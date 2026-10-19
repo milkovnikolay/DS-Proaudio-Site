@@ -1,0 +1,131 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Карточки применения — варианты</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#FAFAFA;color:#141414;font-family:'IBM Plex Sans',sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.vh{padding:72px 0 28px;border-top:1px solid #E4E4E4}
+.vh:first-of-type{border-top:0}
+.vh b{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A8A}
+.vh h2{margin:8px 0 6px;font-family:'Montserrat';font-size:30px}
+.vh p{margin:0;color:#767676;max-width:760px;line-height:1.55}
+.sec-h{display:flex;flex-direction:column;gap:6px;margin:0 0 28px}
+.sec-h .k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A8A}
+.sec-h .t{font-family:'Montserrat';font-weight:700;font-size:40px;line-height:1.1}
+.dark{background:#0A0A0B;color:#FAFAFA;border-radius:20px;padding:56px 48px}
+.dark .sec-h .k{color:#8A8A8A}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.up{font-family:'Montserrat';font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+.sub{display:block;position:relative;padding-left:14px;font-size:14px;line-height:1.5}
+.sub::before{content:"";position:absolute;left:0;top:.75em;width:7px;height:1px;background:currentColor;opacity:.5}
+.sub:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* B — фото + белая панель */
+.B{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.B .c{background:#fff;border:1px solid #E6E6E6;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s}
+.B .c:hover{box-shadow:0 18px 40px -22px rgba(0,0,0,.35);transform:translateY(-2px)}
+.B .ph{display:block;aspect-ratio:4/3;overflow:hidden;background:#ddd}
+.B .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.B .c:hover .ph img{transform:scale(1.05)}
+.B .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.B .tt{font-size:16px;line-height:1.25}
+.B .n{color:#3E6FB0}
+.B .ls{color:#5B5B5B;margin-top:4px}
+.B .ls .sub{font-size:13.5px}
+
+/* C — раскрывающиеся полосы */
+.C{display:flex;gap:10px;height:560px}
+.C .c{position:relative;flex:1 1 0;min-width:0;border-radius:16px;overflow:hidden;background:#111;transition:flex-grow .7s cubic-bezier(.2,.7,.2,1);color:#FAFAFA}
+.C .c.on{flex-grow:5}
+.C img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(25%) brightness(.8)}
+.C .c.on img{filter:none}
+.C .c::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.85))}
+.C .vt{position:absolute;left:50%;bottom:28px;z-index:2;writing-mode:vertical-rl;transform:translateX(-50%) rotate(180deg);font-size:14px;white-space:nowrap;transition:opacity .3s}
+.C .c.on .vt{opacity:0}
+.C .op{position:absolute;left:28px;right:28px;bottom:26px;z-index:2;display:flex;flex-direction:column;gap:12px;opacity:0;transform:translateY(10px);transition:opacity .35s .15s,transform .35s .15s;min-width:340px}
+.C .c.on .op{opacity:1;transform:none}
+.C .op .tt{font-size:24px}
+.C .op .n{color:#C4C4C4}
+.C .op .ls{display:flex;flex-direction:column;gap:3px}
+.C .go{display:inline-flex;align-self:flex-start;margin-top:6px;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600}
+.C .go:hover{background:#fff;color:#111}
+
+/* D — список направлений + большое фото */
+.D{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:stretch}
+.D .lst{display:flex;flex-direction:column;border-top:1px solid #E0E0E0}
+.D .row{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px;padding:18px 4px;border-bottom:1px solid #E0E0E0;cursor:pointer;transition:background .25s,padding .25s}
+.D .row .i{color:#ADADAD}
+.D .row .tt{font-size:17px;color:#5B5B5B;transition:color .25s}
+.D .row .ar{opacity:0;transition:opacity .25s,transform .25s;transform:translateX(-6px)}
+.D .row.on .tt{color:#141414}
+.D .row.on .ar{opacity:1;transform:none}
+.D .row.on{padding-left:14px}
+.D .row .ex{grid-column:2 / -1;max-height:0;overflow:hidden;transition:max-height .5s ease;color:#5B5B5B}
+.D .row.on .ex{max-height:220px}
+.D .row .ex .n{margin:8px 0 6px;color:#3E6FB0}
+.D .pic{position:relative;border-radius:18px;overflow:hidden;background:#111;min-height:620px}
+.D .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.D .pic img.on{opacity:1}
+.D .pic .cap{position:absolute;left:24px;right:24px;bottom:20px;z-index:2;color:#E2E2E2;font-family:'IBM Plex Mono';font-size:11.5px;line-height:1.5;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.D .pic::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.7))}
+
+/* E — тёмные плитки с крупной цифрой */
+.E{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#2A2A2E;border:1px solid #2A2A2E;border-radius:16px;overflow:hidden}
+.E .c{position:relative;background:#121214;min-height:330px;padding:26px 26px 24px;display:flex;flex-direction:column;overflow:hidden;color:#FAFAFA}
+.E .c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .5s,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.E .c::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.55),rgba(10,10,11,.92));opacity:0;transition:opacity .5s;z-index:1}
+.E .c:hover img{opacity:1;transform:none}
+.E .c:hover::before{opacity:1}
+.E .c>*:not(img){position:relative;z-index:2}
+.E .big{font-family:'Montserrat';font-weight:700;font-size:64px;line-height:1;letter-spacing:-.02em}
+.E .big small{font-size:22px;margin-left:4px;color:#8A8A8A}
+.E .big.dim{color:#3A3A3E}
+.E .nl{color:#8A8A8A;margin-top:8px}
+.E .tt{margin-top:auto;font-size:17px;line-height:1.25}
+.E .ls{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .4s,margin .4s;color:#D8D8D8}
+.E .c:hover .ls{max-height:220px;opacity:1;margin-top:12px}
+.E .c>.ix{position:absolute;right:24px;top:26px;color:#5B5B5B}
+
+@media (max-width:1099px){.B,.E{grid-template-columns:repeat(2,1fr)}.D{grid-template-columns:1fr}.D .pic{min-height:420px;order:-1}.C{flex-direction:column;height:auto}.C .c{min-height:90px}.C .c.on{min-height:460px}.C .vt{writing-mode:horizontal-tb;transform:none;left:24px;bottom:auto;top:50%;margin-top:-10px}.C .op{min-width:0}}
+@media (max-width:700px){.wrap{padding:0 16px}.B,.E{grid-template-columns:1fr}.dark{padding:40px 20px}.sec-h .t{font-size:30px}.C .op .ls{grid-template-columns:1fr}}
+@media (hover:none){.E .ls{max-height:none;opacity:1;margin-top:12px}}
+</style></head><body>
+<div class="wrap">
+<div class="vh"><b>Демонстрация · не для публикации</b><h2>Карточки «Применение» — варианты оформления</h2>
+<p>Те же 8 направлений, фото и подпункты, что сейчас на главной. Текущий вариант — бенто-сетка с фото во всю плитку и всплывающим списком — остаётся вариантом A. Ниже — четыре альтернативы.</p></div>
+
+<div class="vh"><b>Вариант B</b><h2>Каталог: фото + панель с текстом</h2><p>Ровная сетка 4×2. Список подпунктов виден всегда, без наведения — удобно на телефоне и понятно с первого взгляда. Спокойный, «каталожный» вид, как у карточек блога.</p></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="B" id="B"></div>
+
+<div class="vh"><b>Вариант C</b><h2>Раскрывающиеся полосы</h2><p>Восемь вертикальных фото-полос; при наведении полоса раскрывается во весь кадр, показывает название, число объектов и подпункты. Эффектно, занимает один экран, самый «выставочный» вариант.</p></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="C" id="C"></div>
+
+<div class="vh"><b>Вариант D</b><h2>Список направлений + большое фото</h2><p>Слева — нумерованный перечень направлений, справа — крупный кадр объекта с подписью. При наведении на строку меняется фото и раскрываются подпункты. Журнальная подача, акцент на фотографии реальных объектов.</p></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="D"><div class="lst" id="Dl"></div><div class="pic" id="Dp"></div></div>
+
+<div class="vh"><b>Вариант E</b><h2>Тёмная сетка с крупной цифрой</h2><p>Строгие тёмные ячейки, в центре внимания — масштаб: «40+», «50+», «20+». Фото проявляется только при наведении вместе со списком. Инженерный, «приборный» характер — перекликается с тёмной шапкой.</p></div>
+</div>
+<div class="wrap" style="padding-bottom:96px"><div class="dark">
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="E" id="E"></div></div></div>
+
+<script>
+var T=[{"title": "Культура и искусство", "top": "Реализовано более 40 объектов", "href": "./culture.html", "img": "./assets/mravinsky-hall-choir.jpg", "caption": "Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2024 г.", "items": [{"text": "Концертные залы и филармонии", "href": "./concert-halls.html"}, {"text": "Драматические и музыкальные театры", "href": "./theatres.html"}, {"text": "Дома культуры и центры досуга", "href": "./dk.html"}, {"text": "Цирки", "href": "./circus.html"}, {"text": "Музеи и выставочные галереи", "href": "./museums.html"}, {"text": "Мобильные комплекты для улицы (IP55)", "href": "./outdoor.html"}]}, {"title": "Образование и наука", "top": "Реализовано более 50 объектов", "href": "./education.html", "img": "./assets/portfolio/pf-001/01.jpg", "caption": "Актовый зал РАНХиГС, 2026 г.", "items": [{"text": "Актовые залы школ и вузов", "href": "./edu-assembly.html"}, {"text": "Учебные аудитории и лекционные залы", "href": "./edu-lecture.html"}, {"text": "Планетарии", "href": "./edu-planetarium.html"}]}, {"title": "Спорт и массовые мероприятия", "top": "8 объектов", "href": "./sport.html", "img": "./assets/portfolio/pf-007/01.jpg", "caption": "Центр единоборств Тарко-Сале, 2026 г.", "items": [{"text": "Дворцы спорта", "href": "./sport-palaces.html"}, {"text": "Ледовые арены (IP55)", "href": "./sport-ice.html"}, {"text": "Спортивные и физкультурно-оздоровительные комплексы", "href": "./sport-complexes.html"}, {"text": "Бассейны и аквапарки (IP55)", "href": "./sport-pools.html"}, {"text": "Открытые стадионы, ипподромы (IP55)", "href": "./sport-stadiums.html"}]}, {"title": "Корпоративный сектор", "top": "Реализовано более 20 объектов", "href": "./corporate.html", "img": "./assets/portfolio/pf-018/07.jpg", "caption": "Конференц-зал Министерства спорта Российской Федерации, 2023 г.", "items": [{"text": "Конференц-залы", "href": "./corp-conference.html"}, {"text": "Переговорные комнаты", "href": "./corp-meeting.html"}, {"text": "Открытые офисные пространства", "href": "./corp-openspace.html"}]}, {"title": "Ресторанный и гостиничный бизнес", "top": "9 объектов", "href": "./hospitality.html", "img": "./assets/portfolio/pf-009/07.jpg", "caption": "Кафе «ЮТЭК», 2024 г.", "items": [{"text": "Рестораны, бары, пабы", "href": "./hosp-restaurants.html"}, {"text": "Банкетные залы и ресторанные холлы", "href": "./corp-banquet.html"}, {"text": "Уличные кафе и летние веранды (IP55)", "href": "./hosp-terraces.html"}, {"text": "Сауны, SPA‑комплексы (IP55)", "href": "./hosp-spa.html"}]}, {"title": "Религиозные учреждения", "top": "3 объекта", "href": "./religious.html", "img": "./assets/segments/religious-hero-soft.jpg", "caption": "Храмовый комплекс в честь Преображения Господня, 2024 г.", "items": [{"text": "Храмы, мечети, синагоги и др. культовые сооружения", "href": "./rel-temples.html"}]}, {"title": "Индустрия развлечений", "top": "2 объекта", "href": "./entertainment.html", "img": "./assets/segments/entertainment-hero-soft.jpg", "caption": "", "items": [{"text": "Клубы живой музыки", "href": "./ent-live.html"}, {"text": "Ночные клубы и дискотеки", "href": "./ent-nightclubs.html"}, {"text": "Караоке-бары", "href": "./ent-karaoke.html"}]}, {"title": "Прокатные компании", "top": "3 комплекта решений", "href": "./rental.html", "img": "./assets/segments/rental-hero-bessonnitsa.jpg", "caption": "Фестиваль «Бессонница», 2025 г.", "items": [{"text": "Полнофункциональные решения для широкого спектра задач", "href": "./rent-full.html"}, {"text": "Оптимальные решения для средних площадок и задач", "href": "./rent-mid.html"}, {"text": "Компактность и бюджет для малых мероприятий", "href": "./rent-compact.html"}]}];
+function e(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function ls(t){return t.items.map(function(i){return '<a class="sub" href="'+e(i.href)+'">'+e(i.text)+'</a>'}).join('')}
+function big(t){var m=/более (\d+)/.exec(t.top);return m?m[1]:null}
+document.getElementById('B').innerHTML=T.map(function(t){return '<div class="c"><a class="ph" href="'+e(t.href)+'"><img src="'+e(t.img)+'" alt="" loading="lazy"></a><div class="bd"><a class="tt up" href="'+e(t.href)+'">'+e(t.title)+'</a><span class="n mono">'+e(t.top)+'</span><div class="ls">'+ls(t)+'</div></div></div>'}).join('');
+var C=document.getElementById('C');
+C.innerHTML=T.map(function(t,k){return '<div class="c'+(k?'':' on')+'"><img src="'+e(t.img)+'" alt="" loading="lazy"><span class="vt up">'+e(t.title)+'</span><div class="op"><span class="n mono">'+e(t.top)+'</span><a class="tt up" href="'+e(t.href)+'">'+e(t.title)+'</a><div class="ls">'+ls(t)+'</div><a class="go" href="'+e(t.href)+'">Смотреть направление →</a></div></div>'}).join('');
+[].forEach.call(C.children,function(c){c.addEventListener('mouseenter',function(){[].forEach.call(C.children,function(x){x.classList.toggle('on',x===c)})});c.addEventListener('click',function(){[].forEach.call(C.children,function(x){x.classList.toggle('on',x===c)})})});
+var Dl=document.getElementById('Dl'),Dp=document.getElementById('Dp');
+Dl.innerHTML=T.map(function(t,k){return '<div class="row'+(k?'':' on')+'"><span class="i mono">0'+(k+1)+'</span><a class="tt up" href="'+e(t.href)+'">'+e(t.title)+'</a><span class="ar">→</span><div class="ex"><div class="n mono">'+e(t.top)+'</div>'+ls(t)+'</div></div>'}).join('');
+Dp.innerHTML=T.map(function(t,k){return '<img src="'+e(t.img)+'" alt="" class="'+(k?'':'on')+'">'}).join('')+'<div class="cap" id="Dc">'+e(T[0].caption||'')+'</div>';
+[].forEach.call(Dl.children,function(r,k){r.addEventListener('mouseenter',function(){[].forEach.call(Dl.children,function(x,j){x.classList.toggle('on',j===k)});[].forEach.call(Dp.querySelectorAll('img'),function(x,j){x.classList.toggle('on',j===k)});document.getElementById('Dc').textContent=T[k].caption||''})});
+document.getElementById('E').innerHTML=T.map(function(t,k){var b=big(t),m=/^(\d+)/.exec(t.top);return '<a class="c" href="'+e(t.href)+'"><img src="'+e(t.img)+'" alt="" loading="lazy"><span class="ix mono">0'+(k+1)+'</span>'+(b?'<span class="big">'+b+'<small>+</small></span><span class="nl mono">реализованных объектов</span>':'<span class="big dim">'+(m?m[1]:'—')+'</span><span class="nl mono">'+e(t.top.replace(/^\d+\s*/,''))+'</span>')+'<span class="tt up">'+e(t.title)+'</span><div class="ls">'+t.items.map(function(i){return '<span class="sub">'+e(i.text)+'</span>'}).join('')+'</div></a>'}).join('');
+</script></body></html>

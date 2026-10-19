@@ -1,0 +1,7 @@
+файл | объект | автор | лицензия | страница на Commons
+ice-1.jpg | G-Drive Арена (Арена Омск), Омск — матч КХЛ | Dvp777 | CC0 | https://commons.wikimedia.org/wiki/File:G-Drive_Arena_Omsk_KHL.jpg
+ice-2.jpg | ДС «Мегаспорт», Москва — матч Спартак–Металлург | Dvp777 | CC0 | https://commons.wikimedia.org/wiki/File:Megasport_Sports_Palace,_Spartak_-_Metallurg.jpg
+ice-3.jpg | УГМК Арена, Екатеринбург — матч КХЛ | Ricco Baroni | CC0 | https://commons.wikimedia.org/wiki/File:KHL_match_at_the_UMMC_Arena.jpg
+pool-1.jpg | Олимпийский центр синхронного плавания Анастасии Давыдовой, Москва | mos.ru | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Olympic_synchronized_swimming_centre_of_Anastasia_Davydova1.jpg
+pool-2.jpg | Бассейн в Косино, Москва | М. Денисова, Mos.ru | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Kosino-Swimming-pool.jpg
+pool-3.jpg | Бассейн Сандуновских бань, Москва | Andreykor | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D1%81%D0%B5%D0%B9%D0%BD_%D0%A1%D0%B0%D0%BD%D0%B4%D1%83%D0%BD%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D1%85_%D0%B1%D0%B0%D0%BD%D1%8C_01.JPG

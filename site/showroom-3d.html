@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+<script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
+<link rel="stylesheet" href="./mnav.css">
+<script src="./mnav.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шоурум — DS PROAUDIO</title>
+<meta name="description" content="Шоурум DS PROAUDIO в 3D: пройдитесь по залу, посмотрите сцену с подвесными линейными массивами, лаунж и антресоль. Запишитесь на прослушивание.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=PT+Mono&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== базовые правила — один в один с Main.dc.html ===== */
+  body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;color:#141414}
+  a{color:inherit;text-decoration:none}
+  a:hover{opacity:.7}
+  button{font-family:inherit;cursor:pointer}
+  ::selection{background:#D1D5DB;color:#0A0A0B}
+  *,*::before,*::after{box-sizing:border-box}
+
+  @keyframes dsGlow{0%,100%{opacity:.45}50%{opacity:1}}
+  .glow-dot{animation:dsGlow 3.4s ease-in-out infinite}
+  @keyframes dsHeroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  .hero-bg{animation:dsHeroZoom 22s ease-in-out infinite alternate}
+
+  .nav-trigger{background:none;border:none;padding:0;margin:0;font:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#F2F2F2;white-space:nowrap;}
+  .mm-item{text-transform:uppercase;font-weight:300;letter-spacing:.045em;font-size:13px;color:#E7E7E7;}
+  .mm-item-long{text-transform:uppercase;font-weight:300;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#E7E7E7;}
+  .mm-item-long .mm-sub{display:block;font-weight:300;letter-spacing:.01em;opacity:.6;margin-top:1px;}
+  .mm-bold{text-transform:uppercase;font-weight:500;letter-spacing:.05em;font-size:13px;color:#FAFAFA;}
+  .mm-current{color:#FAFAFA;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(250,250,250,.45);}
+
+  .ft-item{text-transform:uppercase;font-weight:600;letter-spacing:.045em;font-size:13px;color:#5B5B5B;}
+  .ft-item:hover{color:#141414;}
+  .ft-item-long{text-transform:uppercase;font-weight:600;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#5B5B5B;}
+  .ft-item-long:hover{color:#141414;}
+  .ft-item-long .ft-sub{display:block;font-weight:500;letter-spacing:.01em;opacity:.7;margin-top:1px;}
+  .ft-bold{text-transform:uppercase;font-weight:700;letter-spacing:.05em;font-size:13px;color:#141414;}
+  .ft-bold:hover{opacity:.65;}
+  .ft-heading{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#C2C2C2;}
+
+  .section-cta{background:#141414;color:#FAFAFA;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:15px 26px;border-radius:6px;white-space:nowrap;transition:opacity .25s ease;}
+
+  /* ===== общие элементы страницы раздела ===== */
+  .wrap{max-width:1440px;margin:0 auto;padding-left:64px;padding-right:64px}
+  .kicker{font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+  .h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;line-height:1.15;color:#141414}
+  .lead{margin:0;font-size:17px;line-height:1.65;color:#767676}
+  .dark .h2{color:#FAFAFA}
+  .dark .lead{color:#9A9A9A}
+  .dark .kicker{color:#8A8A8A}
+
+  /* появление блоков при прокрутке */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== хлебные крошки ===== */
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;padding:0;list-style:none;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9A9A9A}
+  .crumbs a{color:#C8C8C8;transition:color .2s ease}
+  .crumbs a:hover{color:#FAFAFA;opacity:1}
+  .crumbs .sep{color:#5B5B5B}
+  .crumbs [aria-current]{color:#FAFAFA}
+
+  /* ===== кнопки ===== */
+  .btn-light{background:#FAFAFA;color:#0A0A0B;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+  .btn-ghost{border:1px solid rgba(250,250,250,.45);color:#FAFAFA;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+
+  /* ===== «перелистывающиеся» цифры ===== */
+  .odo{display:inline-flex;font-variant-numeric:tabular-nums;line-height:1}
+  .odo-col{display:inline-block;height:1.08em;overflow:hidden}
+  .odo-strip{display:block;transition:transform 1.9s cubic-bezier(.16,.8,.14,1)}
+  .odo-strip span{display:block;height:1.08em;line-height:1.08em}
+
+  .fact{padding-top:26px;border-top:1px solid #E6E6E6;position:relative}
+  .fact::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .fact.in::before{width:100%}
+  .fact-num{font-family:'Montserrat',sans-serif;font-weight:600;font-size:76px;letter-spacing:-.02em;color:#141414;display:flex;align-items:flex-start;gap:6px}
+  .fact-unit{font-size:22px;font-weight:600;letter-spacing:0;margin-top:8px;color:#141414}
+  .fact-text{margin-top:14px;font-size:15px;line-height:1.55;color:#767676;max-width:280px}
+
+  .trust{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;letter-spacing:.02em;color:#141414}
+  .trust i{width:6px;height:6px;border-radius:999px;background:#141414;flex:0 0 6px}
+
+  /* текст, который «проявляется» по словам при прокрутке */
+  .scrub{margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:38px;line-height:1.32;letter-spacing:-.005em;color:#141414}
+  .scrub .w{color:#D4D4D4;transition:color .35s ease}
+  .scrub .w.on{color:#141414}
+
+  /* ===== «почему особый подход» — карточки с живыми графиками ===== */
+  .why-card{border:1px solid rgba(255,255,255,.10);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#111113 0%,#0A0A0B 100%);display:flex;flex-direction:column}
+  .why-viz{position:relative;height:210px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .why-viz canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .viz-label{position:absolute;font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E}
+  .why-body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px}
+  .why-idx{font-family:'PT Mono',monospace;font-size:12px;color:#6E6E6E;letter-spacing:.08em}
+  .why-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.25;color:#FAFAFA;text-transform:uppercase;letter-spacing:.01em}
+  .why-text{font-size:15.5px;line-height:1.6;color:#9A9A9A}
+
+  /* ===== архитектура системы ===== */
+  .tabs{display:inline-flex;gap:6px;padding:5px;border:1px solid #E6E6E6;border-radius:999px;background:#FFFFFF}
+  .tab{border:none;background:none;border-radius:999px;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.03em;color:#767676;transition:background .3s ease,color .3s ease}
+  .tab:hover{color:#141414}
+  .tab[aria-selected="true"]{background:#141414;color:#FAFAFA}
+  .arch-list{display:none;flex-direction:column}
+  .arch-list.active{display:flex}
+  .arch-item{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 0;border-top:1px solid #EDEDED;cursor:default;transition:opacity .3s ease}
+  .arch-item:last-child{border-bottom:1px solid #EDEDED}
+  .arch-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;padding-top:4px}
+  .arch-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.3;color:#141414}
+  .arch-text{grid-column:2;font-size:15px;line-height:1.6;color:#767676}
+  .arch-link{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#141414}
+  .arch-list:hover .arch-item{opacity:.45}
+  .arch-list .arch-item:hover{opacity:1}
+  .arch-panel{position:relative;background:#0A0A0B;border-radius:16px;overflow:hidden;padding:26px 26px 18px}
+  .arch-panel svg{display:block;width:100%;height:auto}
+  .arch-mode{transition:opacity .6s ease}
+  .arch-panel[data-mode="a"] .mode-b, .arch-panel[data-mode="b"] .mode-a{opacity:0;pointer-events:none}
+  .part{transition:opacity .35s ease}
+  .arch-panel[data-hl] .part{opacity:.3}
+  .arch-panel[data-hl="array"] .p-array, .arch-panel[data-hl="monitor"] .p-monitor,
+  .arch-panel[data-hl="sub"] .p-sub, .arch-panel[data-hl="column"] .p-column{opacity:1}
+  .svg-label{font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;fill:#6E6E6E;text-transform:uppercase}
+  .svg-label-hi{fill:#C8C8C8}
+
+  /* ===== результат: крупные формулировки ===== */
+  .result-row{display:grid;grid-template-columns:90px 1fr 380px;gap:24px;align-items:baseline;padding:38px 0;position:relative;border-top:1px solid #EDEDED}
+  .result-row::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1) .1s}
+  .result-row.in::before{width:100%}
+  .result-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;letter-spacing:.08em}
+  .mask{display:block;overflow:hidden;padding-bottom:.08em}
+  .mask > span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.75,.15,1)}
+  .in .mask > span{transform:none}
+  .result-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:46px;line-height:1.12;letter-spacing:-.01em;color:#141414}
+  .result-text{font-size:16px;line-height:1.6;color:#767676;opacity:0;transition:opacity .9s ease .5s}
+  .in .result-text{opacity:1}
+
+  /* ===== кейс ===== */
+  .case-media{position:relative;border-radius:16px;overflow:hidden;background:#111;aspect-ratio:4/3}
+  .case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02)}
+  .case-media img.on{opacity:1;animation:dsHeroZoom 9s ease-out forwards}
+  .case-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,0) 55%,rgba(10,10,11,.6) 100%);pointer-events:none}
+  .case-ctrl{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;display:flex;align-items:center;gap:16px;font-family:'PT Mono',monospace;font-size:11px;color:#C4C4C4;letter-spacing:.06em}
+  .case-bar{flex:1;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+  .case-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#FAFAFA}
+  .case-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.10)}
+  .case-row:last-child{border-bottom:1px solid rgba(255,255,255,.10)}
+  .case-key{font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;padding-top:3px}
+  .case-val{font-size:16.5px;line-height:1.6;color:#E2E2E2}
+
+  /* ===== соседние подразделы ===== */
+  .sib{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;border-top:1px solid #E6E6E6;color:#767676;transition:color .25s ease}
+  .sib:last-child{border-bottom:1px solid #E6E6E6}
+  .sib:hover{color:#141414;opacity:1}
+  .sib-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:24px;line-height:1.25}
+  .sib-arrow{font-size:22px;transform:translateX(-8px);opacity:0;transition:transform .3s ease,opacity .3s ease;color:#141414}
+  .sib:hover .sib-arrow{transform:none;opacity:1}
+  .sib-meta{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:#ADADAD;text-transform:uppercase;margin-right:auto;margin-left:18px}
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-bg,.glow-dot,.case-media img.on{animation:none}
+    .reveal,.mask > span,.result-text,.odo-strip,.fact::before,.result-row::before{transition:none}
+  }
+  @media (max-width: 1100px){
+    .wrap{padding-left:24px;padding-right:24px}
+    .grid-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .grid-3{grid-template-columns:1fr !important}
+    .grid-2{grid-template-columns:1fr !important}
+    .result-row{grid-template-columns:1fr}
+    .result-title{font-size:34px}
+    .scrub{font-size:28px}
+    .h1{font-size:52px !important}
+  }
+
+  /* ===== плитки направлений (bento) ===== */
+  .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:420px;gap:18px}
+  .vtile{position:relative;display:block;overflow:hidden;border-radius:16px;background:#111;scroll-margin-top:110px;outline:2px solid transparent;outline-offset:5px;transition:outline-color .4s ease, opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover{opacity:1}
+  .vtile-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.03) brightness(.94);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover .vtile-photo{transform:scale(1.05)}
+  .vtile-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.38) 0%,rgba(10,10,11,.06) 28%,rgba(10,10,11,.22) 55%,rgba(10,10,11,.86) 100%);transition:opacity .4s ease}
+  .vtile::after{content:"";position:absolute;inset:0;background:rgba(10,10,11,.35);opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .vtile:hover::after{opacity:1}
+  .vtile-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px 24px}
+  .vtile-top{display:flex;justify-content:flex-end;gap:16px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#C4C4C4}
+  .vtile-main{display:flex;flex-direction:column;gap:10px;max-width:560px;padding-right:56px}
+  .vtile-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.25;letter-spacing:.01em;text-transform:uppercase;color:#FAFAFA}
+  .vtile-lead{font-size:15px;line-height:1.55;color:#E2E2E2;max-height:0;opacity:0;overflow:hidden;transition:max-height .55s ease, opacity .45s ease}
+  .vtile:hover .vtile-lead,.vtile:focus-visible .vtile-lead{max-height:96px;opacity:1}
+  .vtile-cap{font-family:'PT Mono',monospace;font-size:11px;line-height:1.45;color:#A8A8A8}
+  .vtile-arrow{position:absolute;right:22px;bottom:22px;z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid rgba(250,250,250,.4);color:#FAFAFA;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;transform:translateX(-8px);transition:opacity .35s ease, transform .35s ease, background .35s ease}
+  .vtile:hover .vtile-arrow{opacity:1;transform:none}
+  .vtile:target,.vtile.flash{outline-color:#141414}
+  /* страница подраздела ещё не готова — без стрелки и без курсора-«руки» */
+  .vtile[data-soon]{cursor:default}
+  .vtile[data-soon] .vtile-arrow{display:none}
+
+  /* ===== ключевые пункты (без цифр) ===== */
+  .tp{position:relative;padding-top:24px;border-top:1px solid #E6E6E6;display:flex;flex-direction:column;gap:10px}
+  .tp::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .tp.in::before{width:100%}
+  .tp-main::before{height:2px;top:-1px}
+  .tp-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .tp-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.35;color:#141414}
+  .tp-text{font-size:15px;line-height:1.6;color:#8A8A8A}
+
+  /* ===== этапы работы ===== */
+  .steps-track{position:relative;height:1px;background:#E6E6E6;margin-bottom:34px}
+  .steps-fill{position:absolute;left:0;top:0;height:1px;width:0;background:#141414}
+  .steps-dot{position:absolute;top:-4px;left:0;width:9px;height:9px;margin-left:-4px;border-radius:999px;background:#141414;box-shadow:0 0 0 5px rgba(20,20,20,.08)}
+  .step{opacity:.38;transition:opacity .6s ease}
+  .step.on{opacity:1}
+  .step-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .step-title{margin:12px 0 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.3;color:#141414}
+  .step-text{font-size:15px;line-height:1.6;color:#767676}
+
+  /* ===== отзывы ===== */
+  .quotes{display:grid}
+  .quote{grid-area:1/1;margin:0;opacity:0;transform:translateY(10px);transition:opacity .9s ease, transform .9s ease;pointer-events:none}
+  .quote.on{opacity:1;transform:none;pointer-events:auto}
+  .quote blockquote{margin:0;max-width:1120px;font-family:'Montserrat',sans-serif;font-weight:500;font-size:34px;line-height:1.38;color:#FAFAFA}
+  .quote figcaption{display:flex;align-items:center;gap:16px;margin-top:38px}
+  .quote figcaption img,.q-initials{width:52px;height:52px;border-radius:999px;object-fit:cover;filter:grayscale(100%);flex:0 0 52px}
+  .q-initials{display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.28);font-family:'PT Mono',monospace;font-size:13px;color:#C8C8C8}
+  .quote b{display:block;font-weight:600;font-size:15px;color:#FAFAFA}
+  .quote i{display:block;font-style:normal;font-size:13px;color:#8A8A8A;margin-top:2px}
+  .q-nav{display:flex;align-items:center;gap:10px;margin-top:48px}
+  .q-dot{width:32px;height:2px;border:none;padding:0;background:rgba(255,255,255,.2);transition:background .3s ease}
+  .q-dot.on{background:#FAFAFA}
+  .q-all{margin-left:auto;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#FAFAFA}
+
+  @media (max-width: 1100px){
+    .bento{grid-template-columns:1fr;grid-auto-rows:360px}
+    .bento .vtile{grid-column:auto !important}
+    .quote blockquote{font-size:24px}
+  }
+  @media (hover: none){
+    .vtile-lead{max-height:none;opacity:1}
+    .vtile-arrow{opacity:1;transform:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+  }
+
+  /* отзывы: главная фраза крупно, две другие — мельче, отдельными строками */
+  .quote .q-more{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:900px}
+  .quote .q-more li{font-size:17px;line-height:1.55;color:#9A9A9A;padding-left:18px;position:relative}
+  .quote .q-more li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:#5B5B5B}
+
+  /* заглушка вместо фото (в исходном документе фото объекта нет) */
+  .vtile-ph{position:absolute;inset:0;background:
+      radial-gradient(90% 80% at 85% 10%, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 60%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      linear-gradient(160deg,#1A1A1C 0%,#0E0E10 100%)}
+  .vtile-noimg .vtile-cap{color:#6E6E6E}
+
+  /* --- «Технологии» в колонке «Компания»: раскрывающийся список (меню и подвал) --- */
+  .tech-dd{display:flex;flex-direction:column;align-items:center;}
+  .tech-dd > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  .tech-dd > summary::-webkit-details-marker{display:none;}
+  .tech-dd .tech-chev{display:inline-block;font-size:9px;line-height:1;transition:transform .2s ease;}
+  .tech-dd[open] .tech-chev{transform:rotate(180deg);}
+  .tech-dd .tech-list{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:15px;}
+  .tech-dd .tech-list .mm-item-long,.tech-dd .tech-list .ft-item-long,.tech-dd .tech-list .mm-item,.tech-dd .tech-list .ft-item{font-size:11.5px;}
+  /* «Технологии»: слово — ссылка на раздел, стрелка — отдельная кнопка, раскрывает список (как «split button») */
+  .tech-dd > summary{gap:0;}
+  .tech-dd .tech-go{color:inherit;padding:0 12px 0 0;box-shadow:inset -1px 0 0 rgba(140,140,140,.35);text-decoration:none;}
+  .tech-dd .tech-go:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(140,140,140,.7);}
+  .tech-dd .tech-chev{width:26px;height:26px;margin:-7px 0 -7px 7px;border-radius:50%;display:inline-flex !important;align-items:center;justify-content:center;font-size:9px;transition:transform .2s ease,background .2s ease;}
+  .tech-dd > summary:hover .tech-chev:hover,.tech-dd .tech-chev:hover{background:rgba(140,140,140,.22);}
+  .tech-dd > summary:focus-visible{outline:none;} .tech-dd > summary:focus-visible .tech-chev{outline:2px solid #7FB2FF;outline-offset:1px;}
+  .nav-cabinet{white-space:normal !important;text-align:right;line-height:1.2;font-size:11.5px !important;}
+  /* --- кнопка закрытия выпадающего меню --- */
+  .mm-close{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:999px;border:none;background:none;color:#F2F2F2;font-family:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s ease,color .15s ease;}
+  .mm-close:hover,.mm-close:focus-visible{color:#FFFFFF;opacity:.7;}
+  /* ===== ОБЩАЯ СЕТКА ШАПКИ И ВЫПАДАЮЩЕГО МЕНЮ =====
+     Шапка и меню используют один и тот же класс .ds-row, поэтому их колонки всегда совпадают.
+     Ширины колонок задаются ТОЛЬКО здесь: --ds-c1 … --ds-c7; --ds-spread — насколько «Продукция» и «Клиентам» отодвинуты от центра. Крайние колонки прижаты к краям
+     страницы (отступ --ds-pad), пять средних — по центру. Менять пункты меню можно свободно:
+     текст переносится внутри своей колонки и не сдвигает соседние. */
+  :root{--ds-pad:40px;--ds-gap:20px;--ds-spread:40px;--ds-c1:90px;--ds-c2:175px;--ds-c3:195px;--ds-c4:200px;--ds-c5:195px;--ds-c6:175px;--ds-c7:90px;}
+  .ds-row{display:grid !important;box-sizing:border-box;width:100%;max-width:none;margin:0;padding-left:var(--ds-pad);padding-right:var(--ds-pad);column-gap:var(--ds-gap);
+    grid-template-columns:var(--ds-c1) minmax(0,1fr) minmax(var(--ds-c2),calc(var(--ds-c2) + var(--ds-spread))) var(--ds-c3) var(--ds-c4) var(--ds-c5) minmax(var(--ds-c6),calc(var(--ds-c6) + var(--ds-spread))) minmax(0,1fr) var(--ds-c7);}
+  .ds-row > *{min-width:0;}
+  .ds-row > :nth-child(1){grid-column:1;} .ds-row > :nth-child(2){grid-column:3;} .ds-row > :nth-child(3){grid-column:4;}
+  .ds-row > :nth-child(4){grid-column:5;} .ds-row > :nth-child(5){grid-column:6;} .ds-row > :nth-child(6){grid-column:7;}
+  .ds-row > :nth-child(7){grid-column:9;}
+  /* полоса прокрутки меню скрыта: иначе ряд меню становится уже шапки и колонки съезжают */
+  .mm-overlay{scrollbar-width:none;} .mm-overlay::-webkit-scrollbar{display:none;}
+
+
+  /* ===================================================================
+     ШОУРУМ — 3D-модель зала (showroom3d.js) + фотографии. Префикс sr-.
+     =================================================================== */
+  html,body{background:#0A0A0B;}
+  body.sr-page{background:#0A0A0B;color:#E6E6E6;}
+  .sr{position:relative;margin-top:74px;height:calc(100vh - 74px);min-height:520px;background:#070707;overflow:hidden;user-select:none;-webkit-user-select:none;}
+  .sr canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none;outline:none;}
+  .sr canvas:active{cursor:grabbing;} .sr.sr-walk canvas{cursor:crosshair;}
+  .sr:fullscreen{margin:0;height:100vh;}
+  .sr-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#0A0A0B;color:#8A8A8A;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:opacity .8s;z-index:5;}
+  .sr.sr-ready .sr-load{opacity:0;pointer-events:none;}
+  .sr-nogl .sr-load{opacity:1 !important;}
+  .sr-top{position:absolute;left:var(--ds-pad,40px);top:26px;z-index:3;pointer-events:none;}
+  .sr-kick{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#ADADAD;}
+  .sr-h1{margin:10px 0 0;font-family:'IBM Plex Sans',sans-serif;font-weight:300;font-size:44px;line-height:1;letter-spacing:.05em;text-transform:uppercase;color:#FAFAFA;text-shadow:0 2px 18px rgba(0,0,0,.6);}
+  .sr-bar{position:absolute;left:var(--ds-pad,40px);right:var(--ds-pad,40px);bottom:22px;z-index:3;display:flex;flex-wrap:wrap;align-items:center;gap:10px;pointer-events:none;}
+  .sr-bar > *{pointer-events:auto;}
+  .sr-seg{display:inline-flex;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(10,10,11,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:3px;}
+  .sr-btn{border:0;background:none;color:#CFCFCF;font:500 12px/1 'IBM Plex Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;}
+  .sr-btn:hover{color:#FFF;} .sr-btn[aria-pressed="true"]{background:#FAFAFA;color:#0A0A0B;}
+  .sr-views{display:flex;flex-wrap:wrap;gap:6px;}
+  .sr-chip{border:1px solid rgba(255,255,255,.22);background:rgba(10,10,11,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#E6E6E6;font:400 12.5px/1 'IBM Plex Sans',sans-serif;padding:10px 13px;border-radius:999px;cursor:pointer;}
+  .sr-chip:hover{border-color:#FAFAFA;}
+  .sr-ic{width:38px;height:38px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:18px;}
+  .sr-sp{flex:1 1 auto;}
+  .sr-hint{position:absolute;right:var(--ds-pad,40px);top:30px;z-index:3;max-width:330px;text-align:right;font-family:'PT Mono',monospace;font-size:10.5px;line-height:1.7;letter-spacing:.08em;color:#9A9A9A;text-shadow:0 1px 8px #000;pointer-events:none;}
+  .sr-hint .w{display:none;} .sr-walk .sr-hint .w{display:inline;} .sr-walk .sr-hint .o{display:none;}
+  /* точки интереса */
+  .sr-spot{position:absolute;left:0;top:0;z-index:2;border:0;background:none;padding:0;cursor:pointer;color:#FAFAFA;display:flex;align-items:center;gap:8px;transform:translate(-200px,-200px);will-change:transform;}
+  .sr-spot i{position:relative;flex:0 0 auto;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#FAFAFA;box-shadow:0 0 0 4px rgba(250,250,250,.22),0 2px 10px rgba(0,0,0,.6);}
+  .sr-spot i::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(250,250,250,.55);animation:srPulse 2.4s ease-out infinite;}
+  @keyframes srPulse{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.5);opacity:0}}
+  .sr-spot b{margin-top:-7px;font:500 12px/1 'IBM Plex Sans',sans-serif;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding:7px 10px;border-radius:999px;background:rgba(10,10,11,.75);border:1px solid rgba(255,255,255,.2);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s;}
+  .sr-spot:hover b,.sr-spot:focus-visible b{opacity:1;transform:none;}
+  @media (hover:none){ .sr-spot b{opacity:1;transform:none;} }
+  /* панель с фото */
+  .sr-panel{position:absolute;top:18px;right:18px;bottom:84px;width:min(440px,calc(100% - 36px));z-index:4;display:flex;flex-direction:column;background:rgba(14,14,16,.94);border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+  .sr-panel[hidden]{display:none;}
+  .sr-pimg{position:relative;flex:1 1 auto;min-height:0;background:#000;}
+  .sr-pimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .sr-pprev,.sr-pnext{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(10,10,11,.7);color:#FFF;font-size:20px;cursor:pointer;}
+  .sr-pprev{left:10px;} .sr-pnext{right:10px;}
+  .sr-pn{position:absolute;left:12px;bottom:10px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FFF;text-shadow:0 1px 6px #000;}
+  .sr-ptx{padding:18px 20px 20px;}
+  .sr-pt{margin:0 0 8px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:20px;color:#FAFAFA;}
+  .sr-pd{margin:0;font-size:15px;line-height:1.6;color:#C8C8C8;}
+  .sr-pclose{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(10,10,11,.7);color:#FFF;font-size:16px;cursor:pointer;}
+  .sr-pan .sr-hint{display:none;}
+  /* текст и галерея под моделью */
+  .sr-info{position:relative;padding:110px var(--ds-pad,40px) 120px;}
+  .sr-cols{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start;}
+  .sr-info h2{margin:0 0 26px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:34px;line-height:1.2;color:#FAFAFA;}
+  .sr-info p{margin:0 0 20px;font-size:17.5px;line-height:1.75;color:#CDCDCD;}
+  .sr-note{font-family:'PT Mono',monospace;font-size:11px !important;letter-spacing:.1em;color:#8A8A8A !important;line-height:1.7 !important;}
+  .sr-list{margin:0;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.14);}
+  .sr-list li{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:56px 1fr;font-size:17px;line-height:1.5;color:#FAFAFA;}
+  .sr-list li span{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.2em;color:#8A8A8A;padding-top:4px;}
+  .sr-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;}
+  .sr-cta a{display:inline-flex;align-items:center;padding:16px 24px;border-radius:999px;border:1px solid #FAFAFA;font:500 13px/1 'IBM Plex Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;}
+  .sr-cta a.pri{background:#FAFAFA;color:#0A0A0B;} .sr-cta a:hover{opacity:.85;}
+  .sr-gal{max-width:1180px;margin:110px auto 0;}
+  .sr-gal h3{margin:0 0 22px;font-family:'PT Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#ADADAD;}
+  .sr-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+  .sr-grid button{position:relative;padding:0;border:0;background:#111;aspect-ratio:1/1;overflow:hidden;border-radius:10px;cursor:zoom-in;}
+  .sr-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+  .sr-grid button:hover img{transform:scale(1.06);}
+  .sr-lb{position:fixed;inset:0;z-index:90;background:rgba(5,5,6,.94);display:flex;align-items:center;justify-content:center;}
+  .sr-lb[hidden]{display:none;}
+  .sr-lb img{max-width:calc(100% - 140px);max-height:calc(100% - 80px);border-radius:8px;}
+  .sr-lb button{position:absolute;border:1px solid rgba(255,255,255,.3);background:rgba(10,10,11,.6);color:#FFF;width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer;}
+  .sr-lb .x{top:20px;right:20px;} .sr-lb .l{left:20px;top:50%;transform:translateY(-50%);} .sr-lb .r{right:20px;top:50%;transform:translateY(-50%);}
+  @media (max-width:1099px){ .sr{margin-top:64px;height:calc(100svh - 64px);} .sr-hint{display:none;} .sr-cols{grid-template-columns:1fr;gap:50px;} .sr-grid{grid-template-columns:repeat(4,1fr);} }
+  @media (max-width:699px){
+    .sr{margin-top:58px;height:calc(100svh - 58px);}
+    .sr-top{left:16px;top:16px;} .sr-h1{font-size:28px;}
+    .sr-bar{left:12px;right:12px;bottom:12px;gap:8px;}
+    .sr-views{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;} .sr-views::-webkit-scrollbar{display:none;}
+    .sr-chip{flex:0 0 auto;}
+    .sr-panel{top:auto;left:10px;right:10px;bottom:10px;width:auto;height:62%;}
+    .sr-info{padding:80px 20px 90px;} .sr-info h2{font-size:26px;} .sr-info p{font-size:16px;}
+    .sr-grid{grid-template-columns:repeat(3,1fr);gap:6px;}
+    .sr-lb img{max-width:100%;max-height:80%;}
+  }
+</style>
+<script src="./navbot.js" defer></script>
+</head>
+<body class="sr-page">
+
+<header id="siteHeader" style="position:fixed;top:0;left:0;right:0;z-index:60;width:100%;background:rgba(10,10,11,.82);border-bottom:1px solid rgba(255,255,255,.10);">
+  <div class="ds-row" style="height:74px;align-items:center;">
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./gov.html" aria-label="ГИСП — госучреждениям" style="display:flex;align-items:center;">
+        <img src="./assets/gisp-purple.png" alt="Знак ГИСП" style="height:34px;width:34px;object-fit:contain;">
+      </a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./products.html" class="nav-trigger">Продукция</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./application.html" class="nav-trigger">Применение</a>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <a href="./Main.dc.html" aria-label="DS PROAUDIO — на главную" style="display:block;position:relative;height:32px;width:145px;">
+        <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);">
+      </a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./support.html" class="nav-trigger">Техподдержка</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./clients.html" class="nav-trigger">Клиентам</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;align-items:center;">
+        <a href="#" class="cab-pill" aria-label="Кабинет партнёра" title="Кабинет партнёра"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg><span>Партнёрам</span></a>
+      </div>
+  </div>
+  <button type="button" class="hdr-menu-btn" data-menu-toggle aria-haspopup="true" aria-expanded="false">Меню</button>
+</header>
+
+<div class="mm-overlay" id="megamenu" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;flex-direction:column;">
+  <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
+      <a href="#" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+      <a href="#" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+      <a href="#" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./products-line-arrays.html" class="mm-item">Линейные массивы</a>
+      <a href="./products-constant-curvature.html" class="mm-item">Массивы с фиксированными углами</a>
+      <a href="./products-columns.html" class="mm-item">Звуковые колонны</a>
+      <a href="./products-point-sources.html" class="mm-item">Точечные источники звука</a>
+      <a href="./products-monitors.html" class="mm-item">Сценические мониторы</a>
+      <a href="./products-compact-sets.html" class="mm-item">Компактные комплекты</a>
+      <a href="./products-auditorium.html" class="mm-item">Системы для аудиторий</a>
+      <a href="./products-registry.html" class="mm-item">Реестровое оборудование</a>
+      <a href="./products-all-weather.html" class="mm-item">Всепогодные системы</a>
+      <a href="./products-amplifiers.html" class="mm-item">Усилители</a>
+      <a href="./products-accessories.html" class="mm-item">Аксессуары</a>
+      <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">Каталог PDF</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./reviews.html" class="mm-bold">Отзывы</a>
+      <a href="./portfolio.html" class="mm-bold" style="margin-bottom:2px;">Портфолио</a>
+      <a href="./culture.html" class="mm-item">Культура и искусство</a>
+      <a href="./education.html" class="mm-item">Образование и наука</a>
+      <a href="./sport.html" class="mm-item">Спорт и массовые мероприятия</a>
+      <a href="./corporate.html" class="mm-item">Корпоративный сектор</a>
+      <a href="./hospitality.html" class="mm-item">Ресторанный и гостиничный бизнес</a>
+      <a href="./religious.html" class="mm-item">Религиозные учреждения</a>
+      <a href="./entertainment.html" class="mm-item">Индустрия развлечений</a>
+      <a href="./rental.html" class="mm-item" style="font-weight:500;">Прокат</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-top:6px;">
+      <a href="./history.html" class="mm-item">История</a>
+      <a href="./philosophy.html" class="mm-item">Философия</a>
+      <a href="./faces.html" class="mm-item">Лица компании</a>
+      <a href="./production.html" class="mm-item">Наше производство</a>
+      <details class="tech-dd">
+        <summary class="mm-item" title="Показать список технологий"><a href="./technologies.html" class="tech-go" title="Раздел «Технологии»">Технологии</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
+        <div class="tech-list">
+          <a href="./tech-rigging.html" class="mm-item-long">Риггинг без пинов<span class="mm-sub">(массивы TAURA, ERA)</span></a>
+          <a href="./tech-coaxial-waveguide.html" class="mm-item-long">Коаксиальные массивы<span class="mm-sub">(ERA, TAURA 10)</span></a>
+          <a href="./tech-horizontal-summing.html" class="mm-item-long">Горизонтальное сложение<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
+          <a href="./tech-two-way-element.html" class="mm-item-long">Двухполосный элемент<span class="mm-sub">(массив TAURA 8)</span></a>
+          <a href="./tech-cardioid-sub.html" class="mm-item-long">Кардиоидный сабвуфер<span class="mm-sub">(TAURA C‑Sub 18)</span></a>
+          <a href="./tech-coaxial-cx.html" class="mm-item-long">Коаксиальные динамики<span class="mm-sub">(серии CX, MCX)</span></a>
+          <a href="./tech-voice-coil.html" class="mm-item">Звуковые катушки на ребро в замке</a>
+        </div>
+      </details>
+      <a href="./blog.html" class="mm-item">Блог</a>
+      <a href="./contacts.html" class="mm-item">Контакты</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:17px;text-align:right;">
+      <a href="#" class="mm-item">Обучение, семинары</a>
+      <a href="./docs.html" class="mm-item-long">Центр документации<span class="mm-sub">(скачать файлы EASE CAD)</span></a>
+      <a href="./software.html" class="mm-item-long">ПО для акустических расчётов</a>
+      <a href="./warranty.html" class="mm-item">Гарантия и сервис</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
+      <a href="./showroom.html" class="mm-item mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">Посетить шоурум</a>
+      <a href="#" class="mm-item">Запросить выездную демонстрацию</a>
+      <a href="#" class="mm-item">Запросить консультацию по объекту</a>
+      <a href="#" class="mm-item">Узнать цены</a>
+      <a href="#" class="mm-item">Где купить</a>
+      <a href="./delivery.html" class="mm-item">Срок поставки</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
+      <a href="#" aria-label="Написать в чат" style="font-size:17px;color:#FAFAFA;">💬</a>
+      <a href="#" class="mm-bold">ВК</a>
+      <a href="#" class="mm-bold">ТГ</a>
+      <a href="#contact" aria-label="Написать нам" style="font-size:17px;color:#FAFAFA;">✉</a>
+      <a href="#" aria-label="Позвонить нам" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
+    </div>
+  </div>
+  <div style="flex:0 0 auto;display:flex;justify-content:center;padding:28px 0 34px;">
+    <button type="button" data-menu-close aria-label="Закрыть меню" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Закрыть меню</span></button>
+  </div>
+</div>
+
+<section class="sr" id="sr3d" data-tex="./assets/showroom/tex/" aria-label="3D-модель шоурума">
+  <canvas tabindex="0" aria-label="Интерактивная 3D-модель зала шоурума"></canvas>
+  <div class="sr-load">Собираем зал…</div>
+  <div class="sr-top"><div class="sr-kick">DS PROAUDIO · 3D-тур</div><h1 class="sr-h1">Шоурум</h1></div>
+  <div class="sr-hint"><span class="o">Тяните — вращать · колесо — ближе/дальше<br>Точки — фото этой зоны</span><span class="w">Тяните — осмотреться · клик по полу — перейти<br>WASD или стрелки — идти</span></div>
+  <button type="button" class="sr-spot" data-p="-8.9,4.3,0" data-view="stage" data-ph="./assets/showroom/ph/20260819_131108.jpg,./assets/showroom/ph/20260819_131110.jpg,./assets/showroom/ph/20260819_131054.jpg,./assets/showroom/ph/20260819_131027.jpg,./assets/showroom/ph/20260624_130350_587.jpg" data-d="Подвесные линейные массивы DS PROAUDIO, сабвуферы и сценические мониторы." aria-label="Сцена"><i></i><b>Сцена</b></button>
+<button type="button" class="sr-spot" data-p="-8.9,5.95,-2.7" data-view="rig" data-ph="./assets/showroom/ph/20260819_131043.jpg,./assets/showroom/ph/20260819_131045.jpg,./assets/showroom/ph/20260819_131050.jpg,./assets/showroom/ph/20260819_131052.jpg,./assets/showroom/ph/20260819_131037.jpg" data-d="Массивы подвешены к перекрытию на лебёдках — можно посмотреть, как устроен риггинг." aria-label="Подвес массивов"><i></i><b>Подвес массивов</b></button>
+<button type="button" class="sr-spot" data-p="-1.8,1.4,0" data-view="hall" data-ph="./assets/showroom/ph/20260624_130349_790.jpg,./assets/showroom/ph/20260624_130350_295.jpg,./assets/showroom/ph/20260624_130349_903.jpg,./assets/showroom/ph/20260413_183919_699.jpg" data-d="Зал со зрительскими местами на коврах, деревянный кессонный потолок с куполами и световые обручи." aria-label="Зал"><i></i><b>Зал</b></button>
+<button type="button" class="sr-spot" data-p="1.8,1.2,-2.4" data-view="hall" data-ph="./assets/showroom/ph/20260819_124218.jpg,./assets/showroom/ph/20260819_124423.jpg,./assets/showroom/ph/20260819_124648.jpg,./assets/showroom/ph/20260819_124655.jpg,./assets/showroom/ph/20260819_124844.jpg,./assets/showroom/ph/20260819_131142.jpg" data-d="Зал легко превращается в учебный класс: проектор, рабочие столы, флипчарт." aria-label="Обучение и семинары"><i></i><b>Обучение и семинары</b></button>
+<button type="button" class="sr-spot" data-p="7.6,1.25,5" data-view="lounge" data-ph="./assets/showroom/ph/20260413_183919_389.jpg,./assets/showroom/ph/20260624_130350_655.jpg,./assets/showroom/ph/20260413_183919_065.jpg" data-d="Зона отдыха у окон: кожаные диваны и кресла, растения." aria-label="Лаунж"><i></i><b>Лаунж</b></button>
+<button type="button" class="sr-spot" data-p="9.6,1.7,2.5" data-view="bar" data-ph="./assets/showroom/ph/20260413_183918_939.jpg,./assets/showroom/ph/20260624_130349_903.jpg" data-d="Барная стойка под антресолью." aria-label="Бар"><i></i><b>Бар</b></button>
+<button type="button" class="sr-spot" data-p="10.5,4.7,-3" data-view="mezz" data-ph="./assets/showroom/ph/20260413_183918_874.jpg,./assets/showroom/ph/20260413_183919_699.jpg,./assets/showroom/ph/20260819_125233.jpg" data-d="Галерея вдоль двух стен — вид на зал и сцену сверху." aria-label="Антресоль"><i></i><b>Антресоль</b></button>
+
+  <div class="sr-bar">
+    <div class="sr-seg" role="group" aria-label="Режим"><button type="button" class="sr-btn" data-mode="orbit" aria-pressed="true">Обзор</button><button type="button" class="sr-btn" data-mode="walk" aria-pressed="false">Прогулка</button></div>
+    <div class="sr-views" role="group" aria-label="Виды">
+      <button type="button" class="sr-chip" data-view="hall">Общий вид</button><button type="button" class="sr-chip" data-view="stage">Сцена</button>
+      <button type="button" class="sr-chip" data-view="lounge">Лаунж</button><button type="button" class="sr-chip" data-view="bar">Бар</button>
+      <button type="button" class="sr-chip" data-view="mezz">С антресоли</button><button type="button" class="sr-chip" data-view="top">План сверху</button>
+    </div>
+    <span class="sr-sp"></span>
+    <div class="sr-seg"><button type="button" class="sr-btn sr-ic" data-zoom="in" aria-label="Приблизить">+</button><button type="button" class="sr-btn sr-ic" data-zoom="out" aria-label="Отдалить">−</button><button type="button" class="sr-btn sr-ic" data-fs aria-label="На весь экран">⤢</button></div>
+  </div>
+  <aside class="sr-panel" hidden aria-live="polite">
+    <button type="button" class="sr-pclose" aria-label="Закрыть">✕</button>
+    <div class="sr-pimg"><img src="" alt=""><button type="button" class="sr-pprev" aria-label="Предыдущее фото">‹</button><button type="button" class="sr-pnext" aria-label="Следующее фото">›</button><span class="sr-pn"></span></div>
+    <div class="sr-ptx"><h2 class="sr-pt"></h2><p class="sr-pd"></p></div>
+  </aside>
+</section>
+
+<main class="sr-info">
+  <div class="sr-cols">
+    <div>
+      <h2>Приходите послушать</h2>
+      <p>В шоуруме системы DS PROAUDIO звучат в настоящем зале, а не в демо-комнате: линейные массивы на подвесе, сабвуферы, сценические мониторы. Можно послушать их на своём материале, сравнить конфигурации и обсудить проект с инженерами.</p>
+      <p>Здесь же проходят обучение и семинары для партнёров, звукорежиссёров и системных инженеров.</p>
+      <p class="sr-note">3D-модель построена по фотографиям и видео помещения — планировка и обстановка переданы приблизительно.</p>
+      <div class="sr-cta"><a class="pri" href="#contact">Записаться на посещение</a><a href="#">Запросить выездную демонстрацию</a></div>
+    </div>
+    <ol class="sr-list">
+      <li><span>01</span>Сцена с подвесными массивами, сабвуферами и мониторами</li>
+      <li><span>02</span>Зал на несколько десятков гостей — для прослушиваний и семинаров</li>
+      <li><span>03</span>Антресоль вдоль двух стен — вид на систему сверху</li>
+      <li><span>04</span>Лаунж и бар — чтобы спокойно обсудить проект</li>
+    </ol>
+  </div>
+  <div class="sr-gal"><h3>Фотографии зала</h3><div class="sr-grid"><button type="button" data-i="0"><img src="./assets/showroom/ph/20260624_130349_790-sm.jpg" alt="Шоурум DS PROAUDIO — фото 1" loading="lazy" decoding="async"></button><button type="button" data-i="1"><img src="./assets/showroom/ph/20260624_130350_295-sm.jpg" alt="Шоурум DS PROAUDIO — фото 2" loading="lazy" decoding="async"></button><button type="button" data-i="2"><img src="./assets/showroom/ph/20260624_130349_903-sm.jpg" alt="Шоурум DS PROAUDIO — фото 3" loading="lazy" decoding="async"></button><button type="button" data-i="3"><img src="./assets/showroom/ph/20260413_183919_699-sm.jpg" alt="Шоурум DS PROAUDIO — фото 4" loading="lazy" decoding="async"></button><button type="button" data-i="4"><img src="./assets/showroom/ph/20260413_183918_874-sm.jpg" alt="Шоурум DS PROAUDIO — фото 5" loading="lazy" decoding="async"></button><button type="button" data-i="5"><img src="./assets/showroom/ph/20260624_130350_587-sm.jpg" alt="Шоурум DS PROAUDIO — фото 6" loading="lazy" decoding="async"></button><button type="button" data-i="6"><img src="./assets/showroom/ph/20260413_183919_389-sm.jpg" alt="Шоурум DS PROAUDIO — фото 7" loading="lazy" decoding="async"></button><button type="button" data-i="7"><img src="./assets/showroom/ph/20260624_130350_655-sm.jpg" alt="Шоурум DS PROAUDIO — фото 8" loading="lazy" decoding="async"></button><button type="button" data-i="8"><img src="./assets/showroom/ph/20260413_183919_065-sm.jpg" alt="Шоурум DS PROAUDIO — фото 9" loading="lazy" decoding="async"></button><button type="button" data-i="9"><img src="./assets/showroom/ph/20260413_183918_939-sm.jpg" alt="Шоурум DS PROAUDIO — фото 10" loading="lazy" decoding="async"></button><button type="button" data-i="10"><img src="./assets/showroom/ph/20260819_131108-sm.jpg" alt="Шоурум DS PROAUDIO — фото 11" loading="lazy" decoding="async"></button><button type="button" data-i="11"><img src="./assets/showroom/ph/20260819_131054-sm.jpg" alt="Шоурум DS PROAUDIO — фото 12" loading="lazy" decoding="async"></button><button type="button" data-i="12"><img src="./assets/showroom/ph/20260819_131043-sm.jpg" alt="Шоурум DS PROAUDIO — фото 13" loading="lazy" decoding="async"></button><button type="button" data-i="13"><img src="./assets/showroom/ph/20260819_131050-sm.jpg" alt="Шоурум DS PROAUDIO — фото 14" loading="lazy" decoding="async"></button><button type="button" data-i="14"><img src="./assets/showroom/ph/20260819_124218-sm.jpg" alt="Шоурум DS PROAUDIO — фото 15" loading="lazy" decoding="async"></button><button type="button" data-i="15"><img src="./assets/showroom/ph/20260819_124423-sm.jpg" alt="Шоурум DS PROAUDIO — фото 16" loading="lazy" decoding="async"></button><button type="button" data-i="16"><img src="./assets/showroom/ph/20260819_124648-sm.jpg" alt="Шоурум DS PROAUDIO — фото 17" loading="lazy" decoding="async"></button><button type="button" data-i="17"><img src="./assets/showroom/ph/20260819_131142-sm.jpg" alt="Шоурум DS PROAUDIO — фото 18" loading="lazy" decoding="async"></button></div></div>
+</main>
+<div class="sr-lb" hidden role="dialog" aria-label="Фото"><img src="" alt=""><button type="button" class="x" aria-label="Закрыть">✕</button><button type="button" class="l" aria-label="Предыдущее">‹</button><button type="button" class="r" aria-label="Следующее">›</button></div>
+<script>
+(function(){ var G=["./assets/showroom/ph/20260624_130349_790.jpg", "./assets/showroom/ph/20260624_130350_295.jpg", "./assets/showroom/ph/20260624_130349_903.jpg", "./assets/showroom/ph/20260413_183919_699.jpg", "./assets/showroom/ph/20260413_183918_874.jpg", "./assets/showroom/ph/20260624_130350_587.jpg", "./assets/showroom/ph/20260413_183919_389.jpg", "./assets/showroom/ph/20260624_130350_655.jpg", "./assets/showroom/ph/20260413_183919_065.jpg", "./assets/showroom/ph/20260413_183918_939.jpg", "./assets/showroom/ph/20260819_131108.jpg", "./assets/showroom/ph/20260819_131054.jpg", "./assets/showroom/ph/20260819_131043.jpg", "./assets/showroom/ph/20260819_131050.jpg", "./assets/showroom/ph/20260819_124218.jpg", "./assets/showroom/ph/20260819_124423.jpg", "./assets/showroom/ph/20260819_124648.jpg", "./assets/showroom/ph/20260819_131142.jpg"],lb=document.querySelector('.sr-lb'),im=lb.querySelector('img'),i=0;
+  function show(k){i=(k+G.length)%G.length;im.src=G[i];lb.hidden=false;}
+  document.querySelectorAll('.sr-grid button').forEach(function(b){b.addEventListener('click',function(){show(+b.getAttribute('data-i'));});});
+  lb.querySelector('.x').onclick=function(){lb.hidden=true;}; lb.querySelector('.l').onclick=function(){show(i-1);}; lb.querySelector('.r').onclick=function(){show(i+1);};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.hidden=true;});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);});
+})();
+</script>
+
+<script>
+(function(){
+    /* ---------- мега-меню ---------- */
+  var menu = document.getElementById('megamenu');
+  var toggles = document.querySelectorAll('[data-menu-toggle]');
+  function setMenu(open){
+    if (open){ menu.hidden = false; menu.style.display = 'flex'; } else { menu.hidden = true; menu.style.display = 'none'; }
+    toggles.forEach(function(b){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+  }
+  toggles.forEach(function(b){ b.addEventListener('click', function(){ setMenu(menu.hidden); }); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a,[data-menu-close]')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+})();
+</script>
+<script src="./showroom-tex.js" defer></script>
+<script src="./showroom3d.js" defer></script>
+</body>
+</html>

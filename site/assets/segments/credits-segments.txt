@@ -1,0 +1,10 @@
+файл | где используется | автор | лицензия | страница на Commons
+sport-palaces-hero.jpg | sport-palaces (первый экран), sport (плитка «Дворцы спорта») | Мазур Владимир | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D1%81%D0%BA%D0%B5%D1%82-%D1%85%D0%BE%D0%BB%D0%BB_2013_1.jpg
+stadium-hero.jpg | сейчас не используется (на «Стадионах» возвращено фото нашего объекта) | FingerWiki | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Interior_view_of_Central_Trade_Union_Stadium_in_Murmansk,_2017.jpg
+corp-meeting.jpg | corp-meeting (первый экран), corporate (плитка) | Breather breather | CC0 | https://commons.wikimedia.org/wiki/File:Quiet_meeting_room_(Unsplash).jpg
+corp-openspace.jpg | corp-openspace (первый экран), corporate (плитка) | Crew crew | CC0 | https://commons.wikimedia.org/wiki/File:Desks_and_cubicles_(Unsplash).jpg
+corp-banquet.jpg | corp-banquet (первый экран), corporate (плитка) | Sweet Ice Cream Photography sweeticecreamphotography | CC0 | https://commons.wikimedia.org/wiki/File:Wedding_reception_tables_and_benches_(Unsplash).jpg
+hosp-restaurant.jpg | сейчас не используется | Zeny Rosalina iamzeny | CC0 | https://commons.wikimedia.org/wiki/File:Interior_of_a_restaurant_(Unsplash).jpg
+hosp-terrace.jpg | hosp-terraces (первый экран), hospitality (плитка) | rawpixel.com rawpixel | CC0 | https://commons.wikimedia.org/wiki/File:Restaurant_Patio_Furniture_(Unsplash).jpg
+hosp-spa.jpg | hosp-spa (первый экран), hospitality (плитка) | Basile Morin | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Indoor_pool_and_shower_of_spa_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos_front_view.jpg
+ent-nightclub.jpg | ent-nightclubs (первый экран), entertainment (плитка) | Matty Adame omgitsmattyvee | CC0 | https://commons.wikimedia.org/wiki/File:Dance_club_(Unsplash).jpg

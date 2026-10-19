@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Меню на разных экранах — DS PROAUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=PT+Mono&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#E9E9E5;font-family:'IBM Plex Sans',sans-serif;color:#141414}
+.top{padding:28px 32px 6px;max-width:1700px;margin:0 auto}
+h1{font-family:'Montserrat',sans-serif;font-size:28px;margin:0 0 8px}.top p{margin:0;color:#5B5B5B;max-width:900px;line-height:1.55}
+.bar{display:flex;gap:8px;margin:16px 0 0;flex-wrap:wrap}.bar button{height:34px;padding:0 14px;border:1px solid #CFCFCF;border-radius:99px;background:#FFF;font:inherit;font-size:13px;cursor:pointer}.bar button.on{background:#141414;color:#FFF;border-color:#141414}
+.row{display:flex;gap:28px;align-items:flex-start;padding:20px 32px 40px;max-width:1700px;margin:0 auto;flex-wrap:wrap}
+.dev{display:flex;flex-direction:column;gap:10px}
+.lab{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5B5B5B}
+.lab b{color:#141414;font-weight:400}
+.box{border-radius:14px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(0,0,0,.45);background:#000;border:6px solid #141414}
+.box iframe{border:0;display:block;transform-origin:0 0}
+.note{max-width:var(--w);font-size:13.5px;line-height:1.55;color:#3F3F3F}
+.note li{margin:3px 0}
+</style></head><body>
+<div class="top"><h1>Меню DS PROAUDIO на разных экранах</h1>
+<p>Живой прототип: в каждой рамке открыт один и тот же файл <b>menu-proposal.html</b>, разной ширины. Меню можно открывать, листать, раскрывать разделы и искать по пунктам. Сам файл можно открыть отдельно и менять ширину окна браузера.</p>
+<div class="bar"><button class="on" data-h="#open">Меню открыто</button><button data-h="">Меню закрыто</button></div></div>
+<div class="row" id="row"></div>
+<script>
+var D=[
+ {n:'Ноутбук',w:1280,h:800,s:.5,t:['Те же 7 пунктов в шапке, плотнее; «Кабинет партнёра» — иконкой.','Мега-меню — 6 колонок с подписями разделов, внизу поиск, телефон, «Оставить заявку».']},
+ {n:'Планшет',w:834,h:1112,s:.46,t:['В шапке: «Меню» слева, логотип по центру, ГИСП и кабинет справа.','Меню — все разделы раскрыты в 2 колонки; «Технологии» — свёрнутый подпункт.']},
+ {n:'Телефон',w:390,h:844,s:.62,t:['В шапке: логотип и ГИСП + кнопка меню.','Меню на весь экран: поиск сверху, разделы-аккордеоны (открыт один), у каждого «Весь раздел →».','Внизу закреплены телефон, чат/ТГ/ВК, «Оставить заявку» и «Кабинет партнёра».']}];
+var row=document.getElementById('row');
+function draw(h){row.innerHTML='';D.forEach(function(d){var W=Math.round(d.w*d.s),H=Math.round(d.h*d.s);
+ var el=document.createElement('div');el.className='dev';el.style.setProperty('--w',W+'px');
+ el.innerHTML='<div class="lab"><b>'+d.n+'</b> · '+d.w+' px</div><div class="box" style="width:'+(W+12)+'px;height:'+(H+12)+'px"><iframe src="./menu-proposal.html'+h+'" style="width:'+d.w+'px;height:'+d.h+'px;transform:scale('+d.s+')"></iframe></div><ul class="note">'+d.t.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>';
+ row.appendChild(el);});}
+draw('#open');
+document.querySelectorAll('.bar button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.bar button').forEach(function(x){x.classList.toggle('on',x===b)});draw(b.dataset.h)}});
+</script></body></html>

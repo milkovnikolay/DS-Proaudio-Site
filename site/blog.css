@@ -1,0 +1,79 @@
+/* DS PROAUDIO — блог: карточки материалов (главная, blog.html, blog-post.html) */
+.bl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 24px}
+.bl-grid.bl-4{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+
+.bl-card{display:flex;flex-direction:column;gap:0;color:#141414;min-width:0;text-align:left}
+.bl-card:hover{opacity:1}
+.bl-img{position:relative;display:block;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#EDEDED}
+.bl-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .4s ease;filter:grayscale(10%)}
+.bl-card:hover .bl-img img{transform:scale(1.045);filter:none}
+.bl-type{margin-top:18px;font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#8A8A8A;display:flex;align-items:center;gap:8px}
+.bl-type::before{content:"";width:6px;height:6px;border-radius:999px;background:currentColor;flex:0 0 6px}
+.bl-type[data-t="projects"]{color:#7A7A7A}
+.bl-type[data-t="engineering"]{color:#3E6FB0}
+.bl-type[data-t="interviews"]{color:#A0583A}
+.bl-title{margin-top:10px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:20px;line-height:1.3;color:#141414;transition:color .25s ease}
+.bl-card:hover .bl-title{color:#5B5B5B}
+.bl-date{margin-top:12px;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.04em;color:#ADADAD}
+.bl-4 .bl-title{font-size:18px}
+
+/* крупная первая карточка на странице блога («Все») */
+.bl-grid .bl-card.bl-lead{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:0 48px;align-items:center}
+.bl-lead .bl-img{grid-row:1 / span 4;aspect-ratio:16/10}
+.bl-lead .bl-type{margin-top:0;align-self:end}
+.bl-lead .bl-title{font-size:34px;line-height:1.2;font-weight:700}
+.bl-lead .bl-lead-text{margin-top:16px;font-size:17px;line-height:1.6;color:#767676}
+.bl-lead .bl-date{align-self:start}
+
+/* рубрики */
+.bl-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.bl-tab{display:inline-flex;align-items:center;gap:8px;border:1px solid #E0E0E0;background:#FFFFFF;border-radius:999px;padding:11px 18px;font-size:13px;font-weight:600;letter-spacing:.03em;color:#5B5B5B;transition:background .25s ease,color .25s ease,border-color .25s ease}
+.bl-tab:hover{border-color:#141414;color:#141414;opacity:1}
+.bl-tab b{font-family:'PT Mono',monospace;font-weight:400;font-size:11.5px;color:#ADADAD}
+.bl-tab[aria-selected="true"]{background:#141414;border-color:#141414;color:#FAFAFA}
+.bl-tab[aria-selected="true"] b{color:#8A8A8A}
+.bl-empty{padding:48px 0;color:#8A8A8A;font-size:16px}
+
+/* шаблон статьи */
+.bl-post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.bl-post-meta .bl-type{margin:0}
+.bl-post-meta .bl-date{margin:0;color:#8A8A8A}
+.bl-post-cover{border-radius:16px;overflow:hidden;aspect-ratio:16/8;background:#1A1A1C}
+.bl-post-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.bl-body{max-width:760px;font-size:18px;line-height:1.7;color:#2B2B2B}
+.bl-body p{margin:0 0 1.1em}
+.bl-body h2{margin:1.6em 0 .6em;font-family:'Montserrat',sans-serif;font-weight:700;font-size:28px;line-height:1.25;color:#141414}
+.bl-draft{border:1px dashed #CFCFCF;border-radius:14px;padding:28px 30px;color:#767676;font-size:16px;line-height:1.6}
+.bl-draft b{display:block;margin-bottom:6px;font-family:'PT Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+.bl-rel{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#141414;border-bottom:1px solid #141414;padding-bottom:3px}
+
+@media (max-width:1099px){
+  .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px}
+  .bl-grid.bl-4{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 20px}
+  .bl-grid .bl-card.bl-lead{display:flex;flex-direction:column}
+  .bl-grid .bl-card.bl-lead > *{align-self:stretch}
+  .bl-lead .bl-img{width:100%}
+  .bl-lead .bl-img{aspect-ratio:16/9}
+  .bl-lead .bl-type{margin-top:18px}
+  .bl-lead .bl-title{font-size:26px}
+}
+@media (max-width:700px){
+  .bl-grid,.bl-grid.bl-4{grid-template-columns:1fr;gap:34px}
+  .bl-home .bl-card:nth-child(n+3){display:none}   /* на телефоне на главной — 2 последних материала */
+  .bl-title,.bl-4 .bl-title{font-size:19px}
+  .bl-lead .bl-title{font-size:22px}
+  .bl-lead .bl-lead-text{font-size:15.5px}
+  .bl-tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 -24px;padding:0 24px 4px;scrollbar-width:none}
+  .bl-tabs::-webkit-scrollbar{display:none}
+  .bl-tab{flex:0 0 auto}
+  .bl-body{font-size:16.5px}
+  .bl-post-cover{aspect-ratio:4/3}
+}
+/* блок «Блог» на главной: отступы и шапка блока на планшете и телефоне */
+@media (max-width:1099px){ #blog .home-blog-in{padding:88px 24px 96px !important;gap:40px !important} }
+@media (max-width:700px){
+  #blog .home-blog-in{padding:64px 24px 72px !important;gap:32px !important}
+  #blog .home-blog-head{flex-direction:column;align-items:flex-start !important;gap:22px !important}
+  #blog .home-blog-head h2{font-size:28px !important}
+}
+@media (prefers-reduced-motion:reduce){.bl-img img{transition:none}}

@@ -1,0 +1,103 @@
+/* =====================================================================
+   DS PROAUDIO — подвал сайта (общий для всех страниц).
+   Классическая схема: верхняя полоса (логотип, контакты, помощник) →
+   колонки ссылок (структура и состав прежние) → нижняя строка (© и документы) →
+   мелкий юридический текст. Тёмный фон — в тон шапке.
+   Классы с префиксом dsf-, плюс переопределение старых .ft-* внутри подвала.
+   ===================================================================== */
+.dsf{width:100%;background:#0F0F10;color:#BDBDBD;font-family:'IBM Plex Sans',system-ui,sans-serif;}
+.dsf a{color:inherit;text-decoration:none;}
+.dsf-wrap{max-width:1440px;margin:0 auto;padding:64px 64px 0;box-sizing:border-box;}
+
+/* ---- верхняя полоса ---- */
+.dsf-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(320px,420px);gap:48px;align-items:start;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.1);}
+.dsf-brand{display:flex;flex-direction:column;gap:18px;}
+.dsf-logo{height:20px;width:auto;align-self:flex-start;filter:invert(1) brightness(1.2);}
+.dsf-tag{margin:0;font-size:14px;line-height:1.6;color:#8F8F8F;max-width:340px;}
+.dsf-social{display:flex;gap:10px;margin-top:6px;}
+.dsf-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:inline-flex;align-items:center;justify-content:center;color:#EDEDED;
+  font-family:'PT Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.04em;transition:background .25s,border-color .25s,color .25s;}
+.dsf-social a:hover{background:#FAFAFA;border-color:#FAFAFA;color:#0F0F10;}
+.dsf-social svg{width:16px;height:16px;display:block;}
+
+.dsf-contacts{display:flex;flex-direction:column;gap:14px;}
+.dsf-h{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;margin:0 0 2px;}
+.dsf-phone{font-family:'Montserrat',sans-serif;font-weight:600;font-size:24px;letter-spacing:.01em;color:#FAFAFA !important;line-height:1.1;}
+.dsf-phone:hover,.dsf-mail:hover{opacity:.7;}
+.dsf-mail{font-size:15px;color:#E6E6E6 !important;}
+.dsf-addr{font-size:13.5px;line-height:1.5;color:#A6A6A6;}
+.dsf-addr b{display:block;font-weight:500;color:#D6D6D6;}
+.dsf-hours{font-size:13px;color:#8F8F8F;}
+
+/* ---- помощник ---- */
+.dsf-bot{background:#18181A;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;color:#E6E6E6;}
+.dsf-bot-head{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.02em;color:#FAFAFA;}
+.dsf-bot-ava{width:30px;height:30px;border-radius:50%;background:#FAFAFA;color:#0F0F10;display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px;}
+.dsf-bot-ava svg{width:16px;height:16px;}
+.dsf-bot-sub{display:block;font-weight:400;font-size:11.5px;color:#8F8F8F;letter-spacing:0;}
+.dsf-bot-log{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow:auto;overscroll-behavior:contain;padding-right:2px;scroll-behavior:smooth;}
+.dsf-msg{max-width:92%;padding:9px 12px;border-radius:12px;font-size:13.5px;line-height:1.45;}
+.dsf-msg.b{background:#232326;color:#E6E6E6;border-top-left-radius:4px;align-self:flex-start;}
+.dsf-msg.u{background:#FAFAFA;color:#141414;border-top-right-radius:4px;align-self:flex-end;}
+.dsf-msg a{text-decoration:underline;text-underline-offset:2px;}
+.dsf-msg .dsf-links{display:flex;flex-direction:column;gap:4px;margin-top:6px;}
+.dsf-msg .dsf-links a{text-decoration:none;color:#FAFAFA;}
+.dsf-msg .dsf-links a::before{content:"→ ";color:#8F8F8F;}
+.dsf-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.dsf-chip{height:30px;padding:0 12px;border-radius:99px;border:1px solid rgba(255,255,255,.22);background:transparent;color:#EDEDED;font:inherit;font-size:12.5px;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+.dsf-chip:hover{background:#FAFAFA;color:#141414;border-color:#FAFAFA;}
+.dsf-chip.main{background:#FAFAFA;color:#141414;border-color:#FAFAFA;font-weight:600;}
+.dsf-chip.main:hover{opacity:.85;}
+.dsf-ask{display:flex;gap:6px;}
+.dsf-ask input,.dsf-cb input[type=text],.dsf-cb input[type=tel]{flex:1;min-width:0;height:38px;padding:0 12px;border-radius:10px;border:1px solid rgba(255,255,255,.16);background:#0F0F10;color:#FAFAFA;font:inherit;font-size:13.5px;outline:none;}
+.dsf-ask input:focus,.dsf-cb input:focus{border-color:rgba(255,255,255,.55);}
+.dsf-ask button,.dsf-cb button{height:38px;padding:0 14px;border-radius:10px;border:none;background:#FAFAFA;color:#141414;font:inherit;font-weight:600;font-size:13px;cursor:pointer;}
+.dsf-ask button{width:42px;padding:0;}
+.dsf-cb{display:flex;flex-direction:column;gap:8px;background:#1B1B1D;border-radius:10px;padding:10px;margin-top:10px;}
+.dsf-cb input[type=text],.dsf-cb input[type=tel]{flex:none !important;width:100%;box-sizing:border-box;}
+.dsf-cb button{align-self:flex-start;}
+.dsf-cb label.dsf-agree{display:flex;gap:8px;align-items:flex-start;font-size:11.5px;line-height:1.4;color:#A6A6A6;}
+.dsf-cb label.dsf-agree input{margin:2px 0 0;accent-color:#FAFAFA;}
+.dsf-cb label.dsf-agree a{text-decoration:underline;}
+.dsf-cb .dsf-err{font-size:12px;color:#FF8A80;min-height:0;}
+
+/* ---- колонки ссылок (прежняя структура) ---- */
+.dsf-cols{display:grid;grid-template-columns:.65fr 1.25fr 1.35fr 1.2fr 1.2fr 1.25fr .9fr;gap:32px;padding:48px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.dsf-col{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0;text-align:left;}
+.dsf .ft-heading{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;margin-bottom:4px;}
+.dsf a.ft-heading{color:#FAFAFA;}
+.dsf a.ft-heading:hover{opacity:.7;}
+.dsf a.ft-heading[aria-current]{text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(250,250,250,.45);}
+.dsf .ft-item,.dsf .ft-item-long{text-transform:none;font-weight:400;letter-spacing:0;font-size:14px;line-height:1.4;color:#A6A6A6;transition:color .2s;}
+.dsf .ft-item:hover,.dsf .ft-item-long:hover{color:#FAFAFA;}
+.dsf .ft-item-long .ft-sub{display:block;font-size:12px;opacity:.65;margin-top:1px;}
+.dsf .ft-bold{text-transform:none;font-weight:600;letter-spacing:0;font-size:14px;color:#FAFAFA;}
+.dsf .ft-bold:hover{opacity:.7;}
+.dsf .ft-item[style*="#141414"]{color:#FAFAFA !important;}            /* текущая страница */
+.dsf .ft-item[style*="font-weight:700"]{color:#E6E6E6;}
+.dsf .tech-dd{align-items:flex-start;}
+.dsf .tech-dd .tech-list{align-items:flex-start;gap:10px;margin-top:12px;padding-left:10px;border-left:1px solid rgba(255,255,255,.12);}
+.dsf .tech-dd .tech-list .ft-item,.dsf .tech-dd .tech-list .ft-item-long{font-size:13px;}
+.dsf-col.dsf-reach{gap:14px;}
+.dsf-col.dsf-reach .dsf-social{flex-wrap:wrap;margin:0;}
+
+/* ---- нижняя строка и юридический текст ---- */
+.dsf-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:22px 0;font-size:13px;color:#8F8F8F;}
+.dsf-doc{display:flex;flex-wrap:wrap;gap:8px 28px;}
+.dsf-doc a{color:#BDBDBD;text-decoration:underline;text-decoration-color:rgba(255,255,255,.25);text-underline-offset:3px;}
+.dsf-doc a:hover{color:#FAFAFA;}
+.dsf-legal{padding:4px 0 40px;columns:2;column-gap:48px;}
+.dsf-legal p{margin:0 0 10px;font-size:11px;line-height:1.55;color:#6E6E6E;break-inside:avoid;}
+
+@media (max-width:1180px){
+  .dsf-top{grid-template-columns:1fr 1fr;}
+  .dsf-bot{grid-column:1 / -1;}
+  .dsf-cols{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
+@media (max-width:760px){
+  .dsf-wrap{padding:44px 16px 0;}
+  .dsf-top{grid-template-columns:1fr;gap:32px;}
+  .dsf-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px;}
+  .dsf-legal{columns:1;}
+  .dsf-bottom{flex-direction:column;align-items:flex-start;}
+}

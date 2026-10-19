@@ -1,0 +1,274 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Карточки применения — анимация</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0}body{background:#FAFAFA;color:#141414;font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.vh{padding:80px 0 30px}
+.vh b{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A8A}
+.vh h2{margin:8px 0 6px;font-family:'Montserrat';font-size:30px}
+.vh p{margin:0;color:#767676;max-width:800px;line-height:1.55}
+.vh .tm{display:inline-block;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3E6FB0}
+.dk .vh b{color:#8A8A8A}.dk .vh p{color:#A8A8A8}
+.dk{background:#0A0A0B;color:#FAFAFA}
+.sec-h{display:flex;flex-direction:column;gap:6px;margin:0 0 30px}
+.sec-h .k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8A8A8A}
+.sec-h .t{font-family:'Montserrat';font-weight:700;font-size:40px;line-height:1.1}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.up{font-family:'Montserrat';font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+.sub{display:block;position:relative;padding-left:14px;font-size:14px;line-height:1.5}
+.sub::before{content:"";position:absolute;left:0;top:.75em;width:7px;height:1px;background:currentColor;opacity:.55}
+a.sub:hover{text-decoration:underline;text-underline-offset:3px}
+.foot{display:flex;justify-content:space-between;gap:24px;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;color:rgba(250,250,250,.5)}
+.foot b{font-weight:500;color:#FAFAFA}
+.pad{padding-bottom:96px}
+
+/* общая «фото-карточка» */
+.pc{position:relative;overflow:hidden;border-radius:16px;background:#151517;color:#FAFAFA}
+.pc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pc .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.35) 0%,rgba(10,10,11,.05) 30%,rgba(10,10,11,.35) 55%,rgba(10,10,11,.9) 100%)}
+.pc .in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px 24px}
+.pc .n{text-align:right;color:#D0D0D0}
+.pc .tt{font-size:20px;line-height:1.25;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.pc .ls{margin-top:10px;color:#ECECEC;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.pc .ls .sub{font-size:13.5px}
+
+/* F — ротонда */
+.F-stage{position:relative;height:640px;overflow:hidden;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.F-stage.drag{cursor:grabbing}
+.F-stage::before,.F-stage::after{content:"";position:absolute;top:0;bottom:0;width:12vw;z-index:2;pointer-events:none}
+.F-stage::before{left:0;background:linear-gradient(90deg,#0A0A0B,rgba(10,10,11,0))}
+.F-stage::after{right:0;background:linear-gradient(270deg,#0A0A0B,rgba(10,10,11,0))}
+.F-vp{position:absolute;inset:0;perspective:1000px}
+.F-ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.F-strip{position:absolute;overflow:hidden;backface-visibility:hidden}
+.F-src{position:absolute;top:0}
+.F-src .pc{width:100%;height:100%;border-radius:.9em;font-size:inherit}
+
+/* G — Cover Flow */
+.G{position:relative;height:600px;perspective:1600px;user-select:none;-webkit-user-select:none;touch-action:pan-y;cursor:grab}
+.G .c{position:absolute;left:50%;top:0;width:440px;height:560px;margin-left:-220px;transition:filter .3s;will-change:transform}
+.G .c .ls,.G .c .go{opacity:0;transition:opacity .35s}
+.G .c.cur .ls,.G .c.cur .go{opacity:1}
+.G .go{display:inline-flex;margin-top:16px;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:10px 18px;font-size:13px;font-weight:600;align-self:flex-start}
+.G .c .rf{position:absolute;left:0;right:0;top:100%;height:60px;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);border-radius:16px 16px 0 0;transform:scaleY(-1);pointer-events:none}
+.G-nav{display:flex;justify-content:center;gap:12px;margin-top:22px}
+.G-nav button{width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;font-size:18px;cursor:pointer}
+.G-nav button:hover{background:#fff;color:#111}
+.G-dots{display:flex;gap:8px;align-items:center;margin:0 14px}
+.G-dots i{width:7px;height:7px;border-radius:9px;background:rgba(255,255,255,.25);transition:width .3s,background .3s}
+.G-dots i.on{width:26px;background:#fff}
+
+/* H — горизонтальная лента при прокрутке */
+.H-out{position:relative}
+.H-stick{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.H-track{display:flex;gap:24px;padding:0 48px;will-change:transform}
+.H .pc{flex:0 0 auto;width:min(30vw,460px);height:min(62vh,600px)}
+.H .pc>img{width:130%;left:-15%;will-change:transform}
+.H .pc.wide{width:min(46vw,700px)}
+.H-bar{margin:28px 48px 0;height:2px;background:#E2E2E2;position:relative}
+.H-bar i{position:absolute;left:0;top:0;bottom:0;background:#141414;width:0}
+.H-head{padding:0 48px;display:flex;justify-content:space-between;align-items:flex-end}
+.H-head .cnt{font-family:'IBM Plex Mono';font-size:13px;color:#8A8A8A}.H-head .cnt b{color:#141414;font-weight:500}
+
+/* I — 3D-наклон */
+.I{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;perspective:1000px}
+.I .pc{height:420px;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .4s;will-change:transform}
+.I .pc.act{transition:transform .08s linear,box-shadow .4s;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.I .pc>img{inset:-6%;width:112%;height:112%;transition:transform .5s}
+.I .in{transform:translateZ(46px)}
+.I .gl{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.28),rgba(255,255,255,0) 45%);opacity:0;transition:opacity .4s;mix-blend-mode:soft-light}
+.I .pc:hover .gl{opacity:1}
+.I .ls{max-height:0;opacity:0;overflow:hidden;transition:max-height .55s,opacity .45s}
+.I .pc:hover .ls{max-height:260px;opacity:1}
+
+/* J — бегущая лента */
+.J{overflow:hidden;display:flex;flex-direction:column;gap:22px;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.J-row{display:flex;gap:22px;width:max-content;animation:jl 60s linear infinite}
+.J-row.r{animation-direction:reverse;animation-duration:70s}
+.J:hover .J-row{animation-play-state:paused}
+@keyframes jl{to{transform:translateX(-50%)}}
+.J .pc{flex:0 0 auto;width:400px;height:280px;transition:transform .5s}
+.J .pc>img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.J .pc:hover>img{transform:scale(1.06)}
+.J .pc .ls{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .4s}
+.J .pc:hover .ls{max-height:200px;opacity:1}
+.J .pc:hover .sh{background:linear-gradient(180deg,rgba(10,10,11,.5),rgba(10,10,11,.92))}
+
+/* K — бенто + появление при прокрутке */
+.K{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:300px;gap:16px}
+.K .pc:nth-child(1){grid-column:span 2;grid-row:span 2}
+.K .pc:nth-child(4){grid-column:span 2}
+.K .pc{clip-path:inset(18% 10% 18% 10% round 16px);opacity:0;transform:translateY(40px);transition:clip-path 1.1s cubic-bezier(.2,.7,.2,1),opacity .8s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.K .pc>img{transform:scale(1.25);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.K .pc .in>*{opacity:0;transform:translateY(14px);transition:opacity .6s .5s,transform .6s .5s}
+.K .pc.vis{clip-path:inset(0 0 0 0 round 16px);opacity:1;transform:none}
+.K .pc.vis>img{transform:scale(1)}
+.K .pc.vis .in>*{opacity:1;transform:none}
+.K .pc.vis:hover>img{transform:scale(1.05)}
+.K .ls{max-height:0;opacity:0;overflow:hidden;transition:max-height .55s,opacity .45s}
+.K .pc:hover .ls{max-height:260px;opacity:1}
+.K-replay{margin-top:18px;border:1px solid #CFCFCF;background:#fff;border-radius:999px;padding:10px 18px;font:600 13px 'IBM Plex Sans';cursor:pointer}
+
+@media (max-width:1099px){.I,.K{grid-template-columns:repeat(2,1fr)}.K .pc:nth-child(1),.K .pc:nth-child(4){grid-column:span 2}.H .pc,.H .pc.wide{width:70vw}}
+@media (max-width:700px){.wrap{padding:0 16px}.sec-h .t{font-size:28px}.I,.K{grid-template-columns:1fr}.K .pc:nth-child(n){grid-column:auto;grid-row:auto}.G .c{width:300px;height:460px;margin-left:-150px}.J .pc{width:300px}.H-track,.H-head{padding:0 16px}.H-bar{margin:24px 16px 0}.F-stage{height:540px}}
+@media (hover:none){.I .ls,.J .pc .ls,.K .ls{max-height:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.J-row{animation:none}}
+</style></head><body>
+
+<div class="wrap"><div class="vh" style="padding-top:64px"><b>Демонстрация · не для публикации</b><h2>Карточки «Применение» — варианты с анимацией</h2>
+<p>Продолжение страницы <a href="./cards-variants.html" style="text-decoration:underline">cards-variants.html</a> (A–E). Те же 8 направлений, фото и подпункты. У каждого варианта указано, как называется эффект.</p></div></div>
+
+<!-- F -->
+<section class="dk"><div class="wrap"><div class="vh"><b>Вариант F</b><h2>Ротонда — как в «Отзывах»</h2>
+<p>Карточки направлений изогнуты по внутренней стенке цилиндра, который медленно вращается. Потяните мышью — с инерцией. При наведении вращение останавливается, клик открывает направление. Тот же приём, что в блоке отзывов, — главная будет выглядеть единой системой.</p>
+<span class="tm">Эффект: 3D-карусель / цилиндрическая карусель (CSS 3D-трансформации), автовращение, перетаскивание с инерцией</span></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div></div>
+<div class="F-stage" id="F"><div class="F-vp"><div class="F-ring" id="Fr"></div></div></div>
+<div class="wrap pad"><div class="foot"><span id="Fc"><b>01</b> / 08</span><span>Потяните, чтобы повернуть · клик — открыть направление</span></div></div></section>
+
+<!-- G -->
+<section class="dk" style="border-top:1px solid #1E1E22"><div class="wrap"><div class="vh"><b>Вариант G</b><h2>3D-лента с центральной карточкой</h2>
+<p>В центре — крупная карточка с подпунктами и кнопкой, соседние повёрнуты в перспективе и уходят вглубь. Листается стрелками, точками, свайпом и сама каждые 4 секунды. Клик по боковой карточке выводит её в центр.</p>
+<span class="tm">Эффект: Cover Flow (3D-слайдер / coverflow-карусель), автопрокрутка, свайп</span></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="G" id="G"></div>
+<div class="G-nav"><button id="Gp" aria-label="Назад">←</button><div class="G-dots" id="Gd"></div><button id="Gn" aria-label="Вперёд">→</button></div>
+<div class="pad"></div></div></section>
+
+<!-- H -->
+<section><div class="wrap"><div class="vh"><b>Вариант H</b><h2>Горизонтальная лента при прокрутке страницы</h2>
+<p>Раздел «прилипает» к экрану, и обычная прокрутка колесом двигает карточки вбок, а фото внутри карточек слегка смещаются с другой скоростью (глубина). Под лентой — шкала прогресса и счётчик. Прокрутите вниз, чтобы увидеть.</p>
+<span class="tm">Эффект: горизонтальный скролл с закреплением (pinned / sticky horizontal scroll) + параллакс</span></div></div>
+<div class="H-out H" id="H"><div class="H-stick"><div class="H-head" style="margin-bottom:30px"><div class="sec-h" style="margin:0"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div><span class="cnt" id="Hc"><b>01</b> / 08</span></div>
+<div class="H-track" id="Ht"></div><div class="H-bar"><i id="Hb"></i></div></div></div></section>
+
+<!-- I -->
+<section><div class="wrap"><div class="vh"><b>Вариант I</b><h2>Карточки с 3D-наклоном за курсором</h2>
+<p>Сетка 4×2. Карточка под мышью наклоняется в сторону курсора, текст «приподнят» над фото, по поверхности скользит блик, раскрывается список подпунктов. Сдержанный эффект, который не мешает читать.</p>
+<span class="tm">Эффект: tilt-эффект (3D-наклон, hover-параллакс) с бликом</span></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="I" id="I"></div><div class="pad"></div></div></section>
+
+<!-- J -->
+<section class="dk"><div class="wrap"><div class="vh"><b>Вариант J</b><h2>Бегущая лента в два ряда</h2>
+<p>Два ряда карточек бесконечно плывут навстречу друг другу. При наведении лента останавливается, карточка раскрывает подпункты. Создаёт ощущение масштаба и «живого» раздела, но меньше подходит для внимательного чтения.</p>
+<span class="tm">Эффект: бесконечная лента (marquee / бегущая строка), пауза при наведении</span></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div></div>
+<div class="J" id="J"></div><div class="pad"></div></section>
+
+<!-- K -->
+<section><div class="wrap"><div class="vh"><b>Вариант K</b><h2>Текущая бенто-сетка + появление при прокрутке</h2>
+<p>Раскладка почти как сейчас, но плитки по очереди «раскрываются» из рамки, когда раздел появляется на экране: фото плавно отъезжает из увеличения, затем проявляется текст. Самый безопасный вариант — меняется только подача.</p>
+<span class="tm">Эффект: scroll reveal (появление при прокрутке) с раскрытием по маске (clip-path) и каскадной задержкой</span></div>
+<div class="sec-h"><span class="k">Применение</span><span class="t">Типы объектов / Варианты применения</span></div>
+<div class="K" id="K"></div><button class="K-replay" id="Kr">↻ Показать появление ещё раз</button><div class="pad"></div></div></section>
+
+<script>
+var T=[{"title": "Культура и искусство", "top": "Реализовано более 40 объектов", "href": "./culture.html", "img": "./assets/mravinsky-hall-choir.jpg", "caption": "Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2024 г.", "items": [{"text": "Концертные залы и филармонии", "href": "./concert-halls.html"}, {"text": "Драматические и музыкальные театры", "href": "./theatres.html"}, {"text": "Дома культуры и центры досуга", "href": "./dk.html"}, {"text": "Цирки", "href": "./circus.html"}, {"text": "Музеи и выставочные галереи", "href": "./museums.html"}, {"text": "Мобильные комплекты для улицы (IP55)", "href": "./outdoor.html"}]}, {"title": "Образование и наука", "top": "Реализовано более 50 объектов", "href": "./education.html", "img": "./assets/portfolio/pf-001/01.jpg", "caption": "Актовый зал РАНХиГС, 2026 г.", "items": [{"text": "Актовые залы школ и вузов", "href": "./edu-assembly.html"}, {"text": "Учебные аудитории и лекционные залы", "href": "./edu-lecture.html"}, {"text": "Планетарии", "href": "./edu-planetarium.html"}]}, {"title": "Спорт и массовые мероприятия", "top": "8 объектов", "href": "./sport.html", "img": "./assets/portfolio/pf-007/01.jpg", "caption": "Центр единоборств Тарко-Сале, 2026 г.", "items": [{"text": "Дворцы спорта", "href": "./sport-palaces.html"}, {"text": "Ледовые арены (IP55)", "href": "./sport-ice.html"}, {"text": "Спортивные и физкультурно-оздоровительные комплексы", "href": "./sport-complexes.html"}, {"text": "Бассейны и аквапарки (IP55)", "href": "./sport-pools.html"}, {"text": "Открытые стадионы, ипподромы (IP55)", "href": "./sport-stadiums.html"}]}, {"title": "Корпоративный сектор", "top": "Реализовано более 20 объектов", "href": "./corporate.html", "img": "./assets/portfolio/pf-018/07.jpg", "caption": "Конференц-зал Министерства спорта Российской Федерации, 2023 г.", "items": [{"text": "Конференц-залы", "href": "./corp-conference.html"}, {"text": "Переговорные комнаты", "href": "./corp-meeting.html"}, {"text": "Открытые офисные пространства", "href": "./corp-openspace.html"}]}, {"title": "Ресторанный и гостиничный бизнес", "top": "9 объектов", "href": "./hospitality.html", "img": "./assets/portfolio/pf-009/07.jpg", "caption": "Кафе «ЮТЭК», 2024 г.", "items": [{"text": "Рестораны, бары, пабы", "href": "./hosp-restaurants.html"}, {"text": "Банкетные залы и ресторанные холлы", "href": "./corp-banquet.html"}, {"text": "Уличные кафе и летние веранды (IP55)", "href": "./hosp-terraces.html"}, {"text": "Сауны, SPA‑комплексы (IP55)", "href": "./hosp-spa.html"}]}, {"title": "Религиозные учреждения", "top": "3 объекта", "href": "./religious.html", "img": "./assets/segments/religious-hero-soft.jpg", "caption": "Храмовый комплекс в честь Преображения Господня, 2024 г.", "items": [{"text": "Храмы, мечети, синагоги и др. культовые сооружения", "href": "./rel-temples.html"}]}, {"title": "Индустрия развлечений", "top": "2 объекта", "href": "./entertainment.html", "img": "./assets/segments/entertainment-hero-soft.jpg", "caption": "", "items": [{"text": "Клубы живой музыки", "href": "./ent-live.html"}, {"text": "Ночные клубы и дискотеки", "href": "./ent-nightclubs.html"}, {"text": "Караоке-бары", "href": "./ent-karaoke.html"}]}, {"title": "Прокатные компании", "top": "3 комплекта решений", "href": "./rental.html", "img": "./assets/segments/rental-hero-bessonnitsa.jpg", "caption": "Фестиваль «Бессонница», 2025 г.", "items": [{"text": "Полнофункциональные решения для широкого спектра задач", "href": "./rent-full.html"}, {"text": "Оптимальные решения для средних площадок и задач", "href": "./rent-mid.html"}, {"text": "Компактность и бюджет для малых мероприятий", "href": "./rent-compact.html"}]}], NT=T.length;
+function e(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function pad(n){return (n<10?'0':'')+n}
+function card(t,o){o=o||{};var tag=o.a?'a':'div';
+  var ls=t.items.map(function(i){return o.plain?'<span class="sub">'+e(i.text)+'</span>':'<a class="sub" href="'+e(i.href)+'">'+e(i.text)+'</a>'}).join('');
+  return '<'+tag+' class="pc'+(o.cls?' '+o.cls:'')+'"'+(o.a?' href="'+e(t.href)+'"':'')+'><img src="'+e(t.img)+'" alt="" draggable="false"><span class="sh"></span>'+(o.glare?'<span class="gl"></span>':'')+
+  '<span class="in"><span class="n mono">'+e(t.top)+'</span><span><span class="tt up" style="display:block">'+e(t.title)+'</span><span class="ls" style="display:block">'+ls+'</span>'+(o.go?'<a class="go" href="'+e(t.href)+'">Смотреть направление →</a>':'')+'</span></span></'+tag+'>';
+}
+var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(x){}
+
+/* ---------- F: ротонда ---------- */
+(function(){
+  var st=document.getElementById('F'),ring=document.getElementById('Fr'),NS=20,step=360/NT,DEG=180/Math.PI,objs=[],S={};
+  var angle=0,target=0,vx=0,coast=false,hover=false,inView=true,dragX=null,start=0,lx=0,lt=0,moved=0,last=0,cur=-1;
+  T.forEach(function(t,i){var o={a:i*step,strips:[]};var h=card(t,{plain:true});
+    for(var j=0;j<NS;j++){var s=document.createElement('div');s.className='F-strip';var src=document.createElement('div');src.className='F-src';src.innerHTML=h;s.appendChild(src);ring.appendChild(s);o.strips.push({el:s,src:src})}
+    objs.push(o)});
+  function measure(){var vw=innerWidth;S.w=vw<760?Math.min(vw*.78,380):Math.min(vw*.30,430);S.h=S.w*1.25;S.fs=S.w/430*16;S.R=Math.max(520,S.w*1.55);
+    st.style.height=(S.h+80)+'px';
+    objs.forEach(function(o){var sw=S.w/NS;o.strips.forEach(function(q,j){q.el.style.width=(sw+1)+'px';q.el.style.height=S.h+'px';q.el.style.left=(-sw/2)+'px';q.el.style.top=(-S.h/2)+'px';
+      q.src.style.width=S.w+'px';q.src.style.height=S.h+'px';q.src.style.left=(-j*sw)+'px';q.src.style.fontSize=S.fs+'px'})})}
+  function vis(a){var d=Math.abs((((a-angle)%360)+540)%360-180);return Math.max(0,Math.min(1,(125-d)/30))}
+  function render(){var R=S.R;objs.forEach(function(o){var span=S.w/R*DEG,sw=span/NS,op=vis(o.a);
+      o.strips.forEach(function(q,j){var aj=o.a-span/2+sw*(j+.5);q.el.style.transform='rotateY('+(-aj)+'deg) translateZ('+(-R)+'px)';q.el.style.opacity=op;q.el.style.visibility=op>0?'visible':'hidden'})});
+    ring.style.transform='translateZ('+(R-170)+'px) rotateY('+angle+'deg)';
+    var idx=((Math.round(angle/step)%NT)+NT)%NT;if(idx!==cur){cur=idx;document.getElementById('Fc').innerHTML='<b>'+pad(idx+1)+'</b> / '+pad(NT)}}
+  st.addEventListener('mouseenter',function(){hover=true});st.addEventListener('mouseleave',function(){hover=false});
+  st.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button!==0)return;coast=false;vx=0;dragX=lx=e.clientX;moved=0;lt=performance.now();start=target;st.classList.add('drag');try{st.setPointerCapture(e.pointerId)}catch(x){}});
+  st.addEventListener('pointermove',function(e){if(dragX===null)return;moved=Math.max(moved,Math.abs(e.clientX-dragX));target=start-(e.clientX-dragX)*.12;var now=performance.now(),dt=Math.max(1,now-lt);vx=vx*.6+(-(e.clientX-lx)*.12/dt*16)*.4;lx=e.clientX;lt=now});
+  function end(e){if(dragX===null)return;dragX=null;st.classList.remove('drag');
+    if(moved<5){ // клик: открываем карточку под курсором
+      var el=document.elementFromPoint(e.clientX,e.clientY),s=el&&el.closest('.F-strip');if(s){var i=Array.prototype.indexOf.call(ring.children,s);location.href=T[Math.floor(i/NS)].href}return}
+    if(performance.now()-lt>80)vx=0;target+=vx*.95/.05;vx=0;coast=true}
+  st.addEventListener('pointerup',end);st.addEventListener('pointercancel',end);
+  new IntersectionObserver(function(en){inView=en[0].isIntersecting},{threshold:.1}).observe(st);
+  addEventListener('resize',measure);measure();
+  (function fr(ts){var dt=last?Math.min(64,ts-last):16;last=ts;
+    if(!reduce&&inView&&!hover&&dragX===null&&!coast)target+=4*dt/1000;
+    angle+=(target-angle)*(coast?.045:.12);if(coast&&Math.abs(target-angle)<.05)coast=false;
+    if(inView||dragX!==null)render();requestAnimationFrame(fr)})(0);
+})();
+
+/* ---------- G: Cover Flow ---------- */
+(function(){
+  var G=document.getElementById('G'),D=document.getElementById('Gd');
+  G.innerHTML=T.map(function(t){return '<div class="c">'+card(t,{go:true}).replace('class="pc"','class="pc" style="width:100%;height:100%"')+'<span class="rf"></span></div>'}).join('');
+  D.innerHTML=T.map(function(){return '<i></i>'}).join('');
+  var C=[].slice.call(G.children),pos=0,tgt=0,dragX=null,sp=0,moved=0,timer=0,last=0;
+  function W(){return C[0].offsetWidth}
+  function wrap(d){d=((d%NT)+NT)%NT;return d>NT/2?d-NT:d}
+  function render(){var w=W();C.forEach(function(c,i){var d=wrap(i-pos),a=Math.abs(d),s=d<0?-1:1;
+      var x=d*w*.5+s*Math.min(a,1)*w*.22, z=-Math.min(a,4)*160, ry=-s*Math.min(a,1)*50;
+      c.style.transform='translateX('+x+'px) translateZ('+z+'px) rotateY('+ry+'deg)';
+      c.style.zIndex=100-Math.round(a*10);c.style.opacity=a>3.2?0:1;c.style.filter='brightness('+(1-Math.min(a,2)*.28)+')';
+      c.classList.toggle('cur',a<.5);c.style.pointerEvents=a>3?'none':'auto'});
+    var k=((Math.round(pos)%NT)+NT)%NT;[].forEach.call(D.children,function(x,i){x.classList.toggle('on',i===k)})}
+  function go(n){tgt=n;reset()}
+  function reset(){clearInterval(timer);if(!reduce)timer=setInterval(function(){if(!G.matches(':hover'))go(Math.round(tgt)+1)},4000)}
+  document.getElementById('Gp').onclick=function(){go(Math.round(tgt)-1)};document.getElementById('Gn').onclick=function(){go(Math.round(tgt)+1)};
+  [].forEach.call(D.children,function(x,i){x.style.cursor='pointer';x.onclick=function(){go(Math.round(tgt)+wrap(i-Math.round(tgt)))}});
+  G.addEventListener('pointerdown',function(e){dragX=e.clientX;sp=tgt;moved=0});
+  addEventListener('pointermove',function(e){if(dragX===null)return;moved=Math.max(moved,Math.abs(e.clientX-dragX));if(moved>5){tgt=sp-(e.clientX-dragX)/(W()*.6);pos=tgt}});
+  addEventListener('pointerup',function(){if(dragX===null)return;dragX=null;if(moved>5){go(Math.round(tgt))}});
+  G.addEventListener('click',function(e){if(moved>5){e.preventDefault();return}var c=e.target.closest('.c');if(!c)return;var i=C.indexOf(c);
+    if(!c.classList.contains('cur')){e.preventDefault();go(Math.round(tgt)+wrap(i-Math.round(tgt)))}},true);
+  (function fr(){if(dragX===null)pos+=(tgt-pos)*.1;render();requestAnimationFrame(fr)})();reset();
+})();
+
+/* ---------- H: горизонтальная лента при прокрутке ---------- */
+(function(){
+  var H=document.getElementById('H'),tr=document.getElementById('Ht'),bar=document.getElementById('Hb'),cnt=document.getElementById('Hc');
+  tr.innerHTML=T.map(function(t,i){return card(t,{cls:i%3===0?'wide':''})}).join('');
+  var cards=[].slice.call(tr.children),imgs=cards.map(function(c){return c.querySelector('img')}),dist=0;
+  function measure(){dist=Math.max(0,tr.scrollWidth-innerWidth);H.style.height=(innerHeight+dist)+'px';upd()}
+  function upd(){var r=H.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/Math.max(1,dist)));
+    tr.style.transform='translateX('+(-p*dist)+'px)';bar.style.width=(p*100)+'%';
+    var vw=innerWidth,best=0,bd=1e9;cards.forEach(function(c,i){var b=c.getBoundingClientRect(),cx=b.left+b.width/2,k=(cx-vw/2)/vw;imgs[i].style.transform='translateX('+(-k*12)+'%)';var dd=Math.abs(cx-vw/2);if(dd<bd){bd=dd;best=i}});
+    if(p>.985)best=NT-1;if(p<.01)best=0;cnt.innerHTML='<b>'+pad(best+1)+'</b> / '+pad(NT)}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',measure);addEventListener('load',measure);measure();
+})();
+
+/* ---------- I: 3D-наклон ---------- */
+(function(){
+  var I=document.getElementById('I');I.innerHTML=T.map(function(t){return card(t,{glare:true})}).join('');
+  [].forEach.call(I.children,function(c){var img=c.querySelector('img');
+    c.addEventListener('mousemove',function(e){var b=c.getBoundingClientRect(),x=(e.clientX-b.left)/b.width,y=(e.clientY-b.top)/b.height;
+      c.classList.add('act');c.style.transform='rotateX('+((.5-y)*14)+'deg) rotateY('+((x-.5)*16)+'deg) scale(1.02)';
+      img.style.transform='translate('+((.5-x)*14)+'px,'+((.5-y)*14)+'px)';c.style.setProperty('--gx',(x*100)+'%');c.style.setProperty('--gy',(y*100)+'%')});
+    c.addEventListener('mouseleave',function(){c.classList.remove('act');c.style.transform='';img.style.transform=''})});
+})();
+
+/* ---------- J: бегущая лента ---------- */
+(function(){
+  var a=T.slice(0,4),b=T.slice(4);function row(list,cls){var h=list.concat(list,list).map(function(t){return card(t,{})}).join('');return '<div class="J-row '+cls+'">'+h+h+'</div>'}
+  document.getElementById('J').innerHTML=row(a,'')+row(b,'r');
+})();
+
+/* ---------- K: появление при прокрутке ---------- */
+(function(){
+  var K=document.getElementById('K');K.innerHTML=T.map(function(t){return card(t,{})}).join('');
+  var cs=[].slice.call(K.children);cs.forEach(function(c,i){c.style.transitionDelay=(i*.09)+'s'});
+  function show(){cs.forEach(function(c){c.classList.add('vis')});setTimeout(function(){cs.forEach(function(c){c.style.transitionDelay='0s'})},2200)}
+  var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){show();io.disconnect()}},{threshold:.2});io.observe(K);
+  document.getElementById('Kr').onclick=function(){cs.forEach(function(c,i){c.style.transition='none';c.classList.remove('vis')});void K.offsetWidth;cs.forEach(function(c,i){c.style.transition='';c.style.transitionDelay=(i*.09)+'s'});setTimeout(show,60)};
+})();
+</script></body></html>
