@@ -8,6 +8,7 @@
 <link rel="manifest" href="./site.webmanifest">
 <script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
 <link rel="stylesheet" href="./mnav.css">
+<link rel="stylesheet" href="./apx-page.css">
 <script src="./mnav.js" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Применение — DS PROAUDIO</title>
@@ -442,156 +443,58 @@
 
 <main>
 
-<!-- ================= ЗАГОЛОВОК РАЗДЕЛА ================= -->
-<section class="hub-hero">
-  <img class="hub-hero-img" src="./assets/portfolio/pf-005/hero-wide.jpg" alt="Дворец культуры им. С. М. Кирова, Пермь">
-  <a class="hub-hero-cap" href="./portfolio.html#pf-005">Дворец культуры им. С. М. Кирова, Пермь, 2025 →</a>
-  <div class="wrap" style="position:relative;z-index:2;padding-top:140px;padding-bottom:80px;display:flex;flex-direction:column;gap:44px;">
-    <nav aria-label="Навигационная цепочка">
-      <ol class="crumbs">
-        <li><a href="./Main.dc.html">Главная</a></li>
-        <li class="sep" aria-hidden="true">/</li>
-        <li aria-current="page">Применение</li>
+<!-- ================= ПРИМЕНЕНИЕ: витрина типов объектов (21.10.2026) =================
+     Один экран: слева список направлений, справа — фото площадки, описание и кнопки
+     «Открыть раздел», «Портфолио», «Отзывы». Направления сменяются сами, пока посетитель
+     не выбрал своё; наведение или нажатие — сразу показать. -->
+<section class="apx" id="venues" aria-label="Применение: типы объектов">
+  <div class="apx-bg" aria-hidden="true">
+    <img src="./assets/mravinsky-hall-choir.jpg" alt="Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского" class="on">
+    <img src="./assets/portfolio/pf-001/01.jpg" alt="Актовый зал РАНХиГС" loading="lazy">
+    <img src="./assets/portfolio/pf-007/01.jpg" alt="Центр единоборств Тарко-Сале" loading="lazy">
+    <img src="./assets/portfolio/pf-018/07.jpg" alt="Конференц-зал Министерства спорта Российской Федерации" loading="lazy">
+    <img src="./assets/portfolio/pf-009/07.jpg" alt="Кафе «ЮТЭК»" loading="lazy">
+    <img src="./assets/segments/religious-hero-soft.jpg" alt="Храмовый комплекс в честь Преображения Господня" loading="lazy">
+    <img src="./assets/segments/entertainment-hero-soft.jpg" alt="Клубное выступление" loading="lazy">
+    <img src="./assets/segments/rental-hero-bessonnitsa.jpg" alt="Фестиваль «Бессонница»" loading="lazy">
+  </div>
+  <div class="wrap apx-in">
+    <div class="apx-side">
+      <nav aria-label="Навигационная цепочка">
+        <ol class="crumbs apx-crumbs">
+          <li><a href="./Main.dc.html">Главная</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">Применение</li>
+        </ol>
+      </nav>
+      <h1 class="apx-h1">Применение</h1>
+      <p class="apx-lead">Типы объектов и варианты применения: от концертного зала и школы до ледовой арены, ресторана и прокатной компании.</p>
+      <ol class="apx-list">
+      <li><a href="./culture.html" class="apx-it on" data-i="0" data-pf="./portfolio.html#sec-culture" data-rv="./reviews.html#r22" data-n="40 объектов" data-lead="Натуральный тембр в концертном зале, разборчивая речь в театре, покрытие на 360° под куполом цирка." data-cap="Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2024 г."><span class="apx-no">01</span><span class="apx-t">Культура и искусство</span><span class="apx-n">40 объектов</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./education.html" class="apx-it" data-i="1" data-pf="./portfolio.html#sec-education" data-rv="./reviews.html" data-n="51 объект" data-lead="Каждое слово понятно без напряжения — на линейке, на сцене актового зала и на конференции." data-cap="Актовый зал РАНХиГС, 2026 г."><span class="apx-no">02</span><span class="apx-t">Образование и наука</span><span class="apx-n">51 объект</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./sport.html" class="apx-it" data-i="2" data-pf="./portfolio.html#sec-sport" data-rv="./reviews.html" data-n="8 объектов" data-lead="Голос диктора разборчив на каждой трибуне; для ледовых арен и бассейнов — исполнение IP55." data-cap="Центр единоборств Тарко-Сале, 2026 г."><span class="apx-no">03</span><span class="apx-t">Спорт и массовые мероприятия</span><span class="apx-n">8 объектов</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./corporate.html" class="apx-it" data-i="3" data-pf="./portfolio.html#sec-corporate" data-rv="./reviews.html#r14" data-n="22 объекта" data-lead="Каждого выступающего слышно без напряжения, а оборудование не отвлекает на себя внимание." data-cap="Конференц-зал Министерства спорта Российской Федерации, 2023 г."><span class="apx-no">04</span><span class="apx-t">Корпоративный сектор</span><span class="apx-n">22 объекта</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./hospitality.html" class="apx-it" data-i="4" data-pf="./portfolio.html#sec-hospitality" data-rv="./reviews.html#r25" data-n="9 объектов" data-lead="Фоновая музыка не мешает разговору, а вечером система выдерживает живое выступление." data-cap="Кафе «ЮТЭК», 2024 г."><span class="apx-no">05</span><span class="apx-t">Ресторанный и гостиничный бизнес</span><span class="apx-n">9 объектов</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./religious.html" class="apx-it" data-i="5" data-pf="./portfolio.html#sec-religious" data-rv="./reviews.html" data-n="3 объекта" data-lead="Слово и пение разборчивы под высокими сводами, а оборудование не нарушает архитектуру." data-cap="Храмовый комплекс в честь Преображения Господня, 2024 г."><span class="apx-no">06</span><span class="apx-t">Религиозные учреждения</span><span class="apx-n">3 объекта</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./entertainment.html" class="apx-it" data-i="6" data-pf="./portfolio.html#sec-entertainment" data-rv="./reviews.html#r23" data-n="2 объекта" data-lead="Запас по мощности, плотный бас и чистый вокал — система работает на пределе каждый вечер." data-cap=""><span class="apx-no">07</span><span class="apx-t">Индустрия развлечений</span><span class="apx-n">2 объекта</span><i aria-hidden="true"></i></a></li>
+      <li><a href="./rental.html" class="apx-it" data-i="7" data-pf="./portfolio.html" data-rv="./reviews.html#r2" data-n="3 комплекта решений" data-lead="Быстрая сборка, надёжность в дороге и предсказуемый звук на любой новой площадке." data-cap="Фестиваль «Бессонница», 2025 г."><span class="apx-no">08</span><span class="apx-t">Прокатные компании</span><span class="apx-n">3 комплекта решений</span><i aria-hidden="true"></i></a></li>
       </ol>
-    </nav>
-    <div style="display:flex;flex-direction:column;gap:24px;max-width:900px;">
-      <div class="kicker" style="color:#C8C8C8;">Применение</div>
-      <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:72px;line-height:1.05;color:#FAFAFA;">Применение</h1>
-      <div style="max-width:680px;font-size:22px;line-height:1.5;color:#D8D8D8;">Типы объектов и варианты применения: от концертного зала и школы до ледовой арены, ресторана и прокатной компании.</div>
+    </div>
+    <div class="apx-card" aria-live="polite">
+      <div class="apx-k"><span class="apx-k-no">01 / 08</span><span class="apx-k-n">40 объектов</span></div>
+      <h2 class="apx-title">Культура и искусство</h2>
+      <p class="apx-text">Натуральный тембр в концертном зале, разборчивая речь в театре, покрытие на 360° под куполом цирка.</p>
+      <div class="apx-btns">
+        <a class="apx-go" href="./culture.html">Открыть раздел <span aria-hidden="true">→</span></a>
+        <a class="apx-sm" data-k="pf" href="./portfolio.html#sec-culture">Портфолио</a>
+        <a class="apx-sm" data-k="rv" href="./reviews.html#r22">Отзывы</a>
+      </div>
+      <div class="apx-cap">Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2024 г.</div>
     </div>
   </div>
+  <div class="apx-bar" aria-hidden="true"><b></b></div>
 </section>
-
-<!-- ================= ПОДРАЗДЕЛЫ ================= -->
-<!-- data-soon — страница подраздела ещё не свёрстана -->
-<section id="venues" style="background:#FAFAFA;scroll-margin-top:74px;">
-  <div class="wrap" style="padding-top:100px;padding-bottom:110px;">
-    <div class="reveal" style="display:flex;flex-direction:column;gap:18px;max-width:760px;margin-bottom:40px;">
-      <div class="kicker">Типы объектов</div>
-      <h2 class="h2">Выберите свой вариант</h2>
-    </div>
-    <div class="bento">
-      <a href="./culture.html" class="vtile reveal" style="grid-column:span 2;">
-        <img class="vtile-photo" src="./assets/mravinsky-hall-choir.jpg" alt="Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>40 объектов</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Культура и искусство</span>
-            <span class="vtile-lead">Натуральный тембр в концертном зале, разборчивая речь в театре, покрытие на 360° под куполом цирка.</span>
-            <span class="vtile-cap">Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2024 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./education.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/portfolio/pf-001/01.jpg" alt="Актовый зал РАНХиГС">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>51 объект</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Образование и наука</span>
-            <span class="vtile-lead">Каждое слово понятно без напряжения — на линейке, на сцене актового зала и на конференции.</span>
-            <span class="vtile-cap">Актовый зал РАНХиГС, 2026 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./sport.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/portfolio/pf-007/01.jpg" alt="Центр единоборств Тарко-Сале">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>8 объектов</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Спорт и массовые мероприятия</span>
-            <span class="vtile-lead">Голос диктора разборчив на каждой трибуне; для ледовых арен и бассейнов — исполнение IP55.</span>
-            <span class="vtile-cap">Центр единоборств Тарко-Сале, 2026 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./corporate.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/portfolio/pf-018/07.jpg" alt="Конференц-зал Министерства спорта Российской Федерации">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>22 объекта</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Корпоративный сектор</span>
-            <span class="vtile-lead">Каждого выступающего слышно без напряжения, а оборудование не отвлекает на себя внимание.</span>
-            <span class="vtile-cap">Конференц-зал Министерства спорта Российской Федерации, 2023 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./hospitality.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/portfolio/pf-009/07.jpg" alt="Кафе «ЮТЭК»">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>9 объектов</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Ресторанный и гостиничный бизнес</span>
-            <span class="vtile-lead">Фоновая музыка не мешает разговору, а вечером система выдерживает живое выступление.</span>
-            <span class="vtile-cap">Кафе «ЮТЭК», 2024 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./religious.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/segments/religious-hero-soft.jpg" alt="Храмовый комплекс в честь Преображения Господня">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>3 объекта</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Религиозные учреждения</span>
-            <span class="vtile-lead">Слово и пение разборчивы под высокими сводами, а оборудование не нарушает архитектуру.</span>
-            <span class="vtile-cap">Храмовый комплекс в честь Преображения Господня, 2024 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./entertainment.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/segments/entertainment-hero-soft.jpg" alt="Клубное выступление">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>2 объекта</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Индустрия развлечений</span>
-            <span class="vtile-lead">Запас по мощности, плотный бас и чистый вокал — система работает на пределе каждый вечер.</span>
-            <span class="vtile-cap"></span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./rental.html" class="vtile reveal" style="">
-        <img class="vtile-photo" src="./assets/segments/rental-hero-bessonnitsa.jpg" alt="Фестиваль «Бессонница»">
-        <span class="vtile-overlay"></span>
-        <span class="vtile-body">
-          <span class="vtile-top"><span>3 комплекта решений</span></span>
-          <span class="vtile-main">
-            <span class="vtile-title">Прокатные компании</span>
-            <span class="vtile-lead">Быстрая сборка, надёжность в дороге и предсказуемый звук на любой новой площадке.</span>
-            <span class="vtile-cap">Фестиваль «Бессонница», 2025 г.</span>
-          </span>
-        </span>
-        <span class="vtile-arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
-    <div style="height:18px"></div>
-    <div class="hub-grid">
-      <a href="./reviews.html" class="hub-card reveal">
-        <span><span class="hub-card-idx">01</span>
-          <span class="hub-card-title" style="display:block;margin-top:14px;">Отзывы</span><span class="hub-card-text" style="display:block;">Звукорежиссёры и технические директора о работе с системами DS PROAUDIO.</span></span>
-        <span class="hub-card-arrow" aria-hidden="true">→</span>
-      </a>
-      <a href="./portfolio.html" class="hub-card reveal">
-        <span><span class="hub-card-idx">02</span>
-          <span class="hub-card-title" style="display:block;margin-top:14px;">Портфолио</span><span class="hub-card-text" style="display:block;">141 реализованный объект с фильтрами по типу, городу и серии.</span></span>
-        <span class="hub-card-arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
+<script src="./apx-page.js" defer></script>
 <section id="contact" style="width:100%;background:#FFFFFF;">
   <div class="wrap grid-2" style="padding-top:130px;padding-bottom:130px;display:flex;align-items:center;justify-content:space-between;gap:64px;">
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:22px;max-width:600px;">
