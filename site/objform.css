@@ -1,0 +1,87 @@
+/* DS PROAUDIO — заявка «Расскажите о вашем объекте» (блок #contact внизу страниц).
+   Разметку строит objform.js; здесь только оформление. */
+#contact.of-on{background:#F4F3F0 !important}
+#contact .of-wrap{max-width:1440px;margin:0 auto;padding:120px 64px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:72px;align-items:start;box-sizing:border-box}
+#contact .of-left{display:flex;flex-direction:column;gap:22px;min-width:0}
+#contact .of-kick{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A8A}
+#contact .of-left h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:44px;line-height:1.15;color:#141414}
+#contact .of-lead{margin:0;font-size:17px;line-height:1.6;color:#55534F;max-width:520px}
+#contact .of-get{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:16px;max-width:540px}
+#contact .of-get li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+#contact .of-get b{display:block;font-size:16px;font-weight:600;color:#141414;margin-bottom:2px}
+#contact .of-get span{font-size:14.5px;line-height:1.5;color:#6B6964}
+#contact .of-get i{font-style:normal;font-family:'PT Mono',monospace;font-size:12px;width:34px;height:34px;border-radius:50%;border:1px solid #141414;display:flex;align-items:center;justify-content:center;color:#141414}
+#contact .of-fig{margin:10px 0 0;max-width:540px;border-radius:14px;overflow:hidden;background:#141414;box-shadow:0 20px 50px rgba(0,0,0,.12);position:relative}
+#contact .of-fig img{display:block;width:100%;height:210px;object-fit:cover;object-position:50% 18%}
+#contact .of-fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;background:linear-gradient(transparent,rgba(10,10,11,.86));color:#F2F2F2;font-size:12.5px;line-height:1.4}
+#contact .of-fig figcaption b{font-family:'PT Mono',monospace;font-weight:400;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B8B8B8;display:block;margin-bottom:3px}
+#contact .of-trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:6px;font-family:'PT Mono',monospace;font-size:12.5px;color:#55534F}
+#contact .of-trust span{white-space:nowrap}
+#contact .of-trust span:before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#141414;margin-right:8px;vertical-align:1px}
+
+/* карточка формы */
+#contact .of-card{background:#121214;color:#F2F2F2;border-radius:20px;padding:34px 36px 30px;box-shadow:0 30px 80px rgba(0,0,0,.28);position:relative;min-width:0;font-family:'IBM Plex Sans','Montserrat',system-ui,sans-serif}
+#contact .of-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A8A}
+#contact .of-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:26px}
+#contact .of-bar i{height:3px;border-radius:2px;background:rgba(255,255,255,.14);transition:background .3s}
+#contact .of-bar i.on{background:#FAFAFA}
+#contact .of-step{display:none;animation:ofIn .35s ease}
+#contact .of-step.on{display:block}
+@keyframes ofIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#contact .of-q{margin:0 0 6px;font-family:'Montserrat',sans-serif;font-size:23px;font-weight:600;line-height:1.25;color:#FAFAFA}
+#contact .of-hint{margin:0 0 16px;font-size:13.5px;line-height:1.5;color:#9A9A9A}
+#contact .of-sub{margin:22px 0 10px;font-size:13px;color:#BDBDBD}
+#contact .of-chips{display:flex;flex-wrap:wrap;gap:8px}
+#contact .of-chip{appearance:none;font:inherit;font-size:14px;line-height:1.2;padding:11px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#EDEDED;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+#contact .of-chip:hover{border-color:rgba(255,255,255,.55)}
+#contact .of-chip.on{background:#FAFAFA;color:#0A0A0B;border-color:#FAFAFA}
+#contact .of-chip.on:before{content:'✓ ';font-weight:700}
+#contact .of-need{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#contact .of-need .of-chip{border-radius:12px;text-align:left;padding:13px 14px;display:flex;flex-direction:column;gap:4px}
+#contact .of-need .of-chip small{font-size:12px;line-height:1.35;color:#9A9A9A}
+#contact .of-need .of-chip.on small{color:#4A4A4A}
+#contact .of-need .of-chip.on:before{content:none}
+#contact .of-need .of-chip b{font-weight:600}
+#contact .of-need .of-chip.on b:before{content:'✓ '}
+#contact .of-sum{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+#contact .of-sum button{appearance:none;font:inherit;font-size:12px;padding:6px 10px;border-radius:999px;border:none;background:rgba(255,255,255,.1);color:#D8D8D8;cursor:pointer}
+#contact .of-sum button:hover{background:rgba(255,255,255,.18)}
+#contact .of-f{display:block;margin-bottom:14px}
+#contact .of-f span{display:block;font-size:12.5px;color:#9A9A9A;margin-bottom:6px}
+#contact .of-f input,#contact .of-f textarea{width:100%;box-sizing:border-box;font:inherit;font-size:15.5px;color:#FAFAFA;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:13px 14px;outline:none;transition:border-color .2s,background .2s}
+#contact .of-f textarea{min-height:84px;resize:vertical}
+#contact .of-f input:focus,#contact .of-f textarea:focus{border-color:#FAFAFA;background:rgba(255,255,255,.09)}
+#contact .of-f.bad input{border-color:#FF6B5A}
+#contact .of-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#contact .of-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:26px}
+#contact .of-back{appearance:none;background:none;border:none;color:#9A9A9A;font:inherit;font-size:14px;cursor:pointer;padding:8px 0}
+#contact .of-back:hover{color:#FAFAFA}
+#contact .of-next{appearance:none;border:none;cursor:pointer;font:inherit;font-size:15px;font-weight:600;padding:15px 26px;border-radius:10px;background:#FAFAFA;color:#0A0A0B;transition:transform .15s,opacity .2s;margin-left:auto}
+#contact .of-next:hover{transform:translateY(-1px)}
+#contact .of-next:disabled{opacity:.35;cursor:default;transform:none}
+#contact .of-note{margin:14px 0 0;font-size:12px;line-height:1.5;color:#7A7A7A}
+#contact .of-note a{color:#BDBDBD}
+#contact .of-err{color:#FF8A7A;font-size:13px;margin:8px 0 0;min-height:1em}
+#contact .of-done{display:none;text-align:left}
+#contact .of-card.sent .of-done{display:block;animation:ofIn .4s ease}
+#contact .of-card.sent .of-step,#contact .of-card.sent .of-bar,#contact .of-card.sent .of-top{display:none}
+#contact .of-ok{width:52px;height:52px;border-radius:50%;background:#FAFAFA;color:#0A0A0B;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+#contact .of-done ol{margin:14px 0 20px;padding-left:20px;color:#CFCFCF;font-size:14.5px;line-height:1.7}
+#contact .of-done .of-links{display:flex;flex-wrap:wrap;gap:8px}
+#contact .of-done .of-links a{font-size:13.5px;color:#FAFAFA;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 14px;text-decoration:none}
+#contact .of-done .of-links a:hover{border-color:#FAFAFA}
+
+@media (max-width:1099px){
+  #contact .of-wrap{grid-template-columns:1fr;gap:40px;padding:80px 32px}
+  #contact .of-card{max-width:640px}
+}
+@media (max-width:699px){
+  #contact .of-wrap{padding:56px 16px;gap:32px}
+  #contact .of-left h2{font-size:30px}
+  #contact .of-lead{font-size:15.5px}
+  #contact .of-fig img{height:170px}
+  #contact .of-card{padding:26px 18px 22px;border-radius:16px}
+  #contact .of-q{font-size:20px}
+  #contact .of-need,#contact .of-row{grid-template-columns:1fr}
+  #contact .of-chip{font-size:13.5px;padding:10px 14px}
+}
