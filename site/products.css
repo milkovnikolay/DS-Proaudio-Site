@@ -377,3 +377,7 @@ span.pr-tech-img{cursor:default}
   .tp-note{flex-direction:column;align-items:flex-start}
   .tp-ohm-i{min-width:0;flex:1}.tp-ohm-i b{font-size:30px}
 }
+/* метки серий в карточках типов/серий: непрозрачная подложка, чтобы читались поверх фото продукта (21.10.2026) */
+.pr-cat-s{z-index:2}
+.pr-cat-s .pr-tag{background:#F4F4F2}
+.pr-cat-all .pr-cat-s .pr-tag{background:#141414}
