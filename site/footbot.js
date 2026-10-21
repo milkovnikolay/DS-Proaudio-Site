@@ -121,3 +121,51 @@
     else if (form.matches('#dsFootBot .dsf-ask')) { e.preventDefault(); var inp = form.querySelector('input'); ask(inp.value); inp.value = ''; }
   });
 })();
+
+/* ---- подвал на телефоне: колонки ссылок раскрываются по нажатию на заголовок,
+   юридический текст — по кнопке «Правовая информация». Подвал главной может
+   перерисовываться, поэтому обработчики — на document, а кнопки ставятся заново. ---- */
+(function () {
+  if (window.__dsFootAcc) return; window.__dsFootAcc = true;
+  var root = document.documentElement;
+  root.classList.add('dsf-js');
+  function phone() { return window.innerWidth < 700; }
+
+  function prep() {
+    document.querySelectorAll('.dsf-legal').forEach(function (l) {
+      if (l.previousElementSibling && l.previousElementSibling.classList.contains('dsf-legal-btn')) return;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'dsf-legal-btn'; b.setAttribute('aria-expanded', 'false');
+      b.textContent = 'Правовая информация';
+      l.parentNode.insertBefore(b, l);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', prep); else prep();
+  new MutationObserver(function () { if (document.querySelector('.dsf-legal') && !document.querySelector('.dsf-legal-btn')) prep(); })
+    .observe(document.documentElement, { childList: true, subtree: true });
+
+  document.addEventListener('click', function (e) {
+    if (!phone()) return;
+    var lb = e.target.closest('.dsf-legal-btn');
+    if (lb) {
+      var open = lb.getAttribute('aria-expanded') !== 'true';
+      lb.setAttribute('aria-expanded', open ? 'true' : 'false');
+      lb.nextElementSibling.classList.toggle('open', open);
+      return;
+    }
+    var h = e.target.closest('.dsf-col > a.ft-heading');
+    if (!h) return;
+    var col = h.parentNode;
+    if (col.classList.contains('dsf-reach') || col.children.length < 2) return;
+    e.preventDefault();
+    /* первая строка открытого списка — ссылка на сам раздел */
+    var href = h.getAttribute('href');
+    if (href && href !== '#' && !col.querySelector('.dsf-go')) {
+      var go = document.createElement('a');
+      go.className = 'ft-item dsf-go'; go.href = href;
+      go.textContent = 'Весь раздел «' + h.textContent.trim() + '» →';
+      h.insertAdjacentElement('afterend', go);
+    }
+    col.classList.toggle('open');
+  });
+})();
