@@ -1,0 +1,56 @@
+/* =====================================================================
+   DS PROAUDIO — продукция, серии, модели и технологии на телефоне (до 699 px).
+   Дополняет products.css, компьютерная вёрстка не меняется.
+   Идея: панель выбора — в одну строку прямо под шапкой, на странице модели
+   под шапкой остаются только вкладки разделов; характеристики читаются
+   «подпись — значение» столбиком; технологии и объекты — лентами со свайпом;
+   заглушки «Ожидается» не занимают по пол-экрана.
+   ===================================================================== */
+
+@media (max-width:699px){
+  /* ---------- панель выбора типа и серии ---------- */
+  .pr-nav{top:58px}
+  .pr-nav .wrap{padding:8px 16px !important;gap:6px}
+  .pr-nav-bar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+  .pr-nav-bar::-webkit-scrollbar{display:none}
+  .pr-fgroup{flex:0 0 auto}
+  .pr-nav-pdf{flex:0 0 auto;margin-left:auto;padding-left:6px}
+
+  /* ---------- страница модели ---------- */
+  /* под шапкой остаются только вкладки разделов — панель выбора уезжает вместе со страницей */
+  body:has(.pd-tabs) .pr-nav{position:relative;top:auto}
+  .pd-tabs,.pd-tabs-wrap{top:58px !important;margin-left:-24px;margin-right:-24px;padding:0 12px}
+  .pd-tabs-wrap .pd-tabs{padding:0}
+  .pd-tabs a{padding:13px 12px 12px;font-size:12px}
+  .pd-block{padding:32px 0;scroll-margin-top:120px}
+  .pd-block h2{font-size:22px;margin-bottom:16px}
+  .pd-info h1{font-size:28px;line-height:1.15}
+  .pd-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .pd-cta .pd-btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:50px;padding:0 10px;border-radius:12px;font-size:14px;box-sizing:border-box}
+
+  /* характеристики: подпись над значением, на всю ширину */
+  .pd-specs,.pd-specs tbody,.pd-specs tr,.pd-specs th,.pd-specs td{display:block;width:auto}
+  .pd-specs tr{padding:12px 14px;border-bottom:1px solid #EDEDED}
+  .pd-specs tr:nth-child(odd){background:#FAFAF8}
+  .pd-specs th,.pd-specs td{padding:0;border:0;background:none !important}
+  .pd-specs th{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;line-height:1.5;text-transform:uppercase;color:#8A8A8A;margin-bottom:4px}
+  .pd-specs td{font-size:15px;line-height:1.5}
+
+  /* заглушки «Ожидается» — компактно */
+  .pd-block .pr-wait{min-height:112px !important;padding:16px;box-sizing:border-box}
+  .pd-block .pr-wait span{font-size:12.5px}
+  .pd-polar{grid-template-columns:1fr 1fr !important;gap:10px}
+  .pd-polar .pr-wait span{display:none}
+  .pd-video:has(.pr-wait){aspect-ratio:auto}
+
+  /* ---------- технологии серии и модели: лента со свайпом ---------- */
+  .pr-techs,.pr-techs.small{display:flex !important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -24px;padding:0 24px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pr-techs::-webkit-scrollbar{display:none}
+  .pr-techs > *{flex:0 0 84%;scroll-snap-align:start;scroll-margin-left:24px}
+
+  /* ---------- примеры применения: лента ---------- */
+  .pd-cases{display:flex !important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -24px;padding:0 24px 6px;scrollbar-width:none}
+  .pd-cases::-webkit-scrollbar{display:none}
+  .pd-cases > *{flex:0 0 82%;scroll-snap-align:start;scroll-margin-left:24px}
+  .pd-cases > :only-child{flex-basis:100%}
+}
