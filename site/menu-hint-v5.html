@@ -517,7 +517,7 @@
   html.hv5-c .hv5-word{left:50%;--hx:-50%}
   html.hv5-l .hv5-word{left:var(--hl,200px);--hx:0}
   html.hv5-r .hv5-word{left:var(--hr,900px);--hx:0}
-  .hv5-line{position:absolute;left:0;right:0;bottom:-1px;height:1px;background:rgba(242,242,242,.55);transform:scaleX(0);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s;pointer-events:none;z-index:2}
+  .hv5-line{position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--hv5-lc,rgba(242,242,242,.6));transition-property:transform,opacity,background-color;transform:scaleX(0);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s;pointer-events:none;z-index:2}
   header.hdr-free .hv5-word{opacity:1;transform:translate(var(--hx,-50%),-50%)}
   header.hdr-free .hv5-line{transform:scaleX(1);opacity:1}
   header.hv5-open .hv5-word svg{transform:rotate(180deg)}
@@ -552,12 +552,35 @@ document.addEventListener('DOMContentLoaded',function(){
   place(); addEventListener('resize',place); if(document.fonts) document.fonts.ready.then(place);
   function sync(){ var o=btn.getAttribute('aria-expanded')==='true'; h.classList.toggle('hv5-open',o); txt.textContent=o?'Закрыть':'Меню'; place(); }
   new MutationObserver(sync).observe(btn,{attributes:true,attributeFilter:['aria-expanded']}); sync();
+  // сторона надписи — по тому, с какой стороны от центра курсор заехал на шапку
+  h.addEventListener('mouseenter',function(e){
+    var hr=h.getBoundingClientRect(), side=e.clientX<hr.left+hr.width/2?'l':'r';
+    R.classList.remove('hv5-l','hv5-c','hv5-r'); R.classList.add('hv5-'+side); place();
+  });
+  // цвет линии — по фону страницы сразу под шапкой: светлая на тёмном, тёмная на светлом
+  function bgAt(x,y){
+    var el=document.elementFromPoint(x,y);
+    while(el&&el!==document.documentElement){
+      if(el.closest&&el.closest('header')){el=null;break;}
+      var c=getComputedStyle(el).backgroundColor, m=c.match(/[\d.]+/g);
+      if(m&&(m.length<4||+m[3]>.5)) return [+m[0],+m[1],+m[2]];
+      if(/^(IMG|VIDEO|CANVAS)$/.test(el.tagName)) return [30,30,30];
+      el=el.parentElement;
+    }
+    var b=getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g); return b?[+b[0],+b[1],+b[2]]:[255,255,255];
+  }
+  var lastLc='', tick=0;
+  function lineColor(){
+    tick=0; var hr=h.getBoundingClientRect(), y=hr.bottom+3, xs=[hr.left+hr.width*.25,hr.left+hr.width*.5,hr.left+hr.width*.75], L=0;
+    xs.forEach(function(x){var c=bgAt(x,y); L+=(.2126*c[0]+.7152*c[1]+.0722*c[2])/255;}); L/=xs.length;
+    var lc=L>.55?'rgba(20,20,22,.55)':'rgba(242,242,242,.6)';
+    if(lc!==lastLc){lastLc=lc; h.style.setProperty('--hv5-lc',lc);}
+  }
+  addEventListener('scroll',function(){ if(!tick) tick=requestAnimationFrame(lineColor); },{passive:true});
+  addEventListener('resize',lineColor); h.addEventListener('mouseenter',lineColor); setTimeout(lineColor,300);
   var n=document.createElement('div'); n.className='hv5-note';
-  n.innerHTML='<b>Демо, вариант 5.</b> Наведите курсор на свободное место шапки и нажмите — откроется меню. Положение надписи:<div class="sw"><button data-p="l" class="on">Слева</button><button data-p="c">По центру</button><button data-p="r">Справа</button></div>';
+  n.innerHTML='<b>Демо, вариант 5.</b> Заведите курсор на шапку слева или справа от центра — надпись «МЕНЮ ▾» появится с той же стороны. Линия по нижнему краю шапки светлая над тёмными блоками и тёмная над светлыми — прокрутите страницу и проверьте.';
   document.body.appendChild(n);
-  n.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
-    R.classList.remove('hv5-l','hv5-c','hv5-r'); R.classList.add('hv5-'+b.dataset.p);
-    [].forEach.call(n.querySelectorAll('button'),function(x){x.classList.toggle('on',x===b);}); place();});
 });
 </script>
 </head>
