@@ -1,0 +1,26 @@
+/* =====================================================================
+   DS PROAUDIO — О компании на телефоне (до 699 px): История, Производство, Шоу-рум.
+   Компьютерная вёрстка не меняется.
+   Идея: фото цехов и карточки «почему стоит приехать» / отзывы — лентами со свайпом
+   (видно край следующей карточки), а не столбиком на несколько экранов.
+   ===================================================================== */
+
+@media (max-width:699px){
+  /* ---------- общая лента ---------- */
+  .pw-media,.sz-why,.sz-q{display:flex !important;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+    margin-left:-24px;margin-right:-24px;padding:0 24px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pw-media::-webkit-scrollbar,.sz-why::-webkit-scrollbar,.sz-q::-webkit-scrollbar{display:none}
+
+  /* ---------- Производство: фото и видео цеха ---------- */
+  .pw,.pw:nth-child(even){padding:44px 0 !important;gap:22px !important}
+  .pw-media > *{flex:0 0 84%;height:auto !important;aspect-ratio:4/3;scroll-snap-align:start;scroll-margin-left:24px;grid-row:auto !important}
+  .pw-media > :only-child{flex-basis:100%}
+  .pw-eq{gap:6px;margin-top:16px} .pw-eq li{padding:7px 10px}
+
+  /* ---------- Шоу-рум: почему стоит приехать и отзывы звукорежиссёров ---------- */
+  .sz-why > *{flex:0 0 84%;scroll-snap-align:start;scroll-margin-left:24px}
+  .sz-q > *{flex:0 0 86%;scroll-snap-align:start;scroll-margin-left:24px}
+
+  /* ---------- История: десятилетие в одну строку ---------- */
+  .hs-lux .ab-per{font-size:54px !important}
+}
