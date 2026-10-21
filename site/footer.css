@@ -101,3 +101,35 @@
   .dsf-legal{columns:1;}
   .dsf-bottom{flex-direction:column;align-items:flex-start;}
 }
+
+/* ---- телефон (до 699 px): колонки ссылок — раскрывающиеся списки, юридический текст — свёрнут.
+   Класс dsf-js ставит footbot.js: без скрипта всё остаётся открытым. ---- */
+@media (max-width:699px){
+  .dsf-wrap{padding:40px 20px 0;}
+  .dsf-top{gap:28px;padding-bottom:32px;}
+  .dsf-phone{font-size:26px !important;}
+  .dsf-js .dsf-cols{display:block;padding:4px 0 8px;}
+  .dsf-js .dsf-col{display:block;border-bottom:1px solid rgba(255,255,255,.1);}
+  .dsf-js .dsf-col > a.ft-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0;padding:19px 0;font-size:12px;letter-spacing:.12em;-webkit-tap-highlight-color:transparent;}
+  .dsf-js .dsf-col:not(.dsf-reach) > a.ft-heading::after{content:'';flex:0 0 26px;height:26px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:
+    linear-gradient(#EDEDED,#EDEDED) center/9px 1.5px no-repeat,
+    linear-gradient(#EDEDED,#EDEDED) center/1.5px 9px no-repeat;transition:transform .3s ease,border-color .3s ease;}
+  .dsf-js .dsf-col.open > a.ft-heading::after{transform:rotate(45deg);border-color:#FAFAFA;}
+  .dsf-js .dsf-col:not(.dsf-reach):not(.open) > :not(.ft-heading){display:none !important;}
+  .dsf-js .dsf-col.open{padding-bottom:14px;animation:dsfIn .3s ease;}
+  .dsf-js .dsf-col.open > :not(.ft-heading){display:block;padding:9px 0;font-size:15.5px;}
+  .dsf-js .dsf-col.open > .tech-dd > summary{padding:0;}
+  .dsf-js .dsf-col .dsf-go{color:#FAFAFA !important;font-weight:600;}
+  .dsf-js .dsf-col.dsf-reach{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:0;padding:20px 0 4px;}
+  .dsf-js .dsf-col.dsf-reach > a.ft-heading{padding:0;text-align:left !important;}
+  .dsf-js .dsf-col.dsf-reach .dsf-social{flex-wrap:nowrap;gap:8px;}
+  .dsf-bottom{padding:20px 0 12px;}
+  .dsf-js .dsf-legal{position:relative;max-height:0;overflow:hidden;padding:0;margin-bottom:0;}
+  .dsf-js .dsf-legal.open{max-height:none;padding:4px 0 32px;}
+  .dsf-js .dsf-legal-btn{display:flex;align-items:center;gap:10px;width:100%;margin:0 0 28px;padding:0;border:0;background:none;color:#8F8F8F;font:inherit;font-size:12.5px;text-align:left;cursor:pointer;}
+  .dsf-js .dsf-legal-btn::after{content:'↓';transition:transform .3s ease;}
+  .dsf-js .dsf-legal-btn[aria-expanded="true"]{margin-bottom:12px;}
+  .dsf-js .dsf-legal-btn[aria-expanded="true"]::after{transform:rotate(180deg);}
+}
+@media (min-width:700px){.dsf-legal-btn,.dsf-go{display:none !important;}}
+@keyframes dsfIn{from{opacity:.4}to{opacity:1}}
