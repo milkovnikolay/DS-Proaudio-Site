@@ -1,0 +1,149 @@
+/* =====================================================================
+   DS PROAUDIO — страницы разделов и направлений на телефоне (до 699 px).
+   Подключается на 7 страницах разделов и их подстраницах (цирки, театры…).
+   Компьютерная вёрстка не меняется: всё внутри @media. Секции размечены
+   инлайн-стилями, поэтому местами !important.
+   Идея: меньше пустот, ленты со свайпом вместо столбиков огромных карточек,
+   длинные списки — раскрываются по нажатию, шаги работы — линия времени.
+   Классы dsm-* ставит sub-mobile.js.
+   ===================================================================== */
+
+@media (max-width:699px){
+  /* ---------- ритм страницы: вместо 100–130 px пустоты — 64 px ---------- */
+  section:not([style*="min-height:680"]) > .wrap[style*="padding-top:1"],
+  section:not([style*="min-height:680"]) > .wrap[style*="padding-top:9"]{padding-top:64px !important}
+  section:not([style*="min-height:680"]) > .wrap[style*="padding-bottom:1"]{padding-bottom:64px !important}
+  section:not([style*="min-height:680"]) > .wrap[style*="padding-bottom:10px"]{padding-bottom:8px !important}
+  .wrap{padding-left:20px !important;padding-right:20px !important}
+  .wrap > .reveal[style*="margin-bottom:5"],.wrap > .reveal[style*="margin-bottom:6"]{margin-bottom:28px !important;gap:14px !important}
+
+  /* ---------- типографика ---------- */
+  .h2{font-size:30px !important;line-height:1.15 !important;letter-spacing:-.01em}
+  .h2[style*="font-size:3"]{font-size:26px !important;line-height:1.2 !important}
+  .lead{font-size:16px !important;line-height:1.6 !important}
+  .kicker{font-size:11.5px !important;letter-spacing:.12em !important}
+  .h2,.idr-p1,.feat-title,.vtile-title,.sib-title{-webkit-hyphens:auto;hyphens:auto;overflow-wrap:break-word}
+
+  /* ---------- первый экран ---------- */
+  section[style*="min-height:680"]{min-height:88svh !important;min-height:88vh}
+  section[style*="min-height:680"] > .wrap{padding-top:92px !important;padding-bottom:32px !important;gap:28px !important}
+  /* затемнение снизу плотнее — заголовок читается на любом фото */
+  section[style*="min-height:680"] > div[style*="linear-gradient"]{background:linear-gradient(180deg,rgba(10,10,11,.6) 0%,rgba(10,10,11,.2) 26%,rgba(10,10,11,.55) 52%,rgba(10,10,11,.94) 100%) !important}
+  section[style*="min-height:680"] .crumbs{font-size:10px;line-height:1.7;flex-wrap:wrap}
+  section[style*="min-height:680"] .wrap > div:last-child{flex-direction:column !important;align-items:stretch !important;gap:20px !important}
+  section[style*="min-height:680"] .wrap > div:last-child > div:first-child{gap:16px !important}
+  section[style*="min-height:680"] .h1{font-size:clamp(36px,11vw,46px) !important;line-height:1.04 !important;letter-spacing:-.01em}
+  section[style*="min-height:680"] .h1 + div{font-size:17px !important;line-height:1.5 !important}
+  section[style*="min-height:680"] .h1 + div + div{display:grid !important;grid-template-columns:1fr;gap:10px !important;margin-top:10px !important}
+  section[style*="min-height:680"] .h1 + div + div > a{display:flex !important;align-items:center;justify-content:center;text-align:center;min-height:52px;box-sizing:border-box;border-radius:12px !important;font-size:14px !important}
+
+  /* ---------- описание для руководителя ---------- */
+  .idr-p1{font-size:18px !important;line-height:1.55 !important}
+  .idr-p{font-size:16px !important}
+  .idr-list li{font-size:15px !important;padding:13px 0 13px 26px !important}
+
+  /* ---------- особенности / решение / результат ---------- */
+  .wrap > .grid-3:has(> .feat),.wrap > .grid-2:has(> .feat){gap:0 !important}
+  .feat{padding:18px 0 !important;gap:8px !important;border-top:1px solid #E6E6E6}
+  .feat:last-child{border-bottom:1px solid #E6E6E6}
+  .feat-title{font-size:17px !important;line-height:1.35 !important}
+  .feat-text{font-size:15px !important;line-height:1.6 !important;max-width:none !important}
+  /* длинные списки (4 пункта и больше) — раскрываются по нажатию, первый открыт */
+  .dsm-acc .feat{padding:0 !important;gap:0 !important}
+  .dsm-acc .feat-title{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:18px 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .dsm-acc .feat-title:after{content:'';flex:0 0 28px;height:28px;margin-top:-3px;border:1px solid #DADADA;border-radius:50%;background:
+    linear-gradient(#141414,#141414) center/10px 1.5px no-repeat,
+    linear-gradient(#141414,#141414) center/1.5px 10px no-repeat;transition:transform .3s ease,background-color .3s ease,border-color .3s ease}
+  .dsm-acc .feat.open .feat-title:after{transform:rotate(45deg);border-color:#141414}
+  .dsm-acc .feat-text{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease,padding .35s ease;padding:0 46px 0 0}
+  .dsm-acc .feat-text > span{overflow:hidden}
+  .dsm-acc .feat.open .feat-text{grid-template-rows:1fr;padding-bottom:20px}
+
+  /* ---------- объекты: лента со свайпом ---------- */
+  .dsm-sub #venues .bento{display:flex !important;gap:12px !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .dsm-sub #venues .bento::-webkit-scrollbar{display:none}
+  .dsm-sub #venues .bento .vtile{flex:0 0 84%;height:380px;scroll-snap-align:start;scroll-margin-left:20px;border-radius:18px}
+  .dsm-sub #venues .bento .vtile-title{font-size:18px !important}
+  .dsm-sub #venues .pf-more > .bento{display:none !important}
+  /* страницы разделов: плитки направлений — ниже, текст сразу виден */
+  .dsm-hub .bento{grid-auto-rows:300px !important;gap:12px !important}
+  .bento .vtile-body{padding:18px 18px 20px !important}
+  .bento .vtile-lead{font-size:14px !important}
+  /* счётчик ленты */
+  .dsm-count{display:flex;align-items:center;gap:12px;margin-top:14px;font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#8A8A8A}
+  .dsm-count i{flex:1;height:1px;background:#E2E2E2;position:relative;overflow:hidden}
+  .dsm-count i b{position:absolute;left:0;top:0;bottom:0;background:#141414;transition:width .3s ease,left .3s ease}
+  .dark .dsm-count{color:#8A8A8A}
+  .dark .dsm-count i{background:rgba(255,255,255,.16)}
+  .dark .dsm-count i b{background:#FAFAFA}
+  /* «Ещё объекты»: сначала пять, остальные по кнопке */
+  .pfl{margin-top:32px !important}
+  .pfl-title{font-size:15.5px !important}
+  .pfl-row{padding:14px 0 !important}
+  .dsm-pfl-cut .pfl-row:nth-of-type(n+6){display:none}
+  .dsm-more{appearance:none;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:50px;margin-top:16px;border:1px solid #141414;border-radius:12px;background:transparent;color:#141414;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+
+  /* ---------- пример реализации ---------- */
+  #case .h2{font-size:24px !important}
+  .case-row{grid-template-columns:104px 1fr !important;gap:12px !important;padding:14px 0 !important}
+  .case-val{font-size:15px !important}
+  .case-quote{font-size:17px !important;padding-top:24px !important}
+
+  /* ---------- акустический расчёт: карты одного объекта — лентой ---------- */
+  .calc-list{gap:28px !important}
+  .calc-obj{padding-top:22px !important}
+  .calc-head h3{font-size:18px !important}
+  .calc-pair{display:flex !important;gap:10px !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:6px -20px 0 !important;padding:0 20px 4px;scrollbar-width:none}
+  .calc-pair::-webkit-scrollbar{display:none}
+  .calc-pair > .calc-img{flex:0 0 82%;scroll-snap-align:start;scroll-margin-left:20px}
+  .calc-pair > .calc-img:only-child{flex-basis:100%}
+
+  /* ---------- оборудование для проекта: лента со свайпом ---------- */
+  .eqb-sec .eqb-grid{display:flex !important;gap:12px !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .eqb-sec .eqb-grid::-webkit-scrollbar{display:none}
+  .eqb-sec .eqb-card{flex:0 0 74%;scroll-snap-align:start;scroll-margin-left:20px;border-radius:16px}
+  .eqb-sec .eqb-name{font-size:17px}
+  .eqb-sec .eqb-type{font-size:13px}
+  .eqb-sec .eqb-text{font-size:14px}
+  .eqb-sec .eqb-tag{font-size:10.5px}
+  .eqb-sec .eqb-all{margin-top:22px}
+
+  /* ---------- сопровождение проекта: вертикальная линия времени ---------- */
+  .steps .steps-track{display:none}
+  .steps > .grid-4{display:flex !important;flex-direction:column;gap:0 !important;counter-reset:dsmst}
+  .steps .step{opacity:1 !important;position:relative;padding:2px 0 28px 46px;counter-increment:dsmst}
+  .steps .step:last-child{padding-bottom:0}
+  .steps .step:before{content:counter(dsmst,decimal-leading-zero);position:absolute;left:0;top:0;width:30px;height:30px;box-sizing:border-box;border:1px solid #141414;border-radius:50%;background:#FCFCFC;color:#141414;display:flex;align-items:center;justify-content:center;font-family:'PT Mono',monospace;font-size:11px;z-index:1;transition:background .5s ease,color .5s ease}
+  .steps .step.on:before{background:#141414;color:#FAFAFA}
+  .steps .step:after{content:'';position:absolute;left:15px;top:30px;bottom:0;width:1px;background:#DADADA}
+  .steps .step:last-child:after{display:none}
+  .steps .step-title{margin:3px 0 6px !important;font-size:18px !important}
+  .steps .step-text{font-size:15px !important}
+
+  /* ---------- отзывы: карточки со свайпом ---------- */
+  .dark .kicker.reveal[style*="margin-bottom:40px"]{margin-bottom:24px !important}
+  .quotes{display:flex !important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .quotes::-webkit-scrollbar{display:none}
+  .quotes .quote{grid-area:auto !important;flex:0 0 86%;opacity:1 !important;transform:none !important;pointer-events:auto !important;scroll-snap-align:start;scroll-margin-left:20px;display:flex;flex-direction:column;box-sizing:border-box;padding:24px 20px 22px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.03)}
+  .quotes .quote blockquote{font-size:20px !important;line-height:1.4 !important}
+  .quotes .quote .q-more{margin-top:16px !important;gap:8px !important}
+  .quotes .quote .q-more li{font-size:14.5px !important}
+  .quotes .quote figcaption{margin-top:auto !important;padding-top:22px;gap:12px !important}
+  .quotes .quote figcaption img,.quotes .q-initials{width:44px !important;height:44px !important;flex-basis:44px !important}
+  .q-nav{margin-top:22px !important;gap:8px !important}
+  .q-dot{width:22px !important;height:3px !important;border-radius:2px}
+  .q-all{font-size:12px !important}
+
+  /* ---------- концертные залы: архитектура системы и результат ---------- */
+  .arch-item{display:flex !important;flex-direction:column;gap:6px !important}
+  .arch-item .arch-text{grid-column:auto}
+  .result-title{font-size:26px !important;line-height:1.2 !important}
+  .result-row{gap:10px !important;padding:22px 0 !important}
+
+  /* ---------- другие направления раздела ---------- */
+  .wrap.grid-2{gap:24px !important}
+  .sib{padding:18px 0 !important;gap:14px !important}
+  .sib-title{font-size:18px !important;line-height:1.3 !important}
+  .sib-arrow{opacity:.45 !important;transform:none !important;font-size:18px !important}
+  .sib-meta{margin-left:10px !important}
+}
