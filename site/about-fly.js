@@ -8,6 +8,9 @@
   var ring = root.querySelector('.fly-ring');
   var list = (root.getAttribute('data-items') || '').split(',').filter(Boolean);
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // data-minvis (0…1): насколько может «сжаться» картинка при наклоне; по умолчанию 0,75 (≈70 %)
+  var mv = parseFloat(root.getAttribute('data-minvis')) || 0;
+  var D = 180 / Math.PI, RYM = mv ? Math.acos(Math.pow(mv, .8)) * D : 38, RXM = mv ? Math.acos(Math.pow(mv, .2)) * D : 18;
   var items = [], W = 0, H = 0, R = 0, base = 0, mobile = false, n = 0;
 
   function rnd(i, k) { var x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); }
@@ -29,8 +32,8 @@
         rz0: rnd(i, 4) * 360, rzs: (rnd(i, 5) < .5 ? -1 : 1) * (5 + rnd(i, 6) * 9),   // вращение в плоскости, °/с
         // наклоны ограничены: видимый размер картинки не меньше 70 % исходного
         // (ширина ×cos(ry) ≥ cos 38° ≈ 0,79; высота ×cos(rx) ≥ cos 18° ≈ 0,95; вместе ≥ 0,75). Вращение в плоскости — без ограничений.
-        ryA: 22 + rnd(i, 9) * 16, ryF: .03 + rnd(i, 8) * .04, ph2: rnd(i, 7) * 6.28,
-        rxA: 6 + rnd(i, 10) * 12, rxF: .05 + rnd(i, 11) * .08, ph: rnd(i, 12) * 6.28
+        ryA: RYM * (.58 + rnd(i, 9) * .42), ryF: .03 + rnd(i, 8) * .04, ph2: rnd(i, 7) * 6.28,
+        rxA: RXM * (.33 + rnd(i, 10) * .67), rxF: .05 + rnd(i, 11) * .08, ph: rnd(i, 12) * 6.28
       });
     }
     size();
