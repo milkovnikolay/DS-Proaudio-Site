@@ -428,10 +428,10 @@
       <!-- хиро-видео: «Video Project 2» целиком, без чёрной заставки с логотипом в начале (0–6,3 с) и чёрного хвоста (90,8–97 с);
            телефоны/узкие окна получают лёгкую версию 720p, остальные — 1080p; сначала WebM (VP9, легче), запасной вариант — MP4 (H.264). Прежнее видео: ./assets/91e98fb0df48436a9bd4be3351bafc99.mp4 -->
       <video class="hero-bg" poster="{{heroPoster}}" autoplay="" muted="" loop="" playsinline="" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateZ(0);will-change:transform;">
-        <source src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
-        <source src="./assets/hero/hero-1080.webm" type="video/webm">
-        <source src="./assets/hero/hero-720.mp4" type="video/mp4" media="(max-width: 900px)">
-        <source src="./assets/hero/hero-1080.mp4" type="video/mp4">
+        <source src="./assets/hero/hero2-720.webm" type="video/webm" media="(max-width: 900px)">
+        <source src="./assets/hero/hero2-1080.webm" type="video/webm">
+        <source src="./assets/hero/hero2-720.mp4" type="video/mp4" media="(max-width: 900px)">
+        <source src="./assets/hero/hero2-1080.mp4" type="video/mp4">
     </video></sc-if>
     <sc-if value="{{heroPhotoMode}}" hint-placeholder-val="{{false}}">
       <img class="hero-bg" src="{{heroPoster}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
@@ -978,7 +978,7 @@ class Component extends DCLogic {
 
     // --- хиро: видео при обычных настройках, статичный кадр при prefers-reduced-motion ---
     const heroReduceMotion = !!this._introReduceMotion;
-    const heroPoster = "./assets/hero/hero-poster.jpg";   // кадр из хиро-видео (прежний: ./assets/e78e5d5fb2e6a22da2fab07370e55dd9.jpg)
+    const heroPoster = "./assets/hero/hero2-poster.jpg";   // кадр из хиро-видео IMG_5749 (прежние: ./assets/hero/hero-poster.jpg, ./assets/e78e5d5fb2e6a22da2fab07370e55dd9.jpg)
     const heroPhotoMode = heroReduceMotion;
     const heroVideoMode = !heroReduceMotion;
 
