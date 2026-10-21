@@ -1,4 +1,5 @@
 # Превью сайта на GitHub Pages: при каждом изменении в main папка site/ публикуется заново.
+# Все страницы закрываются паролем из секрета SITE_PASSWORD (без секрета публикация не выполняется).
 name: Превью сайта (GitHub Pages)
 on:
   push:
@@ -23,6 +24,10 @@ jobs:
         run: |
           touch site/.nojekyll
           [ -f site/index.html ] || cp site/Main.dc.html site/index.html
+      - name: Пароль на вход
+        env:
+          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: node tools/protect.mjs site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
