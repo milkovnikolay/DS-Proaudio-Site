@@ -196,3 +196,49 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
+
+/* ---- телефон: плавающая кнопка заявки внизу экрана.
+   Появляется после первого экрана, прячется, когда на экране форма заявки или подвал,
+   и пока открыто меню. Ведёт к форме «Расскажите о вашем объекте» на этой же странице. ---- */
+(function () {
+  if (window.__dsOfBar) return; window.__dsOfBar = true;
+  var TEL = 'tel:+74951501238';
+  function label() {
+    var f = location.pathname.split('/').pop();
+    if (/^p-/.test(f)) return 'Запросить цену';
+    if (/^(products|series-)/.test(f)) return 'Подобрать систему';
+    return 'Обсудить ваш объект';
+  }
+  function start() {
+    if (!document.getElementById('contact')) return;
+    var bar = document.createElement('div');
+    bar.className = 'of-fab'; bar.setAttribute('aria-hidden', 'true');
+    bar.innerHTML = '<a class="of-fab-tel" href="' + TEL + '" aria-label="Позвонить: 8 495 150-12-38" tabindex="-1">'
+      + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>'
+      + '<a class="of-fab-go" href="#contact" tabindex="-1"><span>' + label() + '</span><i aria-hidden="true">→</i></a>';
+    document.body.appendChild(bar);
+    bar.querySelector('.of-fab-go').addEventListener('click', function (e) {
+      var c = document.getElementById('contact'); if (!c) return;
+      e.preventDefault(); c.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    var ticking = false;
+    function inView(el) { if (!el) return false; var r = el.getBoundingClientRect(); return r.top < innerHeight - 40 && r.bottom > 0; }
+    function upd() {
+      ticking = false;
+      var menu = document.querySelector('.mn-menu.open, .mn-on');
+      var on = innerWidth < 700 && scrollY > innerHeight * 0.85 && !menu
+        && !inView(document.getElementById('contact')) && !inView(document.querySelector('footer'));
+      if (on !== bar.classList.contains('on')) {
+        bar.classList.toggle('on', on);
+        bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+        bar.querySelectorAll('a').forEach(function (a) { a.tabIndex = on ? 0 : -1; });
+      }
+    }
+    function req() { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }
+    addEventListener('scroll', req, { passive: true });
+    addEventListener('resize', req);
+    document.addEventListener('click', function () { setTimeout(req, 60); });
+    upd();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
