@@ -2,7 +2,7 @@
    На экранах ≥1100 px ничего не показывается: работает обычная шапка и мега-меню. */
 (function () {
   if (window.__mnav) return; window.__mnav = 1;
-  var LOGO = './assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png', GISP = './assets/gisp-purple.png';
+  var LOGO = './assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png', GISP = './assets/gisp-mark-dark.svg';
   var CAB = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg>';
   // разделы меню — те же, что в мега-меню и подвале
   var S = [
