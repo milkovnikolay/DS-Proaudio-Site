@@ -1250,6 +1250,13 @@
     sg.values.forEach(function(v){ sg.sel[v] = v === sv; });
     sg.panel.querySelectorAll('input[type=checkbox]').forEach(function(c){ c.checked = c.value === sv; });
     sg.refresh(); apply(); } }
+  // ссылка вида portfolio.html#sec-culture (со страницы «Применение») — только объекты этого направления
+  var sch = /^#sec-([a-z]+)$/.exec(location.hash || ''), tg = GROUPS.filter(function(g){ return g.key === 'type'; })[0];
+  var sname = sch && (ALL.filter(function(o){ return o.section === sch[1]; })[0] || {}).sectionName;
+  if (sname && tg && tg.values.indexOf(sname) >= 0){
+    tg.values.forEach(function(v){ tg.sel[v] = v === sname; });
+    tg.panel.querySelectorAll('input[type=checkbox]').forEach(function(c){ c.checked = c.value === sname; });
+    tg.refresh(); apply(); }
   measure(); render(); loop(); dLoop();
   if (startItem) setTimeout(function(){ var o = centerCard(); if (o && o.item) openDetail(o); }, 350);
 })();
