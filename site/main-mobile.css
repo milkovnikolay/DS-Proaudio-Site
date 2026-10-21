@@ -1,0 +1,81 @@
+/* =====================================================================
+   DS PROAUDIO — главная на телефоне (до 699 px) и планшете (до 1099 px).
+   Отдельный файл, чтобы не трогать компьютерную вёрстку: секции главной
+   размечены инлайн-стилями, поэтому здесь местами !important.
+   Идея: как в хорошем приложении — первый экран на весь экран, крупная
+   типографика, ленты со свайпом вместо узких колонок, кнопки под большим пальцем.
+   ===================================================================== */
+
+@media (max-width:1099px){
+  /* шапки секций: заголовок и кнопка — столбиком, кнопка становится ссылкой со стрелкой */
+  #tech > div > div:first-child,
+  #portfolio > div > div:first-child,
+  #products > div > div:first-child,
+  #reviews > div > div:first-child{flex-direction:column !important;align-items:flex-start !important;gap:18px !important}
+  #tech > div,#portfolio > div,#products > div,#reviews > div{padding-left:32px !important;padding-right:32px !important}
+  #hero > div:last-child{padding-left:32px !important;padding-right:32px !important}
+  .hrv-hint{display:none}
+}
+
+@media (max-width:699px){
+  /* ---------- первый экран ---------- */
+  #hero{min-height:100svh !important;min-height:100vh;align-items:flex-end !important}
+  #hero > div:last-child{padding:0 20px calc(36px + env(safe-area-inset-bottom)) !important;gap:16px !important}
+  #hero > div:last-child > div:first-child{font-size:10.5px !important;letter-spacing:.14em !important;line-height:1.6;color:#BDBDBD !important;max-width:300px}
+  #hero h1{font-size:clamp(46px,14vw,60px) !important;line-height:1 !important;margin-left:-.06em !important;letter-spacing:-.01em}
+  #hero h1 + div{font-size:17px !important;line-height:1.45 !important;color:#E2E2E2 !important;max-width:300px}
+  #hero > div:last-child > div:last-child{display:grid !important;grid-template-columns:1fr 1fr;gap:10px !important;margin-top:14px !important;width:100%}
+  #hero > div:last-child > div:last-child a{display:flex;align-items:center;justify-content:center;text-align:center;height:52px;padding:0 10px !important;border-radius:12px !important;font-size:14px !important}
+  /* затемнение снизу плотнее — текст читается на любом кадре видео */
+  #hero > div:nth-last-child(2){background:linear-gradient(180deg,rgba(10,10,11,.25) 0%,rgba(10,10,11,.15) 35%,rgba(10,10,11,.92) 100%) !important}
+
+  /* ---------- преимущества: лента карточек со свайпом ---------- */
+  .adv{overflow:hidden}
+  .adv-grid{display:flex !important;gap:12px !important;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 20px 24px !important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .adv-grid::-webkit-scrollbar{display:none}
+  .adv-card{flex:0 0 78%;scroll-snap-align:start;scroll-margin-left:20px;border:1px solid #E6E6E6 !important;border-radius:16px !important;padding:20px 18px 22px !important;background:#FFFFFF;min-height:150px;display:flex !important;flex-direction:column;gap:10px}
+  .adv-card .adv-t{font-size:17px !important;line-height:1.3 !important}
+  .adv-card .adv-d{font-size:14px !important;line-height:1.5 !important}
+
+  /* ---------- «Кому мы полезны»: кнопки сеткой 2×2, ссылки группы — чистым списком ---------- */
+  .fld-wrap{padding:48px 20px 44px !important}
+  .fld{height:auto !important;display:flex;flex-wrap:wrap}
+  .fld-btns{position:static !important;transform:none !important;order:-1;flex:1 0 100%;display:grid !important;grid-template-columns:1fr 1fr;gap:10px !important;margin-bottom:18px}
+  .fld-btns:before{content:'Кому мы полезны — выберите, кто вы';grid-column:1/-1;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A8A;margin-bottom:6px}
+  .fld-btns .field-btn{width:100%;height:50px;padding:0 8px !important;font-size:12.5px !important;border-radius:12px !important}
+  .field-item{position:static !important;transform:none !important;width:auto !important;flex:1 0 100%;text-align:left !important;font-size:14px !important;letter-spacing:.01em !important;padding:14px 0 !important;border-bottom:1px solid rgba(255,255,255,.08)}
+  .fld:not(.fld-on) .field-item:nth-of-type(n+7){display:none}
+  .fld:not(.fld-on){-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
+  .fld.fld-on .field-item.blurred{display:none}
+  .fld.fld-on .field-item.revealed:after{content:'→';float:right;opacity:.5}
+
+  /* ---------- общие заголовки секций ---------- */
+  #tech > div,#portfolio > div,#products > div,#reviews > div{padding:56px 20px 48px !important;gap:28px !important}
+  #reviews > div{padding-bottom:64px !important}
+  #tech h2,#portfolio h2,#products h2,#reviews h2,#blog h2{font-size:30px !important;line-height:1.15 !important;letter-spacing:-.01em}
+  #tech p,#portfolio p,#products p{font-size:15.5px !important;line-height:1.55 !important}
+  #tech .section-cta,#portfolio .section-cta,#products .section-cta,#blog .section-cta,#reviews .section-cta-dark{padding:11px 16px !important;font-size:11.5px !important;border-radius:999px !important}
+  #portfolio > div > div:first-child{margin-bottom:22px !important}
+
+  /* ---------- модельный ряд: лента карточек со свайпом ---------- */
+  #products .pr-cats{display:flex !important;gap:12px !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 8px;scrollbar-width:none}
+  #products .pr-cats::-webkit-scrollbar{display:none}
+  #products .pr-cat{flex:0 0 72%;scroll-snap-align:start;scroll-margin-left:20px;min-height:340px !important;padding:22px !important;border-radius:20px !important}
+  #products .pr-cat-t{font-size:20px !important;max-width:90% !important}
+  #products .pr-cat-d{font-size:14px !important;max-width:92% !important}
+  #products .pr-cat-m{display:none !important}
+  #products .pr-cat img{width:86% !important;height:52% !important;right:-4% !important;bottom:-2% !important}
+  #products .pr-cat-arrow{width:48px;height:48px}
+  #products .pr-home-ser{flex-wrap:wrap;gap:8px !important}
+
+  /* ---------- отзывы ---------- */
+  .hrv-foot{flex-direction:column;align-items:flex-start;gap:6px}
+  .hrv-hint{display:none}
+  .hrv-foot{margin-top:-12px}
+
+  /* ---------- блог ---------- */
+  #blog .home-blog-in{padding:56px 20px 64px !important;gap:28px !important}
+  #blog .bl-home{display:flex !important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}
+  #blog .bl-home::-webkit-scrollbar{display:none}
+  #blog .bl-home > *{flex:0 0 80%;scroll-snap-align:start;scroll-margin-left:20px}
+}
