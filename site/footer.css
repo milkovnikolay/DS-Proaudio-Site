@@ -62,7 +62,7 @@
 .dsf-cb .dsf-err{font-size:12px;color:#FF8A80;min-height:0;}
 
 /* ---- колонки ссылок (прежняя структура) ---- */
-.dsf-cols{display:grid;grid-template-columns:.65fr 1.25fr 1.35fr 1.2fr 1.2fr 1.25fr .9fr;gap:32px;padding:48px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.dsf-cols{display:grid;grid-template-columns:1.25fr 1.35fr 1.2fr 1.2fr 1.25fr 1fr;gap:32px;padding:48px 0;border-bottom:1px solid rgba(255,255,255,.1);}
 .dsf-col{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0;text-align:left;}
 .dsf .ft-heading{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;margin-bottom:4px;}
 .dsf a.ft-heading{color:#FAFAFA;}
@@ -81,6 +81,12 @@
 .dsf-col.dsf-reach{gap:14px;}
 .dsf-col.dsf-reach .dsf-social{flex-wrap:wrap;margin:0;}
 
+/* быстрые кнопки GLL, CAD, PDF: отдельным блоком под связью, через линию — не смешиваются с соцсетями */
+.dsf-files{display:flex;flex-direction:column;gap:10px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);}
+.dsf-files-b{display:flex;gap:6px;}
+.dsf .dsf-files-b a{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:30px;padding:0 10px;border-radius:6px;border:1px solid rgba(255,255,255,.22);font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.06em;color:#EDEDED;transition:background .2s,color .2s,border-color .2s;}
+.dsf .dsf-files-b a:hover{background:#FAFAFA;border-color:#FAFAFA;color:#0F0F10;}
+
 /* ---- нижняя строка и юридический текст ---- */
 .dsf-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding:22px 0;font-size:13px;color:#8F8F8F;}
 .dsf-doc{display:flex;flex-wrap:wrap;gap:8px 28px;}
@@ -92,7 +98,7 @@
 @media (max-width:1180px){
   .dsf-top{grid-template-columns:1fr 1fr;}
   .dsf-bot{grid-column:1 / -1;}
-  .dsf-cols{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .dsf-cols{grid-template-columns:repeat(3,minmax(0,1fr));}
 }
 @media (max-width:760px){
   .dsf-wrap{padding:44px 16px 0;}
@@ -120,7 +126,10 @@
   .dsf-js .dsf-col.open > :not(.ft-heading){display:block;padding:9px 0;font-size:15.5px;}
   .dsf-js .dsf-col.open > .tech-dd > summary{padding:0;}
   .dsf-js .dsf-col .dsf-go{color:#FAFAFA !important;font-weight:600;}
-  .dsf-js .dsf-col.dsf-reach{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:0;padding:20px 0 4px;}
+  .dsf-js .dsf-col.dsf-reach{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 16px;border-bottom:0;padding:22px 0 4px;}
+  .dsf-js .dsf-reach .dsf-files{flex:1 0 100%;margin-top:8px;padding-top:18px;}
+  .dsf-js .dsf-reach .dsf-files-b{justify-content:center;gap:8px;}
+  .dsf-js .dsf-reach .dsf-files-b a{height:36px;min-width:54px;font-size:13px;}
   .dsf-js .dsf-col.dsf-reach > a.ft-heading{padding:0;text-align:left !important;}
   .dsf-js .dsf-col.dsf-reach .dsf-social{flex-wrap:nowrap;gap:8px;}
   .dsf-bottom{padding:20px 0 12px;}
