@@ -285,8 +285,9 @@
 
     // виден только при открытом выпадающем меню
     function menuIsOpen() {
-      var t = document.querySelector('.nav-trigger');
-      return !!t && t.getAttribute('aria-expanded') === 'true';
+      // меню открывает кнопка «Меню» (.hdr-menu-btn / [data-menu-toggle]); .nav-trigger — прежняя разметка шапки
+      var t = document.querySelector('.hdr-menu-btn[aria-expanded="true"], [data-menu-toggle][aria-expanded="true"], .nav-trigger[aria-expanded="true"]');
+      return !!t;
     }
     setInterval(function () {
       var on = menuIsOpen();
