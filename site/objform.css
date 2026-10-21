@@ -85,3 +85,17 @@
   #contact .of-need,#contact .of-row{grid-template-columns:1fr}
   #contact .of-chip{font-size:13.5px;padding:10px 14px}
 }
+
+/* плавающая кнопка заявки на телефоне (ставит objform.js) */
+.of-fab{display:none}
+@media (max-width:699px){
+  .of-fab{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;gap:8px;padding:6px;border-radius:18px;background:rgba(18,18,20,.88);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);box-shadow:0 14px 40px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.08);transform:translateY(calc(100% + 24px));opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s ease}
+  .of-fab.on{transform:none;opacity:1;pointer-events:auto}
+  .of-fab a{display:flex;align-items:center;justify-content:center;height:50px;border-radius:13px;text-decoration:none;-webkit-tap-highlight-color:transparent}
+  .of-fab-tel{flex:0 0 50px;color:#FAFAFA;border:1px solid rgba(255,255,255,.18)}
+  .of-fab-tel svg{width:20px;height:20px}
+  .of-fab-go{flex:1;gap:10px;background:#FAFAFA;color:#0A0A0B;font-family:'Montserrat','IBM Plex Sans',sans-serif;font-size:15px;font-weight:600;letter-spacing:.01em}
+  .of-fab-go i{font-style:normal;transition:transform .25s ease}
+  .of-fab-go:active i{transform:translateX(4px)}
+}
+@media (prefers-reduced-motion:reduce){.of-fab{transition:opacity .2s ease}}
