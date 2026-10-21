@@ -370,6 +370,11 @@
 .pn-wrap.m-full .pn-row .pn,.pn-wrap.m-short .pn-row .pn{flex:1 1 auto;}
 .pn-wrap.m-short .pn-row .pn-f{display:none;} .pn-wrap.m-short .pn-row .pn-s{display:inline;}
 .pn-wrap.m-num .pn-row .pn{flex:1 1 0;min-width:40px;padding:9px 6px;}
+/* 20.10.2026: на обычных экранах (ноутбук, 1280–1900 px) — номер и короткое название цеха в две строки, чтобы подписи были видны всегда */
+.pn-wrap.m-stack .pn-row .pn{flex:1 1 0;min-width:0;flex-direction:column;gap:3px;padding:7px 3px 8px;border-radius:14px;line-height:1.15;}
+.pn-wrap.m-stack .pn-row .pn-f{display:none;}
+.pn-wrap.m-stack .pn-row .pn-s{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:12.5px;}
+.pn-wrap.m-stack .pn-row .pn b{font-size:10.5px;}
 .pn-wrap.m-num .pn-row .pn-f{display:none;}
 .pn-wrap.m-num .pn-row .pn.on{flex:0 0 auto;padding:9px 14px;}
 .pn-wrap.m-num .pn-row .pn.on .pn-s{display:inline;}
@@ -539,9 +544,9 @@
 <div class="mm-overlay" id="megamenu" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;flex-direction:column;">
   <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
-      <a href="#" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
-      <a href="#" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
-      <a href="#" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+      <a href="./docs.html?g=gll" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+      <a href="./docs.html?g=dwg" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+      <a href="./docs.html?g=man" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
       <a href="./products-line-arrays.html" class="mm-item">Линейные массивы</a>
@@ -597,10 +602,10 @@
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
       <a href="./showroom.html" class="mm-item">Посетить шоурум</a>
-      <a href="#" class="mm-item">Запросить выездную демонстрацию</a>
-      <a href="#" class="mm-item">Запросить консультацию по объекту</a>
-      <a href="#" class="mm-item">Узнать цены</a>
-      <a href="#" class="mm-item">Где купить</a>
+      <a href="./demo.html" class="mm-item">Запросить выездную демонстрацию</a>
+      <a href="./consultation.html" class="mm-item">Запросить консультацию по объекту</a>
+      <a href="./prices.html" class="mm-item">Узнать цены</a>
+      <a href="./where-to-buy.html" class="mm-item">Где купить</a>
       <a href="./delivery.html" class="mm-item">Срок поставки</a>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
@@ -862,7 +867,7 @@
       links=[].slice.call(row.querySelectorAll('.pn')),mlinks=[].slice.call(menu.querySelectorAll('.pn')),
       secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}),
       cn=wrapEl.querySelector('.pn-cn'),ct=wrapEl.querySelector('.pn-ct'),arr=wrapEl.querySelectorAll('.pn-ar'),bar=wrapEl.querySelector('.pn-prog i'),
-      MODES=['m-full','m-short','m-num','m-cmp'],mode='',cur=-2;
+      MODES=['m-full','m-short','m-stack','m-num','m-cmp'],mode='',cur=-2;
   function setMode(m){MODES.forEach(function(x){wrapEl.classList.toggle(x,x===m);});}
   function fits(m){setMode(m);return row.scrollWidth<=row.clientWidth+1;}
   function layout(){
@@ -870,9 +875,8 @@
     links.forEach(function(a){a.classList.remove('on');});
     var m='m-cmp';
     if(fits('m-full'))m='m-full';else if(fits('m-short'))m='m-short';
-    else{ // номера + название у активного: проверяем с самым длинным коротким названием
-      var lng=links.reduce(function(p,a){return a.querySelector('.pn-s').textContent.length>p.querySelector('.pn-s').textContent.length?a:p;});
-      lng.classList.add('on'); if(fits('m-num'))m='m-num'; lng.classList.remove('on');}
+    else if(fits('m-stack')&&links.every(function(a){var s=a.querySelector('.pn-s');return s.scrollWidth<=s.clientWidth+1;}))m='m-stack';
+    else{ /* 20.10.2026: строку из одних номеров не показываем — подписи не видны; узкий экран сразу получает компактную строку с названием цеха и списком */}
     links.forEach(function(a,i){a.classList.toggle('on',keep[i]);});
     setMode(m); mode=m; if(m!=='m-cmp')wrapEl.classList.remove('open'); fitTitle();
   }
@@ -973,7 +977,7 @@
     <nav class="dsf-cols" aria-label="Разделы сайта">
       <div class="dsf-col">
         <a href="./gov.html" class="ft-heading">Госучреждениям</a>
-          <a href="#" class="ft-item">GLL</a><a href="#" class="ft-item">CAD</a><a href="#" class="ft-item">PDF</a>
+          <a href="./docs.html?g=gll" class="ft-item">GLL</a><a href="./docs.html?g=dwg" class="ft-item">CAD</a><a href="./docs.html?g=man" class="ft-item">PDF</a>
       </div>
       <div class="dsf-col">
         <a href="./products.html" class="ft-heading">Продукция</a>
@@ -1034,10 +1038,10 @@
       <div class="dsf-col">
         <a href="./clients.html" class="ft-heading">Клиентам</a>
           <a href="./showroom.html" class="ft-item">Посетить шоурум</a>
-          <a href="#" class="ft-item">Запросить выездную демонстрацию</a>
-          <a href="#" class="ft-item">Запросить консультацию по объекту</a>
-          <a href="#" class="ft-item">Узнать цены</a>
-          <a href="#" class="ft-item">Где купить</a>
+          <a href="./demo.html" class="ft-item">Запросить выездную демонстрацию</a>
+          <a href="./consultation.html" class="ft-item">Запросить консультацию по объекту</a>
+          <a href="./prices.html" class="ft-item">Узнать цены</a>
+          <a href="./where-to-buy.html" class="ft-item">Где купить</a>
           <a href="./delivery.html" class="ft-item">Срок поставки</a>
       </div>
       <div class="dsf-col dsf-reach">

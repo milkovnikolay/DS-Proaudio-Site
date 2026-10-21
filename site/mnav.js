@@ -6,7 +6,7 @@
   var CAB = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg>';
   // разделы меню — те же, что в мега-меню и подвале
   var S = [
-    ['Госучреждениям', './gov.html', 'Весь раздел', [['Реестр ГИСП', './gov.html', 1], ['GLL', '#'], ['CAD', '#'], ['PDF', '#']]],
+    ['Госучреждениям', './gov.html', 'Весь раздел', [['Реестр ГИСП', './gov.html', 1], ['GLL', './docs.html?g=gll'], ['CAD', './docs.html?g=dwg'], ['PDF', './docs.html?g=man']]],
     ['Продукция', './products.html', 'Весь каталог', [['Линейные массивы', './products-line-arrays.html'], ['Массивы с фиксированными углами', './products-constant-curvature.html'], ['Звуковые колонны', './products-columns.html'],
       ['Точечные источники звука', './products-point-sources.html'], ['Сценические мониторы', './products-monitors.html'], ['Компактные комплекты', './products-compact-sets.html'], ['Системы для аудиторий', './products-auditorium.html'],
       ['Реестровое оборудование', './products-registry.html'], ['Всепогодные системы', './products-all-weather.html'], ['Усилители', './products-amplifiers.html'], ['Аксессуары', './products-accessories.html'],
@@ -20,7 +20,7 @@
         ['Коаксиальные динамики', './tech-coaxial-cx.html', 0, 'серии CX, MCX'], ['Звуковые катушки на ребро в замке', './tech-voice-coil.html']]],
       ['Блог', '#'], ['Контакты', './contacts.html']]],
     ['Техподдержка', './support.html', 'Весь раздел', [['Обучение, семинары', '#'], ['Центр документации', './docs.html', 0, 'скачать файлы EASE, CAD'], ['ПО для акустических расчётов', '#'], ['Гарантия и сервис', './warranty.html']]],
-    ['Клиентам', './clients.html', 'Весь раздел', [['Посетить шоурум', './showroom.html'], ['Запросить выездную демонстрацию', '#'], ['Запросить консультацию по объекту', '#'], ['Узнать цены', '#'], ['Где купить', '#']]]
+    ['Клиентам', './clients.html', 'Весь раздел', [['Посетить шоурум', './showroom.html'], ['Запросить выездную демонстрацию', './demo.html'], ['Запросить консультацию по объекту', './consultation.html'], ['Узнать цены', './prices.html'], ['Где купить', './where-to-buy.html'], ['Срок поставки', './delivery.html']]]
   ];
   var here = (location.pathname.split('/').pop() || 'Main.dc.html').toLowerCase();
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
