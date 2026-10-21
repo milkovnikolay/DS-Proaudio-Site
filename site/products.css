@@ -384,3 +384,6 @@ span.pr-tech-img{cursor:default}
 .pr-cat-s .pr-cat-gisp{flex:0 0 100%;display:block;margin-bottom:6px}
 .pr-cat-s .pr-cat-gisp img{position:static;display:block;width:40px;height:40px;object-fit:contain;mix-blend-mode:normal;transform:none !important}
 @media (max-width:760px){.pr-cat-s .pr-cat-gisp img{width:32px;height:32px}}
+/* метки в шапке страниц технологий: одинаковая высота и текст по центру (21.10.2026) */
+.tp-hero-tags{align-items:center}
+.tp-hero-tags .pr-tag,.tp-hero-tags .pr-chip{display:inline-flex;align-items:center;height:28px;padding:0 13px;box-sizing:border-box;font-family:'PT Mono',monospace;font-size:11px;line-height:1;letter-spacing:.08em;text-transform:uppercase}
