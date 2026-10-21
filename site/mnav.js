@@ -95,61 +95,105 @@
 })();
 
 /* ---------- шапка на компьютере (≥1100 px, без отдельной кнопки меню) ----------
-   Все пункты шапки — сразу ссылки на свои разделы.
-   Мега-меню также открывается щелчком по свободному месту шапки.
-   Над свободным местом рядом с курсором появляется подсказка «Меню» («Закрыть меню», если оно открыто).
+   Все пункты шапки — сразу ссылки на свои разделы. Мега-меню открывается щелчком по свободному месту шапки.
+   Подсказка (21.10.2026): над свободным местом курсор — «рука», по нижнему краю шапки от центра растягивается тонкая линия
+   (светлая над тёмной страницей, тёмная над светлой), а на фоне шапки, под пунктами, проявляется крупная неконтрастная
+   надпись «МЕНЮ ▾» («ЗАКРЫТЬ ▴», если меню открыто) — с той стороны от центра, с которой курсор заехал на шапку.
+   Пока курсор движется по свободному полю, ничего не меняется. Стили — в mnav.css (.hdr-bgw, .hdr-line).
    Для клавиатуры в шапке есть кнопка .hdr-menu-btn — видна только при фокусе (Tab).
-   Обработчики — на document: на главной шапку рисует шаблонизатор и может перерисовать. */
+   Обработчики — на document: на главной шапку рисует шаблонизатор и может перерисовать — тогда элементы подсказки добавляются заново. */
 (function () {
-  var tip, label, cur = null;
+  var R = document.documentElement, cur = null, side = 'l', lastLc = '', tick = 0;
+  function headerOf(t) { var h = t && t.closest ? t.closest('header') : null; return h && !h.classList.contains('mn-hd') && h.querySelector('.hdr-menu-btn') ? h : null; }
+  function isFree(t) { return !t.closest('a,button,input,select,textarea,label'); }
+  function desktop() { return window.innerWidth >= 1100; }
+  function zk() { return parseFloat(R.style.zoom) || parseFloat(getComputedStyle(R).zoom) || 1; }
+  function btnOf(h) { return h.querySelector('.hdr-menu-btn'); }
+  function opened(h) { return btnOf(h).getAttribute('aria-expanded') === 'true'; }
+  // элементы подсказки: фон-надпись (первым ребёнком, под пунктами) и линия
+  function ensure(h) {
+    if (h.querySelector(':scope > .hdr-bgw')) return;
+    var bg = document.createElement('div'); bg.className = 'hdr-bgw'; bg.setAttribute('aria-hidden', 'true');
+    bg.innerHTML = '<div class="hdr-word"><span>Меню</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 8l8 8 8-8"/></svg></div>';
+    var line = document.createElement('div'); line.className = 'hdr-line'; line.setAttribute('aria-hidden', 'true');
+    h.insertBefore(bg, h.firstChild); h.appendChild(line);
+    var row = h.querySelector('.ds-row'); if (row) { row.style.position = 'relative'; row.style.zIndex = '1'; }
+    sync(h);
+  }
+  // стрелка ▾ попадает в свободный промежуток: слева — между «Применением» и логотипом, справа — между «Техподдержкой» и «Клиентам»
+  function place(h) {
+    var w = h.querySelector('.hdr-word'); if (!w) return;
+    var z = zk(), hr = h.getBoundingClientRect();
+    function rr(el) { var r = el.getBoundingClientRect(); return { l: (r.left - hr.left) / z, r: (r.right - hr.left) / z }; }
+    var a = [].slice.call(h.querySelectorAll('.nav-trigger')), logo = h.querySelector('a[aria-label^="DS PROAUDIO"]');
+    var ar = w.querySelector('svg'), tail = w.offsetWidth - ar.getBoundingClientRect().width / z / 2, x;
+    if (side === 'l' && a[1] && logo) x = (rr(a[1]).r + rr(logo).l) / 2 - tail;
+    else if (side === 'r' && a[2] && a[3]) x = (rr(a[2]).r + rr(a[3]).l) / 2 - tail;
+    else x = hr.width / z / 2 - w.offsetWidth / 2;
+    w.style.left = x.toFixed(1) + 'px';
+  }
+  function sync(h) {
+    var o = opened(h), w = h.querySelector('.hdr-word'); if (!w) return;
+    h.classList.toggle('hdr-open', o); w.firstChild.textContent = o ? 'Закрыть' : 'Меню'; place(h);
+  }
+  // цвет линии — по фону страницы сразу под шапкой: светлая на тёмном, тёмная на светлом
+  function bgAt(x, y) {
+    var el = document.elementFromPoint(x, y);
+    while (el && el !== R) {
+      if (el.closest && el.closest('header')) return null;
+      var c = getComputedStyle(el).backgroundColor, m = c.match(/[\d.]+/g);
+      if (m && (m.length < 4 || +m[3] > .5)) return [+m[0], +m[1], +m[2]];
+      if (/^(IMG|VIDEO|CANVAS)$/.test(el.tagName)) return [30, 30, 30];
+      el = el.parentElement;
+    }
+    var b = getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g); return b ? [+b[0], +b[1], +b[2]] : [255, 255, 255];
+  }
+  function lineColor() {
+    tick = 0; var h = cur || headerOf(document.querySelector('header .hdr-menu-btn')); if (!h || !desktop()) return;
+    var hr = h.getBoundingClientRect(), y = hr.bottom + 3, L = 0, n = 0;
+    [.25, .5, .75].forEach(function (k) { var c = bgAt(hr.left + hr.width * k, y); if (c) { L += (.2126 * c[0] + .7152 * c[1] + .0722 * c[2]) / 255; n++; } });
+    if (!n) return; L /= n;
+    var lc = L > .55 ? 'rgba(20,20,22,.55)' : 'rgba(242,242,242,.6)';
+    if (lc !== lastLc) { lastLc = lc; R.style.setProperty('--hdr-lc', lc); }
+  }
+  function off() { if (cur) cur.classList.remove('hdr-free'); cur = null; }
+  document.addEventListener('mouseover', function (e) {
+    var h = headerOf(e.target); if (!h || !desktop()) return;
+    var from = headerOf(e.relatedTarget);
+    if (from !== h) {                       // курсор только что заехал на шапку — выбираем сторону
+      ensure(h); var hr = h.getBoundingClientRect(); side = e.clientX < hr.left + hr.width / 2 ? 'l' : 'r';
+      h.classList.remove('hdr-side-l', 'hdr-side-r'); h.classList.add('hdr-side-' + side); place(h); lineColor();
+    }
+  }, { passive: true });
+  document.addEventListener('mousemove', function (e) {
+    var h = headerOf(e.target);
+    if (!h || !desktop() || !isFree(e.target)) { off(); if (h) h.classList.remove('hdr-free'); return; }
+    ensure(h); cur = h; h.classList.add('hdr-free');
+  }, { passive: true });
+  document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) off(); });
+  window.addEventListener('blur', off);
+  window.addEventListener('scroll', function () { if (!tick) tick = requestAnimationFrame(lineColor); }, { passive: true });
+  window.addEventListener('resize', function () { var h = document.querySelector('header .hdr-bgw'); if (h) place(h.parentNode); lineColor(); });
+  document.addEventListener('click', function (e) {
+    var h = headerOf(e.target);
+    if (!h || !desktop() || !isFree(e.target)) return;
+    btnOf(h).click();
+  });
   function init() {
     var st = document.createElement('style');
     st.textContent =
       '.hdr-menu-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;opacity:0;pointer-events:none;background:#FAFAFA;color:#0A0A0B;border:0;border-radius:99px;' +
       'padding:8px 16px;font:500 11.5px "PT Mono",monospace;letter-spacing:.1em;text-transform:uppercase}' +
       '.hdr-menu-btn:focus-visible{opacity:1;pointer-events:auto;outline:2px solid #7FB2FF;outline-offset:2px}' +
-      'header.hdr-free{cursor:pointer}' +
-      '.hdr-tip{position:fixed;z-index:200;left:0;top:0;pointer-events:none;padding:0;background:none;border:0;color:#F2F2F2;' +
-      'text-shadow:0 0 8px rgba(0,0,0,.9),0 0 2px rgba(0,0,0,.9);' +
-      // шрифт — как у пунктов шапки (.nav-trigger: «Продукция», «Применение»…)
-      'font:400 12.5px/1.2 "IBM Plex Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;' +
-      'opacity:0;transition:none;will-change:transform}' +
-      '.hdr-tip.on{opacity:1}' +
-      '@media (max-width:1099px),(hover:none){.hdr-tip{display:none}}';
+      'header.hdr-free{cursor:pointer}';
     document.head.appendChild(st);
-    tip = document.createElement('div'); tip.className = 'hdr-tip'; tip.setAttribute('aria-hidden', 'true');
-    tip.innerHTML = '<span>Меню</span>';
-    document.body.appendChild(tip);
-    label = tip.querySelector('span');
-
-    function headerOf(t) { var h = t && t.closest ? t.closest('header') : null; return h && !h.classList.contains('mn-hd') && h.querySelector('.hdr-menu-btn') ? h : null; }
-    function isFree(t) { return !t.closest('a,button,input,select,textarea,label'); }
-    function opened(h) { return h.querySelector('.hdr-menu-btn').getAttribute('aria-expanded') === 'true'; }
-    function desktop() { return window.innerWidth >= 1100; }
-    function hide() { tip.classList.remove('on'); if (cur) cur.classList.remove('hdr-free'); cur = null; }
-
-    document.addEventListener('mousemove', function (e) {
-      var h = headerOf(e.target);
-      if (!h || !desktop() || !isFree(e.target)) { hide(); if (h) h.classList.remove('hdr-free'); return; }
-      cur = h; h.classList.add('hdr-free');
-      label.textContent = opened(h) ? 'Закрыть меню' : 'Меню';
-      // сайт может быть увеличен через zoom у <html>: координаты подсказки делим на масштаб
-      var z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
-      // плашка центром под курсором
-      tip.style.transform = 'translate(' + (e.clientX / z) + 'px,' + (e.clientY / z) + 'px) translate(-50%,-50%)';
-      tip.classList.add('on');
-    }, { passive: true });
-    // курсор ушёл за пределы окна (например, вверх через край шапки) — прячем подсказку
-    document.addEventListener('mouseout', function (e) { if (!e.relatedTarget) hide(); });
-    document.documentElement.addEventListener('mouseleave', hide);
-    window.addEventListener('blur', hide);
-    window.addEventListener('scroll', hide, { passive: true });
-    document.addEventListener('click', function (e) {
-      var h = headerOf(e.target);
-      if (!h || !desktop() || !isFree(e.target)) return;
-      h.querySelector('.hdr-menu-btn').click();
-      setTimeout(function () { var hh = document.querySelector('header .hdr-menu-btn'); if (hh) label.textContent = hh.getAttribute('aria-expanded') === 'true' ? 'Закрыть меню' : 'Меню'; }, 40);
-    });
+    var b = document.querySelector('header .hdr-menu-btn'); if (b) ensure(b.closest('header'));
+    // меню открыли/закрыли (любым способом) — «Меню ▾» ⇄ «Закрыть ▴»; на главной кнопку может пересоздать шаблонизатор, поэтому следим за всем документом
+    new MutationObserver(function (ms) {
+      for (var i = 0; i < ms.length; i++) { var t = ms[i].target; if (t.classList && t.classList.contains('hdr-menu-btn')) { var h = t.closest('header'); if (h && h.querySelector('.hdr-word')) sync(h); } }
+    }).observe(document.body, { attributes: true, subtree: true, attributeFilter: ['aria-expanded'] });
+    setTimeout(lineColor, 300);
+    if (document.fonts) document.fonts.ready.then(function () { var h = document.querySelector('header .hdr-bgw'); if (h) place(h.parentNode); });
   }
   if (document.body) init(); else document.addEventListener('DOMContentLoaded', init);
 })();

@@ -110,13 +110,22 @@
 html.lw-mid .cab-pill{height:30px;padding:0 9px 0 8px;gap:5px;font-size:10.5px;letter-spacing:.05em}
 html.lw-mid .cab-pill svg{width:13px;height:13px}
 
-/* --- шапка: мягкая подсветка при наведении мыши (только устройства с мышью) ---
-   два варианта селектора: в HTML атрибут пишется «position:fixed», а на главной шапку рисует шаблонизатор — «position: fixed» с пробелом */
-@media (hover:hover){
-  header:is([style*="position:fixed"],[style*="position: fixed"]){transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
-  header:is([style*="position:fixed"],[style*="position: fixed"]):hover{background:rgba(32,32,36,.92) !important;border-bottom-color:rgba(255,255,255,.2) !important;box-shadow:0 10px 28px -14px rgba(0,0,0,.7)}
-  /* над пунктами шапки (ссылки, «Партнёрам», логотип) подсветка гаснет — светится только свободное поле, которое открывает меню */
-  header:is([style*="position:fixed"],[style*="position: fixed"]):hover:has(a:hover){background:rgba(10,10,11,.82) !important;border-bottom-color:rgba(255,255,255,.10) !important;box-shadow:none}
+/* --- шапка: подсказка «щелчок по свободному полю — меню» (21.10.2026, только устройства с мышью, ≥1100 px) ---
+   курсор-«рука», тонкая линия по нижнему краю (цвет — по фону страницы под шапкой, --hdr-lc задаёт mnav.js)
+   и крупная неконтрастная надпись «МЕНЮ ▾» на фоне шапки, под пунктами; сторону и положение задаёт mnav.js */
+.hdr-bgw,.hdr-line{display:none}
+@media (hover:hover) and (min-width:1100px){
+  .hdr-bgw{display:block;position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .hdr-word{position:absolute;top:50%;left:0;display:flex;align-items:center;gap:.16em;
+    font:300 76px/1 "IBM Plex Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:rgba(242,242,242,.10);white-space:nowrap;
+    opacity:0;transform:translateY(-46%);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .hdr-word svg{width:.5em;height:.5em;flex:0 0 auto;transition:transform .35s ease}
+  .hdr-line{display:block;position:absolute;left:0;right:0;bottom:-1px;height:1px;z-index:2;pointer-events:none;
+    background:var(--hdr-lc,rgba(242,242,242,.6));transform:scaleX(0);opacity:0;
+    transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s,background-color .3s}
+  header.hdr-free .hdr-word{opacity:1;transform:translateY(-50%)}
+  header.hdr-free .hdr-line{transform:scaleX(1);opacity:1}
+  header.hdr-open .hdr-word svg{transform:rotate(180deg)}
 }
 
 /* 19.10.2026 — телефон и планшет: блок «Расскажите о вашей площадке / Сделаем акустический расчёт»
