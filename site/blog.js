@@ -25,12 +25,17 @@
   }
 
   /* ---------- главная ---------- */
-  var home = document.getElementById('blogHome');
-  if (home){
+  function fillHome(){
+    var home = document.getElementById('blogHome');
+    if (!home || home.children.length) return;
     var last = POSTS.slice(0, 4);
     if (last.length < 2){ var sec = home.closest('section'); if (sec) sec.hidden = true; }   /* меньше двух материалов — блок не показываем */
     else home.innerHTML = last.map(function(p){ return card(p); }).join('');
   }
+  fillHome();
+  /* главная собирается шаблоном и может перерисовать раздел уже после этого скрипта — тогда заполняем заново */
+  if (document.querySelector('sc-for, [data-dc-tpl]') && window.MutationObserver)
+    new MutationObserver(fillHome).observe(document.body, { childList: true, subtree: true });
 
   /* ---------- страница блога ---------- */
   var grid = document.getElementById('blogGrid'), tabs = document.getElementById('blogTabs');

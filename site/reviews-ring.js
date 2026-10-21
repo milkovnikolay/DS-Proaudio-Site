@@ -36,6 +36,16 @@
     + '.hrv-quote{flex:1;margin:0;font-size:1.06em;font-weight:300;line-height:1.45;color:#EDEDED;display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden;}'
     + '.hrv-pos{font-size:.72em;font-weight:300;line-height:1.4;color:rgba(250,250,250,.55);}'
     + '.hrv-pos::before{content:"";display:block;width:2.4em;border-top:1px solid rgba(255,255,255,.3);margin-bottom:.7em;}'
+    + '.hrv-list{height:auto !important;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none;}'
+    + '.hrv-list::-webkit-scrollbar{display:none;}'
+    + '.hrv-m{flex:0 0 84%;scroll-snap-align:start;scroll-margin-left:20px;display:flex;flex-direction:column;background:#131315;border:1px solid rgba(255,255,255,.09);border-radius:18px;overflow:hidden;color:#FAFAFA;font-family:"IBM Plex Sans",sans-serif;}'
+    + '.hrv-m-ph{position:relative;flex:0 0 210px;height:210px;background-size:cover;background-position:center 28%;background-color:#1B1B1E;}'
+    + '.hrv-m-vid{position:absolute;left:14px;top:14px;font-family:"PT Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:99px;background:rgba(10,10,11,.6);border:1px solid rgba(250,250,250,.5);}'
+    + '.hrv-m-tx{display:flex;flex-direction:column;gap:10px;padding:18px 18px 20px;flex:1;}'
+    + '.hrv-m-q{margin:0;font-size:16px;font-weight:300;line-height:1.5;color:#EDEDED;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden;flex:1;}'
+    + '.hrv-m-n{margin-top:6px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}'
+    + '.hrv-m-p{font-size:12.5px;line-height:1.4;color:rgba(250,250,250,.55);}'
+    + '@media (min-width:700px){.hrv-list{margin:0 -32px;padding:0 32px 4px;}.hrv-m{flex-basis:calc(50% - 6px);scroll-margin-left:32px;}}'
     + '.hrv-below{flex:0 0 auto;margin-top:.75em;font-family:"PT Mono",monospace;font-size:.66em;letter-spacing:.06em;text-transform:uppercase;color:rgba(250,250,250,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}';
 
   function pad(n){ return (n < 10 ? '0' : '') + n; }
@@ -132,9 +142,25 @@
     if (idx !== curIdx){ curIdx = idx; var cnt = document.getElementById('hrvCount'); if (cnt) cnt.innerHTML = '<b>' + pad(idx + 1) + '</b> / ' + M; }
   }
 
+  // телефон и планшет: вместо ротонды — лента карточек со свайпом (в ротонде текст на узком экране получается мельче 9 px)
+  var phone = function(){ return window.innerWidth < 1100; };
+  function buildList(el){
+    stage = el; ring = null; objs = []; el.className = 'hrv-list'; el.removeAttribute('aria-hidden'); el.setAttribute('data-m', '1');
+    el.innerHTML = REV.map(function(R, r){
+      return '<article class="hrv-m"><div class="hrv-m-ph" style="background-image:url(\'' + R.img + '\')">' + (R.video ? '<span class="hrv-m-vid">▶ Видео</span>' : '') + '</div>'
+        + '<div class="hrv-m-tx"><p class="hrv-m-q">«' + esc(R.q) + '»</p><div class="hrv-m-n">' + esc(R.name) + '</div><div class="hrv-m-p">' + esc(R.short) + '</div></div></article>';
+    }).join('');
+    el.onscroll = function(){
+      var w = el.firstChild ? el.firstChild.offsetWidth + 12 : 1, i = Math.min(M - 1, Math.round(el.scrollLeft / w));
+      var cnt = document.getElementById('hrvCount'); if (cnt) cnt.innerHTML = '<b>' + pad(i + 1) + '</b> / ' + M;
+    };
+  }
+
   function frame(ts){
     // главная собирается шаблоном — если контейнер появился заново, собираем ротонду заново
     var el = document.getElementById('hrvStage');
+    if (el && phone()){ if (el.getAttribute('data-m') !== '1') buildList(el); requestAnimationFrame(frame); return; }
+    if (el && el.getAttribute('data-m') === '1'){ el.removeAttribute('data-m'); el.className = ''; el.onscroll = null; ring = null; }
     if (el && (el !== stage || !ring || !ring.isConnected)) build(el);
     if (stage && ring && ring.isConnected){
       var dt = lastTs ? Math.min(64, ts - lastTs) : 16; lastTs = ts;
