@@ -1,0 +1,45 @@
+/* =====================================================================
+   DS PROAUDIO — «кольцо» Портфолио, Лиц компании и Отзывов на телефоне (до 699 px).
+   Компьютерная вёрстка не меняется. Идея: кольцо остаётся, но карточка в центре
+   становится почти во всю ширину экрана и складывается столбиком —
+   сверху название, под ним фото, ниже факты или цитата. Текст читается без увеличения.
+   Размеры карточки на телефоне задаются в measure() самих страниц (ветка vw < 700).
+   ===================================================================== */
+
+@media (max-width:699px){
+  /* ---------- карточка: столбиком ---------- */
+  .pf-card .pf-above,.rv-card .rv-above{gap:.3em;padding-bottom:.6em}
+  .pf-card .pf-idx,.rv-card .rv-idx{font-size:.68em}
+  .pf-card .pf-name{font-size:1.02em;line-height:1.22;letter-spacing:.03em}
+  .rv-card .rv-name{font-size:1.2em}
+  .pf-card .pf-body,.rv-card .rv-body{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}
+  .pf-card .pf-below,.rv-card .rv-below{display:none}
+
+  /* портфолио и лица: факты в две колонки под фото */
+  .pf-card .pf-txt{gap:.55em;padding:.8em .9em .85em}
+  .pf-card .pf-tags{min-height:0}
+  .pf-card .pf-tags:empty{display:none}
+  .pf-card .pf-tag{font-size:.66em}
+  .pf-card .pf-facts{grid-template-columns:1fr 1fr;column-gap:.9em;row-gap:0;font-size:.8em}
+  .pf-card .pf-facts dt{font-size:.82em}
+  /* пары «подпись — значение» раскладываются по двум колонкам */
+  .pf-card .pf-facts dt:nth-of-type(1){grid-area:1/1}.pf-card .pf-facts dd:nth-of-type(1){grid-area:2/1}
+  .pf-card .pf-facts dt:nth-of-type(2){grid-area:1/2}.pf-card .pf-facts dd:nth-of-type(2){grid-area:2/2}
+  .pf-card .pf-facts dt:nth-of-type(3){grid-area:3/1}.pf-card .pf-facts dd:nth-of-type(3){grid-area:4/1}
+  .pf-card .pf-facts dt:nth-of-type(4){grid-area:3/2}.pf-card .pf-facts dd:nth-of-type(4){grid-area:4/2}
+  .pf-card .pf-facts dd{margin-bottom:.45em !important;-webkit-line-clamp:2}
+  .pf-card .pf-photo.none{padding:.9em}
+  .pf-card .pf-ph-year{font-size:2.4em}
+  .pf-card .pf-more{margin-top:.2em;font-size:.7em;align-self:flex-start}
+
+  /* отзывы: фото сверху, цитата под ним */
+  .rv-card .rv-photo{background-position:center 25%}
+  .rv-card .rv-txt{gap:.5em;padding:.8em .9em .9em}
+  .rv-card .rv-tags{min-height:0}
+  .rv-card .rv-tag{font-size:.66em}
+  .rv-card .rv-quote{flex:0 0 auto;font-size:.86em;line-height:1.42;-webkit-line-clamp:4}
+  .rv-card .rv-pos{font-size:.72em}
+
+  /* подсказка внизу — чуть крупнее */
+  .pf-hint,.rv-hint{font-size:11px !important}
+}

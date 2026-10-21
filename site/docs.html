@@ -540,7 +540,29 @@
     .dx-h,.dx-gh{padding-left:4px;padding-right:4px} .dx-s{min-width:0;padding:0 6px;font-size:10.5px}
     .dx-p-in{grid-template-columns:1fr;padding:4px 4px 22px} .dx-ph{max-width:200px;margin:0 auto}
   }
+  /* 21.10.2026, телефон: при прокрутке под шапкой остаётся только строка поиска
+     (фильтры стоят над ней и уезжают вверх), строки списка — в две линии */
+  @media (max-width:699px){
+    .dx-bar{top:-42px !important} .dx-bar-in{padding-top:10px;padding-bottom:10px;row-gap:8px}
+    .dx-sel{order:-2;height:40px} .dx-chips{order:-1;flex:1 1 0;min-width:0;height:34px} .dx-rst{order:-1;flex:0 0 auto;padding:0 2px}
+    .dx-chips button{height:34px;padding:0 13px}
+    .dx-search{height:44px}
+    .dx-h{grid-template-columns:auto minmax(0,1fr) 28px;grid-template-areas:"m t c" "s s c";gap:8px 10px;padding-top:14px;padding-bottom:14px}
+    .dx-m b{font-size:16px}
+    .dx-t{font-size:13px;color:#8A8A8A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .dx-sl{margin-top:0;flex-wrap:wrap} .dx-s{height:24px;font-size:11px}
+    .dx-gh{position:static;margin-top:6px}
+    .dx-bar.stuck{clip-path:inset(100px 0 0 0)}   /* фильтры под полупрозрачной шапкой не просвечивают */
+  }
 </style>
+<script>/* телефон: отметить, что панель поиска прилипла под шапкой */
+(function(){ if (window.innerWidth >= 700) return;
+  document.addEventListener('DOMContentLoaded', function(){
+    var b = document.querySelector('.dx-bar'); if (!b) return;
+    function f(){ b.classList.toggle('stuck', b.getBoundingClientRect().top < -41); }
+    addEventListener('scroll', f, { passive: true }); f();
+  });
+})();</script>
 <link rel="stylesheet" href="./objform.css">
 <script src="./objform.js" defer></script>
 </head>
