@@ -316,32 +316,6 @@
    "name": "Компактные комплекты",
    "series": [
     {
-     "name": "Серия CX",
-     "groups": [
-      {
-       "name": "",
-       "items": [
-        {
-         "slug": "ds-proaudio-cx-12s15-a",
-         "label": "Активный комплект CX 12S15 (A)"
-        },
-        {
-         "slug": "ds-proaudio-cx-12s18-a",
-         "label": "Активный комплект CX 12S18 (A)"
-        },
-        {
-         "slug": "ds-proaudio-cx-15s18-a",
-         "label": "Активный комплект CX 15S18 (A)"
-        },
-        {
-         "slug": "ds-proaudio-cx-315s18-a",
-         "label": "Активный комплект CX 315S18 (A)"
-        }
-       ]
-      }
-     ]
-    },
-    {
      "name": "Серия ANT",
      "groups": [
       {
@@ -371,6 +345,32 @@
         {
          "slug": "ds-proaudio-ant-cover",
          "label": "Комплект сумок ANT Cover"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Серия CX",
+     "groups": [
+      {
+       "name": "",
+       "items": [
+        {
+         "slug": "ds-proaudio-cx-12s15-a",
+         "label": "Активный комплект CX 12S15 (A)"
+        },
+        {
+         "slug": "ds-proaudio-cx-12s18-a",
+         "label": "Активный комплект CX 12S18 (A)"
+        },
+        {
+         "slug": "ds-proaudio-cx-15s18-a",
+         "label": "Активный комплект CX 15S18 (A)"
+        },
+        {
+         "slug": "ds-proaudio-cx-315s18-a",
+         "label": "Активный комплект CX 315S18 (A)"
         }
        ]
       }
