@@ -10366,8 +10366,29 @@
      "4-х точечная система подвеса, до 16 элементов на раму\nуглы между элементами: 0°, 1°, 2°, 3°, 4°, 5°, 7.5°, 10°"
     ]
    ],
-   "images": [],
-   "thumb": "",
+   "images": [
+    {
+     "src": "./assets/products/new-taura-10/01.jpg",
+     "w": 2000,
+     "h": 1341
+    },
+    {
+     "src": "./assets/products/new-taura-10/02.png",
+     "w": 1415,
+     "h": 2000
+    },
+    {
+     "src": "./assets/products/new-taura-10/03.jpg",
+     "w": 1910,
+     "h": 1065
+    },
+    {
+     "src": "./assets/products/new-taura-10/04.png",
+     "w": 1105,
+     "h": 2000
+    }
+   ],
+   "thumb": "./assets/products/new-taura-10/thumb.jpg",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -10441,8 +10462,24 @@
      "2-х точечная система подвеса, до 8 элементов на раму"
     ]
    ],
-   "images": [],
-   "thumb": "",
+   "images": [
+    {
+     "src": "./assets/products/new-taura-s18/01.jpg",
+     "w": 2000,
+     "h": 1341
+    },
+    {
+     "src": "./assets/products/new-taura-s18/02.jpg",
+     "w": 2000,
+     "h": 1341
+    },
+    {
+     "src": "./assets/products/new-taura-s18/03.png",
+     "w": 1105,
+     "h": 2000
+    }
+   ],
+   "thumb": "./assets/products/new-taura-s18/thumb.jpg",
    "polar": [],
    "video": [],
    "gisp": [],

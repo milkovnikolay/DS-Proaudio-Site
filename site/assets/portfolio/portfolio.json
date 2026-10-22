@@ -58,7 +58,6 @@
   "photos": [
    "./assets/portfolio/pf-002/01.jpg",
    "./assets/portfolio/pf-002/02.jpg",
-   "./assets/portfolio/pf-002/03.jpg",
    "./assets/portfolio/pf-002/04.jpg",
    "./assets/portfolio/pf-002/05.jpg",
    "./assets/portfolio/pf-002/calc-01.jpg"
@@ -91,7 +90,6 @@
   "coverSm": "./assets/portfolio/pf-003/cover-sm.jpg",
   "photos": [
    "./assets/portfolio/pf-003/01.jpg",
-   "./assets/portfolio/pf-003/02.jpg",
    "./assets/portfolio/pf-003/03.jpg",
    "./assets/portfolio/pf-003/04.jpg"
   ],
@@ -127,17 +125,11 @@
    "./assets/portfolio/pf-004/02.jpg",
    "./assets/portfolio/pf-004/03.jpg",
    "./assets/portfolio/pf-004/04.jpg",
-   "./assets/portfolio/pf-004/05.jpg",
-   "./assets/portfolio/pf-004/06.jpg",
-   "./assets/portfolio/pf-004/07.jpg",
-   "./assets/portfolio/pf-004/08.jpg",
    "./assets/portfolio/pf-004/09.jpg",
    "./assets/portfolio/pf-004/10.jpg",
    "./assets/portfolio/pf-004/11.jpg",
    "./assets/portfolio/pf-004/12.jpg",
    "./assets/portfolio/pf-004/13.jpg",
-   "./assets/portfolio/pf-004/14.jpg",
-   "./assets/portfolio/pf-004/15.jpg",
    "./assets/portfolio/pf-004/16.jpg",
    "./assets/portfolio/pf-004/17.jpg",
    "./assets/portfolio/pf-004/18.jpg",
@@ -172,7 +164,6 @@
   "coverSm": "./assets/portfolio/pf-005/cover-sm.jpg",
   "photos": [
    "./assets/portfolio/pf-005/13.jpg",
-   "./assets/portfolio/pf-005/01.jpg",
    "./assets/portfolio/pf-005/02.jpg",
    "./assets/portfolio/pf-005/03.jpg",
    "./assets/portfolio/pf-005/04.jpg",
@@ -185,9 +176,7 @@
    "./assets/portfolio/pf-005/11.jpg",
    "./assets/portfolio/pf-005/12.jpg",
    "./assets/portfolio/pf-005/14.jpg",
-   "./assets/portfolio/pf-005/15.jpg",
    "./assets/portfolio/pf-005/16.jpg",
-   "./assets/portfolio/pf-005/17.jpg",
    "./assets/portfolio/pf-005/18.jpg",
    "./assets/portfolio/pf-005/19.jpg",
    "./assets/portfolio/pf-005/20.jpg",
@@ -252,7 +241,6 @@
    "./assets/portfolio/pf-007/03.jpg",
    "./assets/portfolio/pf-007/04.jpg",
    "./assets/portfolio/pf-007/05.jpg",
-   "./assets/portfolio/pf-007/06.jpg",
    "./assets/portfolio/pf-007/07.jpg"
   ],
   "hasPhoto": true,
@@ -318,9 +306,7 @@
    "./assets/portfolio/pf-009/04.jpg",
    "./assets/portfolio/pf-009/05.jpg",
    "./assets/portfolio/pf-009/06.jpg",
-   "./assets/portfolio/pf-009/07.jpg",
    "./assets/portfolio/pf-009/08.jpg",
-   "./assets/portfolio/pf-009/09.jpg",
    "./assets/portfolio/pf-009/10.jpg",
    "./assets/portfolio/pf-009/11.jpg",
    "./assets/portfolio/pf-009/12.jpg",
@@ -359,8 +345,6 @@
    "./assets/portfolio/pf-010/03.jpg",
    "./assets/portfolio/pf-010/04.jpg",
    "./assets/portfolio/pf-010/05.jpg",
-   "./assets/portfolio/pf-010/06.jpg",
-   "./assets/portfolio/pf-010/07.jpg",
    "./assets/portfolio/pf-010/08.jpg"
   ],
   "hasPhoto": true,
@@ -440,7 +424,6 @@
   "coverSm": "./assets/portfolio/pf-012/cover-sm.jpg",
   "photos": [
    "./assets/portfolio/pf-012/01.jpg",
-   "./assets/portfolio/pf-012/02.jpg",
    "./assets/portfolio/pf-012/03.jpg"
   ],
   "hasPhoto": true,
@@ -469,8 +452,7 @@
   "coverSm": "./assets/portfolio/pf-013/cover-sm.jpg",
   "photos": [
    "./assets/portfolio/pf-013/01.jpg",
-   "./assets/portfolio/pf-013/02.jpg",
-   "./assets/portfolio/pf-013/03.jpg"
+   "./assets/portfolio/pf-013/02.jpg"
   ],
   "hasPhoto": true,
   "photoSource": "старый сайт (портфолио)",
@@ -497,9 +479,7 @@
   "cover": "./assets/portfolio/pf-014/cover.jpg",
   "coverSm": "./assets/portfolio/pf-014/cover-sm.jpg",
   "photos": [
-   "./assets/portfolio/pf-014/01.jpg",
-   "./assets/portfolio/pf-014/02.jpg",
-   "./assets/portfolio/pf-014/03.jpg"
+   "./assets/portfolio/pf-014/01.jpg"
   ],
   "hasPhoto": true,
   "photoSource": "старый сайт (портфолио)",
@@ -568,12 +548,10 @@
    "./assets/portfolio/pf-016/04.jpg",
    "./assets/portfolio/pf-016/05.jpg",
    "./assets/portfolio/pf-016/06.jpg",
-   "./assets/portfolio/pf-016/07.jpg",
    "./assets/portfolio/pf-016/08.jpg",
    "./assets/portfolio/pf-016/09.jpg",
    "./assets/portfolio/pf-016/10.jpg",
-   "./assets/portfolio/pf-016/11.jpg",
-   "./assets/portfolio/pf-016/12.jpg"
+   "./assets/portfolio/pf-016/11.jpg"
   ],
   "hasPhoto": true,
   "photoSource": "старый сайт (портфолио)",
@@ -610,14 +588,11 @@
    "./assets/portfolio/pf-017/07.jpg",
    "./assets/portfolio/pf-017/08.jpg",
    "./assets/portfolio/pf-017/09.jpg",
-   "./assets/portfolio/pf-017/10.jpg",
    "./assets/portfolio/pf-017/11.jpg",
-   "./assets/portfolio/pf-017/12.jpg",
    "./assets/portfolio/pf-017/13.jpg",
    "./assets/portfolio/pf-017/14.jpg",
    "./assets/portfolio/pf-017/15.jpg",
    "./assets/portfolio/pf-017/16.jpg",
-   "./assets/portfolio/pf-017/17.jpg",
    "./assets/portfolio/pf-017/18.jpg",
    "./assets/portfolio/pf-017/19.jpg",
    "./assets/portfolio/pf-017/20.jpg"
@@ -753,7 +728,6 @@
    "./assets/portfolio/pf-021/13.jpg",
    "./assets/portfolio/pf-021/14.jpg",
    "./assets/portfolio/pf-021/15.jpg",
-   "./assets/portfolio/pf-021/16.jpg",
    "./assets/portfolio/pf-021/17.jpg",
    "./assets/portfolio/pf-021/18.jpg",
    "./assets/portfolio/pf-021/19.jpg"
@@ -4284,8 +4258,7 @@
   "cover": "./assets/portfolio/pf-139/cover.jpg",
   "coverSm": "./assets/portfolio/pf-139/cover-sm.jpg",
   "photos": [
-   "./assets/portfolio/pf-139/01.jpg",
-   "./assets/portfolio/pf-139/02.jpg"
+   "./assets/portfolio/pf-139/01.jpg"
   ],
   "hasPhoto": true,
   "photoSource": "интернет: commons.wikimedia.org — свободная лицензия (Wikimedia Commons), нужна подпись автора",
