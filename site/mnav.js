@@ -22,6 +22,8 @@
     ['Клиентам', './clients.html', 'Весь раздел', [['Посетить шоурум', './showroom.html'], ['Запросить выездную демонстрацию', './demo.html'], ['Запросить консультацию по объекту', './consultation.html'], ['Узнать цены', './prices.html'], ['Где купить', './where-to-buy.html'], ['Срок поставки', './delivery.html']]]
   ];
   var here = (location.pathname.split('/').pop() || 'Main.dc.html').toLowerCase();
+  // на главной при открытии в шапке сначала надпись «Живи Музыкой!», через 5 с она растворяется в логотип (как в шапке компьютера)
+  var INTRO = './assets/3d4dfaf79132674a05fc4f9379ace7c9.png', isMain = /^(main\.dc\.html|index\.html)?$/.test(here);
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function ext(u) { return /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''; }
   function link(it) {
@@ -41,7 +43,7 @@
   var hd = document.createElement('header');
   hd.className = 'mn-hd';
   hd.innerHTML = '<div class="mn-in"><div class="mn-l"><button type="button" class="mn-burger" aria-expanded="false" aria-controls="mnMenu"><i></i><span>Меню</span></button></div>' +
-    '<a class="mn-logo" href="./Main.dc.html" aria-label="DS PROAUDIO — на главную"><img src="' + LOGO + '" alt=""></a>' +
+    '<a class="mn-logo' + (isMain ? ' intro' : '') + '" href="./Main.dc.html" aria-label="DS PROAUDIO — на главную">' + (isMain ? '<img class="mn-intro" src="' + INTRO + '" alt="Живи Музыкой!">' : '') + '<img class="mn-lg" src="' + LOGO + '" alt=""></a>' +
     '<div class="mn-r"><a class="mn-gisp" href="./gov.html" aria-label="ГИСП — госучреждениям"><img src="' + GISP + '" alt=""></a>' +
     '<a class="mn-ic" href="#" aria-label="Кабинет партнёра">' + CAB + '</a>' +
     '<button type="button" class="mn-burger m" aria-expanded="false" aria-controls="mnMenu" aria-label="Меню"><i></i><span>Меню</span></button></div></div>';
@@ -59,6 +61,11 @@
   function mount() {
     if (document.querySelector('.mn-hd')) return;
     document.body.appendChild(hd); document.body.appendChild(nav);
+    if (isMain) {
+      var rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      var lg = hd.querySelector('.mn-logo');
+      if (rm) lg.classList.add('done'); else setTimeout(function () { lg.classList.add('done'); }, 5000);
+    }
     var root = document.documentElement, btns = [].slice.call(hd.querySelectorAll('.mn-burger'));
     function set(on) { root.classList.toggle('mn-on', on); btns.forEach(function (b) { b.setAttribute('aria-expanded', on ? 'true' : 'false'); }); }
     btns.forEach(function (b) { b.addEventListener('click', function () { set(!root.classList.contains('mn-on')); }); });
