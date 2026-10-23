@@ -17,8 +17,8 @@
       ['Технологии', null, 1, [['Все технологии', './technologies.html'], ['Риггинг без пинов', './tech-rigging.html', 0, 'массивы TAURA, ERA'], ['Коаксиальные массивы', './tech-coaxial-waveguide.html', 0, 'ERA, TAURA 10'],
         ['Горизонтальное сложение', './tech-horizontal-summing.html', 0, 'TAURA 8, PLR, STL'], ['Кардиоидный сабвуфер', './tech-cardioid-sub.html', 0, 'TAURA C‑Sub 18'],
         ['Коаксиальные динамики', './tech-coaxial-cx.html', 0, 'серии CX, MCX'], ['Звуковые катушки на ребро в замке', './tech-voice-coil.html']]],
-      ['Блог', '#'], ['Контакты', './contacts.html']]],
-    ['Техподдержка', './support.html', 'Весь раздел', [['Обучение, семинары', '#'], ['Центр документации', './docs.html', 0, 'скачать файлы EASE, CAD'], ['ПО для акустических расчётов', '#'], ['Гарантия и сервис', './warranty.html']]],
+      ['Блог', './blog.html'], ['Контакты', './contacts.html']]],
+    ['Техподдержка', './support.html', 'Весь раздел', [['Обучение, семинары', './seminars.html'], ['Центр документации', './docs.html', 0, 'скачать файлы EASE, CAD'], ['ПО для акустических расчётов', './software.html'], ['Гарантия и сервис', './warranty.html']]],
     ['Клиентам', './clients.html', 'Весь раздел', [['Посетить шоурум', './showroom.html'], ['Запросить выездную демонстрацию', './demo.html'], ['Запросить консультацию по объекту', './consultation.html'], ['Узнать цены', './prices.html'], ['Где купить', './where-to-buy.html'], ['Срок поставки', './delivery.html']]]
   ];
   var here = (location.pathname.split('/').pop() || 'Main.dc.html').toLowerCase();
