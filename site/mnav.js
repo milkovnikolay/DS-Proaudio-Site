@@ -61,14 +61,6 @@
   function mount() {
     if (document.querySelector('.mn-hd')) return;
     document.body.appendChild(hd); document.body.appendChild(nav);
-    // лого и кнопки шапки — по той же линии, что и текст страницы (у разных страниц поле 16–24 px)
-    function gutter() {
-      if (window.innerWidth >= 700) { hd.style.removeProperty('--mn-pad'); return; }
-      var t = [].slice.call(document.querySelectorAll('main h1, h1, .wrap h2, .wrap p')).filter(function (e) { return !e.closest('header,.mn-menu') && e.getBoundingClientRect().width > 0; })[0];
-      if (!t) return; var x = Math.round(t.getBoundingClientRect().left);
-      if (x >= 8 && x <= 40) hd.style.setProperty('--mn-pad', x + 'px');
-    }
-    gutter(); window.addEventListener('resize', gutter); window.addEventListener('load', gutter);
     if (isMain) {
       var rm = false; try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
       var lg = hd.querySelector('.mn-logo');

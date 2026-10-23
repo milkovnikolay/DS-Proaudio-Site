@@ -86,13 +86,13 @@
 }
 @media (max-width:699px){
   .mn-hd{height:58px}.mn-menu{top:58px}
-  .mn-in{display:flex;justify-content:space-between;padding:0 var(--mn-pad,16px)}
+  .mn-in{display:flex;justify-content:space-between;padding:0 20px}
   .mn-l{display:none}   /* лого — к левому краю (23.10.2026) */
   .mn-logo.intro{justify-items:start}.mn-logo.intro .mn-intro{height:34px}
   .mn-l .mn-burger{display:none}.mn-burger.m{display:inline-flex;padding:0 12px}.mn-burger.m span{display:none}
   .mn-r .mn-ic{width:34px;height:34px}
   .mn-logo img{height:24px}.mn-gisp img{width:28px;height:28px}
-  .mn-wrap{padding:16px 16px 0}
+  .mn-wrap{padding:16px 20px 0}
   .mn-search{margin-bottom:6px}
   .mn-grid{display:block}
   .mn-sec{border-bottom:1px solid rgba(255,255,255,.1)}
@@ -106,7 +106,7 @@
   .mn-all{display:inline-block;margin:0 0 8px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9A9A9A;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px}
   .mn-l2{font-size:14px;text-transform:none;letter-spacing:.005em;font-weight:400;padding:9px 0}
   .mn-l2 .s{font-size:12px}
-  .mn-foot{flex-direction:column;align-items:stretch;gap:14px;margin:auto -16px 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));position:sticky;bottom:0;background:#0A0A0B;border-top:1px solid rgba(255,255,255,.12)}
+  .mn-foot{flex-direction:column;align-items:stretch;gap:14px;margin:auto -20px 0;padding:18px 20px calc(18px + env(safe-area-inset-bottom));position:sticky;bottom:0;background:#0A0A0B;border-top:1px solid rgba(255,255,255,.12)}
   .mn-foot .row{justify-content:space-between;flex-wrap:nowrap}
   .mn-foot .mn-cta{flex:1}
 }
@@ -157,4 +157,10 @@ html.lw-mid .cab-pill svg{width:13px;height:13px}
   section#contact > .wrap{padding-top:72px !important;padding-bottom:72px !important}
   section#contact h2{font-size:32px !important}
   a.pr-more{white-space:normal;flex-shrink:1;min-width:0}
+}
+
+/* 23.10.2026 — единое поле страниц на телефоне: 20 px слева и справа у всех страниц, в шапке, меню и подвале */
+@media (max-width:699px){
+  .wrap{padding-left:20px !important;padding-right:20px !important}
+  .dsf-wrap,.of-wrap{padding-left:20px !important;padding-right:20px !important}
 }
