@@ -663,12 +663,14 @@
   var SECTION_PAGE = { culture: './culture.html', education: './education.html', sport: './sport.html', corporate: './corporate.html',
     hospitality: './hospitality.html', religious: './religious.html', entertainment: './entertainment.html', outdoor: './outdoor.html' };
 
-  var N = 5;
+  // телефон: кольцо большего радиуса и с бо́льшим числом мест — соседние карточки стоят вплотную (зазор MGAP)
+  var PH = window.innerWidth < 700, MGAP = 14, MR = 1000;
+  var N = PH ? Math.round(2 * Math.PI * MR / (Math.min(window.innerWidth * .98, 470) + MGAP)) : 5;
   var LIST = ALL.slice(), M = LIST.length;            // текущая выборка по фильтрам
   var ring = document.getElementById('pfRing'), stage = document.getElementById('pfStage');
   var counter = document.getElementById('pfCounter'), menu = document.getElementById('megamenu');
   var track = document.getElementById('pfTrack'), thumb = document.getElementById('pfThumb'), empty = document.getElementById('pfEmpty');
-  var step = 360 / N, angle = 0, target = 0, panY = 0, panT = 0;
+  var step = 360 / N, DK = step / 72, angle = 0, target = 0, panY = 0, panT = 0;
   var zoom = 0, detailOpen = false, DEG = 180 / Math.PI;
   function pad3(n){ return ('0' + n).slice(-2); }
   function pad(n){ return (n < 10 ? '0' : '') + n; }
@@ -676,9 +678,13 @@
   function menuOpen(){ return menu && !menu.hidden; }
   function numOf(o){ return ALL.indexOf(o) + 1; }
 
+  // где лицо на квадратном фото (доля высоты) — на телефоне кадр обрезается по высоте, держим лицо в кадре
+  var FACE_Y = { starchenko: .29, motsar: .16, milkov: .45, novikov: .25, minyaylo: .50 };
+  function focusOf(src){ var m = /([a-z]+)-sq\./.exec(src || ''), fy = m && FACE_Y[m[1]]; if (fy == null) return 'center';
+    var p = Math.max(0, Math.min(1, (fy - .32) / .36)); return '50% ' + Math.round(p * 100) + '%'; }
   function cardHTML(o){
     return '<div class="pf-above"><div class="pf-idx">' + pad3(numOf(o)) + ' / ' + pad3(TOTAL) + ' · ' + esc(o.city) + '</div><div class="pf-name">' + esc(o.title) + '</div></div>'
-      + '<div class="pf-body"><div class="pf-photo" style="background-image:url(\'' + o.cardImg + '\')"></div>'
+      + '<div class="pf-body"><div class="pf-photo" style="background-image:url(\'' + o.cardImg + '\');--fp:' + focusOf(o.cardImg) + '"></div>'
       +   '<div class="pf-txt"><dl class="pf-facts">'
       +     '<dt>Должность</dt><dd>' + esc(o.role || 'уточняется') + '</dd>'
       +     (o.note ? '<dt>Специализация</dt><dd>' + esc(o.note) + '</dd>' : '')
@@ -739,6 +745,7 @@
     S.fs = S.w / 640 * 16; S.hb = S.w * .6; S.lab = S.fs * 6.2;
     if (vw < 700){ S.w = Math.min(vw * .98, 470); S.fs = 17; S.hb = S.w * .6 + S.fs * 8.2; S.lab = S.fs * 3.6; }   // телефон: крупная карточка столбиком (ring-mobile.css)
     S.R = Math.max(460, S.w * .88);
+    if (PH) S.R = (S.w + MGAP) * N / (2 * Math.PI);
     S.tf = Math.max(8.5, S.fs * .66); S.cap = S.tf * 2.95;   // подпись над фото второстепенной карточки
     S.h1 = S.w * .34 * .62 + S.cap; S.h2 = S.w * .24 * .62 + S.cap;
     S.g1 = S.hb / 2 + S.lab / 2 + 70 + S.h1 / 2; S.g2 = S.g1 + S.h1 / 2 + 60 + S.h2 / 2;
@@ -815,10 +822,11 @@
   }
   function stopCoast(){ coasting = false; vx = vy = 0; }
   function goTo(r){ if (!M) return; stopCoast(); var cur = Math.round(target / step); var diff = ((r - cur) % M + M) % M; if (diff > M / 2) diff -= M; target = (cur + diff) * step; }
+  function KX(){ return PH ? DEG / (S.R * .86) : 0.12; }   // телефон: карточка идёт за пальцем 1:1
   function clampPan(v){ var m = maxPan(); return Math.max(-m, Math.min(m, v)); }
   function blocked(){ return detailOpen || menuOpen() || openPanel; }
 
-  stage.addEventListener('wheel', function(e){ if (e.ctrlKey) return; if (e.target.closest('.pf-filters')) return; e.preventDefault(); if (blocked()) return; stopCoast(); target += (e.deltaY + e.deltaX) * 0.08; }, { passive: false });
+  stage.addEventListener('wheel', function(e){ if (e.ctrlKey) return; if (e.target.closest('.pf-filters')) return; e.preventDefault(); if (blocked()) return; stopCoast(); target += (e.deltaY + e.deltaX) * 0.08 * DK; }, { passive: false });
   var dragX = null, dragY = 0, start = 0, startPan = 0, lx = 0, ly = 0, lt = 0, downObj = -1, downT = 0, downMoving = false;
   stage.addEventListener('pointerdown', function(e){
     if (e.target.closest('button,input,label,.pf-filters,.pf-track')) return;
@@ -830,10 +838,10 @@
   });
   stage.addEventListener('pointermove', function(e){
     if (dragX === null) return;
-    target = start - (e.clientX - dragX) * 0.12;
+    target = start - (e.clientX - dragX) * KX();
     panT = clampPan(startPan + (e.clientY - dragY) * 1.1);
     var now = performance.now(), dt = Math.max(1, now - lt);
-    vx = vx * .6 + (-(e.clientX - lx) * 0.12 / dt * 16) * .4;
+    vx = vx * .6 + (-(e.clientX - lx) * KX() / dt * 16) * .4;
     vy = vy * .6 + (( e.clientY - ly) * 1.1  / dt * 16) * .4;
     lx = e.clientX; ly = e.clientY; lt = now;
   });

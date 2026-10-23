@@ -29,6 +29,7 @@
   .pf-card .pf-facts dt:nth-of-type(4){grid-area:3/2}.pf-card .pf-facts dd:nth-of-type(4){grid-area:4/2}
   .pf-card .pf-facts dd{margin-bottom:.45em !important;-webkit-line-clamp:2}
   .pf-card .pf-photo.none{padding:.9em}
+  .pf-card .pf-photo{background-position:var(--fp,center)}   /* лица: кадр по лицу */
   .pf-card .pf-ph-year{font-size:2.4em}
   .pf-card .pf-more{margin-top:.2em;font-size:.7em;align-self:flex-start}
 
