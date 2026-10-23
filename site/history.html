@@ -560,6 +560,17 @@
   linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,0) 24%,rgba(10,10,11,0) 62%,#0A0A0B 100%);}
 .hs-hero .ab-lead{color:#C8C8C8;}
 @media (max-width:1099px){ .hs-ch.hs-hero{padding-bottom:64px;} .hs-hero-bg::after{background:linear-gradient(180deg,rgba(10,10,11,.55) 0%,rgba(10,10,11,.25) 30%,rgba(10,10,11,.7) 70%,#0A0A0B 100%);} }
+
+  /* телефон: лента фото вместо барабана */
+  .hs-media.is-strip,.hs-hero .hs-media.is-strip{height:auto !important;}
+  .hs-strip{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scroll-padding:0 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .hs-strip::-webkit-scrollbar{display:none;}
+  .hs-sc{flex:0 0 auto;margin:0;width:min(calc(300px * var(--w)), 82vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;}
+  .hs-sc button{display:block;padding:0;border:0;background:#151517;border-radius:10px;overflow:hidden;height:300px;cursor:zoom-in;}
+  .hs-sc img{display:block;width:100%;height:100%;object-fit:cover;}
+  .hs-sc figcaption{display:flex;flex-direction:column;gap:3px;}
+  .hs-sc .n{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.12em;color:#6E6E6E;}
+  .hs-sc .c{font-size:13px;line-height:1.45;color:#A8A8A8;}
 </style>
 <script src="./navbot.js" defer></script>
 </head>
@@ -1051,7 +1062,25 @@ window.HX_DATA={"g": {"g90": {"t": "Архив 1990-х", "i": [["./assets/histor
     if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ es.forEach(function(e){ var was = active; active = e.isIntersecting; if (active && !was){ lastY = window.scrollY; requestAnimationFrame(frame); } }); }, { rootMargin: '100px 0px' }).observe(box);
     else { active = true; requestAnimationFrame(frame); }
   }
-  [].forEach.call(document.querySelectorAll('.hs-media'), Drum);
+  /* телефон: вместо барабана — лента фото с прокруткой по горизонтали (23.10.2026) */
+  function Strip(box){
+    var g = D.g[box.getAttribute('data-g')]; if (!g) return;
+    var photos = g.i, drum = box.querySelector('.hs-drum'); if (drum) drum.style.display = 'none';
+    box.classList.add('is-strip');
+    var st = document.createElement('div'); st.className = 'hs-strip'; st.setAttribute('role', 'list'); st.setAttribute('aria-label', drum ? drum.getAttribute('aria-label') : 'Фото');
+    photos.forEach(function(it, i){
+      var f = document.createElement('figure'); f.className = 'hs-sc'; f.setAttribute('role', 'listitem');
+      f.style.setProperty('--w', (it[1] / it[2]).toFixed(4));
+      f.innerHTML = '<button type="button" aria-label="Открыть фото ' + (i + 1) + '"><img src="' + it[0] + '" alt="" loading="lazy" decoding="async"></button>' +
+        '<figcaption><span class="n">' + String(i + 1).padStart(2, '0') + ' / ' + String(photos.length).padStart(2, '0') + '</span><span class="c"></span></figcaption>';
+      f.querySelector('.c').textContent = it[3] || '';
+      f.querySelector('button').addEventListener('click', function(){ openLb(photos, i); });
+      st.appendChild(f);
+    });
+    box.appendChild(st);
+  }
+  var phone = window.matchMedia && matchMedia('(max-width:759px)').matches;
+  [].forEach.call(document.querySelectorAll('.hs-media'), phone ? Strip : Drum);
   /* ---------- оформление «deco»: год в фоне плывёт медленнее текста, линия времени заполняется ---------- */
   if (document.body.classList.contains('hs-deco')){
     var decoSecs = [].slice.call(document.querySelectorAll('.hs-ch[id^=y]')).map(function(sec){
