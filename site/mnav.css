@@ -118,7 +118,7 @@ html.lw-mid .cab-pill svg{width:13px;height:13px}
   .hdr-bgw{display:block;position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
   .hdr-word{position:absolute;top:50%;left:0;display:flex;align-items:center;gap:.16em;
     font:300 76px/1 "IBM Plex Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:rgba(242,242,242,.17);white-space:nowrap;
-    opacity:0;transform:translateY(-46%);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+    opacity:0;transform:translateY(-46%);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1),left .6s cubic-bezier(.2,.7,.2,1)}
   .hdr-word svg{width:.5em;height:.5em;flex:0 0 auto;transition:transform .35s ease}
   .hdr-line{display:block;position:absolute;left:0;right:0;bottom:-1px;height:1px;z-index:2;pointer-events:none;
     background:var(--hdr-lc,rgba(242,242,242,.6));transform:scaleX(0);opacity:0;

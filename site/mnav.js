@@ -167,6 +167,10 @@
   }, { passive: true });
   document.addEventListener('mousemove', function (e) {
     var h = headerOf(e.target);
+    if (h && desktop() && h.querySelector('.hdr-word')) {   // курсор перешёл на другую половину шапки — надпись переезжает туда же
+      var hr = h.getBoundingClientRect(), sd = e.clientX < hr.left + hr.width / 2 ? 'l' : 'r';
+      if (sd !== side) { side = sd; h.classList.remove('hdr-side-l', 'hdr-side-r'); h.classList.add('hdr-side-' + side); place(h); }
+    }
     if (!h || !desktop() || !isFree(e.target)) { off(); if (h) h.classList.remove('hdr-free'); return; }
     ensure(h); cur = h; h.classList.add('hdr-free');
   }, { passive: true });
