@@ -86,7 +86,7 @@
 }
 @media (max-width:699px){
   .mn-hd{height:58px}.mn-menu{top:58px}
-  .mn-in{display:flex;justify-content:space-between;padding:0 16px}
+  .mn-in{display:flex;justify-content:space-between;padding:0 var(--mn-pad,16px)}
   .mn-l{display:none}   /* лого — к левому краю (23.10.2026) */
   .mn-logo.intro{justify-items:start}.mn-logo.intro .mn-intro{height:34px}
   .mn-l .mn-burger{display:none}.mn-burger.m{display:inline-flex;padding:0 12px}.mn-burger.m span{display:none}
