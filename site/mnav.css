@@ -60,6 +60,13 @@
   .mn-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
   .mn-foot .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   .mn-phone{font-family:'Montserrat',sans-serif;font-weight:600;font-size:18px;color:#FAFAFA;white-space:nowrap}
+  /* быстрые ссылки ГИСП · GLL · CAD · PDF над телефоном (23.10.2026) */
+  .mn-files{flex:1 0 100%;display:flex;align-items:center;gap:8px}
+  .mn-files a{display:inline-flex;align-items:center;justify-content:center;flex:1;height:38px;border-radius:6px;border:1px solid rgba(255,255,255,.22);font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.06em;color:#EDEDED}
+  .mn-files a:active{background:#FAFAFA;color:#0F0F10}
+  .mn-files a.mn-fgisp{flex:0 0 38px;border:0;padding:0}
+  .mn-files a.mn-fgisp img{width:34px;height:34px;display:block}
+
   .mn-soc{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(255,255,255,.22);border-radius:50%;font-size:12px;font-weight:500;color:#FAFAFA}
   .mn-cta{display:inline-flex;align-items:center;justify-content:center;height:46px;padding:0 22px;border-radius:6px;background:#FAFAFA;color:#141414 !important;font-size:13.5px;font-weight:600;white-space:nowrap}
   .mn-cta.gh{background:none;color:#FAFAFA !important;border:1px solid rgba(255,255,255,.4)}

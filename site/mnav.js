@@ -6,7 +6,6 @@
   var CAB = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg>';
   // разделы меню — те же, что в мега-меню и подвале
   var S = [
-    ['Госучреждениям', './gov.html', 'Весь раздел', [['Реестр ГИСП', './gov.html', 1], ['GLL', './docs.html?g=gll'], ['CAD', './docs.html?g=dwg'], ['PDF', './docs.html?g=man']]],
     ['Продукция', './products.html', 'Весь каталог', [['Линейные массивы', './products-line-arrays.html'], ['Массивы с фиксированными углами', './products-constant-curvature.html'], ['Звуковые колонны', './products-columns.html'],
       ['Точечные источники звука', './products-point-sources.html'], ['Сценические мониторы', './products-monitors.html'], ['Компактные комплекты', './products-compact-sets.html'], ['Системы для аудиторий', './products-auditorium.html'],
       ['Реестровое оборудование', './products-registry.html'], ['Всепогодные системы', './products-all-weather.html'], ['Усилители', './products-amplifiers.html'], ['Аксессуары', './products-accessories.html'],
@@ -51,7 +50,9 @@
   nav.innerHTML = '<div class="mn-wrap"><label class="mn-search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9A9A9A" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>' +
     '<input type="search" placeholder="Найти в меню: TAURA, кардиоид, цены…" autocomplete="off" aria-label="Поиск по меню"></label>' +
     '<div class="mn-grid">' + secs + '</div><div class="mn-nores">Ничего не найдено. Спросите помощника — он подскажет раздел или передаст вопрос менеджеру.</div>' +
-    '<div class="mn-foot"><div class="row"><a class="mn-phone" href="tel:+74951501238">8 495 150-12-38</a>' +
+    '<div class="mn-foot"><div class="mn-files" aria-label="Быстрые ссылки"><a class="mn-fgisp" href="./gov.html" aria-label="ГИСП — госучреждениям" title="Оборудование в реестре ГИСП"><img src="' + GISP + '" alt="ГИСП"></a>' +
+    '<a href="./docs.html?g=gll" title="GLL — файлы для EASE">GLL</a><a href="./docs.html?g=dwg" title="CAD — чертежи DWG">CAD</a><a href="./docs.html?g=man" title="PDF — инструкции и паспорта">PDF</a></div>' +
+    '<div class="row"><a class="mn-phone" href="tel:+74951501238">8 495 150-12-38</a>' +
     '<span class="row"><a class="mn-soc" href="https://t.me/dsproaudio" target="_blank" rel="noopener" aria-label="Telegram">ТГ</a><a class="mn-soc" href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" aria-label="ВКонтакте">ВК</a></span></div>' +
     '<div class="row"><a class="mn-cta" href="#contact" data-close>Оставить заявку</a><a class="mn-cta gh" href="#">Кабинет партнёра</a></div></div></div>';
 
