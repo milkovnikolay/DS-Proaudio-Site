@@ -969,11 +969,12 @@
   function blocked(){ return detailOpen || menuOpen() || openPanel; }
 
   stage.addEventListener('wheel', function(e){ if (e.ctrlKey) return; if (e.target.closest('.pf-filters')) return; e.preventDefault(); if (blocked()) return; stopCoast(); target += (e.deltaY + e.deltaX) * 0.08; }, { passive: false });
-  var dragX = null, dragY = 0, start = 0, startPan = 0, lx = 0, ly = 0, lt = 0, downObj = -1, downT = 0;
+  var dragX = null, dragY = 0, start = 0, startPan = 0, lx = 0, ly = 0, lt = 0, downObj = -1, downT = 0, downMoving = false;
   stage.addEventListener('pointerdown', function(e){
     if (e.target.closest('button,input,label,.pf-filters,.pf-track')) return;
     if (openPanel){ closePanels(); return; }
-    stopCoast(); dragX = lx = e.clientX; dragY = ly = e.clientY; lt = performance.now();
+    downMoving = Math.abs(target - angle) > 0.25 || Math.abs(panT - panY) > 2;   // тап во время прокрутки — стоп на месте
+    target = angle; panT = panY; stopCoast(); dragX = lx = e.clientX; dragY = ly = e.clientY; lt = performance.now();
     var st = e.target.closest('.pf-strip'); downObj = st ? +st.dataset.obj : -1; downT = lt;
     start = target; startPan = panT; stage.classList.add('drag'); stage.setPointerCapture(e.pointerId);
   });
@@ -990,6 +991,7 @@
     if (dragX === null) return;
     var moved = Math.hypot(e.clientX - dragX, e.clientY - dragY);
     dragX = null; stage.classList.remove('drag');
+    if (moved < 6 && downMoving){ target = start; panT = startPan; vx = vy = 0; return; }   // это был тап-остановка
     if (moved < 6 && performance.now() - downT < 500 && downObj >= 0 && objs[downObj].item && objs[downObj].mul > .5){
       target = start; panT = startPan; vx = vy = 0;
       openDetail(objs[downObj]); return;
@@ -1213,6 +1215,7 @@
   detail.addEventListener('pointerdown', function(e){
     if (e.target.closest('button,a')) return;
     var sp = e.target.closest('.pf-strip'); dDown = { x: e.clientX, y: e.clientY, t: performance.now(), q: sp ? +sp.dataset.slide : -1 };
+    dDown.mv = dCoast || Math.abs(dTarget - dPos) > 0.04; dTarget = clampD(dPos); dvx = 0;
     dCoast = false; ddx = dlx = e.clientX; dlt = performance.now(); dStart = dTarget; detail.classList.add('drag'); detail.setPointerCapture(e.pointerId);
   });
   detail.addEventListener('pointermove', function(e){
@@ -1224,6 +1227,7 @@
   });
   function dEnd(e){
     if (ddx === null) return; ddx = null; detail.classList.remove('drag');
+    if (dDown && dDown.mv && e && Math.hypot(e.clientX - dDown.x, e.clientY - dDown.y) < 6){ dvx = 0; dCoast = false; dTarget = dStart; return; }   // тап-остановка
     if (dDown && e && e.type === 'pointerup' && Math.hypot(e.clientX - dDown.x, e.clientY - dDown.y) < 6 && dDown.q >= 0){
       dvx = 0; dCoast = false; dTarget = clampD(dDown.q); return;   // клик по соседнему фото — подвинуть его в центр
     }
