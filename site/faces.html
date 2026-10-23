@@ -664,7 +664,7 @@
     hospitality: './hospitality.html', religious: './religious.html', entertainment: './entertainment.html', outdoor: './outdoor.html' };
 
   // телефон: кольцо большего радиуса и с бо́льшим числом мест — соседние карточки стоят вплотную (зазор MGAP)
-  var PH = window.innerWidth < 700, MGAP = 14, MR = 1000;
+  var PH = window.innerWidth < 700, MGAP = 41, MR = 1000;
   var N = PH ? Math.round(2 * Math.PI * MR / (Math.min(window.innerWidth * .98, 470) + MGAP)) : 5;
   var LIST = ALL.slice(), M = LIST.length;            // текущая выборка по фильтрам
   var ring = document.getElementById('pfRing'), stage = document.getElementById('pfStage');
