@@ -6,7 +6,7 @@ const box = document.querySelector('#anatomy .an-pic');
 if (box) init();
 
 function init() {
-  const DAT = './assets/3d/taura8.dat', SIZE = '3,1 МБ';
+  const DAT = './assets/3d/taura8.dat', SIZE = '2,7 МБ';
   const G = {
     cab:    { t: 'Корпус',                    li: 0, delay: .16 },
     back:   { t: 'Задняя панель с разъёмами', li: 0, delay: .12 },
@@ -20,9 +20,12 @@ function init() {
     lfR:    { t: 'НЧ-динамик 8″',             li: 1, delay: .32 },
     hfT:    { t: 'ВЧ-драйвер',                li: 2, delay: .38 },
     hfB:    { t: 'ВЧ-драйвер',                li: 2, delay: .42 },
+    plate:  { t: 'Задняя панель',             li: 5 },   // подгруппы детали back: задаются по имени меша
+    conn:   { t: 'Разъёмы',                   li: 7 },
   };
+  const SUB = { 'Задняя панель': 'plate', 'Разъёмы': 'conn' };
   const LI = [...document.querySelectorAll('#anatomy .an-list .pa')];
-  const LI_GROUPS = [['cab', 'back'], ['lfL', 'lfR'], ['hfT', 'hfB'], ['wave', 'lwL', 'lwR'], ['grille'], ['sideL', 'sideR'], [], Object.keys(G)];
+  const LI_GROUPS = [['cab', 'back'], ['lfL', 'lfR'], ['hfT', 'hfB'], ['wave', 'lwL', 'lwR'], ['grille'], ['plate'], ['sideL', 'sideR'], ['conn'], Object.keys(G)];
 
   // ---- оболочка: постер, кнопка, панель управления ----
   box.classList.add('a3');
@@ -82,7 +85,7 @@ function init() {
     root.children.forEach(n => {
       const d = n.userData.d || [0, 0, 0], g = n.userData.g;
       const p = { n, g, f: !!n.userData.f, d: new THREE.Vector3(...d), mats: [] };
-      n.traverse(o => { if (o.isMesh) { o.material = o.material.clone(); o.userData.part = p; p.mats.push(o.material); meshes.push(o); } });
+      n.traverse(o => { if (o.isMesh) { o.material = o.material.clone(); o.userData.part = p; o.userData.label = /^mesh_\d/.test(o.name) ? '' : o.name.replace(/_\d+$/, '').replace(/_/g, ' '); o.userData.g = (p.g === 'back' && SUB[o.userData.label]) || p.g; p.mats.push(o.material); meshes.push(o); } });
       parts.push(p);
     });
 
@@ -138,11 +141,11 @@ function init() {
     let hl = null;
     function highlight(groups) {
       hl = groups && groups.length ? new Set(groups) : null;
-      for (const p of parts) for (const m of p.mats) {
-        const on = !hl || hl.has(p.g);
+      for (const o of meshes) {
+        const m = o.material, on = !hl || hl.has(o.userData.g);
         m.transparent = !on; m.opacity = on ? 1 : .12; m.depthWrite = on; m.needsUpdate = true;
       }
-      LI.forEach((li, i) => li.classList.toggle('a3-on', !!hl && i < 7 && LI_GROUPS[i].some(g => hl.has(g)) && LI_GROUPS[i].length));
+      LI.forEach((li, i) => li.classList.toggle('a3-on', !!hl && i < LI.length - 1 && LI_GROUPS[i].some(g => hl.has(g)) && LI_GROUPS[i].length));
       dirty = true;
     }
     LI.forEach((li, i) => {
@@ -156,7 +159,7 @@ function init() {
     function pick(e) {
       const r = cv.getBoundingClientRect(); mp.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
       ray.setFromCamera(mp, cam);
-      const hit = ray.intersectObjects(meshes.filter(m => m.visible && m.parent.parent.visible && (!hl || hl.has(m.userData.part.g))), false)[0];
+      const hit = ray.intersectObjects(meshes.filter(m => m.visible && m.parent.parent.visible && (!hl || hl.has(m.userData.g))), false)[0];
       return hit ? hit.object : null;
     }
     let downXY = null;
@@ -165,8 +168,8 @@ function init() {
       if (e.pointerType !== 'mouse' || e.buttons) { tip.hidden = true; return; }
       const m = pick(e);
       if (!m) { tip.hidden = true; cv.style.cursor = 'grab'; return; }
-      const p = m.userData.part, g = G[p.g] || { t: '' };
-      tip.innerHTML = '<b>' + g.t + '</b>' + (m.name && m.name !== g.t && !/^mesh_\d/.test(m.name) ? '<span>' + m.name + '</span>' : '');
+      const g = G[m.userData.g] || { t: '' };
+      tip.innerHTML = '<b>' + g.t + '</b>' + (m.userData.label && m.userData.label !== g.t ? '<span>' + m.userData.label + '</span>' : '');
       const r = box.getBoundingClientRect(); tip.style.left = (e.clientX - r.left + 14) + 'px'; tip.style.top = (e.clientY - r.top + 14) + 'px';
       tip.hidden = false; cv.style.cursor = 'pointer';
     });
@@ -175,7 +178,7 @@ function init() {
       if (downXY && Math.hypot(e.clientX - downXY[0], e.clientY - downXY[1]) > 5) return;
       const m = pick(e);
       if (!m) { highlight(null); return; }
-      const g = m.userData.part.g, li = G[g] ? G[g].li : -1;
+      const g = m.userData.g, li = G[g] ? G[g].li : -1;
       highlight(li >= 0 ? LI_GROUPS[li] : [g]);
       if (li >= 0 && LI[li] && window.innerWidth < 760) LI[li].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });

@@ -15,11 +15,11 @@
       ['Индустрия развлечений', './entertainment.html'], ['Прокат', './rental.html']]],
     ['О компании', './Main.dc.html', 'На главную', [['История', './history.html'], ['Философия', './philosophy.html'], ['Лица компании', './faces.html'], ['Наше производство', './production.html'],
       ['Технологии', null, 1, [['Все технологии', './technologies.html'], ['Риггинг без пинов', './tech-rigging.html', 0, 'массивы TAURA, ERA'], ['Коаксиальные массивы', './tech-coaxial-waveguide.html', 0, 'ERA, TAURA 10'],
-        ['Горизонтальное сложение', './tech-horizontal-summing.html', 0, 'TAURA 8, PLR, STL'], ['Кардиоидный сабвуфер', './tech-cardioid-sub.html', 0, 'TAURA C‑Sub 18'],
+        ['Горизонтальное сложение', './tech-horizontal-summing.html', 0, 'TAURA 8, PLR, STL'], ['Кардиоидный сабвуфер', './tech-cardioid-sub.html', 0, 'TAURA C-Sub 18'],
         ['Коаксиальные динамики', './tech-coaxial-cx.html', 0, 'серии CX, MCX'], ['Звуковые катушки на ребро в замке', './tech-voice-coil.html']]],
       ['Блог', './blog.html'], ['Контакты', './contacts.html']]],
     ['Техподдержка', './support.html', 'Весь раздел', [['Обучение, семинары', './seminars.html'], ['Центр документации', './docs.html', 0, 'скачать файлы EASE, CAD'], ['ПО для акустических расчётов', './software.html'], ['Гарантия и сервис', './warranty.html']]],
-    ['Клиентам', './clients.html', 'Весь раздел', [['Посетить шоурум', './showroom.html'], ['Запросить выездную демонстрацию', './demo.html'], ['Запросить консультацию по объекту', './consultation.html'], ['Узнать цены', './prices.html'], ['Где купить', './where-to-buy.html'], ['Срок поставки', './delivery.html']]]
+    ['Клиентам', './clients.html', 'Весь раздел', [['Посетить шоу-рум', './showroom.html'], ['Запросить выездную демонстрацию', './demo.html'], ['Запросить консультацию по объекту', './consultation.html'], ['Узнать цены', './prices.html'], ['Где купить', './where-to-buy.html'], ['Срок поставки', './delivery.html']]]
   ];
   var here = (location.pathname.split('/').pop() || 'Main.dc.html').toLowerCase();
   // на главной при открытии в шапке сначала надпись «Живи Музыкой!», через 5 с она растворяется в логотип (как в шапке компьютера)
@@ -54,8 +54,8 @@
     '<div class="mn-grid">' + secs + '</div><div class="mn-nores">Ничего не найдено. Спросите помощника — он подскажет раздел или передаст вопрос менеджеру.</div>' +
     '<div class="mn-foot"><div class="mn-files" aria-label="Быстрые ссылки"><a class="mn-fgisp" href="./gov.html" aria-label="ГИСП — госучреждениям" title="Оборудование в реестре ГИСП"><img src="' + GISP + '" alt="ГИСП"></a>' +
     '<a href="./docs.html?g=gll" title="GLL — файлы для EASE">GLL</a><a href="./docs.html?g=dwg" title="CAD — чертежи DWG">CAD</a><a href="./docs.html?g=man" title="PDF — инструкции и паспорта">PDF</a></div>' +
-    '<div class="row"><a class="mn-phone" href="tel:+74951501238">8 495 150-12-38</a>' +
-    '<span class="row"><a class="mn-soc" href="https://t.me/dsproaudio" target="_blank" rel="noopener" aria-label="Telegram">ТГ</a><a class="mn-soc" href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" aria-label="ВКонтакте">ВК</a></span></div>' +
+    '<div class="row"><a class="mn-phone" href="tel:+74951501238">+7 495 150-12-38</a>' +
+    '<span class="row"><a class="mn-soc" href="https://t.me/dsproaudio" target="_blank" rel="noopener" aria-label="Telegram">ТГ</a><a class="mn-soc" href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" aria-label="ВКонтакте">ВК</a><a class="mn-soc" href="https://max.ru/id7702801847_biz" target="_blank" rel="noopener" aria-label="MAX">MAX</a></span></div>' +
     '<div class="row"><a class="mn-cta" href="#contact" data-close>Оставить заявку</a><a class="mn-cta gh" href="#">Кабинет партнёра</a></div></div></div>';
 
   function mount() {

@@ -7,7 +7,7 @@
                                  пересылает менеджерам в Telegram (если заданы TG_TOKEN и TG_CHAT).
      POST /api/tour            — заявка на фактори-тур со страницы «Производство» → data/tours.jsonl + Telegram.
      POST /api/lead            — заявки со страниц «Клиентам» (выезд, консультация, цены, где купить) → data/leads.jsonl + Telegram.
-     POST /api/showroom        — запись в шоурум (showroom.html), то же, что /api/lead.
+     POST /api/showroom        — запись в шоу-рум (showroom.html), то же, что /api/lead.
      POST /api/service-stats   — принимает обезличенное событие статистики → data/stats.jsonl.
      GET  /api/service-stats/summary       — сводка статистики для руководства
                                  (только с заголовком Authorization: Bearer <STATS_KEY>).
@@ -149,13 +149,13 @@ http.createServer(async (req, res) => {
       }
       return send(res, 200, { ok: true, id: rec.id });
     }
-    // 21.10.2026: заявки со страниц «Клиентам» (выезд, консультация, цены, где купить) и записи в шоурум → data/leads.jsonl + Telegram
+    // 21.10.2026: заявки со страниц «Клиентам» (выезд, консультация, цены, где купить) и записи в шоу-рум → data/leads.jsonl + Telegram
     if (req.method === 'POST' && (url.pathname === '/api/lead' || url.pathname === '/api/showroom')) {
       const t = await body(req);
       if (trap(t)) return send(res, 200, { ok: true });
       if (!clip(t.phone, 40).replace(/\D/g, '') || !clip(t.name, 120).trim()) return send(res, 400, { error: 'name and phone required' });
       const rec = { id: 'L' + Date.now().toString(36).toUpperCase(), receivedAt: new Date().toISOString(),
-        kind: clip(t.kind || t.fmt || 'Шоурум', 80), page: clip(t.page, 120) };
+        kind: clip(t.kind || t.fmt || 'Шоу-рум', 80), page: clip(t.page, 120) };
       for (const k of LEAD_FIELDS) if (t[k] != null && t[k] !== '' && !(k === 'fmt' && rec.kind === clip(t.fmt, 80))) rec[k] = clip(t[k], k === 'comment' ? 2000 : 200);
       save('leads.jsonl', rec);
       if (process.env.TG_TOKEN && process.env.TG_CHAT) {

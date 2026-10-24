@@ -165,7 +165,7 @@
       '<label><span>Имя</span><input id="svc-name" name="name" autocomplete="name" required></label>' +
       '<label><span>Телефон</span><input id="svc-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+7"></label>' +
       (fast ? '' : '<label><span>E-mail <em>необязательно</em></span><input id="svc-email" name="email" type="email" autocomplete="email"></label>') +
-      '<label class="svc-agree"><input type="checkbox" id="svc-agree" required> <span>Согласен на <a href="./privacy.html#consent" target="_blank" rel="noopener">обработку персональных данных</a> для ответа на обращение</span></label>' +
+      '<label class="svc-agree"><input type="checkbox" id="svc-agree" required> <span>Согласен на <a href="./consent.html" target="_blank">обработку персональных данных</a> для ответа на обращение</span></label>' +
       '<div class="svc-form-err" aria-live="polite"></div>' +
       '<button type="submit" class="svc-send svc-send-big">' + (fast ? 'Жду звонка' : 'Отправить заявку') + '</button>';
     f.addEventListener('submit', function (e) {
