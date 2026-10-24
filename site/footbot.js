@@ -10,8 +10,8 @@
   if (window.__dsFootBot) return; window.__dsFootBot = true;
 
   var CALLBACK_URL = '';                       // адрес приёма заявок (например, обработчик формы на хостинге); пусто — письмо
-  var PHONE = '8 495 150-12-38', TEL = 'tel:+74951501238', MAIL = 'info@ds-proaudio.ru';
-  var AGREEMENT = '#';                         // страница «Обработка персональных данных»
+  var PHONE = '+7 495 150-12-38', TEL = 'tel:+74951501238', MAIL = 'info@ds-proaudio.ru';
+  var AGREEMENT = './consent.html';                         // страница «Обработка персональных данных»
   var HOURS = 'Пн–Пт, 10:00–19:00 (МСК)';
   var MAIN = './Main.dc.html';
 

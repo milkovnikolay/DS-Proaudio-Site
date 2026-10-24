@@ -12,7 +12,7 @@
   if (window.__dsObjForm) return; window.__dsObjForm = true;
 
   var IMG = 'ee0bf56fd26927721b4e5ed50f35f116'; // картинка прежнего блока: по ней узнаём, что это нужная секция
-  var TEL = '+74951501238', TEL_H = '8 495 150-12-38', MAIL = 'info@ds-proaudio.ru';
+  var TEL = '+74951501238', TEL_H = '+7 495 150-12-38', MAIL = 'info@ds-proaudio.ru';
 
   var OBJ = ['Театр, концертный зал, ДК', 'Учебное заведение', 'Спорт и массовые мероприятия', 'Офис и конференц-зал',
     'Ресторан, бар, отель', 'Храм', 'Клуб и развлечения', 'Прокат и мероприятия', 'Другое'];
@@ -23,12 +23,12 @@
     { k: 'calc', t: 'Акустический расчёт', s: 'Карта покрытия зала в EASE до покупки' },
     { k: 'pick', t: 'Подбор и смета', s: 'Модели, количество и цена от производителя' },
     { k: 'demo', t: 'Выездная демонстрация', s: 'У вас в зале; решение о выезде — после консультации' },
-    { k: 'show', t: 'Прослушивание в шоуруме', s: 'Москва, 2-й Донской проезд, 4' }];
+    { k: 'show', t: 'Прослушивание в шоу-руме', s: 'Москва, 2-й Донской проезд, 4' }];
   var WHEN = ['в ближайшие 3 месяца', 'в этом году', 'пока изучаем'];
   var GET = [
     ['Карта покрытия вашего зала', 'Смоделируем объект в EASE и покажем, как будет звучать каждый ряд, ещё до покупки.'],
     ['Система и смета от производителя', 'Подберём модели под задачу и бюджет. Цены завода, без посредников.'],
-    ['Услышите вживую', 'В шоуруме в Москве или на вашей площадке: выезд согласуем индивидуально, после консультации.']];
+    ['Услышите вживую', 'В шоу-руме в Москве или на вашей площадке: выезд согласуем индивидуально, после консультации.']];
   var TRUST = ['141 объект в 80 городах', 'Оборудование в реестре ГИСП', 'Гарантия 3 года', 'Сервис в Москве и Санкт-Петербурге'];
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -100,11 +100,11 @@
       + '<label class="of-f"><span>Пара слов об объекте</span><textarea name="comment" placeholder="Размеры зала, что уже стоит, что не устраивает">' + esc(S.comment) + '</textarea></label>'
       + '<p class="of-err" aria-live="polite"></p>'
       + '<div class="of-nav"><button type="button" class="of-back" data-go="2">← Назад</button><button type="button" class="of-next of-send">' + submitLabel() + '</button></div>'
-      + '<p class="of-note">Ответим в рабочее время, Пн–Пт 10:00–19:00. Без рассылок. Можно и позвонить: <a href="tel:' + TEL + '">' + TEL_H + '</a>. Отправляя заявку, вы соглашаетесь на обработку персональных данных.</p></div>'
+      + '<p class="of-note">Ответим в рабочее время, Пн–Пт 10:00–19:00. Без рассылок. Можно и позвонить: <a href="tel:' + TEL + '">' + TEL_H + '</a>. Отправляя заявку, вы соглашаетесь на <a href="./consent.html" target="_blank">обработку персональных данных</a>.</p></div>'
       // готово
       + '<div class="of-done"><div class="of-ok">✓</div><h3 class="of-q">Спасибо' + (S.name ? ', ' + esc(S.name) : '') + '! Заявка у нас.</h3>'
-      + '<p class="of-hint">Что будет дальше:</p><ol><li>Инженер позвонит в рабочее время и уточнит детали.</li><li>Подготовим расчёт и подбор системы под ваш объект.</li><li>Пригласим послушать: в шоуруме или у вас на площадке.</li></ol>'
-      + '<div class="of-links"><a href="./portfolio.html">Наши объекты</a><a href="./showroom.html">Шоурум</a><a href="./reviews.html">Отзывы</a></div></div>';
+      + '<p class="of-hint">Что будет дальше:</p><ol><li>Инженер позвонит в рабочее время и уточнит детали.</li><li>Подготовим расчёт и подбор системы под ваш объект.</li><li>Пригласим послушать: в шоу-руме или у вас на площадке.</li></ol>'
+      + '<div class="of-links"><a href="./portfolio.html">Наши объекты</a><a href="./showroom.html">Шоу-рум</a><a href="./reviews.html">Отзывы</a></div></div>';
   }
 
   function leftHTML(h2, lead) {
@@ -213,7 +213,7 @@
     if (!document.getElementById('contact')) return;
     var bar = document.createElement('div');
     bar.className = 'of-fab'; bar.setAttribute('aria-hidden', 'true');
-    bar.innerHTML = '<a class="of-fab-tel" href="' + TEL + '" aria-label="Позвонить: 8 495 150-12-38" tabindex="-1">'
+    bar.innerHTML = '<a class="of-fab-tel" href="' + TEL + '" aria-label="Позвонить: +7 495 150-12-38" tabindex="-1">'
       + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>'
       + '<a class="of-fab-go" href="#contact" tabindex="-1"><span>' + label() + '</span><i aria-hidden="true">→</i></a>';
     document.body.appendChild(bar);
