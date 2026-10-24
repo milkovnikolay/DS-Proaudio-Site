@@ -856,7 +856,7 @@
     </div>
     <div>
       <div id="visitBox">
-        <form class="tf" id="visitForm" novalidate>
+        <form class="tf" id="visitForm" novalidate><input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <fieldset class="full"><span class="flb">Формат</span><div class="seg">
             <label><input type="radio" name="fmt" value="Прослушивание в шоуруме" checked><span>Приехать в шоурум</span></label>
             <label><input type="radio" name="fmt" value="Выездная демонстрация"><span>Выездная демонстрация</span></label></div></fieldset>
@@ -946,7 +946,7 @@
   f.addEventListener('submit',function(e){e.preventDefault();
     var d=new FormData(f),ok=true;['name','phone'].forEach(function(n){var el=f.elements[n],v=(el.value||'').trim(),bad=!v||(n==='phone'&&v.replace(/\D/g,'').length<10);el.classList.toggle('inv',bad);if(bad)ok=false;});
     if(!f.elements.consent.checked)ok=false;f.classList.toggle('bad',!ok);if(!ok)return;
-    var t={fmt:d.get('fmt'),name:d.get('name'),company:d.get('company'),phone:d.get('phone'),email:d.get('email'),role:d.get('role'),series:d.getAll('ser').join(', '),dates:d.get('dates'),people:d.get('people'),comment:d.get('comment'),page:location.pathname};
+    var t={fmt:d.get('fmt'),name:d.get('name'),company:d.get('company'),phone:d.get('phone'),email:d.get('email'),role:d.get('role'),series:d.getAll('ser').join(', '),dates:d.get('dates'),people:d.get('people'),comment:d.get('comment'),website:d.get('website'),page:location.pathname};
     var btn=f.querySelector('button[type=submit]');btn.disabled=true;
     function mail(){var b=['Заявка: '+t.fmt,'','Имя: '+t.name,'Компания: '+(t.company||'—'),'Телефон: '+t.phone,'E-mail: '+(t.email||'—'),'Кто: '+t.role,'Послушать: '+(t.series||'—'),'Даты: '+(t.dates||'—'),'Человек: '+t.people,'Объект и задача: '+(t.comment||'—')].join('\n');
       location.href='mailto:info@ds-proaudio.ru?subject='+encodeURIComponent(t.fmt+': '+t.name)+'&body='+encodeURIComponent(b);vb.classList.add('sent');}

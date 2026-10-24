@@ -49,7 +49,7 @@
     + '.hrv-below{flex:0 0 auto;margin-top:.75em;font-family:"PT Mono",monospace;font-size:.66em;letter-spacing:.06em;text-transform:uppercase;color:rgba(250,250,250,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}';
 
   function pad(n){ return (n < 10 ? '0' : '') + n; }
-  function esc(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function esc(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   function cardHTML(r){
     var R = REV[r];
     var tags = (R.video ? '<span class="hrv-tag vid">▶ Видео</span>' : '') + R.tags.map(function(t){ return '<span class="hrv-tag">' + esc(t) + '</span>'; }).join('');
