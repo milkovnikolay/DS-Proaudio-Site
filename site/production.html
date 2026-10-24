@@ -356,6 +356,28 @@
 .pa-ws{display:flex;flex-wrap:wrap;gap:6px;}
 .pa-ws a{font-size:12.5px;line-height:1;padding:7px 10px;border-radius:99px;border:1px solid #D6D6D6;color:#4A4A4A;white-space:nowrap;}
 .pa-ws a:hover{border-color:#141414;color:#141414;}
+/* 3D-взрыв-схема (anatomy3d.js) */
+.an-pic.a3{display:block;background:#FFFFFF;}
+.an-pic .a3-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .5s;}
+.an-pic.a3-ready .a3-poster{opacity:0;pointer-events:none;}
+.a3-cv{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none;}
+.a3-cv:active{cursor:grabbing;}
+.a3-load{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:10px;padding:13px 20px;border-radius:99px;border:none;background:#141414;color:#FAFAFA;font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;white-space:nowrap;}
+.a3-load span{font:400 11.5px 'PT Mono',monospace;letter-spacing:.04em;color:#A8A8A8;}
+.a3-ui{position:absolute;left:16px;right:16px;bottom:14px;z-index:3;display:flex;align-items:center;gap:14px;}
+.a3-ui[hidden],.a3-wait[hidden],.a3-tip[hidden],.a3-load[hidden]{display:none;}
+.a3-play{flex:0 0 auto;padding:9px 16px;border-radius:99px;border:1px solid #D6D6D6;background:rgba(255,255,255,.9);font:600 13px 'IBM Plex Sans',sans-serif;color:#141414;cursor:pointer;}
+.a3-play:hover{border-color:#141414;}
+.a3-range{flex:1 1 auto;min-width:60px;accent-color:#141414;}
+.a3-hint{flex:0 0 auto;font:11.5px 'PT Mono',monospace;letter-spacing:.04em;color:#9A9A9A;}
+.a3-wait{position:absolute;left:18px;bottom:18px;z-index:3;display:flex;align-items:center;gap:10px;font:11.5px 'PT Mono',monospace;letter-spacing:.04em;color:#8A8A8A;}
+.a3-wait i{width:14px;height:14px;border-radius:50%;border:2px solid #D6D6D6;border-top-color:#141414;animation:a3s 1s linear infinite;}
+@keyframes a3s{to{transform:rotate(360deg)}}
+.a3-tip{position:absolute;z-index:4;pointer-events:none;max-width:240px;padding:8px 11px;border-radius:8px;background:#141414;color:#FAFAFA;font:13px/1.35 'IBM Plex Sans',sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.18);}
+.a3-tip b{display:block;font-weight:600;}
+.a3-tip span{display:block;color:#B8B8B8;font-size:12px;}
+.pa.a3-on{background:#EDEDED;}
+@media (max-width:759px){.a3-hint{display:none}.a3-ui{left:10px;right:10px;bottom:10px;gap:10px}}
 .an-sum{margin-top:26px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:20px;line-height:1.4;}
 .an-sum small{display:block;margin-top:6px;font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:14px;color:#8A8A8A;}
 /* навигация по цехам — подстраивается под ширину: full → short → num → cmp */
@@ -680,9 +702,9 @@
   <div class="wrap">
     <div class="pr-kick" style="color:#8A8A8A;">Анатомия TAURA 8</div>
     <h2 class="pr-h2">Каждая деталь — из нашего цеха</h2>
-    <p class="pr-p">Разберём линейный массив TAURA 8 на полуфабрикаты и покажем, где делается каждый из них. Нажмите на цех, чтобы перейти к нему.</p>
+    <p class="pr-p">Разберём линейный массив TAURA 8 на полуфабрикаты и покажем, где делается каждый из них. Покрутите 3D-модель и разберите её ползунком. Наведите на строку или нажмите на деталь — она подсветится; нажмите на цех, чтобы перейти к нему.</p>
     <div class="an">
-      <div class="an-pic"><img src="./assets/products/ds-proaudio-taura-8/01.jpg" alt="TAURA 8"><div class="an-note">Здесь будет интерактивная 3D-взрыв-схема TAURA 8 — после получения модели</div></div>
+      <div class="an-pic"><img class="a3-poster" src="./assets/3d/taura8-poster.jpg" alt="TAURA 8 — 3D-модель в разборе"></div>
       <div>
         <ol class="an-list"><li class="pa" data-ws="wood paint"><span class="pa-n">01</span><span class="pa-t">Корпус</span><span class="pa-ws"><a href="#ws-wood">Деревообработка</a><a href="#ws-paint">Покраска корпусов</a></span></li><li class="pa" data-ws="casting metal powder coils suspension drivers"><span class="pa-n">02</span><span class="pa-t">НЧ-динамики</span><span class="pa-ws"><a href="#ws-casting">Литьё рам динамиков</a><a href="#ws-metal">Металлообработка</a><a href="#ws-powder">Порошковая покраска</a><a href="#ws-coils">Намотка звуковых катушек</a><a href="#ws-suspension">Печать подвесов и центрирующих шайб</a><a href="#ws-drivers">Сборка динамиков</a></span></li><li class="pa" data-ws="metal coils hf"><span class="pa-n">03</span><span class="pa-t">ВЧ-драйвер</span><span class="pa-ws"><a href="#ws-metal">Металлообработка</a><a href="#ws-coils">Намотка звуковых катушек</a><a href="#ws-hf">Производство ВЧ-драйверов</a></span></li><li class="pa" data-ws="print3d"><span class="pa-n">04</span><span class="pa-t">Волновод</span><span class="pa-ws"><a href="#ws-print3d">3D-печать</a></span></li><li class="pa" data-ws="metal powder"><span class="pa-n">05</span><span class="pa-t">Защитная сетка</span><span class="pa-ws"><a href="#ws-metal">Металлообработка</a><a href="#ws-powder">Порошковая покраска</a></span></li><li class="pa" data-ws="metal powder print3d"><span class="pa-n">06</span><span class="pa-t">Риггинг</span><span class="pa-ws"><a href="#ws-metal">Металлообработка</a><a href="#ws-powder">Порошковая покраска</a><a href="#ws-print3d">3D-печать</a></span></li><li class="pa" data-ws="electronics"><span class="pa-n">07</span><span class="pa-t">Фильтр</span><span class="pa-ws"><a href="#ws-electronics">Электроника</a></span></li><li class="pa" data-ws="assembly packing"><span class="pa-n">08</span><span class="pa-t">Сборка и упаковка</span><span class="pa-ws"><a href="#ws-assembly">Сборка акустических систем</a><a href="#ws-packing">Упаковка</a></span></li></ol>
         <div class="an-sum">Все основные элементы — собственного производства.<small>Рамы динамиков отливаются у партнёра — в наших 12 пресс-формах.</small></div>
@@ -1116,5 +1138,6 @@
   });
 })();
 </script>
+<script type="module" src="./anatomy3d.js"></script>
 </body>
 </html>
