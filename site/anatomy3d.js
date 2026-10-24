@@ -1,12 +1,12 @@
 /* Анатомия TAURA 8: интерактивная 3D-взрыв-схема (страница «Производство», блок #anatomy).
-   Модель: assets/3d/taura8.glb — сборка из CAD, упрощена до ~0,55 млн треугольников, сжата meshopt.
+   Модель: assets/3d/taura8.dat — сборка из CAD, упрощена и сжата meshopt.
    У каждой части в extras: g — группа, d — смещение в разобранном виде (м), f — крепёж (скрывается при разборке).
    Список цехов справа связан с моделью: наведение на строку подсвечивает детали, щелчок по детали — строку. */
 const box = document.querySelector('#anatomy .an-pic');
 if (box) init();
 
 function init() {
-  const GLB = './assets/3d/taura8.glb', SIZE = '5,5 МБ';
+  const DAT = './assets/3d/taura8.dat', SIZE = '3,1 МБ';
   const G = {
     cab:    { t: 'Корпус',                    li: 0, delay: .16 },
     back:   { t: 'Задняя панель с разъёмами', li: 0, delay: .12 },
@@ -14,13 +14,15 @@ function init() {
     sideL:  { t: 'Риггинг и боковина',        li: 5, delay: .06 },
     sideR:  { t: 'Риггинг и боковина',        li: 5, delay: .06 },
     wave:   { t: 'Волновод',                  li: 3, delay: .26 },
+    lwL:    { t: 'НЧ-волновод',               li: 3, delay: .30 },
+    lwR:    { t: 'НЧ-волновод',               li: 3, delay: .30 },
     lfL:    { t: 'НЧ-динамик 8″',             li: 1, delay: .32 },
     lfR:    { t: 'НЧ-динамик 8″',             li: 1, delay: .32 },
     hfT:    { t: 'ВЧ-драйвер',                li: 2, delay: .38 },
     hfB:    { t: 'ВЧ-драйвер',                li: 2, delay: .42 },
   };
   const LI = [...document.querySelectorAll('#anatomy .an-list .pa')];
-  const LI_GROUPS = [['cab', 'back'], ['lfL', 'lfR'], ['hfT', 'hfB'], ['wave'], ['grille'], ['sideL', 'sideR'], [], Object.keys(G)];
+  const LI_GROUPS = [['cab', 'back'], ['lfL', 'lfR'], ['hfT', 'hfB'], ['wave', 'lwL', 'lwR'], ['grille'], ['sideL', 'sideR'], [], Object.keys(G)];
 
   // ---- оболочка: постер, кнопка, панель управления ----
   box.classList.add('a3');
@@ -69,7 +71,12 @@ function init() {
 
     const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
     let gltf;
-    try { gltf = await loader.loadAsync(GLB); } catch (e) { wait.textContent = 'Не удалось загрузить модель'; return; }
+    try {
+      const buf = await (await fetch(DAT)).arrayBuffer(), u = new Uint32Array(buf);
+      let x = 0x5DA1C0DE >>> 0;
+      for (let i = 0; i < u.length; i++) { x ^= x << 13; x >>>= 0; x ^= x >>> 17; x ^= x << 5; x >>>= 0; u[i] ^= x; }
+      gltf = await loader.parseAsync(buf, './assets/3d/');
+    } catch (e) { wait.textContent = 'Не удалось загрузить модель'; return; }
     const root = gltf.scene; scene.add(root);
     const parts = [], meshes = [];
     root.children.forEach(n => {
@@ -159,7 +166,7 @@ function init() {
       const m = pick(e);
       if (!m) { tip.hidden = true; cv.style.cursor = 'grab'; return; }
       const p = m.userData.part, g = G[p.g] || { t: '' };
-      tip.innerHTML = '<b>' + g.t + '</b>' + (m.name && m.name !== g.t ? '<span>' + m.name + '</span>' : '');
+      tip.innerHTML = '<b>' + g.t + '</b>' + (m.name && m.name !== g.t && !/^mesh_\d/.test(m.name) ? '<span>' + m.name + '</span>' : '');
       const r = box.getBoundingClientRect(); tip.style.left = (e.clientX - r.left + 14) + 'px'; tip.style.top = (e.clientY - r.top + 14) + 'px';
       tip.hidden = false; cv.style.cursor = 'pointer';
     });
