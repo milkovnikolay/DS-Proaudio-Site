@@ -10,6 +10,7 @@
 <script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
 <link rel="stylesheet" href="./mnav.css">
 <script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
 <script>/* 24.10.2026, план Коли п. 1.7 / Р17-а: на главной сначала кадр-постер, хиро-видео подгружается только после загрузки страницы
    и только на широких экранах (от 901 px); на телефонах, при экономии трафика и при «уменьшении движения» остаётся постер */
 (function(){
@@ -27,7 +28,7 @@
   if(document.readyState==='complete')setTimeout(start,300);else addEventListener('load',function(){setTimeout(start,300);});
 })();</script>
 <title>Профессиональная акустика российского производства — DS PROAUDIO</title>
-<meta name="description" content="DS PROAUDIO — российский производитель профессиональной акустики: линейные массивы, точечные источники, колонны и усилители. Расчёт, подбор и сервис в Москве и Санкт-Петербурге.">
+<meta name="description" content="DS PROAUDIO — российский производитель профессиональной акустики: линейные массивы, точечные источники, колонны и усилители.">
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="./support.js"></script>
@@ -54,7 +55,7 @@
 <meta property="og:site_name" content="DS PROAUDIO">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Профессиональная акустика российского производства — DS PROAUDIO">
-<meta property="og:description" content="DS PROAUDIO — российский производитель профессиональной акустики: линейные массивы, точечные источники, колонны и усилители. Расчёт, подбор и сервис в Москве и Санкт-Петербурге.">
+<meta property="og:description" content="DS PROAUDIO — российский производитель профессиональной акустики: линейные массивы, точечные источники, колонны и усилители.">
 <meta property="og:url" content="https://ds-proaudio.ru/">
 <meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
 <meta name="twitter:card" content="summary_large_image">

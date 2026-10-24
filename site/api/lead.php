@@ -6,6 +6,7 @@
      POST /api/lead      — «Клиентам» (выезд, консультация, цены, где купить), семинары, главная форма по объекту
      POST /api/showroom  — запись в шоурум
      POST /api/tour      — фактори-тур со страницы «Производство»
+     POST /api/service   — сервисное обращение (бот на странице «Гарантия и сервис», service-bot.js)
    Что делает: проверяет заявку, сохраняет её вне папки сайта, отправляет письмо и сообщение в мессенджер.
    Если отправка не удалась, сайт сам откроет письмо на info@ (как и раньше).
 
@@ -26,7 +27,7 @@ if (!is_dir($DATA)) @mkdir($DATA, 0700, true);
 
 // ---- кто и как прислал ----
 $ep = $_GET['ep'] ?? '';
-if (!in_array($ep, ['lead', 'showroom', 'tour'], true)) out(404, ['error' => 'not found']);
+if (!in_array($ep, ['lead', 'showroom', 'tour', 'service'], true)) out(404, ['error' => 'not found']);
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') out(405, ['error' => 'post only']);
 if (!preg_match('~^application/json\b~i', $_SERVER['CONTENT_TYPE'] ?? '')) out(415, ['error' => 'json only']);
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
@@ -61,6 +62,11 @@ if (!is_array($t)) out(400, ['error' => 'bad request']);
 if (!empty($t['website'])) out(200, ['ok' => true]); // поле-ловушка для ботов: «принято», но никуда не идёт
 
 function clip($v, $n) { return mb_substr(trim(is_scalar($v) ? (string)$v : ''), 0, $n); }
+// сервисный бот присылает контакт вложенным объектом: { contact: { name, phone, email } }
+if ($ep === 'service' && is_array($t['contact'] ?? null)) {
+  foreach (['name', 'phone', 'email'] as $k) if (!isset($t[$k]) && isset($t['contact'][$k])) $t[$k] = $t['contact'][$k];
+  if (!empty($t['urgent'])) $t['urgency'] = 'СРОЧНО' . (!empty($t['urgency']) ? ' · ' . clip($t['urgency'], 80) : '');
+}
 $name = clip($t['name'] ?? '', 120); $phone = clip($t['phone'] ?? '', 40);
 if ($name === '' || strlen(preg_replace('/\D/', '', $phone)) < 10) out(400, ['error' => 'name and phone required']);
 
@@ -68,22 +74,27 @@ if ($name === '' || strlen(preg_replace('/\D/', '', $phone)) < 10) out(400, ['er
 $LABELS = ['name' => 'Имя', 'phone' => 'Телефон', 'email' => 'E-mail', 'company' => 'Компания', 'role' => 'Кто', 'city' => 'Город',
   'obj' => 'Объект', 'object' => 'Объект', 'cap' => 'Вместимость', 'capacity' => 'Вместимость', 'stage' => 'Стадия', 'venue' => 'Площадка',
   'needs' => 'Нужно', 'when' => 'Когда', 'model' => 'Модель', 'way' => 'Как связаться', 'fmt' => 'Формат', 'series' => 'Послушать',
-  'site' => 'Площадка', 'dates' => 'Даты', 'people' => 'Человек', 'comment' => 'Комментарий'];
-$prefix = ['lead' => 'L', 'showroom' => 'L', 'tour' => 'T'][$ep];
+  'site' => 'Площадка', 'dates' => 'Даты', 'people' => 'Человек', 'time' => 'Когда удобно',
+  'issue' => 'Неисправность', 'purchased' => 'Куплено', 'warranty' => 'Гарантия', 'urgency' => 'Срочность', 'callback' => 'Перезвонить',
+  'description' => 'Описание', 'comment' => 'Комментарий'];
+$prefix = ['lead' => 'L', 'showroom' => 'L', 'tour' => 'T', 'service' => 'S'][$ep];
 $rec = ['id' => $prefix . strtoupper(base_convert((string)floor(microtime(true) * 1000), 10, 36)), 'receivedAt' => date('c'),
-  'kind' => clip($t['kind'] ?? ($ep === 'tour' ? 'Фактори-тур' : ($t['fmt'] ?? 'Шоурум')), 80), 'page' => clip($t['page'] ?? '', 120)];
+  'kind' => clip($t['kind'] ?? (['tour' => 'Фактори-тур', 'service' => 'Сервисное обращение'][$ep] ?? ($t['fmt'] ?? 'Шоу-рум')), 80), 'page' => clip($t['page'] ?? '', 120)];
+if ($ep === 'service' && !empty($t['id'])) $rec['id'] = clip($t['id'], 40);
 foreach ($LABELS as $k => $lab) {
-  $v = clip($t[$k] ?? '', $k === 'comment' ? 2000 : 200);
+  $v = clip($t[$k] ?? '', in_array($k, ['comment', 'description'], true) ? 4000 : 200);
   if ($v !== '' && !($k === 'fmt' && $v === $rec['kind'])) $rec[$k] = $v;
 }
 
 // ---- сохранить (вне папки сайта, права 0600) ----
-$file = $DATA . '/' . ($ep === 'tour' ? 'tours' : 'leads') . '.jsonl';
+$base = ['tour' => 'tours', 'service' => 'tickets'][$ep] ?? 'leads';
+$file = $DATA . '/' . $base . '.jsonl';
 file_put_contents($file, json_encode($rec, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
 @chmod($file, 0600);
 
 // ---- текст уведомления ----
-$lines = [($ep === 'tour' ? '🏭 ' : '📩 ') . $rec['kind'] . ' · ' . $rec['id']];
+$icon = ['tour' => '🏭 ', 'service' => (!empty($t['urgent']) ? '🔴 ' : '🛠 ')][$ep] ?? '📩 ';
+$lines = [$icon . $rec['kind'] . ' · ' . $rec['id']];
 foreach ($LABELS as $k => $lab) if (isset($rec[$k])) $lines[] = $lab . ': ' . $rec[$k];
 if ($rec['page'] !== '') $lines[] = 'Страница: ' . $rec['page'];
 $text = implode("\n", $lines);

@@ -9,6 +9,7 @@
 <script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
 <link rel="stylesheet" href="./mnav.css">
 <script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Акустика для концертных залов и филармоний | Оборудование DS PROAUDIO</title>
 <meta name="description" content="Профессиональное звуковое оборудование для филармоний и камерных залов. Системы с высокой разборчивостью речи и натуральным тембром. Установка, настройка, проектирование.">
@@ -515,13 +516,13 @@
           
           <div class="arch-title">Линейные массивы малой или средней мощности</div>
           <div class="arch-text">Ровное покрытие партера и балконов без перепадов громкости.</div>
-          <a href="#" class="arch-link">Линейные массивы →</a>
+          <a href="./products-line-arrays.html" class="arch-link">Линейные массивы →</a>
         </div>
         <div class="arch-item" data-el="monitor">
           
           <div class="arch-title">Низкопрофильные сценические мониторы</div>
           <div class="arch-text">Фронтальные системы для солистов: артист слышит себя натурально, не напрягая слух.</div>
-          <a href="#" class="arch-link">Сценические мониторы →</a>
+          <a href="./products-monitors.html" class="arch-link">Сценические мониторы →</a>
         </div>
         <div class="arch-item" data-el="sub">
           
@@ -535,7 +536,7 @@
           
           <div class="arch-title">Мощные звуковые колонны как основная система</div>
           <div class="arch-text">Узкая вертикальная направленность при равномерном покрытии партера: звук идёт в зрительские кресла, а не в потолок и стены.</div>
-          <a href="#" class="arch-link">Звуковые колонны →</a>
+          <a href="./products-columns.html" class="arch-link">Звуковые колонны →</a>
         </div>
         <div class="arch-item" data-el="column">
           

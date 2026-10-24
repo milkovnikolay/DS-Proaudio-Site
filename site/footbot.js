@@ -1,15 +1,15 @@
 /* =====================================================================
    DS PROAUDIO — помощник в подвале: «перезвонить или помочь чем-то ещё».
    Работает без сервера. Заявка на звонок:
-     • если задан CALLBACK_URL — отправляется туда POST-запросом (JSON: name, phone, time, page);
-     • если нет — открывается письмо на info@ds-proaudio.ru с уже заполненным текстом.
+     • если задан CALLBACK_URL — отправляется туда POST-запросом (JSON: kind, name, phone, time, page);
+     • если нет или сервер не ответил — открывается письмо на info@ds-proaudio.ru с уже заполненным текстом.
    Свободный вопрос ищется по разделам сайта (через поиск помощника навигации, navbot.js).
    Обработчики навешаны на document — подвал может перерисовываться (главная) и всё равно работает.
    ===================================================================== */
 (function () {
   if (window.__dsFootBot) return; window.__dsFootBot = true;
 
-  var CALLBACK_URL = '';                       // адрес приёма заявок (например, обработчик формы на хостинге); пусто — письмо
+  var CALLBACK_URL = '/api/lead';              // приёмник заявок на хостинге (site/api/lead.php); пусто — письмо
   var PHONE = '+7 495 150-12-38', TEL = 'tel:+74951501238', MAIL = 'info@ds-proaudio.ru';
   var AGREEMENT = './consent.html';                         // страница «Обработка персональных данных»
   var HOURS = 'Пн–Пт, 10:00–19:00 (МСК)';
@@ -86,21 +86,22 @@
     if (digits.length < 10) { err.textContent = 'Проверьте номер телефона.'; f.phone.focus(); return; }
     if (!f.agree.checked) { err.textContent = 'Нужно согласие на обработку персональных данных.'; return; }
     err.textContent = '';
-    var data = { name: f.name.value.trim(), phone: phone, time: f.time.value.trim(), page: location.href };
+    var data = { kind: 'Перезвонить', name: f.name.value.trim(), phone: phone, time: f.time.value.trim(), page: location.pathname };
     var btn = form.querySelector('button'); btn.disabled = true;
     function done(sentToServer) {
       form.remove();
       if (sentToServer) add('b', 'Спасибо' + (data.name ? ', ' + esc(data.name) : '') + '! Заявка принята — менеджер перезвонит на ' + esc(phone) + ' в рабочее время.');
       else add('b', 'Открываю письмо с вашей заявкой — отправьте его, и мы перезвоним на ' + esc(phone) + '. Если почтовая программа не открылась, позвоните нам: <a href="' + TEL + '">' + PHONE + '</a>.');
     }
-    if (CALLBACK_URL) {
-      fetch(CALLBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-        .then(function (r) { if (!r.ok) throw 0; done(true); })
-        .catch(function () { btn.disabled = false; err.textContent = 'Не удалось отправить. Позвоните нам: ' + PHONE + '.'; });
-    } else {
+    function byMail() {
       location.href = mailto('Перезвоните мне', 'Имя: ' + data.name + '\nТелефон: ' + data.phone + (data.time ? '\nКогда удобно: ' + data.time : '') + '\nСтраница: ' + data.page);
       done(false);
     }
+    if (CALLBACK_URL) {
+      fetch(CALLBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { if (!r.ok) throw 0; done(true); })
+        .catch(byMail); // сервер недоступен (например, превью без приёмника) — письмом, как раньше
+    } else byMail();
   }
 
   document.addEventListener('click', function (e) {
