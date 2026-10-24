@@ -16,7 +16,7 @@
   var MAIN = './Main.dc.html';
 
   function contactHref() { return document.getElementById('contact') ? '#contact' : MAIN + '#contact'; }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function $(sel) { return document.querySelector(sel); }
   function log() { return $('#dsFootBot .dsf-bot-log'); }
 

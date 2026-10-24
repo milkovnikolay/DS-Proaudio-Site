@@ -952,7 +952,7 @@ window.HX_DATA={"g": {"g90": {"t": "Архив 1990-х", "i": [["./assets/histor
       meas.style.width = cw + 'px'; meas.lastChild.textContent = t;
       return (capCache[key] = meas.offsetHeight + 8);
     }
-    function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
     // поставить в ячейку фото с номером s: карточка = фото + подпись под ним, едут вместе
     function fill(sl, s){
       sl.s = s; var i = ((s % list.length) + list.length) % list.length, it = list[i] || [null, 3, 2, ''];

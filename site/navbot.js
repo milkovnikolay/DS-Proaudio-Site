@@ -160,7 +160,7 @@
   var SEND_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#0A0A0B" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5l2.5 7.2L14 12l-8.5 1.3z"/></svg>';
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function norm(s) { return ' ' + String(s).toLowerCase().replace(/ё/g, 'е').replace(/[^a-zа-я0-9\s-]/g, ' ').replace(/\s+/g, ' ') + ' '; }
   function byUrl(u) { for (var i = 0; i < PAGES.length; i++) if (PAGES[i].u === u) return PAGES[i]; }
 

@@ -674,7 +674,7 @@
   var zoom = 0, detailOpen = false, DEG = 180 / Math.PI;
   function pad3(n){ return ('0' + n).slice(-2); }
   function pad(n){ return (n < 10 ? '0' : '') + n; }
-  function esc(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function esc(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   function menuOpen(){ return menu && !menu.hidden; }
   function numOf(o){ return ALL.indexOf(o) + 1; }
 

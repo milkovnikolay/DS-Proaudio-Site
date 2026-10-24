@@ -24,7 +24,7 @@
   var here = (location.pathname.split('/').pop() || 'Main.dc.html').toLowerCase();
   // на главной при открытии в шапке сначала надпись «Живи Музыкой!», через 5 с она растворяется в логотип (как в шапке компьютера)
   var INTRO = './assets/3d4dfaf79132674a05fc4f9379ace7c9.png', isMain = /^(main\.dc\.html|index\.html)?$/.test(here);
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   function ext(u) { return /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''; }
   function link(it) {
     var cur = it[1] && it[1].replace('./', '').toLowerCase() === here ? ' cur' : '';
