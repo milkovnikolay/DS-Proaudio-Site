@@ -56,3 +56,6 @@ __MACOSX/
 /*.zip
 /Металлообработка/
 /TAURA SAT_8*
+
+# Сборка для выгрузки на хостинг (tools/deploy/build_dist.sh)
+/dist/
