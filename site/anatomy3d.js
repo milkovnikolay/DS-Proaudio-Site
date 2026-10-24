@@ -6,7 +6,7 @@ const box = document.querySelector('#anatomy .an-pic');
 if (box) init();
 
 function init() {
-  const DAT = './assets/3d/taura8.dat', SIZE = '3,1 МБ';
+  const DAT = './assets/3d/taura8.dat', SIZE = '2,7 МБ';
   const G = {
     cab:    { t: 'Корпус',                    li: 0, delay: .16 },
     back:   { t: 'Задняя панель с разъёмами', li: 0, delay: .12 },
