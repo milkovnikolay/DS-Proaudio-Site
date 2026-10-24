@@ -12,6 +12,8 @@ RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 # Старая главная -> корень. Включить, когда на сайте появится index.html (иначе корень сайта не откроется)
 # RewriteRule ^Main\.dc\.html$ / [R=301,L]
+# ---- Приём заявок с форм: /api/lead, /api/showroom, /api/tour -> api/lead.php ----
+RewriteRule ^api/(lead|showroom|tour)$ api/lead.php?ep=$1 [L,QSA]
 # ---- Стартовая страница, без листинга ----
 DirectoryIndex index.html Main.dc.html
 Options -Indexes -MultiViews

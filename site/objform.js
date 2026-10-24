@@ -50,7 +50,7 @@
   var S = null; // состояние формы переживает перерисовку главной (шаблон перерисовывает секции)
   function initState() {
     var c = crumbs(), cat = c[1], last = c.length > 2 ? c[c.length - 1] : '';
-    S = { step: 1, obj: '', own: '', cap: '', need: {}, when: '', model: '', name: '', phone: '', city: '', comment: '' };
+    S = { step: 1, obj: '', own: '', cap: '', need: {}, when: '', model: '', name: '', phone: '', city: '', comment: '', consent: false };
     if (cat in CAT) {
       if (last && last !== cat) { S.own = last; S.obj = last; } else S.obj = OBJ[CAT[cat]];
       S.need.calc = true;
@@ -98,9 +98,10 @@
       + '<label class="of-f"><span>Телефон *</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7" value="' + esc(S.phone) + '"></label></div>'
       + '<label class="of-f"><span>Город</span><input name="city" autocomplete="address-level2" value="' + esc(S.city) + '"></label>'
       + '<label class="of-f"><span>Пара слов об объекте</span><textarea name="comment" placeholder="Размеры зала, что уже стоит, что не устраивает">' + esc(S.comment) + '</textarea></label>'
+      + '<label class="of-agree"><input type="checkbox" name="consent"' + (S.consent ? ' checked' : '') + '> <span>Согласен на <a href="./privacy.html#consent" target="_blank" rel="noopener">обработку персональных данных</a></span></label>'
       + '<p class="of-err" aria-live="polite"></p>'
       + '<div class="of-nav"><button type="button" class="of-back" data-go="2">← Назад</button><button type="button" class="of-next of-send">' + submitLabel() + '</button></div>'
-      + '<p class="of-note">Ответим в рабочее время, Пн–Пт 10:00–19:00. Без рассылок. Можно и позвонить: <a href="tel:' + TEL + '">' + TEL_H + '</a>. Отправляя заявку, вы соглашаетесь на обработку персональных данных.</p></div>'
+      + '<p class="of-note">Ответим в рабочее время, Пн–Пт 10:00–19:00. Без рассылок. Можно и позвонить: <a href="tel:' + TEL + '">' + TEL_H + '</a>.</p></div>'
       // готово
       + '<div class="of-done"><div class="of-ok">✓</div><h3 class="of-q">Спасибо' + (S.name ? ', ' + esc(S.name) : '') + '! Заявка у нас.</h3>'
       + '<p class="of-hint">Что будет дальше:</p><ol><li>Инженер позвонит в рабочее время и уточнит детали.</li><li>Подготовим расчёт и подбор системы под ваш объект.</li><li>Пригласим послушать: в шоуруме или у вас на площадке.</li></ol>'
@@ -127,6 +128,7 @@
 
   function keep(card) { // сохранить введённое перед перерисовкой
     ['name', 'phone', 'city', 'comment'].forEach(function (k) { var f = card.querySelector('[name="' + k + '"]'); if (f) S[k] = f.value; });
+    var c = card.querySelector('[name="consent"]'); if (c) S.consent = c.checked;
   }
 
   function send(card) {
@@ -139,6 +141,7 @@
       err.textContent = 'Укажите, пожалуйста, имя и телефон, чтобы мы могли связаться.';
       return;
     }
+    if (!S.consent) { err.textContent = 'Нужно согласие на обработку персональных данных.'; return; }
     var t = { kind: 'Заявка по объекту: ' + needs().map(function (n) { return n.t.toLowerCase(); }).join(', '), page: location.pathname.split('/').pop() + ' · ' + document.title,
       object: S.obj, capacity: S.cap, needs: needs().map(function (n) { return n.t; }).join(', '), when: S.when, model: S.model,
       name: S.name.trim(), phone: S.phone.trim(), city: S.city.trim(), comment: S.comment.trim() };

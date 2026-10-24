@@ -61,6 +61,9 @@
 #contact .of-next:disabled{opacity:.35;cursor:default;transform:none}
 #contact .of-note{margin:14px 0 0;font-size:12px;line-height:1.5;color:#7A7A7A}
 #contact .of-note a{color:#BDBDBD}
+#contact .of-agree{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:13px;line-height:1.45;color:#BDBDBD;cursor:pointer}
+#contact .of-agree input{margin:2px 0 0;width:16px;height:16px;flex-shrink:0;accent-color:#FAFAFA}
+#contact .of-agree a{color:#FAFAFA}
 #contact .of-err{color:#FF8A7A;font-size:13px;margin:8px 0 0;min-height:1em}
 #contact .of-done{display:none;text-align:left}
 #contact .of-card.sent .of-done{display:block;animation:ofIn .4s ease}
