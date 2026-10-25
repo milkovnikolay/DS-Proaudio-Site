@@ -1011,37 +1011,37 @@
   "TAURA": {
    "name": "TAURA",
    "text": "Линейный массив для аудиторий до 2500 человек. Элементы линейного массива TAURA 8 (2×8″, гибридный волновод) и TAURA 10, кардиоидный сабвуфер TAURA C-Sub 18 (18″+12″) и сабвуфер TAURA Sub 18.",
-   "cover": "./assets/products/_series/tauracover.jpg"
+   "cover": "./assets/products/_series/tauracover.webp"
   },
   "ERA": {
    "name": "ERA",
    "text": "Масштабируемые точечные источники — элементы массивов постоянной кривизны (Constant Curvature Arrays) для малых и средних инсталляций на дистанциях до 35 метров.",
-   "cover": "./assets/products/_series/eraseria1.jpg"
+   "cover": "./assets/products/_series/eraseria1.webp"
   },
   "ERA-i": {
    "name": "ERA-i",
    "text": "Масштабируемые точечные источники — элементы массивов постоянной кривизны (Constant Curvature Arrays) для малых и средних инсталляций на дистанциях до 35 метров.",
-   "cover": "./assets/products/_series/eraseria1.jpg"
+   "cover": "./assets/products/_series/eraseria1.webp"
   },
   "PILLAR": {
    "name": "PILLAR",
    "text": "Комплекты на основе коллинеарных звуковых колонн (6×5″ + 2×1,5″ драйвера на волноводе) и компактных сабвуферов 2×12″.",
-   "cover": "./assets/products/_series/pillara1.jpg"
+   "cover": "./assets/products/_series/pillara1.webp"
   },
   "CX": {
    "name": "CX",
    "text": "Коаксиальные точечные источники для малых и средних инсталляций и мобильной работы.",
-   "cover": "./assets/products/_series/CX_12S15_A_1.jpg"
+   "cover": "./assets/products/_series/CX_12S15_A_1.webp"
   },
   "ANT": {
    "name": "ANT",
    "text": "Компактные и мощные акустические комплекты со встроенным усилением и процессингом.",
-   "cover": "./assets/products/_series/antcover1.jpg"
+   "cover": "./assets/products/_series/antcover1.webp"
   },
   "DA": {
    "name": "DA",
    "text": "",
-   "cover": "./assets/products/_series/dsproaudiousiliteliseria.jpg"
+   "cover": "./assets/products/_series/dsproaudiousiliteliseria.webp"
   },
   "MCX": {
    "name": "MCX",
@@ -1131,37 +1131,37 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-taura-8/01.jpg",
+     "src": "./assets/products/ds-proaudio-taura-8/01.webp",
      "w": 1910,
      "h": 1065
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-8/02.jpg",
+     "src": "./assets/products/ds-proaudio-taura-8/02.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-8/03.jpg",
+     "src": "./assets/products/ds-proaudio-taura-8/03.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-8/04.png",
+     "src": "./assets/products/ds-proaudio-taura-8/04.webp",
      "w": 2000,
      "h": 1285
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-8/05.png",
+     "src": "./assets/products/ds-proaudio-taura-8/05.webp",
      "w": 1415,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-8/06.png",
+     "src": "./assets/products/ds-proaudio-taura-8/06.webp",
      "w": 1105,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-taura-8/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-taura-8/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -1258,37 +1258,37 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-taura-c-sub-18/01.jpg",
+     "src": "./assets/products/ds-proaudio-taura-c-sub-18/01.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-c-sub-18/02.jpg",
+     "src": "./assets/products/ds-proaudio-taura-c-sub-18/02.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-c-sub-18/03.jpg",
+     "src": "./assets/products/ds-proaudio-taura-c-sub-18/03.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-c-sub-18/04.png",
+     "src": "./assets/products/ds-proaudio-taura-c-sub-18/04.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-c-sub-18/05.png",
+     "src": "./assets/products/ds-proaudio-taura-c-sub-18/05.webp",
      "w": 1415,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-c-sub-18/06.png",
+     "src": "./assets/products/ds-proaudio-taura-c-sub-18/06.webp",
      "w": 1105,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-taura-c-sub-18/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-taura-c-sub-18/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -1324,22 +1324,22 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-taura-f-bar/01.jpg",
+     "src": "./assets/products/ds-proaudio-taura-f-bar/01.webp",
      "w": 1280,
      "h": 854
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-f-bar/02.jpg",
+     "src": "./assets/products/ds-proaudio-taura-f-bar/02.webp",
      "w": 1280,
      "h": 854
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-f-bar/03.jpg",
+     "src": "./assets/products/ds-proaudio-taura-f-bar/03.webp",
      "w": 1280,
      "h": 854
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-taura-f-bar/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-taura-f-bar/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -1370,32 +1370,32 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-taura-fr/01.jpg",
+     "src": "./assets/products/ds-proaudio-taura-fr/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-fr/02.jpg",
+     "src": "./assets/products/ds-proaudio-taura-fr/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-fr/03.jpg",
+     "src": "./assets/products/ds-proaudio-taura-fr/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-fr/04.jpg",
+     "src": "./assets/products/ds-proaudio-taura-fr/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-taura-fr/05.jpg",
+     "src": "./assets/products/ds-proaudio-taura-fr/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-taura-fr/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-taura-fr/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -1487,44 +1487,44 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-1210/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1210/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1210/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1210/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1210/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1210/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-1210/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-1210/thumb.webp",
    "polar": [
     {
-     "src": "./assets/products/ds-proaudio-era-1210/polar-1210-h.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/polar-1210-h.webp",
      "label": "Горизонтальная диаграмма направленности (−3, −6, −12 дБ)"
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1210/polar-1210-v.jpg",
+     "src": "./assets/products/ds-proaudio-era-1210/polar-1210-v.webp",
      "label": "Вертикальная диаграмма направленности (−3, −6, −12 дБ)"
     }
    ],
@@ -1631,44 +1631,44 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-1210/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-1210/thumb.webp",
    "polar": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/polar-1210-h.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/polar-1210-h.webp",
      "label": "Горизонтальная диаграмма направленности (−3, −6, −12 дБ)"
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1210/polar-1210-v.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1210/polar-1210-v.webp",
      "label": "Вертикальная диаграмма направленности (−3, −6, −12 дБ)"
     }
    ],
@@ -1795,44 +1795,44 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-1220/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1220/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1220/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1220/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1220/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1220/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-1220/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-1220/thumb.webp",
    "polar": [
     {
-     "src": "./assets/products/ds-proaudio-era-1220/polar-1220-h.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/polar-1220-h.webp",
      "label": "Горизонтальная диаграмма направленности (−3, −6, −12 дБ)"
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1220/polar-1220-v.jpg",
+     "src": "./assets/products/ds-proaudio-era-1220/polar-1220-v.webp",
      "label": "Вертикальная диаграмма направленности (−3, −6, −12 дБ)"
     }
    ],
@@ -1939,64 +1939,64 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/07.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/07.webp",
      "w": 2000,
      "h": 1500
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/08.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/09.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/09.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/10.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/10.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-1220/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-1220/thumb.webp",
    "polar": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/polar-1220-h.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/polar-1220-h.webp",
      "label": "Горизонтальная диаграмма направленности (−3, −6, −12 дБ)"
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1220/polar-1220-v.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1220/polar-1220-v.webp",
      "label": "Вертикальная диаграмма направленности (−3, −6, −12 дБ)"
     }
    ],
@@ -2123,44 +2123,44 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-1230/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1230/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1230/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1230/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1230/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1230/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-1230/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-1230/thumb.webp",
    "polar": [
     {
-     "src": "./assets/products/ds-proaudio-era-1230/polar-1230-h.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/polar-1230-h.webp",
      "label": "Горизонтальная диаграмма направленности (−3, −6, −12 дБ)"
     },
     {
-     "src": "./assets/products/ds-proaudio-era-1230/polar-1230-v.jpg",
+     "src": "./assets/products/ds-proaudio-era-1230/polar-1230-v.webp",
      "label": "Вертикальная диаграмма направленности (−3, −6, −12 дБ)"
     }
    ],
@@ -2261,19 +2261,19 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-1230/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1230/01.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-1230/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-1230/thumb.webp",
    "polar": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-1230/polar-1230-h.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1230/polar-1230-h.webp",
      "label": "Горизонтальная диаграмма направленности (−3, −6, −12 дБ)"
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-1230/polar-1230-v.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-1230/polar-1230-v.webp",
      "label": "Вертикальная диаграмма направленности (−3, −6, −12 дБ)"
     }
    ],
@@ -2386,52 +2386,52 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-s18/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/07.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/08.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18/09.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18/09.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-s18/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-s18/thumb.webp",
    "polar": [],
    "video": [
     "https://youtu.be/4jVcih4sZgE"
@@ -2528,47 +2528,47 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/07.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18/08.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18/08.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-s18/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-s18/thumb.webp",
    "polar": [],
    "video": [
     "https://youtu.be/4jVcih4sZgE"
@@ -2697,47 +2697,47 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/07.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-s18a/08.jpg",
+     "src": "./assets/products/ds-proaudio-era-s18a/08.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-s18a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-s18a/thumb.webp",
    "polar": [],
    "video": [
     "https://youtu.be/4jVcih4sZgE"
@@ -2852,47 +2852,47 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/07.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-s18a/08.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-s18a/08.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-s18a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-s18a/thumb.webp",
    "polar": [],
    "video": [
     "https://youtu.be/4jVcih4sZgE"
@@ -3011,42 +3011,42 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/01.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/02.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/03.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/04.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/05.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/06.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-top-iii/07.jpg",
+     "src": "./assets/products/ds-proaudio-plr-top-iii/07.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-plr-top-iii/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-plr-top-iii/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -3155,32 +3155,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-plr-sub/01.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub/02.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub/03.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub/04.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub/05.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-plr-sub/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-plr-sub/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -3297,32 +3297,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-plr-sub-a/01.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub-a/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub-a/02.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub-a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub-a/03.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub-a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub-a/04.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub-a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-plr-sub-a/05.jpg",
+     "src": "./assets/products/ds-proaudio-plr-sub-a/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-plr-sub-a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-plr-sub-a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -3501,72 +3501,72 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/01.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/02.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/03.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/04.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/05.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/06.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/07.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/08.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/09.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/09.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/10.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/10.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/11.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/11.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/12.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/12.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p/13.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p/13.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-pillar-p/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-pillar-p/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -3769,72 +3769,72 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/01.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/02.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/03.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/04.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/05.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/06.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/07.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/08.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/09.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/09.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/10.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/10.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/11.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/11.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/12.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/12.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a/13.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a/13.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-pillar-a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-pillar-a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4035,47 +4035,47 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/01.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/02.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/03.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/04.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/05.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/06.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/07.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-p-wh/08.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-p-wh/08.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-pillar-p-wh/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-pillar-p-wh/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4254,47 +4254,47 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/01.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/02.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/03.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/04.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/05.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/06.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/07.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-pillar-a-wh/08.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-a-wh/08.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-pillar-a-wh/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-pillar-a-wh/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4421,37 +4421,37 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-106/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-106/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-106/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-106/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-106/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-106/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-106/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-106/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-106/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-106/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-106/06.jpg",
+     "src": "./assets/products/ds-proaudio-cx-106/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-106/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-106/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4568,32 +4568,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-108/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-108/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-108/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-108/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-108/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-108/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-108/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-108/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-108/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-108/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-108/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-108/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4710,27 +4710,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-112/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-112/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-112/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4849,32 +4849,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-112a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112a/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112a/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-112a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-112a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -4985,27 +4985,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-115/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-115/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-115/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -5124,32 +5124,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-115a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-115a/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-115a/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-115a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-115a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -5262,32 +5262,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-315a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315a/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315a/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315a/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-315a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-315a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -5386,22 +5386,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-s15/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s15/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s15/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15/03.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-s15/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-s15/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -5510,27 +5510,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-s15a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s15a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s15a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s15a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s15a/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-s15a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-s15a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -5637,32 +5637,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-s18/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-s18/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-s18/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -5771,32 +5771,32 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-s18a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18a/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-s18a/05.jpg",
+     "src": "./assets/products/ds-proaudio-cx-s18a/05.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-s18a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-s18a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -5995,27 +5995,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-12s15-a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s15-a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-12s15-a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s15-a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-12s15-a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s15-a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-12s15-a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s15-a/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-12s15-a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-12s15-a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -6232,27 +6232,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-12s18-a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s18-a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-12s18-a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s18-a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-12s18-a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s18-a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-12s18-a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-12s18-a/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-12s18-a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-12s18-a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -6475,27 +6475,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-15s18-a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-15s18-a/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-15s18-a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-15s18-a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-15s18-a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-15s18-a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-15s18-a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-15s18-a/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-15s18-a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-15s18-a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -6718,27 +6718,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-315s18-a/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315s18-a/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315s18-a/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315s18-a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315s18-a/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315s18-a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-315s18-a/04.jpg",
+     "src": "./assets/products/ds-proaudio-cx-315s18-a/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-315s18-a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-315s18-a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -6918,57 +6918,57 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-ant/01.jpg",
+     "src": "./assets/products/ds-proaudio-ant/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/02.jpg",
+     "src": "./assets/products/ds-proaudio-ant/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/03.jpg",
+     "src": "./assets/products/ds-proaudio-ant/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/04.jpg",
+     "src": "./assets/products/ds-proaudio-ant/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/05.jpg",
+     "src": "./assets/products/ds-proaudio-ant/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/06.jpg",
+     "src": "./assets/products/ds-proaudio-ant/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/07.jpg",
+     "src": "./assets/products/ds-proaudio-ant/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/08.jpg",
+     "src": "./assets/products/ds-proaudio-ant/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/09.jpg",
+     "src": "./assets/products/ds-proaudio-ant/09.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant/10.jpg",
+     "src": "./assets/products/ds-proaudio-ant/10.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-ant/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-ant/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -7130,52 +7130,52 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-ant-815/01.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/02.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/03.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/04.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/05.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/06.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/07.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/08.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-815/09.jpg",
+     "src": "./assets/products/ds-proaudio-ant-815/09.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-ant-815/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-ant-815/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -7337,27 +7337,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-ant-m815/01.jpg",
+     "src": "./assets/products/ds-proaudio-ant-m815/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-m815/02.jpg",
+     "src": "./assets/products/ds-proaudio-ant-m815/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-m815/03.jpg",
+     "src": "./assets/products/ds-proaudio-ant-m815/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-m815/04.jpg",
+     "src": "./assets/products/ds-proaudio-ant-m815/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-ant-m815/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-ant-m815/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -7519,62 +7519,62 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/01.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/02.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/03.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/04.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/05.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/06.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/06.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/07.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/07.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/08.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/08.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/09.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/09.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/10.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/10.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-wh/11.jpg",
+     "src": "./assets/products/ds-proaudio-ant-wh/11.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-ant-wh/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-ant-wh/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -7706,27 +7706,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-mcx-8/01.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-8/01.webp",
      "w": 1617,
      "h": 1080
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-8/02.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-8/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-8/03.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-8/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-8/04.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-8/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-mcx-8/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-mcx-8/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -7843,27 +7843,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-mcx-12/01.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-12/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-12/02.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-12/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-12/03.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-12/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-12/04.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-12/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-mcx-12/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-mcx-12/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [
@@ -7980,27 +7980,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-mcx-15/01.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-15/02.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-15/03.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-15/04.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-mcx-15/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-mcx-15/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8105,27 +8105,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-mcx-15a/01.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15a/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-15a/02.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15a/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-15a/03.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15a/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx-15a/04.jpg",
+     "src": "./assets/products/ds-proaudio-mcx-15a/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-mcx-15a/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-mcx-15a/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8243,22 +8243,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-da2-900-dsp/01.jpg",
+     "src": "./assets/products/ds-proaudio-da2-900-dsp/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da2-900-dsp/02.jpg",
+     "src": "./assets/products/ds-proaudio-da2-900-dsp/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da2-900-dsp/03.jpg",
+     "src": "./assets/products/ds-proaudio-da2-900-dsp/03.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-da2-900-dsp/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-da2-900-dsp/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8382,22 +8382,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-da4-900-dsp/01.jpg",
+     "src": "./assets/products/ds-proaudio-da4-900-dsp/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da4-900-dsp/02.jpg",
+     "src": "./assets/products/ds-proaudio-da4-900-dsp/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da4-900-dsp/03.jpg",
+     "src": "./assets/products/ds-proaudio-da4-900-dsp/03.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-da4-900-dsp/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-da4-900-dsp/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8521,22 +8521,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-da2-1300-dsp/01.jpg",
+     "src": "./assets/products/ds-proaudio-da2-1300-dsp/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da2-1300-dsp/02.jpg",
+     "src": "./assets/products/ds-proaudio-da2-1300-dsp/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da2-1300-dsp/03.jpg",
+     "src": "./assets/products/ds-proaudio-da2-1300-dsp/03.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-da2-1300-dsp/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-da2-1300-dsp/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8660,22 +8660,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-da4-1300-dsp/01.jpg",
+     "src": "./assets/products/ds-proaudio-da4-1300-dsp/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da4-1300-dsp/02.jpg",
+     "src": "./assets/products/ds-proaudio-da4-1300-dsp/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-da4-1300-dsp/03.jpg",
+     "src": "./assets/products/ds-proaudio-da4-1300-dsp/03.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-da4-1300-dsp/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-da4-1300-dsp/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8799,22 +8799,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-da2-2500-dsp/01.jpg",
+     "src": "./assets/products/ds-proaudio-da2-2500-dsp/01.webp",
      "w": 1200,
      "h": 1200
     },
     {
-     "src": "./assets/products/ds-proaudio-da2-2500-dsp/02.jpg",
+     "src": "./assets/products/ds-proaudio-da2-2500-dsp/02.webp",
      "w": 1200,
      "h": 1200
     },
     {
-     "src": "./assets/products/ds-proaudio-da2-2500-dsp/03.jpg",
+     "src": "./assets/products/ds-proaudio-da2-2500-dsp/03.webp",
      "w": 1200,
      "h": 1200
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-da2-2500-dsp/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-da2-2500-dsp/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8849,12 +8849,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-pl1/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-pl1/01.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-pl1/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-pl1/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8877,12 +8877,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-pl2/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-pl2/01.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-pl2/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-pl2/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8905,12 +8905,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-pl3/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-pl3/01.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-pl3/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-pl3/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8933,22 +8933,22 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx106-u-bracket-v2/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx106-u-bracket-v2/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-cx106-u-bracket-v2/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx106-u-bracket-v2/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-cx106-u-bracket-v2/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx106-u-bracket-v2/03.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx106-u-bracket-v2/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx106-u-bracket-v2/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -8971,22 +8971,22 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx108-u-bracket-v2/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx108-u-bracket-v2/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-cx108-u-bracket-v2/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx108-u-bracket-v2/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-cx108-u-bracket-v2/03.jpg",
+     "src": "./assets/products/ds-proaudio-cx108-u-bracket-v2/03.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx108-u-bracket-v2/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx108-u-bracket-v2/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9009,32 +9009,32 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/01.jpg",
+     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/02.jpg",
+     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/03.jpg",
+     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/03.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/04.jpg",
+     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/04.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/05.jpg",
+     "src": "./assets/products/ds-proaudio-mcx8-u-bracket/05.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-mcx8-u-bracket/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-mcx8-u-bracket/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9064,32 +9064,32 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/01.jpg",
+     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/02.jpg",
+     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/03.jpg",
+     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/03.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/04.jpg",
+     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/04.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/05.jpg",
+     "src": "./assets/products/ds-proaudio-mcx12-u-bracket/05.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-mcx12-u-bracket/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-mcx12-u-bracket/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9119,17 +9119,17 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-cx-112-115-u-bracket/01.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112-115-u-bracket/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-cx-112-115-u-bracket/02.jpg",
+     "src": "./assets/products/ds-proaudio-cx-112-115-u-bracket/02.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-cx-112-115-u-bracket/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-cx-112-115-u-bracket/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9159,37 +9159,37 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-ad/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-ad/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-ad/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-ad/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-ad/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-ad/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-ad/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-ad/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-ad/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-ad/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-ad/06.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-ad/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-ad/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-ad/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9212,32 +9212,32 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-fr-h/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-fr-h/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-fr-h/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-fr-h/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-fr-h/03.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-fr-h/03.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-fr-h/04.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-fr-h/04.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-era-i-fr-h/05.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-fr-h/05.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-fr-h/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-fr-h/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9260,12 +9260,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-i-fr-v/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-i-fr-v/01.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-i-fr-v/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-i-fr-v/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9288,12 +9288,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-fr-v/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-fr-v/01.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-fr-v/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-fr-v/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9317,37 +9317,37 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-ds-truss/01.jpg",
+     "src": "./assets/products/ds-proaudio-ds-truss/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ds-truss/02.jpg",
+     "src": "./assets/products/ds-proaudio-ds-truss/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ds-truss/03.jpg",
+     "src": "./assets/products/ds-proaudio-ds-truss/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ds-truss/04.jpg",
+     "src": "./assets/products/ds-proaudio-ds-truss/04.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ds-truss/05.jpg",
+     "src": "./assets/products/ds-proaudio-ds-truss/05.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ds-truss/06.jpg",
+     "src": "./assets/products/ds-proaudio-ds-truss/06.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-ds-truss/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-ds-truss/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9370,17 +9370,17 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-era-fr-gr/01.jpg",
+     "src": "./assets/products/ds-proaudio-era-fr-gr/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/ds-proaudio-era-fr-gr/02.jpg",
+     "src": "./assets/products/ds-proaudio-era-fr-gr/02.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-era-fr-gr/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-era-fr-gr/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9404,27 +9404,27 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-ant-cover/01.jpg",
+     "src": "./assets/products/ds-proaudio-ant-cover/01.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-cover/02.jpg",
+     "src": "./assets/products/ds-proaudio-ant-cover/02.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-cover/03.jpg",
+     "src": "./assets/products/ds-proaudio-ant-cover/03.webp",
      "w": 2000,
      "h": 1335
     },
     {
-     "src": "./assets/products/ds-proaudio-ant-cover/04.jpg",
+     "src": "./assets/products/ds-proaudio-ant-cover/04.webp",
      "w": 2000,
      "h": 1335
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-ant-cover/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-ant-cover/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9447,12 +9447,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-pillar-cover/01.jpg",
+     "src": "./assets/products/ds-proaudio-pillar-cover/01.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-pillar-cover/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-pillar-cover/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9475,12 +9475,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/rs485-usb-adapter/01.jpg",
+     "src": "./assets/products/rs485-usb-adapter/01.webp",
      "w": 1000,
      "h": 1000
     }
    ],
-   "thumb": "./assets/products/rs485-usb-adapter/thumb.jpg",
+   "thumb": "./assets/products/rs485-usb-adapter/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9508,17 +9508,17 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-sp111-00-2/01.jpg",
+     "src": "./assets/products/ds-proaudio-sp111-00-2/01.webp",
      "w": 757,
      "h": 375
     },
     {
-     "src": "./assets/products/ds-proaudio-sp111-00-2/02.png",
+     "src": "./assets/products/ds-proaudio-sp111-00-2/02.webp",
      "w": 965,
      "h": 673
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-sp111-00-2/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-sp111-00-2/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9548,12 +9548,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/ds-proaudio-combo-cable-2-5m/01.jpg",
+     "src": "./assets/products/ds-proaudio-combo-cable-2-5m/01.webp",
      "w": 1600,
      "h": 1067
     }
    ],
-   "thumb": "./assets/products/ds-proaudio-combo-cable-2-5m/thumb.jpg",
+   "thumb": "./assets/products/ds-proaudio-combo-cable-2-5m/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9576,27 +9576,27 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/gravity-gsp2332extb/01.jpg",
+     "src": "./assets/products/gravity-gsp2332extb/01.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gsp2332extb/02.jpg",
+     "src": "./assets/products/gravity-gsp2332extb/02.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gsp2332extb/03.jpg",
+     "src": "./assets/products/gravity-gsp2332extb/03.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gsp2332extb/04.jpg",
+     "src": "./assets/products/gravity-gsp2332extb/04.webp",
      "w": 1000,
      "h": 1000
     }
    ],
-   "thumb": "./assets/products/gravity-gsp2332extb/thumb.jpg",
+   "thumb": "./assets/products/gravity-gsp2332extb/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9620,82 +9620,82 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/gravity-gsspwbset1w/01.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/01.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/02.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/02.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/03.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/03.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/04.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/04.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/05.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/05.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/06.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/06.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/07.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/07.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/08.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/08.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/09.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/09.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/10.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/10.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/11.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/11.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/12.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/12.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/13.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/13.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/14.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/14.webp",
      "w": 2000,
      "h": 2000
     },
     {
-     "src": "./assets/products/gravity-gsspwbset1w/15.jpg",
+     "src": "./assets/products/gravity-gsspwbset1w/15.webp",
      "w": 2000,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/gravity-gsspwbset1w/thumb.jpg",
+   "thumb": "./assets/products/gravity-gsspwbset1w/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9719,32 +9719,32 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/gravity-gwb123set1b/01.jpg",
+     "src": "./assets/products/gravity-gwb123set1b/01.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gwb123set1b/02.jpg",
+     "src": "./assets/products/gravity-gwb123set1b/02.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gwb123set1b/03.jpg",
+     "src": "./assets/products/gravity-gwb123set1b/03.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gwb123set1b/04.jpg",
+     "src": "./assets/products/gravity-gwb123set1b/04.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gwb123set1b/05.jpg",
+     "src": "./assets/products/gravity-gwb123set1b/05.webp",
      "w": 1000,
      "h": 1000
     }
    ],
-   "thumb": "./assets/products/gravity-gwb123set1b/thumb.jpg",
+   "thumb": "./assets/products/gravity-gwb123set1b/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9765,37 +9765,37 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/gravity-sp-2332-tpb/01.jpg",
+     "src": "./assets/products/gravity-sp-2332-tpb/01.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-sp-2332-tpb/02.jpg",
+     "src": "./assets/products/gravity-sp-2332-tpb/02.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-sp-2332-tpb/03.jpg",
+     "src": "./assets/products/gravity-sp-2332-tpb/03.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-sp-2332-tpb/04.jpg",
+     "src": "./assets/products/gravity-sp-2332-tpb/04.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-sp-2332-tpb/05.jpg",
+     "src": "./assets/products/gravity-sp-2332-tpb/05.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-sp-2332-tpb/06.jpg",
+     "src": "./assets/products/gravity-sp-2332-tpb/06.webp",
      "w": 1000,
      "h": 1000
     }
    ],
-   "thumb": "./assets/products/gravity-sp-2332-tpb/thumb.jpg",
+   "thumb": "./assets/products/gravity-sp-2332-tpb/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9819,22 +9819,22 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/gravity-gsf36m10m/01.jpg",
+     "src": "./assets/products/gravity-gsf36m10m/01.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gsf36m10m/02.jpg",
+     "src": "./assets/products/gravity-gsf36m10m/02.webp",
      "w": 1000,
      "h": 1000
     },
     {
-     "src": "./assets/products/gravity-gsf36m10m/03.jpg",
+     "src": "./assets/products/gravity-gsf36m10m/03.webp",
      "w": 1000,
      "h": 1000
     }
    ],
-   "thumb": "./assets/products/gravity-gsf36m10m/thumb.jpg",
+   "thumb": "./assets/products/gravity-gsf36m10m/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9865,22 +9865,22 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/gravity-gspwmbs30b/01.jpg",
+     "src": "./assets/products/gravity-gspwmbs30b/01.webp",
      "w": 768,
      "h": 768
     },
     {
-     "src": "./assets/products/gravity-gspwmbs30b/02.jpg",
+     "src": "./assets/products/gravity-gspwmbs30b/02.webp",
      "w": 768,
      "h": 768
     },
     {
-     "src": "./assets/products/gravity-gspwmbs30b/03.jpg",
+     "src": "./assets/products/gravity-gspwmbs30b/03.webp",
      "w": 768,
      "h": 768
     }
    ],
-   "thumb": "./assets/products/gravity-gspwmbs30b/thumb.jpg",
+   "thumb": "./assets/products/gravity-gspwmbs30b/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9923,12 +9923,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/euromet-byr-m10/01.jpg",
+     "src": "./assets/products/euromet-byr-m10/01.webp",
      "w": 1125,
      "h": 1125
     }
    ],
-   "thumb": "./assets/products/euromet-byr-m10/thumb.jpg",
+   "thumb": "./assets/products/euromet-byr-m10/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -9959,12 +9959,12 @@
    "specs": [],
    "images": [
     {
-     "src": "./assets/products/konig-meyer-21420-000-55/01.jpg",
+     "src": "./assets/products/konig-meyer-21420-000-55/01.webp",
      "w": 436,
      "h": 694
     }
    ],
-   "thumb": "./assets/products/konig-meyer-21420-000-55/thumb.jpg",
+   "thumb": "./assets/products/konig-meyer-21420-000-55/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -10049,27 +10049,27 @@
    ],
    "images": [
     {
-     "src": "./assets/products/new-taura-10/01.jpg",
+     "src": "./assets/products/new-taura-10/01.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/new-taura-10/02.png",
+     "src": "./assets/products/new-taura-10/02.webp",
      "w": 1415,
      "h": 2000
     },
     {
-     "src": "./assets/products/new-taura-10/03.jpg",
+     "src": "./assets/products/new-taura-10/03.webp",
      "w": 1910,
      "h": 1065
     },
     {
-     "src": "./assets/products/new-taura-10/04.png",
+     "src": "./assets/products/new-taura-10/04.webp",
      "w": 1105,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/new-taura-10/thumb.jpg",
+   "thumb": "./assets/products/new-taura-10/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
@@ -10145,22 +10145,22 @@
    ],
    "images": [
     {
-     "src": "./assets/products/new-taura-s18/01.jpg",
+     "src": "./assets/products/new-taura-s18/01.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/new-taura-s18/02.jpg",
+     "src": "./assets/products/new-taura-s18/02.webp",
      "w": 2000,
      "h": 1341
     },
     {
-     "src": "./assets/products/new-taura-s18/03.png",
+     "src": "./assets/products/new-taura-s18/03.webp",
      "w": 1105,
      "h": 2000
     }
    ],
-   "thumb": "./assets/products/new-taura-s18/thumb.jpg",
+   "thumb": "./assets/products/new-taura-s18/thumb.webp",
    "polar": [],
    "video": [],
    "gisp": [],
