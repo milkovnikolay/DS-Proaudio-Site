@@ -502,6 +502,122 @@
   </div>
 </section>
 
+<!-- gov:start — блок собирается tools/gov/build.py, правки вносить туда -->
+<style>
+  .gv-sec{background:#FFFFFF}
+  .gv-sec.gv-alt{background:#FAFAFA}
+  .gv-in{padding-top:110px;padding-bottom:110px}
+  .gv-head{display:flex;flex-direction:column;gap:18px;max-width:760px;margin-bottom:44px}
+  .gv-prs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .gv-pr{padding:28px 26px;border:1px solid #E6E6E6;border-radius:16px;background:#FFFFFF}
+  .gv-pr b{display:block;font-family:'PT Mono',monospace;font-weight:400;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD;margin-bottom:14px}
+  .gv-pr p{margin:0;font-size:16px;line-height:1.6;color:#3A3A3A}
+  .gv-regs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 40px}
+  .gv-ser-h{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;color:#141414;padding-bottom:12px;border-bottom:1px solid #141414}
+  .gv-ser-h span{font-weight:500;font-size:14px;color:#8A8A8A;margin-left:8px}
+  .gv-list{list-style:none;margin:0;padding:0}
+  .gv-list li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #E6E6E6;font-size:15px}
+  .gv-list a{color:#141414;border-bottom:1px solid #D0D0D0}
+  .gv-list a:hover{border-color:#141414}
+  .gv-n{font-family:'PT Mono',monospace;font-size:14px;color:#5A5A5A;white-space:nowrap}
+  .gv-note{margin:28px 0 0;font-size:14px;line-height:1.6;color:#8A8A8A;max-width:900px}
+  .gv-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:gv}
+  .gv-steps li{counter-increment:gv;padding:26px;border:1px solid #E6E6E6;border-radius:16px;background:#FFFFFF}
+  .gv-steps li::before{content:"0" counter(gv);display:block;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:#ADADAD;margin-bottom:14px}
+  .gv-steps h3{margin:0 0 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;line-height:1.3;color:#141414}
+  .gv-steps p{margin:0;font-size:15px;line-height:1.6;color:#5A5A5A}
+  .gv-faq{max-width:900px}
+  .gv-q{border-bottom:1px solid #E6E6E6}
+  .gv-q summary{cursor:pointer;list-style:none;padding:20px 32px 20px 0;position:relative;font-family:'Montserrat',sans-serif;font-weight:600;font-size:18px;color:#141414}
+  .gv-q summary::-webkit-details-marker{display:none}
+  .gv-q summary::after{content:"+";position:absolute;right:0;top:18px;font-size:22px;color:#8A8A8A}
+  .gv-q[open] summary::after{content:"−"}
+  .gv-q p{margin:0 0 22px;font-size:16px;line-height:1.65;color:#5A5A5A}
+  @media (max-width:1100px){.gv-steps{grid-template-columns:1fr 1fr}.gv-prs{grid-template-columns:1fr}}
+  @media (max-width:700px){.gv-in{padding-top:72px;padding-bottom:72px}.gv-regs,.gv-steps{grid-template-columns:1fr}.gv-q summary{font-size:16px}}
+</style>
+<section class="gv-sec" id="about-gov">
+  <div class="wrap gv-in">
+    <div class="gv-head reveal">
+      <div class="kicker">Для руководителя учреждения</div>
+      <h2 class="h2">Российский звук, который проходит закупку</h2>
+    </div>
+    <div class="gv-prs">
+      <div class="gv-pr reveal"><b>Задача</b><p>Учреждению нужна надёжная акустика для зала, школы или стадиона, а закупка требует российской продукции и полного пакета документов.</p></div>
+      <div class="gv-pr reveal"><b>Решение</b><p>DS PROAUDIO — производитель полного цикла из Санкт-Петербурга. 20 моделей внесены в реестр российской промышленной продукции (ГИСП), к каждой есть паспорт, файлы GLL и чертежи.</p></div>
+      <div class="gv-pr reveal"><b>Результат</b><p>Спецификация с номерами реестровых записей для документации о закупке, расчёт звука под объект, поставка, монтаж и гарантия 3 года с сервисом в Москве и Санкт-Петербурге.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gv-sec gv-alt" id="registry">
+  <div class="wrap gv-in">
+    <div class="gv-head reveal">
+      <div class="kicker">Реестр ГИСП</div>
+      <h2 class="h2">Номера реестровых записей</h2>
+      <p class="lead">Модели DS PROAUDIO в реестре российской промышленной продукции Минпромторга. Номер можно указать в описании объекта закупки.</p>
+    </div>
+    <div class="gv-regs reveal">
+<div class="gv-ser"><div class="gv-ser-h">ERA-i <span>Линейные массивы</span></div><ul class="gv-list">
+<li><span class="gv-m"><a href="./p-era-i-1210.html">ERA-i 1210</a></span><span class="gv-n">№ 10585439</span></li>
+<li><span class="gv-m"><a href="./p-era-i-1220.html">ERA-i 1220</a></span><span class="gv-n">№ 10585440</span></li>
+<li><span class="gv-m"><a href="./p-era-i-1230.html">ERA-i 1230</a></span><span class="gv-n">№ 10585441</span></li>
+<li><span class="gv-m"><a href="./p-era-i-s18.html">ERA-i S18</a></span><span class="gv-n">№ 10585438</span></li>
+<li><span class="gv-m"><a href="./p-era-i-s18a.html">ERA-i S18A</a></span><span class="gv-n">№ 10789789</span></li>
+</ul></div>
+<div class="gv-ser"><div class="gv-ser-h">PILLAR <span>Звуковые колонны</span></div><ul class="gv-list">
+<li><span class="gv-m"><a href="./p-plr-sub.html">PLR SUB</a></span><span class="gv-n">№ 10655673</span></li>
+<li><span class="gv-m"><a href="./p-plr-sub-a.html">PLR SUB A</a></span><span class="gv-n">№ 10789790</span></li>
+<li><span class="gv-m"><a href="./p-plr-top-iii.html">PLR TOP III</a></span><span class="gv-n">№ 10655672</span></li>
+</ul></div>
+<div class="gv-ser"><div class="gv-ser-h">CX <span>Точечные источники и сабвуферы</span></div><ul class="gv-list">
+<li><span class="gv-m"><a href="./p-cx-106.html">CX 106</a></span><span class="gv-n">№ 10655669</span></li>
+<li><span class="gv-m"><a href="./p-cx-108.html">CX 108</a></span><span class="gv-n">№ 10655670</span></li>
+<li><span class="gv-m"><a href="./p-cx-112.html">CX 112</a></span><span class="gv-n">№ 10789787</span></li>
+<li><span class="gv-m"><a href="./p-cx-112a.html">CX 112A</a></span><span class="gv-n">№ 10789784</span></li>
+<li><span class="gv-m"><a href="./p-cx-115.html">CX 115</a></span><span class="gv-n">№ 10789785</span></li>
+<li><span class="gv-m"><a href="./p-cx-115a.html">CX 115A</a></span><span class="gv-n">№ 10789786</span></li>
+<li><span class="gv-m"><a href="./p-cx-s15.html">CX S15</a></span><span class="gv-n">№ 10789792</span></li>
+<li><span class="gv-m"><a href="./p-cx-s15a.html">CX S15A</a></span><span class="gv-n">№ 10789788</span></li>
+<li><span class="gv-m"><a href="./p-cx-s18.html">CX S18</a></span><span class="gv-n">№ 10789791</span></li>
+<li><span class="gv-m"><a href="./p-cx-s18a.html">CX S18A</a></span><span class="gv-n">№ 10789783</span></li>
+</ul></div>
+<div class="gv-ser"><div class="gv-ser-h">MCX <span>Сценические мониторы</span></div><ul class="gv-list">
+<li><span class="gv-m"><a href="./p-mcx-12.html">MCX 12</a></span><span class="gv-n">№ 10655671</span></li>
+<li><span class="gv-m"><a href="./p-mcx-8.html">MCX 8</a></span><span class="gv-n">№ 10789782</span></li>
+</ul></div>
+    </div>
+    <p class="gv-note">Комплекты PILLAR и CX собираются из моделей этого списка и имеют их номера. Актуальный список — на странице <a href="./products-registry.html" style="color:#141414;border-bottom:1px solid #D0D0D0;">«Реестровое оборудование»</a>; выписки из реестра прикладываем к коммерческому предложению.</p>
+  </div>
+</section>
+
+<section class="gv-sec" id="procurement">
+  <div class="wrap gv-in">
+    <div class="gv-head reveal">
+      <div class="kicker">44-ФЗ и 223-ФЗ</div>
+      <h2 class="h2">Как получить коммерческое предложение</h2>
+    </div>
+    <ol class="gv-steps">
+      <li class="reveal"><h3>Расскажите об объекте</h3><p>Тип и размеры помещения, число мест, задачи: речь, концерты, спорт. Подойдут планировка или фото.</p></li>
+      <li class="reveal"><h3>Расчёт и подбор</h3><p>Делаем акустический расчёт и подбираем систему из реестровых моделей. Бесплатно.</p></li>
+      <li class="reveal"><h3>КП и документы</h3><p>Спецификация с номерами реестровых записей, выписки из реестра, паспорта, GLL и CAD — для обоснования закупки.</p></li>
+      <li class="reveal"><h3>Поставка и сервис</h3><p>Поставка, монтаж и настройка напрямую или через партнёров. Гарантия 3 года, сервис в Москве и Санкт-Петербурге.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="gv-sec gv-alt" id="faq">
+  <div class="wrap gv-in">
+    <div class="gv-head reveal">
+      <div class="kicker">Вопросы и ответы</div>
+      <h2 class="h2">Частые вопросы заказчиков</h2>
+    </div>
+    <div class="gv-faq reveal"><details class="gv-q"><summary>Как проверить, что модель в реестре?</summary><p>Номер реестровой записи указан в таблице выше и на карточке каждой модели. По номеру запись находится в ГИСП (реестр российской промышленной продукции Минпромторга). Выписку из реестра приложим к коммерческому предложению.</p></details><details class="gv-q"><summary>Все ли модели DS PROAUDIO внесены в реестр?</summary><p>Нет. В реестре 20 моделей серий ERA-i, PILLAR, CX и MCX — они перечислены выше. Если проекту нужна модель без реестровой записи, подберём реестровую замену с теми же задачами.</p></details><details class="gv-q"><summary>Какие документы вы даёте для закупки?</summary><p>Коммерческое предложение со спецификацией и номерами реестровых записей, выписки из реестра, паспорта и технические описания, файлы GLL для акустического расчёта и чертежи CAD.</p></details><details class="gv-q"><summary>Работаете ли вы по 44-ФЗ и 223-ФЗ?</summary><p>Да. Готовим спецификацию и описание объекта закупки, участвуем в закупках напрямую и через партнёров-интеграторов.</p></details></div>
+  </div>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как проверить, что модель в реестре?", "acceptedAnswer": {"@type": "Answer", "text": "Номер реестровой записи указан в таблице выше и на карточке каждой модели. По номеру запись находится в ГИСП (реестр российской промышленной продукции Минпромторга). Выписку из реестра приложим к коммерческому предложению."}}, {"@type": "Question", "name": "Все ли модели DS PROAUDIO внесены в реестр?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. В реестре 20 моделей серий ERA-i, PILLAR, CX и MCX — они перечислены выше. Если проекту нужна модель без реестровой записи, подберём реестровую замену с теми же задачами."}}, {"@type": "Question", "name": "Какие документы вы даёте для закупки?", "acceptedAnswer": {"@type": "Answer", "text": "Коммерческое предложение со спецификацией и номерами реестровых записей, выписки из реестра, паспорта и технические описания, файлы GLL для акустического расчёта и чертежи CAD."}}, {"@type": "Question", "name": "Работаете ли вы по 44-ФЗ и 223-ФЗ?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Готовим спецификацию и описание объекта закупки, участвуем в закупках напрямую и через партнёров-интеграторов."}}]}</script>
+</section>
+<!-- gov:end -->
+
 <section id="contact" style="width:100%;background:#FFFFFF;">
   <div class="wrap grid-2" style="padding-top:130px;padding-bottom:130px;display:flex;align-items:center;justify-content:space-between;gap:64px;">
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:22px;max-width:600px;">
