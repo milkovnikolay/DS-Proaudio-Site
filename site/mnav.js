@@ -6,9 +6,9 @@
   var CAB = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg>';
   // разделы меню — те же, что в мега-меню и подвале
   var S = [
-    ['Продукция', './products.html', 'Весь каталог', [['Линейные массивы', './products-line-arrays.html'], ['Массивы с фиксированными углами', './products-constant-curvature.html'], ['Звуковые колонны', './products-columns.html'],
+    ['Продукция', './products.html', 'Весь каталог', [['Линейные массивы', './products-line-arrays.html'], ['Массивы постоянной направленности', './products-constant-curvature.html'], ['Звуковые колонны', './products-columns.html'],
       ['Точечные источники звука', './products-point-sources.html'], ['Сценические мониторы', './products-monitors.html'], ['Компактные комплекты', './products-compact-sets.html'], ['Системы для аудиторий', './products-auditorium.html'],
-      ['Реестровое оборудование', './products-registry.html'], ['Всепогодные системы', './products-all-weather.html'], ['Усилители', './products-amplifiers.html'], ['Аксессуары', './products-accessories.html'],
+      ['Реестровое оборудование', './products-registry.html'], ['Всепогодные системы', './products-all-weather.html'], ['Усилители мощности', './products-amplifiers.html'], ['Аксессуары', './products-accessories.html'],
       ['Каталог PDF ↗', 'https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf', 1]]],
     ['Применение', './application.html', 'Весь раздел', [['Отзывы', './reviews.html', 1], ['Портфолио', './portfolio.html', 1], ['Культура и искусство', './culture.html'], ['Образование и наука', './education.html'],
       ['Спорт и массовые мероприятия', './sport.html'], ['Корпоративный сектор', './corporate.html'], ['Ресторанный и гостиничный бизнес', './hospitality.html'], ['Религиозные учреждения', './religious.html'],
