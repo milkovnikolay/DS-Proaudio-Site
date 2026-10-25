@@ -1,0 +1,5 @@
+# DS PROAUDIO — куда сообщить об уязвимости на сайте (RFC 9116)
+Contact: mailto:info@ds-proaudio.ru
+Expires: 2027-10-25T00:00:00.000Z
+Preferred-Languages: ru, en
+Canonical: https://ds-proaudio.ru/.well-known/security.txt

@@ -12,7 +12,9 @@ const pass = process.env.SITE_PASSWORD || '';
 if (!dir) { console.error('Укажите папку'); process.exit(1); }
 if (pass.length < 4) { console.error('Нет пароля (секрет SITE_PASSWORD) — публикация остановлена, чтобы сайт не оказался открытым'); process.exit(1); }
 
-const ITER = 200000;
+if (pass.length < 12) console.log('::warning::Пароль превью короче 12 символов — замените секрет SITE_PASSWORD на более длинный (план безопасности, п. 1)');
+
+const ITER = 600000;
 const salt = randomBytes(16);
 const key = pbkdf2Sync(pass, salt, ITER, 32, 'sha256');
 const b64 = (b) => Buffer.from(b).toString('base64');

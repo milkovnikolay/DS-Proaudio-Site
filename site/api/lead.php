@@ -92,6 +92,27 @@ $file = $DATA . '/' . $base . '.jsonl';
 file_put_contents($file, json_encode($rec, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
 @chmod($file, 0600);
 
+// ---- срок хранения: заявки старше 1 года удаляются (политика ПДн, 152-ФЗ); проверка не чаще раза в сутки ----
+$mark = $DATA . '/retention.stamp';
+if (!is_file($mark) || filemtime($mark) < time() - 86400) {
+  @touch($mark);
+  $limit = time() - 365 * 86400;
+  foreach (['leads', 'tours', 'tickets'] as $b) {
+    $fn = $DATA . '/' . $b . '.jsonl';
+    if (!is_file($fn)) continue;
+    $h = @fopen($fn, 'c+'); if (!$h) continue;
+    flock($h, LOCK_EX);
+    $keep = [];
+    while (($line = fgets($h)) !== false) {
+      $r = json_decode($line, true);
+      $at = is_array($r) ? strtotime($r['receivedAt'] ?? '') : false;
+      if ($at === false || $at >= $limit) $keep[] = $line;
+    }
+    ftruncate($h, 0); rewind($h); fwrite($h, implode('', $keep));
+    flock($h, LOCK_UN); fclose($h);
+  }
+}
+
 // ---- текст уведомления ----
 $icon = ['tour' => '🏭 ', 'service' => (!empty($t['urgent']) ? '🔴 ' : '🛠 ')][$ep] ?? '📩 ';
 $lines = [$icon . $rec['kind'] . ' · ' . $rec['id']];
