@@ -13,7 +13,7 @@
     ['Применение', './application.html', 'Весь раздел', [['Отзывы', './reviews.html', 1], ['Портфолио', './portfolio.html', 1], ['Культура и искусство', './culture.html'], ['Образование и наука', './education.html'],
       ['Спорт и массовые мероприятия', './sport.html'], ['Корпоративный сектор', './corporate.html'], ['Ресторанный и гостиничный бизнес', './hospitality.html'], ['Религиозные учреждения', './religious.html'],
       ['Индустрия развлечений', './entertainment.html'], ['Прокат', './rental.html']]],
-    ['О компании', './Main.dc.html', 'На главную', [['История', './history.html'], ['Философия', './philosophy.html'], ['Лица компании', './faces.html'], ['Наше производство', './production.html'],
+    ['О компании', './Main.dc.html', 'На главную', [['История', './history.html'], ['Философия', './philosophy.html'], ['Лица компании', './faces.html'], ['Компания в цифрах', './about.html'], ['Наше производство', './production.html'],
       ['Технологии', null, 1, [['Все технологии', './technologies.html'], ['Риггинг без пинов', './tech-rigging.html', 0, 'массивы TAURA, ERA'], ['Коаксиальные массивы', './tech-coaxial-waveguide.html', 0, 'ERA, TAURA 10'],
         ['Горизонтальное сложение', './tech-horizontal-summing.html', 0, 'TAURA 8, PLR, STL'], ['Кардиоидный сабвуфер', './tech-cardioid-sub.html', 0, 'TAURA C-Sub 18'],
         ['Коаксиальные динамики', './tech-coaxial-cx.html', 0, 'серии CX, MCX'], ['Звуковые катушки на ребро в замке', './tech-voice-coil.html']]],
