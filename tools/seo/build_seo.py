@@ -123,6 +123,19 @@ def product_ld(pid, url, imgs):
     return ld
 
 
+def strip(s):
+    return re.sub(r'<(?!br)[^>]+>', '', s)
+
+def faq_ld(s):
+    """Вопросы и ответы из блока «Частые вопросы» (.kl-faq) → разметка FAQPage для поиска."""
+    m = re.search(r'<div class="kl-faq[^"]*">(.*?</details>)</div>', s, re.S)
+    if not m: return None
+    qa = re.findall(r'<summary>(.*?)</summary>\s*<div>(.*?)</div>', m.group(1), re.S)
+    if not qa: return None
+    return {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": text(strip(q)), "acceptedAnswer": {"@type": "Answer", "text": text(strip(a))}} for q, a in qa]}
+
+
 def process(fn):
     path = os.path.join(SITE, fn)
     s = read(path); orig = s
@@ -157,6 +170,8 @@ def process(fn):
         og_img = OG_DEFAULT
     if fn == 'Main.dc.html':
         extra.append(json.dumps(ORG, ensure_ascii=False))
+    faq = faq_ld(s)
+    if faq: extra.append(json.dumps(faq, ensure_ascii=False))
 
     # описание
     m = re.search(r'<meta name="description" content="([^"]*)">', s)
@@ -185,7 +200,12 @@ def process(fn):
              '<meta property="og:title" content="' + attr(title) + '">',
              '<meta property="og:url" content="' + canon + '">',
              '<meta property="og:image" content="' + DOMAIN + og_img + '">',
-             '<meta name="twitter:card" content="summary_large_image">']
+             '<meta name="twitter:card" content="summary_large_image">',
+             '<meta name="author" content="DS PROAUDIO">']
+    # автор и дата обновления страницы (дата — последний коммит файла)
+    extra.insert(0, json.dumps({"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": canon, "inLanguage": "ru",
+                                "dateModified": git_date(fn), "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": DOMAIN + '/'},
+                                "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": DOMAIN + '/'}}, ensure_ascii=False))
     if d: block.insert(6, '<meta property="og:description" content="' + attr(d) + '">')
     for e in extra:
         block.append('<script type="application/ld+json">' + e.replace('</', '<\\/') + '</script>')
