@@ -19,7 +19,7 @@
     { t: 'Продукция: Сценические мониторы', u: './products-monitors.html', k: ["монитор", "mcx"] },
     { t: 'Продукция: Компактные комплекты', u: './products-compact-sets.html', k: ["комплект", "ant", "компактн"] },
     { t: 'Продукция: Точечные источники звука', u: './products-point-sources.html', k: ["точечн", "cx 1", "колонк", "акустическ систем", "сабвуфер"] },
-    { t: 'Продукция: Акустика для аудиторий', u: './products-auditorium.html', k: ["аудитор", "adr", "потолочн"] },
+    { t: 'Продукция: Системы для аудиторий', u: './products-auditorium.html', k: ["аудитор", "adr", "потолочн"] },
     { t: 'Продукция: Реестровое оборудование', u: './products-registry.html', k: ["реестр", "гисп", "госзакуп", "44-фз", "223-фз", "минпромторг"] },
     { t: 'Продукция: Всепогодные системы', u: './products-all-weather.html', k: ["всепогодн", "ip55", "улиц"] },
     { t: 'Продукция: Усилители мощности', u: './products-amplifiers.html', k: ["усилител", "da2", "da4", "dsp"] },
@@ -95,7 +95,7 @@
     { t: 'Ночные клубы и дискотеки', u: './ent-nightclubs.html', k: ['ночн','дискотек','диджей','dj','танц'] },
     { t: 'Караоке-бары', u: './ent-karaoke.html', k: ['караоке'] },
 
-    { t: 'Прокатные компании', u: './rental.html', k: ['прокат','аренд','rental','rent'] },
+    { t: 'Прокат', u: './rental.html', k: ['прокат','аренд','rental','rent'] },
     { t: 'Прокат: полнофункциональные решения', u: './rent-full.html', k: ['полнофункц','крупн','больш','стадионн'] },
     { t: 'Прокат: решения для средних площадок', u: './rent-mid.html', k: ['средн'] },
     { t: 'Прокат: компактные и бюджетные решения', u: './rent-compact.html', k: ['компакт','бюджет','недорог','мал'] },
@@ -160,7 +160,7 @@
   var SEND_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="#0A0A0B" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5l2.5 7.2L14 12l-8.5 1.3z"/></svg>';
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function norm(s) { return ' ' + String(s).toLowerCase().replace(/ё/g, 'е').replace(/[^a-zа-я0-9\s-]/g, ' ').replace(/\s+/g, ' ') + ' '; }
   function byUrl(u) { for (var i = 0; i < PAGES.length; i++) if (PAGES[i].u === u) return PAGES[i]; }
 

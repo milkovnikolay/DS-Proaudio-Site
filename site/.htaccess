@@ -1,0 +1,155 @@
+# DS PROAUDIO — настройки сервера Apache для хостинга RU-CENTER (план безопасности Коли, п. 1.3, приложение А).
+# Работает только на обычном хостинге; превью на GitHub Pages этот файл не читает.
+# CSP пока в режиме наблюдения (Report-Only): ничего не блокирует, только сообщает в консоли браузера.
+# После проверки и переноса шрифтов на сайт заменить на Content-Security-Policy и убрать fonts.*.
+
+# ---- HTTPS ----
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# www -> без www (если выбран такой вариант)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# Старая главная -> корень. Включить, когда на сайте появится index.html (иначе корень сайта не откроется)
+# RewriteRule ^Main\.dc\.html$ / [R=301,L]
+# ---- redirects:start — старые адреса ds-proaudio.ru → новые страницы (tools/seo/redirects.py) ----
+RewriteRule ^catalog/aksessuary/ds-proaudio-ant-cover/?$ /p-ant-cover.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-combo-cable-2-5m/?$ /p-combo-cable-2-5m.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-cx-112-115-u-bracket/?$ /p-cx-112-115-u-bracket.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-cx106-u-bracket-v2/?$ /p-cx106-u-bracket-v2.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-cx108-u-bracket-v2/?$ /p-cx108-u-bracket-v2.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-ds-truss/?$ /p-ds-truss.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-fr-gr/?$ /p-era-fr-gr.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-fr-v/?$ /p-era-fr-v.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-i-ad/?$ /p-era-i-ad.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-i-fr-h/?$ /p-era-i-fr-h.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-i-fr-v/?$ /p-era-i-fr-v.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-i-pl1/?$ /p-era-i-pl1.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-i-pl2/?$ /p-era-i-pl2.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-era-i-pl3/?$ /p-era-i-pl3.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-mcx12-u-bracket/?$ /p-mcx12-u-bracket.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-mcx8-u-bracket/?$ /p-mcx8-u-bracket.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-pillar-cover/?$ /p-pillar-cover.html [R=301,L]
+RewriteRule ^catalog/aksessuary/ds-proaudio-sp111-00-2/?$ /p-sp111-00-2.html [R=301,L]
+RewriteRule ^catalog/aksessuary/euromet-byr-m10/?$ /p-euromet-byr-m10.html [R=301,L]
+RewriteRule ^catalog/aksessuary/gravity-gsf36m10m/?$ /p-gravity-gsf36m10m.html [R=301,L]
+RewriteRule ^catalog/aksessuary/gravity-gsp2332extb/?$ /p-gravity-gsp2332extb.html [R=301,L]
+RewriteRule ^catalog/aksessuary/gravity-gspwmbs30b/?$ /p-gravity-gspwmbs30b.html [R=301,L]
+RewriteRule ^catalog/aksessuary/gravity-gsspwbset1w/?$ /p-gravity-gsspwbset1w.html [R=301,L]
+RewriteRule ^catalog/aksessuary/gravity-gwb123set1b/?$ /p-gravity-gwb123set1b.html [R=301,L]
+RewriteRule ^catalog/aksessuary/gravity-sp-2332-tpb/?$ /p-gravity-sp-2332-tpb.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-1210/?$ /p-era-1210.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-1220/?$ /p-era-1220.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-1230/?$ /p-era-1230.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-i-1210/?$ /p-era-i-1210.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-i-1220/?$ /p-era-i-1220.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-i-1230/?$ /p-era-i-1230.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-i-s18/?$ /p-era-i-s18.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-i-s18a/?$ /p-era-i-s18a.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-s18/?$ /p-era-s18.html [R=301,L]
+RewriteRule ^catalog/seria-era/ds-proaudio-era-s18a/?$ /p-era-s18a.html [R=301,L]
+RewriteRule ^catalog/seriya-ant/ds-proaudio-ant/?$ /p-ant.html [R=301,L]
+RewriteRule ^catalog/seriya-ant/ds-proaudio-ant-815/?$ /p-ant-815.html [R=301,L]
+RewriteRule ^catalog/seriya-ant/ds-proaudio-ant-m815/?$ /p-ant-m815.html [R=301,L]
+RewriteRule ^catalog/seriya-ant/ds-proaudio-ant-wh/?$ /p-ant-wh.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-106/?$ /p-cx-106.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-108/?$ /p-cx-108.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-112/?$ /p-cx-112.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-112a/?$ /p-cx-112a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-115/?$ /p-cx-115.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-115a/?$ /p-cx-115a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-12s15-a/?$ /p-cx-12s15-a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-12s18-a/?$ /p-cx-12s18-a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-15s18-a/?$ /p-cx-15s18-a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-315a/?$ /p-cx-315a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-315s18-a/?$ /p-cx-315s18-a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-s15/?$ /p-cx-s15.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-s15a/?$ /p-cx-s15a.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-s18/?$ /p-cx-s18.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/ds-proaudio-cx-s18a/?$ /p-cx-s18a.html [R=301,L]
+RewriteRule ^catalog/seriya-monitor/ds-proaudio-mcx-12/?$ /p-mcx-12.html [R=301,L]
+RewriteRule ^catalog/seriya-monitor/ds-proaudio-mcx-15/?$ /p-mcx-15.html [R=301,L]
+RewriteRule ^catalog/seriya-monitor/ds-proaudio-mcx-15a/?$ /p-mcx-15a.html [R=301,L]
+RewriteRule ^catalog/seriya-monitor/ds-proaudio-mcx-8/?$ /p-mcx-8.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-pillar-a/?$ /p-pillar-a.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-pillar-a-wh/?$ /p-pillar-a-wh.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-pillar-p/?$ /p-pillar-p.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-pillar-p-wh/?$ /p-pillar-p-wh.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-plr-sub/?$ /p-plr-sub.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-plr-sub-a/?$ /p-plr-sub-a.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/ds-proaudio-plr-top-iii/?$ /p-plr-top-iii.html [R=301,L]
+RewriteRule ^catalog/seriya-taura/ds-proaudio-taura-8/?$ /p-taura-8.html [R=301,L]
+RewriteRule ^catalog/seriya-taura/ds-proaudio-taura-c-sub-18/?$ /p-taura-c-sub-18.html [R=301,L]
+RewriteRule ^catalog/seriya-taura/ds-proaudio-taura-f-bar/?$ /p-taura-f-bar.html [R=301,L]
+RewriteRule ^catalog/seriya-taura/ds-proaudio-taura-fr/?$ /p-taura-fr.html [R=301,L]
+RewriteRule ^catalog/usiliteli/ds-proaudio-da2-1300-dsp/?$ /p-da2-1300-dsp.html [R=301,L]
+RewriteRule ^catalog/usiliteli/ds-proaudio-da2-2500-dsp/?$ /p-da2-2500-dsp.html [R=301,L]
+RewriteRule ^catalog/usiliteli/ds-proaudio-da2-900-dsp/?$ /p-da2-900-dsp.html [R=301,L]
+RewriteRule ^catalog/usiliteli/ds-proaudio-da4-1300-dsp/?$ /p-da4-1300-dsp.html [R=301,L]
+RewriteRule ^catalog/usiliteli/ds-proaudio-da4-900-dsp/?$ /p-da4-900-dsp.html [R=301,L]
+RewriteRule ^company/tekhnologii/proizvodstvo-nashikh-dinamikov/?$ /production.html [R=301,L]
+RewriteRule ^company/tekhnologii/zvykovie-katushki/?$ /tech-voice-coil.html [R=301,L]
+RewriteRule ^catalog/aksessuary/?$ /products-accessories.html [R=301,L]
+RewriteRule ^catalog/seria-era/?$ /series-era.html [R=301,L]
+RewriteRule ^catalog/seriya-ant/?$ /series-ant.html [R=301,L]
+RewriteRule ^catalog/seriya-cx/?$ /series-cx.html [R=301,L]
+RewriteRule ^catalog/seriya-era/?$ /series-era-i.html [R=301,L]
+RewriteRule ^catalog/seriya-monitor/?$ /products-monitors.html [R=301,L]
+RewriteRule ^catalog/seriya-plr/?$ /series-pillar.html [R=301,L]
+RewriteRule ^catalog/seriya-taura/?$ /series-taura.html [R=301,L]
+RewriteRule ^catalog/usiliteli/?$ /series-da.html [R=301,L]
+RewriteRule ^company/istoriya-brenda/?$ /history.html [R=301,L]
+RewriteRule ^company/otzyvy/?$ /reviews.html [R=301,L]
+RewriteRule ^company/tekhnologii/?$ /technologies.html [R=301,L]
+RewriteRule ^company/vacancies/?$ /contacts.html [R=301,L]
+RewriteRule ^support/dokumentatsiya/?$ /docs.html [R=301,L]
+RewriteRule ^support/servis/?$ /warranty.html [R=301,L]
+RewriteRule ^agreement/?$ /consent.html [R=301,L]
+RewriteRule ^catalog/?$ /products.html [R=301,L]
+RewriteRule ^company/?$ /history.html [R=301,L]
+RewriteRule ^contacts/?$ /contacts.html [R=301,L]
+RewriteRule ^news/?$ /blog.html [R=301,L]
+RewriteRule ^portfolio/?$ /portfolio.html [R=301,L]
+RewriteRule ^services/?$ /where-to-buy.html [R=301,L]
+RewriteRule ^show-room/?$ /showroom.html [R=301,L]
+RewriteRule ^support/?$ /support.html [R=301,L]
+# ---- redirects:end ----
+# ---- Приём заявок с форм: /api/lead, /api/showroom, /api/tour, /api/service -> api/lead.php ----
+RewriteRule ^api/(lead|showroom|tour|service)$ api/lead.php?ep=$1 [L,QSA]
+# ---- Стартовая страница, без листинга ----
+DirectoryIndex index.html Main.dc.html
+Options -Indexes -MultiViews
+ServerSignature Off
+ErrorDocument 404 /404.html
+# ---- Закрыть служебное ----
+<FilesMatch "\.(jsonl|log|bak|env|mjs|py|md|sh|sql)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(\.htaccess|\.gitignore|server\.js|Thumbs\.db|\.DS_Store)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 ^/service-api(/|$)
+RedirectMatch 404 ^/(cards-variants(-motion)?|menu-proposal(-demo)?|showroom-3d)\.html$
+# ---- Заголовки безопасности ----
+<IfModule mod_headers.c>
+  # HSTS включать только после того, как HTTPS заработает на всех адресах сайта (убрать # в начале строки)
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  # CSP сначала в режиме Report-Only; после переноса шрифтов убрать fonts.*
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://yandex.ru https://vk.com https://rutube.ru; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests"
+  <FilesMatch "\.(jpg|jpeg|png|webp|avif|svg|ico|woff2|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(html|js|css|json|xml|txt)$">
+    Header set Cache-Control "public, max-age=600"
+  </FilesMatch>
+</IfModule>
+# ---- Сжатие ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain application/xml
+</IfModule>
+AddType font/woff2 .woff2
+AddCharset UTF-8 .html .css .js .json .txt .xml

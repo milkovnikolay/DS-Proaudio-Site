@@ -9,6 +9,7 @@
 <script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
 <link rel="stylesheet" href="./mnav.css">
 <script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Философия — DS PROAUDIO</title>
 <meta name="description" content="Философия DS PROAUDIO: свой путь в разработке, забота обо всех, кто работает с оборудованием, и звук без собственного «почерка».">
@@ -377,6 +378,19 @@
   @media (prefers-reduced-motion:reduce){ .ab-rev{opacity:1;transform:none;transition:none;} }
 </style>
 <script src="./navbot.js" defer></script>
+<!-- seo:start -->
+<link rel="canonical" href="https://ds-proaudio.ru/philosophy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Философия — DS PROAUDIO">
+<meta property="og:description" content="Философия DS PROAUDIO: свой путь в разработке, забота обо всех, кто работает с оборудованием, и звук без собственного «почерка».">
+<meta property="og:url" content="https://ds-proaudio.ru/philosophy.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Философия — DS PROAUDIO", "url": "https://ds-proaudio.ru/philosophy.html", "inLanguage": "ru", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+<!-- seo:end -->
 </head>
 <body class="ab-page">
 
@@ -420,7 +434,7 @@
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
       <a href="./products-line-arrays.html" class="mm-item">Линейные массивы</a>
-      <a href="./products-constant-curvature.html" class="mm-item">Массивы с фиксированными углами</a>
+      <a href="./products-constant-curvature.html" class="mm-item">Массивы постоянной направленности</a>
       <a href="./products-columns.html" class="mm-item">Звуковые колонны</a>
       <a href="./products-point-sources.html" class="mm-item">Точечные источники звука</a>
       <a href="./products-monitors.html" class="mm-item">Сценические мониторы</a>
@@ -428,7 +442,7 @@
       <a href="./products-auditorium.html" class="mm-item">Системы для аудиторий</a>
       <a href="./products-registry.html" class="mm-item">Реестровое оборудование</a>
       <a href="./products-all-weather.html" class="mm-item">Всепогодные системы</a>
-      <a href="./products-amplifiers.html" class="mm-item">Усилители</a>
+      <a href="./products-amplifiers.html" class="mm-item">Усилители мощности</a>
       <a href="./products-accessories.html" class="mm-item">Аксессуары</a>
       <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">Каталог PDF</a>
     </div>
@@ -448,6 +462,7 @@
       <a href="./history.html" class="mm-item">История</a>
       <a href="./philosophy.html" class="mm-item mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">Философия</a>
       <a href="./faces.html" class="mm-item">Лица компании</a>
+      <a href="./about.html" class="mm-item">Компания в цифрах</a>
       <a href="./production.html" class="mm-item">Наше производство</a>
       <details class="tech-dd">
         <summary class="mm-item" title="Показать список технологий"><a href="./technologies.html" class="tech-go" title="Раздел «Технологии»">Технологии</a><span class="tech-chev" aria-hidden="true">▼</span></summary>

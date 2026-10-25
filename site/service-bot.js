@@ -11,7 +11,7 @@
    Пока endpoint не задан, заявка уходит письмом: открывается почтовая программа с готовым текстом. */
 (function () {
   var DEFAULTS = {
-    endpoint: '',
+    endpoint: '/api/service',             // site/api/lead.php на хостинге; нет ответа — заявка уходит письмом
     statsEndpoint: '',
     phone: '+74951501238',
     phoneText: '+7 495 150-12-38',

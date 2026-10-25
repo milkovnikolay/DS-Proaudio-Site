@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SoundMath — Калькулятор Массива</title>
+<meta name="description" content="SoundMath — калькулятор DS PROAUDIO для расчёта линейных массивов: углы раскрытия, звуковое давление и АЧХ по точкам площадки.">
 <style>
   :root{
     --bg:#0f1420; --panel:#161d2b; --panel2:#1d2536; --ink:#e8ecf5; --ink-muted:#8a93a8;
@@ -130,6 +131,20 @@
   .checkbox-row{display:flex;align-items:flex-start;gap:6px;margin-top:8px;font-size:11px;color:var(--ink-muted)}
   .checkbox-row input{width:auto;flex:0 0 auto;margin-top:2px}
 </style>
+<script src="./cookie.js" defer></script>
+<!-- seo:start -->
+<link rel="canonical" href="https://ds-proaudio.ru/soundmath.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="SoundMath — Калькулятор Массива">
+<meta property="og:description" content="SoundMath — калькулятор DS PROAUDIO для расчёта линейных массивов: углы раскрытия, звуковое давление и АЧХ по точкам площадки.">
+<meta property="og:url" content="https://ds-proaudio.ru/soundmath.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "SoundMath — Калькулятор Массива", "url": "https://ds-proaudio.ru/soundmath.html", "inLanguage": "ru", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+<!-- seo:end -->
 </head>
 <body>
 <div id="app">
@@ -163,11 +178,11 @@
     </fieldset>
 
     <fieldset>
-      <legend id="arrayLegend">Массив DS Proaudio TAURA 10</legend>
+      <legend id="arrayLegend">Массив DS PROAUDIO TAURA 10</legend>
       <label>Система</label>
       <select id="systemSel">
-        <option value="taura10">DS Proaudio TAURA 10</option>
-        <option value="era">DS Proaudio ERA-I (элементы 1210 / 1220 / 1230)</option>
+        <option value="taura10">DS PROAUDIO TAURA 10</option>
+        <option value="era">DS PROAUDIO ERA-i (элементы 1210 / 1220 / 1230)</option>
       </select>
       <label>Модель звукового поля</label>
       <select id="soundModel">
@@ -188,7 +203,7 @@
       </div>
       <label style="margin-top:8px" id="anglesLabel">Углы раскрытия (по звеньям цепочки)</label>
       <table class="angles" id="anglesTable"></table>
-      <div id="eraNote" style="display:none;font-size:10px;color:var(--ink-muted);margin-top:6px;line-height:1.4">ERA-I: элементы стыкуются гранями вплотную, угол между осями соседних элементов = полусумма их углов клина (1210 — 10°, 1220 — 20°, 1230 — 30°), кривизна массива задаётся выбором типов. Оптимизация геометрии для ERA-I пока недоступна.</div>
+      <div id="eraNote" style="display:none;font-size:10px;color:var(--ink-muted);margin-top:6px;line-height:1.4">ERA-i: элементы стыкуются гранями вплотную, угол между осями соседних элементов = полусумма их углов клина (1210 — 10°, 1220 — 20°, 1230 — 30°), кривизна массива задаётся выбором типов. Оптимизация геометрии для ERA-i пока недоступна.</div>
       <div id="eraOptBlock" style="display:none;margin-top:10px;padding-top:8px;border-top:1px solid var(--line)">
         <div style="color:var(--accent);font-size:12px;font-weight:600;margin-bottom:4px">Подбор минимального числа элементов</div>
         <div style="font-size:10px;color:var(--ink-muted);line-height:1.4;margin-bottom:6px">Перебираются число элементов, типы (1210/1220/1230 сверху вниз), наклон рамы и точка подвеса в заданной зоне. Критерий — как у оптимизатора TAURA («тональный баланс + равная громкость»): три показателя (отклонение от цели, разброс формы, разброс уровня) сравниваются с лучшим достижимым при заданном максимуме; берётся наименьшее число элементов, у которого ни один показатель не хуже лучшего более чем на допуск.</div>
@@ -868,7 +883,7 @@
 
   // ---------------------------------------------------------------------
   // 8. Системы (типы кабинетов). TAURA 10 — параметрическая модель (выше);
-  //    ERA-I 1210/1220/1230 — измеренные «баллоны» направленности из GLL
+  //    ERA-i 1210/1220/1230 — измеренные «баллоны» направленности из GLL
   //    (замеры EASERA 2022): потери вне оси по углам θ,φ (шаг 10°) и частоте
   //    (шаг 1/6 окт.), АЧХ на оси (1/24 окт.), контур вида сбоку из чертежа.
   // ---------------------------------------------------------------------
@@ -885,7 +900,7 @@
     var on = new Int16Array(b64Bytes(d.onAxis).buffer);
     var aRad = d.alpha * Math.PI / 180;
     var sys = {
-      id: 'era' + type, kind: 'balloon', family: 'era', label: 'ERA-I ' + type, shortLabel: type,
+      id: 'era' + type, kind: 'balloon', family: 'era', label: 'ERA-i ' + type, shortLabel: type,
       alphaDeg: d.alpha, hBeamDeg: { '1210': 90, '1220': 100, '1230': 110 }[type], frontR_mm: d.R, sideLen_mm: d.R / Math.cos(aRad / 2), depth_mm: d.D,
       verts: d.verts.slice(0, d.verts.length - 1).map(function (v) { return [[v[0], v[1]], v[2] || 0]; }), halfWidthM: 0.295, massKg: d.massKg,
       maxSplContinuousDb: 125, maxSplPeakDb: 131, bandCount: d.bandCount,
@@ -1164,7 +1179,7 @@
   function cabinetGeometry(cabinet, pointM, envParams, arrayYawDeg) {
     var bsys = (cabinet.sys && cabinet.vs) ? AS.SYSTEMS[cabinet.sys] : null;
     if (bsys && bsys.kind === 'balloon') {
-      // измеренный баллон (ERA-I): источник — виртуальный центр клина, направление — по сигнеду
+      // измеренный баллон (ERA-i): источник — виртуальный центр клина, направление — по сигнеду
       var bx = pointM[0] - cabinet.vs[0], by = pointM[1] - cabinet.vs[1], bz = pointM[2] || 0;
       var byaw = (arrayYawDeg || 0) * Math.PI / 180;
       var bh = angleBetweenDeg([Math.cos(byaw), Math.sin(byaw)], [bx, bz]);
@@ -3174,9 +3189,9 @@
     heatmap: { fHiHz: 20000, fLoHz: 60, steps: 30, style: 'c6', widthM: 20, portalIdx: 0 }, // вкладка «Карта уровней»
     cabCount: DEFAULT_PROJECT.cabCount,
     splayAnglesDeg: DEFAULT_PROJECT.splayAnglesDeg.slice(),
-    systemId: 'taura10', // система массива: 'taura10' | 'era' (ERA-I 1210/1220/1230)
-    cabTypes: [],        // типы элементов (только ERA-I): 'era1210' | 'era1220' | 'era1230'
-    pinIdx: 1,           // точка подвеса на балке FR-V (только ERA-I): 0 задняя, 1 средняя, 2 передняя
+    systemId: 'taura10', // система массива: 'taura10' | 'era' (ERA-i 1210/1220/1230)
+    cabTypes: [],        // типы элементов (только ERA-i): 'era1210' | 'era1220' | 'era1230'
+    pinIdx: 1,           // точка подвеса на балке FR-V (только ERA-i): 0 задняя, 1 средняя, 2 передняя
     frameAngleDeg: DEFAULT_PROJECT.frameAngleDeg,
     arrayYawDeg: DEFAULT_PROJECT.arrayYawDeg, // Подэтап 1.2
     riggingPosM: DEFAULT_PROJECT.riggingPosM.slice(),
@@ -4266,7 +4281,7 @@
         var a = toPx(p1), b = toPx([p1[0] + dx * t, p1[1] + dy * t]);
         el('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], class: 'sector-line' }, svg);
       }
-      if (cabs[0].vs) { // ERA-I: боковые грани клина идут из виртуального центра
+      if (cabs[0].vs) { // ERA-i: боковые грани клина идут из виртуального центра
         var s0 = AS.SYSTEMS[cabs[0].sys], s1 = AS.SYSTEMS[cabs[cabs.length - 1].sys];
         wall(cabs[0], [0, 0], [s0.frontR_mm, s0.frontR_mm * Math.tan(s0.alphaDeg * Math.PI / 360)]);
         wall(cabs[cabs.length - 1], [0, 0], [s1.frontR_mm, -s1.frontR_mm * Math.tan(s1.alphaDeg * Math.PI / 360)]);
@@ -4331,7 +4346,7 @@
             // и желаемым углом текущего кабинета; снэп к каталогу шарнира.
             var prevFwd = room.cabinets[idx - 1].forward;
             var prevDeg = Math.atan2(prevFwd[1], prevFwd[0]) * 180 / Math.PI;
-            if (state.systemId !== 'era') state.splayAnglesDeg[idx] = nearestSplayCatalogValue(prevDeg - desiredDeg); // у ERA-I угол стыка фиксирован
+            if (state.systemId !== 'era') state.splayAnglesDeg[idx] = nearestSplayCatalogValue(prevDeg - desiredDeg); // у ERA-i угол стыка фиксирован
           }
           if (window.ArrayScopeApp && window.ArrayScopeApp.resyncSidebar) window.ArrayScopeApp.resyncSidebar();
           render();
@@ -5049,7 +5064,7 @@
   var floorListDiv = document.getElementById('floorList');
   var addFloorPtBtn = document.getElementById('addFloorPt');
 
-  // Система массива: для ERA-I приводит список типов к числу кабинетов и выводит
+  // Система массива: для ERA-i приводит список типов к числу кабинетов и выводит
   // из него углы стыков (грани в контакте: полусумма углов клина соседей).
   function normalizeSystem() {
     if (state.systemId !== 'era') return;
@@ -5520,7 +5535,7 @@
     // обратная (щелчок по одной оси) идёт через selectAxis, не через это.
     selectAxisGroup: selectAxisGroup
   };
-  // Для подбора числа элементов (ERA-I): задать число и список типов без отдельного шага истории.
+  // Для подбора числа элементов (ERA-i): задать число и список типов без отдельного шага истории.
   window.ArrayScopeApp.applyCabCount = function (n) {
     state.cabCount = n; cabCountInput.value = n;
     syncAnglesArrayLength(); rebuildAnglesTable();
@@ -6914,7 +6929,7 @@
 
 
   // =======================================================================
-  // ERA-I: подбор минимального числа элементов.
+  // ERA-i: подбор минимального числа элементов.
   //  Для N = 1..Nmax перебираются неубывающие (сверху вниз) последовательности
   //  типов 1210/1220/1230, положения подвеса (сетка в зоне) и угол рамы.
   //  Оценка — как у TAURA, алгоритм 2 (тональный баланс + равная громкость)
@@ -8165,7 +8180,7 @@
       state.cfgSum === 'coherent' ? 'Фазы конфигураций складываются по расстояниям и задержкам: на карте видна интерференция между системами. Задержка — у каждой конфигурации своя.' : 'Конфигурации считаются независимыми источниками: уровни складываются по мощности.';
     var col2 = App.CFG_COLORS[state.cfgIdx % App.CFG_COLORS.length], tag = 'конфигурация ' + cfgTitle(state.cfgIdx);
     var al = document.getElementById('arrayLegend'), pl = document.getElementById('portalsLegend');
-    if (al) { al.textContent = 'Массив DS Proaudio ' + (state.systemId === 'era' ? 'ERA-I' : 'TAURA 10') + ' — ' + tag; al.style.color = col2; }
+    if (al) { al.textContent = 'Массив DS PROAUDIO ' + (state.systemId === 'era' ? 'ERA-i' : 'TAURA 10') + ' — ' + tag; al.style.color = col2; }
     if (pl) { pl.textContent = 'Порталы (до 8) — ' + (state.cfgIdx > 0 ? 'другая конфигурация, ' : '') + tag; pl.style.color = col2; }
   }
   App.renderCfgUI = renderCfgUI;
@@ -8418,11 +8433,11 @@
   @media (max-width:800px){#manualNav{display:none}}
 </style>
 <div id="manualOverlay"><div id="manualWin" role="dialog" aria-label="Инструкция">
-  <div id="manualHead"><h2>Инструкция — SoundMath · Калькулятор массива DS Proaudio TAURA 10</h2><button id="manualClose">Закрыть ✕</button></div>
+  <div id="manualHead"><h2>Инструкция — SoundMath · Калькулятор массива DS PROAUDIO TAURA 10</h2><button id="manualClose">Закрыть ✕</button></div>
   <div id="manualBody"><div id="manualNav"></div><div id="manualText">
 <h3 id="m-purpose">1. Для чего нужно приложение</h3>
 <p><b>Интеллектуальная собственность.</b> Приложение SoundMath (программа, расчётные модели, алгоритмы, данные, интерфейс и эта инструкция) является интеллектуальной собственностью авторов. Условия использования — в разделе 5.</p>
-<p>SoundMath — расчётный инструмент для проектирования и настройки линейного массива DS Proaudio TAURA 10. Он помогает ещё до монтажа ответить на вопросы: как расположить и согласовать кабинеты, чтобы звук в зале был равномерным по тембру и громкости, в какой точке подвесить массив, какие углы раскрытия выставить между кабинетами, какую высокочастотную коррекцию задать по каналам усиления и как будет звучать площадка в разных точках.</p>
+<p>SoundMath — расчётный инструмент для проектирования и настройки линейного массива DS PROAUDIO TAURA 10. Он помогает ещё до монтажа ответить на вопросы: как расположить и согласовать кабинеты, чтобы звук в зале был равномерным по тембру и громкости, в какой точке подвесить массив, какие углы раскрытия выставить между кабинетами, какую высокочастотную коррекцию задать по каналам усиления и как будет звучать площадка в разных точках.</p>
 <p>Основные задачи приложения:</p>
 <ul>
 <li>построить геометрию массива (рама, до 16 кабинетов, углы раскрытия, наклон рамы, разворот) относительно профиля площадки зала;</li>
@@ -8437,7 +8452,7 @@
 <h3 id="m-limits">2. Ограничения приложения</h3>
 <p>Приложение — инженерная оценка, а не замена измерениям. Перед принятием окончательных решений результаты нужно проверять измерениями на площадке.</p>
 <ul>
-<li><b>Один тип кабинета.</b> Расчёт выполнен только для DS Proaudio TAURA 10 (число кабинетов — от 1 до 16). Геометрия кабинета, виртуальный источник (1556 мм позади излучающей грани) и дуга волнового фронта (10°) зафиксированы и не редактируются.</li>
+<li><b>Один тип кабинета.</b> Расчёт выполнен только для DS PROAUDIO TAURA 10 (число кабинетов — от 1 до 16). Геометрия кабинета, виртуальный источник (1556 мм позади излучающей грани) и дуга волнового фронта (10°) зафиксированы и не редактируются.</li>
 <li><b>Идеализированное звуковое поле.</b> Учитываются расстояния, направленность кабинетов в вертикальной и горизонтальной плоскостях и поглощение звука в воздухе (по температуре и влажности). Не учитываются отражения от стен, потолка и конструкций, реверберация, затенение публикой и оборудованием, ветер и градиенты температуры. Давление воздуха принято равным 101,325 кПа.</li>
 <li><b>Двумерная схема зала.</b> Профиль площадки задаётся одним сечением (глубина X — высота Y). Боковое смещение точек (Z) и разворот массива учитываются в расчёте расстояний и горизонтальной направленности, но геометрия зала в боковом направлении не моделируется.</li>
 <li><b>Низкие частоты.</b> В низкочастотной области (ниже примерно 200–300 Гц) направленность массива слабая, и выровнять уровень по залу углами раскрытия или коррекцией практически нельзя; оценки ниже 100 Гц — ориентировочные (не учитываются отражения и резонансы помещения).</li>
@@ -8501,7 +8516,7 @@
 <h3 id="m-sections">4. Инструкции по разделам</h3>
 <h4 id="m-sec-top">4.1. Верхняя панель</h4>
 <p>«Отменить» и «Повторить» (также Ctrl+Z и Ctrl+Y) возвращают и повторяют изменения: перемещения точек, смену углов, результаты оптимизации, загрузку проекта. История хранит до 50 шагов. Кнопка «Инструкция» открывает это окно. Значок «i» рядом с элементом открывает краткую подсказку именно по нему.</p>
-<h4 id="m-sec-array">4.2. Раздел «Массив DS Proaudio TAURA 10»</h4>
+<h4 id="m-sec-array">4.2. Раздел «Массив DS PROAUDIO TAURA 10»</h4>
 <ul>
 <li><b>Число кабинетов</b> — от 1 до 16. Таблица углов и схема перестраиваются.</li>
 <li><b>Наклон рамы</b> — угол рамы в вертикальной плоскости, от −45° до +15°.</li>

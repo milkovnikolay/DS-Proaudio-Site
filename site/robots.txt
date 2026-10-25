@@ -1,0 +1,53 @@
+# DS PROAUDIO — правила для поисковых роботов (план Коли, раздел 2 и приложение Б; решение Тима Р18-б:
+# ИИ-поисковикам разрешено находить и цитировать сайт, обучающим роботам ИИ — запрещено).
+
+User-agent: *
+Disallow: /api/
+Disallow: /cards-variants
+Disallow: /menu-proposal
+Disallow: /showroom-3d.html
+
+User-agent: Yandex
+Disallow: /api/
+Disallow: /cards-variants
+Disallow: /menu-proposal
+Disallow: /showroom-3d.html
+Clean-param: g /docs.html
+Clean-param: id /blog-post.html
+
+# ИИ: обучение на материалах сайта — запрещено
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# ИИ-поиск и ответы пользователям — разрешено
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://ds-proaudio.ru/sitemap.xml

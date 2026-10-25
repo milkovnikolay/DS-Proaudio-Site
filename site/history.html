@@ -10,9 +10,10 @@
 <link rel="stylesheet" href="./mnav.css">
 <link rel="stylesheet" href="./about-mobile.css">
 <script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>История — DS PROAUDIO</title>
-<meta name="description" content="История DS PROAUDIO с 1970-х: ленинградская акустическая школа, EVM, СЗТ и бренд концертной акустики с собственным производством в Санкт-Петербурге и Ленинградской области. Архивные фото и выставки по годам.">
+<meta name="description" content="История DS PROAUDIO с 1970-х: ленинградская акустическая школа, EVM, СЗТ и бренд концертной акустики с собственным производством в Санкт-Петербурге и…">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=PT+Mono&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -573,6 +574,19 @@
   .hs-sc .c{font-size:13px;line-height:1.45;color:#A8A8A8;}
 </style>
 <script src="./navbot.js" defer></script>
+<!-- seo:start -->
+<link rel="canonical" href="https://ds-proaudio.ru/history.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="История — DS PROAUDIO">
+<meta property="og:description" content="История DS PROAUDIO с 1970-х: ленинградская акустическая школа, EVM, СЗТ и бренд концертной акустики с собственным производством в Санкт-Петербурге и…">
+<meta property="og:url" content="https://ds-proaudio.ru/history.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "История — DS PROAUDIO", "url": "https://ds-proaudio.ru/history.html", "inLanguage": "ru", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+<!-- seo:end -->
 </head>
 <body class="ab-page hs-page hs-lux">
 
@@ -616,7 +630,7 @@
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
       <a href="./products-line-arrays.html" class="mm-item">Линейные массивы</a>
-      <a href="./products-constant-curvature.html" class="mm-item">Массивы с фиксированными углами</a>
+      <a href="./products-constant-curvature.html" class="mm-item">Массивы постоянной направленности</a>
       <a href="./products-columns.html" class="mm-item">Звуковые колонны</a>
       <a href="./products-point-sources.html" class="mm-item">Точечные источники звука</a>
       <a href="./products-monitors.html" class="mm-item">Сценические мониторы</a>
@@ -624,7 +638,7 @@
       <a href="./products-auditorium.html" class="mm-item">Системы для аудиторий</a>
       <a href="./products-registry.html" class="mm-item">Реестровое оборудование</a>
       <a href="./products-all-weather.html" class="mm-item">Всепогодные системы</a>
-      <a href="./products-amplifiers.html" class="mm-item">Усилители</a>
+      <a href="./products-amplifiers.html" class="mm-item">Усилители мощности</a>
       <a href="./products-accessories.html" class="mm-item">Аксессуары</a>
       <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">Каталог PDF</a>
     </div>
@@ -644,6 +658,7 @@
       <a href="./history.html" class="mm-item mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">История</a>
       <a href="./philosophy.html" class="mm-item">Философия</a>
       <a href="./faces.html" class="mm-item">Лица компании</a>
+      <a href="./about.html" class="mm-item">Компания в цифрах</a>
       <a href="./production.html" class="mm-item">Наше производство</a>
       <details class="tech-dd">
         <summary class="mm-item" title="Показать список технологий"><a href="./technologies.html" class="tech-go" title="Раздел «Технологии»">Технологии</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
@@ -952,7 +967,7 @@ window.HX_DATA={"g": {"g90": {"t": "Архив 1990-х", "i": [["./assets/histor
       meas.style.width = cw + 'px'; meas.lastChild.textContent = t;
       return (capCache[key] = meas.offsetHeight + 8);
     }
-    function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+    function esc(t){ return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
     // поставить в ячейку фото с номером s: карточка = фото + подпись под ним, едут вместе
     function fill(sl, s){
       sl.s = s; var i = ((s % list.length) + list.length) % list.length, it = list[i] || [null, 3, 2, ''];

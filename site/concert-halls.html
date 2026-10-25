@@ -9,6 +9,7 @@
 <script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
 <link rel="stylesheet" href="./mnav.css">
 <script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Акустика для концертных залов и филармоний | Оборудование DS PROAUDIO</title>
 <meta name="description" content="Профессиональное звуковое оборудование для филармоний и камерных залов. Системы с высокой разборчивостью речи и натуральным тембром. Установка, настройка, проектирование.">
@@ -237,6 +238,19 @@
 <link rel="stylesheet" href="./sub-mobile.css">
 <script src="./objform.js" defer></script>
 <script src="./sub-mobile.js" defer></script>
+<!-- seo:start -->
+<link rel="canonical" href="https://ds-proaudio.ru/concert-halls.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Акустика для концертных залов и филармоний | Оборудование DS PROAUDIO">
+<meta property="og:description" content="Профессиональное звуковое оборудование для филармоний и камерных залов. Системы с высокой разборчивостью речи и натуральным тембром. Установка, настройка, проектирование.">
+<meta property="og:url" content="https://ds-proaudio.ru/concert-halls.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Акустика для концертных залов и филармоний | Оборудование DS PROAUDIO", "url": "https://ds-proaudio.ru/concert-halls.html", "inLanguage": "ru", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+<!-- seo:end -->
 </head>
 <body>
 
@@ -282,7 +296,7 @@
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
       <a href="./products-line-arrays.html" class="mm-item">Линейные массивы</a>
-      <a href="./products-constant-curvature.html" class="mm-item">Массивы с фиксированными углами</a>
+      <a href="./products-constant-curvature.html" class="mm-item">Массивы постоянной направленности</a>
       <a href="./products-columns.html" class="mm-item">Звуковые колонны</a>
       <a href="./products-point-sources.html" class="mm-item">Точечные источники звука</a>
       <a href="./products-monitors.html" class="mm-item">Сценические мониторы</a>
@@ -290,7 +304,7 @@
       <a href="./products-auditorium.html" class="mm-item">Системы для аудиторий</a>
       <a href="./products-registry.html" class="mm-item">Реестровое оборудование</a>
       <a href="./products-all-weather.html" class="mm-item">Всепогодные системы</a>
-      <a href="./products-amplifiers.html" class="mm-item">Усилители</a>
+      <a href="./products-amplifiers.html" class="mm-item">Усилители мощности</a>
       <a href="./products-accessories.html" class="mm-item">Аксессуары</a>
       <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">Каталог PDF</a>
     </div>
@@ -310,6 +324,7 @@
       <a href="./history.html" class="mm-item">История</a>
       <a href="./philosophy.html" class="mm-item">Философия</a>
       <a href="./faces.html" class="mm-item">Лица компании</a>
+      <a href="./about.html" class="mm-item">Компания в цифрах</a>
       <a href="./production.html" class="mm-item">Наше производство</a>
       <details class="tech-dd">
         <summary class="mm-item" title="Показать список технологий"><a href="./technologies.html" class="tech-go" title="Раздел «Технологии»">Технологии</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
@@ -374,7 +389,7 @@
     <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:48px;">
       <div style="display:flex;flex-direction:column;gap:24px;max-width:900px;">
         <div class="kicker" style="color:#C8C8C8;">Акустические системы · Культура и искусство</div>
-        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:72px;line-height:1.05;color:#FAFAFA;">Концертные залы<br>и филармонии</h1>
+        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:72px;line-height:1.05;color:#FAFAFA;">Концертные залы <br>и филармонии</h1>
         <div style="max-width:620px;font-size:22px;line-height:1.5;color:#D8D8D8;">Эталонная чистота звука</div>
         <div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;">
           <a href="#contact" class="btn-light">Запросить акустический расчёт</a>
@@ -504,13 +519,13 @@
           
           <div class="arch-title">Линейные массивы малой или средней мощности</div>
           <div class="arch-text">Ровное покрытие партера и балконов без перепадов громкости.</div>
-          <a href="#" class="arch-link">Линейные массивы →</a>
+          <a href="./products-line-arrays.html" class="arch-link">Линейные массивы →</a>
         </div>
         <div class="arch-item" data-el="monitor">
           
           <div class="arch-title">Низкопрофильные сценические мониторы</div>
           <div class="arch-text">Фронтальные системы для солистов: артист слышит себя натурально, не напрягая слух.</div>
-          <a href="#" class="arch-link">Сценические мониторы →</a>
+          <a href="./products-monitors.html" class="arch-link">Сценические мониторы →</a>
         </div>
         <div class="arch-item" data-el="sub">
           
@@ -524,7 +539,7 @@
           
           <div class="arch-title">Мощные звуковые колонны как основная система</div>
           <div class="arch-text">Узкая вертикальная направленность при равномерном покрытии партера: звук идёт в зрительские кресла, а не в потолок и стены.</div>
-          <a href="#" class="arch-link">Звуковые колонны →</a>
+          <a href="./products-columns.html" class="arch-link">Звуковые колонны →</a>
         </div>
         <div class="arch-item" data-el="column">
           
@@ -702,19 +717,19 @@
     </div>
     <div class="eqb-grid reveal">
       <a class="eqb-card" href="./p-plr-top-iii.html">
-        <span class="eqb-img"><img src="./assets/products/ds-proaudio-plr-top-iii/01.jpg" alt="DS PROAUDIO PLR TOP III" loading="lazy"></span>
+        <span class="eqb-img"><img src="./assets/products/ds-proaudio-plr-top-iii/01.webp" alt="DS PROAUDIO PLR TOP III" loading="lazy"></span>
         <span class="eqb-body"><span class="eqb-tags"><span class="eqb-tag">PILLAR</span><span class="eqb-tag gisp">ГИСП</span></span><span class="eqb-name">PLR TOP III</span><span class="eqb-type">Звуковая колонна</span><span class="eqb-text">Пассивная акустическая колонна: (6х5” динамиков+2х1,5&quot; драйвера нагруженных на волновод).</span></span>
       </a>
       <a class="eqb-card" href="./p-plr-sub.html">
-        <span class="eqb-img"><img src="./assets/products/ds-proaudio-plr-sub/01.jpg" alt="DS PROAUDIO PLR SUB" loading="lazy"></span>
+        <span class="eqb-img"><img src="./assets/products/ds-proaudio-plr-sub/01.webp" alt="DS PROAUDIO PLR SUB" loading="lazy"></span>
         <span class="eqb-body"><span class="eqb-tags"><span class="eqb-tag">PILLAR</span><span class="eqb-tag gisp">ГИСП</span></span><span class="eqb-name">PLR SUB</span><span class="eqb-type">Сабвуфер</span><span class="eqb-text">Сабвуфер пассивный, 1200 Вт.</span></span>
       </a>
       <a class="eqb-card" href="./p-taura-8.html">
-        <span class="eqb-img"><img src="./assets/products/ds-proaudio-taura-8/01.jpg" alt="DS PROAUDIO TAURA 8" loading="lazy"></span>
+        <span class="eqb-img"><img src="./assets/products/ds-proaudio-taura-8/01.webp" alt="DS PROAUDIO TAURA 8" loading="lazy"></span>
         <span class="eqb-body"><span class="eqb-tags"><span class="eqb-tag">TAURA</span></span><span class="eqb-name">TAURA 8</span><span class="eqb-type">Элемент массива</span><span class="eqb-text">Двухполосный пассивный элемент линейного массива с гибридной конструкцией НЧ-волновода.</span></span>
       </a>
       <a class="eqb-card" href="./p-taura-c-sub-18.html">
-        <span class="eqb-img"><img src="./assets/products/ds-proaudio-taura-c-sub-18/01.jpg" alt="DS PROAUDIO TAURA C-Sub 18" loading="lazy"></span>
+        <span class="eqb-img"><img src="./assets/products/ds-proaudio-taura-c-sub-18/01.webp" alt="DS PROAUDIO TAURA C-Sub 18" loading="lazy"></span>
         <span class="eqb-body"><span class="eqb-tags"><span class="eqb-tag">TAURA</span></span><span class="eqb-name">TAURA C-Sub 18</span><span class="eqb-type">Кардиоидный сабвуфер</span><span class="eqb-text">Высокопроизводительный кардиоидный сабвуфер.</span></span>
       </a>
     </div>
@@ -793,7 +808,7 @@
         <a class="dsf-mail" href="mailto:info@ds-proaudio.ru">info@ds-proaudio.ru</a>
         <div class="dsf-addr"><b>Офис и сервисный центр</b>Москва, Остаповский проезд, д. 3с8</div>
         <div class="dsf-addr"><b>Сервисный центр</b>Санкт-Петербург, ул. Парковая, 4Д</div>
-        <div class="dsf-hours">Пн–Пт, 10:00–19:00</div>
+        <div class="dsf-hours">Пн–Пт, 10:00–19:00 (МСК)</div>
       </div>
       <div class="dsf-bot" id="dsFootBot" aria-label="Помощник DS PROAUDIO">
         <div class="dsf-bot-head"><span class="dsf-bot-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" stroke-width="2.6" stroke-linecap="round"/></svg></span><span>Помощник DS PROAUDIO<span class="dsf-bot-sub">Ответит сразу, менеджер — в рабочее время</span></span></div>
@@ -814,7 +829,7 @@
       <div class="dsf-col">
         <a href="./products.html" class="ft-heading">Продукция</a>
           <a href="./products-line-arrays.html" class="ft-item">Линейные массивы</a>
-          <a href="./products-constant-curvature.html" class="ft-item">Массивы с фиксированными углами</a>
+          <a href="./products-constant-curvature.html" class="ft-item">Массивы постоянной направленности</a>
           <a href="./products-columns.html" class="ft-item">Звуковые колонны</a>
           <a href="./products-point-sources.html" class="ft-item">Точечные источники звука</a>
           <a href="./products-monitors.html" class="ft-item">Сценические мониторы</a>
@@ -822,7 +837,7 @@
           <a href="./products-auditorium.html" class="ft-item">Системы для аудиторий</a>
           <a href="./products-registry.html" class="ft-item">Реестровое оборудование</a>
           <a href="./products-all-weather.html" class="ft-item">Всепогодные системы</a>
-          <a href="./products-amplifiers.html" class="ft-item">Усилители</a>
+          <a href="./products-amplifiers.html" class="ft-item">Усилители мощности</a>
           <a href="./products-accessories.html" class="ft-item">Аксессуары</a>
           <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="ft-bold">Каталог PDF</a>
       </div>
@@ -844,6 +859,7 @@
           <a href="./history.html" class="ft-item">История</a>
           <a href="./philosophy.html" class="ft-item">Философия</a>
           <a href="./faces.html" class="ft-item">Лица компании</a>
+          <a href="./about.html" class="ft-item">Компания в цифрах</a>
           <a href="./production.html" class="ft-item">Наше производство</a>
           <details class="tech-dd">
             <summary class="ft-item" title="Показать список технологий"><a href="./technologies.html" class="tech-go" title="Раздел «Технологии»">Технологии</a><span class="tech-chev" aria-hidden="true">▼</span></summary>

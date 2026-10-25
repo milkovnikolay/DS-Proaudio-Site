@@ -1,0 +1,30 @@
+# DS PROAUDIO
+
+> Российский производитель профессиональных акустических систем полного цикла. Производство — Санкт-Петербург и Ленинградская область (12 собственных цехов, динамики и ВЧ-драйверы 4–18″ своего производства). Офис, шоу-рум и сервис — Москва, сервисный центр — Санкт-Петербург. Оборудование включено в реестр российской промышленной продукции (ГИСП).
+
+## Продукция
+- [Каталог](https://ds-proaudio.ru/products.html): все серии и модели с характеристиками
+- [Линейные массивы TAURA](https://ds-proaudio.ru/series-taura.html): TAURA 8, кардиоидный сабвуфер TAURA C-Sub 18
+- [Массивы постоянной направленности ERA](https://ds-proaudio.ru/series-era.html) и [ERA-i](https://ds-proaudio.ru/series-era-i.html)
+- [Колонны PILLAR](https://ds-proaudio.ru/series-pillar.html) и [STELLA](https://ds-proaudio.ru/series-stella.html)
+- [Точечные источники CX](https://ds-proaudio.ru/series-cx.html) и [MCX](https://ds-proaudio.ru/series-mcx.html), [компактные комплекты ANT](https://ds-proaudio.ru/series-ant.html)
+- [Акустика для аудиторий AUDITORIUM (ADR)](https://ds-proaudio.ru/series-auditorium.html)
+- [Усилители мощности DA с DSP](https://ds-proaudio.ru/series-da.html)
+- [Реестровое оборудование (ГИСП)](https://ds-proaudio.ru/products-registry.html)
+
+## Технологии и производство
+- [Технологии](https://ds-proaudio.ru/technologies.html): риггинг без пинов, CLICK-CLACK, коаксиальные волноводы, горизонтальное сложение, кардиоидный сабвуфер, звуковые катушки на ребро
+- [Производство](https://ds-proaudio.ru/production.html)
+- [История компании](https://ds-proaudio.ru/history.html)
+
+## Применение
+- [Культура и искусство](https://ds-proaudio.ru/culture.html), [образование](https://ds-proaudio.ru/education.html), [спорт](https://ds-proaudio.ru/sport.html), [корпоративный сектор](https://ds-proaudio.ru/corporate.html), [рестораны и гостиницы](https://ds-proaudio.ru/hospitality.html), [религиозные учреждения](https://ds-proaudio.ru/religious.html), [развлечения](https://ds-proaudio.ru/entertainment.html), [прокат](https://ds-proaudio.ru/rental.html)
+- [Портфолио объектов](https://ds-proaudio.ru/portfolio.html) и [отзывы](https://ds-proaudio.ru/reviews.html)
+
+## Документы и поддержка
+- [Центр документации](https://ds-proaudio.ru/docs.html): каталог PDF, файлы GLL для EASE, чертежи CAD, руководства
+- [Гарантия и сервис](https://ds-proaudio.ru/warranty.html), [доставка](https://ds-proaudio.ru/delivery.html), [обучение и семинары](https://ds-proaudio.ru/seminars.html)
+
+## Контакты
+- [Контакты](https://ds-proaudio.ru/contacts.html): +7 495 150-12-38, info@ds-proaudio.ru
+- Офис и сервисный центр: Москва, Остаповский проезд, д. 3с8; шоу-рум: Москва, 2-й Донской проезд, 4; сервисный центр: Санкт-Петербург, ул. Парковая, 4Д
