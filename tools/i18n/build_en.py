@@ -132,13 +132,12 @@ EN_SW = '<a class="lang-sw" href="./{href}" hreflang="ru" lang="ru" title="Russi
 
 
 def add_switch(s, sw):
-    """Переключатель в шапку русской страницы: отдельная ячейка в свободной колонке между «Клиентам»
-    и «Партнёрам» (сразу после ячейки с «Партнёрам»). Если переключатель уже есть — ничего не меняем."""
+    """Переключатель в шапку русской страницы: кружок прямо перед капсулой «Партнёрам» (ширину крайних
+    колонок шапки на таких страницах увеличивает mnav.css). Если переключатель уже есть — ничего не меняем."""
     if 'class="lang-sw"' in s or 'class="cab-pill"' not in s:
         return s
-    i = s.index('</div>', s.index('class="cab-pill"')) + len('</div>')
-    return s[:i] + ('\n      <div style="grid-column:8;grid-row:1;justify-self:center;display:flex;align-items:center;">'
-                    + sw + '</div>') + s[i:]
+    i = s.index('<a href="#" class="cab-pill"')
+    return s[:i] + sw + '\n        ' + s[i:]
 
 
 def build(ru_file, info):
