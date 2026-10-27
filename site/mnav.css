@@ -166,17 +166,13 @@ html.lw-mid .cab-pill svg{width:13px;height:13px}
   .dsf-wrap,.of-wrap{padding-left:20px !important;padding-right:20px !important}
 }
 
-/* ===== переключатель языка (27.10.2026): в шапке — кружок в стиле капсулы «Партнёрам» с буквами другого языка (EN / RU) между «Клиентам» и «Партнёрам»;
+/* ===== переключатель языка (27.10.2026): в шапке — кружок в стиле капсулы «Партнёрам» с буквами другого языка (EN / RU) слева, рядом со знаком ГИСП;
    на телефоне — кружок с буквами другого языка. Только на страницах, у которых есть английская версия (tools/i18n/build_en.py) ===== */
-.lang-sw{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;margin-right:8px;width:30px;height:30px;border:1px solid rgba(255,255,255,.35);border-radius:99px;
+.lang-sw{display:inline-flex;flex:0 0 auto;align-self:center;align-items:center;justify-content:center;margin-left:14px;width:30px;height:30px;border:1px solid rgba(255,255,255,.35);border-radius:99px;
   color:#F2F2F2;font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.04em;white-space:nowrap;
   transition:border-color .2s,background .2s}
 .lang-sw:hover{opacity:1;border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.08)}
-/* на страницах с переключателем крайние колонки шапки шире на ширину кружка (симметрично, чтобы логотип остался по центру) */
-@media (min-width:1440px){ html:root:not(.lw-mid):has(.lang-sw){--ds-gap:16px;--ds-c1:142px;--ds-c7:142px} }
-html:has(.lang-sw) .cab-pill{height:30px;padding:0 9px 0 8px;gap:5px;font-size:10.5px;letter-spacing:.05em}
-html:has(.lang-sw) .cab-pill svg{width:13px;height:13px}
-@media (min-width:1100px) and (max-width:1439px){ html:root:has(.lang-sw){--ds-c1:130px;--ds-c7:130px} }
-html.lw-mid:root:has(.lang-sw){--ds-c1:130px;--ds-c7:130px}
+/* кружок стоит в левой колонке шапки рядом со знаком ГИСП; на английских страницах знака нет — кружок у левого края */
+html[lang="en"] .lang-sw{margin-left:0}
 .mn-lang{display:inline-flex;align-items:center;justify-content:center;height:38px;min-width:38px;padding:0 9px;border:1px solid rgba(255,255,255,.35);border-radius:99px;
   color:#F2F2F2;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em}

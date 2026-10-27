@@ -132,12 +132,13 @@ EN_SW = '<a class="lang-sw" href="./{href}" hreflang="ru" lang="ru" title="Russi
 
 
 def add_switch(s, sw):
-    """Переключатель в шапку русской страницы: кружок прямо перед капсулой «Партнёрам» (ширину крайних
-    колонок шапки на таких страницах увеличивает mnav.css). Если переключатель уже есть — ничего не меняем."""
-    if 'class="lang-sw"' in s or 'class="cab-pill"' not in s:
+    """Переключатель в шапку русской страницы: кружок в левой колонке, сразу за знаком ГИСП (на английской
+    странице знак скрыт, и кружок остаётся у левого края). Если переключатель уже есть — ничего не меняем."""
+    mark = '<a href="./gov.html" aria-label="ГИСП — госучреждениям"'
+    if 'class="lang-sw"' in s or mark not in s:
         return s
-    i = s.index('<a href="#" class="cab-pill"')
-    return s[:i] + sw + '\n        ' + s[i:]
+    i = s.index('</a>', s.index(mark)) + len('</a>')
+    return s[:i] + '\n        ' + sw + s[i:]
 
 
 def build(ru_file, info):
