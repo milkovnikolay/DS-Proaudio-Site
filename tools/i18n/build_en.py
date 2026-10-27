@@ -25,6 +25,7 @@ DOMAIN = 'https://ds-proaudio.ru'
 # русская страница → английская (путь внутри site/en/) и адреса для поисковиков
 PAGES = {
     'Main.dc.html': {'en': 'index.html', 'ru_url': DOMAIN + '/', 'en_url': DOMAIN + '/en/'},
+    'technologies.html': {'en': 'technologies.html', 'ru_url': DOMAIN + '/technologies.html', 'en_url': DOMAIN + '/en/technologies.html'},
 }
 
 CYR = re.compile('[А-Яа-яЁё]')
@@ -130,12 +131,23 @@ RU_SW = '<a class="lang-sw" href="{href}" hreflang="en" lang="en" title="English
 EN_SW = '<a class="lang-sw" href="./{href}" hreflang="ru" lang="ru" title="Russian version">RU</a>'
 
 
+def add_switch(s, sw):
+    """Переключатель в шапку русской страницы: отдельная ячейка в свободной колонке между «Клиентам»
+    и «Партнёрам» (сразу после ячейки с «Партнёрам»). Если переключатель уже есть — ничего не меняем."""
+    if 'class="lang-sw"' in s or 'class="cab-pill"' not in s:
+        return s
+    i = s.index('</div>', s.index('class="cab-pill"')) + len('</div>')
+    return s[:i] + ('\n      <div style="grid-column:8;grid-row:1;justify-self:center;display:flex;align-items:center;">'
+                    + sw + '</div>') + s[i:]
+
+
 def build(ru_file, info):
     src_path = os.path.join(SITE, ru_file)
     s = open(src_path, encoding='utf-8').read()
 
     # 1) русская страница: блок hreflang и адрес для переключателя
     s_ru = set_lang_block(s, lang_block(ru_file, info, 'ru'))
+    s_ru = add_switch(s_ru, RU_SW.format(href='./en/' + info['en']))
     if s_ru != s:
         open(src_path, 'w', encoding='utf-8').write(s_ru)
     s = re.sub(r'\n?<!-- lang:start.*?<!-- lang:end -->', '', s_ru, flags=re.S)
@@ -173,6 +185,7 @@ def build(ru_file, info):
 
 def build_runtime():
     links = {('./' + rf): ('./en/' + inf['en']) for rf, inf in PAGES.items()}
+    links.update({rf: ('./en/' + inf['en']) for rf, inf in PAGES.items()})
     js = open(os.path.join(os.path.dirname(__file__), 'i18n-runtime.js'), encoding='utf-8').read()
     js = js.replace('/*DICT*/{}', json.dumps(DICT, ensure_ascii=False, separators=(',', ':'), sort_keys=True))
     js = js.replace('/*PATS*/[]', json.dumps([[p['re'], p['en'], p.get('tr', [])] for p in data['patterns']], ensure_ascii=False))
