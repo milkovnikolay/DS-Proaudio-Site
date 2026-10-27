@@ -40,11 +40,14 @@
       '<div class="mn-b"><a class="mn-all" href="' + s[1] + '">' + esc(s[2]) + ' →</a>' + body + '</div></div>';
   }).join('');
 
+  // переключатель RU | EN: показывается, если у страницы есть версия на другом языке (meta ds-lang-alt ставит tools/i18n/build_en.py)
+  var LALT = document.querySelector('meta[name="ds-lang-alt"]');
   var hd = document.createElement('header');
   hd.className = 'mn-hd';
   hd.innerHTML = '<div class="mn-in"><div class="mn-l"><button type="button" class="mn-burger" aria-expanded="false" aria-controls="mnMenu"><i></i><span>Меню</span></button></div>' +
     '<a class="mn-logo' + (isMain ? ' intro' : '') + '" href="./Main.dc.html" aria-label="DS PROAUDIO — на главную">' + (isMain ? '<img class="mn-intro" src="' + INTRO + '" alt="Живи Музыкой!">' : '') + '<img class="mn-lg" src="' + LOGO + '" alt=""></a>' +
     '<div class="mn-r"><a class="mn-gisp" href="./gov.html" aria-label="ГИСП — госучреждениям"><img src="' + GISP + '" alt=""></a>' +
+    (LALT ? '<a class="mn-lang" href="' + LALT.getAttribute('content') + '" hreflang="' + LALT.getAttribute('data-lang') + '" lang="' + LALT.getAttribute('data-lang') + '">' + LALT.getAttribute('data-lang').toUpperCase() + '</a>' : '') +
     '<a class="mn-ic" href="#" aria-label="Кабинет партнёра">' + CAB + '</a>' +
     '<button type="button" class="mn-burger m" aria-expanded="false" aria-controls="mnMenu" aria-label="Меню"><i></i><span>Меню</span></button></div></div>';
   var nav = document.createElement('nav');
