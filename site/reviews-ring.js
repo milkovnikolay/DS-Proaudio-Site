@@ -139,7 +139,15 @@
     });
     ring.style.transform = 'translateZ(' + (R - 170) + 'px) rotateY(' + angle + 'deg)';
     var idx = ((c % M) + M) % M;
-    if (idx !== curIdx){ curIdx = idx; var cnt = document.getElementById('hrvCount'); if (cnt) cnt.innerHTML = '<b>' + pad(idx + 1) + '</b> / ' + M; }
+    if (idx !== curIdx){ curIdx = idx; setCount(idx); }
+  }
+
+  // счётчик «01 / 25» рисует шаблон главной: меняем только цифру в его текстовом узле. Раньше счётчик
+  // перезаписывался через innerHTML, и при следующей перерисовке шаблон не находил свои узлы — главная
+  // на компьютере иногда падала с ошибкой removeChild и оставалась белой (27.10.2026).
+  function setCount(i){
+    var b = document.querySelector('#hrvCount b'), t = b && b.firstChild;
+    if (t && t.nodeType === 3) t.nodeValue = pad(i + 1);
   }
 
   // телефон и планшет: вместо ротонды — лента карточек со свайпом (в ротонде текст на узком экране получается мельче 9 px)
@@ -152,13 +160,16 @@
     }).join('');
     el.onscroll = function(){
       var w = el.firstChild ? el.firstChild.offsetWidth + 12 : 1, i = Math.min(M - 1, Math.round(el.scrollLeft / w));
-      var cnt = document.getElementById('hrvCount'); if (cnt) cnt.innerHTML = '<b>' + pad(i + 1) + '</b> / ' + M;
+      setCount(i);
     };
   }
 
   function frame(ts){
     // главная собирается шаблоном — если контейнер появился заново, собираем ротонду заново
     var el = document.getElementById('hrvStage');
+    // ждём, пока шаблон главной отрисует свой #hrvStage: если собрать ротонду раньше, шаблон забирает её
+    // узлы себе, а при следующей перерисовке не находит их — главная падала с ошибкой removeChild (27.10.2026)
+    if (el && window.React && !Object.keys(el).some(function(k){ return k.indexOf('__react') === 0; })){ requestAnimationFrame(frame); return; }
     if (el && phone()){ if (el.getAttribute('data-m') !== '1') buildList(el); requestAnimationFrame(frame); return; }
     if (el && el.getAttribute('data-m') === '1'){ el.removeAttribute('data-m'); el.className = ''; el.onscroll = null; ring = null; }
     if (el && (el !== stage || !ring || !ring.isConnected)) build(el);

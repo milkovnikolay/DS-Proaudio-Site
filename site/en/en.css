@@ -1,0 +1,5 @@
+/* DS PROAUDIO — английская версия (27.10.2026): всё про ГИСП, реестр Минпромторга и госзакупки скрыто.
+   Тексты переводятся сборкой tools/i18n/build_en.py, этот файл подключается только на страницах из site/en/. */
+a[href*="gov.html"], a[href*="products-registry"],
+.pr-cat-gisp, .mn-gisp, .mn-fgisp, .dsf-gisp,
+img[src*="gisp-mark"] { display: none !important; }
