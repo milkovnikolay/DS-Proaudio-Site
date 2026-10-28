@@ -13,3 +13,5 @@ li:has(> a[href*="/Reestr_"]) { display: none !important; }
 .dc-stats > span:nth-child(6) { display: none !important; }
 /* пункт списка, текст которого в английской версии убран (про ГИСП/госзакупки), не показываем */
 li:empty { display: none !important; }
+/* карточка-преимущество, заголовок которой убран (например, «Реестровое оборудование» на страницах «Применения»), не показываем */
+.feat:has(> .feat-title:empty) { display: none !important; }

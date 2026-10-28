@@ -38,6 +38,35 @@ PAGES = {
     'seminars.html': {'en': 'seminars.html', 'ru_url': DOMAIN + '/seminars.html', 'en_url': DOMAIN + '/en/seminars.html'},
     'software.html': {'en': 'software.html', 'ru_url': DOMAIN + '/software.html', 'en_url': DOMAIN + '/en/software.html'},
     'docs.html': {'en': 'docs.html', 'ru_url': DOMAIN + '/docs.html', 'en_url': DOMAIN + '/en/docs.html'},
+    'rent-mid.html': {'en': 'rent-mid.html', 'ru_url': DOMAIN + '/rent-mid.html', 'en_url': DOMAIN + '/en/rent-mid.html'},
+    'rent-full.html': {'en': 'rent-full.html', 'ru_url': DOMAIN + '/rent-full.html', 'en_url': DOMAIN + '/en/rent-full.html'},
+    'rent-compact.html': {'en': 'rent-compact.html', 'ru_url': DOMAIN + '/rent-compact.html', 'en_url': DOMAIN + '/en/rent-compact.html'},
+    'ent-nightclubs.html': {'en': 'ent-nightclubs.html', 'ru_url': DOMAIN + '/ent-nightclubs.html', 'en_url': DOMAIN + '/en/ent-nightclubs.html'},
+    'ent-live.html': {'en': 'ent-live.html', 'ru_url': DOMAIN + '/ent-live.html', 'en_url': DOMAIN + '/en/ent-live.html'},
+    'ent-karaoke.html': {'en': 'ent-karaoke.html', 'ru_url': DOMAIN + '/ent-karaoke.html', 'en_url': DOMAIN + '/en/ent-karaoke.html'},
+    'rel-temples.html': {'en': 'rel-temples.html', 'ru_url': DOMAIN + '/rel-temples.html', 'en_url': DOMAIN + '/en/rel-temples.html'},
+    'hosp-terraces.html': {'en': 'hosp-terraces.html', 'ru_url': DOMAIN + '/hosp-terraces.html', 'en_url': DOMAIN + '/en/hosp-terraces.html'},
+    'hosp-spa.html': {'en': 'hosp-spa.html', 'ru_url': DOMAIN + '/hosp-spa.html', 'en_url': DOMAIN + '/en/hosp-spa.html'},
+    'hosp-restaurants.html': {'en': 'hosp-restaurants.html', 'ru_url': DOMAIN + '/hosp-restaurants.html', 'en_url': DOMAIN + '/en/hosp-restaurants.html'},
+    'corp-openspace.html': {'en': 'corp-openspace.html', 'ru_url': DOMAIN + '/corp-openspace.html', 'en_url': DOMAIN + '/en/corp-openspace.html'},
+    'corp-meeting.html': {'en': 'corp-meeting.html', 'ru_url': DOMAIN + '/corp-meeting.html', 'en_url': DOMAIN + '/en/corp-meeting.html'},
+    'corp-conference.html': {'en': 'corp-conference.html', 'ru_url': DOMAIN + '/corp-conference.html', 'en_url': DOMAIN + '/en/corp-conference.html'},
+    'corp-banquet.html': {'en': 'corp-banquet.html', 'ru_url': DOMAIN + '/corp-banquet.html', 'en_url': DOMAIN + '/en/corp-banquet.html'},
+    'sport-stadiums.html': {'en': 'sport-stadiums.html', 'ru_url': DOMAIN + '/sport-stadiums.html', 'en_url': DOMAIN + '/en/sport-stadiums.html'},
+    'sport-pools.html': {'en': 'sport-pools.html', 'ru_url': DOMAIN + '/sport-pools.html', 'en_url': DOMAIN + '/en/sport-pools.html'},
+    'sport-palaces.html': {'en': 'sport-palaces.html', 'ru_url': DOMAIN + '/sport-palaces.html', 'en_url': DOMAIN + '/en/sport-palaces.html'},
+    'sport-ice.html': {'en': 'sport-ice.html', 'ru_url': DOMAIN + '/sport-ice.html', 'en_url': DOMAIN + '/en/sport-ice.html'},
+    'sport-complexes.html': {'en': 'sport-complexes.html', 'ru_url': DOMAIN + '/sport-complexes.html', 'en_url': DOMAIN + '/en/sport-complexes.html'},
+    'edu-planetarium.html': {'en': 'edu-planetarium.html', 'ru_url': DOMAIN + '/edu-planetarium.html', 'en_url': DOMAIN + '/en/edu-planetarium.html'},
+    'edu-lecture.html': {'en': 'edu-lecture.html', 'ru_url': DOMAIN + '/edu-lecture.html', 'en_url': DOMAIN + '/en/edu-lecture.html'},
+    'edu-assembly.html': {'en': 'edu-assembly.html', 'ru_url': DOMAIN + '/edu-assembly.html', 'en_url': DOMAIN + '/en/edu-assembly.html'},
+    'theatres.html': {'en': 'theatres.html', 'ru_url': DOMAIN + '/theatres.html', 'en_url': DOMAIN + '/en/theatres.html'},
+    'outdoor.html': {'en': 'outdoor.html', 'ru_url': DOMAIN + '/outdoor.html', 'en_url': DOMAIN + '/en/outdoor.html'},
+    'museums.html': {'en': 'museums.html', 'ru_url': DOMAIN + '/museums.html', 'en_url': DOMAIN + '/en/museums.html'},
+    'leisure.html': {'en': 'leisure.html', 'ru_url': DOMAIN + '/leisure.html', 'en_url': DOMAIN + '/en/leisure.html'},
+    'dk.html': {'en': 'dk.html', 'ru_url': DOMAIN + '/dk.html', 'en_url': DOMAIN + '/en/dk.html'},
+    'concert-halls.html': {'en': 'concert-halls.html', 'ru_url': DOMAIN + '/concert-halls.html', 'en_url': DOMAIN + '/en/concert-halls.html'},
+    'circus.html': {'en': 'circus.html', 'ru_url': DOMAIN + '/circus.html', 'en_url': DOMAIN + '/en/circus.html'},
     'rental.html': {'en': 'rental.html', 'ru_url': DOMAIN + '/rental.html', 'en_url': DOMAIN + '/en/rental.html'},
     'entertainment.html': {'en': 'entertainment.html', 'ru_url': DOMAIN + '/entertainment.html', 'en_url': DOMAIN + '/en/entertainment.html'},
     'religious.html': {'en': 'religious.html', 'ru_url': DOMAIN + '/religious.html', 'en_url': DOMAIN + '/en/religious.html'},
@@ -200,6 +229,8 @@ def build(ru_file, info):
     s = s.replace('<base href="../">', '<base href="../">\n' + lang_block(ru_file, info, 'en') +
                   '\n<link rel="stylesheet" href="./en/en.css">\n<script src="./en/i18n-en.js"></script>', 1)
     s = s.replace('./__RU_HREF__', './' + ru_file)
+    # плашка «trust», текст которой в английской версии убран (реестр Минпромторга), остаётся пустой — убираем целиком
+    s = re.sub(r'\s*<div class="trust reveal"><i class="glow-dot"[^>]*></i></div>', '', s)
     os.makedirs(EN_DIR, exist_ok=True)
     open(os.path.join(EN_DIR, info['en']), 'w', encoding='utf-8').write(s)
 
