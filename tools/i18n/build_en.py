@@ -38,6 +38,97 @@ PAGES = {
     'seminars.html': {'en': 'seminars.html', 'ru_url': DOMAIN + '/seminars.html', 'en_url': DOMAIN + '/en/seminars.html'},
     'software.html': {'en': 'software.html', 'ru_url': DOMAIN + '/software.html', 'en_url': DOMAIN + '/en/software.html'},
     'docs.html': {'en': 'docs.html', 'ru_url': DOMAIN + '/docs.html', 'en_url': DOMAIN + '/en/docs.html'},
+    'p-taura-s18.html': {'en': 'p-taura-s18.html', 'ru_url': DOMAIN + '/p-taura-s18.html', 'en_url': DOMAIN + '/en/p-taura-s18.html'},
+    'p-taura-fr.html': {'en': 'p-taura-fr.html', 'ru_url': DOMAIN + '/p-taura-fr.html', 'en_url': DOMAIN + '/en/p-taura-fr.html'},
+    'p-taura-f-bar.html': {'en': 'p-taura-f-bar.html', 'ru_url': DOMAIN + '/p-taura-f-bar.html', 'en_url': DOMAIN + '/en/p-taura-f-bar.html'},
+    'p-taura-c-sub-18.html': {'en': 'p-taura-c-sub-18.html', 'ru_url': DOMAIN + '/p-taura-c-sub-18.html', 'en_url': DOMAIN + '/en/p-taura-c-sub-18.html'},
+    'p-taura-8.html': {'en': 'p-taura-8.html', 'ru_url': DOMAIN + '/p-taura-8.html', 'en_url': DOMAIN + '/en/p-taura-8.html'},
+    'p-taura-10.html': {'en': 'p-taura-10.html', 'ru_url': DOMAIN + '/p-taura-10.html', 'en_url': DOMAIN + '/en/p-taura-10.html'},
+    'p-stl-top-iii.html': {'en': 'p-stl-top-iii.html', 'ru_url': DOMAIN + '/p-stl-top-iii.html', 'en_url': DOMAIN + '/en/p-stl-top-iii.html'},
+    'p-stl-sub.html': {'en': 'p-stl-sub.html', 'ru_url': DOMAIN + '/p-stl-sub.html', 'en_url': DOMAIN + '/en/p-stl-sub.html'},
+    'p-stl-sub-a.html': {'en': 'p-stl-sub-a.html', 'ru_url': DOMAIN + '/p-stl-sub-a.html', 'en_url': DOMAIN + '/en/p-stl-sub-a.html'},
+    'p-stella.html': {'en': 'p-stella.html', 'ru_url': DOMAIN + '/p-stella.html', 'en_url': DOMAIN + '/en/p-stella.html'},
+    'p-stella-a.html': {'en': 'p-stella-a.html', 'ru_url': DOMAIN + '/p-stella-a.html', 'en_url': DOMAIN + '/en/p-stella-a.html'},
+    'p-sp111-00-2.html': {'en': 'p-sp111-00-2.html', 'ru_url': DOMAIN + '/p-sp111-00-2.html', 'en_url': DOMAIN + '/en/p-sp111-00-2.html'},
+    'p-rs485-usb-adapter.html': {'en': 'p-rs485-usb-adapter.html', 'ru_url': DOMAIN + '/p-rs485-usb-adapter.html', 'en_url': DOMAIN + '/en/p-rs485-usb-adapter.html'},
+    'p-plr-top-iii.html': {'en': 'p-plr-top-iii.html', 'ru_url': DOMAIN + '/p-plr-top-iii.html', 'en_url': DOMAIN + '/en/p-plr-top-iii.html'},
+    'p-plr-sub.html': {'en': 'p-plr-sub.html', 'ru_url': DOMAIN + '/p-plr-sub.html', 'en_url': DOMAIN + '/en/p-plr-sub.html'},
+    'p-plr-sub-a.html': {'en': 'p-plr-sub-a.html', 'ru_url': DOMAIN + '/p-plr-sub-a.html', 'en_url': DOMAIN + '/en/p-plr-sub-a.html'},
+    'p-pillar-p.html': {'en': 'p-pillar-p.html', 'ru_url': DOMAIN + '/p-pillar-p.html', 'en_url': DOMAIN + '/en/p-pillar-p.html'},
+    'p-pillar-p-wh.html': {'en': 'p-pillar-p-wh.html', 'ru_url': DOMAIN + '/p-pillar-p-wh.html', 'en_url': DOMAIN + '/en/p-pillar-p-wh.html'},
+    'p-pillar-cover.html': {'en': 'p-pillar-cover.html', 'ru_url': DOMAIN + '/p-pillar-cover.html', 'en_url': DOMAIN + '/en/p-pillar-cover.html'},
+    'p-pillar-a.html': {'en': 'p-pillar-a.html', 'ru_url': DOMAIN + '/p-pillar-a.html', 'en_url': DOMAIN + '/en/p-pillar-a.html'},
+    'p-pillar-a-wh.html': {'en': 'p-pillar-a-wh.html', 'ru_url': DOMAIN + '/p-pillar-a-wh.html', 'en_url': DOMAIN + '/en/p-pillar-a-wh.html'},
+    'p-mcx8-u-bracket.html': {'en': 'p-mcx8-u-bracket.html', 'ru_url': DOMAIN + '/p-mcx8-u-bracket.html', 'en_url': DOMAIN + '/en/p-mcx8-u-bracket.html'},
+    'p-mcx12-u-bracket.html': {'en': 'p-mcx12-u-bracket.html', 'ru_url': DOMAIN + '/p-mcx12-u-bracket.html', 'en_url': DOMAIN + '/en/p-mcx12-u-bracket.html'},
+    'p-mcx-8.html': {'en': 'p-mcx-8.html', 'ru_url': DOMAIN + '/p-mcx-8.html', 'en_url': DOMAIN + '/en/p-mcx-8.html'},
+    'p-mcx-15a.html': {'en': 'p-mcx-15a.html', 'ru_url': DOMAIN + '/p-mcx-15a.html', 'en_url': DOMAIN + '/en/p-mcx-15a.html'},
+    'p-mcx-15.html': {'en': 'p-mcx-15.html', 'ru_url': DOMAIN + '/p-mcx-15.html', 'en_url': DOMAIN + '/en/p-mcx-15.html'},
+    'p-mcx-12.html': {'en': 'p-mcx-12.html', 'ru_url': DOMAIN + '/p-mcx-12.html', 'en_url': DOMAIN + '/en/p-mcx-12.html'},
+    'p-konig-meyer-21420-000-55.html': {'en': 'p-konig-meyer-21420-000-55.html', 'ru_url': DOMAIN + '/p-konig-meyer-21420-000-55.html', 'en_url': DOMAIN + '/en/p-konig-meyer-21420-000-55.html'},
+    'p-gravity-sp-2332-tpb.html': {'en': 'p-gravity-sp-2332-tpb.html', 'ru_url': DOMAIN + '/p-gravity-sp-2332-tpb.html', 'en_url': DOMAIN + '/en/p-gravity-sp-2332-tpb.html'},
+    'p-gravity-gwb123set1b.html': {'en': 'p-gravity-gwb123set1b.html', 'ru_url': DOMAIN + '/p-gravity-gwb123set1b.html', 'en_url': DOMAIN + '/en/p-gravity-gwb123set1b.html'},
+    'p-gravity-gsspwbset1w.html': {'en': 'p-gravity-gsspwbset1w.html', 'ru_url': DOMAIN + '/p-gravity-gsspwbset1w.html', 'en_url': DOMAIN + '/en/p-gravity-gsspwbset1w.html'},
+    'p-gravity-gspwmbs30b.html': {'en': 'p-gravity-gspwmbs30b.html', 'ru_url': DOMAIN + '/p-gravity-gspwmbs30b.html', 'en_url': DOMAIN + '/en/p-gravity-gspwmbs30b.html'},
+    'p-gravity-gsp2332extb.html': {'en': 'p-gravity-gsp2332extb.html', 'ru_url': DOMAIN + '/p-gravity-gsp2332extb.html', 'en_url': DOMAIN + '/en/p-gravity-gsp2332extb.html'},
+    'p-gravity-gsf36m10m.html': {'en': 'p-gravity-gsf36m10m.html', 'ru_url': DOMAIN + '/p-gravity-gsf36m10m.html', 'en_url': DOMAIN + '/en/p-gravity-gsf36m10m.html'},
+    'p-euromet-byr-m10.html': {'en': 'p-euromet-byr-m10.html', 'ru_url': DOMAIN + '/p-euromet-byr-m10.html', 'en_url': DOMAIN + '/en/p-euromet-byr-m10.html'},
+    'p-era-s18a.html': {'en': 'p-era-s18a.html', 'ru_url': DOMAIN + '/p-era-s18a.html', 'en_url': DOMAIN + '/en/p-era-s18a.html'},
+    'p-era-s18.html': {'en': 'p-era-s18.html', 'ru_url': DOMAIN + '/p-era-s18.html', 'en_url': DOMAIN + '/en/p-era-s18.html'},
+    'p-era-i-s18a.html': {'en': 'p-era-i-s18a.html', 'ru_url': DOMAIN + '/p-era-i-s18a.html', 'en_url': DOMAIN + '/en/p-era-i-s18a.html'},
+    'p-era-i-s18.html': {'en': 'p-era-i-s18.html', 'ru_url': DOMAIN + '/p-era-i-s18.html', 'en_url': DOMAIN + '/en/p-era-i-s18.html'},
+    'p-era-i-pl3.html': {'en': 'p-era-i-pl3.html', 'ru_url': DOMAIN + '/p-era-i-pl3.html', 'en_url': DOMAIN + '/en/p-era-i-pl3.html'},
+    'p-era-i-pl2.html': {'en': 'p-era-i-pl2.html', 'ru_url': DOMAIN + '/p-era-i-pl2.html', 'en_url': DOMAIN + '/en/p-era-i-pl2.html'},
+    'p-era-i-pl1.html': {'en': 'p-era-i-pl1.html', 'ru_url': DOMAIN + '/p-era-i-pl1.html', 'en_url': DOMAIN + '/en/p-era-i-pl1.html'},
+    'p-era-i-fr-v.html': {'en': 'p-era-i-fr-v.html', 'ru_url': DOMAIN + '/p-era-i-fr-v.html', 'en_url': DOMAIN + '/en/p-era-i-fr-v.html'},
+    'p-era-i-fr-h.html': {'en': 'p-era-i-fr-h.html', 'ru_url': DOMAIN + '/p-era-i-fr-h.html', 'en_url': DOMAIN + '/en/p-era-i-fr-h.html'},
+    'p-era-i-ad.html': {'en': 'p-era-i-ad.html', 'ru_url': DOMAIN + '/p-era-i-ad.html', 'en_url': DOMAIN + '/en/p-era-i-ad.html'},
+    'p-era-i-1230.html': {'en': 'p-era-i-1230.html', 'ru_url': DOMAIN + '/p-era-i-1230.html', 'en_url': DOMAIN + '/en/p-era-i-1230.html'},
+    'p-era-i-1220.html': {'en': 'p-era-i-1220.html', 'ru_url': DOMAIN + '/p-era-i-1220.html', 'en_url': DOMAIN + '/en/p-era-i-1220.html'},
+    'p-era-i-1210.html': {'en': 'p-era-i-1210.html', 'ru_url': DOMAIN + '/p-era-i-1210.html', 'en_url': DOMAIN + '/en/p-era-i-1210.html'},
+    'p-era-fr-v.html': {'en': 'p-era-fr-v.html', 'ru_url': DOMAIN + '/p-era-fr-v.html', 'en_url': DOMAIN + '/en/p-era-fr-v.html'},
+    'p-era-fr-gr.html': {'en': 'p-era-fr-gr.html', 'ru_url': DOMAIN + '/p-era-fr-gr.html', 'en_url': DOMAIN + '/en/p-era-fr-gr.html'},
+    'p-era-1230.html': {'en': 'p-era-1230.html', 'ru_url': DOMAIN + '/p-era-1230.html', 'en_url': DOMAIN + '/en/p-era-1230.html'},
+    'p-era-1220.html': {'en': 'p-era-1220.html', 'ru_url': DOMAIN + '/p-era-1220.html', 'en_url': DOMAIN + '/en/p-era-1220.html'},
+    'p-era-1210.html': {'en': 'p-era-1210.html', 'ru_url': DOMAIN + '/p-era-1210.html', 'en_url': DOMAIN + '/en/p-era-1210.html'},
+    'p-ds-truss.html': {'en': 'p-ds-truss.html', 'ru_url': DOMAIN + '/p-ds-truss.html', 'en_url': DOMAIN + '/en/p-ds-truss.html'},
+    'p-da4-900-dsp.html': {'en': 'p-da4-900-dsp.html', 'ru_url': DOMAIN + '/p-da4-900-dsp.html', 'en_url': DOMAIN + '/en/p-da4-900-dsp.html'},
+    'p-da4-1300-dsp.html': {'en': 'p-da4-1300-dsp.html', 'ru_url': DOMAIN + '/p-da4-1300-dsp.html', 'en_url': DOMAIN + '/en/p-da4-1300-dsp.html'},
+    'p-da2-900-dsp.html': {'en': 'p-da2-900-dsp.html', 'ru_url': DOMAIN + '/p-da2-900-dsp.html', 'en_url': DOMAIN + '/en/p-da2-900-dsp.html'},
+    'p-da2-2500-dsp.html': {'en': 'p-da2-2500-dsp.html', 'ru_url': DOMAIN + '/p-da2-2500-dsp.html', 'en_url': DOMAIN + '/en/p-da2-2500-dsp.html'},
+    'p-da2-1300-dsp.html': {'en': 'p-da2-1300-dsp.html', 'ru_url': DOMAIN + '/p-da2-1300-dsp.html', 'en_url': DOMAIN + '/en/p-da2-1300-dsp.html'},
+    'p-cx108-u-bracket-v2.html': {'en': 'p-cx108-u-bracket-v2.html', 'ru_url': DOMAIN + '/p-cx108-u-bracket-v2.html', 'en_url': DOMAIN + '/en/p-cx108-u-bracket-v2.html'},
+    'p-cx106-u-bracket-v2.html': {'en': 'p-cx106-u-bracket-v2.html', 'ru_url': DOMAIN + '/p-cx106-u-bracket-v2.html', 'en_url': DOMAIN + '/en/p-cx106-u-bracket-v2.html'},
+    'p-cx-s18a.html': {'en': 'p-cx-s18a.html', 'ru_url': DOMAIN + '/p-cx-s18a.html', 'en_url': DOMAIN + '/en/p-cx-s18a.html'},
+    'p-cx-s18.html': {'en': 'p-cx-s18.html', 'ru_url': DOMAIN + '/p-cx-s18.html', 'en_url': DOMAIN + '/en/p-cx-s18.html'},
+    'p-cx-s15a.html': {'en': 'p-cx-s15a.html', 'ru_url': DOMAIN + '/p-cx-s15a.html', 'en_url': DOMAIN + '/en/p-cx-s15a.html'},
+    'p-cx-s15.html': {'en': 'p-cx-s15.html', 'ru_url': DOMAIN + '/p-cx-s15.html', 'en_url': DOMAIN + '/en/p-cx-s15.html'},
+    'p-cx-315s18-a.html': {'en': 'p-cx-315s18-a.html', 'ru_url': DOMAIN + '/p-cx-315s18-a.html', 'en_url': DOMAIN + '/en/p-cx-315s18-a.html'},
+    'p-cx-315a.html': {'en': 'p-cx-315a.html', 'ru_url': DOMAIN + '/p-cx-315a.html', 'en_url': DOMAIN + '/en/p-cx-315a.html'},
+    'p-cx-15s18-a.html': {'en': 'p-cx-15s18-a.html', 'ru_url': DOMAIN + '/p-cx-15s18-a.html', 'en_url': DOMAIN + '/en/p-cx-15s18-a.html'},
+    'p-cx-12s18-a.html': {'en': 'p-cx-12s18-a.html', 'ru_url': DOMAIN + '/p-cx-12s18-a.html', 'en_url': DOMAIN + '/en/p-cx-12s18-a.html'},
+    'p-cx-12s15-a.html': {'en': 'p-cx-12s15-a.html', 'ru_url': DOMAIN + '/p-cx-12s15-a.html', 'en_url': DOMAIN + '/en/p-cx-12s15-a.html'},
+    'p-cx-115a.html': {'en': 'p-cx-115a.html', 'ru_url': DOMAIN + '/p-cx-115a.html', 'en_url': DOMAIN + '/en/p-cx-115a.html'},
+    'p-cx-115.html': {'en': 'p-cx-115.html', 'ru_url': DOMAIN + '/p-cx-115.html', 'en_url': DOMAIN + '/en/p-cx-115.html'},
+    'p-cx-112a.html': {'en': 'p-cx-112a.html', 'ru_url': DOMAIN + '/p-cx-112a.html', 'en_url': DOMAIN + '/en/p-cx-112a.html'},
+    'p-cx-112.html': {'en': 'p-cx-112.html', 'ru_url': DOMAIN + '/p-cx-112.html', 'en_url': DOMAIN + '/en/p-cx-112.html'},
+    'p-cx-112-115-u-bracket.html': {'en': 'p-cx-112-115-u-bracket.html', 'ru_url': DOMAIN + '/p-cx-112-115-u-bracket.html', 'en_url': DOMAIN + '/en/p-cx-112-115-u-bracket.html'},
+    'p-cx-108.html': {'en': 'p-cx-108.html', 'ru_url': DOMAIN + '/p-cx-108.html', 'en_url': DOMAIN + '/en/p-cx-108.html'},
+    'p-cx-106.html': {'en': 'p-cx-106.html', 'ru_url': DOMAIN + '/p-cx-106.html', 'en_url': DOMAIN + '/en/p-cx-106.html'},
+    'p-combo-cable-2-5m.html': {'en': 'p-combo-cable-2-5m.html', 'ru_url': DOMAIN + '/p-combo-cable-2-5m.html', 'en_url': DOMAIN + '/en/p-combo-cable-2-5m.html'},
+    'p-ant.html': {'en': 'p-ant.html', 'ru_url': DOMAIN + '/p-ant.html', 'en_url': DOMAIN + '/en/p-ant.html'},
+    'p-ant-wh.html': {'en': 'p-ant-wh.html', 'ru_url': DOMAIN + '/p-ant-wh.html', 'en_url': DOMAIN + '/en/p-ant-wh.html'},
+    'p-ant-m815.html': {'en': 'p-ant-m815.html', 'ru_url': DOMAIN + '/p-ant-m815.html', 'en_url': DOMAIN + '/en/p-ant-m815.html'},
+    'p-ant-cover.html': {'en': 'p-ant-cover.html', 'ru_url': DOMAIN + '/p-ant-cover.html', 'en_url': DOMAIN + '/en/p-ant-cover.html'},
+    'p-ant-815.html': {'en': 'p-ant-815.html', 'ru_url': DOMAIN + '/p-ant-815.html', 'en_url': DOMAIN + '/en/p-ant-815.html'},
+    'p-adr-s8.html': {'en': 'p-adr-s8.html', 'ru_url': DOMAIN + '/p-adr-s8.html', 'en_url': DOMAIN + '/en/p-adr-s8.html'},
+    'p-adr-s10.html': {'en': 'p-adr-s10.html', 'ru_url': DOMAIN + '/p-adr-s10.html', 'en_url': DOMAIN + '/en/p-adr-s10.html'},
+    'p-adr-8.html': {'en': 'p-adr-8.html', 'ru_url': DOMAIN + '/p-adr-8.html', 'en_url': DOMAIN + '/en/p-adr-8.html'},
+    'p-adr-8-c.html': {'en': 'p-adr-8-c.html', 'ru_url': DOMAIN + '/p-adr-8-c.html', 'en_url': DOMAIN + '/en/p-adr-8-c.html'},
+    'p-adr-6.html': {'en': 'p-adr-6.html', 'ru_url': DOMAIN + '/p-adr-6.html', 'en_url': DOMAIN + '/en/p-adr-6.html'},
+    'p-adr-5-2.html': {'en': 'p-adr-5-2.html', 'ru_url': DOMAIN + '/p-adr-5-2.html', 'en_url': DOMAIN + '/en/p-adr-5-2.html'},
+    'p-adr-5-1.html': {'en': 'p-adr-5-1.html', 'ru_url': DOMAIN + '/p-adr-5-1.html', 'en_url': DOMAIN + '/en/p-adr-5-1.html'},
+    'p-adr-10.html': {'en': 'p-adr-10.html', 'ru_url': DOMAIN + '/p-adr-10.html', 'en_url': DOMAIN + '/en/p-adr-10.html'},
     'series-taura.html': {'en': 'series-taura.html', 'ru_url': DOMAIN + '/series-taura.html', 'en_url': DOMAIN + '/en/series-taura.html'},
     'series-stella.html': {'en': 'series-stella.html', 'ru_url': DOMAIN + '/series-stella.html', 'en_url': DOMAIN + '/en/series-stella.html'},
     'series-pillar.html': {'en': 'series-pillar.html', 'ru_url': DOMAIN + '/series-pillar.html', 'en_url': DOMAIN + '/en/series-pillar.html'},
@@ -126,10 +217,29 @@ def tr(s):
                 g = m.group(i) or ''
                 if i in groups:
                     t = tr(g)
+                    if t is None and CYR.search(g):  # часть фразы не переводится — шаблон не годится
+                        out = None
+                        break
                     g = t if t is not None else g
                 out = out.replace('$' + str(i), g)
-            return out
-    return None
+            if out is not None:
+                return out
+    if k.endswith('…') and len(k) > 40:  # обрезанное описание (meta description): берём перевод полной фразы и режем по слову
+        full = next((v for key, v in DICT.items() if key.startswith(k[:-1]) and v), None)
+        if full:
+            return (full[:150].rsplit(' ', 1)[0].rstrip(',;:') + '…') if len(full) > 150 else full
+    return units(k)
+
+
+# значения характеристик («531х708х200 мм», «38-20 000 Гц», «2х400/8 Ом»): переводим только единицы измерения
+UNIT_EN = {'кГц': 'kHz', 'Гц': 'Hz', 'дБ': 'dB', 'Вт': 'W', 'Ом': 'Ω', 'кг': 'kg', 'мм': 'mm', 'м²': 'm²', 'м2': 'm²', 'м': 'm', 'В': 'V', 'х': '×'}
+UNIT_RX = re.compile('|'.join(sorted(UNIT_EN, key=len, reverse=True)))
+
+
+def units(k):
+    if not re.search(r'\d', k) or CYR.search(UNIT_RX.sub('', k)):
+        return None
+    return UNIT_RX.sub(lambda m: UNIT_EN[m.group(0)], k)
 
 
 def tr_keep_space(s, where):
@@ -174,7 +284,7 @@ def translate_script(body):
         v = m.group(2)
         if not CYR.search(v):
             return m.group(0)
-        t = tr(v.replace('\\' + q, q))
+        t = tr(re.sub(r'\\(.)', r'\1', v))  # \" и \' внутри строки — обычные кавычки
         if t is None:
             return m.group(0)  # комментарии и служебные строки скриптов не переводим
         t = t.replace('\\', '\\\\').replace(q, '\\' + q)
@@ -261,6 +371,7 @@ def build_runtime():
     links.update({rf: ('./en/' + inf['en']) for rf, inf in PAGES.items()})
     js = open(os.path.join(os.path.dirname(__file__), 'i18n-runtime.js'), encoding='utf-8').read()
     js = js.replace('/*DICT*/{}', json.dumps(DICT, ensure_ascii=False, separators=(',', ':'), sort_keys=True))
+    js = js.replace('/*UNITS*/{}', json.dumps(UNIT_EN, ensure_ascii=False))
     js = js.replace('/*PATS*/[]', json.dumps([[p['re'], p['en'], p.get('tr', [])] for p in data['patterns']], ensure_ascii=False))
     js = js.replace('/*LINKS*/{}', json.dumps(links))
     open(os.path.join(EN_DIR, 'i18n-en.js'), 'w', encoding='utf-8').write(js)

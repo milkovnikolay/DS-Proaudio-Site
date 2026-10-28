@@ -19,12 +19,22 @@
       var out = P[i][1];
       for (var g = m.length - 1; g > 0; g--) {
         var v = m[g] || '';
-        if (P[i][2].indexOf(g) >= 0) { var t = tr(v); if (t != null) v = t; }
+        if (P[i][2].indexOf(g) >= 0) {
+          var t = tr(v);
+          if (t == null && CYR.test(v)) { out = null; break; } // часть фразы не переводится — шаблон не годится
+          if (t != null) v = t;
+        }
         out = out.split('$' + g).join(v);
       }
-      return out;
+      if (out != null) return out;
     }
-    return null;
+    return units(k);
+  }
+  // значения характеристик («531х708х200 мм», «38-20 000 Гц»): переводим только единицы измерения
+  var U = /*UNITS*/{}, URX = new RegExp(Object.keys(U).sort(function (a, b) { return b.length - a.length; }).join('|'), 'g');
+  function units(k) {
+    if (!/\d/.test(k) || CYR.test(k.replace(URX, ''))) return null;
+    return k.replace(URX, function (u) { return U[u]; });
   }
   window.dsTr = tr;
 
@@ -34,7 +44,7 @@
     var v = n.nodeValue, p = n.parentNode;
     if (!v || !CYR.test(v) || !p || /^(SCRIPT|STYLE|TEXTAREA|NOSCRIPT)$/.test(p.nodeName)) return;
     var t = tr(v);
-    if (t == null) return;
+    if (t == null || t === norm(v)) return;
     if (t === '') { if (norm(p.textContent) === norm(v)) hide(p); n.nodeValue = ''; return; }
     var lead = v.match(/^\s*/)[0], tail = v.match(/\s*$/)[0];
     n.nodeValue = lead + t + tail;
@@ -44,7 +54,7 @@
       var a = el.getAttribute(ATTRS[i]);
       if (!a || !CYR.test(a)) continue;
       var t = tr(a);
-      if (t == null) continue;
+      if (t == null || t === a) continue;
       if (t === '' && el.nodeName === 'IMG') hide(el);
       el.setAttribute(ATTRS[i], t);
     }
@@ -68,7 +78,7 @@
       else if (r.type === 'attributes') attrs(r.target);
       else for (var j = 0; j < r.addedNodes.length; j++) walk(r.addedNodes[j]);
     }
-    if (CYR.test(document.title)) { var t = tr(document.title); if (t) document.title = t; }
+    if (CYR.test(document.title)) { var t = tr(document.title); if (t && t !== document.title) document.title = t; }
   }).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATTRS.concat(['href']) });
 
   walk(document.documentElement);
