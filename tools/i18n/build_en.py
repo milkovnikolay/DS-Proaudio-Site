@@ -35,6 +35,8 @@ PAGES = {
     'clients.html': {'en': 'clients.html', 'ru_url': DOMAIN + '/clients.html', 'en_url': DOMAIN + '/en/clients.html'},
     'support.html': {'en': 'support.html', 'ru_url': DOMAIN + '/support.html', 'en_url': DOMAIN + '/en/support.html'},
     'warranty.html': {'en': 'warranty.html', 'ru_url': DOMAIN + '/warranty.html', 'en_url': DOMAIN + '/en/warranty.html'},
+    'seminars.html': {'en': 'seminars.html', 'ru_url': DOMAIN + '/seminars.html', 'en_url': DOMAIN + '/en/seminars.html'},
+    'software.html': {'en': 'software.html', 'ru_url': DOMAIN + '/software.html', 'en_url': DOMAIN + '/en/software.html'},
 }
 
 CYR = re.compile('[А-Яа-яЁё]')
