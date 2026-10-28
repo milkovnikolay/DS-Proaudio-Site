@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="../">
+<!-- lang:start (собирается tools/i18n/build_en.py) -->
+<link rel="alternate" hreflang="ru" href="https://ds-proaudio.ru/warranty.html">
+<link rel="alternate" hreflang="en" href="https://ds-proaudio.ru/en/warranty.html">
+<link rel="alternate" hreflang="x-default" href="https://ds-proaudio.ru/warranty.html">
+<meta name="ds-lang-alt" content="./warranty.html" data-lang="ru">
+<!-- lang:end -->
+<link rel="stylesheet" href="./en/en.css">
+<script src="./en/i18n-en.js"></script>
+<meta charset="utf-8">
+<link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+<script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
+<link rel="stylesheet" href="./mnav.css">
+<script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warranty & service — DS PROAUDIO</title>
+<meta name="description" content="3-year warranty on DS PROAUDIO equipment. In-house manufacturing in Russia, spare parts in stock, short repair times. Online service requests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=PT+Mono&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://ds-proaudio.ru/"},
+ {"@type":"ListItem","position":2,"name":"Support","item":"https://ds-proaudio.ru/support.html"},
+ {"@type":"ListItem","position":3,"name":"Warranty & service"}]}
+</script>
+<style>
+  /* ===== базовые правила — один в один с Main.dc.html ===== */
+  body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;color:#141414}
+  a{color:inherit;text-decoration:none}
+  a:hover{opacity:.7}
+  button{font-family:inherit;cursor:pointer}
+  ::selection{background:#D1D5DB;color:#0A0A0B}
+  *,*::before,*::after{box-sizing:border-box}
+
+  @keyframes dsGlow{0%,100%{opacity:.45}50%{opacity:1}}
+  .glow-dot{animation:dsGlow 3.4s ease-in-out infinite}
+  @keyframes dsHeroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  .hero-bg{animation:dsHeroZoom 22s ease-in-out infinite alternate}
+
+  .nav-trigger{background:none;border:none;padding:0;margin:0;font:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#F2F2F2;white-space:nowrap;}
+  .mm-item{text-transform:uppercase;font-weight:300;letter-spacing:.045em;font-size:13px;color:#E7E7E7;}
+  .mm-item-long{text-transform:uppercase;font-weight:300;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#E7E7E7;}
+  .mm-item-long .mm-sub{display:block;font-weight:300;letter-spacing:.01em;opacity:.6;margin-top:1px;}
+  .mm-bold{text-transform:uppercase;font-weight:500;letter-spacing:.05em;font-size:13px;color:#FAFAFA;}
+  .mm-current{color:#FAFAFA;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(250,250,250,.45);}
+
+  .ft-item{text-transform:uppercase;font-weight:600;letter-spacing:.045em;font-size:13px;color:#5B5B5B;}
+  .ft-item:hover{color:#141414;}
+  .ft-item-long{text-transform:uppercase;font-weight:600;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#5B5B5B;}
+  .ft-item-long:hover{color:#141414;}
+  .ft-item-long .ft-sub{display:block;font-weight:500;letter-spacing:.01em;opacity:.7;margin-top:1px;}
+  .ft-bold{text-transform:uppercase;font-weight:700;letter-spacing:.05em;font-size:13px;color:#141414;}
+  .ft-bold:hover{opacity:.65;}
+  .ft-heading{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#C2C2C2;}
+
+  .section-cta{background:#141414;color:#FAFAFA;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:15px 26px;border-radius:6px;white-space:nowrap;transition:opacity .25s ease;}
+
+  /* ===== общие элементы страницы раздела ===== */
+  .wrap{max-width:1440px;margin:0 auto;padding-left:64px;padding-right:64px}
+  .kicker{font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+  .h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;line-height:1.15;color:#141414}
+  .lead{margin:0;font-size:17px;line-height:1.65;color:#767676}
+  .dark .h2{color:#FAFAFA}
+  .dark .lead{color:#9A9A9A}
+  .dark .kicker{color:#8A8A8A}
+
+  /* появление блоков при прокрутке */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== хлебные крошки ===== */
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;padding:0;list-style:none;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9A9A9A}
+  .crumbs a{color:#C8C8C8;transition:color .2s ease}
+  .crumbs a:hover{color:#FAFAFA;opacity:1}
+  .crumbs .sep{color:#5B5B5B}
+  .crumbs [aria-current]{color:#FAFAFA}
+
+  /* ===== кнопки ===== */
+  .btn-light{background:#FAFAFA;color:#0A0A0B;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+  .btn-ghost{border:1px solid rgba(250,250,250,.45);color:#FAFAFA;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+
+  /* ===== «перелистывающиеся» цифры ===== */
+  .odo{display:inline-flex;font-variant-numeric:tabular-nums;line-height:1}
+  .odo-col{display:inline-block;height:1.08em;overflow:hidden}
+  .odo-strip{display:block;transition:transform 1.9s cubic-bezier(.16,.8,.14,1)}
+  .odo-strip span{display:block;height:1.08em;line-height:1.08em}
+
+  .fact{padding-top:26px;border-top:1px solid #E6E6E6;position:relative}
+  .fact::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .fact.in::before{width:100%}
+  .fact-num{font-family:'Montserrat',sans-serif;font-weight:600;font-size:76px;letter-spacing:-.02em;color:#141414;display:flex;align-items:flex-start;gap:6px}
+  .fact-unit{font-size:22px;font-weight:600;letter-spacing:0;margin-top:8px;color:#141414}
+  .fact-text{margin-top:14px;font-size:15px;line-height:1.55;color:#767676;max-width:280px}
+
+  .trust{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;letter-spacing:.02em;color:#141414}
+  .trust i{width:6px;height:6px;border-radius:999px;background:#141414;flex:0 0 6px}
+
+  /* текст, который «проявляется» по словам при прокрутке */
+  .scrub{margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:38px;line-height:1.32;letter-spacing:-.005em;color:#141414}
+  .scrub .w{color:#D4D4D4;transition:color .35s ease}
+  .scrub .w.on{color:#141414}
+
+  /* ===== «почему особый подход» — карточки с живыми графиками ===== */
+  .why-card{border:1px solid rgba(255,255,255,.10);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#111113 0%,#0A0A0B 100%);display:flex;flex-direction:column}
+  .why-viz{position:relative;height:210px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .why-viz canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .viz-label{position:absolute;font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E}
+  .why-body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px}
+  .why-idx{font-family:'PT Mono',monospace;font-size:12px;color:#6E6E6E;letter-spacing:.08em}
+  .why-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.25;color:#FAFAFA;text-transform:uppercase;letter-spacing:.01em}
+  .why-text{font-size:15.5px;line-height:1.6;color:#9A9A9A}
+
+  /* ===== архитектура системы ===== */
+  .tabs{display:inline-flex;gap:6px;padding:5px;border:1px solid #E6E6E6;border-radius:999px;background:#FFFFFF}
+  .tab{border:none;background:none;border-radius:999px;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.03em;color:#767676;transition:background .3s ease,color .3s ease}
+  .tab:hover{color:#141414}
+  .tab[aria-selected="true"]{background:#141414;color:#FAFAFA}
+  .arch-list{display:none;flex-direction:column}
+  .arch-list.active{display:flex}
+  .arch-item{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 0;border-top:1px solid #EDEDED;cursor:default;transition:opacity .3s ease}
+  .arch-item:last-child{border-bottom:1px solid #EDEDED}
+  .arch-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;padding-top:4px}
+  .arch-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.3;color:#141414}
+  .arch-text{grid-column:2;font-size:15px;line-height:1.6;color:#767676}
+  .arch-link{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#141414}
+  .arch-list:hover .arch-item{opacity:.45}
+  .arch-list .arch-item:hover{opacity:1}
+  .arch-panel{position:relative;background:#0A0A0B;border-radius:16px;overflow:hidden;padding:26px 26px 18px}
+  .arch-panel svg{display:block;width:100%;height:auto}
+  .arch-mode{transition:opacity .6s ease}
+  .arch-panel[data-mode="a"] .mode-b, .arch-panel[data-mode="b"] .mode-a{opacity:0;pointer-events:none}
+  .part{transition:opacity .35s ease}
+  .arch-panel[data-hl] .part{opacity:.3}
+  .arch-panel[data-hl="array"] .p-array, .arch-panel[data-hl="monitor"] .p-monitor,
+  .arch-panel[data-hl="sub"] .p-sub, .arch-panel[data-hl="column"] .p-column{opacity:1}
+  .svg-label{font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;fill:#6E6E6E;text-transform:uppercase}
+  .svg-label-hi{fill:#C8C8C8}
+
+  /* ===== результат: крупные формулировки ===== */
+  .result-row{display:grid;grid-template-columns:90px 1fr 380px;gap:24px;align-items:baseline;padding:38px 0;position:relative;border-top:1px solid #EDEDED}
+  .result-row::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1) .1s}
+  .result-row.in::before{width:100%}
+  .result-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;letter-spacing:.08em}
+  .mask{display:block;overflow:hidden;padding-bottom:.08em}
+  .mask > span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.75,.15,1)}
+  .in .mask > span{transform:none}
+  .result-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:46px;line-height:1.12;letter-spacing:-.01em;color:#141414}
+  .result-text{font-size:16px;line-height:1.6;color:#767676;opacity:0;transition:opacity .9s ease .5s}
+  .in .result-text{opacity:1}
+
+  /* ===== кейс ===== */
+  .case-media{position:relative;border-radius:16px;overflow:hidden;background:#111;aspect-ratio:4/3}
+  .case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02)}
+  .case-media img.on{opacity:1;animation:dsHeroZoom 9s ease-out forwards}
+  .case-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,0) 55%,rgba(10,10,11,.6) 100%);pointer-events:none}
+  .case-ctrl{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;display:flex;align-items:center;gap:16px;font-family:'PT Mono',monospace;font-size:11px;color:#C4C4C4;letter-spacing:.06em}
+  .case-bar{flex:1;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+  .case-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#FAFAFA}
+  .case-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.10)}
+  .case-row:last-child{border-bottom:1px solid rgba(255,255,255,.10)}
+  .case-key{font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;padding-top:3px}
+  .case-val{font-size:16.5px;line-height:1.6;color:#E2E2E2}
+
+  /* ===== соседние подразделы ===== */
+  .sib{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;border-top:1px solid #E6E6E6;color:#767676;transition:color .25s ease}
+  .sib:last-child{border-bottom:1px solid #E6E6E6}
+  .sib:hover{color:#141414;opacity:1}
+  .sib-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:24px;line-height:1.25}
+  .sib-arrow{font-size:22px;transform:translateX(-8px);opacity:0;transition:transform .3s ease,opacity .3s ease;color:#141414}
+  .sib:hover .sib-arrow{transform:none;opacity:1}
+  .sib-meta{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:#ADADAD;text-transform:uppercase;margin-right:auto;margin-left:18px}
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-bg,.glow-dot,.case-media img.on{animation:none}
+    .reveal,.mask > span,.result-text,.odo-strip,.fact::before,.result-row::before{transition:none}
+  }
+  @media (max-width: 1100px){
+    .wrap{padding-left:24px;padding-right:24px}
+    .grid-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .grid-3{grid-template-columns:1fr !important}
+    .grid-2{grid-template-columns:1fr !important}
+    .result-row{grid-template-columns:1fr}
+    .result-title{font-size:34px}
+    .scrub{font-size:28px}
+    .h1{font-size:52px !important}
+  }
+
+  /* ===== плитки направлений (bento) ===== */
+  .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:420px;gap:18px}
+  .vtile{position:relative;display:block;overflow:hidden;border-radius:16px;background:#111;scroll-margin-top:110px;outline:2px solid transparent;outline-offset:5px;transition:outline-color .4s ease, opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover{opacity:1}
+  .vtile-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.03) brightness(.94);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover .vtile-photo{transform:scale(1.05)}
+  .vtile-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.38) 0%,rgba(10,10,11,.06) 28%,rgba(10,10,11,.22) 55%,rgba(10,10,11,.86) 100%);transition:opacity .4s ease}
+  .vtile::after{content:"";position:absolute;inset:0;background:rgba(10,10,11,.35);opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .vtile:hover::after{opacity:1}
+  .vtile-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px 24px}
+  .vtile-top{display:flex;justify-content:flex-end;gap:16px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#C4C4C4}
+  .vtile-main{display:flex;flex-direction:column;gap:10px;max-width:560px;padding-right:56px}
+  .vtile-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.25;letter-spacing:.01em;text-transform:uppercase;color:#FAFAFA}
+  .vtile-lead{font-size:15px;line-height:1.55;color:#E2E2E2;max-height:0;opacity:0;overflow:hidden;transition:max-height .55s ease, opacity .45s ease}
+  .vtile:hover .vtile-lead,.vtile:focus-visible .vtile-lead{max-height:96px;opacity:1}
+  .vtile-cap{font-family:'PT Mono',monospace;font-size:11px;line-height:1.45;color:#A8A8A8}
+  .vtile-arrow{position:absolute;right:22px;bottom:22px;z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid rgba(250,250,250,.4);color:#FAFAFA;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;transform:translateX(-8px);transition:opacity .35s ease, transform .35s ease, background .35s ease}
+  .vtile:hover .vtile-arrow{opacity:1;transform:none}
+  .vtile:target,.vtile.flash{outline-color:#141414}
+  /* страница подраздела ещё не готова — без стрелки и без курсора-«руки» */
+  .vtile[data-soon]{cursor:default}
+  .vtile[data-soon] .vtile-arrow{display:none}
+
+  /* ===== ключевые пункты (без цифр) ===== */
+  .tp{position:relative;padding-top:24px;border-top:1px solid #E6E6E6;display:flex;flex-direction:column;gap:10px}
+  .tp::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .tp.in::before{width:100%}
+  .tp-main::before{height:2px;top:-1px}
+  .tp-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .tp-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.35;color:#141414}
+  .tp-text{font-size:15px;line-height:1.6;color:#8A8A8A}
+
+  /* ===== этапы работы ===== */
+  .steps-track{position:relative;height:1px;background:#E6E6E6;margin-bottom:34px}
+  .steps-fill{position:absolute;left:0;top:0;height:1px;width:0;background:#141414}
+  .steps-dot{position:absolute;top:-4px;left:0;width:9px;height:9px;margin-left:-4px;border-radius:999px;background:#141414;box-shadow:0 0 0 5px rgba(20,20,20,.08)}
+  .step{opacity:.38;transition:opacity .6s ease}
+  .step.on{opacity:1}
+  .step-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .step-title{margin:12px 0 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.3;color:#141414}
+  .step-text{font-size:15px;line-height:1.6;color:#767676}
+
+  /* ===== отзывы ===== */
+  .quotes{display:grid}
+  .quote{grid-area:1/1;margin:0;opacity:0;transform:translateY(10px);transition:opacity .9s ease, transform .9s ease;pointer-events:none}
+  .quote.on{opacity:1;transform:none;pointer-events:auto}
+  .quote blockquote{margin:0;max-width:1120px;font-family:'Montserrat',sans-serif;font-weight:500;font-size:34px;line-height:1.38;color:#FAFAFA}
+  .quote figcaption{display:flex;align-items:center;gap:16px;margin-top:38px}
+  .quote figcaption img,.q-initials{width:52px;height:52px;border-radius:999px;object-fit:cover;filter:grayscale(100%);flex:0 0 52px}
+  .q-initials{display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.28);font-family:'PT Mono',monospace;font-size:13px;color:#C8C8C8}
+  .quote b{display:block;font-weight:600;font-size:15px;color:#FAFAFA}
+  .quote i{display:block;font-style:normal;font-size:13px;color:#8A8A8A;margin-top:2px}
+  .q-nav{display:flex;align-items:center;gap:10px;margin-top:48px}
+  .q-dot{width:32px;height:2px;border:none;padding:0;background:rgba(255,255,255,.2);transition:background .3s ease}
+  .q-dot.on{background:#FAFAFA}
+  .q-all{margin-left:auto;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#FAFAFA}
+
+  @media (max-width: 1100px){
+    .bento{grid-template-columns:1fr;grid-auto-rows:360px}
+    .bento .vtile{grid-column:auto !important}
+    .quote blockquote{font-size:24px}
+  }
+  @media (hover: none){
+    .vtile-lead{max-height:none;opacity:1}
+    .vtile-arrow{opacity:1;transform:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+  }
+
+  /* отзывы: главная фраза крупно, две другие — мельче, отдельными строками */
+  .quote .q-more{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:900px}
+  .quote .q-more li{font-size:17px;line-height:1.55;color:#9A9A9A;padding-left:18px;position:relative}
+  .quote .q-more li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:#5B5B5B}
+
+  /* заглушка вместо фото (в исходном документе фото объекта нет) */
+  .vtile-ph{position:absolute;inset:0;background:
+      radial-gradient(90% 80% at 85% 10%, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 60%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      linear-gradient(160deg,#1A1A1C 0%,#0E0E10 100%)}
+  .vtile-noimg .vtile-cap{color:#6E6E6E}
+
+  /* --- «Технологии» в колонке «Компания»: раскрывающийся список (меню и подвал) --- */
+  .tech-dd{display:flex;flex-direction:column;align-items:center;}
+  .tech-dd > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  .tech-dd > summary::-webkit-details-marker{display:none;}
+  .tech-dd .tech-chev{display:inline-block;font-size:9px;line-height:1;transition:transform .2s ease;}
+  .tech-dd[open] .tech-chev{transform:rotate(180deg);}
+  .tech-dd .tech-list{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:15px;}
+  .tech-dd .tech-list .mm-item-long,.tech-dd .tech-list .ft-item-long,.tech-dd .tech-list .mm-item,.tech-dd .tech-list .ft-item{font-size:11.5px;}
+  /* «Технологии»: слово — ссылка на раздел, стрелка — отдельная кнопка, раскрывает список (как «split button») */
+  .tech-dd > summary{gap:0;}
+  .tech-dd .tech-go{color:inherit;padding:0 12px 0 0;box-shadow:inset -1px 0 0 rgba(140,140,140,.35);text-decoration:none;}
+  .tech-dd .tech-go:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(140,140,140,.7);}
+  .tech-dd .tech-chev{width:26px;height:26px;margin:-7px 0 -7px 7px;border-radius:50%;display:inline-flex !important;align-items:center;justify-content:center;font-size:9px;transition:transform .2s ease,background .2s ease;}
+  .tech-dd > summary:hover .tech-chev:hover,.tech-dd .tech-chev:hover{background:rgba(140,140,140,.22);}
+  .tech-dd > summary:focus-visible{outline:none;} .tech-dd > summary:focus-visible .tech-chev{outline:2px solid #7FB2FF;outline-offset:1px;}
+  .nav-cabinet{white-space:normal !important;text-align:right;line-height:1.2;font-size:11.5px !important;}
+  /* --- кнопка закрытия выпадающего меню --- */
+  .mm-close{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:999px;border:none;background:none;color:#F2F2F2;font-family:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s ease,color .15s ease;}
+  .mm-close:hover,.mm-close:focus-visible{color:#FFFFFF;opacity:.7;}
+  /* ===== ОБЩАЯ СЕТКА ШАПКИ И ВЫПАДАЮЩЕГО МЕНЮ =====
+     Шапка и меню используют один и тот же класс .ds-row, поэтому их колонки всегда совпадают.
+     Ширины колонок задаются ТОЛЬКО здесь: --ds-c1 … --ds-c7; --ds-spread — насколько «Продукция» и «Клиентам» отодвинуты от центра. Крайние колонки прижаты к краям
+     страницы (отступ --ds-pad), пять средних — по центру. Менять пункты меню можно свободно:
+     текст переносится внутри своей колонки и не сдвигает соседние. */
+  :root{--ds-pad:40px;--ds-gap:20px;--ds-spread:40px;--ds-c1:90px;--ds-c2:175px;--ds-c3:195px;--ds-c4:200px;--ds-c5:195px;--ds-c6:175px;--ds-c7:90px;}
+  .ds-row{display:grid !important;box-sizing:border-box;width:100%;max-width:none;margin:0;padding-left:var(--ds-pad);padding-right:var(--ds-pad);column-gap:var(--ds-gap);
+    grid-template-columns:var(--ds-c1) minmax(0,1fr) minmax(var(--ds-c2),calc(var(--ds-c2) + var(--ds-spread))) var(--ds-c3) var(--ds-c4) var(--ds-c5) minmax(var(--ds-c6),calc(var(--ds-c6) + var(--ds-spread))) minmax(0,1fr) var(--ds-c7);}
+  .ds-row > *{min-width:0;}
+  .ds-row > :nth-child(1){grid-column:1;} .ds-row > :nth-child(2){grid-column:3;} .ds-row > :nth-child(3){grid-column:4;}
+  .ds-row > :nth-child(4){grid-column:5;} .ds-row > :nth-child(5){grid-column:6;} .ds-row > :nth-child(6){grid-column:7;}
+  .ds-row > :nth-child(7){grid-column:9;}
+  /* полоса прокрутки меню скрыта: иначе ряд меню становится уже шапки и колонки съезжают */
+  .mm-overlay{scrollbar-width:none;} .mm-overlay::-webkit-scrollbar{display:none;}
+
+  /* ===== страница-раздел: карточки подразделов ===== */
+  .hub-hero{position:relative;background:#0A0A0B;overflow:hidden}
+  .hub-hero::after{content:"";position:absolute;right:-12%;top:-30%;width:62%;height:160%;background:radial-gradient(closest-side,rgba(255,255,255,.07),rgba(255,255,255,0));pointer-events:none}
+  .hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .hub-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:190px;padding:26px 26px 24px;border:1px solid #E6E6E6;border-radius:16px;background:#FFFFFF;transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease}
+  .hub-card:hover{opacity:1;border-color:#141414;box-shadow:0 18px 40px -22px rgba(0,0,0,.35);transform:translateY(-2px)}
+  .hub-card-idx{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+  .hub-card-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;line-height:1.3;color:#141414;text-transform:uppercase;letter-spacing:.01em}
+  .hub-card-text{margin-top:8px;font-size:15px;line-height:1.55;color:#767676}
+  .hub-card-arrow{align-self:flex-end;width:40px;height:40px;border-radius:999px;border:1px solid #D6D6D6;display:flex;align-items:center;justify-content:center;font-size:15px;color:#141414;transition:background .3s ease,color .3s ease,border-color .3s ease}
+  .hub-card:hover .hub-card-arrow{background:#141414;color:#FAFAFA;border-color:#141414}
+  .hub-card[data-soon]{cursor:default}
+  .hub-card[data-soon]:hover{transform:none;box-shadow:none;border-color:#E6E6E6}
+  .hub-card[data-soon] .hub-card-arrow{display:none}
+  .hub-soon{font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD;border:1px solid #E6E6E6;border-radius:99px;padding:4px 10px;align-self:flex-start}
+  @media (max-width:1100px){ .hub-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:700px){ .hub-grid{grid-template-columns:1fr} }
+
+  /* ===== страница «Гарантия и сервис» ===== */
+  .wr-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:64px;align-items:end}
+  .wr-years{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:28px 34px 30px;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(255,255,255,.03)}
+  .wr-years b{font-family:'Montserrat',sans-serif;font-weight:700;font-size:120px;line-height:.9;color:#FAFAFA;letter-spacing:-.02em}
+  .wr-years span{font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#C8C8C8}
+  .wr-cta{display:inline-flex;align-items:center;gap:10px;background:#FAFAFA;color:#0A0A0B;font-size:14px;font-weight:600;padding:16px 28px;border-radius:6px}
+  .wr-cta:hover{opacity:.85}
+  .wr-cta-ghost{background:none;color:#FAFAFA;border:1px solid rgba(255,255,255,.35)}
+  .wr-h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:44px;line-height:1.15;color:#141414;text-wrap:balance}
+  .wr-lead{margin:0;font-size:18px;line-height:1.65;color:#444;max-width:760px}
+  .wr-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .wr-pillar{display:flex;flex-direction:column;gap:14px;padding:30px 28px 32px;border:1px solid #E6E6E6;border-radius:16px;background:#FFFFFF}
+  .wr-pillar h3{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:21px;line-height:1.3;text-transform:uppercase;letter-spacing:.01em;color:#141414}
+  .wr-pillar p{margin:0;font-size:16px;line-height:1.6;color:#5B5B5B}
+  .wr-pillar ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .wr-pillar li{font-size:15px;line-height:1.5;color:#444;padding-left:18px;position:relative}
+  .wr-pillar li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:#141414}
+  .wr-cycle{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center}
+  .wr-cycle-img{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#F4F4F2}
+  .wr-cycle-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .wr-chain{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+  .wr-chain li{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#141414;border:1px solid #D6D6D6;border-radius:99px;padding:7px 12px}
+  .wr-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #141414;margin:0;padding:0;list-style:none;counter-reset:st}
+  .wr-steps li{counter-increment:st;padding:22px 24px 0 0;display:flex;flex-direction:column;gap:8px}
+  .wr-steps li::before{content:counter(st,decimal-leading-zero);font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .wr-steps b{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;text-transform:uppercase;color:#141414}
+  .wr-steps span{font-size:15px;line-height:1.55;color:#5B5B5B}
+  .wr-terms{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .wr-term{padding:26px 28px;border-radius:16px;background:#FFFFFF;border:1px solid #E6E6E6}
+  .wr-term h3{margin:0 0 12px;font-size:15px;font-family:'PT Mono',monospace;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#141414}
+  .wr-term ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.55;color:#444}
+  .wr-note{font-size:14px;line-height:1.6;color:#8A8A8A;margin:0}
+
+  /* бот сервисного обращения */
+  .svc-sec{background:#0A0A0B;color:#FAFAFA}
+  .svc-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+  .svc-side h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:44px;line-height:1.15;color:#FAFAFA}
+  .svc-side p{margin:0;font-size:17px;line-height:1.6;color:#C8C8C8}
+  .svc-phone{display:flex;flex-direction:column;gap:4px;padding:20px 22px;border:1px solid rgba(255,255,255,.14);border-radius:14px}
+  .svc-phone span{font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#8A8A8A}
+  .svc-phone a{font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;color:#FAFAFA}
+  #svc-bot{display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:#141416;overflow:hidden;min-height:620px}
+  .svc-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.10)}
+  .svc-head-t{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;letter-spacing:.02em}
+  .svc-head-t i{width:8px;height:8px;border-radius:50%;background:#7BD88F;box-shadow:0 0 10px #7BD88F}
+  .svc-restart{background:none;border:1px solid rgba(255,255,255,.2);color:#C8C8C8;font-size:12.5px;padding:6px 12px;border-radius:6px}
+  .svc-restart:hover{color:#FAFAFA;border-color:rgba(255,255,255,.5)}
+  .svc-progress{height:2px;background:rgba(255,255,255,.08)} .svc-progress i{display:block;height:100%;width:0;background:#FAFAFA;transition:width .4s ease}
+  .svc-log{flex:1;overflow-y:auto;padding:22px 20px;display:flex;flex-direction:column;gap:12px;max-height:520px;scroll-behavior:smooth}
+  .svc-msg{max-width:86%;font-size:15.5px;line-height:1.55;border-radius:14px;padding:12px 16px;animation:svcIn .3s ease}
+  .svc-msg p{margin:0} .svc-msg p+p{margin-top:8px}
+  .svc-bot-msg{align-self:flex-start;background:#1E1E21;color:#EDEDED;border-top-left-radius:4px}
+  .svc-me{align-self:flex-end;background:#FAFAFA;color:#0A0A0B;border-top-right-radius:4px;white-space:pre-wrap}
+  @keyframes svcIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .svc-dock{padding:14px 20px 20px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;gap:12px}
+  .svc-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .svc-chip{background:none;border:1px solid rgba(255,255,255,.28);color:#FAFAFA;font-size:14px;padding:9px 14px;border-radius:99px;text-align:left;transition:background .2s,border-color .2s}
+  .svc-chip:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6)}
+  .svc-chip-hi{border-color:#FF6B5B;color:#FFD4CF}
+  .svc-chip-hi:hover{background:rgba(255,107,91,.12);border-color:#FF6B5B}
+  .svc-chip:focus-visible,.svc-send:focus-visible,.svc-restart:focus-visible,.svc-call:focus-visible{outline:2px solid #7FB2FF;outline-offset:2px}
+  .svc-input{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}
+  .svc-input textarea{flex:1 1 240px;min-width:0;resize:none;background:#0A0A0B;border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#FAFAFA;font:inherit;font-size:15px;line-height:1.45;padding:11px 14px}
+  .svc-input textarea:focus,.svc-form input:focus{outline:none;border-color:rgba(255,255,255,.6)}
+  .svc-send{background:#FAFAFA;color:#0A0A0B;border:0;border-radius:8px;font-size:14px;font-weight:600;padding:12px 18px}
+  .svc-send-big{padding:14px 24px;align-self:flex-start}
+  .svc-skip{background:none;border:0;color:#8A8A8A;font-size:13.5px;padding:12px 6px;text-decoration:underline;text-underline-offset:3px}
+  .svc-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .svc-form label{display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#9A9A9A;font-family:'PT Mono',monospace;letter-spacing:.04em;text-transform:uppercase}
+  .svc-form label em{font-style:normal;text-transform:none;color:#6A6A6A}
+  .svc-form input:not([type=checkbox]){background:#0A0A0B;border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#FAFAFA;font:inherit;font-family:'IBM Plex Sans',sans-serif;font-size:15px;text-transform:none;letter-spacing:0;padding:11px 14px}
+  .svc-form .svc-agree{grid-column:1/-1;flex-direction:row;align-items:flex-start;gap:10px;text-transform:none;font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:0;color:#9A9A9A;line-height:1.45}
+  .svc-form-err{grid-column:1/-1;color:#FF8A7D;font-size:13.5px;min-height:0}
+  .svc-form .svc-send{grid-column:1/-1}
+  .svc-urgent{border-left:2px solid #FF6B5B;padding-left:14px;display:flex;flex-direction:column;gap:10px}
+  .svc-urgent-t{font-weight:600;color:#FAFAFA}
+  .svc-urgent-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .svc-call{display:inline-flex;align-items:center;background:#FF6B5B;color:#0A0A0B;font-weight:600;font-size:14.5px;padding:11px 18px;border-radius:8px}
+  .svc-call:hover{opacity:.88}
+  .svc-urgent-n{font-size:13.5px;color:#9A9A9A}
+  .svc-pre{margin:10px 0 0;white-space:pre-wrap;font-family:'PT Mono',monospace;font-size:12.5px;line-height:1.55;color:#C8C8C8;background:#0A0A0B;border-radius:8px;padding:12px;user-select:all}
+
+  @media (max-width:1100px){
+    .wr-hero-grid{grid-template-columns:1fr;gap:36px}
+    .wr-pillars{grid-template-columns:1fr}
+    .wr-cycle{grid-template-columns:1fr;gap:32px}
+    .wr-steps{grid-template-columns:1fr 1fr;row-gap:28px}
+    .svc-grid{grid-template-columns:1fr;gap:36px}
+  }
+  @media (max-width:700px){
+    .wr-years b{font-size:84px}
+    .wr-h2,.svc-side h2{font-size:30px}
+    .wr-terms{grid-template-columns:1fr}
+    .wr-steps{grid-template-columns:1fr}
+    .svc-form{grid-template-columns:1fr}
+    .svc-msg{max-width:94%}
+    .svc-log{padding:16px 14px}.svc-dock{padding:12px 14px 16px}
+    #svc-bot{min-height:540px}
+  }
+  @media (prefers-reduced-motion:reduce){.svc-msg{animation:none}.svc-log{scroll-behavior:auto}}
+</style>
+<link rel="stylesheet" href="./footer.css">
+<script src="./navbot.js" defer></script>
+<script src="./footbot.js" defer></script>
+
+<link rel="canonical" href="https://ds-proaudio.ru/en/warranty.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Warranty &amp; service — DS PROAUDIO">
+<meta property="og:description" content="3-year warranty on DS PROAUDIO equipment. In-house manufacturing in Russia, spare parts in stock, short repair times. Online service requests.">
+<meta property="og:url" content="https://ds-proaudio.ru/en/warranty.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Warranty & service — DS PROAUDIO", "url": "https://ds-proaudio.ru/en/warranty.html", "inLanguage": "en", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+
+</head>
+<body>
+
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;width:100%;background:rgba(10,10,11,.82);border-bottom:1px solid rgba(255,255,255,.10);">
+  <div class="ds-row" style="height:74px;align-items:center;">
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./gov.html" aria-label="" style="display:flex;align-items:center;">
+        <img src="./assets/gisp-mark-dark.svg" alt="" style="height:34px;width:34px;object-fit:contain;">
+      </a>
+        <a class="lang-sw" href="./warranty.html" hreflang="ru" lang="ru" title="Russian version">RU</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./products.html" class="nav-trigger">Products</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./application.html" class="nav-trigger">Applications</a>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <a href="./en/index.html" aria-label="DS PROAUDIO — home" style="display:block;position:relative;height:32px;width:145px;">
+        <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);">
+      </a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./en/support.html" class="nav-trigger">Support</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./en/clients.html" class="nav-trigger">Clients</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;align-items:center;">
+        <a href="#" class="cab-pill" aria-label="Partner portal" title="Partner portal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg><span>Partners</span></a>
+      </div>
+  </div>
+  <button type="button" class="hdr-menu-btn" data-menu-toggle aria-haspopup="true" aria-expanded="false">Menu</button>
+</header>
+
+
+<div class="mm-overlay" id="megamenu" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;flex-direction:column;">
+  <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
+      <a href="./docs.html?g=gll" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+      <a href="./docs.html?g=dwg" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+      <a href="./docs.html?g=man" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./products-line-arrays.html" class="mm-item">Line arrays</a>
+      <a href="./products-constant-curvature.html" class="mm-item">Constant-curvature arrays</a>
+      <a href="./products-columns.html" class="mm-item">Column loudspeakers</a>
+      <a href="./products-point-sources.html" class="mm-item">Point-source loudspeakers</a>
+      <a href="./products-monitors.html" class="mm-item">Stage monitors</a>
+      <a href="./products-compact-sets.html" class="mm-item">Compact systems</a>
+      <a href="./products-auditorium.html" class="mm-item">Lecture hall systems</a>
+      <a href="./products-registry.html" class="mm-item"></a>
+      <a href="./products-all-weather.html" class="mm-item">All-weather systems</a>
+      <a href="./products-amplifiers.html" class="mm-item">Amplifiers</a>
+      <a href="./products-accessories.html" class="mm-item">Accessories</a>
+      <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">PDF catalog</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./reviews.html" class="mm-bold">Testimonials</a>
+      <a href="./portfolio.html" class="mm-bold" style="margin-bottom:2px;">Portfolio</a>
+      <a href="./culture.html" class="mm-item">Arts & culture</a>
+      <a href="./education.html" class="mm-item">Education & research</a>
+      <a href="./sport.html" class="mm-item">Sports & live events</a>
+      <a href="./corporate.html" class="mm-item">Corporate</a>
+      <a href="./hospitality.html" class="mm-item">Hospitality</a>
+      <a href="./religious.html" class="mm-item">Houses of worship</a>
+      <a href="./entertainment.html" class="mm-item">Entertainment</a>
+      <a href="./rental.html" class="mm-item" style="font-weight:500;">Rental</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-top:6px;">
+      <a href="./en/history.html" class="mm-item">History</a>
+      <a href="./en/philosophy.html" class="mm-item">Philosophy</a>
+      <a href="./en/faces.html" class="mm-item">Our people</a>
+      <a href="./en/about.html" class="mm-item">Company at a glance</a>
+      <a href="./en/production.html" class="mm-item">Manufacturing</a>
+      <details class="tech-dd">
+        <summary class="mm-item" title="Show the list of technologies"><a href="./en/technologies.html" class="tech-go" title="Technologies section">Technologies</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
+        <div class="tech-list">
+          <a href="./tech-rigging.html" class="mm-item-long">Pinless rigging<span class="mm-sub">(TAURA, ERA arrays)</span></a><a href="./tech-click-clack.html" class="mm-item-long">CLICK-CLACK<span class="mm-sub">(angles set on the ground, TAURA)</span></a>
+          <a href="./tech-coaxial-waveguide.html" class="mm-item-long">Coaxial arrays<span class="mm-sub">(ERA, TAURA 10)</span></a>
+          <a href="./tech-horizontal-summing.html" class="mm-item-long">Horizontal summing<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
+          <a href="./tech-two-way-element.html" class="mm-item-long">Two-way array element<span class="mm-sub">(TAURA 8 array)</span></a>
+          <a href="./tech-cardioid-sub.html" class="mm-item-long">Cardioid subwoofer<span class="mm-sub">(TAURA C-Sub 18)</span></a>
+          <a href="./tech-coaxial-cx.html" class="mm-item-long">Coaxial drivers<span class="mm-sub">(CX, MCX series)</span></a>
+          <a href="./tech-voice-coil.html" class="mm-item">Edge-wound interlocked voice coils</a>
+        </div>
+      </details>
+      <a href="./blog.html" class="mm-item">Blog</a>
+      <a href="./en/contacts.html" class="mm-item">Contact</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:17px;text-align:right;">
+      <a href="./seminars.html" class="mm-item">Training & seminars</a>
+      <a href="./docs.html" class="mm-item-long">Documentation center<span class="mm-sub">(EASE & CAD downloads)</span></a>
+      <a href="./software.html" class="mm-item-long">Acoustic simulation software</a>
+      <a href="./en/warranty.html" class="mm-item">Warranty & service</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
+      <a href="./showroom.html" class="mm-item">Visit the showroom</a>
+      <a href="./demo.html" class="mm-item">Request an on-site demo</a>
+      <a href="./consultation.html" class="mm-item">Request a project consultation</a>
+      <a href="./prices.html" class="mm-item">Get pricing</a>
+      <a href="./where-to-buy.html" class="mm-item">Where to buy</a>
+      <a href="./delivery.html" class="mm-item">Lead times</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
+      <a href="#dsf-bot" aria-label="Chat with us" style="font-size:17px;color:#FAFAFA;">💬</a>
+      <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" class="mm-bold">VK</a>
+      <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" class="mm-bold">TG</a>
+      <a href="#contact" aria-label="Write to us" style="font-size:17px;color:#FAFAFA;">✉</a>
+      <a href="tel:+74951501238" aria-label="Call us" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
+    </div>
+  </div>
+  <div style="flex:0 0 auto;display:flex;justify-content:center;padding:28px 0 34px;">
+    <button type="button" data-menu-close aria-label="Close menu" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Close menu</span></button>
+  </div>
+</div>
+
+<main>
+
+
+<section class="hub-hero">
+  <div class="wrap" style="position:relative;z-index:2;padding-top:140px;padding-bottom:80px;display:flex;flex-direction:column;gap:44px;">
+    <nav aria-label="Breadcrumb">
+      <ol class="crumbs">
+        <li><a href="./en/index.html">Home</a></li>
+        <li class="sep" aria-hidden="true">/</li>
+        <li><a href="./en/support.html">Support</a></li>
+        <li class="sep" aria-hidden="true">/</li>
+        <li aria-current="page">Warranty & service</li>
+      </ol>
+    </nav>
+    <div class="wr-hero-grid">
+      <div style="display:flex;flex-direction:column;gap:24px;max-width:860px;">
+        <div class="kicker" style="color:#C8C8C8;">Support</div>
+        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:72px;line-height:1.05;color:#FAFAFA;">Warranty & service</h1>
+        <div style="max-width:680px;font-size:22px;line-height:1.5;color:#D8D8D8;">We build our loudspeakers ourselves in Russia, so we repair them fast: there’s no need to order parts from abroad, because they’re already in our warehouse.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;">
+          <a class="wr-cta" href="#service" data-svc-start>Service request →</a>
+          <a class="wr-cta wr-cta-ghost" href="tel:+74951501238">+7 495 150-12-38</a>
+        </div>
+      </div>
+      <div class="wr-years" aria-label="3-year warranty"><b>3</b><span>year warranty<br>on equipment made by DS PROAUDIO</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:#FAFAFA;">
+  <div class="wrap" style="padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:44px;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="kicker">Why DS PROAUDIO service is fast</div>
+      <h2 class="wr-h2">Manufacturer, warehouse and service in one company</h2>
+    </div>
+    <div class="wr-pillars">
+      <article class="wr-pillar reveal">
+        <div class="kicker">01 · Manufacturing</div>
+        <h3>Full cycle in Russia</h3>
+        <p>We design and build enclosures, drivers, HF compression drivers and voice coils ourselves. The engineers who designed your system take part in repairing it.</p>
+        <ul><li>No dependence on foreign supply</li><li>Repairs to factory procedures and factory tolerances</li><li>After repair, tested on the same equipment as new products</li></ul>
+      </article>
+      <article class="wr-pillar reveal">
+        <div class="kicker">02 · Warehouse</div>
+        <h3>Parts in stock</h3>
+        <p>We keep key parts in stock for every series, including discontinued models. Repairs never wait for a delivery.</p>
+        <ul><li>Cones, surrounds, voice coils</li><li>HF driver diaphragms and repair kits</li><li>Grilles, connectors, rigging parts</li></ul>
+      </article>
+      <article class="wr-pillar reveal">
+        <div class="kicker">03 · Turnaround</div>
+        <h3>The shortest possible repair time</h3>
+        <p>Diagnostics start the day the equipment arrives. If your event is coming up soon, tell us: urgent cases jump the queue.</p>
+        <ul><li>Service in Moscow and St. Petersburg</li><li>We can send you a repair kit to replace the part on site</li><li>Urgent requests: call us straight away</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:#FFFFFF;">
+  <div class="wrap wr-cycle" style="padding-top:96px;padding-bottom:96px;">
+    <div class="wr-cycle-img reveal"><img src="./assets/e5ab6f14d68fef82dc712d7056b2894d.jpg" alt="DS PROAUDIO voice coils, made in-house" loading="lazy"></div>
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <div class="kicker">Full-cycle manufacturing</div>
+      <h2 class="wr-h2">All key components are made in-house</h2>
+      <p class="wr-lead">We don’t assemble loudspeakers from other people’s components: every key component is made in-house, and driver baskets are cast by a partner in our own molds. We wind our own voice coils, edge-wound flat wire with an interlocked joint. HF compression drivers come off our own line, and enclosures and rigging are built to our own drawings.</p>
+      <p class="wr-lead">So we know every part of the system and replace exactly what failed with the same part fitted at the factory. After repair, the system performs exactly like a new one.</p>
+      <ul class="wr-chain" aria-label="What we make ourselves"><li>Voice coils</li><li>HF drivers</li><li>LF drivers</li><li>Waveguides</li><li>Enclosures</li><li>Rigging</li></ul>
+    </div>
+  </div>
+</section>
+
+
+<section style="background:#FAFAFA;">
+  <div class="wrap" style="padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:44px;">
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="kicker">Warranty</div>
+      <h2 class="wr-h2">3-year warranty on equipment made by DS PROAUDIO</h2>
+      <p class="wr-lead">The warranty runs from the date of purchase and covers equipment made by DS PROAUDIO. If a manufacturing defect appears within three years, we’ll repair or replace the equipment free of charge.</p>
+    </div>
+    <ol class="wr-steps">
+      <li><b>Request</b><span>Describe the problem with the service bot below, or call us.</span></li>
+      <li><b>Diagnostics</b><span>An engineer will clarify the details and may ask for photos or video.</span></li>
+      <li><b>Repair</b><span>We repair it at our service center or send a repair kit for on-site replacement.</span></li>
+      <li><b>Testing and return</b><span>We test the system on the factory test rig and return it to you.</span></li>
+    </ol>
+    <div class="wr-terms">
+      <div class="wr-term"><h3>What you’ll need</h3><ul><li>Proof of purchase: receipt, delivery note or contract</li><li>Model and serial number from the rating plate</li><li>A description of the fault, with photos or video if possible</li></ul></div>
+      <div class="wr-term"><h3>What the warranty doesn’t cover</h3><ul><li>Mechanical damage during transport and installation</li><li>Damage from overloading beyond the rated power</li><li>Signs of DIY repair not agreed with our service team</li></ul></div>
+    </div>
+    <p class="wr-note">Full terms are in the warranty card supplied with the equipment. After the warranty ends, we repair on the same turnaround; we quote the cost after diagnostics.</p>
+  </div>
+</section>
+
+
+<section class="svc-sec" id="service">
+  <div class="wrap svc-grid" style="padding-top:104px;padding-bottom:110px;">
+    <div class="svc-side" style="display:flex;flex-direction:column;gap:22px;">
+      <div class="kicker" style="color:#8A8A8A;">Service request</div>
+      <h2>Something wrong with your equipment?</h2>
+      <p>Answer a few questions and your request goes straight to our service engineers. If it’s urgent, the bot will offer to call us right away or request a callback.</p>
+      <div class="svc-phone"><span>Service · Mon–Fri, 10:00–19:00 (Moscow time)</span><a href="tel:+74951501238">+7 495 150-12-38</a></div>
+      <p style="font-size:14px;color:#8A8A8A;">You can also write to <a href="mailto:info@ds-proaudio.ru" style="border-bottom:1px solid currentColor;">info@ds-proaudio.ru</a>.</p>
+    </div>
+    <div id="svc-bot" role="region" aria-label="Service request bot">
+      <div class="svc-head"><div class="svc-head-t"><i aria-hidden="true"></i>DS PROAUDIO service</div><button type="button" class="svc-restart">Start over</button></div>
+      <div class="svc-progress" aria-hidden="true"><i></i></div>
+      <div class="svc-log" aria-live="polite"></div>
+      <div class="svc-dock"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="dsf">
+  <div class="dsf-wrap">
+    
+    <div class="dsf-top">
+      <div class="dsf-brand">
+        <img class="dsf-logo" src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="DS PROAUDIO">
+        <p class="dsf-tag">Russian full-cycle manufacturer of concert loudspeaker systems.</p>
+      </div>
+      <div class="dsf-contacts">
+        <div class="dsf-h">Contact</div>
+        <a class="dsf-phone" href="tel:+74951501238">+7 495 150-12-38</a>
+        <a class="dsf-mail" href="mailto:info@ds-proaudio.ru">info@ds-proaudio.ru</a>
+        <div class="dsf-addr"><b>Office and service center</b>Moscow, Ostapovsky Proezd, 3 bldg. 8</div>
+        <div class="dsf-addr"><b>Service center</b>St. Petersburg, Parkovaya St., 4D</div>
+        <div class="dsf-hours">Mon–Fri, 10:00–19:00 (Moscow time)</div>
+      </div>
+      <div class="dsf-bot" id="dsFootBot" aria-label="DS PROAUDIO assistant">
+        <div class="dsf-bot-head"><span class="dsf-bot-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" stroke-width="2.6" stroke-linecap="round"/></svg></span><span>DS PROAUDIO assistant<span class="dsf-bot-sub">Instant answers; a manager replies during business hours</span></span></div>
+        <div class="dsf-bot-log" aria-live="polite"><div class="dsf-msg b">Hello! Shall we call you back, or can we help with something else?</div></div>
+        <div class="dsf-chips">
+          <button type="button" class="dsf-chip main" data-dsf="call">Call me back</button>
+          <button type="button" class="dsf-chip" data-dsf="pick">Choose equipment</button>
+          <button type="button" class="dsf-chip" data-dsf="price">Get pricing</button>
+          <button type="button" class="dsf-chip" data-dsf="buy">Where to buy</button>
+          <button type="button" class="dsf-chip" data-dsf="service">Service & warranty</button>
+        </div>
+        <form class="dsf-ask"><input type="text" placeholder="Or ask a question…" aria-label="Ask the assistant"><button type="submit" aria-label="Send">→</button></form>
+      </div>
+    </div>
+
+    
+    <nav class="dsf-cols" aria-label="Site sections">
+      <div class="dsf-col">
+        <a href="./products.html" class="ft-heading">Products</a>
+          <a href="./products-line-arrays.html" class="ft-item">Line arrays</a>
+          <a href="./products-constant-curvature.html" class="ft-item">Constant-curvature arrays</a>
+          <a href="./products-columns.html" class="ft-item">Column loudspeakers</a>
+          <a href="./products-point-sources.html" class="ft-item">Point-source loudspeakers</a>
+          <a href="./products-monitors.html" class="ft-item">Stage monitors</a>
+          <a href="./products-compact-sets.html" class="ft-item">Compact systems</a>
+          <a href="./products-auditorium.html" class="ft-item">Lecture hall systems</a>
+          <a href="./products-registry.html" class="ft-item"></a>
+          <a href="./products-all-weather.html" class="ft-item">All-weather systems</a>
+          <a href="./products-amplifiers.html" class="ft-item">Amplifiers</a>
+          <a href="./products-accessories.html" class="ft-item">Accessories</a>
+          <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="ft-bold">PDF catalog</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./application.html" class="ft-heading">Applications</a>
+          <a href="./reviews.html" class="ft-bold">Testimonials</a>
+          <a href="./portfolio.html" class="ft-bold" style="margin-bottom:2px;">Portfolio</a>
+          <a href="./culture.html" class="ft-item">Arts & culture</a>
+          <a href="./education.html" class="ft-item">Education & research</a>
+          <a href="./sport.html" class="ft-item">Sports & live events</a>
+          <a href="./corporate.html" class="ft-item">Corporate</a>
+          <a href="./hospitality.html" class="ft-item">Hospitality</a>
+          <a href="./religious.html" class="ft-item">Houses of worship</a>
+          <a href="./entertainment.html" class="ft-item">Entertainment</a>
+          <a href="./rental.html" class="ft-item" style="font-weight:700;">Rental</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./en/index.html" class="ft-heading">Home</a>
+          <a href="./en/history.html" class="ft-item">History</a>
+          <a href="./en/philosophy.html" class="ft-item">Philosophy</a>
+          <a href="./en/faces.html" class="ft-item">Our people</a>
+          <a href="./en/about.html" class="ft-item">Company at a glance</a>
+          <a href="./en/production.html" class="ft-item">Manufacturing</a>
+          <details class="tech-dd">
+            <summary class="ft-item" title="Show the list of technologies"><a href="./en/technologies.html" class="tech-go" title="Technologies section">Technologies</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
+            <div class="tech-list">
+              <a href="./tech-rigging.html" class="ft-item-long">Pinless rigging<span class="ft-sub">(TAURA, ERA arrays)</span></a><a href="./tech-click-clack.html" class="ft-item-long">CLICK-CLACK<span class="ft-sub">(angles set on the ground, TAURA)</span></a>
+              <a href="./tech-coaxial-waveguide.html" class="ft-item-long">Coaxial arrays<span class="ft-sub">(ERA, TAURA 10)</span></a>
+              <a href="./tech-horizontal-summing.html" class="ft-item-long">Horizontal summing<span class="ft-sub">(TAURA 8, PLR, STL)</span></a>
+              <a href="./tech-two-way-element.html" class="ft-item-long">Two-way array element<span class="ft-sub">(TAURA 8 array)</span></a>
+          <a href="./tech-cardioid-sub.html" class="ft-item-long">Cardioid subwoofer<span class="ft-sub">(TAURA C-Sub 18)</span></a>
+              <a href="./tech-coaxial-cx.html" class="ft-item-long">Coaxial drivers<span class="ft-sub">(CX, MCX series)</span></a>
+              <a href="./tech-voice-coil.html" class="ft-item">Edge-wound interlocked voice coils</a>
+            </div>
+          </details>
+          <a href="./blog.html" class="ft-item">Blog</a>
+          <a href="./en/contacts.html" class="ft-item">Contact</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./en/support.html" class="ft-heading" aria-current="page">Support</a>
+          <a href="./seminars.html" class="ft-item">Training & seminars</a>
+          <a href="./docs.html" class="ft-item-long">Documentation center<span class="ft-sub">(EASE & CAD downloads)</span></a>
+          <a href="./software.html" class="ft-item-long">Acoustic simulation software</a>
+          <a href="./en/warranty.html" class="ft-item">Warranty & service</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./en/clients.html" class="ft-heading">Clients</a>
+          <a href="./showroom.html" class="ft-item">Visit the showroom</a>
+          <a href="./demo.html" class="ft-item">Request an on-site demo</a>
+          <a href="./consultation.html" class="ft-item">Request a project consultation</a>
+          <a href="./prices.html" class="ft-item">Get pricing</a>
+          <a href="./where-to-buy.html" class="ft-item">Where to buy</a>
+          <a href="./delivery.html" class="ft-item">Lead times</a>
+      </div>
+      <div class="dsf-col dsf-reach">
+        <a href="#" class="ft-heading" style="text-align:center;">Partner portal</a>
+        <div class="dsf-social"><a href="#dsf-bot" aria-label="Chat with the assistant" title="Chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></a><a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" aria-label="DS PROAUDIO on VK" title="VK">VK</a><a href="https://t.me/dsproaudio" target="_blank" rel="noopener" aria-label="DS PROAUDIO on Telegram" title="Telegram">TG</a><a href="https://max.ru/id7702801847_biz" target="_blank" rel="noopener" aria-label="DS PROAUDIO on MAX" title="MAX">MAX</a><a href="mailto:info@ds-proaudio.ru" aria-label="Email info@ds-proaudio.ru" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a><a href="tel:+74951501238" aria-label="Call +7 495 150-12-38" title="Call"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a></div>
+        <div class="dsf-files" aria-label="Project files"><span class="dsf-files-b"><a class="dsf-gisp" href="./gov.html" aria-label="" title=""><img src="./assets/gisp-mark-dark.svg" alt=""></a><a href="./docs.html?g=gll" title="GLL — EASE data files">GLL</a><a href="./docs.html?g=dwg" title="CAD — DWG drawings">CAD</a><a href="./docs.html?g=man" title="PDF — manuals and spec sheets">PDF</a></span></div>
+      </div>
+    </nav>
+
+    <div class="dsf-bottom">
+      <span>© DS PROAUDIO, 2026</span>
+      <span class="dsf-doc"><a href="./consent.html">Consent to personal data processing</a><a href="./privacy.html">Privacy policy</a></span>
+    </div>
+    <div class="dsf-legal">
+      <p>All content on this website, including but not limited to text, graphics, photos and video, as well as page structure, design and layout, the domain name and the trade name, is subject to copyright and intellectual property rights and is protected by Russian law and international copyright treaties.</p>
+      <p>Any use of the content of this website elsewhere without the prior consent of the copyright holder is prohibited, as is any other action that may give Internet users the impression that the materials presented are not related to this website.</p>
+      <p>Product information on this website does not constitute a public offer.</p>
+      <p>Invoices are issued by an official company representative once all order details have been confirmed.</p>
+      <p>The manufacturer reserves the right to change product appearance, specifications and descriptions without prior notice.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- мега-меню ---------- */
+  var menu = document.getElementById('megamenu');
+  var toggles = document.querySelectorAll('[data-menu-toggle]');
+  function setMenu(open){
+    if (open){ menu.hidden = false; menu.style.display = 'flex'; } else { menu.hidden = true; menu.style.display = 'none'; }
+    toggles.forEach(function(b){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+  }
+  toggles.forEach(function(b){ b.addEventListener('click', function(){ setMenu(menu.hidden); }); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a,[data-menu-close]')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+  /* ---------- появление при прокрутке ---------- */
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el, i){
+    if (reduce) el.classList.add('in'); else { el.style.transitionDelay = ((i % 3) * 0.08) + 's'; io.observe(el); }
+  });
+})();
+</script>
+<script>
+  /* сервисный бот: адрес приёма заявок и статистики (см. service-api/server.js). Пока пусто — заявка уходит письмом */
+  window.DS_SERVICE = { endpoint: "", statsEndpoint: "" };
+</script>
+<script src="./service-bot.js" defer></script>
+</body>
+</html>
