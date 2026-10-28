@@ -7,3 +7,7 @@ img[src*="gisp-mark"] { display: none !important; }
 li:has(> a[href*="gov.html"]) { display: none !important; }
 /* «Производство», блок «Подтверждено»: без карточки реестра остаются три карточки — ставим их в три колонки */
 @media (min-width:1100px) { .pf:has(> a[href*="products-registry"]) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* «Центр документации»: выписки из реестра ГИСП (файлы Reestr_…) в английской версии не показываем */
+li:has(> a[href*="/Reestr_"]) { display: none !important; }
+/* там же: счётчик «сертификатов, патентов, выписок ГИСП» включает выписки — убираем */
+.dc-stats > span:nth-child(6) { display: none !important; }
