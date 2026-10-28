@@ -15,3 +15,5 @@ li:has(> a[href*="/Reestr_"]) { display: none !important; }
 li:empty { display: none !important; }
 /* карточка-преимущество, заголовок которой убран (например, «Реестровое оборудование» на страницах «Применения»), не показываем */
 .feat:has(> .feat-title:empty) { display: none !important; }
+/* метки «ГИСП» на карточках моделей и в блоке «Оборудование для проекта» */
+.pr-tag.gisp, .eqb-tag.gisp { display: none !important; }
