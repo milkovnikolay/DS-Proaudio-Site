@@ -3,3 +3,5 @@
 a[href*="gov.html"], a[href*="products-registry"],
 .pr-cat-gisp, .mn-gisp, .mn-fgisp, .dsf-gisp,
 img[src*="gisp-mark"] { display: none !important; }
+/* пункт списка, который ведёт только в раздел для госзаказчиков (например, «Реестр ГИСП» в «Компании в цифрах»), убираем целиком */
+li:has(> a[href*="gov.html"]) { display: none !important; }
