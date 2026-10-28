@@ -38,6 +38,15 @@ PAGES = {
     'seminars.html': {'en': 'seminars.html', 'ru_url': DOMAIN + '/seminars.html', 'en_url': DOMAIN + '/en/seminars.html'},
     'software.html': {'en': 'software.html', 'ru_url': DOMAIN + '/software.html', 'en_url': DOMAIN + '/en/software.html'},
     'docs.html': {'en': 'docs.html', 'ru_url': DOMAIN + '/docs.html', 'en_url': DOMAIN + '/en/docs.html'},
+    'rental.html': {'en': 'rental.html', 'ru_url': DOMAIN + '/rental.html', 'en_url': DOMAIN + '/en/rental.html'},
+    'entertainment.html': {'en': 'entertainment.html', 'ru_url': DOMAIN + '/entertainment.html', 'en_url': DOMAIN + '/en/entertainment.html'},
+    'religious.html': {'en': 'religious.html', 'ru_url': DOMAIN + '/religious.html', 'en_url': DOMAIN + '/en/religious.html'},
+    'hospitality.html': {'en': 'hospitality.html', 'ru_url': DOMAIN + '/hospitality.html', 'en_url': DOMAIN + '/en/hospitality.html'},
+    'corporate.html': {'en': 'corporate.html', 'ru_url': DOMAIN + '/corporate.html', 'en_url': DOMAIN + '/en/corporate.html'},
+    'sport.html': {'en': 'sport.html', 'ru_url': DOMAIN + '/sport.html', 'en_url': DOMAIN + '/en/sport.html'},
+    'education.html': {'en': 'education.html', 'ru_url': DOMAIN + '/education.html', 'en_url': DOMAIN + '/en/education.html'},
+    'culture.html': {'en': 'culture.html', 'ru_url': DOMAIN + '/culture.html', 'en_url': DOMAIN + '/en/culture.html'},
+    'application.html': {'en': 'application.html', 'ru_url': DOMAIN + '/application.html', 'en_url': DOMAIN + '/en/application.html'},
 }
 
 CYR = re.compile('[А-Яа-яЁё]')

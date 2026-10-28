@@ -11,3 +11,5 @@ li:has(> a[href*="gov.html"]) { display: none !important; }
 li:has(> a[href*="/Reestr_"]) { display: none !important; }
 /* там же: счётчик «сертификатов, патентов, выписок ГИСП» включает выписки — убираем */
 .dc-stats > span:nth-child(6) { display: none !important; }
+/* пункт списка, текст которого в английской версии убран (про ГИСП/госзакупки), не показываем */
+li:empty { display: none !important; }
