@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="../">
+<!-- lang:start (собирается tools/i18n/build_en.py) -->
+<link rel="alternate" hreflang="ru" href="https://ds-proaudio.ru/production.html">
+<link rel="alternate" hreflang="en" href="https://ds-proaudio.ru/en/production.html">
+<link rel="alternate" hreflang="x-default" href="https://ds-proaudio.ru/production.html">
+<meta name="ds-lang-alt" content="./production.html" data-lang="ru">
+<!-- lang:end -->
+<link rel="stylesheet" href="./en/en.css">
+<script src="./en/i18n-en.js"></script>
+<meta charset="utf-8">
+<link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+<script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
+<link rel="stylesheet" href="./mnav.css">
+<link rel="stylesheet" href="./about-mobile.css">
+<script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manufacturing — DS PROAUDIO</title>
+<meta name="description" content="DS PROAUDIO manufacturing in St. Petersburg and the Leningrad Region: loudspeaker systems and drivers made in-house, from raw material to the finished system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=PT+Mono&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://ds-proaudio.ru/"},
+ {"@type":"ListItem","position":2,"name":"Support"}]}
+</script>
+<style>
+  /* ===== базовые правила — один в один с Main.dc.html ===== */
+  body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;color:#141414}
+  a{color:inherit;text-decoration:none}
+  a:hover{opacity:.7}
+  button{font-family:inherit;cursor:pointer}
+  ::selection{background:#D1D5DB;color:#0A0A0B}
+  *,*::before,*::after{box-sizing:border-box}
+
+  @keyframes dsGlow{0%,100%{opacity:.45}50%{opacity:1}}
+  .glow-dot{animation:dsGlow 3.4s ease-in-out infinite}
+  @keyframes dsHeroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  .hero-bg{animation:dsHeroZoom 22s ease-in-out infinite alternate}
+
+  .nav-trigger{background:none;border:none;padding:0;margin:0;font:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#F2F2F2;white-space:nowrap;}
+  .mm-item{text-transform:uppercase;font-weight:300;letter-spacing:.045em;font-size:13px;color:#E7E7E7;}
+  .mm-item-long{text-transform:uppercase;font-weight:300;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#E7E7E7;}
+  .mm-item-long .mm-sub{display:block;font-weight:300;letter-spacing:.01em;opacity:.6;margin-top:1px;}
+  .mm-bold{text-transform:uppercase;font-weight:500;letter-spacing:.05em;font-size:13px;color:#FAFAFA;}
+  .mm-current{color:#FAFAFA;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(250,250,250,.45);}
+
+  .ft-item{text-transform:uppercase;font-weight:600;letter-spacing:.045em;font-size:13px;color:#5B5B5B;}
+  .ft-item:hover{color:#141414;}
+  .ft-item-long{text-transform:uppercase;font-weight:600;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#5B5B5B;}
+  .ft-item-long:hover{color:#141414;}
+  .ft-item-long .ft-sub{display:block;font-weight:500;letter-spacing:.01em;opacity:.7;margin-top:1px;}
+  .ft-bold{text-transform:uppercase;font-weight:700;letter-spacing:.05em;font-size:13px;color:#141414;}
+  .ft-bold:hover{opacity:.65;}
+  .ft-heading{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#C2C2C2;}
+
+  .section-cta{background:#141414;color:#FAFAFA;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:15px 26px;border-radius:6px;white-space:nowrap;transition:opacity .25s ease;}
+
+  /* ===== общие элементы страницы раздела ===== */
+  .wrap{max-width:1440px;margin:0 auto;padding-left:64px;padding-right:64px}
+  .kicker{font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+  .h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;line-height:1.15;color:#141414}
+  .lead{margin:0;font-size:17px;line-height:1.65;color:#767676}
+  .dark .h2{color:#FAFAFA}
+  .dark .lead{color:#9A9A9A}
+  .dark .kicker{color:#8A8A8A}
+
+  /* появление блоков при прокрутке */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== хлебные крошки ===== */
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;padding:0;list-style:none;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9A9A9A}
+  .crumbs a{color:#C8C8C8;transition:color .2s ease}
+  .crumbs a:hover{color:#FAFAFA;opacity:1}
+  .crumbs .sep{color:#5B5B5B}
+  .crumbs [aria-current]{color:#FAFAFA}
+
+  /* ===== кнопки ===== */
+  .btn-light{background:#FAFAFA;color:#0A0A0B;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+  .btn-ghost{border:1px solid rgba(250,250,250,.45);color:#FAFAFA;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+
+  /* ===== «перелистывающиеся» цифры ===== */
+  .odo{display:inline-flex;font-variant-numeric:tabular-nums;line-height:1}
+  .odo-col{display:inline-block;height:1.08em;overflow:hidden}
+  .odo-strip{display:block;transition:transform 1.9s cubic-bezier(.16,.8,.14,1)}
+  .odo-strip span{display:block;height:1.08em;line-height:1.08em}
+
+  .fact{padding-top:26px;border-top:1px solid #E6E6E6;position:relative}
+  .fact::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .fact.in::before{width:100%}
+  .fact-num{font-family:'Montserrat',sans-serif;font-weight:600;font-size:76px;letter-spacing:-.02em;color:#141414;display:flex;align-items:flex-start;gap:6px}
+  .fact-unit{font-size:22px;font-weight:600;letter-spacing:0;margin-top:8px;color:#141414}
+  .fact-text{margin-top:14px;font-size:15px;line-height:1.55;color:#767676;max-width:280px}
+
+  .trust{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;letter-spacing:.02em;color:#141414}
+  .trust i{width:6px;height:6px;border-radius:999px;background:#141414;flex:0 0 6px}
+
+  /* текст, который «проявляется» по словам при прокрутке */
+  .scrub{margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:38px;line-height:1.32;letter-spacing:-.005em;color:#141414}
+  .scrub .w{color:#D4D4D4;transition:color .35s ease}
+  .scrub .w.on{color:#141414}
+
+  /* ===== «почему особый подход» — карточки с живыми графиками ===== */
+  .why-card{border:1px solid rgba(255,255,255,.10);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#111113 0%,#0A0A0B 100%);display:flex;flex-direction:column}
+  .why-viz{position:relative;height:210px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .why-viz canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .viz-label{position:absolute;font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E}
+  .why-body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px}
+  .why-idx{font-family:'PT Mono',monospace;font-size:12px;color:#6E6E6E;letter-spacing:.08em}
+  .why-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.25;color:#FAFAFA;text-transform:uppercase;letter-spacing:.01em}
+  .why-text{font-size:15.5px;line-height:1.6;color:#9A9A9A}
+
+  /* ===== архитектура системы ===== */
+  .tabs{display:inline-flex;gap:6px;padding:5px;border:1px solid #E6E6E6;border-radius:999px;background:#FFFFFF}
+  .tab{border:none;background:none;border-radius:999px;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.03em;color:#767676;transition:background .3s ease,color .3s ease}
+  .tab:hover{color:#141414}
+  .tab[aria-selected="true"]{background:#141414;color:#FAFAFA}
+  .arch-list{display:none;flex-direction:column}
+  .arch-list.active{display:flex}
+  .arch-item{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 0;border-top:1px solid #EDEDED;cursor:default;transition:opacity .3s ease}
+  .arch-item:last-child{border-bottom:1px solid #EDEDED}
+  .arch-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;padding-top:4px}
+  .arch-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.3;color:#141414}
+  .arch-text{grid-column:2;font-size:15px;line-height:1.6;color:#767676}
+  .arch-link{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#141414}
+  .arch-list:hover .arch-item{opacity:.45}
+  .arch-list .arch-item:hover{opacity:1}
+  .arch-panel{position:relative;background:#0A0A0B;border-radius:16px;overflow:hidden;padding:26px 26px 18px}
+  .arch-panel svg{display:block;width:100%;height:auto}
+  .arch-mode{transition:opacity .6s ease}
+  .arch-panel[data-mode="a"] .mode-b, .arch-panel[data-mode="b"] .mode-a{opacity:0;pointer-events:none}
+  .part{transition:opacity .35s ease}
+  .arch-panel[data-hl] .part{opacity:.3}
+  .arch-panel[data-hl="array"] .p-array, .arch-panel[data-hl="monitor"] .p-monitor,
+  .arch-panel[data-hl="sub"] .p-sub, .arch-panel[data-hl="column"] .p-column{opacity:1}
+  .svg-label{font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;fill:#6E6E6E;text-transform:uppercase}
+  .svg-label-hi{fill:#C8C8C8}
+
+  /* ===== результат: крупные формулировки ===== */
+  .result-row{display:grid;grid-template-columns:90px 1fr 380px;gap:24px;align-items:baseline;padding:38px 0;position:relative;border-top:1px solid #EDEDED}
+  .result-row::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1) .1s}
+  .result-row.in::before{width:100%}
+  .result-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;letter-spacing:.08em}
+  .mask{display:block;overflow:hidden;padding-bottom:.08em}
+  .mask > span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.75,.15,1)}
+  .in .mask > span{transform:none}
+  .result-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:46px;line-height:1.12;letter-spacing:-.01em;color:#141414}
+  .result-text{font-size:16px;line-height:1.6;color:#767676;opacity:0;transition:opacity .9s ease .5s}
+  .in .result-text{opacity:1}
+
+  /* ===== кейс ===== */
+  .case-media{position:relative;border-radius:16px;overflow:hidden;background:#111;aspect-ratio:4/3}
+  .case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02)}
+  .case-media img.on{opacity:1;animation:dsHeroZoom 9s ease-out forwards}
+  .case-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,0) 55%,rgba(10,10,11,.6) 100%);pointer-events:none}
+  .case-ctrl{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;display:flex;align-items:center;gap:16px;font-family:'PT Mono',monospace;font-size:11px;color:#C4C4C4;letter-spacing:.06em}
+  .case-bar{flex:1;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+  .case-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#FAFAFA}
+  .case-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.10)}
+  .case-row:last-child{border-bottom:1px solid rgba(255,255,255,.10)}
+  .case-key{font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;padding-top:3px}
+  .case-val{font-size:16.5px;line-height:1.6;color:#E2E2E2}
+
+  /* ===== соседние подразделы ===== */
+  .sib{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;border-top:1px solid #E6E6E6;color:#767676;transition:color .25s ease}
+  .sib:last-child{border-bottom:1px solid #E6E6E6}
+  .sib:hover{color:#141414;opacity:1}
+  .sib-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:24px;line-height:1.25}
+  .sib-arrow{font-size:22px;transform:translateX(-8px);opacity:0;transition:transform .3s ease,opacity .3s ease;color:#141414}
+  .sib:hover .sib-arrow{transform:none;opacity:1}
+  .sib-meta{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:#ADADAD;text-transform:uppercase;margin-right:auto;margin-left:18px}
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-bg,.glow-dot,.case-media img.on{animation:none}
+    .reveal,.mask > span,.result-text,.odo-strip,.fact::before,.result-row::before{transition:none}
+  }
+  @media (max-width: 1100px){
+    .wrap{padding-left:24px;padding-right:24px}
+    .grid-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .grid-3{grid-template-columns:1fr !important}
+    .grid-2{grid-template-columns:1fr !important}
+    .result-row{grid-template-columns:1fr}
+    .result-title{font-size:34px}
+    .scrub{font-size:28px}
+    .h1{font-size:52px !important}
+  }
+
+  /* ===== плитки направлений (bento) ===== */
+  .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:420px;gap:18px}
+  .vtile{position:relative;display:block;overflow:hidden;border-radius:16px;background:#111;scroll-margin-top:110px;outline:2px solid transparent;outline-offset:5px;transition:outline-color .4s ease, opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover{opacity:1}
+  .vtile-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.03) brightness(.94);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover .vtile-photo{transform:scale(1.05)}
+  .vtile-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.38) 0%,rgba(10,10,11,.06) 28%,rgba(10,10,11,.22) 55%,rgba(10,10,11,.86) 100%);transition:opacity .4s ease}
+  .vtile::after{content:"";position:absolute;inset:0;background:rgba(10,10,11,.35);opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .vtile:hover::after{opacity:1}
+  .vtile-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px 24px}
+  .vtile-top{display:flex;justify-content:flex-end;gap:16px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#C4C4C4}
+  .vtile-main{display:flex;flex-direction:column;gap:10px;max-width:560px;padding-right:56px}
+  .vtile-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.25;letter-spacing:.01em;text-transform:uppercase;color:#FAFAFA}
+  .vtile-lead{font-size:15px;line-height:1.55;color:#E2E2E2;max-height:0;opacity:0;overflow:hidden;transition:max-height .55s ease, opacity .45s ease}
+  .vtile:hover .vtile-lead,.vtile:focus-visible .vtile-lead{max-height:96px;opacity:1}
+  .vtile-cap{font-family:'PT Mono',monospace;font-size:11px;line-height:1.45;color:#A8A8A8}
+  .vtile-arrow{position:absolute;right:22px;bottom:22px;z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid rgba(250,250,250,.4);color:#FAFAFA;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;transform:translateX(-8px);transition:opacity .35s ease, transform .35s ease, background .35s ease}
+  .vtile:hover .vtile-arrow{opacity:1;transform:none}
+  .vtile:target,.vtile.flash{outline-color:#141414}
+  /* страница подраздела ещё не готова — без стрелки и без курсора-«руки» */
+  .vtile[data-soon]{cursor:default}
+  .vtile[data-soon] .vtile-arrow{display:none}
+
+  /* ===== ключевые пункты (без цифр) ===== */
+  .tp{position:relative;padding-top:24px;border-top:1px solid #E6E6E6;display:flex;flex-direction:column;gap:10px}
+  .tp::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .tp.in::before{width:100%}
+  .tp-main::before{height:2px;top:-1px}
+  .tp-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .tp-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.35;color:#141414}
+  .tp-text{font-size:15px;line-height:1.6;color:#8A8A8A}
+
+  /* ===== этапы работы ===== */
+  .steps-track{position:relative;height:1px;background:#E6E6E6;margin-bottom:34px}
+  .steps-fill{position:absolute;left:0;top:0;height:1px;width:0;background:#141414}
+  .steps-dot{position:absolute;top:-4px;left:0;width:9px;height:9px;margin-left:-4px;border-radius:999px;background:#141414;box-shadow:0 0 0 5px rgba(20,20,20,.08)}
+  .step{opacity:.38;transition:opacity .6s ease}
+  .step.on{opacity:1}
+  .step-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .step-title{margin:12px 0 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.3;color:#141414}
+  .step-text{font-size:15px;line-height:1.6;color:#767676}
+
+  /* ===== отзывы ===== */
+  .quotes{display:grid}
+  .quote{grid-area:1/1;margin:0;opacity:0;transform:translateY(10px);transition:opacity .9s ease, transform .9s ease;pointer-events:none}
+  .quote.on{opacity:1;transform:none;pointer-events:auto}
+  .quote blockquote{margin:0;max-width:1120px;font-family:'Montserrat',sans-serif;font-weight:500;font-size:34px;line-height:1.38;color:#FAFAFA}
+  .quote figcaption{display:flex;align-items:center;gap:16px;margin-top:38px}
+  .quote figcaption img,.q-initials{width:52px;height:52px;border-radius:999px;object-fit:cover;filter:grayscale(100%);flex:0 0 52px}
+  .q-initials{display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.28);font-family:'PT Mono',monospace;font-size:13px;color:#C8C8C8}
+  .quote b{display:block;font-weight:600;font-size:15px;color:#FAFAFA}
+  .quote i{display:block;font-style:normal;font-size:13px;color:#8A8A8A;margin-top:2px}
+  .q-nav{display:flex;align-items:center;gap:10px;margin-top:48px}
+  .q-dot{width:32px;height:2px;border:none;padding:0;background:rgba(255,255,255,.2);transition:background .3s ease}
+  .q-dot.on{background:#FAFAFA}
+  .q-all{margin-left:auto;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#FAFAFA}
+
+  @media (max-width: 1100px){
+    .bento{grid-template-columns:1fr;grid-auto-rows:360px}
+    .bento .vtile{grid-column:auto !important}
+    .quote blockquote{font-size:24px}
+  }
+  @media (hover: none){
+    .vtile-lead{max-height:none;opacity:1}
+    .vtile-arrow{opacity:1;transform:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+  }
+
+  /* отзывы: главная фраза крупно, две другие — мельче, отдельными строками */
+  .quote .q-more{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:900px}
+  .quote .q-more li{font-size:17px;line-height:1.55;color:#9A9A9A;padding-left:18px;position:relative}
+  .quote .q-more li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:#5B5B5B}
+
+  /* заглушка вместо фото (в исходном документе фото объекта нет) */
+  .vtile-ph{position:absolute;inset:0;background:
+      radial-gradient(90% 80% at 85% 10%, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 60%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      linear-gradient(160deg,#1A1A1C 0%,#0E0E10 100%)}
+  .vtile-noimg .vtile-cap{color:#6E6E6E}
+
+  /* --- «Технологии» в колонке «Компания»: раскрывающийся список (меню и подвал) --- */
+  .tech-dd{display:flex;flex-direction:column;align-items:center;}
+  .tech-dd > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  .tech-dd > summary::-webkit-details-marker{display:none;}
+  .tech-dd .tech-chev{display:inline-block;font-size:9px;line-height:1;transition:transform .2s ease;}
+  .tech-dd[open] .tech-chev{transform:rotate(180deg);}
+  .tech-dd .tech-list{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:15px;}
+  .tech-dd .tech-list .mm-item-long,.tech-dd .tech-list .ft-item-long,.tech-dd .tech-list .mm-item,.tech-dd .tech-list .ft-item{font-size:11.5px;}
+  /* «Технологии»: слово — ссылка на раздел, стрелка — отдельная кнопка, раскрывает список (как «split button») */
+  .tech-dd > summary{gap:0;}
+  .tech-dd .tech-go{color:inherit;padding:0 12px 0 0;box-shadow:inset -1px 0 0 rgba(140,140,140,.35);text-decoration:none;}
+  .tech-dd .tech-go:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(140,140,140,.7);}
+  .tech-dd .tech-chev{width:26px;height:26px;margin:-7px 0 -7px 7px;border-radius:50%;display:inline-flex !important;align-items:center;justify-content:center;font-size:9px;transition:transform .2s ease,background .2s ease;}
+  .tech-dd > summary:hover .tech-chev:hover,.tech-dd .tech-chev:hover{background:rgba(140,140,140,.22);}
+  .tech-dd > summary:focus-visible{outline:none;} .tech-dd > summary:focus-visible .tech-chev{outline:2px solid #7FB2FF;outline-offset:1px;}
+  .nav-cabinet{white-space:normal !important;text-align:right;line-height:1.2;font-size:11.5px !important;}
+  /* --- кнопка закрытия выпадающего меню --- */
+  .mm-close{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:999px;border:none;background:none;color:#F2F2F2;font-family:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s ease,color .15s ease;}
+  .mm-close:hover,.mm-close:focus-visible{color:#FFFFFF;opacity:.7;}
+  /* ===== ОБЩАЯ СЕТКА ШАПКИ И ВЫПАДАЮЩЕГО МЕНЮ =====
+     Шапка и меню используют один и тот же класс .ds-row, поэтому их колонки всегда совпадают.
+     Ширины колонок задаются ТОЛЬКО здесь: --ds-c1 … --ds-c7; --ds-spread — насколько «Продукция» и «Клиентам» отодвинуты от центра. Крайние колонки прижаты к краям
+     страницы (отступ --ds-pad), пять средних — по центру. Менять пункты меню можно свободно:
+     текст переносится внутри своей колонки и не сдвигает соседние. */
+  :root{--ds-pad:40px;--ds-gap:20px;--ds-spread:40px;--ds-c1:90px;--ds-c2:175px;--ds-c3:195px;--ds-c4:200px;--ds-c5:195px;--ds-c6:175px;--ds-c7:90px;}
+  .ds-row{display:grid !important;box-sizing:border-box;width:100%;max-width:none;margin:0;padding-left:var(--ds-pad);padding-right:var(--ds-pad);column-gap:var(--ds-gap);
+    grid-template-columns:var(--ds-c1) minmax(0,1fr) minmax(var(--ds-c2),calc(var(--ds-c2) + var(--ds-spread))) var(--ds-c3) var(--ds-c4) var(--ds-c5) minmax(var(--ds-c6),calc(var(--ds-c6) + var(--ds-spread))) minmax(0,1fr) var(--ds-c7);}
+  .ds-row > *{min-width:0;}
+  .ds-row > :nth-child(1){grid-column:1;} .ds-row > :nth-child(2){grid-column:3;} .ds-row > :nth-child(3){grid-column:4;}
+  .ds-row > :nth-child(4){grid-column:5;} .ds-row > :nth-child(5){grid-column:6;} .ds-row > :nth-child(6){grid-column:7;}
+  .ds-row > :nth-child(7){grid-column:9;}
+  /* полоса прокрутки меню скрыта: иначе ряд меню становится уже шапки и колонки съезжают */
+  .mm-overlay{scrollbar-width:none;} .mm-overlay::-webkit-scrollbar{display:none;}
+
+  /* ===== страница-раздел: карточки подразделов ===== */
+  .hub-hero{position:relative;background:#0A0A0B;overflow:hidden}
+  .hub-hero::after{content:"";position:absolute;right:-12%;top:-30%;width:62%;height:160%;background:radial-gradient(closest-side,rgba(255,255,255,.07),rgba(255,255,255,0));pointer-events:none}
+  .hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .hub-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:190px;padding:26px 26px 24px;border:1px solid #E6E6E6;border-radius:16px;background:#FFFFFF;transition:border-color .3s ease, box-shadow .3s ease, transform .3s ease}
+  .hub-card:hover{opacity:1;border-color:#141414;box-shadow:0 18px 40px -22px rgba(0,0,0,.35);transform:translateY(-2px)}
+  .hub-card-idx{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+  .hub-card-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;line-height:1.3;color:#141414;text-transform:uppercase;letter-spacing:.01em}
+  .hub-card-text{margin-top:8px;font-size:15px;line-height:1.55;color:#767676}
+  .hub-card-arrow{align-self:flex-end;width:40px;height:40px;border-radius:999px;border:1px solid #D6D6D6;display:flex;align-items:center;justify-content:center;font-size:15px;color:#141414;transition:background .3s ease,color .3s ease,border-color .3s ease}
+  .hub-card:hover .hub-card-arrow{background:#141414;color:#FAFAFA;border-color:#141414}
+  .hub-card[data-soon]{cursor:default}
+  .hub-card[data-soon]:hover{transform:none;box-shadow:none;border-color:#E6E6E6}
+  .hub-card[data-soon] .hub-card-arrow{display:none}
+  .hub-soon{font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD;border:1px solid #E6E6E6;border-radius:99px;padding:4px 10px;align-self:flex-start}
+  @media (max-width:1100px){ .hub-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:700px){ .hub-grid{grid-template-columns:1fr} }
+</style>
+<link rel="stylesheet" href="./footer.css">
+<script src="./navbot.js" defer></script>
+<script src="./footbot.js" defer></script>
+
+<style>
+/* ===== страница «Производство» (макет) ===== */
+.pr-hero{position:relative;min-height:var(--vhpx,100vh);display:flex;align-items:flex-end;overflow:hidden;background:#0A0A0B;color:#FAFAFA;}
+.pr-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62);}
+.pr-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,11,.85) 0%,rgba(10,10,11,.35) 55%,rgba(10,10,11,.1) 100%),linear-gradient(180deg,rgba(10,10,11,.5) 0%,transparent 30%,transparent 60%,#0A0A0B 100%);}
+.pr-hero .wrap{position:relative;z-index:2;width:100%;padding-top:clamp(96px,calc(var(--vhpx,900px) * .16),150px);padding-bottom:clamp(32px,calc(var(--vhpx,900px) * .08),84px);}
+.pr-hero .pr-kick{margin-top:clamp(14px,calc(var(--vhpx,900px) * .04),40px) !important;}
+.pr-kick{font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#BDBDBD;}
+.pr-h1{margin:clamp(10px,calc(var(--vhpx,900px) * .02),18px) 0 clamp(14px,calc(var(--vhpx,900px) * .025),22px);font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(44px,calc(var(--vhpx,900px) * .07),68px);line-height:1.04;max-width:900px;}
+.pr-lead{max-width:640px;font-size:21px;line-height:1.55;color:#D6D6D6;margin:0;}
+.pr-stats{display:flex;flex-wrap:wrap;gap:16px 56px;margin-top:clamp(22px,calc(var(--vhpx,900px) * .045),44px);}
+.pr-stat b{display:block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(32px,calc(var(--vhpx,900px) * .05),44px);line-height:1;}
+.pr-stat span{display:block;margin-top:8px;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.06em;color:#BDBDBD;max-width:210px;line-height:1.45;}
+.pr-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px;}
+.pr-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:8px;border:0;font-family:inherit;cursor:pointer;font-size:14px;font-weight:600;letter-spacing:.03em;background:#FAFAFA;color:#111;}
+.pr-btn.gh{background:none;color:#FAFAFA;border:1px solid rgba(250,250,250,.45);}
+.pr-btn:hover{opacity:.88;}
+.pr-sec{padding:120px 0;}
+.pr-sec.lt{background:#FAFAFA;color:#141414;}
+.pr-sec.dk{background:#0A0A0B;color:#FAFAFA;}
+.pr-h2{margin:14px 0 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:44px;line-height:1.15;max-width:900px;}
+.pr-p{margin:0;max-width:760px;font-size:18px;line-height:1.65;color:#6A6A6A;}
+.dk .pr-p{color:#A8A8A8;}
+/* анатомия */
+.an{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:start;margin-top:56px;}
+.an-pic{position:relative;border-radius:18px;background:#FFFFFF;border:1px solid #E6E6E6;aspect-ratio:16/11;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.an-pic img{width:92%;height:auto;}
+.an-note{position:absolute;left:18px;bottom:16px;right:18px;font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:#9A9A9A;}
+.an-list{list-style:none;margin:0;padding:0;border-top:1px solid #E2E2E2;}
+.pa{display:grid;grid-template-columns:40px minmax(0,170px) 1fr;gap:14px;align-items:baseline;padding:15px 4px;border-bottom:1px solid #E2E2E2;transition:background .25s;}
+.pa:hover{background:#F1F1F1;}
+.pa-n{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;}
+.pa-t{font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;}
+.pa-ws{display:flex;flex-wrap:wrap;gap:6px;}
+.pa-ws a{font-size:12.5px;line-height:1;padding:7px 10px;border-radius:99px;border:1px solid #D6D6D6;color:#4A4A4A;white-space:nowrap;}
+.pa-ws a:hover{border-color:#141414;color:#141414;}
+/* 3D-взрыв-схема (anatomy3d.js) */
+.an-pic.a3{display:block;background:#FFFFFF;}
+.an-pic .a3-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .5s;}
+.an-pic.a3-ready .a3-poster{opacity:0;pointer-events:none;}
+.a3-cv{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:none;}
+.a3-cv:active{cursor:grabbing;}
+.a3-load{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:10px;padding:13px 20px;border-radius:99px;border:none;background:#141414;color:#FAFAFA;font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;white-space:nowrap;}
+.a3-load span{font:400 11.5px 'PT Mono',monospace;letter-spacing:.04em;color:#A8A8A8;}
+.a3-ui{position:absolute;left:16px;right:16px;bottom:14px;z-index:3;display:flex;align-items:center;gap:14px;}
+.a3-ui[hidden],.a3-wait[hidden],.a3-tip[hidden],.a3-load[hidden]{display:none;}
+.a3-play{flex:0 0 auto;padding:9px 16px;border-radius:99px;border:1px solid #D6D6D6;background:rgba(255,255,255,.9);font:600 13px 'IBM Plex Sans',sans-serif;color:#141414;cursor:pointer;}
+.a3-play:hover{border-color:#141414;}
+.a3-range{flex:1 1 auto;min-width:60px;accent-color:#141414;}
+.a3-hint{flex:0 0 auto;font:11.5px 'PT Mono',monospace;letter-spacing:.04em;color:#9A9A9A;}
+.a3-wait{position:absolute;left:18px;bottom:18px;z-index:3;display:flex;align-items:center;gap:10px;font:11.5px 'PT Mono',monospace;letter-spacing:.04em;color:#8A8A8A;}
+.a3-wait i{width:14px;height:14px;border-radius:50%;border:2px solid #D6D6D6;border-top-color:#141414;animation:a3s 1s linear infinite;}
+@keyframes a3s{to{transform:rotate(360deg)}}
+.a3-tip{position:absolute;z-index:4;pointer-events:none;max-width:240px;padding:8px 11px;border-radius:8px;background:#141414;color:#FAFAFA;font:13px/1.35 'IBM Plex Sans',sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.18);}
+.a3-tip b{display:block;font-weight:600;}
+.a3-tip span{display:block;color:#B8B8B8;font-size:12px;}
+.pa.a3-on{background:#EDEDED;}
+@media (max-width:759px){.a3-hint{display:none}.a3-ui{left:10px;right:10px;bottom:10px;gap:10px}}
+.an-sum{margin-top:26px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:20px;line-height:1.4;}
+.an-sum small{display:block;margin-top:6px;font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:14px;color:#8A8A8A;}
+/* навигация по цехам — подстраивается под ширину: full → short → num → cmp */
+.pn-wrap{position:sticky;top:74px;z-index:20;background:rgba(10,10,11,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);}
+.pn-wrap .wrap{position:relative;max-width:none;padding-left:clamp(16px,3vw,48px);padding-right:clamp(16px,3vw,48px);}
+.pn-row{display:flex;gap:6px;padding:12px 0;overflow:hidden;}
+.pn{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.14);font-size:13px;color:#CFCFCF;white-space:nowrap;transition:background .25s,color .25s,border-color .25s,flex-grow .3s;}
+.pn b{font-family:'PT Mono',monospace;font-weight:400;font-size:11.5px;color:#8A8A8A;}
+.pn:hover,.pn.on{background:#FAFAFA;color:#111;border-color:#FAFAFA;}
+.pn.on b,.pn:hover b{color:#6A6A6A;}
+.pn-p{border-style:dashed;}
+.pn-s{display:none;}
+.pn-wrap.m-full .pn-row .pn,.pn-wrap.m-short .pn-row .pn{flex:1 1 auto;}
+.pn-wrap.m-short .pn-row .pn-f{display:none;} .pn-wrap.m-short .pn-row .pn-s{display:inline;}
+.pn-wrap.m-num .pn-row .pn{flex:1 1 0;min-width:40px;padding:9px 6px;}
+/* 20.10.2026: на обычных экранах (ноутбук, 1280–1900 px) — номер и короткое название цеха в две строки, чтобы подписи были видны всегда */
+.pn-wrap.m-stack .pn-row .pn{flex:1 1 0;min-width:0;flex-direction:column;gap:3px;padding:7px 3px 8px;border-radius:14px;line-height:1.15;}
+.pn-wrap.m-stack .pn-row .pn-f{display:none;}
+.pn-wrap.m-stack .pn-row .pn-s{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:12.5px;}
+.pn-wrap.m-stack .pn-row .pn b{font-size:10.5px;}
+.pn-wrap.m-num .pn-row .pn-f{display:none;}
+.pn-wrap.m-num .pn-row .pn.on{flex:0 0 auto;padding:9px 14px;}
+.pn-wrap.m-num .pn-row .pn.on .pn-s{display:inline;}
+/* компактный режим (телефон): ‹ 03 / 12 Намотка звуковых катушек ▾ › */
+.pn-cmp{display:none;align-items:center;gap:6px;padding:10px 0;}
+.pn-wrap.m-cmp .pn-row{display:none;} .pn-wrap.m-cmp .pn-cmp{display:flex;}
+.pn-ar{flex:0 0 40px;height:40px;border-radius:99px;border:1px solid rgba(255,255,255,.14);background:none;color:#CFCFCF;font-size:22px;line-height:1;cursor:pointer;}
+.pn-ar:disabled{opacity:.3;cursor:default;}
+.pn-cur{flex:1 1 auto;min-width:0;height:40px;display:flex;align-items:center;gap:10px;padding:0 14px;border-radius:99px;border:1px solid rgba(255,255,255,.14);background:none;color:#FAFAFA;font:500 14px 'IBM Plex Sans',sans-serif;text-align:left;cursor:pointer;}
+.pn-cn{font-family:'PT Mono',monospace;font-weight:400;font-size:12px;color:#8A8A8A;flex:0 0 auto;}
+.pn-ct{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pn-cur i{flex:0 0 8px;height:8px;border-right:1.5px solid #8A8A8A;border-bottom:1.5px solid #8A8A8A;transform:translateY(-2px) rotate(45deg);transition:transform .25s;}
+.pn-wrap.open .pn-cur i{transform:translateY(2px) rotate(-135deg);}
+.pn-menu{display:none;}
+.pn-wrap.m-cmp.open .pn-menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;padding:4px 0 14px;max-height:calc(var(--vhpx,100vh) - 160px);overflow:auto;}
+.pn-menu .pn{justify-content:flex-start;white-space:normal;text-align:left;line-height:1.25;border-radius:12px;padding:10px 12px;}
+.pn-menu .pn-s{display:none;}
+.pn-prog{height:2px;background:rgba(255,255,255,.06);}
+.pn-prog i{display:block;height:100%;width:0;background:#FAFAFA;transition:width .15s linear;}
+/* цех */
+.pw{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;padding:72px 0;border-top:1px solid rgba(255,255,255,.08);scroll-margin-top:150px;}
+.pw:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr);}
+.pw:nth-child(even) .pw-txt{order:2;}
+.pw-no{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A8A;}
+.pw-no span{letter-spacing:.04em;text-transform:none;color:#6E6E6E;}
+.pw h3{margin:14px 0 16px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:34px;line-height:1.15;}
+.pw p{margin:0;font-size:17px;line-height:1.65;color:#BDBDBD;max-width:520px;}
+.pw-makes{margin-top:22px;font-size:15px;color:#EDEDED;}
+.pw-makes b{display:block;margin-bottom:6px;font-family:'PT Mono',monospace;font-weight:400;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#7A7A7A;}
+.pw-eq{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.pw-eq li{font-size:13px;line-height:1.3;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.06);color:#D2D2D2;}
+.pw-partner h3::after{content:"партнёр";display:inline-block;margin-left:14px;vertical-align:middle;font-family:'PT Mono',monospace;font-weight:400;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border:1px solid rgba(255,255,255,.3);border-radius:99px;color:#BDBDBD;}
+.pw-media{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:150px;gap:10px;align-content:start;}
+.pw-m{position:relative;padding:0;border:0;border-radius:12px;overflow:hidden;background:#151517;cursor:zoom-in;}
+.pw-m img,.pw-m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.pw-m:hover img,.pw-m:hover video{transform:scale(1.04);}
+.pw-main{grid-column:1 / -1;grid-row:span 2;}
+.pw-badge{position:absolute;left:12px;bottom:12px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;color:#FAFAFA;background:rgba(10,10,11,.6);padding:5px 9px;border-radius:99px;}
+.pw-side{min-width:0;}
+.pw-all{margin-top:12px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:none;color:#FAFAFA;font:500 14px 'IBM Plex Sans',sans-serif;cursor:pointer;transition:background .25s,border-color .25s;}
+.pw-all span{font-family:'PT Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.06em;color:#8A8A8A;}
+.pw-all:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);}
+.pw-empty{display:block;}
+.pw-ph{height:100%;min-height:320px;border-radius:12px;border:1px dashed rgba(255,255,255,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.06em;color:#6E6E6E;background:repeating-linear-gradient(135deg,rgba(255,255,255,.02) 0 12px,transparent 12px 24px);}
+.pw-ph b{font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:15px;letter-spacing:0;color:#9A9A9A;}
+/* доказательства */
+.pf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:48px;}
+.pf a{display:flex;flex-direction:column;gap:12px;padding:26px 24px;border-radius:14px;background:#FFFFFF;border:1px solid #E6E6E6;transition:border-color .25s,box-shadow .25s;}
+.pf a:hover{border-color:#CFCFCF;box-shadow:0 18px 40px -26px rgba(0,0,0,.3);}
+.pf b{font-family:'Montserrat',sans-serif;font-size:18px;line-height:1.3;}
+.pf span{font-size:14.5px;line-height:1.55;color:#6A6A6A;}
+.pf i{margin-top:auto;font-style:normal;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#141414;}
+/* форма фактори-тура */
+.tour{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start;}
+.tour-points{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.tour-points li{position:relative;padding-left:22px;font-size:16px;line-height:1.5;color:#BDBDBD;}
+.tour-points li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:#8A8A8A;}
+.tf{display:grid;grid-template-columns:1fr 1fr;gap:18px 18px;padding:36px;border-radius:18px;background:#151517;border:1px solid rgba(255,255,255,.08);}
+.tf label,.tf fieldset{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;border:0;min-width:0;}
+.tf .full{grid-column:1 / -1;}
+.tf .flb{font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#9A9A9A;}
+.tf .flb em{font-style:normal;color:#E0E0E0;}
+.tf input[type=text],.tf input[type=tel],.tf input[type=email],.tf input[type=number],.tf textarea{width:100%;box-sizing:border-box;background:#0E0E10;border:1px solid rgba(255,255,255,.14);border-radius:8px;color:#FAFAFA;font:inherit;font-size:15px;padding:13px 14px;outline:none;transition:border-color .2s;}
+.tf input:focus,.tf textarea:focus{border-color:rgba(255,255,255,.55);}
+.tf textarea{min-height:96px;resize:vertical;}
+.seg{display:flex;flex-wrap:wrap;gap:8px;}
+.seg input{position:absolute;opacity:0;pointer-events:none;}
+.seg span{display:inline-block;padding:10px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.18);font-size:13.5px;color:#D0D0D0;cursor:pointer;transition:all .2s;user-select:none;}
+.seg input:checked + span{background:#FAFAFA;color:#111;border-color:#FAFAFA;}
+.seg input:focus-visible + span{outline:2px solid #FAFAFA;outline-offset:2px;}
+.tf .cons{flex-direction:row;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:#8A8A8A;}
+.tf .cons input{margin-top:3px;accent-color:#FAFAFA;}
+.tf .cons a{text-decoration:underline;}
+.tf-sub{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:18px;}
+.tf-sub button{border:0;cursor:pointer;padding:17px 30px;border-radius:8px;background:#FAFAFA;color:#111;font:inherit;font-size:14px;font-weight:600;letter-spacing:.03em;}
+.tf-sub button:disabled{opacity:.5;cursor:default;}
+.tf-sub span{font-size:13px;color:#8A8A8A;}
+.tf-err{grid-column:1 / -1;display:none;font-size:13.5px;color:#FF9A8A;}
+.tf.bad .tf-err{display:block;}
+.tf .inv{border-color:#FF9A8A !important;}
+.tf-ok{display:none;padding:44px 36px;border-radius:18px;background:#151517;border:1px solid rgba(255,255,255,.08);}
+.tf-ok h3{margin:0 0 10px;font-family:'Montserrat',sans-serif;font-size:26px;}
+.tf-ok p{margin:0;color:#BDBDBD;font-size:16px;line-height:1.6;}
+.sent .tf{display:none;} .sent .tf-ok{display:block;}
+/* лайтбокс */
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(5,5,6,.95);display:none;flex-direction:column;align-items:center;justify-content:center;padding:64px 80px 70px;touch-action:pan-y;}
+.lb.on{display:flex;}
+#lbBody{flex:1 1 auto;width:100%;min-height:0;display:flex;align-items:center;justify-content:center;}
+.lb img,.lb video{max-width:100%;max-height:100%;border-radius:10px;background:#000;}
+.lb-x,.lb-ar{position:absolute;width:46px;height:46px;border-radius:99px;border:1px solid rgba(255,255,255,.35);background:rgba(10,10,11,.5);color:#fff;font-size:20px;line-height:1;cursor:pointer;}
+.lb-x{top:14px;right:18px;}
+.lb-ar{top:50%;margin-top:-23px;font-size:26px;} .lb-ar[data-d="-1"]{left:18px;} .lb-ar[data-d="1"]{right:18px;}
+.lb-ar:disabled{opacity:.25;cursor:default;}
+.lb-cap{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#9A9A9A;}
+.lb-cap b{font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;letter-spacing:0;color:#FAFAFA;margin-right:12px;}
+.lb.one .lb-ar{display:none;}
+@media (max-width:699px){.lb{padding:60px 10px 64px;} .lb-ar{top:auto;bottom:10px;margin-top:0;} .lb-cap{bottom:24px;padding:0 64px;}}
+/* фильмы */
+.fm{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;margin-top:40px;}
+.fm-c{position:relative;display:block;padding:0;border:0;border-radius:14px;overflow:hidden;background:#151517;cursor:pointer;aspect-ratio:16/9;text-align:left;color:#FAFAFA;}
+.fm-c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+.fm-c:hover img{transform:scale(1.04);}
+.fm-c::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.75));}
+.fm-pl{position:absolute;left:50%;top:50%;z-index:2;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:99px;background:rgba(250,250,250,.92);display:flex;align-items:center;justify-content:center;transition:transform .3s;}
+.fm-pl::before{content:"";margin-left:6px;border-left:22px solid #111;border-top:13px solid transparent;border-bottom:13px solid transparent;}
+.fm-c:hover .fm-pl{transform:scale(1.08);}
+.fm-t{position:absolute;left:24px;right:24px;bottom:20px;z-index:2;}
+.fm-t b{display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:22px;line-height:1.25;}
+.fm-t span{display:block;margin-top:6px;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#BDBDBD;}
+.fm-side{display:grid;gap:16px;align-content:start;}
+.fm-side .fm-t b{font-size:17px;}
+.fm-side .fm-pl{width:56px;height:56px;margin:-28px 0 0 -28px;} .fm-side .fm-pl::before{border-left-width:16px;border-top-width:10px;border-bottom-width:10px;margin-left:4px;}
+.fm-note{margin:0;font-size:15px;line-height:1.6;color:#8A8A8A;}
+@media (max-width:899px){.fm{grid-template-columns:1fr;}}
+@media (max-width:699px){.fm-t{left:16px;right:16px;bottom:14px;} .fm-t b,.fm-side .fm-t b{font-size:16px;} .fm-pl,.fm-side .fm-pl{width:52px;height:52px;margin:-26px 0 0 -26px;top:38%;} .fm-pl::before,.fm-side .fm-pl::before{border-left-width:15px;border-top-width:9px;border-bottom-width:9px;margin-left:4px;}}
+@media (max-width:1099px){
+  .pr-h1{font-size:48px;} .an,.tour{grid-template-columns:1fr;gap:40px;}
+  .pw,.pw:nth-child(even){grid-template-columns:1fr;gap:28px;padding:56px 0;} .pw:nth-child(even) .pw-txt{order:0;}
+  .pf{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:699px){
+  .pr-h1{font-size:36px;} .pr-lead{font-size:17px;} .pr-stat b{font-size:34px;} .pr-stats{gap:22px 32px;}
+  .pr-sec{padding:80px 0;} .pr-h2{font-size:30px;}
+  .pa{grid-template-columns:32px 1fr;} .pa-ws{grid-column:2;}
+  .pw h3{font-size:26px;} .pw-media{grid-auto-rows:110px;}
+  .pf{grid-template-columns:1fr;} .tf{grid-template-columns:1fr;padding:24px;}
+  .pn-wrap{top:64px;}
+}
+</style>
+<script id="vhpx">/* высота окна в px вёрстки: на широких экранах сайт увеличен через zoom у <html>, и 100vh там больше экрана */(function(){var R=document.documentElement;function vh(){R.style.setProperty("--vhpx",(innerHeight/(parseFloat(R.style.zoom)||1))+"px");}vh();addEventListener("resize",vh);})();</script>
+<style>
+/* Команда (23.10.2026): коллаж «рядами» без обрезки — ширина плитки по пропорциям фото, номер в углу; подпись имени добавляется в figcaption */
+.tm-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:36px}
+.tm-head .pr-p{margin:0;color:#BDBDBD;font-size:17px;line-height:1.6;max-width:620px}
+.tm-stat{display:flex;align-items:center;gap:14px;margin-top:22px}.tm-stat b{font-family:'Montserrat',sans-serif;font-weight:700;font-size:56px;line-height:1;color:#FAFAFA}.tm-stat span{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;line-height:1.5;color:#9A9A9E}
+.tm{display:flex;flex-wrap:wrap;gap:10px}
+.tm::after{content:"";flex-grow:999}
+.tm-i{position:relative;margin:0;flex-grow:var(--ar);flex-basis:calc(var(--ar) * 265px);height:265px;border-radius:12px;overflow:hidden;background:#151517}
+.tm-i img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tm-i:hover img{transform:scale(1.03)}
+.tm-i figcaption{position:absolute;left:10px;bottom:10px;display:flex;gap:8px;align-items:center;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:#FAFAFA}
+.tm-n{background:rgba(10,10,11,.66);padding:4px 8px;border-radius:99px}
+@media (min-width:1400px){.tm::after{display:none}}
+@media (max-width:1100px){.tm-head{grid-template-columns:1fr;gap:12px}}
+@media (max-width:760px){.tm{gap:6px}.tm-i{height:150px;flex-basis:calc(var(--ar) * 150px);border-radius:8px}}
+</style>
+
+<link rel="canonical" href="https://ds-proaudio.ru/en/production.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Manufacturing — DS PROAUDIO">
+<meta property="og:description" content="DS PROAUDIO manufacturing in St. Petersburg and the Leningrad Region: loudspeaker systems and drivers made in-house, from raw material to the finished system.">
+<meta property="og:url" content="https://ds-proaudio.ru/en/production.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Manufacturing — DS PROAUDIO", "url": "https://ds-proaudio.ru/en/production.html", "inLanguage": "en", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+
+</head>
+<body>
+
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;width:100%;background:rgba(10,10,11,.82);border-bottom:1px solid rgba(255,255,255,.10);">
+  <div class="ds-row" style="height:74px;align-items:center;">
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./gov.html" aria-label="" style="display:flex;align-items:center;">
+        <img src="./assets/gisp-mark-dark.svg" alt="" style="height:34px;width:34px;object-fit:contain;">
+      </a>
+        <a class="lang-sw" href="./production.html" hreflang="ru" lang="ru" title="Russian version">RU</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./products.html" class="nav-trigger">Products</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./application.html" class="nav-trigger">Applications</a>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <a href="./en/index.html" aria-label="DS PROAUDIO — home" style="display:block;position:relative;height:32px;width:145px;">
+        <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);">
+      </a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./support.html" class="nav-trigger">Support</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./clients.html" class="nav-trigger">Clients</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;align-items:center;">
+        <a href="#" class="cab-pill" aria-label="Partner portal" title="Partner portal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg><span>Partners</span></a>
+      </div>
+  </div>
+  <button type="button" class="hdr-menu-btn" data-menu-toggle aria-haspopup="true" aria-expanded="false">Menu</button>
+</header>
+
+
+<div class="mm-overlay" id="megamenu" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;flex-direction:column;">
+  <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
+      <a href="./docs.html?g=gll" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+      <a href="./docs.html?g=dwg" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+      <a href="./docs.html?g=man" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./products-line-arrays.html" class="mm-item">Line arrays</a>
+      <a href="./products-constant-curvature.html" class="mm-item">Constant-curvature arrays</a>
+      <a href="./products-columns.html" class="mm-item">Column loudspeakers</a>
+      <a href="./products-point-sources.html" class="mm-item">Point-source loudspeakers</a>
+      <a href="./products-monitors.html" class="mm-item">Stage monitors</a>
+      <a href="./products-compact-sets.html" class="mm-item">Compact systems</a>
+      <a href="./products-auditorium.html" class="mm-item">Lecture hall systems</a>
+      <a href="./products-registry.html" class="mm-item"></a>
+      <a href="./products-all-weather.html" class="mm-item">All-weather systems</a>
+      <a href="./products-amplifiers.html" class="mm-item">Amplifiers</a>
+      <a href="./products-accessories.html" class="mm-item">Accessories</a>
+      <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">PDF catalog</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./reviews.html" class="mm-bold">Testimonials</a>
+      <a href="./portfolio.html" class="mm-bold" style="margin-bottom:2px;">Portfolio</a>
+      <a href="./culture.html" class="mm-item">Arts & culture</a>
+      <a href="./education.html" class="mm-item">Education & research</a>
+      <a href="./sport.html" class="mm-item">Sports & live events</a>
+      <a href="./corporate.html" class="mm-item">Corporate</a>
+      <a href="./hospitality.html" class="mm-item">Hospitality</a>
+      <a href="./religious.html" class="mm-item">Houses of worship</a>
+      <a href="./entertainment.html" class="mm-item">Entertainment</a>
+      <a href="./rental.html" class="mm-item" style="font-weight:500;">Rental</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-top:6px;">
+      <a href="./history.html" class="mm-item">History</a>
+      <a href="./philosophy.html" class="mm-item">Philosophy</a>
+      <a href="./faces.html" class="mm-item">Our people</a>
+      <a href="./en/about.html" class="mm-item">Company at a glance</a>
+      <a href="./en/production.html" class="mm-item">Manufacturing</a>
+      <details class="tech-dd">
+        <summary class="mm-item" title="Show the list of technologies"><a href="./en/technologies.html" class="tech-go" title="Technologies section">Technologies</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
+        <div class="tech-list">
+          <a href="./tech-rigging.html" class="mm-item-long">Pinless rigging<span class="mm-sub">(TAURA, ERA arrays)</span></a><a href="./tech-click-clack.html" class="mm-item-long">CLICK-CLACK<span class="mm-sub">(angles set on the ground, TAURA)</span></a>
+          <a href="./tech-coaxial-waveguide.html" class="mm-item-long">Coaxial arrays<span class="mm-sub">(ERA, TAURA 10)</span></a>
+          <a href="./tech-horizontal-summing.html" class="mm-item-long">Horizontal summing<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
+          <a href="./tech-two-way-element.html" class="mm-item-long">Two-way array element<span class="mm-sub">(TAURA 8 array)</span></a>
+          <a href="./tech-cardioid-sub.html" class="mm-item-long">Cardioid subwoofer<span class="mm-sub">(TAURA C-Sub 18)</span></a>
+          <a href="./tech-coaxial-cx.html" class="mm-item-long">Coaxial drivers<span class="mm-sub">(CX, MCX series)</span></a>
+          <a href="./tech-voice-coil.html" class="mm-item">Edge-wound interlocked voice coils</a>
+        </div>
+      </details>
+      <a href="./blog.html" class="mm-item">Blog</a>
+      <a href="./contacts.html" class="mm-item">Contact</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:17px;text-align:right;">
+      <a href="./seminars.html" class="mm-item">Training & seminars</a>
+      <a href="./docs.html" class="mm-item-long">Documentation center<span class="mm-sub">(EASE & CAD downloads)</span></a>
+      <a href="./software.html" class="mm-item-long">Acoustic simulation software</a>
+      <a href="./warranty.html" class="mm-item">Warranty & service</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
+      <a href="./showroom.html" class="mm-item">Visit the showroom</a>
+      <a href="./demo.html" class="mm-item">Request an on-site demo</a>
+      <a href="./consultation.html" class="mm-item">Request a project consultation</a>
+      <a href="./prices.html" class="mm-item">Get pricing</a>
+      <a href="./where-to-buy.html" class="mm-item">Where to buy</a>
+      <a href="./delivery.html" class="mm-item">Lead times</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
+      <a href="#dsf-bot" aria-label="Chat with us" style="font-size:17px;color:#FAFAFA;">💬</a>
+      <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" class="mm-bold">VK</a>
+      <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" class="mm-bold">TG</a>
+      <a href="#contact" aria-label="Write to us" style="font-size:17px;color:#FAFAFA;">✉</a>
+      <a href="tel:+74951501238" aria-label="Call us" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
+    </div>
+  </div>
+  <div style="flex:0 0 auto;display:flex;justify-content:center;padding:28px 0 34px;">
+    <button type="button" data-menu-close aria-label="Close menu" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Close menu</span></button>
+  </div>
+</div>
+
+<main>
+
+<section class="pr-hero">
+  <video autoplay muted loop playsinline preload="auto" poster="./assets/hero/hero-poster.jpg" aria-hidden="true">
+    <source src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
+    <source src="./assets/hero/hero-1080.webm" type="video/webm">
+    <source src="./assets/hero/hero-1080.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="./en/index.html">Home</a></li><li class="sep" aria-hidden="true">/</li><li aria-current="page">Manufacturing</li></ol></nav>
+    <div class="pr-kick" style="margin-top:40px;">About us · Full-cycle manufacturing</div>
+    <h1 class="pr-h1">We don’t assemble loudspeakers from other people’s parts. We manufacture them.</h1>
+    <p class="pr-lead">Enclosures, metalwork, voice coils, surrounds, LF drivers, HF compression drivers, waveguides and electronics are all made in our own workshops in St. Petersburg and the Leningrad Region.</p>
+    <div class="pr-stats">
+      <div class="pr-stat"><b>12</b><span>in-house workshops</span></div>
+      <div class="pr-stat"><b>2</b><span>manufacturing sites: St. Petersburg and the Leningrad Region</span></div>
+      <div class="pr-stat"><b>12</b><span>die-casting molds for 8–18″ driver baskets</span></div>
+      <div class="pr-stat"><b>4–18″</b><span>every cone driver and HF compression driver is made in-house</span></div>
+    </div>
+    <div class="pr-ctas"><a href="#tour" class="pr-btn">Book a factory tour →</a><button type="button" class="pr-btn gh" data-film="tour">▶ Factory film · 3:35</button></div>
+  </div>
+</section>
+
+<section class="pr-sec dk" id="films" style="padding-top:96px;padding-bottom:96px;">
+  <div class="wrap">
+    <div class="pr-kick">Films</div>
+    <h2 class="pr-h2">The whole factory in 3.5 minutes</h2>
+    <p class="pr-p">A loudspeaker’s journey from a sheet of plywood and a metal blank to a box on the truck. Nothing staged: real workshops, real work.</p>
+    <div class="fm">
+      <button type="button" class="fm-c" data-film="tour"><img src="./assets/production/film-tour.jpg" alt="DS PROAUDIO factory film" loading="lazy"><span class="fm-pl"></span><span class="fm-t"><b>How we build loudspeaker systems</b><span>FACTORY OVERVIEW · 3:35</span></span></button>
+      <div class="fm-side">
+        <button type="button" class="fm-c" data-film="brand"><img src="./assets/production/film-brand.jpg" alt="DS PROAUDIO: we manufacture" loading="lazy"><span class="fm-pl"></span><span class="fm-t"><b>DS PROAUDIO: we manufacture</b><span>BRAND FILM · 0:54</span></span></button>
+        <p class="fm-note">Want to see it in person? <a href="#tour" style="color:#FAFAFA;text-decoration:underline;text-underline-offset:3px;">Book a factory tour</a> and we’ll show you the workshops that matter to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pr-sec lt" id="anatomy">
+  <div class="wrap">
+    <div class="pr-kick" style="color:#8A8A8A;">Anatomy of TAURA 8</div>
+    <h2 class="pr-h2">Every part comes from our own workshop</h2>
+    <p class="pr-p">We take the TAURA 8 line array apart into its components and show where each one is made. Rotate the 3D model and explode it with the slider. Hover over a row or click a part to highlight it; click a workshop to jump to it.</p>
+    <div class="an">
+      <div class="an-pic"><img class="a3-poster" src="./assets/3d/taura8-poster.jpg" alt="TAURA 8: exploded 3D model"></div>
+      <div>
+        <ol class="an-list"><li class="pa" data-ws="wood paint"><span class="pa-n">01</span><span class="pa-t">Enclosure</span><span class="pa-ws"><a href="#ws-wood">Woodworking</a><a href="#ws-paint">Enclosure finishing</a></span></li><li class="pa" data-ws="casting metal powder coils suspension drivers"><span class="pa-n">02</span><span class="pa-t">LF drivers</span><span class="pa-ws"><a href="#ws-casting">Driver basket casting</a><a href="#ws-metal">Metalworking</a><a href="#ws-powder">Powder coating</a><a href="#ws-coils">Voice coil winding</a><a href="#ws-suspension">Surround and spider printing</a><a href="#ws-drivers">Driver assembly</a></span></li><li class="pa" data-ws="metal coils hf"><span class="pa-n">03</span><span class="pa-t">HF compression driver</span><span class="pa-ws"><a href="#ws-metal">Metalworking</a><a href="#ws-coils">Voice coil winding</a><a href="#ws-hf">HF driver production</a></span></li><li class="pa" data-ws="print3d"><span class="pa-n">04</span><span class="pa-t">Waveguide</span><span class="pa-ws"><a href="#ws-print3d">3D printing</a></span></li><li class="pa" data-ws="metal powder"><span class="pa-n">05</span><span class="pa-t">Grille</span><span class="pa-ws"><a href="#ws-metal">Metalworking</a><a href="#ws-powder">Powder coating</a></span></li><li class="pa" data-ws="metal powder"><span class="pa-n">06</span><span class="pa-t">Rear panel</span><span class="pa-ws"><a href="#ws-metal">Metalworking</a><a href="#ws-powder">Powder coating</a></span></li><li class="pa" data-ws="metal powder print3d"><span class="pa-n">07</span><span class="pa-t">Rigging</span><span class="pa-ws"><a href="#ws-metal">Metalworking</a><a href="#ws-powder">Powder coating</a><a href="#ws-print3d">3D printing</a></span></li><li class="pa" data-ws="electronics"><span class="pa-n">08</span><span class="pa-t">Crossover and connectors</span><span class="pa-ws"><a href="#ws-electronics">Electronics</a></span></li><li class="pa" data-ws="assembly packing"><span class="pa-n">09</span><span class="pa-t">Assembly and packing</span><span class="pa-ws"><a href="#ws-assembly">System assembly</a><a href="#ws-packing">Packing</a></span></li></ol>
+        <div class="an-sum">All key components are made in-house.<small>Driver baskets are cast by a partner, using our own 12 molds.</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pr-sec dk" id="workshops" style="padding-bottom:40px;">
+  <div class="wrap">
+    <div class="pr-kick">Product journey</div>
+    <h2 class="pr-h2">12 workshops, from metal and plywood to a finished system</h2>
+    <p class="pr-p">The workshops are listed in the order a loudspeaker passes through them. Each has photos and video of real work; click a frame to open the workshop gallery.</p>
+  </div>
+</section>
+<div class="pn-scope"><div class="pn-wrap"><div class="wrap">
+  <nav class="pn-row" aria-label="Workshops"><a href="#ws-casting" class="pn pn-p" title="Driver basket casting"><b>P</b><span class="pn-f">Driver basket casting</span><span class="pn-s">Casting</span></a><a href="#ws-metal" class="pn" title="Metalworking"><b>01</b><span class="pn-f">Metalworking</span><span class="pn-s">Metal</span></a><a href="#ws-powder" class="pn" title="Powder coating"><b>02</b><span class="pn-f">Powder coating</span><span class="pn-s">Powder</span></a><a href="#ws-coils" class="pn" title="Voice coil winding"><b>03</b><span class="pn-f">Voice coil winding</span><span class="pn-s">Coils</span></a><a href="#ws-suspension" class="pn" title="Surround and spider printing"><b>04</b><span class="pn-f">Surround and spider printing</span><span class="pn-s">Surrounds</span></a><a href="#ws-drivers" class="pn" title="Driver assembly"><b>05</b><span class="pn-f">Driver assembly</span><span class="pn-s">Drivers</span></a><a href="#ws-hf" class="pn" title="HF driver production"><b>06</b><span class="pn-f">HF driver production</span><span class="pn-s">HF drivers</span></a><a href="#ws-print3d" class="pn" title="3D printing"><b>07</b><span class="pn-f">3D printing</span><span class="pn-s">3D printing</span></a><a href="#ws-electronics" class="pn" title="Electronics"><b>08</b><span class="pn-f">Electronics</span><span class="pn-s">Electronics</span></a><a href="#ws-wood" class="pn" title="Woodworking"><b>09</b><span class="pn-f">Woodworking</span><span class="pn-s">Wood</span></a><a href="#ws-paint" class="pn" title="Enclosure finishing"><b>10</b><span class="pn-f">Enclosure finishing</span><span class="pn-s">Finishing</span></a><a href="#ws-assembly" class="pn" title="System assembly"><b>11</b><span class="pn-f">System assembly</span><span class="pn-s">Assembly</span></a><a href="#ws-packing" class="pn" title="Packing"><b>12</b><span class="pn-f">Packing</span><span class="pn-s">Packing</span></a></nav>
+  <div class="pn-cmp"><button type="button" class="pn-ar" data-d="-1" aria-label="Previous workshop">‹</button><button type="button" class="pn-cur" aria-expanded="false" aria-controls="pnMenu"><b class="pn-cn">—</b><span class="pn-ct">Choose a workshop</span><i aria-hidden="true"></i></button><button type="button" class="pn-ar" data-d="1" aria-label="Next workshop">›</button></div>
+  <div class="pn-menu" id="pnMenu"><a href="#ws-casting" class="pn pn-p" title="Driver basket casting"><b>P</b><span class="pn-f">Driver basket casting</span><span class="pn-s">Casting</span></a><a href="#ws-metal" class="pn" title="Metalworking"><b>01</b><span class="pn-f">Metalworking</span><span class="pn-s">Metal</span></a><a href="#ws-powder" class="pn" title="Powder coating"><b>02</b><span class="pn-f">Powder coating</span><span class="pn-s">Powder</span></a><a href="#ws-coils" class="pn" title="Voice coil winding"><b>03</b><span class="pn-f">Voice coil winding</span><span class="pn-s">Coils</span></a><a href="#ws-suspension" class="pn" title="Surround and spider printing"><b>04</b><span class="pn-f">Surround and spider printing</span><span class="pn-s">Surrounds</span></a><a href="#ws-drivers" class="pn" title="Driver assembly"><b>05</b><span class="pn-f">Driver assembly</span><span class="pn-s">Drivers</span></a><a href="#ws-hf" class="pn" title="HF driver production"><b>06</b><span class="pn-f">HF driver production</span><span class="pn-s">HF drivers</span></a><a href="#ws-print3d" class="pn" title="3D printing"><b>07</b><span class="pn-f">3D printing</span><span class="pn-s">3D printing</span></a><a href="#ws-electronics" class="pn" title="Electronics"><b>08</b><span class="pn-f">Electronics</span><span class="pn-s">Electronics</span></a><a href="#ws-wood" class="pn" title="Woodworking"><b>09</b><span class="pn-f">Woodworking</span><span class="pn-s">Wood</span></a><a href="#ws-paint" class="pn" title="Enclosure finishing"><b>10</b><span class="pn-f">Enclosure finishing</span><span class="pn-s">Finishing</span></a><a href="#ws-assembly" class="pn" title="System assembly"><b>11</b><span class="pn-f">System assembly</span><span class="pn-s">Assembly</span></a><a href="#ws-packing" class="pn" title="Packing"><b>12</b><span class="pn-f">Packing</span><span class="pn-s">Packing</span></a></div>
+</div><div class="pn-prog"><i></i></div></div>
+<section class="pr-sec dk" style="padding-top:0;"><div class="wrap">
+<article class="pw pw-partner" id="ws-casting">
+  <div class="pw-txt">
+    <div class="pw-no">Partner<span>At a partner · in our molds</span></div>
+    <h3>Driver basket casting</h3>
+    <p>Baskets (cone frames) for 8″ to 18″ drivers are die-cast at a partner’s facility, in 12 molds owned by DS PROAUDIO.</p>
+    <div class="pw-makes"><b>Makes</b>Driver baskets</div>
+    <ul class="pw-eq"><li>12 molds</li><li>Die casting</li><li>8–18″ baskets</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Литьё рам динамиков" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-cast&quot;, &quot;p&quot;: &quot;./assets/production/loop-cast.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/cast-1.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Driver basket casting"><video muted loop playsinline preload="none" poster="./assets/production/loop-cast.jpg"><source src="./assets/production/loop-cast.webm" type="video/webm"><source src="./assets/production/loop-cast.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: Driver basket casting"><img src="./assets/production/cast-1.jpg" alt="Driver basket casting" loading="lazy"></button></div><button type="button" class="pw-all" data-i="0"><span>1 photos · 1 videos</span>Open gallery →</button></div>
+</article><article class="pw" id="ws-metal">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 01<span>St. Petersburg</span></div>
+    <h3>Metalworking</h3>
+    <p>Magnet system parts for LF and HF drivers, grilles, machining of cast baskets, welding of array flying frames, and rigging hardware.</p>
+    <div class="pw-makes"><b>Makes</b>Magnet systems · Grilles · Rigging · Flying frames</div>
+    <ul class="pw-eq"><li>High-precision CNC turn-mill center</li><li>Manual lathes and milling machines</li><li>Welding: TIG and MIG</li><li>Guillotine shear</li><li>Band saws and drill presses</li><li>Grinding machines</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Металлообработка" data-gal="[{&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-metal&quot;, &quot;p&quot;: &quot;./assets/production/metal-1.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-7.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-8.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-9.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-10.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-11.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-12.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-13.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metp-14.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-weld2&quot;, &quot;p&quot;: &quot;./assets/production/loop-weld2.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-7.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-8.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/weldp-9.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metal-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metal-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metal-1.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metal-7.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-metal2&quot;, &quot;p&quot;: &quot;./assets/production/loop-metal2.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metal-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/metal-3.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Photo: Metalworking"><img src="./assets/production/metp-1.jpg" alt="Metalworking" loading="lazy"></button><button type="button" class="pw-m" data-i="1" aria-label="Video: Metalworking"><video muted loop playsinline preload="none" poster="./assets/production/metal-1.jpg"><source src="./assets/production/loop-metal.webm" type="video/webm"><source src="./assets/production/loop-metal.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: Metalworking"><img src="./assets/production/metp-2.jpg" alt="Metalworking" loading="lazy"></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Metalworking"><img src="./assets/production/metp-3.jpg" alt="Metalworking" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>29 photos · 3 videos</span>+28 more in gallery →</button></div>
+</article><article class="pw" id="ws-powder">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 02<span>St. Petersburg</span></div>
+    <h3>Powder coating</h3>
+    <p>Coating for almost every metal part: grilles, frames and rigging hardware. The only exception is HF driver magnet systems.</p>
+    <div class="pw-makes"><b>Makes</b>Grilles · Rigging · Frames</div>
+    <ul class="pw-eq"><li>Spray booth</li><li>Curing oven</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Порошковая покраска" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-powder&quot;, &quot;p&quot;: &quot;./assets/production/powder-1.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/powder-1.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Powder coating"><video muted loop playsinline preload="none" poster="./assets/production/powder-1.jpg"><source src="./assets/production/loop-powder.webm" type="video/webm"><source src="./assets/production/loop-powder.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: Powder coating"><img src="./assets/production/powder-1.jpg" alt="Powder coating" loading="lazy"></button></div><button type="button" class="pw-all" data-i="0"><span>1 photos · 1 videos</span>Open gallery →</button></div>
+</article><article class="pw" id="ws-coils">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 03<span>St. Petersburg</span></div>
+    <h3>Voice coil winding</h3>
+    <p>Every voice coil, for LF/MF drivers and HF compression drivers alike, is wound in-house, including edge-wound flat-wire coils.</p>
+    <div class="pw-makes"><b>Makes</b>Voice coils</div>
+    <ul class="pw-eq"><li>Purpose-built machines for edge-winding flat wire</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Намотка звуковых катушек" data-gal="[{&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-7.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-4.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-coil&quot;, &quot;p&quot;: &quot;./assets/production/loop-coil.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-1.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-8.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coilp-9.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/coil-3.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Photo: Voice coil winding"><img src="./assets/production/coilp-7.jpg" alt="Voice coil winding" loading="lazy"></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: Voice coil winding"><img src="./assets/production/coilp-4.jpg" alt="Voice coil winding" loading="lazy"></button><button type="button" class="pw-m" data-i="2" aria-label="Video: Voice coil winding"><video muted loop playsinline preload="none" poster="./assets/production/loop-coil.jpg"><source src="./assets/production/loop-coil.webm" type="video/webm"><source src="./assets/production/loop-coil.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Voice coil winding"><img src="./assets/production/coilp-2.jpg" alt="Voice coil winding" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>10 photos · 1 videos</span>+7 more in gallery →</button></div>
+</article><article class="pw" id="ws-suspension">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 04<span>St. Petersburg</span></div>
+    <h3>Surround and spider printing</h3>
+    <p>Driver surrounds and spiders are printed on our own equipment.</p>
+    <div class="pw-makes"><b>Makes</b>Surrounds · Spiders</div>
+    <ul class="pw-eq"><li>CNC printing machines</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Печать подвесов и центрирующих шайб" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-susp&quot;, &quot;p&quot;: &quot;./assets/production/loop-susp.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/susp-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-susp2&quot;, &quot;p&quot;: &quot;./assets/production/loop-susp2.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/susp-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-7.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Surround and spider printing"><video muted loop playsinline preload="none" poster="./assets/production/loop-susp.jpg"><source src="./assets/production/loop-susp.webm" type="video/webm"><source src="./assets/production/loop-susp.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: Surround and spider printing"><img src="./assets/production/susp-1.jpg" alt="Surround and spider printing" loading="lazy"></button><button type="button" class="pw-m" data-i="2" aria-label="Video: Surround and spider printing"><video muted loop playsinline preload="none" poster="./assets/production/loop-susp2.jpg"><source src="./assets/production/loop-susp2.webm" type="video/webm"><source src="./assets/production/loop-susp2.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Surround and spider printing"><img src="./assets/production/susp-2.jpg" alt="Surround and spider printing" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>3 photos · 2 videos</span>+1 more in gallery →</button></div>
+</article><article class="pw" id="ws-drivers">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 05<span>St. Petersburg</span></div>
+    <h3>Driver assembly</h3>
+    <p>Drivers of every type and size, from 4″ to 18″, are assembled on our own tooling.</p>
+    <div class="pw-makes"><b>Makes</b>LF and MF drivers</div>
+    <ul class="pw-eq"><li>Assembly tooling for drivers of every type and size</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Сборка динамиков" data-gal="[{&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-spk&quot;, &quot;p&quot;: &quot;./assets/production/spk-1.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-2.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-pressv&quot;, &quot;p&quot;: &quot;./assets/production/loop-pressv.jpg&quot;, &quot;r&quot;: 1}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-8.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-9.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/spkp-10.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-glue2&quot;, &quot;p&quot;: &quot;./assets/production/loop-glue2.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-hall&quot;, &quot;p&quot;: &quot;./assets/production/loop-hall.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-glue&quot;, &quot;p&quot;: &quot;./assets/production/loop-glue.jpg&quot;, &quot;r&quot;: 0}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Photo: Driver assembly"><img src="./assets/production/spkp-1.jpg" alt="Driver assembly" loading="lazy"></button><button type="button" class="pw-m" data-i="1" aria-label="Video: Driver assembly"><video muted loop playsinline preload="none" poster="./assets/production/spk-1.jpg"><source src="./assets/production/loop-spk.webm" type="video/webm"><source src="./assets/production/loop-spk.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: Driver assembly"><img src="./assets/production/spkp-2.jpg" alt="Driver assembly" loading="lazy"></button><button type="button" class="pw-m" data-i="3" aria-label="Video: Driver assembly"><video muted loop playsinline preload="none" poster="./assets/production/loop-pressv.jpg"><source src="./assets/production/loop-pressv.webm" type="video/webm"><source src="./assets/production/loop-pressv.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button></div><button type="button" class="pw-all" data-i="4"><span>9 photos · 5 videos</span>+10 more in gallery →</button></div>
+</article><article class="pw" id="ws-hf">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 06<span>St. Petersburg</span></div>
+    <h3>HF driver production</h3>
+    <p>HF driver diaphragms are formed in our own molds, and the drivers are assembled on our own tooling.</p>
+    <div class="pw-makes"><b>Makes</b>HF drivers · Diaphragms</div>
+    <ul class="pw-eq"><li>Diaphragm molds</li><li>Driver assembly tooling</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Производство ВЧ-драйверов" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-hfp&quot;, &quot;p&quot;: &quot;./assets/production/loop-hfp.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/hf-1.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/hf-2.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: HF driver production"><video muted loop playsinline preload="none" poster="./assets/production/loop-hfp.jpg"><source src="./assets/production/loop-hfp.webm" type="video/webm"><source src="./assets/production/loop-hfp.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: HF driver production"><img src="./assets/production/hf-1.jpg" alt="HF driver production" loading="lazy"></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: HF driver production"><img src="./assets/production/hf-2.jpg" alt="HF driver production" loading="lazy"></button></div><button type="button" class="pw-all" data-i="0"><span>2 photos · 1 videos</span>Open gallery →</button></div>
+</article><article class="pw" id="ws-print3d">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 07<span>St. Petersburg</span></div>
+    <h3>3D printing</h3>
+    <p>Waveguides and some rigging mechanism parts are printed on a 3D printer farm.</p>
+    <div class="pw-makes"><b>Makes</b>Waveguides · Rigging parts</div>
+    <ul class="pw-eq"><li>3D printer farm</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="3D-печать" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-p3d&quot;, &quot;p&quot;: &quot;./assets/production/loop-p3d.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/p3dp-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-p3dv&quot;, &quot;p&quot;: &quot;./assets/production/loop-p3dv.jpg&quot;, &quot;r&quot;: 1}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/p3dp-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/p3d-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/p3d-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/p3dp-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/p3dp-4.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: 3D printing"><video muted loop playsinline preload="none" poster="./assets/production/loop-p3d.jpg"><source src="./assets/production/loop-p3d.webm" type="video/webm"><source src="./assets/production/loop-p3d.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: 3D printing"><img src="./assets/production/p3dp-1.jpg" alt="3D printing" loading="lazy"></button><button type="button" class="pw-m" data-i="2" aria-label="Video: 3D printing"><video muted loop playsinline preload="none" poster="./assets/production/loop-p3dv.jpg"><source src="./assets/production/loop-p3dv.webm" type="video/webm"><source src="./assets/production/loop-p3dv.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: 3D printing"><img src="./assets/production/p3dp-2.jpg" alt="3D printing" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>6 photos · 2 videos</span>+4 more in gallery →</button></div>
+</article><article class="pw" id="ws-electronics">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 08<span>St. Petersburg</span></div>
+    <h3>Electronics</h3>
+    <p>Passive crossovers and amplifiers: assembly, soldering, tuning and measurement.</p>
+    <div class="pw-makes"><b>Makes</b>Crossovers · Amplifiers</div>
+    <ul class="pw-eq"><li>Oscilloscopes and measurement equipment</li><li>Soldering and assembly</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Электроника" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-solder&quot;, &quot;p&quot;: &quot;./assets/production/loop-solder.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elp-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-elec&quot;, &quot;p&quot;: &quot;./assets/production/loop-elec.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elp-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elp-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elec-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elec-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elec-3.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Electronics"><video muted loop playsinline preload="none" poster="./assets/production/loop-solder.jpg"><source src="./assets/production/loop-solder.webm" type="video/webm"><source src="./assets/production/loop-solder.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: Electronics"><img src="./assets/production/elp-1.jpg" alt="Electronics: crossover assembly" loading="lazy"></button><button type="button" class="pw-m" data-i="2" aria-label="Video: Electronics"><video muted loop playsinline preload="none" poster="./assets/production/loop-elec.jpg"><source src="./assets/production/loop-elec.webm" type="video/webm"><source src="./assets/production/loop-elec.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Electronics"><img src="./assets/production/elp-2.jpg" alt="Electronics: crossover assembly" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>6 photos · 2 videos</span>+4 more in gallery →</button></div>
+</article><article class="pw" id="ws-wood">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 09<span>2 sites · St. Petersburg and the Leningrad Region</span></div>
+    <h3>Woodworking</h3>
+    <p>Loudspeaker enclosures. In the city, a small R&D shop for prototypes; in the Leningrad Region, a large shop for series production. Both are fully equipped.</p>
+    <div class="pw-makes"><b>Makes</b>Enclosures</div>
+    <ul class="pw-eq"><li>CNC routers</li><li>Panel saws</li><li>Power-feed routers</li><li>Grinding machines</li><li>Hand tools</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Деревообработка" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-wood&quot;, &quot;p&quot;: &quot;./assets/production/loop-wood.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-woodv&quot;, &quot;p&quot;: &quot;./assets/production/loop-woodv.jpg&quot;, &quot;r&quot;: 1}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-1.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-cncv&quot;, &quot;p&quot;: &quot;./assets/production/loop-cncv.jpg&quot;, &quot;r&quot;: 1}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-5.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-8.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-9.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/wood-3.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Woodworking"><video muted loop playsinline preload="none" poster="./assets/production/loop-wood.jpg"><source src="./assets/production/loop-wood.webm" type="video/webm"><source src="./assets/production/loop-wood.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Video: Woodworking"><video muted loop playsinline preload="none" poster="./assets/production/loop-woodv.jpg"><source src="./assets/production/loop-woodv.webm" type="video/webm"><source src="./assets/production/loop-woodv.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: Woodworking"><img src="./assets/production/wood-4.jpg" alt="Woodworking" loading="lazy"></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Woodworking"><img src="./assets/production/wood-1.jpg" alt="Woodworking" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>8 photos · 3 videos</span>+7 more in gallery →</button></div>
+</article><article class="pw" id="ws-paint">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 10<span>2 booths · next to each woodworking shop</span></div>
+    <h3>Enclosure finishing</h3>
+    <p>Enclosures are finished in two paint booths, one next to each woodworking shop.</p>
+    <div class="pw-makes"><b>Makes</b>Enclosure coating</div>
+    <ul class="pw-eq"><li>2 paint booths</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Покраска корпусов" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-paintv&quot;, &quot;p&quot;: &quot;./assets/production/loop-paintv.jpg&quot;, &quot;r&quot;: 1}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/paint-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/paint-1.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/paint-2.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Enclosure finishing"><video muted loop playsinline preload="none" poster="./assets/production/loop-paintv.jpg"><source src="./assets/production/loop-paintv.webm" type="video/webm"><source src="./assets/production/loop-paintv.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Photo: Enclosure finishing"><img src="./assets/production/paint-3.jpg" alt="Enclosure finishing" loading="lazy"></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: Enclosure finishing"><img src="./assets/production/paint-1.jpg" alt="Enclosure finishing" loading="lazy"></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Enclosure finishing"><img src="./assets/production/paint-2.jpg" alt="Enclosure finishing" loading="lazy"></button></div><button type="button" class="pw-all" data-i="0"><span>3 photos · 1 videos</span>Open gallery →</button></div>
+</article><article class="pw" id="ws-assembly">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 11<span>St. Petersburg</span></div>
+    <h3>System assembly</h3>
+    <p>Final assembly: enclosure, LF drivers, HF drivers, waveguides, crossovers, grilles and rigging come together as a finished system.</p>
+    <div class="pw-makes"><b>Makes</b>Finished systems</div>
+    <ul class="pw-eq"><li>Assembly stations</li></ul>
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Сборка акустических систем" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-asm3&quot;, &quot;p&quot;: &quot;./assets/production/loop-asm3.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-asm&quot;, &quot;p&quot;: &quot;./assets/production/asm-1.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/asm-4.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/asm-5.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-asm2&quot;, &quot;p&quot;: &quot;./assets/production/loop-asm2.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/asm-2.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/asm-6.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/asm-7.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/fin-1.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/elec-2.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: System assembly"><video muted loop playsinline preload="none" poster="./assets/production/loop-asm3.jpg"><source src="./assets/production/loop-asm3.webm" type="video/webm"><source src="./assets/production/loop-asm3.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Video: System assembly"><video muted loop playsinline preload="none" poster="./assets/production/asm-1.jpg"><source src="./assets/production/loop-asm.webm" type="video/webm"><source src="./assets/production/loop-asm.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: System assembly"><img src="./assets/production/asm-4.jpg" alt="System assembly" loading="lazy"></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: System assembly"><img src="./assets/production/asm-5.jpg" alt="System assembly" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>7 photos · 3 videos</span>+6 more in gallery →</button></div>
+</article><article class="pw" id="ws-packing">
+  <div class="pw-txt">
+    <div class="pw-no">Workshop 12<span>St. Petersburg</span></div>
+    <h3>Packing</h3>
+    <p>Finished systems are wrapped in film, packed in branded cartons and shipped to the customer.</p>
+    <div class="pw-makes"><b>Makes</b>Packing</div>
+    
+  </div>
+  <div class="pw-side"><div class="pw-media" data-t="Упаковка" data-gal="[{&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-pack2&quot;, &quot;p&quot;: &quot;./assets/production/loop-pack2.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-pack&quot;, &quot;p&quot;: &quot;./assets/production/loop-pack.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/pack-1.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/pack-2.jpg&quot;}, {&quot;t&quot;: &quot;v&quot;, &quot;s&quot;: &quot;./assets/production/loop-ship&quot;, &quot;p&quot;: &quot;./assets/production/loop-ship.jpg&quot;, &quot;r&quot;: 0}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/pack-3.jpg&quot;}, {&quot;t&quot;: &quot;i&quot;, &quot;s&quot;: &quot;./assets/production/pack-4.jpg&quot;}]"><button type="button" class="pw-m pw-main" data-i="0" aria-label="Video: Packing"><video muted loop playsinline preload="none" poster="./assets/production/loop-pack2.jpg"><source src="./assets/production/loop-pack2.webm" type="video/webm"><source src="./assets/production/loop-pack2.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="1" aria-label="Video: Packing"><video muted loop playsinline preload="none" poster="./assets/production/loop-pack.jpg"><source src="./assets/production/loop-pack.webm" type="video/webm"><source src="./assets/production/loop-pack.mp4" type="video/mp4"></video><span class="pw-badge">▶ video</span></button><button type="button" class="pw-m" data-i="2" aria-label="Photo: Packing"><img src="./assets/production/pack-1.jpg" alt="Packing" loading="lazy"></button><button type="button" class="pw-m" data-i="3" aria-label="Photo: Packing"><img src="./assets/production/pack-2.jpg" alt="Packing" loading="lazy"></button></div><button type="button" class="pw-all" data-i="4"><span>4 photos · 3 videos</span>+3 more in gallery →</button></div>
+</article>
+</div></section></div>
+
+
+<section class="pr-sec dk" id="team">
+  <div class="wrap">
+    <div class="tm-head">
+      <div>
+        <div class="pr-kick">Team</div>
+        <h2 class="pr-h2" style="margin-bottom:0">The people who make DS PROAUDIO</h2>
+        <div class="tm-stat"><b>40+</b><span>people<br>on the DS PROAUDIO team</span></div>
+      </div>
+      <p class="pr-p">DS PROAUDIO has more than 40 people. Every system is built by our own team: designers and engineers, machinists and welders, coil winders and driver assemblers, cabinet makers, painters, electronics technicians, quality control specialists, and the people who manage orders and ship them to customers.</p>
+    </div>
+    <div class="tm"><figure class="tm-i" style="--ar:1.5000"><img src="./assets/team/team-01.jpg" alt="DS PROAUDIO team member #1" width="1200" height="800" loading="lazy"><figcaption><span class="tm-n">01</span></figcaption></figure><figure class="tm-i" style="--ar:1.5000"><img src="./assets/team/team-02.jpg" alt="DS PROAUDIO team member #2" width="1200" height="800" loading="lazy"><figcaption><span class="tm-n">02</span></figcaption></figure><figure class="tm-i" style="--ar:1.5000"><img src="./assets/team/team-03.jpg" alt="DS PROAUDIO team member #3" width="1200" height="800" loading="lazy"><figcaption><span class="tm-n">03</span></figcaption></figure><figure class="tm-i" style="--ar:0.6663"><img src="./assets/team/team-04.jpg" alt="DS PROAUDIO team member #4" width="533" height="800" loading="lazy"><figcaption><span class="tm-n">04</span></figcaption></figure><figure class="tm-i" style="--ar:0.6663"><img src="./assets/team/team-05.jpg" alt="DS PROAUDIO team member #5" width="533" height="800" loading="lazy"><figcaption><span class="tm-n">05</span></figcaption></figure><figure class="tm-i" style="--ar:0.7137"><img src="./assets/team/team-06.jpg" alt="DS PROAUDIO team member #6" width="571" height="800" loading="lazy"><figcaption><span class="tm-n">06</span></figcaption></figure><figure class="tm-i" style="--ar:0.6663"><img src="./assets/team/team-07.jpg" alt="DS PROAUDIO team member #7" width="533" height="800" loading="lazy"><figcaption><span class="tm-n">07</span></figcaption></figure><figure class="tm-i" style="--ar:0.6663"><img src="./assets/team/team-08.jpg" alt="DS PROAUDIO team member #8" width="533" height="800" loading="lazy"><figcaption><span class="tm-n">08</span></figcaption></figure><figure class="tm-i" style="--ar:0.6663"><img src="./assets/team/team-09.jpg" alt="DS PROAUDIO team member #9" width="533" height="800" loading="lazy"><figcaption><span class="tm-n">09</span></figcaption></figure><figure class="tm-i" style="--ar:0.6663"><img src="./assets/team/team-10.jpg" alt="DS PROAUDIO team member #10" width="533" height="800" loading="lazy"><figcaption><span class="tm-n">10</span></figcaption></figure><figure class="tm-i" style="--ar:1.5000"><img src="./assets/team/team-11.jpg" alt="DS PROAUDIO team member #11" width="1200" height="800" loading="lazy"><figcaption><span class="tm-n">11</span></figcaption></figure><figure class="tm-i" style="--ar:1.5000"><img src="./assets/team/team-12.jpg" alt="DS PROAUDIO team member #12" width="1200" height="800" loading="lazy"><figcaption><span class="tm-n">12</span></figcaption></figure><figure class="tm-i" style="--ar:1.5000"><img src="./assets/team/team-13.jpg" alt="DS PROAUDIO team member #13" width="1200" height="800" loading="lazy"><figcaption><span class="tm-n">13</span></figcaption></figure></div>
+  </div>
+</section>
+
+<section class="pr-sec lt" id="proof">
+  <div class="wrap">
+    <div class="pr-kick" style="color:#8A8A8A;">Proven</div>
+    <h2 class="pr-h2">In-house production you can verify</h2>
+    <div class="pf">
+      <a href="./products-registry.html"><b></b><span></span><i></i></a>
+      <a href="./en/technologies.html"><b>Our own patents</b><span>Key engineering solutions are patent-protected and built into production models.</span><i>Technologies →</i></a>
+      <a href="./software.html"><b>Engineering department</b><span>Acoustics, mechanics and rigging are designed and calculated by our own engineers.</span><i>Simulation software →</i></a>
+      <a href="./history.html"><b>Since the 1970s</b><span>How the Leningrad school of acoustics grew into full-cycle manufacturing.</span><i>History →</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="pr-sec dk" id="tour">
+  <div class="wrap tour">
+    <div>
+      <div class="pr-kick">Factory tour</div>
+      <h2 class="pr-h2">Come and see how it’s done</h2>
+      <p class="pr-p">The best proof is seeing the workshops for yourself. We’ll walk you through the product journey from raw blank to packing and answer your engineers’ questions.</p>
+      <ul class="tour-points">
+        <li>For consultants, integrators, end clients and rental companies</li>
+        <li>In the city: the R&D shop and component production. In the Leningrad Region: the series enclosure shop</li>
+        <li>We’ll agree the date, route and group by phone</li>
+      </ul>
+    </div>
+    <div id="tourBox">
+      <form class="tf" id="tourForm" novalidate>
+        <label><span class="flb">Name <em>*</em></span><input type="text" name="name" autocomplete="name" required></label>
+        <label><span class="flb">Company</span><input type="text" name="company" autocomplete="organization"></label>
+        <label><span class="flb">Phone <em>*</em></span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7"></label>
+        <label><span class="flb">E-mail</span><input type="email" name="email" autocomplete="email"></label>
+        <fieldset class="full"><span class="flb">You are</span><div class="seg">
+          <label><input type="radio" name="role" value="Инженер / проектировщик" checked><span>Engineer / consultant</span></label>
+          <label><input type="radio" name="role" value="Партнёр / интегратор"><span>Partner / integrator</span></label>
+          <label><input type="radio" name="role" value="Заказчик"><span>End client</span></label>
+          <label><input type="radio" name="role" value="Прокатчик"><span>Rental company</span></label>
+          <label><input type="radio" name="role" value="Другое"><span>Other</span></label></div></fieldset>
+        <fieldset class="full"><span class="flb">What to see</span><div class="seg">
+          <label><input type="radio" name="site" value="Обе площадки" checked><span>The whole factory</span></label>
+          <label><input type="radio" name="site" value="Санкт-Петербург"><span>Workshops in St. Petersburg</span></label>
+          <label><input type="radio" name="site" value="Ленинградская область"><span>Enclosure shop in the Leningrad Region</span></label></div></fieldset>
+        <label><span class="flb">Preferred dates</span><input type="text" name="dates" placeholder="e.g. November 10–14"></label>
+        <label><span class="flb">Group size</span><input type="number" name="people" min="1" max="30" value="1"></label>
+        <label class="full"><span class="flb">What interests you most</span><textarea name="comment" placeholder="For example: HF driver production, coil winding, rigging"></textarea></label>
+        <label class="full cons"><input type="checkbox" name="consent" required><span>I agree to the <a href="./consent.html" target="_blank">processing of my personal data</a> to arrange the visit (<a href="./privacy.html" target="_blank">privacy policy</a>)</span></label>
+        <div class="tf-err" role="alert">Please enter your name and phone number and tick the consent box.</div>
+        <div class="tf-sub"><button type="submit">Send request</button><span>or call: <a href="tel:+74951501238">+7 495 150-12-38</a></span></div>
+      </form>
+      <div class="tf-ok" role="status"><h3>Request sent</h3><p>We’ll get in touch to agree the date, route and group.</p></div>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Viewer"><div id="lbBody"></div><button type="button" class="lb-ar" data-d="-1" aria-label="Back">‹</button><button type="button" class="lb-ar" data-d="1" aria-label="Next">›</button><button type="button" class="lb-x" aria-label="Close">✕</button><div class="lb-cap"></div></div>
+<script>
+(function(){
+  /* навигация по цехам: режим по ширине + подсветка текущего + прогресс */
+  var wrapEl=document.querySelector('.pn-wrap'),row=wrapEl.querySelector('.pn-row'),menu=wrapEl.querySelector('.pn-menu'),
+      links=[].slice.call(row.querySelectorAll('.pn')),mlinks=[].slice.call(menu.querySelectorAll('.pn')),
+      secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}),
+      cn=wrapEl.querySelector('.pn-cn'),ct=wrapEl.querySelector('.pn-ct'),arr=wrapEl.querySelectorAll('.pn-ar'),bar=wrapEl.querySelector('.pn-prog i'),
+      MODES=['m-full','m-short','m-stack','m-num','m-cmp'],mode='',cur=-2;
+  function setMode(m){MODES.forEach(function(x){wrapEl.classList.toggle(x,x===m);});}
+  function fits(m){setMode(m);return row.scrollWidth<=row.clientWidth+1;}
+  function layout(){
+    var keep=links.map(function(a){return a.classList.contains('on');});
+    links.forEach(function(a){a.classList.remove('on');});
+    var m='m-cmp';
+    if(fits('m-full'))m='m-full';else if(fits('m-short'))m='m-short';
+    else if(fits('m-stack')&&links.every(function(a){var s=a.querySelector('.pn-s');return s.scrollWidth<=s.clientWidth+1;}))m='m-stack';
+    else{ /* 20.10.2026: строку из одних номеров не показываем — подписи не видны; узкий экран сразу получает компактную строку с названием цеха и списком */}
+    links.forEach(function(a,i){a.classList.toggle('on',keep[i]);});
+    setMode(m); mode=m; if(m!=='m-cmp')wrapEl.classList.remove('open'); fitTitle();
+  }
+  function fitTitle(){ // в компактной строке: если полное название не влезает — короткое
+    var w=links[cur]; if(!w||mode!=='m-cmp')return; ct.textContent=w.querySelector('.pn-f').textContent;
+    if(ct.scrollWidth>ct.clientWidth+1)ct.textContent=w.querySelector('.pn-s').textContent;}
+  function onScroll(){
+    var y=innerHeight*.35,c=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<y)c=i;});
+    if(c!==cur){cur=c;
+      links.forEach(function(a,i){a.classList.toggle('on',i===c);}); mlinks.forEach(function(a,i){a.classList.toggle('on',i===c);});
+      var w=c<0?null:links[c];
+      cn.textContent=w?w.querySelector('b').textContent+(w.classList.contains('pn-p')?'':' / 12'):'12 цехов';
+      ct.textContent=w?w.querySelector('.pn-f').textContent:'Choose a workshop'; fitTitle();
+      arr[0].disabled=c<=0; arr[1].disabled=c>=links.length-1;}
+    var f=secs[0],l=secs[secs.length-1];
+    if(f&&l){var t0=f.getBoundingClientRect().top+scrollY-y,t1=l.getBoundingClientRect().bottom+scrollY-innerHeight;
+      bar.style.width=Math.max(0,Math.min(1,(scrollY-t0)/Math.max(1,t1-t0)))*100+'%';}
+  }
+  wrapEl.querySelector('.pn-cur').addEventListener('click',function(){var o=wrapEl.classList.toggle('open');this.setAttribute('aria-expanded',o);});
+  menu.addEventListener('click',function(e){if(e.target.closest('.pn')){wrapEl.classList.remove('open');wrapEl.querySelector('.pn-cur').setAttribute('aria-expanded','false');}});
+  [].forEach.call(arr,function(b){b.addEventListener('click',function(){var i=Math.max(0,Math.min(links.length-1,cur+ +b.getAttribute('data-d')));
+    if(cur<0)i=0; secs[i].scrollIntoView({behavior:'smooth'});});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.pn-wrap'))wrapEl.classList.remove('open');});
+  var rt=0;addEventListener('resize',function(){cancelAnimationFrame(rt);rt=requestAnimationFrame(layout);});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
+  layout();addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* видео в карточках играют только на экране */
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){var v=x.target;if(x.isIntersecting){var p=v.play();p&&p.catch(function(){});}else v.pause();});},{threshold:.2});
+    [].forEach.call(document.querySelectorAll('.pw-m video'),function(v){io.observe(v);});}
+  /* галерея цеха / фильмы в лайтбоксе */
+  var lb=document.getElementById('lb'),body=document.getElementById('lbBody'),cap=lb.querySelector('.lb-cap'),arw=lb.querySelectorAll('.lb-ar'),G=[],gi=0,gt='';
+  var FILMS={tour:{t:'v',s:'./assets/production/film-tour',p:'./assets/production/film-tour.jpg',film:1,n:'How we build loudspeaker systems'},
+              brand:{t:'v',s:'./assets/production/film-brand',p:'./assets/production/film-brand.jpg',film:1,n:'DS PROAUDIO: we manufacture'}};
+  function show(){var it=G[gi];
+    body.innerHTML=it.t==='v'?('<video controls autoplay playsinline '+(it.film?'':'muted loop ')+'poster="'+it.p+'">'+(it.film?'':'<source src="'+it.s+'.webm" type="video/webm">')+'<source src="'+it.s+'.mp4" type="video/mp4"></video>'):'<img src="'+it.s+'" alt="">';
+    var v=body.querySelector('video');if(v){var p=v.play();p&&p.catch(function(){});}
+    cap.innerHTML='<b>'+gt+'</b>'+(G.length>1?(gi+1)+' / '+G.length:'');
+    arw[0].disabled=gi<=0;arw[1].disabled=gi>=G.length-1;lb.classList.toggle('one',G.length<2);}
+  function open(list,i,t){G=list;gi=i;gt=t;show();lb.classList.add('on');document.documentElement.style.overflow='hidden';}
+  function go(d){var n=gi+d;if(n<0||n>=G.length)return;gi=n;show();}
+  document.addEventListener('click',function(e){
+    var f=e.target.closest('[data-film]');if(f){var it=FILMS[f.getAttribute('data-film')];open([it],0,it.n);return;}
+    var b=e.target.closest('.pw-m,.pw-all');if(!b)return;var side=b.closest('.pw-side'),m=side&&side.querySelector('.pw-media');if(!m)return;
+    open(JSON.parse(m.getAttribute('data-gal')),+b.getAttribute('data-i')||0,m.getAttribute('data-t'));});
+  [].forEach.call(arw,function(b){b.addEventListener('click',function(e){e.stopPropagation();go(+b.getAttribute('data-d'));});});
+  function close(){lb.classList.remove('on');body.innerHTML='';document.documentElement.style.overflow='';}
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===body||e.target.closest('.lb-x'))close();});
+  addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft')go(-1);else if(e.key==='ArrowRight')go(1);});
+  var sx=null;lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>50)go(dx<0?1:-1);});
+  /* форма фактори-тура: отправка на /api/tour (service-api), при недоступности — письмо на info@ */
+  var f=document.getElementById('tourForm'),box=document.getElementById('tourBox');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    var d=new FormData(f),ok=true;['name','phone'].forEach(function(n){var el=f.elements[n],v=(el.value||'').trim(),bad=!v||(n==='phone'&&v.replace(/\D/g,'').length<10);el.classList.toggle('inv',bad);if(bad)ok=false;});
+    if(!f.elements.consent.checked)ok=false; f.classList.toggle('bad',!ok); if(!ok)return;
+    var t={name:d.get('name'),company:d.get('company'),phone:d.get('phone'),email:d.get('email'),role:d.get('role'),site:d.get('site'),dates:d.get('dates'),people:d.get('people'),comment:d.get('comment'),page:location.pathname};
+    var btn=f.querySelector('button[type=submit]');btn.disabled=true;
+    function mail(){var b=['Заявка на фактори-тур','','Имя: '+t.name,'Компания: '+(t.company||'—'),'Телефон: '+t.phone,'E-mail: '+(t.email||'—'),'Кто: '+t.role,'Площадка: '+t.site,'Даты: '+(t.dates||'—'),'Человек: '+t.people,'Интересно: '+(t.comment||'—')].join('\n');
+      location.href='mailto:info@ds-proaudio.ru?subject='+encodeURIComponent('Фактори-тур: '+t.name)+'&body='+encodeURIComponent(b);box.classList.add('sent');}
+    fetch('/api/tour',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(t)}).then(function(r){if(!r.ok)throw 0;box.classList.add('sent');}).catch(mail).then(function(){btn.disabled=false;});
+  });
+})();
+</script>
+</main>
+
+
+<footer class="dsf">
+  <div class="dsf-wrap">
+    
+    <div class="dsf-top">
+      <div class="dsf-brand">
+        <img class="dsf-logo" src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="DS PROAUDIO">
+        <p class="dsf-tag">Russian full-cycle manufacturer of concert loudspeaker systems.</p>
+      </div>
+      <div class="dsf-contacts">
+        <div class="dsf-h">Contact</div>
+        <a class="dsf-phone" href="tel:+74951501238">+7 495 150-12-38</a>
+        <a class="dsf-mail" href="mailto:info@ds-proaudio.ru">info@ds-proaudio.ru</a>
+        <div class="dsf-addr"><b>Office and service center</b>Moscow, Ostapovsky Proezd, 3 bldg. 8</div>
+        <div class="dsf-addr"><b>Service center</b>St. Petersburg, Parkovaya St., 4D</div>
+        <div class="dsf-hours">Mon–Fri, 10:00–19:00 (Moscow time)</div>
+      </div>
+      <div class="dsf-bot" id="dsFootBot" aria-label="DS PROAUDIO assistant">
+        <div class="dsf-bot-head"><span class="dsf-bot-ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01" stroke-width="2.6" stroke-linecap="round"/></svg></span><span>DS PROAUDIO assistant<span class="dsf-bot-sub">Instant answers; a manager replies during business hours</span></span></div>
+        <div class="dsf-bot-log" aria-live="polite"><div class="dsf-msg b">Hello! Shall we call you back, or can we help with something else?</div></div>
+        <div class="dsf-chips">
+          <button type="button" class="dsf-chip main" data-dsf="call">Call me back</button>
+          <button type="button" class="dsf-chip" data-dsf="pick">Choose equipment</button>
+          <button type="button" class="dsf-chip" data-dsf="price">Get pricing</button>
+          <button type="button" class="dsf-chip" data-dsf="buy">Where to buy</button>
+          <button type="button" class="dsf-chip" data-dsf="service">Service & warranty</button>
+        </div>
+        <form class="dsf-ask"><input type="text" placeholder="Or ask a question…" aria-label="Ask the assistant"><button type="submit" aria-label="Send">→</button></form>
+      </div>
+    </div>
+
+    
+    <nav class="dsf-cols" aria-label="Site sections">
+      <div class="dsf-col">
+        <a href="./products.html" class="ft-heading">Products</a>
+          <a href="./products-line-arrays.html" class="ft-item">Line arrays</a>
+          <a href="./products-constant-curvature.html" class="ft-item">Constant-curvature arrays</a>
+          <a href="./products-columns.html" class="ft-item">Column loudspeakers</a>
+          <a href="./products-point-sources.html" class="ft-item">Point-source loudspeakers</a>
+          <a href="./products-monitors.html" class="ft-item">Stage monitors</a>
+          <a href="./products-compact-sets.html" class="ft-item">Compact systems</a>
+          <a href="./products-auditorium.html" class="ft-item">Lecture hall systems</a>
+          <a href="./products-registry.html" class="ft-item"></a>
+          <a href="./products-all-weather.html" class="ft-item">All-weather systems</a>
+          <a href="./products-amplifiers.html" class="ft-item">Amplifiers</a>
+          <a href="./products-accessories.html" class="ft-item">Accessories</a>
+          <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="ft-bold">PDF catalog</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./application.html" class="ft-heading">Applications</a>
+          <a href="./reviews.html" class="ft-bold">Testimonials</a>
+          <a href="./portfolio.html" class="ft-bold" style="margin-bottom:2px;">Portfolio</a>
+          <a href="./culture.html" class="ft-item">Arts & culture</a>
+          <a href="./education.html" class="ft-item">Education & research</a>
+          <a href="./sport.html" class="ft-item">Sports & live events</a>
+          <a href="./corporate.html" class="ft-item">Corporate</a>
+          <a href="./hospitality.html" class="ft-item">Hospitality</a>
+          <a href="./religious.html" class="ft-item">Houses of worship</a>
+          <a href="./entertainment.html" class="ft-item">Entertainment</a>
+          <a href="./rental.html" class="ft-item" style="font-weight:700;">Rental</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./en/index.html" class="ft-heading">Home</a>
+          <a href="./history.html" class="ft-item">History</a>
+          <a href="./philosophy.html" class="ft-item">Philosophy</a>
+          <a href="./faces.html" class="ft-item">Our people</a>
+          <a href="./en/about.html" class="ft-item">Company at a glance</a>
+          <a href="./en/production.html" class="ft-item">Manufacturing</a>
+          <details class="tech-dd">
+            <summary class="ft-item" title="Show the list of technologies"><a href="./en/technologies.html" class="tech-go" title="Technologies section">Technologies</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
+            <div class="tech-list">
+              <a href="./tech-rigging.html" class="ft-item-long">Pinless rigging<span class="ft-sub">(TAURA, ERA arrays)</span></a><a href="./tech-click-clack.html" class="ft-item-long">CLICK-CLACK<span class="ft-sub">(angles set on the ground, TAURA)</span></a>
+              <a href="./tech-coaxial-waveguide.html" class="ft-item-long">Coaxial arrays<span class="ft-sub">(ERA, TAURA 10)</span></a>
+              <a href="./tech-horizontal-summing.html" class="ft-item-long">Horizontal summing<span class="ft-sub">(TAURA 8, PLR, STL)</span></a>
+              <a href="./tech-two-way-element.html" class="ft-item-long">Two-way array element<span class="ft-sub">(TAURA 8 array)</span></a>
+          <a href="./tech-cardioid-sub.html" class="ft-item-long">Cardioid subwoofer<span class="ft-sub">(TAURA C-Sub 18)</span></a>
+              <a href="./tech-coaxial-cx.html" class="ft-item-long">Coaxial drivers<span class="ft-sub">(CX, MCX series)</span></a>
+              <a href="./tech-voice-coil.html" class="ft-item">Edge-wound interlocked voice coils</a>
+            </div>
+          </details>
+          <a href="./blog.html" class="ft-item">Blog</a>
+          <a href="./contacts.html" class="ft-item">Contact</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./support.html" class="ft-heading" aria-current="page">Support</a>
+          <a href="./seminars.html" class="ft-item">Training & seminars</a>
+          <a href="./docs.html" class="ft-item-long">Documentation center<span class="ft-sub">(EASE & CAD downloads)</span></a>
+          <a href="./software.html" class="ft-item-long">Acoustic simulation software</a>
+          <a href="./warranty.html" class="ft-item">Warranty & service</a>
+      </div>
+      <div class="dsf-col">
+        <a href="./clients.html" class="ft-heading">Clients</a>
+          <a href="./showroom.html" class="ft-item">Visit the showroom</a>
+          <a href="./demo.html" class="ft-item">Request an on-site demo</a>
+          <a href="./consultation.html" class="ft-item">Request a project consultation</a>
+          <a href="./prices.html" class="ft-item">Get pricing</a>
+          <a href="./where-to-buy.html" class="ft-item">Where to buy</a>
+          <a href="./delivery.html" class="ft-item">Lead times</a>
+      </div>
+      <div class="dsf-col dsf-reach">
+        <a href="#" class="ft-heading" style="text-align:center;">Partner portal</a>
+        <div class="dsf-social"><a href="#dsf-bot" aria-label="Chat with the assistant" title="Chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></a><a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" aria-label="DS PROAUDIO on VK" title="VK">VK</a><a href="https://t.me/dsproaudio" target="_blank" rel="noopener" aria-label="DS PROAUDIO on Telegram" title="Telegram">TG</a><a href="https://max.ru/id7702801847_biz" target="_blank" rel="noopener" aria-label="DS PROAUDIO on MAX" title="MAX">MAX</a><a href="mailto:info@ds-proaudio.ru" aria-label="Email info@ds-proaudio.ru" title="E-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a><a href="tel:+74951501238" aria-label="Call +7 495 150-12-38" title="Call"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a></div>
+        <div class="dsf-files" aria-label="Project files"><span class="dsf-files-b"><a class="dsf-gisp" href="./gov.html" aria-label="" title=""><img src="./assets/gisp-mark-dark.svg" alt=""></a><a href="./docs.html?g=gll" title="GLL — EASE data files">GLL</a><a href="./docs.html?g=dwg" title="CAD — DWG drawings">CAD</a><a href="./docs.html?g=man" title="PDF — manuals and spec sheets">PDF</a></span></div>
+      </div>
+    </nav>
+
+    <div class="dsf-bottom">
+      <span>© DS PROAUDIO, 2026</span>
+      <span class="dsf-doc"><a href="./consent.html">Consent to personal data processing</a><a href="./privacy.html">Privacy policy</a></span>
+    </div>
+    <div class="dsf-legal">
+      <p>All content on this website, including but not limited to text, graphics, photos and video, as well as page structure, design and layout, the domain name and the trade name, is subject to copyright and intellectual property rights and is protected by Russian law and international copyright treaties.</p>
+      <p>Any use of the content of this website elsewhere without the prior consent of the copyright holder is prohibited, as is any other action that may give Internet users the impression that the materials presented are not related to this website.</p>
+      <p>Product information on this website does not constitute a public offer.</p>
+      <p>Invoices are issued by an official company representative once all order details have been confirmed.</p>
+      <p>The manufacturer reserves the right to change product appearance, specifications and descriptions without prior notice.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- мега-меню ---------- */
+  var menu = document.getElementById('megamenu');
+  var toggles = document.querySelectorAll('[data-menu-toggle]');
+  function setMenu(open){
+    if (open){ menu.hidden = false; menu.style.display = 'flex'; } else { menu.hidden = true; menu.style.display = 'none'; }
+    toggles.forEach(function(b){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+  }
+  toggles.forEach(function(b){ b.addEventListener('click', function(){ setMenu(menu.hidden); }); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a,[data-menu-close]')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+  /* ---------- появление при прокрутке ---------- */
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el, i){
+    if (reduce) el.classList.add('in'); else { el.style.transitionDelay = ((i % 3) * 0.08) + 's'; io.observe(el); }
+  });
+})();
+</script>
+<script type="module" src="./anatomy3d.js"></script>
+</body>
+</html>

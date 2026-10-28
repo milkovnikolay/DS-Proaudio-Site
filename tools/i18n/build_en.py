@@ -27,6 +27,7 @@ PAGES = {
     'Main.dc.html': {'en': 'index.html', 'ru_url': DOMAIN + '/', 'en_url': DOMAIN + '/en/'},
     'technologies.html': {'en': 'technologies.html', 'ru_url': DOMAIN + '/technologies.html', 'en_url': DOMAIN + '/en/technologies.html'},
     'about.html': {'en': 'about.html', 'ru_url': DOMAIN + '/about.html', 'en_url': DOMAIN + '/en/about.html'},
+    'production.html': {'en': 'production.html', 'ru_url': DOMAIN + '/production.html', 'en_url': DOMAIN + '/en/production.html'},
 }
 
 CYR = re.compile('[А-Яа-яЁё]')
