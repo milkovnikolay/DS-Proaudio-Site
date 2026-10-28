@@ -28,6 +28,8 @@ PAGES = {
     'technologies.html': {'en': 'technologies.html', 'ru_url': DOMAIN + '/technologies.html', 'en_url': DOMAIN + '/en/technologies.html'},
     'about.html': {'en': 'about.html', 'ru_url': DOMAIN + '/about.html', 'en_url': DOMAIN + '/en/about.html'},
     'production.html': {'en': 'production.html', 'ru_url': DOMAIN + '/production.html', 'en_url': DOMAIN + '/en/production.html'},
+    'philosophy.html': {'en': 'philosophy.html', 'ru_url': DOMAIN + '/philosophy.html', 'en_url': DOMAIN + '/en/philosophy.html'},
+    'faces.html': {'en': 'faces.html', 'ru_url': DOMAIN + '/faces.html', 'en_url': DOMAIN + '/en/faces.html'},
 }
 
 CYR = re.compile('[А-Яа-яЁё]')
