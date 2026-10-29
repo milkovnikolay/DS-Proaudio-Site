@@ -369,7 +369,9 @@ def build(ru_file, info):
     s = ''.join(out)
 
     # 4) язык, адреса, ссылки на уже переведённые страницы, подключение en.css и i18n-en.js
-    s = s.replace('<html lang="ru">', '<html lang="en">', 1)
+    # translate="no" + notranslate: браузер (Яндекс, Chrome) не должен сам «переводить» английскую копию на русский —
+    # для русского языка есть своя версия, переключатель RU
+    s = s.replace('<html lang="ru">', '<html lang="en" translate="no" class="notranslate">', 1)
     s = s.replace('<head>', '<head>\n<base href="../">', 1)
     s = s.replace('<link rel="canonical" href="' + info['ru_url'] + '">', '<link rel="canonical" href="' + info['en_url'] + '">')
     s = s.replace('<meta property="og:url" content="' + info['ru_url'] + '">', '<meta property="og:url" content="' + info['en_url'] + '">')
@@ -378,7 +380,7 @@ def build(ru_file, info):
     for rf, inf in PAGES.items():
         s = re.sub(r'href="(?:\./)?' + re.escape(rf) + r'(?=[#"?])', 'href="./en/' + inf['en'], s)
     s = s.replace('<!-- seo:end -->', '', 1)
-    s = s.replace('<base href="../">', '<base href="../">\n' + lang_block(ru_file, info, 'en') +
+    s = s.replace('<base href="../">', '<base href="../">\n<meta name="google" content="notranslate">\n' + lang_block(ru_file, info, 'en') +
                   '\n<link rel="stylesheet" href="./en/en.css">\n<script src="./en/i18n-en.js"></script>', 1)
     s = s.replace('./__RU_HREF__', './' + ru_file)
     # плашка «trust», текст которой в английской версии убран (реестр Минпромторга), остаётся пустой — убираем целиком
