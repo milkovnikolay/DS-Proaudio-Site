@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+<head>
+<base href="../">
+<!-- lang:start (собирается tools/i18n/build_en.py) -->
+<link rel="alternate" hreflang="ru" href="https://ds-proaudio.ru/reviews.html">
+<link rel="alternate" hreflang="en" href="https://ds-proaudio.ru/en/reviews.html">
+<link rel="alternate" hreflang="x-default" href="https://ds-proaudio.ru/reviews.html">
+<meta name="ds-lang-alt" content="./reviews.html" data-lang="ru">
+<!-- lang:end -->
+<link rel="stylesheet" href="./en/en.css">
+<script src="./en/i18n-en.js"></script>
+<meta charset="utf-8">
+<link rel="icon" href="./favicon.ico" sizes="32x32">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+<script>/* масштаб: на экранах шире 1439 px сайт увеличивается пропорционально экрану (макет — 1440×780 px); на вытянутых по ширине экранах увеличение ограничено высотой окна; масштаб браузера (Ctrl+колесо) работает: при увеличении ширина вёрстки не меньше 1100 px, а класс lw-mid включает сжатую шапку 1100–1439 */(function(){var d=document.documentElement;function z(){var w=window.innerWidth,h=window.innerHeight,b=window.outerWidth&&w?Math.round(window.outerWidth/w*20)/20:1;if(!(b>0))b=1;var k=Math.min(w*b/1440,h*b/780,w/1100);if(!(k>1))k=1;d.style.zoom=k>1?k.toFixed(4):'';d.classList.toggle('lw-mid',k>1&&w>=1440&&w/k<1440);}z();addEventListener('resize',z);})();</script>
+<link rel="stylesheet" href="./mnav.css">
+<link rel="stylesheet" href="./ring-mobile.css">
+<script src="./mnav.js" defer></script>
+<script src="./cookie.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testimonials — DS PROAUDIO</title>
+<meta name="description" content="Testimonials from sound engineers, technical directors and system engineers about DS PROAUDIO systems: Taura, Pillar, ERA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=PT+Mono&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== базовые правила — один в один с Main.dc.html ===== */
+  body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;color:#141414}
+  a{color:inherit;text-decoration:none}
+  a:hover{opacity:.7}
+  button{font-family:inherit;cursor:pointer}
+  ::selection{background:#D1D5DB;color:#0A0A0B}
+  *,*::before,*::after{box-sizing:border-box}
+
+  @keyframes dsGlow{0%,100%{opacity:.45}50%{opacity:1}}
+  .glow-dot{animation:dsGlow 3.4s ease-in-out infinite}
+  @keyframes dsHeroZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  .hero-bg{animation:dsHeroZoom 22s ease-in-out infinite alternate}
+
+  .nav-trigger{background:none;border:none;padding:0;margin:0;font:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#F2F2F2;white-space:nowrap;}
+  .mm-item{text-transform:uppercase;font-weight:300;letter-spacing:.045em;font-size:13px;color:#E7E7E7;}
+  .mm-item-long{text-transform:uppercase;font-weight:300;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#E7E7E7;}
+  .mm-item-long .mm-sub{display:block;font-weight:300;letter-spacing:.01em;opacity:.6;margin-top:1px;}
+  .mm-bold{text-transform:uppercase;font-weight:500;letter-spacing:.05em;font-size:13px;color:#FAFAFA;}
+  .mm-current{color:#FAFAFA;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(250,250,250,.45);}
+
+  .ft-item{text-transform:uppercase;font-weight:600;letter-spacing:.045em;font-size:13px;color:#5B5B5B;}
+  .ft-item:hover{color:#141414;}
+  .ft-item-long{text-transform:uppercase;font-weight:600;letter-spacing:.015em;font-size:12.5px;line-height:1.45;color:#5B5B5B;}
+  .ft-item-long:hover{color:#141414;}
+  .ft-item-long .ft-sub{display:block;font-weight:500;letter-spacing:.01em;opacity:.7;margin-top:1px;}
+  .ft-bold{text-transform:uppercase;font-weight:700;letter-spacing:.05em;font-size:13px;color:#141414;}
+  .ft-bold:hover{opacity:.65;}
+  .ft-heading{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#C2C2C2;}
+
+  .section-cta{background:#141414;color:#FAFAFA;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:15px 26px;border-radius:6px;white-space:nowrap;transition:opacity .25s ease;}
+
+  /* ===== общие элементы страницы раздела ===== */
+  .wrap{max-width:1440px;margin:0 auto;padding-left:64px;padding-right:64px}
+  .kicker{font-family:'PT Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
+  .h2{margin:0;font-family:'Montserrat',sans-serif;font-weight:700;font-size:42px;line-height:1.15;color:#141414}
+  .lead{margin:0;font-size:17px;line-height:1.65;color:#767676}
+  .dark .h2{color:#FAFAFA}
+  .dark .lead{color:#9A9A9A}
+  .dark .kicker{color:#8A8A8A}
+
+  /* появление блоков при прокрутке */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===== хлебные крошки ===== */
+  .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;padding:0;list-style:none;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9A9A9A}
+  .crumbs a{color:#C8C8C8;transition:color .2s ease}
+  .crumbs a:hover{color:#FAFAFA;opacity:1}
+  .crumbs .sep{color:#5B5B5B}
+  .crumbs [aria-current]{color:#FAFAFA}
+
+  /* ===== кнопки ===== */
+  .btn-light{background:#FAFAFA;color:#0A0A0B;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+  .btn-ghost{border:1px solid rgba(250,250,250,.45);color:#FAFAFA;font-size:14px;font-weight:600;padding:15px 28px;border-radius:6px}
+
+  /* ===== «перелистывающиеся» цифры ===== */
+  .odo{display:inline-flex;font-variant-numeric:tabular-nums;line-height:1}
+  .odo-col{display:inline-block;height:1.08em;overflow:hidden}
+  .odo-strip{display:block;transition:transform 1.9s cubic-bezier(.16,.8,.14,1)}
+  .odo-strip span{display:block;height:1.08em;line-height:1.08em}
+
+  .fact{padding-top:26px;border-top:1px solid #E6E6E6;position:relative}
+  .fact::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .fact.in::before{width:100%}
+  .fact-num{font-family:'Montserrat',sans-serif;font-weight:600;font-size:76px;letter-spacing:-.02em;color:#141414;display:flex;align-items:flex-start;gap:6px}
+  .fact-unit{font-size:22px;font-weight:600;letter-spacing:0;margin-top:8px;color:#141414}
+  .fact-text{margin-top:14px;font-size:15px;line-height:1.55;color:#767676;max-width:280px}
+
+  .trust{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;letter-spacing:.02em;color:#141414}
+  .trust i{width:6px;height:6px;border-radius:999px;background:#141414;flex:0 0 6px}
+
+  /* текст, который «проявляется» по словам при прокрутке */
+  .scrub{margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:38px;line-height:1.32;letter-spacing:-.005em;color:#141414}
+  .scrub .w{color:#D4D4D4;transition:color .35s ease}
+  .scrub .w.on{color:#141414}
+
+  /* ===== «почему особый подход» — карточки с живыми графиками ===== */
+  .why-card{border:1px solid rgba(255,255,255,.10);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#111113 0%,#0A0A0B 100%);display:flex;flex-direction:column}
+  .why-viz{position:relative;height:210px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .why-viz canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .viz-label{position:absolute;font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E}
+  .why-body{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px}
+  .why-idx{font-family:'PT Mono',monospace;font-size:12px;color:#6E6E6E;letter-spacing:.08em}
+  .why-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.25;color:#FAFAFA;text-transform:uppercase;letter-spacing:.01em}
+  .why-text{font-size:15.5px;line-height:1.6;color:#9A9A9A}
+
+  /* ===== архитектура системы ===== */
+  .tabs{display:inline-flex;gap:6px;padding:5px;border:1px solid #E6E6E6;border-radius:999px;background:#FFFFFF}
+  .tab{border:none;background:none;border-radius:999px;padding:11px 20px;font-size:13px;font-weight:600;letter-spacing:.03em;color:#767676;transition:background .3s ease,color .3s ease}
+  .tab:hover{color:#141414}
+  .tab[aria-selected="true"]{background:#141414;color:#FAFAFA}
+  .arch-list{display:none;flex-direction:column}
+  .arch-list.active{display:flex}
+  .arch-item{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 0;border-top:1px solid #EDEDED;cursor:default;transition:opacity .3s ease}
+  .arch-item:last-child{border-bottom:1px solid #EDEDED}
+  .arch-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;padding-top:4px}
+  .arch-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.3;color:#141414}
+  .arch-text{grid-column:2;font-size:15px;line-height:1.6;color:#767676}
+  .arch-link{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#141414}
+  .arch-list:hover .arch-item{opacity:.45}
+  .arch-list .arch-item:hover{opacity:1}
+  .arch-panel{position:relative;background:#0A0A0B;border-radius:16px;overflow:hidden;padding:26px 26px 18px}
+  .arch-panel svg{display:block;width:100%;height:auto}
+  .arch-mode{transition:opacity .6s ease}
+  .arch-panel[data-mode="a"] .mode-b, .arch-panel[data-mode="b"] .mode-a{opacity:0;pointer-events:none}
+  .part{transition:opacity .35s ease}
+  .arch-panel[data-hl] .part{opacity:.3}
+  .arch-panel[data-hl="array"] .p-array, .arch-panel[data-hl="monitor"] .p-monitor,
+  .arch-panel[data-hl="sub"] .p-sub, .arch-panel[data-hl="column"] .p-column{opacity:1}
+  .svg-label{font-family:'PT Mono',monospace;font-size:10.5px;letter-spacing:.08em;fill:#6E6E6E;text-transform:uppercase}
+  .svg-label-hi{fill:#C8C8C8}
+
+  /* ===== результат: крупные формулировки ===== */
+  .result-row{display:grid;grid-template-columns:90px 1fr 380px;gap:24px;align-items:baseline;padding:38px 0;position:relative;border-top:1px solid #EDEDED}
+  .result-row::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1) .1s}
+  .result-row.in::before{width:100%}
+  .result-idx{font-family:'PT Mono',monospace;font-size:12px;color:#ADADAD;letter-spacing:.08em}
+  .mask{display:block;overflow:hidden;padding-bottom:.08em}
+  .mask > span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.75,.15,1)}
+  .in .mask > span{transform:none}
+  .result-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:46px;line-height:1.12;letter-spacing:-.01em;color:#141414}
+  .result-text{font-size:16px;line-height:1.6;color:#767676;opacity:0;transition:opacity .9s ease .5s}
+  .in .result-text{opacity:1}
+
+  /* ===== кейс ===== */
+  .case-media{position:relative;border-radius:16px;overflow:hidden;background:#111;aspect-ratio:4/3}
+  .case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease;transform:scale(1.02)}
+  .case-media img.on{opacity:1;animation:dsHeroZoom 9s ease-out forwards}
+  .case-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,0) 55%,rgba(10,10,11,.6) 100%);pointer-events:none}
+  .case-ctrl{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;display:flex;align-items:center;gap:16px;font-family:'PT Mono',monospace;font-size:11px;color:#C4C4C4;letter-spacing:.06em}
+  .case-bar{flex:1;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+  .case-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#FAFAFA}
+  .case-row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:20px 0;border-top:1px solid rgba(255,255,255,.10)}
+  .case-row:last-child{border-bottom:1px solid rgba(255,255,255,.10)}
+  .case-key{font-family:'PT Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#6E6E6E;padding-top:3px}
+  .case-val{font-size:16.5px;line-height:1.6;color:#E2E2E2}
+
+  /* ===== соседние подразделы ===== */
+  .sib{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;border-top:1px solid #E6E6E6;color:#767676;transition:color .25s ease}
+  .sib:last-child{border-bottom:1px solid #E6E6E6}
+  .sib:hover{color:#141414;opacity:1}
+  .sib-title{font-family:'Montserrat',sans-serif;font-weight:600;font-size:24px;line-height:1.25}
+  .sib-arrow{font-size:22px;transform:translateX(-8px);opacity:0;transition:transform .3s ease,opacity .3s ease;color:#141414}
+  .sib:hover .sib-arrow{transform:none;opacity:1}
+  .sib-meta{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:#ADADAD;text-transform:uppercase;margin-right:auto;margin-left:18px}
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-bg,.glow-dot,.case-media img.on{animation:none}
+    .reveal,.mask > span,.result-text,.odo-strip,.fact::before,.result-row::before{transition:none}
+  }
+  @media (max-width: 1100px){
+    .wrap{padding-left:24px;padding-right:24px}
+    .grid-4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+    .grid-3{grid-template-columns:1fr !important}
+    .grid-2{grid-template-columns:1fr !important}
+    .result-row{grid-template-columns:1fr}
+    .result-title{font-size:34px}
+    .scrub{font-size:28px}
+    .h1{font-size:52px !important}
+  }
+
+  /* ===== плитки направлений (bento) ===== */
+  .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:420px;gap:18px}
+  .vtile{position:relative;display:block;overflow:hidden;border-radius:16px;background:#111;scroll-margin-top:110px;outline:2px solid transparent;outline-offset:5px;transition:outline-color .4s ease, opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover{opacity:1}
+  .vtile-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(15%) contrast(1.03) brightness(.94);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .vtile:hover .vtile-photo{transform:scale(1.05)}
+  .vtile-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.38) 0%,rgba(10,10,11,.06) 28%,rgba(10,10,11,.22) 55%,rgba(10,10,11,.86) 100%);transition:opacity .4s ease}
+  .vtile::after{content:"";position:absolute;inset:0;background:rgba(10,10,11,.35);opacity:0;transition:opacity .4s ease;pointer-events:none}
+  .vtile:hover::after{opacity:1}
+  .vtile-body{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:22px 24px 24px}
+  .vtile-top{display:flex;justify-content:flex-end;gap:16px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#C4C4C4}
+  .vtile-main{display:flex;flex-direction:column;gap:10px;max-width:560px;padding-right:56px}
+  .vtile-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.25;letter-spacing:.01em;text-transform:uppercase;color:#FAFAFA}
+  .vtile-lead{font-size:15px;line-height:1.55;color:#E2E2E2;max-height:0;opacity:0;overflow:hidden;transition:max-height .55s ease, opacity .45s ease}
+  .vtile:hover .vtile-lead,.vtile:focus-visible .vtile-lead{max-height:96px;opacity:1}
+  .vtile-cap{font-family:'PT Mono',monospace;font-size:11px;line-height:1.45;color:#A8A8A8}
+  .vtile-arrow{position:absolute;right:22px;bottom:22px;z-index:3;width:42px;height:42px;border-radius:999px;border:1px solid rgba(250,250,250,.4);color:#FAFAFA;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;transform:translateX(-8px);transition:opacity .35s ease, transform .35s ease, background .35s ease}
+  .vtile:hover .vtile-arrow{opacity:1;transform:none}
+  .vtile:target,.vtile.flash{outline-color:#141414}
+  /* страница подраздела ещё не готова — без стрелки и без курсора-«руки» */
+  .vtile[data-soon]{cursor:default}
+  .vtile[data-soon] .vtile-arrow{display:none}
+
+  /* ===== ключевые пункты (без цифр) ===== */
+  .tp{position:relative;padding-top:24px;border-top:1px solid #E6E6E6;display:flex;flex-direction:column;gap:10px}
+  .tp::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:0;background:#141414;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+  .tp.in::before{width:100%}
+  .tp-main::before{height:2px;top:-1px}
+  .tp-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .tp-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;line-height:1.35;color:#141414}
+  .tp-text{font-size:15px;line-height:1.6;color:#8A8A8A}
+
+  /* ===== этапы работы ===== */
+  .steps-track{position:relative;height:1px;background:#E6E6E6;margin-bottom:34px}
+  .steps-fill{position:absolute;left:0;top:0;height:1px;width:0;background:#141414}
+  .steps-dot{position:absolute;top:-4px;left:0;width:9px;height:9px;margin-left:-4px;border-radius:999px;background:#141414;box-shadow:0 0 0 5px rgba(20,20,20,.08)}
+  .step{opacity:.38;transition:opacity .6s ease}
+  .step.on{opacity:1}
+  .step-idx{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:#ADADAD}
+  .step-title{margin:12px 0 10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;line-height:1.3;color:#141414}
+  .step-text{font-size:15px;line-height:1.6;color:#767676}
+
+  /* ===== отзывы ===== */
+  .quotes{display:grid}
+  .quote{grid-area:1/1;margin:0;opacity:0;transform:translateY(10px);transition:opacity .9s ease, transform .9s ease;pointer-events:none}
+  .quote.on{opacity:1;transform:none;pointer-events:auto}
+  .quote blockquote{margin:0;max-width:1120px;font-family:'Montserrat',sans-serif;font-weight:500;font-size:34px;line-height:1.38;color:#FAFAFA}
+  .quote figcaption{display:flex;align-items:center;gap:16px;margin-top:38px}
+  .quote figcaption img,.q-initials{width:52px;height:52px;border-radius:999px;object-fit:cover;filter:grayscale(100%);flex:0 0 52px}
+  .q-initials{display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.28);font-family:'PT Mono',monospace;font-size:13px;color:#C8C8C8}
+  .quote b{display:block;font-weight:600;font-size:15px;color:#FAFAFA}
+  .quote i{display:block;font-style:normal;font-size:13px;color:#8A8A8A;margin-top:2px}
+  .q-nav{display:flex;align-items:center;gap:10px;margin-top:48px}
+  .q-dot{width:32px;height:2px;border:none;padding:0;background:rgba(255,255,255,.2);transition:background .3s ease}
+  .q-dot.on{background:#FAFAFA}
+  .q-all{margin-left:auto;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#FAFAFA}
+
+  @media (max-width: 1100px){
+    .bento{grid-template-columns:1fr;grid-auto-rows:360px}
+    .bento .vtile{grid-column:auto !important}
+    .quote blockquote{font-size:24px}
+  }
+  @media (hover: none){
+    .vtile-lead{max-height:none;opacity:1}
+    .vtile-arrow{opacity:1;transform:none}
+  }
+  @media (prefers-reduced-motion: reduce){
+  }
+
+  /* отзывы: главная фраза крупно, две другие — мельче, отдельными строками */
+  .quote .q-more{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;max-width:900px}
+  .quote .q-more li{font-size:17px;line-height:1.55;color:#9A9A9A;padding-left:18px;position:relative}
+  .quote .q-more li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:#5B5B5B}
+
+  /* заглушка вместо фото (в исходном документе фото объекта нет) */
+  .vtile-ph{position:absolute;inset:0;background:
+      radial-gradient(90% 80% at 85% 10%, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 60%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 32px),
+      linear-gradient(160deg,#1A1A1C 0%,#0E0E10 100%)}
+  .vtile-noimg .vtile-cap{color:#6E6E6E}
+
+  /* --- «Технологии» в колонке «Компания»: раскрывающийся список (меню и подвал) --- */
+  .tech-dd{display:flex;flex-direction:column;align-items:center;}
+  .tech-dd > summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  .tech-dd > summary::-webkit-details-marker{display:none;}
+  .tech-dd .tech-chev{display:inline-block;font-size:9px;line-height:1;transition:transform .2s ease;}
+  .tech-dd[open] .tech-chev{transform:rotate(180deg);}
+  .tech-dd .tech-list{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:15px;}
+  .tech-dd .tech-list .mm-item-long,.tech-dd .tech-list .ft-item-long,.tech-dd .tech-list .mm-item,.tech-dd .tech-list .ft-item{font-size:11.5px;}
+  /* «Технологии»: слово — ссылка на раздел, стрелка — отдельная кнопка, раскрывает список (как «split button») */
+  .tech-dd > summary{gap:0;}
+  .tech-dd .tech-go{color:inherit;padding:0 12px 0 0;box-shadow:inset -1px 0 0 rgba(140,140,140,.35);text-decoration:none;}
+  .tech-dd .tech-go:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(140,140,140,.7);}
+  .tech-dd .tech-chev{width:26px;height:26px;margin:-7px 0 -7px 7px;border-radius:50%;display:inline-flex !important;align-items:center;justify-content:center;font-size:9px;transition:transform .2s ease,background .2s ease;}
+  .tech-dd > summary:hover .tech-chev:hover,.tech-dd .tech-chev:hover{background:rgba(140,140,140,.22);}
+  .tech-dd > summary:focus-visible{outline:none;} .tech-dd > summary:focus-visible .tech-chev{outline:2px solid #7FB2FF;outline-offset:1px;}
+  .nav-cabinet{white-space:normal !important;text-align:right;line-height:1.2;font-size:11.5px !important;}
+  /* --- кнопка закрытия выпадающего меню --- */
+  .mm-close{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:999px;border:none;background:none;color:#F2F2F2;font-family:inherit;font-size:12.5px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .15s ease,color .15s ease;}
+  .mm-close:hover,.mm-close:focus-visible{color:#FFFFFF;opacity:.7;}
+  /* ===== ОБЩАЯ СЕТКА ШАПКИ И ВЫПАДАЮЩЕГО МЕНЮ =====
+     Шапка и меню используют один и тот же класс .ds-row, поэтому их колонки всегда совпадают.
+     Ширины колонок задаются ТОЛЬКО здесь: --ds-c1 … --ds-c7; --ds-spread — насколько «Продукция» и «Клиентам» отодвинуты от центра. Крайние колонки прижаты к краям
+     страницы (отступ --ds-pad), пять средних — по центру. Менять пункты меню можно свободно:
+     текст переносится внутри своей колонки и не сдвигает соседние. */
+  :root{--ds-pad:40px;--ds-gap:20px;--ds-spread:40px;--ds-c1:90px;--ds-c2:175px;--ds-c3:195px;--ds-c4:200px;--ds-c5:195px;--ds-c6:175px;--ds-c7:90px;}
+  .ds-row{display:grid !important;box-sizing:border-box;width:100%;max-width:none;margin:0;padding-left:var(--ds-pad);padding-right:var(--ds-pad);column-gap:var(--ds-gap);
+    grid-template-columns:var(--ds-c1) minmax(0,1fr) minmax(var(--ds-c2),calc(var(--ds-c2) + var(--ds-spread))) var(--ds-c3) var(--ds-c4) var(--ds-c5) minmax(var(--ds-c6),calc(var(--ds-c6) + var(--ds-spread))) minmax(0,1fr) var(--ds-c7);}
+  .ds-row > *{min-width:0;}
+  .ds-row > :nth-child(1){grid-column:1;} .ds-row > :nth-child(2){grid-column:3;} .ds-row > :nth-child(3){grid-column:4;}
+  .ds-row > :nth-child(4){grid-column:5;} .ds-row > :nth-child(5){grid-column:6;} .ds-row > :nth-child(6){grid-column:7;}
+  .ds-row > :nth-child(7){grid-column:9;}
+  /* полоса прокрутки меню скрыта: иначе ряд меню становится уже шапки и колонки съезжают */
+  .mm-overlay{scrollbar-width:none;} .mm-overlay::-webkit-scrollbar{display:none;}
+
+  /* ===================================================================
+     СТРАНИЦА «ОТЗЫВЫ» — ротонда (по референсу lucas-aufrere.com/projets)
+     Все объекты лежат на внутренней поверхности воображаемого цилиндра:
+     каждая карточка/плитка собрана из узких вертикальных полос под своим углом.
+     Классы с префиксом rv- — чтобы не пересекаться с общими стилями сайта.
+     =================================================================== */
+  html,body{height:100%;}
+  body.rv-page{background:#0A0A0B;color:#FAFAFA;overflow:hidden;}
+  .rv-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  .rv-stage{position:fixed;inset:0;overflow:hidden;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;background:#0A0A0B;}
+  .rv-stage.drag{cursor:grabbing;}
+  .rv-counter{position:absolute;left:var(--ds-pad,40px);top:110px;z-index:5;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.08em;color:rgba(250,250,250,.55);}
+  .rv-counter b{font-weight:500;color:#FAFAFA;}
+  .rv-title{position:absolute;left:50%;top:104px;transform:translateX(-50%);z-index:5;margin:0;font-weight:300;font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:#FAFAFA;padding-left:.42em;}
+  .rv-viewport{position:absolute;inset:0;perspective:1000px;perspective-origin:50% 50%;transition:opacity .55s ease;}
+  .rv-ring{position:absolute;left:50%;top:53%;width:0;height:0;transform-style:preserve-3d;}
+  .rv-strip{position:absolute;overflow:hidden;backface-visibility:hidden;}
+  .rv-strip > .rv-src{position:absolute;top:0;}
+
+  /* карточка отзыва (развёрнутый макет до изгиба). Размеры в em: шрифт карточки масштабируется вместе с её шириной */
+  .rv-card{display:flex;flex-direction:column;}
+  .rv-above{flex:0 0 auto;display:flex;flex-direction:column;gap:.35em;padding-bottom:.75em;}
+  .rv-idx{font-family:'PT Mono',monospace;font-size:.7em;letter-spacing:.1em;color:rgba(250,250,250,.5);}
+  .rv-name{font-size:1.3em;font-weight:300;letter-spacing:.06em;text-transform:uppercase;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .rv-body{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:44% 1fr;background:#131315;border:1px solid rgba(255,255,255,.09);border-radius:.9em;overflow:hidden;}
+  .rv-photo{background-size:cover;background-position:center 30%;background-color:#1B1B1E;}
+  .rv-txt{display:flex;flex-direction:column;gap:.9em;min-width:0;padding:1.3em 1.3em 1.2em;}
+  .rv-tags{display:flex;flex-wrap:wrap;gap:.4em;min-height:1.5em;}
+  .rv-tag{font-family:'PT Mono',monospace;font-size:.62em;letter-spacing:.08em;text-transform:uppercase;padding:.35em .7em;border:1px solid rgba(255,255,255,.22);border-radius:99px;color:rgba(250,250,250,.8);}
+  .rv-quote{flex:1;margin:0;font-size:1.06em;font-weight:300;line-height:1.45;color:#EDEDED;display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden;}
+  .rv-pos{font-size:.72em;font-weight:300;line-height:1.4;color:rgba(250,250,250,.55);}
+  .rv-pos::before{content:"";display:block;width:2.4em;border-top:1px solid rgba(255,255,255,.3);margin-bottom:.7em;}
+  .rv-below{flex:0 0 auto;margin-top:.75em;font-family:'PT Mono',monospace;font-size:.66em;letter-spacing:.06em;text-transform:uppercase;color:rgba(250,250,250,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  /* плитки на верхних и нижних ярусах — фото других отзывов */
+  .rv-tile{background-size:cover;background-position:center 30%;background-color:#18181B;border-radius:6px;filter:grayscale(.35) brightness(.72);}
+  .rv-strip.hov .rv-tile{filter:none;}
+  .rv-strip{cursor:inherit;}
+
+  .rv-progress{position:absolute;left:50%;bottom:84px;transform:translateX(-50%);display:flex;gap:6px;z-index:5;width:min(672px,calc(100vw - 32px));}
+  .rv-progress button{flex:1;height:14px;padding:0;background:none;border:none;cursor:pointer;position:relative;}
+  .rv-progress button::after{content:"";position:absolute;left:0;right:0;top:6px;border-top:1px solid rgba(255,255,255,.22);transition:border-color .3s;}
+  .rv-progress button:hover::after{border-top-color:rgba(255,255,255,.55);}
+  .rv-progress button.on::after{border-top:2px solid #FAFAFA;top:5px;}
+  .rv-stage::before,.rv-stage::after{content:"";position:absolute;left:0;right:0;z-index:4;pointer-events:none;}
+  .rv-stage::before{top:0;height:170px;background:linear-gradient(#0A0A0B 45%,rgba(10,10,11,0));}
+  .rv-stage::after{bottom:0;height:150px;background:linear-gradient(rgba(10,10,11,0),#0A0A0B 60%);}
+  .rv-hint .m{display:none;}
+  .rv-hint{position:absolute;left:50%;bottom:50px;transform:translateX(-50%);z-index:5;white-space:nowrap;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(250,250,250,.45);}
+
+  /* переход ротонда → подробный вид */
+  #siteHeader,.rv-counter,.rv-title,.rv-progress,.rv-hint{transition:opacity .45s ease;}
+  body.rv-detail-on .rv-counter,body.rv-detail-on .rv-title,
+  body.rv-detail-on .rv-progress,body.rv-detail-on .rv-hint{opacity:0;pointer-events:none;}
+  body.rv-detail-on .rv-viewport{opacity:0;}
+
+  /* подробный вид отзыва */
+  .rv-detail{position:fixed;inset:0;z-index:30;background:#0A0A0B;opacity:0;pointer-events:none;transition:opacity .45s ease;
+    cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;overflow:hidden;}
+  .rv-detail.open{opacity:1;pointer-events:auto;}
+  .rv-detail.drag{cursor:grabbing;}
+  .rv-dtext{position:absolute;left:var(--ds-pad,40px);top:28px;width:min(760px,calc(100vw - 2*var(--ds-pad,40px) - 80px));display:flex;flex-direction:column;gap:12px;}
+  .rv-dmeta{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(250,250,250,.55);}
+  .rv-dname{margin:0;font-weight:300;font-size:clamp(30px,4.2vw,60px);line-height:1.02;letter-spacing:.02em;text-transform:uppercase;}
+  .rv-dsub{font-style:italic;font-weight:300;font-size:clamp(14px,1.2vw,17px);line-height:1.4;color:rgba(250,250,250,.75);max-width:640px;}
+  .rv-dvar{display:flex;flex-direction:column;gap:12px;transition:opacity .25s ease,transform .25s ease;}
+  .rv-dvar.swap{opacity:0;transform:translateY(8px);}
+  .rv-ddesc{font-weight:300;font-size:clamp(14px,1.15vw,16px);line-height:1.5;color:#DCDCDC;max-width:620px;min-height:3em;}
+  .rv-dcount{margin-top:6px;font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.1em;color:#FAFAFA;}
+  .rv-dhint{font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.08em;color:rgba(250,250,250,.45);}
+  .rv-close{position:absolute;right:var(--ds-pad,40px);top:28px;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.3);
+    background:transparent;color:#FAFAFA;cursor:pointer;padding:0;z-index:2;display:flex;align-items:center;justify-content:center;transition:background .25s,border-color .25s;}
+  .rv-close:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.6);}
+  .rv-dviewport{position:absolute;left:0;right:0;bottom:0;top:var(--dv-top,230px);perspective:1000px;perspective-origin:50% 40%;}
+  .rv-dring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;}
+  .rv-slide{border-radius:.9em;overflow:hidden;}
+  .rv-slide.ph{background-size:cover;background-position:center 30%;background-color:#18181B;}
+  .rv-slide.tx{background:#131315;border:1px solid rgba(255,255,255,.09);padding:1.6em 1.8em;font-weight:300;font-size:1em;line-height:1.55;color:#E2E2E2;}
+  .rv-slide.tx p{margin:0 0 .7em;}
+  .rv-slide.tx h4{margin:.2em 0 .5em;font-family:'PT Mono',monospace;font-weight:500;font-size:.72em;letter-spacing:.1em;text-transform:uppercase;color:#FAFAFA;}
+  /* видеоплашка: кадры видео рисуются на холсты внутри полос, поверх — кнопка, подпись и полоса прогресса */
+  .rv-slide.vd{background-color:#000;background-size:cover;background-position:center;}
+  .rv-slide.vd.vert{background-size:contain;background-repeat:no-repeat;}
+  .rv-slide .vc{position:absolute;top:0;display:block;opacity:0;transition:opacity .2s;}
+  .rv-slide.drawn .vc{opacity:1;}
+  .rv-slide .vo{position:absolute;inset:0;}
+  .rv-slide .vo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.6));pointer-events:none;}
+  .rv-slide .vplay{position:absolute;left:50%;top:50%;width:4.6em;height:4.6em;margin:-2.3em 0 0 -2.3em;padding:1.15em 1.05em 1.15em 1.35em;border-radius:50%;
+    background:rgba(10,10,11,.55);border:1px solid rgba(255,255,255,.7);color:#FAFAFA;transition:opacity .25s,transform .25s;}
+  .rv-slide.playing .vplay{opacity:0;transform:scale(.8);}
+  .rv-slide .vlab,.rv-slide .vtime{position:absolute;bottom:1.5em;z-index:1;font-family:'PT Mono',monospace;font-size:.62em;letter-spacing:.1em;text-transform:uppercase;color:#FAFAFA;}
+  .rv-slide .vlab{left:1.4em;top:1.2em;bottom:auto;padding:.35em .7em;border:1px solid rgba(255,255,255,.55);border-radius:99px;background:rgba(10,10,11,.45);} .rv-slide .vtime{right:1.9em;text-shadow:0 1px 3px rgba(0,0,0,.8);}
+  .rv-slide .vbar{position:absolute;left:1.2em;right:1.2em;bottom:.55em;height:3px;z-index:1;background:rgba(255,255,255,.25);}
+  .rv-slide .vbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#FAFAFA;}
+  .rv-slide.vd .sn{display:none;}
+  .rv-full{align-self:flex-start;margin-top:2px;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#FAFAFA;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:7px 14px;cursor:pointer;transition:background .25s,border-color .25s;}
+  .rv-full:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.7);}
+  .rv-full[hidden]{display:none;}
+  .rv-tag.vid{border-color:rgba(250,250,250,.7);color:#FAFAFA;}
+  .rv-slide .sn{position:absolute;right:1.1em;bottom:.8em;font-family:'PT Mono',monospace;font-size:.62em;color:rgba(250,250,250,.4);}
+  @media (max-width:760px){
+    .rv-counter{top:92px;left:16px}.rv-title{top:90px}
+    .rv-hint{font-size:10px;bottom:40px}.rv-hint .d{display:none}.rv-hint .m{display:inline}.rv-progress{bottom:66px}
+    .rv-close{top:16px;right:16px;width:44px;height:44px}.rv-dtext{left:16px;top:24px;width:calc(100vw - 92px)}
+  }
+
+  /* шапка сайта остаётся видимой в подробном виде: карточка открывается под ней */
+  .rv-detail{top:74px !important;}
+  @media (max-width:1099px){ .rv-detail{top:64px !important;} }
+  @media (max-width:699px){ .rv-detail{top:58px !important;} }
+  /* слайды, уходящие при прокрутке под текст карточки, плавно затемняются (гаснут в фон) */
+  .rv-dtext{z-index:3;}
+  .rv-dviewport{-webkit-mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.4) 18px,#000 44px);mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.4) 18px,#000 44px);}
+
+  /* компактный текст карточки сверху — слайдам остаётся почти весь экран (текст не ложится на слайды) */
+  @media (min-width:761px){
+    .rv-dtext{top:20px !important;gap:6px !important;width:min(1180px,calc(100vw - 2*var(--ds-pad,40px) - 90px)) !important;}
+    .rv-dname{font-size:clamp(24px,2.4vw,38px) !important;line-height:1.05 !important;}
+    .rv-dsub{font-size:clamp(13px,1vw,15px) !important;max-width:none !important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .rv-dvar{gap:4px 18px !important;flex-direction:row !important;flex-wrap:wrap;align-items:baseline;}
+    .rv-ddesc{font-size:clamp(13px,1vw,15px) !important;min-height:0 !important;max-width:none !important;flex:1 1 100%;}
+    .rv-dcount{margin-top:0 !important;}
+    .rv-dhint{position:fixed;left:0;right:0;bottom:12px;text-align:center;z-index:4;pointer-events:none;}
+  }
+</style>
+<script src="./navbot.js" defer></script>
+
+<link rel="canonical" href="https://ds-proaudio.ru/en/reviews.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DS PROAUDIO">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Testimonials — DS PROAUDIO">
+<meta property="og:description" content="Testimonials from sound engineers, technical directors and system engineers about DS PROAUDIO systems: Taura, Pillar, ERA.">
+<meta property="og:url" content="https://ds-proaudio.ru/en/reviews.html">
+<meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="DS PROAUDIO">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Testimonials — DS PROAUDIO", "url": "https://ds-proaudio.ru/en/reviews.html", "inLanguage": "en", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
+
+</head>
+<body class="rv-page">
+
+<header id="siteHeader" style="position:fixed;top:0;left:0;right:0;z-index:60;width:100%;background:rgba(10,10,11,.82);border-bottom:1px solid rgba(255,255,255,.10);">
+  <div class="ds-row" style="height:74px;align-items:center;">
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./gov.html" aria-label="" style="display:flex;align-items:center;">
+        <img src="./assets/gisp-mark-dark.svg" alt="" style="height:34px;width:34px;object-fit:contain;">
+      </a>
+        <a class="lang-sw" href="./reviews.html" hreflang="ru" lang="ru" title="Russian version">RU</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./en/products.html" class="nav-trigger">Products</a>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a href="./en/application.html" class="nav-trigger">Applications</a>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <a href="./en/index.html" aria-label="DS PROAUDIO — home" style="display:block;position:relative;height:32px;width:145px;">
+        <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);">
+      </a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./en/support.html" class="nav-trigger">Support</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <a href="./en/clients.html" class="nav-trigger">Clients</a>
+    </div>
+    <div style="display:flex;justify-content:flex-end;align-items:center;">
+        <a href="#" class="cab-pill" aria-label="Partner portal" title="Partner portal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></svg><span>Partners</span></a>
+      </div>
+  </div>
+  <button type="button" class="hdr-menu-btn" data-menu-toggle aria-haspopup="true" aria-expanded="false">Menu</button>
+</header>
+
+<div class="mm-overlay" id="megamenu" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;flex-direction:column;">
+  <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
+      <a href="./en/docs.html?g=gll" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+      <a href="./en/docs.html?g=dwg" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+      <a href="./en/docs.html?g=man" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./en/products-line-arrays.html" class="mm-item">Line arrays</a>
+      <a href="./en/products-constant-curvature.html" class="mm-item">Constant-curvature arrays</a>
+      <a href="./en/products-columns.html" class="mm-item">Column loudspeakers</a>
+      <a href="./en/products-point-sources.html" class="mm-item">Point-source loudspeakers</a>
+      <a href="./en/products-monitors.html" class="mm-item">Stage monitors</a>
+      <a href="./en/products-compact-sets.html" class="mm-item">Compact systems</a>
+      <a href="./en/products-auditorium.html" class="mm-item">Lecture hall systems</a>
+      <a href="./products-registry.html" class="mm-item"></a>
+      <a href="./en/products-all-weather.html" class="mm-item">All-weather systems</a>
+      <a href="./en/products-amplifiers.html" class="mm-item">Amplifiers</a>
+      <a href="./en/products-accessories.html" class="mm-item">Accessories</a>
+      <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" class="mm-bold">PDF catalog</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
+      <a href="./en/reviews.html" class="mm-bold mm-current" aria-current="page">Testimonials</a>
+      <a href="./en/portfolio.html" class="mm-bold" style="margin-bottom:2px;">Portfolio</a>
+      <a href="./en/culture.html" class="mm-item">Arts & culture</a>
+      <a href="./en/education.html" class="mm-item">Education & research</a>
+      <a href="./en/sport.html" class="mm-item">Sports & live events</a>
+      <a href="./en/corporate.html" class="mm-item">Corporate</a>
+      <a href="./en/hospitality.html" class="mm-item">Hospitality</a>
+      <a href="./en/religious.html" class="mm-item">Houses of worship</a>
+      <a href="./en/entertainment.html" class="mm-item">Entertainment</a>
+      <a href="./en/rental.html" class="mm-item" style="font-weight:500;">Rental</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-top:6px;">
+      <a href="./en/history.html" class="mm-item">History</a>
+      <a href="./en/philosophy.html" class="mm-item">Philosophy</a>
+      <a href="./en/faces.html" class="mm-item">Our people</a>
+      <a href="./en/about.html" class="mm-item">Company at a glance</a>
+      <a href="./en/production.html" class="mm-item">Manufacturing</a>
+      <details class="tech-dd">
+        <summary class="mm-item" title="Show the list of technologies"><a href="./en/technologies.html" class="tech-go" title="Technologies section">Technologies</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
+        <div class="tech-list">
+          <a href="./en/tech-rigging.html" class="mm-item-long">Pinless rigging<span class="mm-sub">(TAURA, ERA arrays)</span></a><a href="./en/tech-click-clack.html" class="mm-item-long">CLICK-CLACK<span class="mm-sub">(angles set on the ground, TAURA)</span></a>
+          <a href="./en/tech-coaxial-waveguide.html" class="mm-item-long">Coaxial arrays<span class="mm-sub">(ERA, TAURA 10)</span></a>
+          <a href="./en/tech-horizontal-summing.html" class="mm-item-long">Horizontal summing<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
+          <a href="./en/tech-two-way-element.html" class="mm-item-long">Two-way array element<span class="mm-sub">(TAURA 8 array)</span></a>
+          <a href="./en/tech-cardioid-sub.html" class="mm-item-long">Cardioid subwoofer<span class="mm-sub">(TAURA C-Sub 18)</span></a>
+          <a href="./en/tech-coaxial-cx.html" class="mm-item-long">Coaxial drivers<span class="mm-sub">(CX, MCX series)</span></a>
+          <a href="./en/tech-voice-coil.html" class="mm-item">Edge-wound interlocked voice coils</a>
+        </div>
+      </details>
+      <a href="./en/blog.html" class="mm-item">Blog</a>
+      <a href="./en/contacts.html" class="mm-item">Contact</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:17px;text-align:right;">
+      <a href="./en/seminars.html" class="mm-item">Training & seminars</a>
+      <a href="./en/docs.html" class="mm-item-long">Documentation center<span class="mm-sub">(EASE & CAD downloads)</span></a>
+      <a href="./en/software.html" class="mm-item-long">Acoustic simulation software</a>
+      <a href="./en/warranty.html" class="mm-item">Warranty & service</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
+      <a href="./en/showroom.html" class="mm-item">Visit the showroom</a>
+      <a href="./en/demo.html" class="mm-item">Request an on-site demo</a>
+      <a href="./en/consultation.html" class="mm-item">Request a project consultation</a>
+      <a href="./en/prices.html" class="mm-item">Get pricing</a>
+      <a href="./en/where-to-buy.html" class="mm-item">Where to buy</a>
+      <a href="./en/delivery.html" class="mm-item">Lead times</a>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
+      <a href="#dsf-bot" aria-label="Chat with us" style="font-size:17px;color:#FAFAFA;">💬</a>
+      <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" class="mm-bold">VK</a>
+      <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" class="mm-bold">TG</a>
+      <a href="#contact" aria-label="Write to us" style="font-size:17px;color:#FAFAFA;">✉</a>
+      <a href="tel:+74951501238" aria-label="Call us" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
+    </div>
+  </div>
+  <div style="flex:0 0 auto;display:flex;justify-content:center;padding:28px 0 34px;">
+    <button type="button" data-menu-close aria-label="Close menu" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Close menu</span></button>
+  </div>
+</div>
+
+
+<section class="rv-stage" id="rvStage" aria-label="Testimonials">
+  <div class="rv-counter" id="rvCounter" aria-live="polite"><b>01</b> / 25</div>
+  <h1 class="rv-title">Testimonials</h1>
+  <div class="rv-viewport" aria-hidden="true"><div class="rv-ring" id="rvRing"></div></div>
+  <div class="rv-progress" id="rvProgress"></div>
+  <div class="rv-hint"><span class="d">Drag · scroll wheel · arrow keys ← → ↑ ↓ · click for details</span><span class="m">Drag · tap a testimonial for details</span></div>
+</section>
+
+
+<ol class="rv-sr">
+    <li><b>Yuri Astafyev</b>, technical director and FOH engineer for Grigory Leps, organizer of the Rental Companies Conference in Samara, founder of Pro Show Labs. “DS PROAUDIO is one of the few companies that develop and use loudspeakers of their own manufacture.”</li>
+    <li><b>Arsen Stepanyan</b>, main stage FOH engineer, Bessonnitsa festival. “This is probably the best sound we’ve ever had at the festival. Beautiful detail, a tight, well-defined punch — the kick drum hits you right in the soul.”</li>
+    <li><b>Andrey Klyukin</b>, CEO and producer, Dikaya Myata festival. “Musicians, organizers and the audience were absolutely thrilled — the sound was top quality.”</li>
+    <li><b>Vyacheslav Velichkovsky</b>, second engineer on Polina Gagarina’s touring crew, also FOH for Merab Amzoev, MON for Dayte Tank (!), and former FOH engineer for Danila Kozlovsky, the Makarsky family and Mitya Fomin. “Among Russian-made systems, this is the best option on the market. The sound is dense, the system is responsive, and it performs great in a thousand-seat venue.”</li>
+    <li><b>Dmitry Danilov</b>, FOH engineer for Elena Vaenga. “This may well be the first Russian-made loudspeaker system I have no complaints or questions about at all.”</li>
+    <li><b>Sergey Lukyanov</b>, house sound engineer, Dikaya Myata art camp. “I’d especially single out the midrange: it’s snappy but very controlled, which made dialing in instruments and vocals much easier.”</li>
+    <li><b>Pavel Babaev</b>, FOH engineer for the band Neschastny Sluchai. “Here it sounded soft and natural, with no harshness, giving the sound density and warmth. This is not a harsh-sounding rig.”</li>
+    <li><b>Vladimir Kasymov</b>, touring FOH engineer, head of the sound department at the Moscow Theater for Young Audiences. “The result was a very balanced sound with excellent clarity, good SPL and dynamics.”</li>
+    <li><b>Sergey Proskuryakov</b>, design engineer, acoustic designer, author and developer of training programs. “Compared with systems in the same class from well-known manufacturers, Taura clearly comes out ahead. It’s my favorite, and I recommend it for any application without hesitation.”</li>
+    <li><b>Alexey Sedov</b>, founder and executive producer, ZAVOD SHOW. “The Taura array is a long-awaited new product from a Russian manufacturer, and once it became available, we decided to put it to the test.”</li>
+    <li><b>Vadim Kovalevsky</b>, FOH engineer for Alexey Glyzin. “The system has even coverage: on the balcony, up front and under the balcony, the sound is dense and high quality.”</li>
+    <li><b>Ivan Tishchenko</b>, technical director, Bessonnitsa festival. “At every venue we achieved even coverage, precise zoning and a natural tonal balance.”</li>
+    <li><b>Alexander Lepeshkin</b>, sound engineer. “The response turned out to be exceptional, delivering transparent, clean sound.”</li>
+    <li><b>Stanislav Belov</b>, system engineer. Author and instructor of the “Applied System Engineering” course at Show Crew Academy. “ERA with the subs got an overwhelmingly positive reaction from all the students, which is exactly what we expected.”</li>
+    <li><b>Alexander Aladyshev</b>, actor, musician, founder and head of the Zavod theater company. “After testing the DS PROAUDIO Taura line array, I was pleasantly impressed.”</li>
+    <li><b>Nadezhda Rakhmanova</b>, head of sound and show engineer, Young Actor Children’s Musical Theater, presales engineer for mixing systems at Constage. “I always come away from a listening session with a very good impression.”</li>
+    <li><b>Konstantin Umarov</b>, sound engineer. “Thanks to you, the festival’s main stage sounds better than ever!”</li>
+    <li><b>Sergey Pyanov</b>, sound engineer, Sergo Ordzhonikidze Metallurgists’ Palace of Culture. “The new Taura line array made a great impression on me: a pleasant, smooth and open sound, beautiful tone.”</li>
+    <li><b>Sergey Yarkov</b>, brand manager, Hi-Tech Media. “The system has a substantial power reserve and plenty of headroom, which lets you unlock its full potential.”</li>
+    <li><b>Dmitry Kazantsev</b>, sound engineer. “It’s worth considering for both permanent installations and rental use. The design of the driver impressed me.”</li>
+    <li><b>Roman Skripnik</b>, founder of the Pro Event rental company, Urengoy. “A really lively-sounding system. I liked it. It’s a great option for mid-size venues.”</li>
+    <li><b>Alexander Antonov</b>, sound engineer, Kirov Palace of Culture. “Clean, balanced sound, high power and reliable equipment have significantly improved the quality of events in our hall.”</li>
+    <li><b>Alexander Shvedov</b>, FOH engineer for the band Severny Flot. “I liked the ‘flavor’ of the system and its sound — I want to work with it more and really get to know it.”</li>
+    <li><b>Evgeny Efremov</b>, technical director, system engineer. “The pace at which this brand is developing doesn’t surprise me — it inspires me!”</li>
+    <li><b>Dmitry Abramov</b>, sound and lighting rental company owner. “This is pretty much the best purchase we’ve ever made!”</li>
+</ol>
+
+
+<div class="rv-detail" id="rvDetail" aria-hidden="true" role="dialog" aria-label="Testimonial">
+  <div class="rv-dtext">
+    <div class="rv-dmeta" id="rvDMeta"></div>
+    <h2 class="rv-dname" id="rvDName"></h2>
+    <div class="rv-dsub" id="rvDSub"></div>
+    <div class="rv-dvar" id="rvDVar">
+      <div class="rv-ddesc" id="rvDDesc"></div>
+      <div class="rv-dcount" id="rvDCount"></div>
+      <button type="button" class="rv-full" id="rvFull" hidden>⤢ View full screen</button>
+    </div>
+    <div class="rv-dhint">Drag or swipe · ← → · Esc to close</div>
+  </div>
+  <button type="button" class="rv-close" id="rvClose" aria-label="Close testimonial"><svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
+  <div class="rv-dviewport" aria-hidden="true"><div class="rv-dring" id="rvDRing"></div></div>
+</div>
+
+<script>
+(function(){
+    /* ---------- мега-меню ---------- */
+  var menu = document.getElementById('megamenu');
+  var toggles = document.querySelectorAll('[data-menu-toggle]');
+  function setMenu(open){
+    if (open){ menu.hidden = false; menu.style.display = 'flex'; } else { menu.hidden = true; menu.style.display = 'none'; }
+    toggles.forEach(function(b){ b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+  }
+  toggles.forEach(function(b){ b.addEventListener('click', function(){ setMenu(menu.hidden); }); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a,[data-menu-close]')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+})();
+</script>
+<script>
+(function(){
+  /* ===== данные: 25 отзывов (24 из «Отзывы.docx» + Д. Абрамов из видео); video — видеоотзыв последней плашкой. q — дословный фрагмент отзыва, pages — полный текст по страницам ленты ===== */
+  var REV = [{"name": "Yuri Astafyev", "pos": "technical director and FOH engineer for Grigory Leps, organizer of the Rental Companies Conference in Samara, founder of Pro Show Labs", "short": "technical director and FOH engineer for Grigory Leps", "q": "DS PROAUDIO is one of the few companies that design and use loudspeakers of their own making.", "tags": [], "ctx": "", "img": "./assets/reviews/rv-23.jpg", "pages": [[["p", "I’ve known the DS PROAUDIO brand for quite a while, and this team caught my eye right away."], ["p", "I really like their loudspeakers, and I especially value that they’re made in Russia. DS PROAUDIO is one of the few companies that design and use loudspeakers of their own manufacture. The company is growing fast. I wish it every success and prosperity. DS PROAUDIO everywhere!"]]], "video": {"src": "./assets/reviews/video/rv-video-astafiev.mp4", "poster": "./assets/reviews/video/rv-video-astafiev.jpg", "dur": 41.1, "vert": false}}, {"name": "Arsen Stepanyan", "pos": "main stage FOH engineer, Bessonnitsa festival", "short": "main stage FOH engineer, Bessonnitsa festival", "q": "This is probably the best sound we’ve ever had at the festival. Beautiful detail, a tight, well-defined punch — the kick drum hits you right in the soul.", "tags": ["Taura"], "ctx": "Bessonnitsa festival, main stage", "img": "./assets/reviews/rv-02.jpg", "pages": [[["p", "Taura is a superb set of speakers. I loved them, the sound is wonderful. It’s probably the best sound we’ve ever had at the festival. Beautiful detail, a tight, well-defined punch — the kick hits you right in the soul."]]], "video": {"src": "./assets/reviews/video/rv-video-stepanyan.mp4", "poster": "./assets/reviews/video/rv-video-stepanyan.jpg", "dur": 41.1, "vert": false}}, {"name": "Andrey Klyukin", "pos": "CEO and producer, Dikaya Myata festival", "short": "CEO and producer, Dikaya Myata festival", "q": "Musicians, organizers and the audience were absolutely thrilled: the sound was top quality.", "tags": [], "ctx": "Vashana Sup Camp festival", "img": "./assets/reviews/rv-03.jpg", "pages": [[["p", "At the Vashana Sup Camp festival, with sound provided entirely by DS PROAUDIO, everything went great, with real power. There were concerts on the main Mayak stage and jams in the Ambar. Musicians, organizers and the audience were absolutely thrilled: the sound was top quality."]]], "video": {"src": "./assets/reviews/video/rv-video-klyukin.mp4", "poster": "./assets/reviews/video/rv-video-klyukin.jpg", "dur": 34.4, "vert": false}}, {"name": "Vyacheslav Velichkovsky", "pos": "second engineer, Polina Gagarina’s touring crew; also FOH for Merab Amzoev, MON for Dayte Tank (!), and former FOH engineer for Danila Kozlovsky, the Makarskiy duo and Mitya Fomin", "short": "second engineer, Polina Gagarina’s touring crew", "q": "Of the domestic brands, this is the best option on the market. The sound is dense, the system is responsive, and it works great at a thousand-seat venue.", "tags": ["Taura", "Pillar"], "ctx": "Light + Audio Tec 2024, touring", "img": "./assets/reviews/rv-04.jpg", "pages": [[["p", "I first heard DS PROAUDIO Taura at the Light + Audio Tec show in 2024 and liked it right away. Later I got to work with it live with a band, and now I can say with confidence: among Russian-made systems, it’s the best option on the market. The sound is dense, the system is responsive, and it performs great in a thousand-seat venue."], ["p", "Taura and Pillar are truly brilliant designs."]], [["p", "These days you often run into knockoffs of well-known brands. On tour there’s a real risk of getting a fake, and you only find out once you’re at the venue. In that respect, Taura is reliable. It can compete with all the French brands and a number of American ones. So whether it’s a corporate event or a concert, I’ll choose DS PROAUDIO."]]], "video": {"src": "./assets/reviews/video/rv-video-velichkovsky.mp4", "poster": "./assets/reviews/video/rv-video-velichkovsky.jpg", "dur": 85.8, "vert": false}}, {"name": "Dmitry Danilov", "pos": "FOH engineer for Elena Vaenga", "short": "FOH engineer for Elena Vaenga", "q": "This may well be the first Russian-made loudspeaker system I have no complaints or questions about at all.", "tags": ["Taura"], "ctx": "Elena Vaenga solo concert, Reutov", "img": "./assets/reviews/rv-05.jpg", "pages": [[["p", "We used the DS PROAUDIO Taura system for Elena Vaenga’s solo concert in Reutov. It’s probably the first Russian-made loudspeaker system I have no complaints or questions about at all. Everything went quickly and smoothly: setup was simple, and the tuning turned out really well. I got exactly the sound I wanted. These are the best Russian-made speakers I’ve come across."]]], "video": {"src": "./assets/reviews/video/rv-video-danilov.mp4", "poster": "./assets/reviews/video/rv-video-danilov.jpg", "dur": 62.1, "vert": true}}, {"name": "Sergey Lukyanov", "pos": "house sound engineer, Dikaya Myata art camp", "short": "house sound engineer, Dikaya Myata art camp", "q": "I’d especially point out the midrange: it’s punchy yet very controlled, which made dialing in the instruments and vocals much easier.", "tags": ["Taura", "Taura C-Sub 18"], "ctx": "Dikaya Myata art camp, Mayak stage", "img": "./assets/reviews/rv-06.jpg", "pages": [[["p", "On the Mayak stage we worked with the Russian manufacturer DS PROAUDIO. We used an interesting Taura configuration: five cardioid subwoofers and five tops per side. It was great, with more than enough sound. I’d especially point out the midrange: it’s punchy yet very controlled, which made dialing in the instruments and vocals much easier. The guests loved it, and so did we and the organizing team."]]], "video": {"src": "./assets/reviews/video/rv-video-lukyanov.mp4", "poster": "./assets/reviews/video/rv-video-lukyanov.jpg", "dur": 55.4, "vert": false}}, {"name": "Pavel Babaev", "pos": "FOH engineer for the band Neschastny Sluchai", "short": "FOH engineer for the band Neschastny Sluchai", "q": "Here, though, it sounded soft and natural, with no harshness, giving the sound density and warmth. This is not a harsh-sounding box.", "tags": ["Taura"], "ctx": "Sound Engineers Congress, Samara", "img": "./assets/reviews/rv-07.jpg", "pages": [[["p", "I was lucky enough to work on the Taura system with a live band at the Sound Engineers Congress in Samara. I really liked it."], ["p", "The sound is rich in the low end and midrange, which was a pleasant surprise for me, since I usually don’t care much for that range. Here, though, it sounded soft and natural, with no harshness, giving the sound density and warmth. This is not a harsh-sounding box. If you get a chance to work on it, I think you’ll really enjoy it."]]], "video": null}, {"name": "Vladimir Kasymov", "pos": "concert sound engineer, head of audio at the Moscow Youth Theater", "short": "concert sound engineer, head of audio at the Moscow Youth Theater", "q": "The result is a very balanced sound with excellent clarity, good SPL and dynamics.", "tags": ["Pillar", "ERA"], "ctx": "Bessonnitsa festival, small stage", "img": "./assets/reviews/rv-08.jpg", "pages": [[["p", "The Bessonnitsa festival was my first time with DS PROAUDIO Pillar speakers, and I really liked them. The system was complemented by ERA 18\" passive subwoofers. The result was a very balanced sound with excellent clarity, good SPL and dynamics. The speakers are very responsive and easy and pleasant to work with."], ["p", "The system was set up on the small stage, and many people said that this year it became one of the best spots of the whole festival, both for the sound and the design."]]], "video": null}, {"name": "Sergey Proskuryakov", "pos": "design engineer, acoustic designer, author and developer of training programs", "short": "design engineer, acoustic designer", "q": "Compared with systems in the same class from well-known manufacturers, Taura clearly comes out ahead. It’s my favorite, and I recommend it for any job without hesitation.", "tags": ["Taura"], "ctx": "", "img": "./assets/reviews/rv-09.jpg", "pages": [[["p", "What I particularly enjoyed about the DS PROAUDIO Taura array was the low-frequency section. The highs sound refined, which is rare for small formats that are usually harsh and “sizzly.” Taura was a pleasure precisely because of its smooth sound."], ["p", "It’s a versatile system: it sounds good with different sources and different kinds of music. The engineers did a great job; it’s a superb design. It’s doubly gratifying that localization and production are almost 100 percent. That’s very rare these days. Compared with systems of a similar class from well-known manufacturers, Taura clearly comes out ahead. It’s my favorite, and I recommend it without hesitation for any application."]]], "video": {"src": "./assets/reviews/video/rv-video-proskuryakov.mp4", "poster": "./assets/reviews/video/rv-video-proskuryakov.jpg", "dur": 92.6, "vert": false}}, {"name": "Alexey Sedov", "pos": "founder and executive producer, ZAVOD SHOW", "short": "founder and executive producer, ZAVOD SHOW", "q": "The Taura array is a long-awaited new product from a Russian manufacturer, and once it became available, we decided to put it to the test.", "tags": ["Taura", "Pillar"], "ctx": "Trade show in Samara; Mir Cultural Center, Reutov", "img": "./assets/reviews/rv-10.jpg", "pages": [[["p", "We’ve been using DS PROAUDIO models, Pillar in particular, for several years now. The Taura array is a long-awaited new product from a Russian manufacturer, and once it became available, we decided to put it to the test."], ["p", "The first time was at a trade show in Samara, the second at the Mir Palace of Culture in Reutov. I liked the system, but I judge it from a production standpoint. What matters most is the opinion of the sound engineers and our end clients."], ["p", "I’ll be recommending Taura, and time will tell how it works out."]]], "video": null}, {"name": "Vadim Kovalevsky", "pos": "FOH engineer for Alexey Glyzin", "short": "FOH engineer for Alexey Glyzin", "q": "The system’s coverage is even: on the balcony, up front and under the balcony the sound is dense and clean.", "tags": ["Taura"], "ctx": "Alexey Glyzin solo concert, Reutov", "img": "./assets/reviews/rv-11.jpg", "pages": [[["p", "We worked with the DS PROAUDIO Taura system at Alexey Glyzin’s solo concert in Reutov. The system has even coverage: on the balcony, at the front and under the balcony, the sound is dense and high quality. As the volume went up, there were no spurious resonances."], ["p", "It’s not a “shouty” box that relies on extra sensitivity. I’d be happy to work with it again, for example at an open-air venue, since a hall always has its own acoustic quirks and characteristic resonances."]]], "video": {"src": "./assets/reviews/video/rv-video-kovalevsky.mp4", "poster": "./assets/reviews/video/rv-video-kovalevsky.jpg", "dur": 59.5, "vert": false}}, {"name": "Ivan Tishchenko", "pos": "technical director, Bessonnitsa festival", "short": "technical director, Bessonnitsa festival", "q": "At every venue we achieved even coverage, precise zoning and a natural tonal balance.", "tags": ["Taura", "ERA", "Pillar"], "ctx": "Bessonnitsa festival", "img": "./assets/reviews/rv-12.jpg", "pages": [[["p", "I’m responsible for creating a flawless technical environment for tens of thousands of guests and hundreds of participants. Sound is one of the key elements of that environment. For the second year running, we’ve been using audio equipment from the Russian manufacturer DS PROAUDIO across different venues, at screens and music stages. Almost the entire product range was in use: a set of Pillar columns on the small stage, the “small” ERA constant-curvature array at the river screen, and the flagship Taura line array on the main stage."]], [["p", "Bessonnitsa is especially challenging to cover with sound, since it’s an animation film festival. We have many “sound-producing” locations, including music stages that must not interfere with each other, and especially not with screenings of the main program. DS PROAUDIO handled the job brilliantly: both the team and the equipment performed at a high level. We achieved even coverage, precise zoning and a natural tonal balance at every venue. I’d especially like to note that there were no technical failures at all: everything ran as planned. Thank you for the great speakers, the support and the result!"]]], "video": null}, {"name": "Alexander Lepeshkin", "pos": "sound engineer", "short": "sound engineer", "q": "The response was exceptional, delivering transparent, clean sound.", "tags": ["Pillar"], "ctx": "Sound Engineers Congress", "img": "./assets/reviews/rv-13.jpg", "pages": [[["p", "At the Sound Engineers Congress, I tested DS PROAUDIO Pillar (A) loudspeakers while mixing my own multitrack. I was sure they would perform well, but the result exceeded all expectations. The response was exceptional, delivering transparent, clean sound. My thanks to the company’s engineers for their professionalism and quality approach to equipment design."]]], "video": null}, {"name": "Stanislav Belov", "pos": "system engineer; author and instructor of the “Applied System Engineering” course at Show Crew Academy", "short": "system engineer, instructor at Show Crew Academy", "q": "ERA with the subs drew nothing but positive reactions from all the students, which is pretty much what I expected.", "tags": ["ERA", "S18", "CX108"], "ctx": "“Applied System Engineering” seminar, Moscow", "img": "./assets/reviews/rv-14.jpg", "pages": [[["p", "When it’s time to choose loudspeakers for the hands-on part of a seminar, I have to weigh several things. First, the loudspeakers must be good enough that I can recommend them and give them to students as a reference for their acoustic experience. Second, I need to pick loudspeakers from different manufacturers (so it isn’t too easy) and make sure they play nicely together (so it isn’t too hard)."]], [["p", "Since I usually know the first manufacturer at the venue in advance (we always use the in-house system), I can generally pick the second one from a fairly wide range. In Saint Petersburg I had plenty of options, because as I saw it, quite a lot of loudspeakers could get along with the house system. In Moscow, though, things were a bit different."]], [["p", "There, the house system was a range from a German manufacturer whose main selling point is very meticulous component selection and tight consistency of parameters and sound across elements. That put serious limits on which models from other manufacturers could keep it company and form a proper system with it, giving students confidence that they had done everything right."]], [["p", "There were a lot of students in Moscow, and I couldn’t afford to take risks, so I turned to my old friends at DS PROAUDIO and asked them to lend us speakers for the hands-on part of the seminar. We’ve known each other for a long time, so I can always be sure that even if I get a new model I’ve never heard, our idea of what makes a “good speaker” is, if not identical, then very close, and I’ll be happy either way."]], [["p", "And that’s how it turned out. The models that came up most often in my exam questions were ERA and its companion S18. The sub is simply a good single-18″ subwoofer (I no longer believe you can do anything amazing there; it’s either bad or good), but the phase linearity of ERA itself made many of the students irresistibly want to take a picture of it. That was nice to see, but also a little hurtful in a way: why should a phase-linear speaker from a Russian manufacturer be such a curiosity?"]], [["p", "In any case, ERA with the subs drew nothing but positive reactions from all the students, which is pretty much what I expected. The CX108 8″ coaxial (commonly called “the cube”) may not match some of its foreign counterparts in low-end output (possibly only because they use dark magic), but it is just as linear and tonally pleasing as the other DS models."]], [["p", "My only regret is that the new cardioid subs hadn’t been released yet at the time of the seminar. I would have loved to watch the wow effect on the students’ faces as they walked around a sub the size of any 18″ sub that somehow achieves such convincing rear cancellation from a single pair of pins (I think that dark magic has finally been discovered)."]], [["p", "Overall, I sincerely hope the Russian loudspeaker market keeps developing and growing (including its own amplification and processing) and that our students, while preparing a venue for a show, can breathe a sigh of relief at the sight of familiar speakers made in our country, which has always been strong in engineers."], ["p", "For my part, I plan to keep meeting DS systems at my seminars (and at venues, too) in the future."]]], "video": null}, {"name": "Alexander Aladyshev", "pos": "actor, musician, founder and head of the Zavod theater company", "short": "actor, musician, head of the Zavod theater company", "q": "After testing the Taura line array from DS PROAUDIO, I was pleasantly impressed.", "tags": ["Taura"], "ctx": "Listening session", "img": "./assets/reviews/rv-15.jpg", "pages": [[["p", "I’ll admit that when I went to hear a Russian-designed loudspeaker system, I expected some shortcomings. However, after testing the Taura line array from DS PROAUDIO, I was pleasantly impressed. As a performer and event organizer with more than twenty years of experience in stage sound, I can say I now genuinely want to work with this equipment, both with a band and on theater projects."]]], "video": null}, {"name": "Nadezhda Rakhmanova", "pos": "head of sound and show engineer, Young Actor Children’s Musical Theater; presales engineer for mixing systems at Constage", "short": "head of sound and show engineer, Young Actor Children’s Musical Theater", "q": "I always come away from a listening session with a very good impression.", "tags": [], "ctx": "Sound Engineers Congress, trade shows", "img": "./assets/reviews/rv-16.jpg", "pages": [[["p", "I’ve heard DS PROAUDIO loudspeakers at various events: at the Sound Engineers Congress and at loud booths at various trade shows, and I always come away from a listening session with a very good impression."]]], "video": null}, {"name": "Konstantin Umarov", "pos": "sound engineer", "short": "sound engineer, chief audio engineer of the Bessonnitsa festival", "q": "Thanks to you, the festival’s main stage sounds better than ever!", "tags": ["Taura"], "ctx": "Bessonnitsa festival; Sound Engineers Congress", "img": "./assets/reviews/rv-17.jpg", "pages": [[["h", "At the Sound Engineers Congress in Samara"], ["p", "I first got to know the Taura line array at the Light + Audio Tec show in 2024, and it made a strong impression on me. Now, at the congress, I can fully appreciate its capabilities, since it’s installed on the main stage and will be used throughout the entire program. I’m also glad to be working with the DS PROAUDIO team at the Bessonnitsa International Festival, where I am the chief audio engineer. In 2025, we plan to use this array on the festival’s main music stage."], ["p", "At the Bessonnitsa International Festival"]], [["p", "This year DS PROAUDIO supplied its TAURA line array for our festival. Guys, I just want to say a big thank you! Thanks to you, the festival’s main stage sounds better than ever!"]]], "video": null}, {"name": "Sergey Pyanov", "pos": "sound engineer, Sergo Ordzhonikidze Metallurgists’ Palace of Culture", "short": "sound engineer, Sergo Ordzhonikidze Metallurgists’ Palace of Culture", "q": "The new Taura line array made an excellent impression on me: pleasant, smooth and open sound, beautiful tone.", "tags": ["Taura"], "ctx": "", "img": "./assets/reviews/rv-18.jpg", "pages": [[["p", "I’ve known DS PROAUDIO and their loudspeakers for a long time. It’s great to see the team building truly professional, high-end products, constantly growing and bringing in new ideas. I especially liked the rigging concept of their line array. I genuinely support manufacturers who design their own drivers. It’s an extremely important and demanding technological process that calls for high precision and repeatability."]], [["p", "Great job, guys: you keep improving and pushing forward. The new TAURA line array made an excellent impression on me: pleasant, smooth and open sound, a beautiful sonic character. I wish the company continued growth and success, and I hope to see your loudspeakers on sound engineers’ and artists’ riders more often!"]]], "video": null}, {"name": "Sergey Yarkov", "pos": "brand manager, Hi-Tech Media", "short": "brand manager, Hi-Tech Media", "q": "The system has plenty of power reserve and generous headroom, which lets you unlock its full potential.", "tags": ["Taura", "Taura C-Sub 18"], "ctx": "Sound Engineers Congress", "img": "./assets/reviews/rv-19.jpg", "pages": [[["p", "At the Sound Engineers Congress, DS PROAUDIO presented its new TAURA line array. The system has plenty of power reserve and generous headroom, which lets you unlock its full potential. I’d especially single out the cardioid subwoofers: a great complement to the line array."]]], "video": null}, {"name": "Dmitry Kazantsev", "pos": "sound engineer", "short": "sound engineer", "q": "It’s worth considering both for permanent installs and for rental. The driver design really impressed me.", "tags": ["Taura"], "ctx": "Listening session", "img": "./assets/reviews/rv-20.jpg", "pages": [[["p", "I attended a TAURA line array listening session and really liked the system. It’s a strong candidate for both fixed installations and rental. The driver design really impressed me. I recommend it to everyone."]]], "video": null}, {"name": "Roman Skripnik", "pos": "founder of the Pro Event rental company, Urengoy", "short": "founder of the Pro Event rental company, Urengoy", "q": "A really lively-sounding system. I liked it. For mid-size venues it’s a great option.", "tags": ["Pillar"], "ctx": "", "img": "./assets/reviews/rv-21.jpg", "pages": [[["p", "This year I listened to the PILLAR system from DS PROAUDIO. A really lively-sounding system. I liked it. For mid-size venues it’s an excellent option."]]], "video": null}, {"name": "Alexander Antonov", "pos": "sound engineer, Kirov Palace of Culture", "short": "sound engineer, Kirov Palace of Culture", "q": "Clean, balanced sound, plenty of power and reliable equipment have made a real difference to the events in our hall.", "tags": ["ERA"], "ctx": "Kirov Palace of Culture, Perm Krai", "img": "./assets/reviews/rv-22.jpg", "pages": [[["p", "I would like to thank DS PROAUDIO and its dealer in Perm Krai, TL Project, for supplying and tuning our ERA sound system."], ["p", "The system has proven itself in the best possible way: clean, balanced sound, high power and reliable equipment have significantly raised the quality of events in our hall. The new sound system lets us do justice to the whole range of music, from chamber concerts to large-scale shows."]], [["p", "I’d especially like to mention the company’s sound engineers. Their professionalism, attentiveness and willingness to explain every detail of operating the equipment deserve the highest praise. Thanks to their tuning, the system was adapted to the acoustics of our hall, giving us the most accurate sound possible."], ["p", "I can confidently recommend DS PROAUDIO loudspeakers as a reliable, high-quality solution for cultural institutions and concert venues."]]], "video": null}, {"name": "Alexander Shvedov", "pos": "FOH engineer for the band Severny Flot", "short": "FOH engineer for the band Severny Flot", "q": "I liked the “flavor” of the system and its sound: I’d like to work with it more and really get to know it.", "tags": ["Taura"], "ctx": "Severny Flot concert", "img": "./assets/reviews/rv-01.jpg", "pages": [[["p", "We worked on a DS PROAUDIO TAURA system with the band Severny Flot. Interesting loudspeakers: the sound is unusual, not what I’m used to, but very pleasant. Of course, it takes some getting used to, but the system was easy to work with."], ["p", "I liked the “flavor” of the system and its sound: I’d like to work with it more and really get to know it. I’ll gladly do it again."]]], "video": {"src": "./assets/reviews/video/rv-video-shvedov.mp4", "poster": "./assets/reviews/video/rv-video-shvedov.jpg", "dur": 54.3, "vert": false}}, {"name": "Evgeny Efremov", "pos": "technical director, system engineer", "short": "technical director, system engineer", "q": "The way this brand keeps growing doesn’t surprise me; it inspires me!", "tags": [], "ctx": "", "img": "./assets/reviews/rv-24.jpg", "pages": [[["p", "As I recall, DS PROAUDIO started out about six years ago, and I was involved in writing the first presets for their loudspeakers."], ["p", "The pace of this brand’s growth doesn’t surprise me, it inspires me! They’re developing so fast, boldly moving forward in this market and making exactly the products the market needs. I sincerely wish the company success and all the very best."]]], "video": {"src": "./assets/reviews/video/rv-video-efremov.mp4", "poster": "./assets/reviews/video/rv-video-efremov.jpg", "dur": 78.6, "vert": false}}, {"name": "Dmitry Abramov", "pos": "sound and lighting equipment rental", "short": "rental company owner", "q": "Honestly, this is just about the best purchase we’ve ever made!", "tags": ["Pillar"], "ctx": "Ships, private residences, conference venues", "img": "./assets/reviews/rv-25.jpg", "pages": [[["p", "Hi everyone, my name is Dmitry Abramov and I run a sound and lighting equipment rental business. I already have DS PROAUDIO PILLAR loudspeakers in my rental stock, and they’re excellent! In the giveaway video you may have seen some of the photos we took at our venues and sent to the team. Big-name artists and bands are happy to perform on them. We set them up on boats, in private homes and at small conference venues. I recommend them to everyone, if you don’t have these loudspeakers yet. It’s pretty much the best purchase we’ve ever made!"]]], "video": {"src": "./assets/reviews/video/rv-video-abramov.mp4", "poster": "./assets/reviews/video/rv-video-abramov.jpg", "dur": 36.3, "vert": false}}];
+  var N = 5;                                         // мест на кольце
+  var M = REV.length;                                // всего отзывов: сменяются по очереди в скрытой части кольца
+  var ring = document.getElementById('rvRing'), stage = document.getElementById('rvStage'), prog = document.getElementById('rvProgress');
+  var counter = document.getElementById('rvCounter'), menu = document.getElementById('megamenu');
+  var step = 360 / N, angle = 0, target = 0, panY = 0, panT = 0, bars = [];
+  var zoom = 0, detailOpen = false;
+  var DEG = 180 / Math.PI;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function esc(s){ return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+  function menuOpen(){ return menu && !menu.hidden; }
+
+  function cardHTML(r){
+    var R = REV[r];
+    var tags = (R.video ? '<span class="rv-tag vid">▶ Video</span>' : '') + R.tags.map(function(t){ return '<span class="rv-tag">' + esc(t) + '</span>'; }).join('');
+    return '<div class="rv-above"><div class="rv-idx">' + pad(r + 1) + ' / ' + M + '</div><div class="rv-name">' + esc(R.name) + '</div></div>'
+      + '<div class="rv-body"><div class="rv-photo" style="background-image:url(\'' + R.img + '\')"></div>'
+      +   '<div class="rv-txt"><div class="rv-tags">' + tags + '</div>'
+      +     '<p class="rv-quote">«' + esc(R.q) + '»</p>'
+      +     '<div class="rv-pos">' + esc(R.short) + '</div></div></div>'
+      + '<div class="rv-below">' + esc(R.ctx || R.short) + '</div>';
+  }
+
+  // ---- объект на цилиндре: набор вертикальных полос, каждая со своей копией макета, сдвинутой влево ----
+  var objs = [];
+  function makeObj(kind, html, a, tier, k, dy, strips, slot, rev){
+    var o = { kind: kind, a: a, tier: tier, k: k, dy: dy, n: strips, strips: [], slot: slot, rev: rev };
+    for (var j = 0; j < strips; j++){
+      var s = document.createElement('div'); s.className = 'rv-strip'; s.dataset.obj = objs.length;
+      var src = document.createElement('div'); src.className = 'rv-src ' + kind; src.innerHTML = html;
+      s.appendChild(src); ring.appendChild(s); o.strips.push({ el: s, src: src });
+    }
+    objs.push(o); return o;
+  }
+
+  // ярус 0 — карточки отзывов
+  for (var i = 0; i < N; i++) makeObj('rv-card', '', i * step, 0, 1, 0, 24, i, -1);
+  // ярусы ±1 и ±2 — плитки с фотографиями других отзывов
+  var tn = 0;
+  [{ t:-2, k:.24, shift:.75 }, { t:-1, k:.34, shift:.5 }, { t:1, k:.34, shift:.25 }, { t:2, k:.24, shift:.6 }].forEach(function(T){
+    for (var i = 0; i < N; i++){
+      var j = ((i * 37 + T.t * 11 + 70) % 7) / 7;         // детерминированный «разброс» 0…1
+      var r = (tn * 7 + 3) % M; tn++;
+      var el = makeObj('rv-tile', '', (i + T.shift) * step + (j - .5) * step * .35, T.t, T.k * (.85 + j * .3), (j - .5) * 36, 8, -1, r);
+      el.strips.forEach(function(st){ st.src.style.backgroundImage = "url('" + REV[r].img + "')"; });
+    }
+  });
+
+  for (var b = 0; b < M; b++){
+    var btn = document.createElement('button'); btn.type = 'button'; btn.setAttribute('aria-label', 'Testimonial' + (b + 1) + ': ' + REV[b].name);
+    (function(k){ btn.addEventListener('click', function(){ goTo(k); }); })(b);
+    prog.appendChild(btn); bars.push(btn);
+  }
+
+  // ---- геометрия ----
+  var S = {};
+  function measure(){
+    var vw = window.innerWidth, vh = window.innerHeight;
+    S.w = Math.min(vw * .46, 640, vh * 1.05);          // ширина карточки по дуге
+    if (vw < 760) S.w = Math.min(vw * .78, 460);
+    S.fs = S.w / 640 * 16;                             // шрифт карточки — пропорционально ширине
+    S.hb = S.w * .58;                                  // высота самой карточки
+    S.lab = S.fs * 4.9;                                // подписи сверху и снизу
+    if (vw < 700){ S.w = Math.min(vw * .98, 470); S.fs = 17; S.hb = S.w * .6 + S.fs * 8.2; S.lab = S.fs * 2.6; }   // телефон: крупная карточка столбиком (ring-mobile.css)
+    S.R = Math.max(460, S.w * .88);                    // радиус цилиндра
+    S.h1 = S.w * .34 * .62; S.h2 = S.w * .24 * .62;
+    S.g1 = S.hb / 2 + S.lab / 2 + 70 + S.h1 / 2; S.g2 = S.g1 + S.h1 / 2 + 60 + S.h2 / 2;
+    objs.forEach(function(o){
+      var w = o.kind === 'rv-card' ? S.w : S.w * o.k;
+      var h = o.kind === 'rv-card' ? S.hb + S.lab : w * .62;
+      o.w = w; o.h = h;
+      var sw = w / o.n;
+      o.strips.forEach(function(st, j){
+        st.el.style.width = (sw + 1) + 'px';           // +1 px — без щелей между полосами
+        st.el.style.height = h + 'px';
+        st.el.style.left = (-sw / 2) + 'px';
+        st.el.style.top = (-h / 2) + 'px';
+        st.src.style.width = w + 'px'; st.src.style.height = h + 'px';
+        st.src.style.left = (-j * sw) + 'px';
+        if (o.kind === 'rv-card') st.src.style.fontSize = S.fs + 'px';
+      });
+    });
+  }
+  function tierY(t){ return t === 0 ? 0 : (t > 0 ? 1 : -1) * (Math.abs(t) === 1 ? S.g1 : S.g2); }
+  function maxPan(){ return S.g2 - S.hb * .3; }
+  function vis(a){                                   // до 100° от направления взгляда — полностью, 100–130° — плавно гаснет
+    var d = Math.abs((((a - angle) % 360) + 540) % 360 - 180);
+    return Math.max(0, Math.min(1, (130 - d) / 30));
+  }
+
+  var curIdx = -1;
+  function render(){
+    var R = S.R;
+    // смена отзывов: место кольца показывает отзыв k mod M, где k — ближайшая к текущему положению «виртуальная» позиция
+    var c = Math.round(angle / step);
+    objs.forEach(function(o){
+      if (o.kind !== 'rv-card') return;
+      var d = ((o.slot - c) % N + N) % N; if (d > N / 2) d -= N;
+      var k = c + d; o.a = k * step;
+      var rev = ((k % M) + M) % M;
+      if (rev !== o.rev){ o.rev = rev; var h = cardHTML(rev); o.strips.forEach(function(st){ st.src.innerHTML = h; }); }
+    });
+    // зритель всегда на высоте центрального кольца: вверх-вниз — это наклон взгляда
+    var P = 1000, D = P + 170, pitch = Math.atan2(panY, D) * DEG;
+    zoom += ((detailOpen ? 1 : 0) - zoom) * 0.09;    // при открытии подробного вида кольцо уезжает вглубь
+    ring.style.transform = 'translateZ(' + (-zoom * 700) + 'px) translateZ(' + P + 'px) rotateX(' + pitch + 'deg) translateZ(' + (-P) + 'px)'
+;   // сдвиг кольца к зрителю и поворот перенесены в каждую полосу: плоскость кольца за «камерой» ломает попадание щелчков по боковым карточкам
+    objs.forEach(function(o){
+      var y = tierY(o.tier) + o.dy;
+      var span = o.w / R * DEG, sw = span / o.n, op = vis(o.a);
+      o.strips.forEach(function(st, j){
+        var aj = o.a - span / 2 + sw * (j + .5);       // угол полосы на цилиндре
+        st.el.style.transform = 'translateZ(' + (R - 170) + 'px) rotateY(' + (angle - aj) + 'deg) translateZ(' + (-R) + 'px) translateY(' + y + 'px)';
+        st.el.style.opacity = op;
+        st.el.style.visibility = op > 0 ? 'visible' : 'hidden';
+      });
+    });
+    var idx = ((Math.round(angle / step) % M) + M) % M;
+    if (idx !== curIdx){
+      curIdx = idx;
+      bars.forEach(function(b, i){ b.classList.toggle('on', i === idx); });
+      counter.innerHTML = '<b>' + pad(idx + 1) + '</b> / ' + M;
+    }
+  }
+
+  // ---- инерция: после отпускания цилиндр продолжает движение и плавно замедляется, без доводки к отзыву ----
+  var FRICTION = 0.95, GLIDE = 0.045;
+  var vx = 0, vy = 0, coasting = false;
+  function loop(){
+    var k = coasting ? GLIDE : 0.12;
+    angle += (target - angle) * k; if (Math.abs(target - angle) < 0.01) angle = target;
+    panY += (panT - panY) * k;
+    if (coasting && Math.abs(target - angle) < 0.05 && Math.abs(panT - panY) < 0.5) coasting = false;
+    render(); requestAnimationFrame(loop);
+  }
+  function stopCoast(){ coasting = false; vx = vy = 0; }
+  function goTo(r){ stopCoast(); var cur = Math.round(target / step); var diff = ((r - cur) % M + M) % M; if (diff > M / 2) diff -= M; target = (cur + diff) * step; }
+  function clampPan(v){ var m = maxPan(); return Math.max(-m, Math.min(m, v)); }
+
+  stage.addEventListener('wheel', function(e){ if (e.ctrlKey) return; e.preventDefault(); if (detailOpen || menuOpen()) return; stopCoast(); target += (e.deltaY + e.deltaX) * 0.08; }, { passive: false });
+  var dragX = null, dragY = 0, start = 0, startPan = 0, lx = 0, ly = 0, lt = 0, downObj = -1, downT = 0, downMoving = false;
+  stage.addEventListener('pointerdown', function(e){
+    if (e.target.closest('button')) return;
+    downMoving = Math.abs(target - angle) > 0.25 || Math.abs(panT - panY) > 2;   // тап во время прокрутки — стоп на месте
+    target = angle; panT = panY; stopCoast(); dragX = lx = e.clientX; dragY = ly = e.clientY; lt = performance.now();
+    var st = e.target.closest('.rv-strip'); downObj = st ? +st.dataset.obj : -1; downT = lt;
+    start = target; startPan = panT; stage.classList.add('drag'); stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener('pointermove', function(e){
+    if (dragX === null) return;
+    target = start - (e.clientX - dragX) * 0.12;
+    panT = clampPan(startPan + (e.clientY - dragY) * 1.1);
+    var now = performance.now(), dt = Math.max(1, now - lt);
+    vx = vx * .6 + (-(e.clientX - lx) * 0.12 / dt * 16) * .4;
+    vy = vy * .6 + (( e.clientY - ly) * 1.1  / dt * 16) * .4;
+    lx = e.clientX; ly = e.clientY; lt = now;
+  });
+  function end(e){
+    if (dragX === null) return;
+    var moved = Math.hypot(e.clientX - dragX, e.clientY - dragY);
+    dragX = null; stage.classList.remove('drag');
+    if (moved < 6 && downMoving){ target = start; panT = startPan; vx = vy = 0; return; }   // это был тап-остановка
+    if (moved < 6 && performance.now() - downT < 500 && downObj >= 0){
+      target = start; panT = startPan; vx = vy = 0;      // это клик, а не перетаскивание
+      openDetail(objs[downObj]); return;
+    }
+    if (performance.now() - lt > 80){ vx = vy = 0; }
+    var tail = FRICTION / (1 - FRICTION);
+    target = target + vx * tail;
+    panT = clampPan(panT + vy * tail);
+    vx = vy = 0; coasting = true;
+  }
+  stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
+  document.addEventListener('keydown', function(e){
+    if (detailOpen || menuOpen()) return;
+    if (/^Arrow/.test(e.key)) stopCoast();
+    if (e.key === 'ArrowRight') target += step;
+    if (e.key === 'ArrowLeft')  target -= step;
+    if (e.key === 'ArrowUp')   { e.preventDefault(); panT = clampPan(panT + 160); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); panT = clampPan(panT - 160); }
+    if (e.key === 'Enter' && !e.target.closest('a,button')){ var o = centerCard(); if (o) openDetail(o); }
+  });
+  function centerCard(){
+    var best = null, bd = 999;
+    objs.forEach(function(o){ if (o.kind !== 'rv-card') return; var d = Math.abs((((o.a - angle) % 360) + 540) % 360 - 180); if (d < bd){ bd = d; best = o; } });
+    return best;
+  }
+
+  // =================== ПОДРОБНЫЙ ВИД: лента слайдов на мягко изогнутом цилиндре ===================
+  var detail = document.getElementById('rvDetail'), dRing = document.getElementById('rvDRing'),
+      dVar = document.getElementById('rvDVar'), dCount = document.getElementById('rvDCount'),
+      dMeta = document.getElementById('rvDMeta'), dName = document.getElementById('rvDName'),
+      dSub = document.getElementById('rvDSub'), dDesc = document.getElementById('rvDDesc');
+  var slides = [], K = 1, dPos = 0, dTarget = 0, dActive = -1, openRev = 0, D2 = {};
+
+  // ---- видеоотзыв: одна скрытая <video> даёт звук и кадры; кадры рисуются на холсты в полосах изогнутой плашки ----
+  var VID = document.createElement('video');
+  VID.setAttribute('playsinline', ''); VID.playsInline = true; VID.preload = 'none';
+  VID.style.cssText = 'position:fixed;left:0;top:0;width:2px;height:2px;opacity:0;pointer-events:none;';
+  document.body.appendChild(VID);
+  var vIndex = -1, vDraw = false, vTextPages = 0;
+  function fmt(t){ t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ':' + pad(t % 60); }
+  function vSrcs(){ return vIndex >= 0 && slides[vIndex] ? slides[vIndex].strips : []; }
+  function vState(){
+    var playing = !VID.paused && !VID.ended;
+    vSrcs().forEach(function(st){ st.src.classList.toggle('playing', playing); });
+  }
+  function vToggle(){
+    if (vIndex < 0) return;
+    if (VID.paused || VID.ended){ var p = VID.play(); if (p && p.catch) p.catch(function(){}); } else VID.pause();
+  }
+  function vPause(){ if (!VID.paused) VID.pause(); }
+  // полноэкранный просмотр: на время полноэкранного режима скрытая <video> становится видимой и получает штатные кнопки
+  function vFull(){
+    if (vIndex < 0) return;
+    VID.style.opacity = '1'; VID.controls = true;
+    var p = VID.play(); if (p && p.catch) p.catch(function(){});
+    if (VID.requestFullscreen) VID.requestFullscreen().catch(function(){ vUnfull(); });
+    else if (VID.webkitEnterFullscreen) VID.webkitEnterFullscreen();
+  }
+  function vUnfull(){ VID.style.opacity = '0'; VID.controls = false; vDraw = true; }
+  document.addEventListener('fullscreenchange', function(){ if (!document.fullscreenElement) vUnfull(); });
+  VID.addEventListener('webkitendfullscreen', vUnfull);
+  ['play', 'pause', 'ended', 'waiting', 'playing'].forEach(function(ev){ VID.addEventListener(ev, function(){ vState(); vDraw = true; }); });
+  VID.addEventListener('seeked', function(){ vDraw = true; });
+  VID.addEventListener('loadeddata', function(){ vDraw = true; });
+  function vFrame(){
+    if (vIndex < 0) return;
+    var playing = !VID.paused && !VID.ended;
+    var srcs = vSrcs(), d = VID.duration || REV[openRev].video.dur, t = VID.currentTime;
+    if (playing || vDraw){
+      var pct = (d ? t / d * 100 : 0) + '%', lab = fmt(t) + ' / ' + fmt(d);
+      srcs.forEach(function(st){ st.bar.style.width = pct; st.time.textContent = lab; });
+    }
+    if ((playing || vDraw) && VID.readyState >= 2 && VID.videoWidth){
+      var W = D2.w, H = D2.h, vw = VID.videoWidth, vh = VID.videoHeight, n = slides[vIndex].n, sw = W / n;
+      var vert = vh > vw, k = vert ? Math.min(W / vw, H / vh) : Math.max(W / vw, H / vh);
+      var dw = vw * k, dh = vh * k, dx = (W - dw) / 2, dy = (H - dh) / 2, dpr = Math.min(2, window.devicePixelRatio || 1);
+      srcs.forEach(function(st, j){
+        var c = st.cv, ctx = st.ctx;
+        if (c.width !== Math.round((sw + 1) * dpr) || c.height !== Math.round(H * dpr)){ c.width = Math.round((sw + 1) * dpr); c.height = Math.round(H * dpr); }
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.fillStyle = '#000'; ctx.fillRect(0, 0, sw + 1, H);
+        ctx.drawImage(VID, dx - j * sw, dy, dw, dh);
+      });
+      srcs.forEach(function(st){ st.src.classList.add('drawn'); });
+      vDraw = false;
+    }
+  }
+
+  function buildSlides(r){
+    var R = REV[r];
+    dRing.innerHTML = ''; slides = [];
+    var list = [{ kind: 'ph', html: '' }];
+    R.pages.forEach(function(pg){
+      list.push({ kind: 'tx', html: pg.map(function(b){ return b[0] === 'h' ? '<h4>' + esc(b[1]) + '</h4>' : '<p>' + esc(b[1]) + '</p>'; }).join('') });
+    });
+    vTextPages = list.length - 1;
+    if (R.video) list.push({ kind: 'vd' + (R.video.vert ? ' vert' : ''), video: true,
+      html: '<canvas class="vc"></canvas><div class="vo"><span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></span>'
+          + '<span class="vlab">Video testimonial</span><span class="vtime">0:00 /' + fmt(R.video.dur) + '</span><span class="vbar"><i></i></span></div>' });
+    K = list.length; vIndex = R.video ? K - 1 : -1;
+    list.forEach(function(it, q){
+      var so = { strips: [], n: 12 };
+      for (var j = 0; j < so.n; j++){
+        var s2 = document.createElement('div'); s2.className = 'rv-strip'; s2.dataset.slide = q; s2.dataset.j = j;
+        var sr = document.createElement('div'); sr.className = 'rv-src rv-slide ' + it.kind;
+        if (it.kind === 'ph') sr.style.backgroundImage = "url('" + R.img + "')";
+        if (it.video) sr.style.backgroundImage = "url('" + R.video.poster + "')";
+        sr.innerHTML = it.html + '<span class="sn">' + pad(q + 1) + '</span>';
+        s2.appendChild(sr); dRing.appendChild(s2);
+        var rec = { el: s2, src: sr };
+        if (it.video){ rec.cv = sr.querySelector('canvas'); rec.ctx = rec.cv.getContext('2d'); rec.bar = sr.querySelector('.vbar i'); rec.time = sr.querySelector('.vtime'); }
+        so.strips.push(rec);
+      }
+      slides.push(so);
+    });
+    dMeasure(); vDraw = true;
+  }
+  function dMeasure(){
+    var vw = window.innerWidth, vh = window.innerHeight;
+    // область слайдов — всё под текстом карточки; размер слайда — по её высоте
+    var vpEl = document.querySelector('.rv-dviewport'), txEl = document.querySelector('.rv-dtext');
+    if (vpEl && txEl) vpEl.style.top = Math.round(txEl.offsetTop + txEl.offsetHeight + (window.innerWidth < 760 ? 34 : 16)) + 'px';
+    D2.vpH = vpEl ? vpEl.clientHeight : 0; if (vpEl && vpEl.clientWidth) vw = vpEl.clientWidth;
+    var avail = (D2.vpH || vh * .55) - (vw < 760 ? 90 : 52); D2.w = Math.min(vw * .78, 1700, avail / .6); if (vw < 760) D2.w = Math.min(vw * .86, avail / 1.3 * 1.12);
+    D2.h = D2.w * (vw < 760 ? 1.3 : .6); D2.gap = 28;
+    D2.R = D2.w * 1.9;
+    D2.step = (D2.w + D2.gap) / D2.R * DEG;
+    var fs = vw < 760 ? 11.5 : D2.w / 600 * 16.5;
+    slides.forEach(function(so){
+      var sw = D2.w / so.n;
+      so.strips.forEach(function(st, j){
+        st.el.style.width = (sw + 1) + 'px'; st.el.style.height = D2.h + 'px';
+        st.el.style.left = (-sw / 2) + 'px'; st.el.style.top = (-D2.h / 2) + 'px';
+        st.src.style.width = D2.w + 'px'; st.src.style.height = D2.h + 'px'; st.src.style.left = (-j * sw) + 'px';
+        st.src.style.fontSize = fs + 'px';
+        if (st.cv){ st.cv.style.left = (j * sw) + 'px'; st.cv.style.width = (sw + 1) + 'px'; st.cv.style.height = D2.h + 'px'; }
+      });
+    });
+  }
+  function setVar(act){
+    var R = REV[openRev], n = K - 1;
+    if (act === 0) dDesc.textContent = '«' + R.q + '»';
+    else if (act === vIndex) dDesc.textContent = 'Video testimonial ·' + fmt(R.video.dur) + '. Click the video to play it with sound; click again to pause.';
+    else dDesc.textContent = (R.ctx ? R.ctx + ' · ' : '') + 'Full testimonial text, part' + act + 'of' + vTextPages;
+    dCount.textContent = pad(act + 1) + ' / ' + pad(K);
+    document.getElementById('rvFull').hidden = act !== vIndex || vIndex < 0;
+  }
+  function dRender(){
+    var R = D2.R, span = D2.w / R * DEG;
+    dRing.style.transform = '';   // сдвиг кольца перенесён в каждую полосу: элемент дальше «камеры» ломает определение щелчков
+    slides.forEach(function(so, q){
+      var a = (q - dPos) * D2.step, sw = span / so.n;
+      var op = Math.max(0, Math.min(1, (115 - Math.abs(a)) / 25));
+      so.strips.forEach(function(st, j){
+        var aj = a - span / 2 + sw * (j + .5);
+        st.el.style.transform = 'translateZ(' + (R - 260) + 'px) rotateY(' + (-aj) + 'deg) translateZ(' + (-R) + 'px)';
+        // полосы, ушедшие за «камеру» (перспектива 1000 px), убираем: иначе браузер перестаёт определять щелчки по слайдам
+        st.el.style.display = ((R - 260) - R * Math.cos(aj / DEG)) < 700 ? '' : 'none';
+        st.el.style.opacity = op;
+        st.el.style.visibility = op > 0 ? 'visible' : 'hidden';
+      });
+    });
+    var act = Math.max(0, Math.min(K - 1, Math.round(dPos)));
+    if (act !== dActive){                            // сменился слайд — текстовый блок меняется вместе с ним
+      var first = dActive < 0; dActive = act;
+      if (act !== vIndex) vPause();                  // ушли с видеоплашки — пауза
+      if (first) setVar(act);
+      else { dVar.classList.add('swap'); setTimeout(function(){ setVar(dActive); dVar.classList.remove('swap'); }, 220); }
+    }
+  }
+  var dvx = 0, dCoast = false, ddx = null, dStart = 0, dlx = 0, dlt = 0;
+  function dLoop(){
+    if (detailOpen || detail.classList.contains('open')){
+      if (dCoast){ dTarget = clampD(dTarget + dvx); dvx *= FRICTION; if (Math.abs(dvx) < .002) dCoast = false; }
+      dPos += (dTarget - dPos) * 0.1; dRender(); vFrame();
+    }
+    requestAnimationFrame(dLoop);
+  }
+  function clampD(v){ return Math.max(-.15, Math.min(K - 1 + .15, v)); }
+
+  var lastFocus = null;
+  function openDetail(o){
+    if (detailOpen) return;
+    if (o.kind === 'rv-card') target = o.a;          // карточку — в центр
+    openRev = o.rev; detailOpen = true; document.body.classList.add('rv-detail-on');
+    try { history.replaceState(null, '', '#r' + (o.rev + 1)); } catch(e){}
+    var R = REV[openRev];
+    dMeta.textContent = pad(openRev + 1) + ' / ' + M + (R.tags.length ? ' · ' + R.tags.join(', ') : '') + (R.video ? '· video testimonial' : '');
+    dName.textContent = R.name; dSub.textContent = R.pos;
+    detail.setAttribute('aria-label', 'Testimonial:' + R.name);
+    buildSlides(openRev);
+    if (R.video){ if (VID.getAttribute('src') !== R.video.src){ VID.preload = 'metadata'; VID.src = R.video.src; } }
+    else if (VID.getAttribute('src')){ VID.pause(); VID.removeAttribute('src'); VID.load(); }
+    dPos = Math.min(2.2, K - 1 + .8); dTarget = 0; dActive = -1; dvx = 0; dCoast = false;   // лента «въезжает» справа
+    dRender();
+    lastFocus = document.activeElement;
+    setTimeout(function(){ detail.classList.add('open'); detail.setAttribute('aria-hidden', 'false'); document.getElementById('rvClose').focus({ preventScroll: true }); }, 420);
+  }
+  function closeDetail(){
+    if (!detailOpen) return;
+    vPause();
+    try { history.replaceState(null, '', location.pathname + location.search); } catch(e){}
+    detail.classList.remove('open'); detail.setAttribute('aria-hidden', 'true');
+    setTimeout(function(){ detailOpen = false; document.body.classList.remove('rv-detail-on'); if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true }); }, 300);
+  }
+  document.getElementById('rvClose').addEventListener('click', closeDetail);
+  document.getElementById('rvFull').addEventListener('click', vFull);
+
+  detail.addEventListener('wheel', function(e){ if (e.ctrlKey) return; e.preventDefault(); dCoast = false; dTarget = clampD(dTarget + (e.deltaY + e.deltaX) / 400); }, { passive: false });
+  detail.addEventListener('pointerdown', function(e){
+    if (e.target.closest('button')) return;
+    var sp = e.target.closest('.rv-strip'); dDown = { x: e.clientX, y: e.clientY, t: performance.now(), q: sp ? +sp.dataset.slide : -1, j: sp ? +sp.dataset.j : -1, el: sp };
+    dDown.mv = dCoast || Math.abs(dTarget - dPos) > 0.04; dTarget = clampD(dPos); dvx = 0;
+    dCoast = false; ddx = dlx = e.clientX; dlt = performance.now(); dStart = dTarget; detail.classList.add('drag'); detail.setPointerCapture(e.pointerId);
+  });
+  detail.addEventListener('pointermove', function(e){
+    if (ddx === null) return;
+    var per = D2.w + D2.gap;
+    dTarget = clampD(dStart - (e.clientX - ddx) / per);
+    var now = performance.now(), dt = Math.max(1, now - dlt);
+    dvx = dvx * .6 + (-(e.clientX - dlx) / per / dt * 16) * .4; dlx = e.clientX; dlt = now;
+  });
+  var dDown = null;
+  function dEnd(e){
+    if (ddx === null) return; ddx = null; detail.classList.remove('drag');
+    if (dDown && dDown.mv && e && Math.hypot(e.clientX - dDown.x, e.clientY - dDown.y) < 6){ dvx = 0; dCoast = false; dTarget = dStart; return; }   // тап-остановка
+    if (dDown && e && e.type === 'pointerup' && Math.hypot(e.clientX - dDown.x, e.clientY - dDown.y) < 6 && performance.now() - dDown.t < 500 && dDown.q >= 0){
+      dvx = 0; dCoast = false; dTarget = dStart;              // это клик, а не перетаскивание
+      if (dDown.q !== Math.round(dStart)){ dTarget = clampD(dDown.q); return; }   // клик по соседней плашке — подвинуть её в центр
+      if (dDown.q === vIndex){
+        var r = dDown.el.getBoundingClientRect(), n = slides[vIndex].n;
+        if (e.clientY > r.bottom - r.height * .14 && (VID.duration || 0) > 0){   // клик по полосе прогресса — перемотка
+          VID.currentTime = Math.max(0, Math.min(1, (dDown.j + (e.clientX - r.left) / r.width) / n)) * VID.duration; vDraw = true;
+          if (VID.paused) vToggle();
+        } else vToggle();
+      }
+      return;
+    }
+    if (performance.now() - dlt > 80) dvx = 0; dCoast = true;
+  }
+  detail.addEventListener('pointerup', dEnd); detail.addEventListener('pointercancel', dEnd);
+  document.addEventListener('keydown', function(e){
+    if (!detailOpen) return;
+    if (e.key === 'Escape') closeDetail();
+    if ((e.key === ' ' || e.key === 'Enter') && dActive === vIndex && vIndex >= 0 && !e.target.closest('button')){ e.preventDefault(); vToggle(); }
+    if (e.key === 'ArrowRight') { dCoast = false; dTarget = clampD(Math.round(dTarget) + 1); }
+    if (e.key === 'ArrowLeft')  { dCoast = false; dTarget = clampD(Math.round(dTarget) - 1); }
+  });
+
+  window.addEventListener('resize', function(){ measure(); dMeasure(); panT = clampPan(panT); });
+  // ссылка вида reviews.html#r5 (например, с главной) — сразу повернуть ротонду к отзыву 5 и открыть его
+  var hm = /^#r(\d+)$/.exec(location.hash || '');
+  var startRev = hm ? Math.max(1, Math.min(M, +hm[1])) - 1 : -1;
+  if (startRev >= 0){ target = angle = startRev * step; }
+  measure(); render(); loop(); dLoop();
+  if (startRev >= 0) setTimeout(function(){ var o = centerCard(); if (o) openDetail(o); }, 350);
+})();
+
+</script>
+</body>
+</html>
