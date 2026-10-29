@@ -390,6 +390,9 @@ def build(ru_file, info):
     s = ''.join(out)
 
     # 4) язык, адреса, ссылки на уже переведённые страницы, подключение en.css и i18n-en.js
+    # i18n-en.js (словарь ~900 КБ) — с defer: не задерживает первую отрисовку (Lighthouse, 29.10.2026). Разметка уже переведена
+    # при сборке, а общие скрипты сайта тоже подключены с defer и выполняются после словаря, так что русский текст не мелькает
+    # (проверено на всех 185 страницах, ПК и телефон: итоговый текст тот же, что без defer)
     # translate="no" + notranslate: браузер (Яндекс, Chrome) не должен сам «переводить» английскую копию на русский —
     # для русского языка есть своя версия, переключатель RU
     s = s.replace('<html lang="ru">', '<html lang="en" translate="no" class="notranslate">', 1)
@@ -402,7 +405,7 @@ def build(ru_file, info):
         s = re.sub(r'href="(?:\./)?' + re.escape(rf) + r'(?=[#"?])', 'href="./en/' + inf['en'], s)
     s = s.replace('<!-- seo:end -->', '', 1)
     s = s.replace('<base href="../">', '<base href="../">\n<meta name="google" content="notranslate">\n' + lang_block(ru_file, info, 'en') +
-                  '\n<link rel="stylesheet" href="./en/en.css">\n<script src="./en/i18n-en.js"></script>', 1)
+                  '\n<link rel="stylesheet" href="./en/en.css">\n<script src="./en/i18n-en.js" defer></script>', 1)
     s = s.replace('./__RU_HREF__', './' + ru_file)
     # плашка «trust», текст которой в английской версии убран (реестр Минпромторга), остаётся пустой — убираем целиком
     s = re.sub(r'\s*<div class="trust reveal"><i class="glow-dot"[^>]*></i></div>', '', s)
