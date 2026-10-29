@@ -220,32 +220,3 @@ document.addEventListener('click', function (e) {
   e.preventDefault();               // не даём <summary> раскрыть список…
   window.location.href = a.href;    // …и переходим на страницу раздела
 }, true);
-
-/* Переключатель языка в шапке (≥1100 px): кружок стоит ровно посередине между знаком ГИСП и «Продукцией».
-   Промежуток между колонками шапки меняется с шириной окна, поэтому место считаем по факту и пересчитываем при изменении окна.
-   На английских страницах знака ГИСП нет — там кружок просто стоит у левого края (mnav.css). */
-(function () {
-  function placeLang() {
-    var sw = document.querySelector('header .lang-sw');
-    if (!sw) return;
-    var g = sw.parentNode.querySelector('a[href*="gov.html"]'), pr = document.querySelector('header .nav-trigger[href*="products.html"]');
-    if (!g || !pr || !g.offsetWidth) { sw.style.left = ''; return; }
-    var box = sw.parentNode.getBoundingClientRect();
-    var mid = (g.getBoundingClientRect().right + pr.getBoundingClientRect().left) / 2;
-    var k = box.width / (sw.parentNode.offsetWidth || box.width) || 1;  // на широких экранах шапка масштабируется
-    sw.style.left = Math.round((mid - box.left) / k - sw.offsetWidth / 2) + 'px';
-  }
-  window.addEventListener('resize', placeLang);
-  window.addEventListener('load', placeLang);
-  if (document.fonts) document.fonts.ready.then(placeLang);
-  // главная рисуется шаблоном после загрузки — кружок появляется в шапке позже; колонки шапки могут перестроиться
-  // и после загрузки (шрифты, масштаб), поэтому следим и за размером колонок «ГИСП» и «Продукция»
-  var ro = window.ResizeObserver ? new ResizeObserver(placeLang) : null, watched = null;
-  new MutationObserver(function () {
-    var sw = document.querySelector('header .lang-sw');
-    if (!sw || sw === watched) return;
-    watched = sw; placeLang();
-    var pr = document.querySelector('header .nav-trigger[href*="products.html"]');
-    if (ro) { ro.observe(sw.parentNode); if (pr) ro.observe(pr.parentNode); }
-  }).observe(document.documentElement, { childList: true, subtree: true });
-})();

@@ -329,13 +329,33 @@ def set_lang_block(s, block):
         else s.replace('</head>', block + '\n</head>', 1)
 
 
-RU_SW = '<a class="lang-sw" href="{href}" hreflang="en" lang="en" title="English version">EN</a>'
-EN_SW = '<a class="lang-sw" href="./{href}" hreflang="ru" lang="ru" title="Russian version">RU</a>'
+GLOBE = ('<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'
+         '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>')
+# русская страница: капсула «глобус + EN» в выпадающем меню (компьютер), в левой колонке над GLL (29.10.2026);
+# на телефоне переключатель остаётся в шапке (mnav.js, .mn-lang)
+RU_SW = '<a class="mm-lang" href="{href}" hreflang="en" lang="en" title="English version">' + GLOBE + '<span>EN</span></a>'
+# английская страница: капсула «глобус + RU» в шапке на месте знака ГИСП (знак в английской версии скрыт)
+EN_SW = '<a class="lang-sw" href="./{href}" hreflang="ru" lang="ru" title="Russian version">' + GLOBE + '<span>RU</span></a>'
+OLD_HDR_SW = re.compile(r'\n[ \t]*<a class="lang-sw" href="\./en/[^"]*" hreflang="en"[^>]*>EN</a>')
+MENU_SW = re.compile(r'<a class="mm-lang" [^>]*>.*?</a>\s*', re.S)
+GLL_MARK = '<a href="./docs.html?g=gll"'
 
 
 def add_switch(s, sw):
-    """Переключатель в шапку русской страницы: кружок в левой колонке, сразу за знаком ГИСП (на английской
-    странице знак скрыт, и кружок остаётся у левого края). Если переключатель уже есть — ничего не меняем."""
+    """Русская страница: капсула в левую колонку выпадающего меню перед GLL (остальные кнопки колонки сдвигаются вниз).
+    Старый кружок «EN» из шапки убираем. Если капсула уже есть — ничего не меняем."""
+    s = OLD_HDR_SW.sub('', s)
+    if 'class="mm-lang"' in s:
+        return s
+    i = s.find(GLL_MARK)
+    if i < 0 or 'mm-item' not in s[i:i + 200]:
+        return s
+    j = s.rfind('\n', 0, i) + 1
+    return s[:i] + sw + '\n' + s[j:i] + s[i:]
+
+
+def add_header_switch(s, sw):
+    """Английская копия: капсула «глобус + RU» в шапке сразу за знаком ГИСП (сам знак скрыт в en.css)."""
     mark = '<a href="./gov.html" aria-label="ГИСП — госучреждениям"'
     if 'class="lang-sw"' in s or mark not in s:
         return s
@@ -355,7 +375,8 @@ def build(ru_file, info):
     s = re.sub(r'\n?<!-- lang:start.*?<!-- lang:end -->', '', s_ru, flags=re.S)
 
     # 2) английская копия: переключатель языка
-    s = s.replace(RU_SW.format(href='./en/' + info['en']), EN_SW.format(href='__RU_HREF__'))
+    s = MENU_SW.sub('', s)
+    s = add_header_switch(s, EN_SW.format(href='__RU_HREF__'))
 
     # 3) перевод: разметка отдельно, встроенные скрипты и стили отдельно
     out = []

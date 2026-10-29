@@ -166,14 +166,14 @@ html.lw-mid .cab-pill svg{width:13px;height:13px}
   .dsf-wrap,.of-wrap{padding-left:20px !important;padding-right:20px !important}
 }
 
-/* ===== переключатель языка (27.10.2026): в шапке — кружок в стиле капсулы «Партнёрам» с буквами другого языка (EN / RU) посередине между знаком ГИСП и «Продукцией»;
-   на телефоне — кружок с буквами другого языка. Только на страницах, у которых есть английская версия (tools/i18n/build_en.py) ===== */
-.lang-sw{position:absolute;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid rgba(255,255,255,.35);border-radius:99px;
-  color:#F2F2F2;font-family:'IBM Plex Sans',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.04em;white-space:nowrap;
+/* ===== переключатель языка (29.10.2026). Компьютер: на русских страницах — капсула «глобус + EN» в выпадающем меню, в левой колонке над GLL;
+   на английских — капсула «глобус + RU» в шапке на месте знака ГИСП. Телефон: кружок с буквами другого языка в шапке (.mn-lang).
+   Только на страницах, у которых есть английская версия (tools/i18n/build_en.py) ===== */
+.lang-sw,.mm-lang{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 10px;border:1px solid rgba(255,255,255,.35);border-radius:99px;
+  color:#F2F2F2;font-family:'IBM Plex Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;white-space:nowrap;text-decoration:none;
   transition:border-color .2s,background .2s}
-.lang-sw:hover{opacity:1;border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.08)}
-/* кружок стоит посередине между знаком ГИСП и «Продукцией» (место считает mnav.js); на английских страницах знака нет — кружок у левого края */
-div:has(> .lang-sw){position:relative}
-html[lang="en"] .lang-sw{position:static;transform:none}
+.lang-sw:hover,.mm-lang:hover{opacity:1;border-color:rgba(255,255,255,.8);background:rgba(255,255,255,.08)}
+.lang-sw svg,.mm-lang svg{flex:0 0 auto}
+.mm-overlay .mm-lang{margin-top:-8px;margin-bottom:-4px}
 .mn-lang{display:inline-flex;align-items:center;justify-content:center;height:38px;min-width:38px;padding:0 9px;border:1px solid rgba(255,255,255,.35);border-radius:99px;
   color:#F2F2F2;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em}
