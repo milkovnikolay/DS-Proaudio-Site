@@ -39,7 +39,7 @@
 - карты Яндекса в «Контактах»: окно `yandex.ru/map-widget` разрешено;
 - видео YouTube на 10 карточках ERA, русских и английских: `youtube-nocookie.com` разрешён;
 - 3D-разбор TAURA 8 на «Производстве»: WebAssembly разрешён через `'unsafe-eval'`;
-- шрифты Google;
+- шрифты: до задачи 7 грузились с Google и были разрешены, после неё грузятся со своего сайта;
 - все 11 форм: заявки отправляются на свой сайт (`connect-src 'self'`), запасной вариант «письмом» тоже разрешён (`form-action … mailto:`).
 
 ## Что поменялось в `site/.htaccess`
@@ -64,14 +64,15 @@
 
 ## Когда правило нужно менять
 
-- **Шрифты переедут на сайт (задача 7):** убрать `https://fonts.googleapis.com` из `style-src` и `https://fonts.gstatic.com` из `font-src`, в обеих строках.
+- **Шрифты на своём сайте (задача 7, PR #33):** `fonts.googleapis.com` и `fonts.gstatic.com` из правила **убраны**.
+- **Яндекс Метрика (задача 6, PR #34):** адреса **добавлены** по [справке Метрики «Установка счётчика на сайт с CSP»](https://yandex.ru/support/metrica/code/install-counter-csp.html), способ «внешний скрипт» (`site/metrika.js`):
+  - `script-src`: `https://mc.yandex.ru https://mc.yandex.com https://yastatic.net`;
+  - `img-src`: `https://mc.yandex.ru https://mc.yandex.com`;
+  - `connect-src`: `https://mc.yandex.ru https://mc.yandex.com wss://mc.yandex.ru wss://mc.yandex.com` (Вебвизор);
+  - `frame-src` и `child-src`: `blob: https://mc.yandex.ru https://mc.yandex.com` (Вебвизор, карты кликов и скроллинга);
+  - `frame-ancestors`: `'self'` и адреса интерфейса Метрики (`metrika.yandex.ru`, `metrica.yandex.com` и др.). Метрика показывает сайт внутри себя, когда строит карты кликов и скроллинга.
+  - **Важно:** заголовок `X-Frame-Options: SAMEORIGIN` запрещает показывать сайт внутри интерфейса Метрики. Пока стоит Report-Only, **карты кликов и скроллинга в Метрике могут не открываться**; сама статистика и записи Вебвизора при этом собираются. Когда включим боевой CSP, браузер увидит `frame-ancestors` и перестанет смотреть на `X-Frame-Options`, и карты заработают. Удалять `X-Frame-Options` не нужно: он защищает старые браузеры.
+  - Справка перечисляет ещё домены `mc.yandex.*` других стран и `mc.webvisor.com/org`. Если после запуска в консоли появятся «Refused to…» с такими адресами, их нужно дописать.
 - **Видео ERA переедут на сайт (задача 8):** убрать `https://www.youtube-nocookie.com` из `frame-src`, если YouTube больше нигде не нужен.
-- **Яндекс.Метрика (задача 6).** Сейчас её на сайте нет, поэтому адреса в правило не добавлены. При установке счётчика внешним файлом (`site/metrika.js`) нужно дописать в обе строки, по [справке Метрики «Установка счётчика на сайт с CSP»](https://yandex.ru/support/metrica/code/install-counter-csp.html):
-  - `script-src`: `https://mc.yandex.ru https://yastatic.net`
-  - `img-src`: `https://mc.yandex.ru`
-  - `connect-src`: `https://mc.yandex.ru wss://mc.yandex.ru` (для Вебвизора)
-  - `frame-src` и `child-src`: `blob: https://mc.yandex.ru` (Вебвизор, карты кликов и скроллинга)
-  - справка перечисляет и другие домены Метрики (`mc.yandex.com`, `mc.webvisor.com`, `mc.webvisor.org` и т. д.); их стоит добавить, если в консоли появятся «Refused to…» с этими адресами.
-
-  После установки повторить проверку из раздела «Когда и как включать».
+- **Повторная проверка после правок 6 и 7:** все PR (#28, #30, #31, #33, #34) слиты во временную ветку и собраны (`build_dist.sh`). Боевой CSP проверен на тех же 373 страницах × 2 ширины: **0 нарушений, 0 ошибок JavaScript**; шрифты грузятся со своего сайта. Саму Метрику так проверить нельзя: она включается только на ds-proaudio.ru, а из облака `mc.yandex.ru` закрыт. Её адреса взяты по справке; проверить их нужно после запуска (консоль браузера, раздел «Когда и как включать»).
 - **Убрать `'unsafe-eval'` пока нельзя:** без него не работают главная (шаблоны `support.js`) и 3D-модель. Для 3D хватило бы `'wasm-unsafe-eval'`, а главную сначала нужно перевести в обычный HTML.
