@@ -9,10 +9,10 @@ function init() {
   const DAT = './assets/3d/taura8.dat', SIZE = '2,7 МБ';
   const G = {
     cab:    { t: 'Корпус',                    li: 0, delay: .16 },
-    back:   { t: 'Задняя панель с разъёмами', li: 0, delay: .12 },
+    back:   { t: 'Корпус',                    li: 0, delay: .12 },
     grille: { t: 'Защитная сетка',            li: 4, delay: 0 },
-    sideL:  { t: 'Риггинг и боковина',        li: 5, delay: .06 },
-    sideR:  { t: 'Риггинг и боковина',        li: 5, delay: .06 },
+    sideL:  { t: 'Риггинг и боковина',        li: 6, delay: .06 },
+    sideR:  { t: 'Риггинг и боковина',        li: 6, delay: .06 },
     wave:   { t: 'Волновод',                  li: 3, delay: .26 },
     lwL:    { t: 'НЧ-волновод',               li: 3, delay: .30 },
     lwR:    { t: 'НЧ-волновод',               li: 3, delay: .30 },
