@@ -66,6 +66,9 @@ function clip($v, $n) { return mb_substr(trim(is_scalar($v) ? (string)$v : ''), 
 if ($ep === 'service' && is_array($t['contact'] ?? null)) {
   foreach (['name', 'phone', 'email'] as $k) if (!isset($t[$k]) && isset($t['contact'][$k])) $t[$k] = $t['contact'][$k];
   if (!empty($t['urgent'])) $t['urgency'] = 'СРОЧНО' . (!empty($t['urgency']) ? ' · ' . clip($t['urgency'], 80) : '');
+  // гарантийный статус приходит кодом — в письме пишем словами
+  $W = ['warranty' => 'да, на гарантии (до 3 лет)', 'post' => 'нет, гарантия закончилась', 'check' => 'проверить по документам'];
+  if (isset($t['warranty']) && is_string($t['warranty']) && isset($W[$t['warranty']])) $t['warranty'] = $W[$t['warranty']];
 }
 $name = clip($t['name'] ?? '', 120); $phone = clip($t['phone'] ?? '', 40);
 if ($name === '' || strlen(preg_replace('/\D/', '', $phone)) < 10) out(400, ['error' => 'name and phone required']);
@@ -77,6 +80,8 @@ $LABELS = ['name' => 'Имя', 'phone' => 'Телефон', 'email' => 'E-mail',
   'site' => 'Площадка', 'dates' => 'Даты', 'people' => 'Человек', 'time' => 'Когда удобно',
   'issue' => 'Неисправность', 'purchased' => 'Куплено', 'warranty' => 'Гарантия', 'urgency' => 'Срочность', 'callback' => 'Перезвонить',
   'description' => 'Описание', 'comment' => 'Комментарий'];
+// в сервисном обращении series — серия оборудования, а не «что послушать» (шоу-рум)
+if ($ep === 'service') $LABELS['series'] = 'Серия';
 $prefix = ['lead' => 'L', 'showroom' => 'L', 'tour' => 'T', 'service' => 'S'][$ep];
 $rec = ['id' => $prefix . strtoupper(base_convert((string)floor(microtime(true) * 1000), 10, 36)), 'receivedAt' => date('c'),
   'kind' => clip($t['kind'] ?? (['tour' => 'Фактори-тур', 'service' => 'Сервисное обращение'][$ep] ?? ($t['fmt'] ?? 'Шоу-рум')), 80), 'page' => clip($t['page'] ?? '', 120)];

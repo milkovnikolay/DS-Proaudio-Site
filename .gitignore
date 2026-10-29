@@ -10,6 +10,8 @@ service-api/data/
 *.jsonl
 
 # Пароли и доступы к хостингу — никогда не загружать в репозиторий
+/private/
+ds-config.php
 .env
 .env.*
 *.pem
