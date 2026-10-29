@@ -1,7 +1,7 @@
 # DS PROAUDIO — настройки сервера Apache для хостинга RU-CENTER (план безопасности Коли, п. 1.3, приложение А).
 # Работает только на обычном хостинге; превью на GitHub Pages этот файл не читает.
 # CSP пока в режиме наблюдения (Report-Only): ничего не блокирует, только сообщает в консоли браузера.
-# После проверки и переноса шрифтов на сайт заменить на Content-Security-Policy и убрать fonts.*.
+# Готовые строки боевого CSP и HSTS — в разделе «Заголовки безопасности», там же сказано, когда их включать.
 
 # ---- HTTPS ----
 RewriteEngine On
@@ -132,18 +132,46 @@ RedirectMatch 404 ^/service-api(/|$)
 RedirectMatch 404 ^/(cards-variants(-motion)?|menu-proposal(-demo)?|showroom-3d)\.html$
 # ---- Заголовки безопасности ----
 <IfModule mod_headers.c>
-  # HSTS включать только после того, как HTTPS заработает на всех адресах сайта (убрать # в начале строки)
-  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
-  # CSP сначала в режиме Report-Only; после переноса шрифтов убрать fonts.*
-  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://yandex.ru https://vk.com https://rutube.ru; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests"
+
+  # ---- CSP: с каких адресов странице можно загружать скрипты, стили, шрифты, картинки, видео и встроенные окна ----
+  # Проверено 29.10.2026 в режиме ЗАПРЕТА на всех 373 страницах (русские и английские), на ПК и телефоне:
+  # нарушений нет, карты, видео, 3D и формы работают (отчёт docs/launch/csp-hsts.md). Зачем нужен каждый адрес:
+  #   script-src 'unsafe-inline'   — небольшие скрипты прямо в страницах (меню, формы, галереи) — есть на всех страницах;
+  #   script-src 'unsafe-eval'     — шаблоны главной страницы (support.js) и распаковка 3D-модели на «Производстве» (WebAssembly);
+  #   fonts.googleapis.com, fonts.gstatic.com — шрифты Google; убрать, когда шрифты переедут на сайт (задача 7);
+  #   font-src data:, img-src data: blob: — встроенные значки и текстуры 3D-модели;
+  #   frame-src www.youtube-nocookie.com — видео на 10 карточках ERA (убрать, если видео переедут на сайт, задача 8);
+  #   frame-src yandex.ru          — карты Яндекса на странице «Контакты» (появляются по кнопке «Показать карту»);
+  #   vk.com и rutube.ru из frame-src убраны: на сайте нет встроенных видео VK и Rutube. Появятся — вернуть.
+  # Если ставим Яндекс.Метрику (задача 6), сначала дописать её адреса в ОБЕ строки ниже (список — в docs/launch/csp-hsts.md).
+  #
+  # Сейчас — режим наблюдения (Report-Only): ничего не блокирует, только пишет предупреждения в консоль браузера.
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://yandex.ru; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:"
+  #
+  # БОЕВОЙ CSP. Включать ТОЛЬКО после того, как сайт заработал на хостинге по HTTPS и проверен по памятке (docs/launch/pereezd.md):
+  #   1) убрать # в начале строки «Header always set Content-Security-Policy …» ниже;
+  #   2) поставить # в начале строки «…-Report-Only» выше;
+  #   3) открыть главную, каталог, карточку TAURA 8, «Контакты» (показать карту), карточку ERA (видео), «Производство» (3D) —
+  #      в консоли браузера (F12) не должно быть сообщений «Refused to…». Если есть — вернуть как было и написать Тимуру.
+  # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://yandex.ru; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests"
+
+  # ---- HSTS: браузер будет открывать сайт только по HTTPS ----
+  # Включать НЕ РАНЬШЕ, чем через неделю после переезда, когда HTTPS без ошибок работает на ds-proaudio.ru и www.ds-proaudio.ru
+  # и сертификат продлевается автоматически. Убрать # в начале строки ниже. Отменить быстро нельзя: браузеры, которые уже
+  # увидели заголовок, год не будут открывать сайт по HTTP, даже если HTTPS сломается. Без includeSubDomains и без preload:
+  # поддомены (например, почта) этим правилом не затрагиваются.
+  # Header always set Strict-Transport-Security "max-age=31536000"
+
+  # ---- Кэш в браузере ----
   <FilesMatch "\.(jpg|jpeg|png|webp|avif|svg|ico|woff2|mp4|webm)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
-  <FilesMatch "\.(html|js|css|json|xml|txt)$">
+  # 3D-модель (assets/3d/taura8.dat) и site.webmanifest — тоже 10 минут, потом браузер сверяет, не изменился ли файл
+  <FilesMatch "\.(html|js|css|json|xml|txt|dat|webmanifest)$">
     Header set Cache-Control "public, max-age=600"
   </FilesMatch>
 </IfModule>
@@ -152,4 +180,5 @@ RedirectMatch 404 ^/(cards-variants(-motion)?|menu-proposal(-demo)?|showroom-3d)
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain application/xml
 </IfModule>
 AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
 AddCharset UTF-8 .html .css .js .json .txt .xml
