@@ -58,7 +58,8 @@
       if (t === '' && el.nodeName === 'IMG') hide(el);
       el.setAttribute(ATTRS[i], t);
     }
-    if (el.nodeName === 'A') {
+    // ссылки на русские страницы ведём на английские копии — кроме переключателя языка RU (hreflang="ru")
+    if (el.nodeName === 'A' && el.getAttribute('hreflang') !== 'ru') {
       var h = el.getAttribute('href');
       if (h && Object.prototype.hasOwnProperty.call(LINKS, h)) el.setAttribute('href', LINKS[h]);
     }
