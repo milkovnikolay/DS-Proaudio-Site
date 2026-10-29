@@ -228,7 +228,7 @@ document.addEventListener('click', function (e) {
   function placeLang() {
     var sw = document.querySelector('header .lang-sw');
     if (!sw) return;
-    var g = sw.parentNode.querySelector('a[href*="gov.html"]'), pr = document.querySelector('header a[href*="products.html"]');
+    var g = sw.parentNode.querySelector('a[href*="gov.html"]'), pr = document.querySelector('header .nav-trigger[href*="products.html"]');
     if (!g || !pr || !g.offsetWidth) { sw.style.left = ''; return; }
     var box = sw.parentNode.getBoundingClientRect();
     var mid = (g.getBoundingClientRect().right + pr.getBoundingClientRect().left) / 2;
@@ -245,7 +245,7 @@ document.addEventListener('click', function (e) {
     var sw = document.querySelector('header .lang-sw');
     if (!sw || sw === watched) return;
     watched = sw; placeLang();
-    var pr = document.querySelector('header a[href*="products.html"]');
+    var pr = document.querySelector('header .nav-trigger[href*="products.html"]');
     if (ro) { ro.observe(sw.parentNode); if (pr) ro.observe(pr.parentNode); }
   }).observe(document.documentElement, { childList: true, subtree: true });
 })();
