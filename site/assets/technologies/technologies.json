@@ -525,7 +525,7 @@
    "models": [
     "taura-c-sub-18"
    ],
-   "img": "./assets/technologies/taura-c-sub-18-section.jpg",
+   "img": "./assets/technologies/taura-c-sub-18-section-card.jpg",
    "short": "Кардиоидная диаграмма направленности на одном канале усиления: подавление звука сзади −10 дБ и привычные 8 Ом итогового сопротивления.",
    "where": "TAURA C-Sub 18",
    "page": "tech-cardioid-sub.html",
