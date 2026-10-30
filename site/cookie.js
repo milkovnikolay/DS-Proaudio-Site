@@ -14,7 +14,7 @@
     document.head.appendChild(css);
     var b = document.createElement('div');
     b.className = 'ds-ck'; b.setAttribute('role', 'region'); b.setAttribute('aria-label', 'Уведомление о cookie');
-    b.innerHTML = '<span>Сайт использует cookie и сервисы статистики, чтобы работать удобнее. Подробнее — в <a href="./privacy.html">политике обработки персональных данных</a>.</span><button type="button">Понятно</button>';
+    b.innerHTML = '<span>Сайт использует cookie и Яндекс Метрику, чтобы работать удобнее. Подробнее — в <a href="./privacy.html">политике обработки персональных данных</a>.</span><button type="button">Понятно</button>';
     b.querySelector('button').addEventListener('click', function () {
       try { localStorage.setItem(KEY, '1'); } catch (e) {}
       b.remove();
