@@ -24,6 +24,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Manufacturing — DS PROAUDIO</title>
 <meta name="description" content="DS PROAUDIO manufacturing in St. Petersburg and the Leningrad Region: loudspeaker systems and drivers made in-house, from raw material to the finished system.">
+
+<link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./fonts/fonts.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -688,11 +691,22 @@
 <main>
 
 <section class="pr-hero">
-  <video autoplay muted loop playsinline preload="auto" poster="./assets/hero/hero-poster.jpg" aria-hidden="true">
-    <source src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
-    <source src="./assets/hero/hero-1080.webm" type="video/webm">
-    <source src="./assets/hero/hero-1080.mp4" type="video/mp4">
+  
+  <video muted loop playsinline preload="none" poster="./assets/hero/hero-poster.jpg" aria-hidden="true" data-lazy-hero>
+    <source data-src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
+    <source data-src="./assets/hero/hero-1080.webm" type="video/webm">
+    <source data-src="./assets/hero/hero-720.mp4" type="video/mp4" media="(max-width: 900px)">
+    <source data-src="./assets/hero/hero-1080.mp4" type="video/mp4">
   </video>
+  <script>(function(){
+    function start(){
+      var mm=window.matchMedia, c=navigator.connection, v=document.querySelector('.pr-hero video[data-lazy-hero]');
+      if(!v||(mm&&mm('(prefers-reduced-motion: reduce)').matches)||(c&&c.saveData))return;
+      [].forEach.call(v.querySelectorAll('source[data-src]'),function(s){s.src=s.getAttribute('data-src');});
+      v.preload='auto';v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});
+    }
+    if(document.readyState==='complete')setTimeout(start,300);else addEventListener('load',function(){setTimeout(start,300);});
+  })();</script>
   <div class="wrap">
     <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="./en/index.html">Home</a></li><li class="sep" aria-hidden="true">/</li><li aria-current="page">Manufacturing</li></ol></nav>
     <div class="pr-kick" style="margin-top:40px;">About us · Full-cycle manufacturing</div>

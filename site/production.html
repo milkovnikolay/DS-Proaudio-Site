@@ -15,6 +15,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Производство — DS PROAUDIO</title>
 <meta name="description" content="Производство DS PROAUDIO в Санкт-Петербурге и Ленинградской области: акустические системы и динамические головки собственного производства, продукция в реестре…">
+<!-- основные шрифты заранее: без этого текст перестраивается при подмене шрифта (сдвиг вёрстки, CLS) -->
+<link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./fonts/fonts.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -685,11 +688,23 @@
 <main>
 <!-- ================= ПРОИЗВОДСТВО (макет) — данные цехов в /tmp/claude-0/prodpg/build.py ================= -->
 <section class="pr-hero">
-  <video autoplay muted loop playsinline preload="auto" poster="./assets/hero/hero-poster.jpg" aria-hidden="true">
-    <source src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
-    <source src="./assets/hero/hero-1080.webm" type="video/webm">
-    <source src="./assets/hero/hero-1080.mp4" type="video/mp4">
+  <!-- фоновое видео: сначала кадр-постер, ролик подгружается после загрузки страницы (как на главной); на телефоне — версия 720,
+       при экономии трафика и «уменьшении движения» остаётся постер (30.10.2026) -->
+  <video muted loop playsinline preload="none" poster="./assets/hero/hero-poster.jpg" aria-hidden="true" data-lazy-hero>
+    <source data-src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
+    <source data-src="./assets/hero/hero-1080.webm" type="video/webm">
+    <source data-src="./assets/hero/hero-720.mp4" type="video/mp4" media="(max-width: 900px)">
+    <source data-src="./assets/hero/hero-1080.mp4" type="video/mp4">
   </video>
+  <script>(function(){
+    function start(){
+      var mm=window.matchMedia, c=navigator.connection, v=document.querySelector('.pr-hero video[data-lazy-hero]');
+      if(!v||(mm&&mm('(prefers-reduced-motion: reduce)').matches)||(c&&c.saveData))return;
+      [].forEach.call(v.querySelectorAll('source[data-src]'),function(s){s.src=s.getAttribute('data-src');});
+      v.preload='auto';v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});
+    }
+    if(document.readyState==='complete')setTimeout(start,300);else addEventListener('load',function(){setTimeout(start,300);});
+  })();</script>
   <div class="wrap">
     <nav aria-label="Навигационная цепочка"><ol class="crumbs"><li><a href="./Main.dc.html">Главная</a></li><li class="sep" aria-hidden="true">/</li><li aria-current="page">Производство</li></ol></nav>
     <div class="pr-kick" style="margin-top:40px;">О компании · Производство полного цикла</div>

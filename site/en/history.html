@@ -24,6 +24,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>History — DS PROAUDIO</title>
 <meta name="description" content="The DS PROAUDIO story since the 1970s: the Leningrad school of acoustics, EVM, Special Sound Technologies, and a concert loudspeaker brand with its own manufacturing in St. Petersburg and the Leningrad Region.">
+
+<link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./fonts/fonts.css">
 <style>
   /* ===== базовые правила — один в один с Main.dc.html ===== */
@@ -1105,7 +1108,12 @@ window.HX_DATA={"g": {"g90": {"t": "1990s archive", "i": [["./assets/history/199
     box.appendChild(st);
   }
   var phone = window.matchMedia && matchMedia('(max-width:759px)').matches;
-  [].forEach.call(document.querySelectorAll('.hs-media'), phone ? Strip : Drum);
+  // барабаны и ленты фото собираются, когда до них остаётся ~1 экран: раньше все архивные снимки (~13 МБ) грузились сразу при открытии
+  var initMedia = phone ? Strip : Drum, medias = document.querySelectorAll('.hs-media');
+  if ('IntersectionObserver' in window){
+    var mio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ mio.unobserve(e.target); initMedia(e.target); } }); }, { rootMargin: '900px 0px' });
+    [].forEach.call(medias, function(m){ mio.observe(m); });
+  } else [].forEach.call(medias, initMedia);
   /* ---------- оформление «deco»: год в фоне плывёт медленнее текста, линия времени заполняется ---------- */
   if (document.body.classList.contains('hs-deco')){
     var decoSecs = [].slice.call(document.querySelectorAll('.hs-ch[id^=y]')).map(function(sec){
