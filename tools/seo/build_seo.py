@@ -223,6 +223,15 @@ def main():
         if c and fn not in NOT_IN_SITEMAP:
             pr = '1.0' if fn == 'Main.dc.html' else ('0.8' if fn.startswith(('p-', 'series-', 'products')) else '0.6')
             urls.append((c, git_date(fn), pr))
+    # английская версия (site/en/, собирается tools/i18n/build_en.py): страницы, у которых canonical ведёт на них самих
+    en_dir = os.path.join(SITE, 'en')
+    for fn in sorted(os.listdir(en_dir)) if os.path.isdir(en_dir) else []:
+        if not fn.endswith('.html') or fn == '404.html':
+            continue
+        m = re.search(r'<link rel="canonical" href="([^"]+)">', open(os.path.join(en_dir, fn), encoding='utf-8').read())
+        if m and m.group(1).startswith(DOMAIN + '/en/') and m.group(1) in (DOMAIN + '/en/' + fn, DOMAIN + '/en/' if fn == 'index.html' else ''):
+            pr = '0.9' if fn == 'index.html' else ('0.7' if fn.startswith(('p-', 'series-', 'products')) else '0.5')
+            urls.append((m.group(1), git_date('en/' + fn), pr))
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u, d, pr in urls:
         sm.append('  <url><loc>' + u + '</loc><lastmod>' + d + '</lastmod><priority>' + pr + '</priority></url>')

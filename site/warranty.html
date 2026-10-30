@@ -818,8 +818,9 @@
 })();
 </script>
 <script>
-  /* сервисный бот: адрес приёма заявок и статистики (см. service-api/server.js). Пока пусто — заявка уходит письмом */
-  window.DS_SERVICE = { endpoint: "", statsEndpoint: "" };
+  /* сервисный бот: заявка уходит на /api/service (site/api/lead.php, адрес задан в service-bot.js); если сервер не ответил — письмом.
+     statsEndpoint — адрес для обезличенной статистики; пока пусто, статистика не отправляется */
+  window.DS_SERVICE = { statsEndpoint: "" };
 </script>
 <script src="./service-bot.js" defer></script>
 </body>

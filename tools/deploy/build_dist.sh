@@ -14,5 +14,9 @@ cp -R site/. dist/
 (cd dist && rm -f cards-variants*.html menu-proposal*.html showroom-3d.html .nojekyll && rm -rf service-api \
   && find . \( -name '.DS_Store' -o -name 'Thumbs.db' -o -name '*.bak' \) -delete)
 cp dist/Main.dc.html dist/index.html
+# страница 404 открывается по любому несуществующему адресу, в том числе вложенному (/catalog/…/): ссылки «./…» должны
+# считаться от корня сайта, иначе стили и картинки не загрузятся. Только для хостинга — превью на GitHub Pages живёт не в корне.
+perl -0pi -e 's|<head>|<head>\n<base href="/">|' dist/404.html
+grep -q '<base href="/">' dist/404.html || { echo "Ошибка: не удалось добавить <base> в 404.html"; exit 1; }
 (cd dist && find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS)
 echo "Готово: $(find dist -type f | wc -l) файлов, $(du -sh dist | cut -f1). Загрузить содержимое dist/ на хостинг."

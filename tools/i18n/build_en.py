@@ -396,6 +396,9 @@ def build(ru_file, info):
     s = s.replace('<head>', '<head>\n<base href="../">', 1)
     s = s.replace('<link rel="canonical" href="' + info['ru_url'] + '">', '<link rel="canonical" href="' + info['en_url'] + '">')
     s = s.replace('<meta property="og:url" content="' + info['ru_url'] + '">', '<meta property="og:url" content="' + info['en_url'] + '">')
+    # цветовые варианты (p-pillar-*-wh): canonical ведёт на основную модель — в английской копии на её английскую страницу
+    s = re.sub(r'<link rel="canonical" href="' + re.escape(DOMAIN) + r'/([^"]+)">',
+               lambda m: '<link rel="canonical" href="' + DOMAIN + '/en/' + PAGES[m.group(1)]['en'] + '">' if m.group(1) in PAGES else m.group(0), s)
     s = s.replace('<meta property="og:locale" content="ru_RU">', '<meta property="og:locale" content="en_US">')
     s = s.replace('"url": "' + info['ru_url'] + '", "inLanguage": "ru"', '"url": "' + info['en_url'] + '", "inLanguage": "en"')
     for rf, inf in PAGES.items():
