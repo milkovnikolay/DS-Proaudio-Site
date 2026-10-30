@@ -688,18 +688,16 @@
 <main>
 <!-- ================= ПРОИЗВОДСТВО (макет) — данные цехов в /tmp/claude-0/prodpg/build.py ================= -->
 <section class="pr-hero">
-  <!-- фоновое видео: сначала кадр-постер, ролик подгружается после загрузки страницы (как на главной); на телефоне — версия 720,
-       при экономии трафика и «уменьшении движения» остаётся постер (30.10.2026) -->
+  <!-- фоновое видео: сначала кадр-постер, ролик подгружается после загрузки страницы (как на главной);
+       на телефоне и планшете до 900 px, при экономии трафика и «уменьшении движения» остаётся постер (30.10.2026) -->
   <video muted loop playsinline preload="none" poster="./assets/hero/hero-poster.jpg" aria-hidden="true" data-lazy-hero>
-    <source data-src="./assets/hero/hero-720.webm" type="video/webm" media="(max-width: 900px)">
     <source data-src="./assets/hero/hero-1080.webm" type="video/webm">
-    <source data-src="./assets/hero/hero-720.mp4" type="video/mp4" media="(max-width: 900px)">
     <source data-src="./assets/hero/hero-1080.mp4" type="video/mp4">
   </video>
   <script>(function(){
     function start(){
       var mm=window.matchMedia, c=navigator.connection, v=document.querySelector('.pr-hero video[data-lazy-hero]');
-      if(!v||(mm&&mm('(prefers-reduced-motion: reduce)').matches)||(c&&c.saveData))return;
+      if(!v||(mm&&(mm('(prefers-reduced-motion: reduce)').matches||mm('(max-width: 900px)').matches))||(c&&c.saveData))return;
       [].forEach.call(v.querySelectorAll('source[data-src]'),function(s){s.src=s.getAttribute('data-src');});
       v.preload='auto';v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});
     }
@@ -994,8 +992,8 @@
   var rt=0;addEventListener('resize',function(){cancelAnimationFrame(rt);rt=requestAnimationFrame(layout);});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(layout);
   layout();addEventListener('scroll',onScroll,{passive:true});onScroll();
-  /* видео в карточках играют только на экране */
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){var v=x.target;if(x.isIntersecting){var p=v.play();p&&p.catch(function(){});}else v.pause();});},{threshold:.2});
+  /* видео в карточках играют только на экране; на телефоне — кадры, ролик открывается по нажатию */
+  if('IntersectionObserver' in window&&!(window.matchMedia&&matchMedia('(max-width: 900px)').matches)){var io=new IntersectionObserver(function(en){en.forEach(function(x){var v=x.target;if(x.isIntersecting){var p=v.play();p&&p.catch(function(){});}else v.pause();});},{threshold:.2});
     [].forEach.call(document.querySelectorAll('.pw-m video'),function(v){io.observe(v);});}
   /* галерея цеха / фильмы в лайтбоксе */
   var lb=document.getElementById('lb'),body=document.getElementById('lbBody'),cap=lb.querySelector('.lb-cap'),arw=lb.querySelectorAll('.lb-ar'),G=[],gi=0,gt='';
