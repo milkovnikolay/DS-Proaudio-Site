@@ -15,6 +15,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>История — DS PROAUDIO</title>
 <meta name="description" content="История DS PROAUDIO с 1970-х: ленинградская акустическая школа, EVM, СЗТ и бренд концертной акустики с собственным производством в Санкт-Петербурге и…">
+<!-- основные шрифты заранее: без этого текст перестраивается при подмене шрифта (сдвиг вёрстки, CLS) -->
+<link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./fonts/fonts.css">
 <style>
   /* ===== базовые правила — один в один с Main.dc.html ===== */
@@ -1102,7 +1105,12 @@ window.HX_DATA={"g": {"g90": {"t": "Архив 1990-х", "i": [["./assets/histor
     box.appendChild(st);
   }
   var phone = window.matchMedia && matchMedia('(max-width:759px)').matches;
-  [].forEach.call(document.querySelectorAll('.hs-media'), phone ? Strip : Drum);
+  // барабаны и ленты фото собираются, когда до них остаётся ~1 экран: раньше все архивные снимки (~13 МБ) грузились сразу при открытии
+  var initMedia = phone ? Strip : Drum, medias = document.querySelectorAll('.hs-media');
+  if ('IntersectionObserver' in window){
+    var mio = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ mio.unobserve(e.target); initMedia(e.target); } }); }, { rootMargin: '900px 0px' });
+    [].forEach.call(medias, function(m){ mio.observe(m); });
+  } else [].forEach.call(medias, initMedia);
   /* ---------- оформление «deco»: год в фоне плывёт медленнее текста, линия времени заполняется ---------- */
   if (document.body.classList.contains('hs-deco')){
     var decoSecs = [].slice.call(document.querySelectorAll('.hs-ch[id^=y]')).map(function(sec){
