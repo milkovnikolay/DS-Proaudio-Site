@@ -1,6 +1,7 @@
 /* DS PROAUDIO — счётчик Яндекс Метрики № 113819454 (задача 6, счётчик прислал Дмитрий Калинин), 29.10.2026.
    Один файл на весь сайт: подключается на каждой странице строкой <script src="./metrika.js" defer></script>.
-   Работает ТОЛЬКО на ds-proaudio.ru: на превью github.io, localhost и других адресах ничего не грузится и не считается.
+   Работает ТОЛЬКО на русских страницах ds-proaudio.ru: на английской версии (/en/), превью github.io, localhost и других адресах
+   ничего не грузится и не считается. В английские страницы build_en.py этот файл и не подключает.
    Включено: Вебвизор (записи посещений, карта скроллинга, аналитика форм), карта кликов, внешние ссылки и файлы,
    точный показатель отказов. Цели настраивает Дмитрий в интерфейсе Метрики — здесь ничего менять не нужно.
    Адреса Метрики разрешены в Content-Security-Policy (site/.htaccess). Политика: privacy.html, раздел 7. */
@@ -8,6 +9,8 @@
   var ID = 113819454;
   var host = location.hostname.replace(/^www\./, '');
   if (host !== 'ds-proaudio.ru') return;
+  // только русские страницы: английская версия (/en/) в Метрике не учитывается (решение Коли, 30.10.2026)
+  if (/^\/en\//.test(location.pathname) || document.documentElement.lang === 'en') return;
   if (window.__dsMetrika) return; window.__dsMetrika = true;
   (function (m, e, t, r, i, k, a) {
     m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
