@@ -39,9 +39,6 @@
 })();</script>
 <title>DS PROAUDIO — Professional Loudspeaker Systems Made in Russia</title>
 <meta name="description" content="DS PROAUDIO is a Russian manufacturer of professional loudspeaker systems: line arrays, point-source loudspeakers, column speakers and amplifiers.">
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
 
 <link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -75,10 +72,6 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "DS PROAUDIO — Professional Loudspeaker Systems Made in Russia", "url": "https://ds-proaudio.ru/en/", "inLanguage": "en", "dateModified": "2026-10-25", "author": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}, "publisher": {"@type": "Organization", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://ds-proaudio.ru/#org", "name": "DS PROAUDIO", "url": "https://ds-proaudio.ru/", "logo": "https://ds-proaudio.ru/icon-512.png", "description": "Russian full-cycle manufacturer of professional loudspeaker systems.", "email": "info@ds-proaudio.ru", "telephone": "+7 495 150-12-38", "sameAs": ["https://vk.com/ds_proaudio", "https://t.me/dsproaudio", "https://max.ru/id7702801847_biz"], "areaServed": "RU", "contactPoint": [{"@type": "ContactPoint", "telephone": "+7 495 150-12-38", "email": "info@ds-proaudio.ru", "contactType": "sales", "areaServed": "RU", "availableLanguage": "ru"}], "location": [{"@type": "Place", "name": "Office and service center", "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Moscow", "streetAddress": "Ostapovsky Proezd, 3 bldg. 8"}}, {"@type": "Place", "name": "Showroom", "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Moscow", "streetAddress": "2nd Donskoy Proezd, 4"}}, {"@type": "Place", "name": "Service center", "address": {"@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "St. Petersburg", "streetAddress": "Parkovaya St., 4D"}}]}</script>
 
-</head>
-<body>
-<x-dc>
-<helmet>
 <style>
   body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -312,9 +305,10 @@
     .apx-cap{left:22px;right:22px;max-width:none;text-align:left;}
   }
   @media (prefers-reduced-motion:reduce){ .apx-c,.apx-op,.apx-ph{transition:none;} }
+  .mm-overlay[hidden]{display:none !important;} /* меню закрыто: атрибут hidden сильнее inline display:flex */
 </style>
-</helmet>
-
+</head>
+<body>
 <div style="width:100%;min-height:6600px;background:#FFFFFF;display:flex;flex-direction:column;">
 
   
@@ -340,8 +334,8 @@
       
       <div style="display:flex;justify-content:center;">
         <a href="./en/index.html" aria-label="DS PROAUDIO — home" style="display:block;position:relative;height:32px;width:145px;">
-          <img src="./assets/3d4dfaf79132674a05fc4f9379ace7c9.png" alt="" style="{{introImgStyle}}">
-          <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" style="{{logoImgStyle}}">
+          <img src="./assets/3d4dfaf79132674a05fc4f9379ace7c9.png" alt="" data-intro style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:48px;width:auto;transition:opacity .6s ease;opacity:1;">
+          <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" data-logo style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);transition:opacity .6s ease;opacity:0;">
         </a>
       </div>
 
@@ -357,126 +351,126 @@
       </div>
 
     </div>
-    <button type="button" class="hdr-menu-btn" onClick="{{toggleMenu}}" aria-haspopup="true" aria-expanded="{{menuOpen}}">Menu</button>
+    <button type="button" class="hdr-menu-btn" data-mm-toggle aria-haspopup="true" aria-expanded="false">Menu</button>
 </header>
 
   
   
-  <sc-if value="{{menuOpen}}">
-      <div class="mm-overlay" style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;display:flex;flex-direction:column;">
+  
+      <div class="mm-overlay" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;display:flex;flex-direction:column;">
         <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
 
           
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
-            <a href="./en/docs.html?g=gll" onClick="{{closeMenu}}" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
-            <a href="./en/docs.html?g=dwg" onClick="{{closeMenu}}" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
-            <a href="./en/docs.html?g=man" onClick="{{closeMenu}}" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+            <a href="./en/docs.html?g=gll" data-mm-close class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+            <a href="./en/docs.html?g=dwg" data-mm-close class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+            <a href="./en/docs.html?g=man" data-mm-close class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
           </div>
 
           
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
-            <a href="./en/products-line-arrays.html" onClick="{{closeMenu}}" class="mm-item">Line arrays</a>
-            <a href="./en/products-constant-curvature.html" onClick="{{closeMenu}}" class="mm-item">Constant-curvature arrays</a>
-            <a href="./en/products-columns.html" onClick="{{closeMenu}}" class="mm-item">Column loudspeakers</a>
-            <a href="./en/products-point-sources.html" onClick="{{closeMenu}}" class="mm-item">Point-source loudspeakers</a>
-            <a href="./en/products-monitors.html" onClick="{{closeMenu}}" class="mm-item">Stage monitors</a>
-            <a href="./en/products-compact-sets.html" onClick="{{closeMenu}}" class="mm-item">Compact systems</a>
-            <a href="./en/products-auditorium.html" onClick="{{closeMenu}}" class="mm-item">Lecture hall systems</a>
-            <a href="./products-registry.html" onClick="{{closeMenu}}" class="mm-item"></a>
-            <a href="./en/products-all-weather.html" onClick="{{closeMenu}}" class="mm-item">All-weather systems</a>
-            <a href="./en/products-amplifiers.html" onClick="{{closeMenu}}" class="mm-item">Amplifiers</a>
-            <a href="./en/products-accessories.html" onClick="{{closeMenu}}" class="mm-item">Accessories</a>
-            <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" onClick="{{closeMenu}}" class="mm-bold">PDF catalog</a>
+            <a href="./en/products-line-arrays.html" data-mm-close class="mm-item">Line arrays</a>
+            <a href="./en/products-constant-curvature.html" data-mm-close class="mm-item">Constant-curvature arrays</a>
+            <a href="./en/products-columns.html" data-mm-close class="mm-item">Column loudspeakers</a>
+            <a href="./en/products-point-sources.html" data-mm-close class="mm-item">Point-source loudspeakers</a>
+            <a href="./en/products-monitors.html" data-mm-close class="mm-item">Stage monitors</a>
+            <a href="./en/products-compact-sets.html" data-mm-close class="mm-item">Compact systems</a>
+            <a href="./en/products-auditorium.html" data-mm-close class="mm-item">Lecture hall systems</a>
+            <a href="./products-registry.html" data-mm-close class="mm-item"></a>
+            <a href="./en/products-all-weather.html" data-mm-close class="mm-item">All-weather systems</a>
+            <a href="./en/products-amplifiers.html" data-mm-close class="mm-item">Amplifiers</a>
+            <a href="./en/products-accessories.html" data-mm-close class="mm-item">Accessories</a>
+            <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" data-mm-close class="mm-bold">PDF catalog</a>
           </div>
 
           
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
-            <a href="./en/reviews.html" onClick="{{closeMenu}}" class="mm-bold">Testimonials</a>
-            <a href="./en/portfolio.html" onClick="{{closeMenu}}" class="mm-bold" style="margin-bottom:2px;">Portfolio</a>
-            <a href="./en/culture.html" onClick="{{closeMenu}}" class="mm-item">Arts & culture</a>
-            <a href="./en/education.html" onClick="{{closeMenu}}" class="mm-item">Education & research</a>
-            <a href="./en/sport.html" onClick="{{closeMenu}}" class="mm-item">Sports & live events</a>
-            <a href="./en/corporate.html" onClick="{{closeMenu}}" class="mm-item">Corporate</a>
-            <a href="./en/hospitality.html" onClick="{{closeMenu}}" class="mm-item">Hospitality</a>
-            <a href="./en/religious.html" onClick="{{closeMenu}}" class="mm-item">Houses of worship</a>
-            <a href="./en/entertainment.html" onClick="{{closeMenu}}" class="mm-item">Entertainment</a>
-            <a href="./en/rental.html" onClick="{{closeMenu}}" class="mm-item" style="font-weight:500;">Rental</a>
+            <a href="./en/reviews.html" data-mm-close class="mm-bold">Testimonials</a>
+            <a href="./en/portfolio.html" data-mm-close class="mm-bold" style="margin-bottom:2px;">Portfolio</a>
+            <a href="./en/culture.html" data-mm-close class="mm-item">Arts & culture</a>
+            <a href="./en/education.html" data-mm-close class="mm-item">Education & research</a>
+            <a href="./en/sport.html" data-mm-close class="mm-item">Sports & live events</a>
+            <a href="./en/corporate.html" data-mm-close class="mm-item">Corporate</a>
+            <a href="./en/hospitality.html" data-mm-close class="mm-item">Hospitality</a>
+            <a href="./en/religious.html" data-mm-close class="mm-item">Houses of worship</a>
+            <a href="./en/entertainment.html" data-mm-close class="mm-item">Entertainment</a>
+            <a href="./en/rental.html" data-mm-close class="mm-item" style="font-weight:500;">Rental</a>
           </div>
 
           
           <div style="display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-top:6px;">
-            <a href="./en/history.html" onClick="{{closeMenu}}" class="mm-item">History</a>
-            <a href="./en/philosophy.html" onClick="{{closeMenu}}" class="mm-item">Philosophy</a>
-            <a href="./en/faces.html" onClick="{{closeMenu}}" class="mm-item">Our people</a>
-            <a href="./en/about.html" onClick="{{closeMenu}}" class="mm-item">Company at a glance</a>
-            <a href="./en/production.html" onClick="{{closeMenu}}" class="mm-item">Manufacturing</a>
+            <a href="./en/history.html" data-mm-close class="mm-item">History</a>
+            <a href="./en/philosophy.html" data-mm-close class="mm-item">Philosophy</a>
+            <a href="./en/faces.html" data-mm-close class="mm-item">Our people</a>
+            <a href="./en/about.html" data-mm-close class="mm-item">Company at a glance</a>
+            <a href="./en/production.html" data-mm-close class="mm-item">Manufacturing</a>
             <details class="tech-dd">
               <summary class="mm-item" title="Show the list of technologies"><a href="./en/technologies.html" class="tech-go" title="Technologies section">Technologies</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
               <div class="tech-list">
-                <a href="./en/tech-rigging.html" onClick="{{closeMenu}}" class="mm-item-long">Pinless rigging<span class="mm-sub">(TAURA, ERA arrays)</span></a><a href="./en/tech-click-clack.html" onClick="{{closeMenu}}" class="mm-item-long">CLICK-CLACK<span class="mm-sub">(angles set on the ground, TAURA)</span></a>
-                <a href="./en/tech-coaxial-waveguide.html" onClick="{{closeMenu}}" class="mm-item-long">Coaxial arrays<span class="mm-sub">(ERA, TAURA 10)</span></a>
-                <a href="./en/tech-horizontal-summing.html" onClick="{{closeMenu}}" class="mm-item-long">Horizontal summing<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
-                <a href="./en/tech-cardioid-sub.html" onClick="{{closeMenu}}" class="mm-item-long">Cardioid subwoofer<span class="mm-sub">(TAURA C-Sub 18)</span></a>
-                <a href="./en/tech-coaxial-cx.html" onClick="{{closeMenu}}" class="mm-item-long">Coaxial drivers<span class="mm-sub">(CX, MCX series)</span></a>
-                <a href="./en/tech-voice-coil.html" onClick="{{closeMenu}}" class="mm-item">Edge-wound interlocked voice coils</a>
+                <a href="./en/tech-rigging.html" data-mm-close class="mm-item-long">Pinless rigging<span class="mm-sub">(TAURA, ERA arrays)</span></a><a href="./en/tech-click-clack.html" data-mm-close class="mm-item-long">CLICK-CLACK<span class="mm-sub">(angles set on the ground, TAURA)</span></a>
+                <a href="./en/tech-coaxial-waveguide.html" data-mm-close class="mm-item-long">Coaxial arrays<span class="mm-sub">(ERA, TAURA 10)</span></a>
+                <a href="./en/tech-horizontal-summing.html" data-mm-close class="mm-item-long">Horizontal summing<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
+                <a href="./en/tech-cardioid-sub.html" data-mm-close class="mm-item-long">Cardioid subwoofer<span class="mm-sub">(TAURA C-Sub 18)</span></a>
+                <a href="./en/tech-coaxial-cx.html" data-mm-close class="mm-item-long">Coaxial drivers<span class="mm-sub">(CX, MCX series)</span></a>
+                <a href="./en/tech-voice-coil.html" data-mm-close class="mm-item">Edge-wound interlocked voice coils</a>
               </div>
             </details>
-            <a href="./en/blog.html" onClick="{{closeMenu}}" class="mm-item">Blog</a>
-            <a href="./en/contacts.html" onClick="{{closeMenu}}" class="mm-item">Contact</a>
+            <a href="./en/blog.html" data-mm-close class="mm-item">Blog</a>
+            <a href="./en/contacts.html" data-mm-close class="mm-item">Contact</a>
           </div>
 
           
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:17px;text-align:right;">
-            <a href="./en/seminars.html" onClick="{{closeMenu}}" class="mm-item">Training & seminars</a>
-            <a href="./en/docs.html" onClick="{{closeMenu}}" class="mm-item-long">Documentation center<span class="mm-sub">(EASE & CAD downloads)</span></a>
-            <a href="./en/software.html" onClick="{{closeMenu}}" class="mm-item-long">Acoustic simulation software</a>
-            <a href="./en/warranty.html" onClick="{{closeMenu}}" class="mm-item">Warranty & service</a>
+            <a href="./en/seminars.html" data-mm-close class="mm-item">Training & seminars</a>
+            <a href="./en/docs.html" data-mm-close class="mm-item-long">Documentation center<span class="mm-sub">(EASE & CAD downloads)</span></a>
+            <a href="./en/software.html" data-mm-close class="mm-item-long">Acoustic simulation software</a>
+            <a href="./en/warranty.html" data-mm-close class="mm-item">Warranty & service</a>
           </div>
 
           
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
-            <a href="./en/showroom.html" onClick="{{closeMenu}}" class="mm-item">Visit the showroom</a>
-            <a href="./en/demo.html" onClick="{{closeMenu}}" class="mm-item">Request an on-site demo</a>
-            <a href="./en/consultation.html" onClick="{{closeMenu}}" class="mm-item">Request a project consultation</a>
-            <a href="./en/prices.html" onClick="{{closeMenu}}" class="mm-item">Get pricing</a>
-            <a href="./en/where-to-buy.html" onClick="{{closeMenu}}" class="mm-item">Where to buy</a>
-            <a href="./en/delivery.html" onClick="{{closeMenu}}" class="mm-item">Lead times</a>
+            <a href="./en/showroom.html" data-mm-close class="mm-item">Visit the showroom</a>
+            <a href="./en/demo.html" data-mm-close class="mm-item">Request an on-site demo</a>
+            <a href="./en/consultation.html" data-mm-close class="mm-item">Request a project consultation</a>
+            <a href="./en/prices.html" data-mm-close class="mm-item">Get pricing</a>
+            <a href="./en/where-to-buy.html" data-mm-close class="mm-item">Where to buy</a>
+            <a href="./en/delivery.html" data-mm-close class="mm-item">Lead times</a>
           </div>
 
           
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
-            <a href="#dsf-bot" onClick="{{closeMenu}}" aria-label="Chat with us" style="font-size:17px;color:#FAFAFA;">💬</a>
-            <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" onClick="{{closeMenu}}" class="mm-bold">VK</a>
-            <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" onClick="{{closeMenu}}" class="mm-bold">TG</a>
-            <a href="#contact" onClick="{{closeMenu}}" aria-label="Write to us" style="font-size:17px;color:#FAFAFA;">✉</a>
-            <a href="tel:+74951501238" onClick="{{closeMenu}}" aria-label="Call us" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
+            <a href="#dsf-bot" data-mm-close aria-label="Chat with us" style="font-size:17px;color:#FAFAFA;">💬</a>
+            <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" data-mm-close class="mm-bold">VK</a>
+            <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" data-mm-close class="mm-bold">TG</a>
+            <a href="#contact" data-mm-close aria-label="Write to us" style="font-size:17px;color:#FAFAFA;">✉</a>
+            <a href="tel:+74951501238" data-mm-close aria-label="Call us" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
           </div>
 
         </div>
 
         
         <div style="flex:0 0 auto;display:flex;justify-content:center;padding:28px 0 34px;">
-          <button type="button" onClick="{{closeMenu}}" aria-label="Close menu" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Close menu</span></button>
+          <button type="button" data-mm-close aria-label="Close menu" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Close menu</span></button>
         </div>
       </div>
-  </sc-if>
+  
 
   
   
   <section id="hero" style="position:relative;width:100%;min-height:760px;overflow:hidden;display:flex;align-items:flex-end;background:#0A0A0B;">
-    <sc-if value="{{heroVideoMode}}" hint-placeholder-val="{{true}}">
+    
       
-      <video class="hero-bg" poster="{{heroPoster}}" muted="" loop="" playsinline="" preload="none" data-lazy-hero="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateZ(0);will-change:transform;">
+      <video class="hero-bg" poster="./assets/hero/hero2-poster.jpg" muted="" loop="" playsinline="" preload="none" data-lazy-hero="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateZ(0);will-change:transform;">
         <source data-src="./assets/hero/hero2-1440.webm" type="video/webm" media="(min-width: 1800px), (min-width: 1200px) and (min-resolution: 1.5dppx)">
         <source data-src="./assets/hero/hero2-720.webm" type="video/webm" media="(max-width: 900px)">
         <source data-src="./assets/hero/hero2-1080.webm" type="video/webm">
         <source data-src="./assets/hero/hero2-1440.mp4" type="video/mp4" media="(min-width: 1800px), (min-width: 1200px) and (min-resolution: 1.5dppx)">
         <source data-src="./assets/hero/hero2-720.mp4" type="video/mp4" media="(max-width: 900px)">
         <source data-src="./assets/hero/hero2-1080.mp4" type="video/mp4">
-    </video></sc-if>
-    <sc-if value="{{heroPhotoMode}}" hint-placeholder-val="{{false}}">
-      <img class="hero-bg" fetchpriority="high" src="{{heroPoster}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-    </sc-if>
+    </video>
+    <template data-hero-photo>
+      <img class="hero-bg" fetchpriority="high" src="./assets/hero/hero2-poster.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </template>
     <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,11,.12) 0%, rgba(10,10,11,.20) 38%, rgba(10,10,11,.82) 100%);"></div>
 
     <div style="position:relative;z-index:2;max-width:1440px;width:100%;margin:0 auto;padding:190px 64px 100px;display:flex;flex-direction:column;gap:26px;">
@@ -523,16 +517,62 @@
   
   <section class="fld-sec" style="width:100%;background:#0A0A0B;overflow:hidden;">
     <div class="fld-wrap" style="max-width:1440px;margin:0 auto;padding:0 64px;">
-      <div class="{{fldCls}}" style="position:relative;width:100%;height:500px;">
+      <div class="fld" style="position:relative;width:100%;height:500px;">
 
-        <sc-for list="{{fieldItems}}" as="item">
-          <a href="{{item.href}}" class="{{item.cls}}" style="{{item.posStyle}}" tabindex="{{item.tab}}" aria-hidden="{{item.hidden}}">{{item.label}}</a>
-        </sc-for>
+        
+          <a href="./en/products.html" class="field-item blurred fg-eng" style="--dt:83.00%;--dl:70.10%;--tt:16.40%;--tl:12.90%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">PRODUCT CATALOG</a>
+        
+          <a href="./en/clients.html" class="field-item blurred fg-clients" style="--dt:9.60%;--dl:34.00%;--tt:23.50%;--tl:34.20%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">REQUEST A DEMO</a>
+        
+          <a href="#contact" class="field-item blurred fg-partners" style="--dt:15.20%;--dl:53.20%;--tt:16.50%;--tl:64.60%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">BECOME A PARTNER</a>
+        
+          <a href="./en/rental.html" class="field-item blurred fg-rental" style="--dt:33.80%;--dl:42.80%;--tt:50.90%;--tl:56.50%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">APPLICATION EXAMPLES</a>
+        
+          <a href="./en/support.html" class="field-item blurred fg-eng" style="--dt:9.70%;--dl:94.30%;--tt:19.10%;--tl:88.30%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">TRAINING & SEMINARS</a>
+        
+          <a href="./en/showroom.html" class="field-item blurred fg-clients" style="--dt:38.60%;--dl:7.20%;--tt:47.50%;--tl:22.90%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">VISIT THE SHOWROOM</a>
+        
+          <a href="./en/showroom.html" class="field-item blurred fg-partners" style="--dt:29.50%;--dl:25.20%;--tt:34.50%;--tl:12.00%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">VISIT THE SHOWROOM</a>
+        
+          <a href="./en/reviews.html" class="field-item blurred fg-rental" style="--dt:10.90%;--dl:73.90%;--tt:36.60%;--tl:41.00%;width:180px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">TESTIMONIALS FROM SYSTEM AND FOH ENGINEERS</a>
+        
+          <a href="./en/warranty.html" class="field-item blurred fg-eng" style="--dt:28.30%;--dl:63.40%;--tt:26.60%;--tl:58.30%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">WARRANTY & SERVICE</a>
+        
+          <a href="./gov.html" class="field-item blurred fg-clients" style="--dt:32.90%;--dl:83.30%;--tt:36.40%;--tl:78.80%;width:220px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true"></a>
+        
+          <a href="./en/clients.html" class="field-item blurred fg-partners" style="--dt:62.40%;--dl:11.20%;--tt:58.80%;--tl:39.60%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">REQUEST A DEMO</a>
+        
+          <a href="./en/warranty.html" class="field-item blurred fg-rental" style="--dt:94.00%;--dl:32.90%;--tt:80.30%;--tl:36.90%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">WARRANTY & SERVICE</a>
+        
+          <a href="./en/docs.html" class="field-item blurred fg-eng" style="--dt:58.90%;--dl:90.30%;--tt:54.00%;--tl:81.80%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">DOCUMENTATION CENTER</a>
+        
+          <a href="./en/portfolio.html" class="field-item blurred fg-clients" style="--dt:90.90%;--dl:54.10%;--tt:90.20%;--tl:50.20%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">COMPLETED PROJECTS</a>
+        
+          <a href="#" class="field-item blurred fg-partners" style="--dt:89.70%;--dl:94.50%;--tt:93.00%;--tl:86.00%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">PARTNER PORTAL</a>
+        
+          <a href="./en/support.html" class="field-item blurred fg-rental" style="--dt:76.00%;--dl:82.00%;--tt:69.00%;--tl:88.80%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ARRAY CALCULATOR</a>
+        
+          <a href="./en/technologies.html" class="field-item blurred fg-eng" style="--dt:78.60%;--dl:23.30%;--tt:61.20%;--tl:10.70%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">TECHNOLOGIES & PATENTS</a>
+        
+          <a href="./en/reviews.html" class="field-item blurred fg-clients" style="--dt:87.60%;--dl:8.50%;--tt:70.90%;--tl:25.30%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">TESTIMONIALS</a>
+        
+          <a href="./en/clients.html" class="field-item blurred fg-partners" style="--dt:75.10%;--dl:41.70%;--tt:90.20%;--tl:16.00%;width:180px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">REQUEST A PROJECT CONSULTATION</a>
+        
+          <a href="./en/support.html" class="field-item blurred fg-eng" style="--dt:14.30%;--dl:12.40%;--tt:80.20%;--tl:66.20%;width:180px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">SIMULATE YOUR ROOM YOURSELF</a>
+        
+          <a href="./en/clients.html" class="field-item blurred fg-clients" style="--dt:67.40%;--dl:61.70%;--tt:65.70%;--tl:63.00%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">WHERE TO BUY</a>
+        
 
         <div class="fld-btns" style="position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);z-index:5;display:flex;gap:18px;">
-          <sc-for list="{{fieldButtons}}" as="btn">
-            <button type="button" class="{{btn.cls}}" onClick="{{btn.onClick}}" aria-pressed="{{btn.pressed}}">{{btn.label}}</button>
-          </sc-for>
+          
+            <button type="button" class="field-btn" data-fg="eng" aria-pressed="false">Engineers</button>
+          
+            <button type="button" class="field-btn" data-fg="partners" aria-pressed="false">Partners</button>
+          
+            <button type="button" class="field-btn" data-fg="clients" aria-pressed="false">Venue owners</button>
+          
+            <button type="button" class="field-btn" data-fg="rental" aria-pressed="false">Rental companies</button>
+          
         </div>
 
       </div>
@@ -571,27 +611,207 @@
       </div>
       
       <div class="apx" data-apx>
-        <sc-for list="{{portfolioTiles}}" as="tile">
+        
           <div class="apx-c">
-            <img loading="lazy" class="apx-ph" src="{{tile.img}}" alt="{{tile.alt}}" draggable="false">
+            <img loading="lazy" class="apx-ph" src="./assets/mravinsky-hall-choir.jpg" alt="Concert hall of the Mravinsky Children’s Art School, St. Petersburg" draggable="false">
             <span class="apx-sh"></span>
-            <a href="{{tile.href}}" class="apx-link" aria-label="{{tile.title}}"></a>
-            <span class="{{tile.numCls}}"><b>{{tile.num}}</b><i>{{tile.plus}}</i></span>
-            <span class="apx-vt">{{tile.title}}</span>
+            <a href="./en/culture.html" class="apx-link" aria-label="Arts &amp; culture"></a>
+            <span class="apx-num"><b>40</b><i>+</i></span>
+            <span class="apx-vt">Arts & culture</span>
             <span class="apx-op">
-              <span class="{{tile.bigCls}}"><b>{{tile.num}}</b><i>{{tile.plus}}</i></span>
-              <span class="apx-nl">{{tile.numLabel}}</span>
-              <a href="{{tile.href}}" class="apx-tt">{{tile.title}}</a>
+              <span class="apx-big"><b>40</b><i>+</i></span>
+              <span class="apx-nl">completed projects</span>
+              <a href="./en/culture.html" class="apx-tt">Arts & culture</a>
               <span class="apx-ls">
-                <sc-for list="{{tile.items}}" as="item">
-                  <a href="{{item.href}}" class="apx-sub">{{item.text}}</a>
-                </sc-for>
+                
+                  <a href="./en/concert-halls.html" class="apx-sub">Concert halls and philharmonic halls</a>
+                
+                  <a href="./en/theatres.html" class="apx-sub">Drama and musical theaters</a>
+                
+                  <a href="./en/dk.html" class="apx-sub">Cultural and community centers</a>
+                
+                  <a href="./en/circus.html" class="apx-sub">Circuses</a>
+                
+                  <a href="./en/museums.html" class="apx-sub">Museums and exhibition galleries</a>
+                
+                  <a href="./en/outdoor.html" class="apx-sub">Portable outdoor systems (IP55)</a>
+                
               </span>
-              <a href="{{tile.href}}" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+              <a href="./en/culture.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
             </span>
-            <span class="apx-cap">{{tile.caption}}</span>
+            <span class="apx-cap">Concert hall of the Mravinsky Children’s Art School, St. Petersburg, 2023</span>
           </div>
-        </sc-for>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-001/01.jpg" alt="RANEPA assembly hall" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/education.html" class="apx-link" aria-label="Education &amp; research"></a>
+            <span class="apx-num"><b>50</b><i>+</i></span>
+            <span class="apx-vt">Education & research</span>
+            <span class="apx-op">
+              <span class="apx-big"><b>50</b><i>+</i></span>
+              <span class="apx-nl">completed projects</span>
+              <a href="./en/education.html" class="apx-tt">Education & research</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/edu-assembly.html" class="apx-sub">School and university assembly halls</a>
+                
+                  <a href="./en/edu-lecture.html" class="apx-sub">Classrooms and lecture halls</a>
+                
+                  <a href="./en/edu-planetarium.html" class="apx-sub">Planetariums</a>
+                
+              </span>
+              <a href="./en/education.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">RANEPA assembly hall, 2026</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-007/01.jpg" alt="Tarko-Sale Martial Arts Center" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/sport.html" class="apx-link" aria-label="Sports &amp; live events"></a>
+            <span class="apx-num dim"><b>8</b><i></i></span>
+            <span class="apx-vt">Sports & live events</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>8</b><i></i></span>
+              <span class="apx-nl">projects</span>
+              <a href="./en/sport.html" class="apx-tt">Sports & live events</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/sport-palaces.html" class="apx-sub">Sports arenas</a>
+                
+                  <a href="./en/sport-ice.html" class="apx-sub">Ice arenas (IP55)</a>
+                
+                  <a href="./en/sport-complexes.html" class="apx-sub">Sports and fitness centers</a>
+                
+                  <a href="./en/sport-pools.html" class="apx-sub">Swimming pools and water parks (IP55)</a>
+                
+                  <a href="./en/sport-stadiums.html" class="apx-sub">Open-air stadiums and racecourses (IP55)</a>
+                
+              </span>
+              <a href="./en/sport.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Tarko-Sale Martial Arts Center, 2025</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-018/07.jpg" alt="Conference hall of the Ministry of Sport of the Russian Federation" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/corporate.html" class="apx-link" aria-label="Corporate"></a>
+            <span class="apx-num"><b>20</b><i>+</i></span>
+            <span class="apx-vt">Corporate</span>
+            <span class="apx-op">
+              <span class="apx-big"><b>20</b><i>+</i></span>
+              <span class="apx-nl">completed projects</span>
+              <a href="./en/corporate.html" class="apx-tt">Corporate</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/corp-conference.html" class="apx-sub">Conference halls</a>
+                
+                  <a href="./en/corp-meeting.html" class="apx-sub">Meeting rooms</a>
+                
+                  <a href="./en/corp-openspace.html" class="apx-sub">Open-plan offices</a>
+                
+              </span>
+              <a href="./en/corporate.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Conference hall of the Ministry of Sport of the Russian Federation, 2023</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-009/07.jpg" alt="UTEK Café" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/hospitality.html" class="apx-link" aria-label="Hospitality"></a>
+            <span class="apx-num dim"><b>9</b><i></i></span>
+            <span class="apx-vt">Hospitality</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>9</b><i></i></span>
+              <span class="apx-nl">projects</span>
+              <a href="./en/hospitality.html" class="apx-tt">Hospitality</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/hosp-restaurants.html" class="apx-sub">Restaurants, bars, pubs</a>
+                
+                  <a href="./en/corp-banquet.html" class="apx-sub">Banquet halls and restaurant lobbies</a>
+                
+                  <a href="./en/hosp-terraces.html" class="apx-sub">Outdoor cafés and summer terraces (IP55)</a>
+                
+                  <a href="./en/hosp-spa.html" class="apx-sub">Saunas and spa complexes (IP55)</a>
+                
+              </span>
+              <a href="./en/hospitality.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">UTEK Café, 2024</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/segments/religious-hero-soft.jpg" alt="Church of the Transfiguration complex" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/religious.html" class="apx-link" aria-label="Houses of worship"></a>
+            <span class="apx-num dim"><b>3</b><i></i></span>
+            <span class="apx-vt">Houses of worship</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>3</b><i></i></span>
+              <span class="apx-nl">projects</span>
+              <a href="./en/religious.html" class="apx-tt">Houses of worship</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/rel-temples.html" class="apx-sub">Churches, mosques, synagogues and other places of worship</a>
+                
+              </span>
+              <a href="./en/religious.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Church of the Transfiguration complex, 2024</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/segments/entertainment-hero-soft.jpg" alt="Club gig" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/entertainment.html" class="apx-link" aria-label="Entertainment"></a>
+            <span class="apx-num dim"><b>2</b><i></i></span>
+            <span class="apx-vt">Entertainment</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>2</b><i></i></span>
+              <span class="apx-nl">projects</span>
+              <a href="./en/entertainment.html" class="apx-tt">Entertainment</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/ent-live.html" class="apx-sub">Live music clubs</a>
+                
+                  <a href="./en/ent-nightclubs.html" class="apx-sub">Nightclubs and dance clubs</a>
+                
+                  <a href="./en/ent-karaoke.html" class="apx-sub">Karaoke bars</a>
+                
+              </span>
+              <a href="./en/entertainment.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap"></span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/segments/rental-hero-bessonnitsa.jpg" alt="Bessonnitsa festival" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./en/rental.html" class="apx-link" aria-label="Rental companies"></a>
+            <span class="apx-num dim"><b>3</b><i></i></span>
+            <span class="apx-vt">Rental companies</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>3</b><i></i></span>
+              <span class="apx-nl">solution sets</span>
+              <a href="./en/rental.html" class="apx-tt">Rental companies</a>
+              <span class="apx-ls">
+                
+                  <a href="./en/rent-full.html" class="apx-sub">Full-featured solutions for a wide range of applications</a>
+                
+                  <a href="./en/rent-mid.html" class="apx-sub">Well-balanced solutions for mid-size venues and applications</a>
+                
+                  <a href="./en/rent-compact.html" class="apx-sub">Compact and budget-friendly for small events</a>
+                
+              </span>
+              <a href="./en/rental.html" class="apx-go">Explore this application <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Bessonnitsa festival, 2025</span>
+          </div>
+        
       </div>
     </div>
   </section>
@@ -784,269 +1004,34 @@
   </footer>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
-// Отзывы на главной — упрощённая ротонда: данные и логика в reviews-ring.js (собирается из тех же данных, что reviews.html).
+<script>/* Главная в обычном HTML (30.10.2026, Коля): то, что раньше делал шаблон на React, — меню, интро в логотипе,
+   кадр вместо видео при «уменьшении движения», кнопки поля «кому мы полезны» */
+(function(){
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  /* интро: «Живи Музыкой!» через 5 с растворяется в логотип */
+  var intro=document.querySelector('img[data-intro]'),logo=document.querySelector('img[data-logo]');
+  function showLogo(){if(intro)intro.style.opacity='0';if(logo)logo.style.opacity='1';}
+  if(reduce)showLogo();else setTimeout(showLogo,5000);
+  /* хиро: при «уменьшении движения» — статичный кадр вместо видео */
+  if(reduce){var tp=document.querySelector('template[data-hero-photo]'),hv=document.querySelector('#hero video');
+    if(tp&&hv){hv.parentNode.replaceChild(tp.content.cloneNode(true),hv);}}
+  /* мега-меню */
+  var mm=document.querySelector('.mm-overlay'),mb=document.querySelector('[data-mm-toggle]');
+  function menu(o){if(!mm||!mb)return;mm.hidden=!o;mb.setAttribute('aria-expanded',o?'true':'false');}
+  if(mb)mb.addEventListener('click',function(){menu(mm.hidden);});
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-mm-close]'))menu(false);});
+  /* поле «кому мы полезны»: кнопка проявляет надписи своей группы, повторное нажатие — снимает выбор */
+  var fld=document.querySelector('.fld'),grp=null;
+  function field(g){grp=g;
+    if(fld)fld.className=g?'fld fld-on':'fld';
+    [].forEach.call(document.querySelectorAll('.field-item'),function(a){var on=!!g&&a.classList.contains('fg-'+g);
+      a.classList.toggle('revealed',on);a.classList.toggle('blurred',!on);
+      a.setAttribute('tabindex',on?'0':'-1');a.setAttribute('aria-hidden',on?'false':'true');
+      a.style.transform='translate(-50%,-50%) scale('+(on?1.06:1)+')';});
+    [].forEach.call(document.querySelectorAll('[data-fg]'),function(b){var on=b.getAttribute('data-fg')===g;
+      b.className=on?'field-btn field-btn-active':'field-btn';b.setAttribute('aria-pressed',on?'true':'false');});}
+  [].forEach.call(document.querySelectorAll('[data-fg]'),function(b){b.addEventListener('click',function(){var g=b.getAttribute('data-fg');field(grp===g?null:g);});});
+})();</script>
 
-// --- поле «кому мы полезны»: 16 надписей из присланного списка, привязанные к трём группам ---
-// расположение (top/left, % от поля) — зафиксированная раскладка, которую пользователь расставил вручную и попросил закрепить как новую по умолчанию
-// href — куда ведёт клик по надписи: якорь на существующий раздел черновика, где он есть,
-// либо "#" placeholder — там же, где на такую же по смыслу страницу пока ведёт "#" и в мега-меню (страница ещё не построена)
-// пункты по таблице «Быстрые ссылки для ЦА»; top/left — раскладка, расставленная пользователем в макете (10.10.2026); страницы-заглушки ещё не готовы → ведут на раздел (Техподдержка / Клиентам)
-const FIELD_ITEMS = [
-  { text: "PRODUCT CATALOG", group: "eng", width: 150, top: 83.0, left: 70.1, tTop: 16.4, tLeft: 12.9, href: "./products.html" },
-  { text: "REQUEST A DEMO", group: "clients", width: 150, top: 9.6, left: 34.0, tTop: 23.5, tLeft: 34.2, href: "./clients.html" },
-  { text: "BECOME A PARTNER", group: "partners", width: 150, top: 15.2, left: 53.2, tTop: 16.5, tLeft: 64.6, href: "#contact" },
-  { text: "APPLICATION EXAMPLES", group: "rental", width: 150, top: 33.8, left: 42.8, tTop: 50.9, tLeft: 56.5, href: "./rental.html" },
-  { text: "TRAINING & SEMINARS", group: "eng", width: 150, top: 9.7, left: 94.3, tTop: 19.1, tLeft: 88.3, href: "./support.html" },
-  { text: "VISIT THE SHOWROOM", group: "clients", width: 150, top: 38.6, left: 7.2, tTop: 47.5, tLeft: 22.9, href: "./showroom.html" },
-  { text: "VISIT THE SHOWROOM", group: "partners", width: 150, top: 29.5, left: 25.2, tTop: 34.5, tLeft: 12.0, href: "./showroom.html" },
-  { text: "TESTIMONIALS FROM SYSTEM AND FOH ENGINEERS", group: "rental", width: 180, top: 10.9, left: 73.9, tTop: 36.6, tLeft: 41.0, href: "./reviews.html" },
-  { text: "WARRANTY & SERVICE", group: "eng", width: 150, top: 28.3, left: 63.4, tTop: 26.6, tLeft: 58.3, href: "./warranty.html" },
-  { text: "", group: "clients", width: 220, top: 32.9, left: 83.3, tTop: 36.4, tLeft: 78.8, href: "./gov.html" },
-  { text: "REQUEST A DEMO", group: "partners", width: 150, top: 62.4, left: 11.2, tTop: 58.8, tLeft: 39.6, href: "./clients.html" },
-  { text: "WARRANTY & SERVICE", group: "rental", width: 150, top: 94.0, left: 32.9, tTop: 80.3, tLeft: 36.9, href: "./warranty.html" },
-  { text: "DOCUMENTATION CENTER", group: "eng", width: 150, top: 58.9, left: 90.3, tTop: 54.0, tLeft: 81.8, href: "./docs.html" },
-  { text: "COMPLETED PROJECTS", group: "clients", width: 150, top: 90.9, left: 54.1, tTop: 90.2, tLeft: 50.2, href: "./portfolio.html" },
-  { text: "PARTNER PORTAL", group: "partners", width: 150, top: 89.7, left: 94.5, tTop: 93.0, tLeft: 86.0, href: "#" },
-  { text: "ARRAY CALCULATOR", group: "rental", width: 150, top: 76.0, left: 82.0, tTop: 69.0, tLeft: 88.8, href: "./support.html" },
-  { text: "TECHNOLOGIES & PATENTS", group: "eng", width: 150, top: 78.6, left: 23.3, tTop: 61.2, tLeft: 10.7, href: "./technologies.html" },
-  { text: "TESTIMONIALS", group: "clients", width: 150, top: 87.6, left: 8.5, tTop: 70.9, tLeft: 25.3, href: "./reviews.html" },
-  { text: "REQUEST A PROJECT CONSULTATION", group: "partners", width: 180, top: 75.1, left: 41.7, tTop: 90.2, tLeft: 16.0, href: "./clients.html" },
-  { text: "SIMULATE YOUR ROOM YOURSELF", group: "eng", width: 180, top: 14.3, left: 12.4, tTop: 80.2, tLeft: 66.2, href: "./support.html" },
-  { text: "WHERE TO BUY", group: "clients", width: 150, top: 67.4, left: 61.7, tTop: 65.7, tLeft: 63.0, href: "./clients.html" }
-];
-const FIELD_GROUPS = [
-  { key: "eng", label: "Engineers" },
-  { key: "partners", label: "Partners" },
-  { key: "clients", label: "Venue owners" },
-  { key: "rental", label: "Rental companies" }
-];
-
-// --- «Типы объектов / Варианты применения»: 8 плиток-направлений (вид — как .vtile на страницах раздела «Применение») ---
-// top — число объектов этого направления в портфолио (assets/portfolio/portfolio-data.js); style — ширина плитки в сетке из 3 колонок
-// href подразделов — "#" placeholder: посадочные страницы сегментов ещё не построены (тот же приём, что и в мега-меню/FIELD_ITEMS)
-// куда ведёт пункт списка внутри плитки портфолио (по тексту пункта) — плитка на странице раздела
-const ITEM_HREFS = {
-  "School and university assembly halls": "./edu-assembly.html",
-  "Classrooms and lecture halls": "./edu-lecture.html",
-  "Planetariums": "./edu-planetarium.html",
-  "Sports arenas": "./sport-palaces.html",
-  "Ice arenas (IP55)": "./sport-ice.html",
-  "Sports and fitness centers": "./sport-complexes.html",
-  "Swimming pools and water parks (IP55)": "./sport-pools.html",
-  "Open-air stadiums and racecourses (IP55)": "./sport-stadiums.html",
-  "Conference halls": "./corp-conference.html",
-  "Meeting rooms": "./corp-meeting.html",
-  "Open-plan offices": "./corp-openspace.html",
-  "Banquet halls and restaurant lobbies": "./corp-banquet.html",
-  "Restaurants, bars, pubs": "./hosp-restaurants.html",
-  "Outdoor cafés and summer terraces (IP55)": "./hosp-terraces.html",
-  "Saunas and spa complexes (IP55)": "./hosp-spa.html",
-  "Saunas and spa complexes (IP55)": "./hosp-spa.html",
-  "Churches, mosques, synagogues and other places of worship": "./rel-temples.html",
-  "Live music clubs": "./ent-live.html",
-  "Nightclubs and dance clubs": "./ent-nightclubs.html",
-  "Karaoke bars": "./ent-karaoke.html",
-  "Full-featured solutions for a wide range of applications": "./rent-full.html",
-  "Well-balanced solutions for mid-size venues and applications": "./rent-mid.html",
-  "Compact and budget-friendly for small events": "./rent-compact.html"
-};
-const PORTFOLIO_TILES = [
-  {
-    title: "Arts & culture",
-    lead: "Natural timbre in the concert hall, intelligible speech in the theater, 360° coverage under the circus dome.",
-    top: "Over 40 completed projects",
-    style: "grid-column:span 2;",
-    href: "./culture.html",
-    // куда ведёт каждый пункт списка (по порядку items): готовая страница или плитка на странице раздела
-    itemHrefs: ["./concert-halls.html", "./theatres.html", "./dk.html", "./circus.html", "./museums.html", "./outdoor.html"],
-    img: "./assets/mravinsky-hall-choir.jpg",
-    alt: "Concert hall of the Mravinsky Children’s Art School, St. Petersburg",
-    caption: "Concert hall of the Mravinsky Children’s Art School, St. Petersburg, 2023",
-    items: ["Concert halls and philharmonic halls", "Drama and musical theaters", "Cultural and community centers", "Circuses", "Museums and exhibition galleries", "Portable outdoor systems (IP55)"]
-  },
-  {
-    title: "Education & research",
-    lead: "Every word comes through effortlessly — at a school assembly, on the auditorium stage or at a conference.",
-    top: "Over 50 completed projects",
-    style: "",
-    href: "./education.html",
-    img: "./assets/portfolio/pf-001/01.jpg",
-    alt: "RANEPA assembly hall",
-    caption: "RANEPA assembly hall, 2026",
-    items: ["School and university assembly halls", "Classrooms and lecture halls", "Planetariums"]
-  },
-  {
-    title: "Sports & live events",
-    lead: "The announcer is intelligible in every stand; IP55 versions for ice arenas and swimming pools.",
-    top: "8 projects",
-    style: "",
-    href: "./sport.html",
-    img: "./assets/portfolio/pf-007/01.jpg",
-    alt: "Tarko-Sale Martial Arts Center",
-    caption: "Tarko-Sale Martial Arts Center, 2025",
-    items: ["Sports arenas", "Ice arenas (IP55)", "Sports and fitness centers", "Swimming pools and water parks (IP55)", "Open-air stadiums and racecourses (IP55)"]
-  },
-  {
-    title: "Corporate",
-    lead: "Every speaker is heard without strain, and the equipment never draws attention to itself.",
-    top: "Over 20 completed projects",
-    style: "",
-    href: "./corporate.html",
-    img: "./assets/portfolio/pf-018/07.jpg",
-    alt: "Conference hall of the Ministry of Sport of the Russian Federation",
-    caption: "Conference hall of the Ministry of Sport of the Russian Federation, 2023",
-    items: ["Conference halls", "Meeting rooms", "Open-plan offices"]
-  },
-  {
-    title: "Hospitality",
-    lead: "Background music never gets in the way of conversation, and at night the system handles a live show.",
-    top: "9 projects",
-    style: "",
-    href: "./hospitality.html",
-    img: "./assets/portfolio/pf-009/07.jpg",
-    alt: "UTEK Café",
-    caption: "UTEK Café, 2024",
-    items: ["Restaurants, bars, pubs", "Banquet halls and restaurant lobbies", "Outdoor cafés and summer terraces (IP55)", "Saunas and spa complexes (IP55)"]
-  },
-  {
-    title: "Houses of worship",
-    lead: "Speech and singing stay intelligible under high vaults, and the equipment respects the architecture.",
-    top: "3 projects",
-    style: "",
-    href: "./religious.html",
-    img: "./assets/segments/religious-hero-soft.jpg",
-    alt: "Church of the Transfiguration complex",
-    caption: "Church of the Transfiguration complex, 2024",
-    items: ["Churches, mosques, synagogues and other places of worship"]
-  },
-  {
-    title: "Entertainment",
-    lead: "Headroom to spare, solid low end and clean vocals — the system is pushed hard every night and delivers.",
-    top: "2 projects",
-    style: "",
-    href: "./entertainment.html",
-    img: "./assets/segments/entertainment-hero-soft.jpg",
-    alt: "Club gig",
-    caption: "",
-    items: ["Live music clubs", "Nightclubs and dance clubs", "Karaoke bars"]
-  },
-  {
-    title: "Rental companies",
-    lead: "Fast setup, road-ready reliability and predictable sound in every new venue.",
-    top: "3 solution sets",
-    style: "",
-    href: "./rental.html",
-    img: "./assets/segments/rental-hero-bessonnitsa.jpg",
-    alt: "Bessonnitsa festival",
-    caption: "Bessonnitsa festival, 2025",
-    items: ["Full-featured solutions for a wide range of applications", "Well-balanced solutions for mid-size venues and applications", "Compact and budget-friendly for small events"]
-  }
-];
-
-class Component extends DCLogic {
-  renderVals() {
-    // --- мега-меню: по клику на любой пункт открывается целиком, все разделы сразу (референс mercedes-benz.com) ---
-    const menuOpen = !!this.state.menuOpen;
-
-    // --- поле «кому мы полезны»: клик по кнопке проявляет надписи её группы, остальные остаются размытыми и мерцающими ---
-    // расположение зафиксировано — см. top/left в FIELD_ITEMS, перетаскивание убрано по просьбе пользователя
-    const fieldGroup = this.state.fieldGroup || null;
-
-    const fieldItems = FIELD_ITEMS.map((it, i) => {
-      const revealed = !!fieldGroup && it.group === fieldGroup;
-      const scale = revealed ? 1.06 : 1;
-      return {
-        id: "fi" + i,
-        label: it.text,
-        href: it.href,
-        cls: (revealed ? "field-item revealed" : "field-item blurred") + " fg-" + it.group,
-        tab: revealed ? "0" : "-1",                 // скрытые надписи не получают фокус
-        hidden: revealed ? "false" : "true",
-        posStyle: "--dt:" + it.top.toFixed(2) + "%;--dl:" + it.left.toFixed(2) + "%;--tt:" + it.tTop.toFixed(2) + "%;--tl:" + it.tLeft.toFixed(2) + "%;width:" + it.width + "px;transform:translate(-50%,-50%) scale(" + scale + ");"
-      };
-    });
-    // --- портфолио: перечень подразделов каждой плитки — ссылки-плейсхолдеры "#" (посадочные страницы сегментов не построены) ---
-    const portfolioTiles = PORTFOLIO_TILES.map((t, i) => ({
-      id: "pt" + i,
-      title: t.title,
-      img: t.img,
-      alt: t.alt,
-      caption: t.caption,
-      lead: t.lead || "",
-      top: t.top || "",
-      // крупная цифра масштаба: «Реализовано более 40 объектов» → 40+ / «реализованных объектов»; «8 объектов» → 8 (приглушённо)
-      num: (/(\d+)/.exec(t.top || "") || ["", "—"])[1],
-      plus: /более/.test(t.top || "") ? "+" : "",
-      numLabel: /более/.test(t.top || "") ? "completed projects" : (t.top || "").replace(/^\D*\d+\s*/, ""),
-      numCls: "apx-num" + (/более/.test(t.top || "") ? "" : " dim"),
-      bigCls: "apx-big" + (/более/.test(t.top || "") ? "" : " dim"),
-      style: t.style || "",
-      href: t.href || "#",
-      hasLink: !!t.href,
-      items: t.items.map((txt, j) => ({ id: "pt" + i + "-" + j, text: txt, href: (t.itemHrefs && t.itemHrefs[j]) || ITEM_HREFS[txt] || "#" }))
-    }));
-
-    const fieldButtons = FIELD_GROUPS.map(g => {
-      const active = fieldGroup === g.key;
-      return {
-        id: "fb-" + g.key,
-        label: g.label,
-        cls: active ? "field-btn field-btn-active" : "field-btn",
-        pressed: active ? "true" : "false",
-        onClick: () => this.setState({ fieldGroup: active ? null : g.key })
-      };
-    });
-
-    // --- интро в логотипе: «Живи Музыкой!» показывается при открытии страницы, затем растворяется в логотип DS PROAUDIO ---
-    if (!this._introReady) {
-      this._introReady = true;
-      let reduceMotion = false;
-      try { reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-      this._introReduceMotion = reduceMotion;
-      if (!reduceMotion) {
-        setTimeout(() => { this.setState({ showLogo: true }); }, 5000);
-      }
-    }
-
-    // --- хиро: видео при обычных настройках, статичный кадр при prefers-reduced-motion ---
-    const heroReduceMotion = !!this._introReduceMotion;
-    const heroPoster = "./assets/hero/hero2-poster.jpg";   // кадр из хиро-видео IMG_5755 (2K) (прежние: ./assets/hero/hero-poster.jpg, ./assets/e78e5d5fb2e6a22da2fab07370e55dd9.jpg)
-    const heroPhotoMode = heroReduceMotion;
-    const heroVideoMode = !heroReduceMotion;
-
-    const showLogo = this._introReduceMotion || !!this.state.showLogo;
-    const introImgStyle = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:48px;width:auto;transition:opacity .6s ease;opacity:" + (showLogo ? "0" : "1") + ";";
-    const logoImgStyle = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);transition:opacity .6s ease;opacity:" + (showLogo ? "1" : "0") + ";";
-
-
-
-    return {
-      // мега-меню
-      menuOpen: menuOpen,
-      toggleMenu: () => this.setState({ menuOpen: !menuOpen }),
-      closeMenu: () => this.setState({ menuOpen: false }),
-
-      // интро логотипа
-      introImgStyle: introImgStyle,
-      logoImgStyle: logoImgStyle,
-
-      // хиро: видео/фото
-      heroPhotoMode: heroPhotoMode,
-      heroVideoMode: heroVideoMode,
-      heroPoster: heroPoster,
-
-      // поле «кому мы полезны»
-      fieldItems: fieldItems,
-      fieldButtons: fieldButtons,
-      fldCls: fieldGroup ? "fld fld-on" : "fld",
-
-      // портфолио «примеры реализованных объектов»
-      portfolioTiles: portfolioTiles
-    };
-  }
-}
-</script>
 </body>
 </html>

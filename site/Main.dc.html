@@ -30,9 +30,6 @@
 })();</script>
 <title>Профессиональная акустика российского производства — DS PROAUDIO</title>
 <meta name="description" content="DS PROAUDIO — российский производитель профессиональной акустики: линейные массивы, точечные источники, колонны и усилители.">
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
 <!-- основные шрифты заранее: без этого текст перестраивается при подмене шрифта (сдвиг вёрстки, CLS) -->
 <link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -72,10 +69,6 @@
 <link rel="alternate" hreflang="x-default" href="https://ds-proaudio.ru/">
 <meta name="ds-lang-alt" content="./en/index.html" data-lang="en">
 <!-- lang:end -->
-</head>
-<body>
-<x-dc>
-<helmet>
 <style>
   body{margin:0;background:#FFFFFF;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -309,9 +302,10 @@
     .apx-cap{left:22px;right:22px;max-width:none;text-align:left;}
   }
   @media (prefers-reduced-motion:reduce){ .apx-c,.apx-op,.apx-ph{transition:none;} }
+  .mm-overlay[hidden]{display:none !important;} /* меню закрыто: атрибут hidden сильнее inline display:flex */
 </style>
-</helmet>
-
+</head>
+<body>
 <div style="width:100%;min-height:6600px;background:#FFFFFF;display:flex;flex-direction:column;">
 
   <!-- ================= HEADER ================= -->
@@ -339,8 +333,8 @@
       <!-- при открытии страницы: сначала надпись «Живи Музыкой!», затем она растворяется, и на её месте проявляется логотип DS PROAUDIO -->
       <div style="display:flex;justify-content:center;">
         <a href="./Main.dc.html" aria-label="DS PROAUDIO — на главную" style="display:block;position:relative;height:32px;width:145px;">
-          <img src="./assets/3d4dfaf79132674a05fc4f9379ace7c9.png" alt="" style="{{introImgStyle}}">
-          <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" style="{{logoImgStyle}}">
+          <img src="./assets/3d4dfaf79132674a05fc4f9379ace7c9.png" alt="" data-intro style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:48px;width:auto;transition:opacity .6s ease;opacity:1;">
+          <img src="./assets/ed4decb6b5a70b43cdf0d482d0b1e26e.png" alt="" data-logo style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);transition:opacity .6s ease;opacity:0;">
         </a>
       </div>
 
@@ -356,110 +350,110 @@
       </div>
 
     </div>
-    <button type="button" class="hdr-menu-btn" onClick="{{toggleMenu}}" aria-haspopup="true" aria-expanded="{{menuOpen}}">Меню</button>
+    <button type="button" class="hdr-menu-btn" data-mm-toggle aria-haspopup="true" aria-expanded="false">Меню</button>
 </header>
 
   <!-- ============ МЕГА-МЕНЮ: раскрывается целиком, все разделы сразу (референс mercedes-benz.com) ============ -->
   <!-- вынесено за пределы <header> (структуру оставил как есть — независимо и корректно работает) -->
-  <sc-if value="{{menuOpen}}">
-      <div class="mm-overlay" style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;display:flex;flex-direction:column;">
+  
+      <div class="mm-overlay" hidden style="position:fixed;top:74px;left:0;right:0;bottom:0;background:rgba(10,10,11,.92);overflow-y:auto;z-index:55;display:flex;flex-direction:column;">
         <div class="ds-row" style="padding-top:56px;flex:1 0 auto;">
 
           <!-- ГИСП: колонка прижата к левому краю меню (первая в ряду), пункты центрированы относительно пункта «ГИСП» -->
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-top:6px;">
             <a class="mm-lang" href="./en/index.html" hreflang="en" lang="en" title="English version"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span>EN</span></a>
-            <a href="./docs.html?g=gll" onClick="{{closeMenu}}" class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
-            <a href="./docs.html?g=dwg" onClick="{{closeMenu}}" class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
-            <a href="./docs.html?g=man" onClick="{{closeMenu}}" class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
+            <a href="./docs.html?g=gll" data-mm-close class="mm-item" style="font-weight:400;color:#F5F5F5;">GLL</a>
+            <a href="./docs.html?g=dwg" data-mm-close class="mm-item" style="font-weight:400;color:#F5F5F5;">CAD</a>
+            <a href="./docs.html?g=man" data-mm-close class="mm-item" style="font-weight:400;color:#F5F5F5;">PDF</a>
           </div>
 
           <!-- ПРОДУКЦИЯ: по левому краю пункта «ПРОДУКЦИЯ» -->
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
-            <a href="./products-line-arrays.html" onClick="{{closeMenu}}" class="mm-item">Линейные массивы</a>
-            <a href="./products-constant-curvature.html" onClick="{{closeMenu}}" class="mm-item">Массивы с фиксированными углами</a>
-            <a href="./products-columns.html" onClick="{{closeMenu}}" class="mm-item">Звуковые колонны</a>
-            <a href="./products-point-sources.html" onClick="{{closeMenu}}" class="mm-item">Точечные источники звука</a>
-            <a href="./products-monitors.html" onClick="{{closeMenu}}" class="mm-item">Сценические мониторы</a>
-            <a href="./products-compact-sets.html" onClick="{{closeMenu}}" class="mm-item">Компактные комплекты</a>
-            <a href="./products-auditorium.html" onClick="{{closeMenu}}" class="mm-item">Системы для аудиторий</a>
-            <a href="./products-registry.html" onClick="{{closeMenu}}" class="mm-item">Реестровое оборудование</a>
-            <a href="./products-all-weather.html" onClick="{{closeMenu}}" class="mm-item">Всепогодные системы</a>
-            <a href="./products-amplifiers.html" onClick="{{closeMenu}}" class="mm-item">Усилители</a>
-            <a href="./products-accessories.html" onClick="{{closeMenu}}" class="mm-item">Аксессуары</a>
-            <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" onClick="{{closeMenu}}" class="mm-bold">Каталог PDF</a>
+            <a href="./products-line-arrays.html" data-mm-close class="mm-item">Линейные массивы</a>
+            <a href="./products-constant-curvature.html" data-mm-close class="mm-item">Массивы с фиксированными углами</a>
+            <a href="./products-columns.html" data-mm-close class="mm-item">Звуковые колонны</a>
+            <a href="./products-point-sources.html" data-mm-close class="mm-item">Точечные источники звука</a>
+            <a href="./products-monitors.html" data-mm-close class="mm-item">Сценические мониторы</a>
+            <a href="./products-compact-sets.html" data-mm-close class="mm-item">Компактные комплекты</a>
+            <a href="./products-auditorium.html" data-mm-close class="mm-item">Системы для аудиторий</a>
+            <a href="./products-registry.html" data-mm-close class="mm-item">Реестровое оборудование</a>
+            <a href="./products-all-weather.html" data-mm-close class="mm-item">Всепогодные системы</a>
+            <a href="./products-amplifiers.html" data-mm-close class="mm-item">Усилители</a>
+            <a href="./products-accessories.html" data-mm-close class="mm-item">Аксессуары</a>
+            <a href="https://ds-proaudio.ru/upload/ds-proaudio-catalog_files/DS_Proaudio_catalog_2025_web.pdf" target="_blank" rel="noopener" data-mm-close class="mm-bold">Каталог PDF</a>
           </div>
 
           <!-- ПРИМЕНЕНИЕ: по левому краю пункта «ПРИМЕНЕНИЕ» -->
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:15px;text-align:left;">
-            <a href="./reviews.html" onClick="{{closeMenu}}" class="mm-bold">Отзывы</a>
-            <a href="./portfolio.html" onClick="{{closeMenu}}" class="mm-bold" style="margin-bottom:2px;">Портфолио</a>
-            <a href="./culture.html" onClick="{{closeMenu}}" class="mm-item">Культура и искусство</a>
-            <a href="./education.html" onClick="{{closeMenu}}" class="mm-item">Образование и наука</a>
-            <a href="./sport.html" onClick="{{closeMenu}}" class="mm-item">Спорт и массовые мероприятия</a>
-            <a href="./corporate.html" onClick="{{closeMenu}}" class="mm-item">Корпоративный сектор</a>
-            <a href="./hospitality.html" onClick="{{closeMenu}}" class="mm-item">Ресторанный и гостиничный бизнес</a>
-            <a href="./religious.html" onClick="{{closeMenu}}" class="mm-item">Религиозные учреждения</a>
-            <a href="./entertainment.html" onClick="{{closeMenu}}" class="mm-item">Индустрия развлечений</a>
-            <a href="./rental.html" onClick="{{closeMenu}}" class="mm-item" style="font-weight:500;">Прокат</a>
+            <a href="./reviews.html" data-mm-close class="mm-bold">Отзывы</a>
+            <a href="./portfolio.html" data-mm-close class="mm-bold" style="margin-bottom:2px;">Портфолио</a>
+            <a href="./culture.html" data-mm-close class="mm-item">Культура и искусство</a>
+            <a href="./education.html" data-mm-close class="mm-item">Образование и наука</a>
+            <a href="./sport.html" data-mm-close class="mm-item">Спорт и массовые мероприятия</a>
+            <a href="./corporate.html" data-mm-close class="mm-item">Корпоративный сектор</a>
+            <a href="./hospitality.html" data-mm-close class="mm-item">Ресторанный и гостиничный бизнес</a>
+            <a href="./religious.html" data-mm-close class="mm-item">Религиозные учреждения</a>
+            <a href="./entertainment.html" data-mm-close class="mm-item">Индустрия развлечений</a>
+            <a href="./rental.html" data-mm-close class="mm-item" style="font-weight:500;">Прокат</a>
           </div>
 
           <!-- DS PROAUDIO (компания): по центру горизонтального логотипа в строке меню -->
           <div style="display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-top:6px;">
-            <a href="./history.html" onClick="{{closeMenu}}" class="mm-item">История</a>
-            <a href="./philosophy.html" onClick="{{closeMenu}}" class="mm-item">Философия</a>
-            <a href="./faces.html" onClick="{{closeMenu}}" class="mm-item">Лица компании</a>
-            <a href="./about.html" onClick="{{closeMenu}}" class="mm-item">Компания в цифрах</a>
-            <a href="./production.html" onClick="{{closeMenu}}" class="mm-item">Наше производство</a>
+            <a href="./history.html" data-mm-close class="mm-item">История</a>
+            <a href="./philosophy.html" data-mm-close class="mm-item">Философия</a>
+            <a href="./faces.html" data-mm-close class="mm-item">Лица компании</a>
+            <a href="./about.html" data-mm-close class="mm-item">Компания в цифрах</a>
+            <a href="./production.html" data-mm-close class="mm-item">Наше производство</a>
             <details class="tech-dd">
               <summary class="mm-item" title="Показать список технологий"><a href="./technologies.html" class="tech-go" title="Раздел «Технологии»">Технологии</a><span class="tech-chev" aria-hidden="true">▼</span></summary>
               <div class="tech-list">
-                <a href="./tech-rigging.html" onClick="{{closeMenu}}" class="mm-item-long">Риггинг без пинов<span class="mm-sub">(массивы TAURA, ERA)</span></a><a href="./tech-click-clack.html" onClick="{{closeMenu}}" class="mm-item-long">CLICK-CLACK<span class="mm-sub">(углы на земле, TAURA)</span></a>
-                <a href="./tech-coaxial-waveguide.html" onClick="{{closeMenu}}" class="mm-item-long">Коаксиальные массивы<span class="mm-sub">(ERA, TAURA 10)</span></a>
-                <a href="./tech-horizontal-summing.html" onClick="{{closeMenu}}" class="mm-item-long">Горизонтальное сложение<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
-                <a href="./tech-cardioid-sub.html" onClick="{{closeMenu}}" class="mm-item-long">Кардиоидный сабвуфер<span class="mm-sub">(TAURA C-Sub 18)</span></a>
-                <a href="./tech-coaxial-cx.html" onClick="{{closeMenu}}" class="mm-item-long">Коаксиальные динамики<span class="mm-sub">(серии CX, MCX)</span></a>
-                <a href="./tech-voice-coil.html" onClick="{{closeMenu}}" class="mm-item">Звуковые катушки на ребро в замке</a>
+                <a href="./tech-rigging.html" data-mm-close class="mm-item-long">Риггинг без пинов<span class="mm-sub">(массивы TAURA, ERA)</span></a><a href="./tech-click-clack.html" data-mm-close class="mm-item-long">CLICK-CLACK<span class="mm-sub">(углы на земле, TAURA)</span></a>
+                <a href="./tech-coaxial-waveguide.html" data-mm-close class="mm-item-long">Коаксиальные массивы<span class="mm-sub">(ERA, TAURA 10)</span></a>
+                <a href="./tech-horizontal-summing.html" data-mm-close class="mm-item-long">Горизонтальное сложение<span class="mm-sub">(TAURA 8, PLR, STL)</span></a>
+                <a href="./tech-cardioid-sub.html" data-mm-close class="mm-item-long">Кардиоидный сабвуфер<span class="mm-sub">(TAURA C-Sub 18)</span></a>
+                <a href="./tech-coaxial-cx.html" data-mm-close class="mm-item-long">Коаксиальные динамики<span class="mm-sub">(серии CX, MCX)</span></a>
+                <a href="./tech-voice-coil.html" data-mm-close class="mm-item">Звуковые катушки на ребро в замке</a>
               </div>
             </details>
-            <a href="./blog.html" onClick="{{closeMenu}}" class="mm-item">Блог</a>
-            <a href="./contacts.html" onClick="{{closeMenu}}" class="mm-item">Контакты</a>
+            <a href="./blog.html" data-mm-close class="mm-item">Блог</a>
+            <a href="./contacts.html" data-mm-close class="mm-item">Контакты</a>
           </div>
 
           <!-- ПОДДЕРЖКА: по правому краю пункта «ПОДДЕРЖКА» -->
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:17px;text-align:right;">
-            <a href="./seminars.html" onClick="{{closeMenu}}" class="mm-item">Обучение, семинары</a>
-            <a href="./docs.html" onClick="{{closeMenu}}" class="mm-item-long">Центр документации<span class="mm-sub">(скачать файлы EASE CAD)</span></a>
-            <a href="./software.html" onClick="{{closeMenu}}" class="mm-item-long">ПО для акустических расчётов</a>
-            <a href="./warranty.html" onClick="{{closeMenu}}" class="mm-item">Гарантия и сервис</a>
+            <a href="./seminars.html" data-mm-close class="mm-item">Обучение, семинары</a>
+            <a href="./docs.html" data-mm-close class="mm-item-long">Центр документации<span class="mm-sub">(скачать файлы EASE CAD)</span></a>
+            <a href="./software.html" data-mm-close class="mm-item-long">ПО для акустических расчётов</a>
+            <a href="./warranty.html" data-mm-close class="mm-item">Гарантия и сервис</a>
           </div>
 
           <!-- КЛИЕНТАМ: по правому краю пункта «КЛИЕНТАМ» -->
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
-            <a href="./showroom.html" onClick="{{closeMenu}}" class="mm-item">Посетить шоу-рум</a>
-            <a href="./demo.html" onClick="{{closeMenu}}" class="mm-item">Запросить выездную демонстрацию</a>
-            <a href="./consultation.html" onClick="{{closeMenu}}" class="mm-item">Запросить консультацию по объекту</a>
-            <a href="./prices.html" onClick="{{closeMenu}}" class="mm-item">Узнать цены</a>
-            <a href="./where-to-buy.html" onClick="{{closeMenu}}" class="mm-item">Где купить</a>
-            <a href="./delivery.html" onClick="{{closeMenu}}" class="mm-item">Срок поставки</a>
+            <a href="./showroom.html" data-mm-close class="mm-item">Посетить шоу-рум</a>
+            <a href="./demo.html" data-mm-close class="mm-item">Запросить выездную демонстрацию</a>
+            <a href="./consultation.html" data-mm-close class="mm-item">Запросить консультацию по объекту</a>
+            <a href="./prices.html" data-mm-close class="mm-item">Узнать цены</a>
+            <a href="./where-to-buy.html" data-mm-close class="mm-item">Где купить</a>
+            <a href="./delivery.html" data-mm-close class="mm-item">Срок поставки</a>
           </div>
 
           <!-- «сообщение» / ВК / ТГ / «письмо»: по центру ru|eng -->
           <div style="display:flex;flex-direction:column;align-items:flex-end;gap:20px;">
-            <a href="#dsf-bot" onClick="{{closeMenu}}" aria-label="Написать в чат" style="font-size:17px;color:#FAFAFA;">💬</a>
-            <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" onClick="{{closeMenu}}" class="mm-bold">ВК</a>
-            <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" onClick="{{closeMenu}}" class="mm-bold">ТГ</a>
-            <a href="#contact" onClick="{{closeMenu}}" aria-label="Написать нам" style="font-size:17px;color:#FAFAFA;">✉</a>
-            <a href="tel:+74951501238" onClick="{{closeMenu}}" aria-label="Позвонить нам" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
+            <a href="#dsf-bot" data-mm-close aria-label="Написать в чат" style="font-size:17px;color:#FAFAFA;">💬</a>
+            <a href="https://vk.com/ds_proaudio" target="_blank" rel="noopener" data-mm-close class="mm-bold">ВК</a>
+            <a href="https://t.me/dsproaudio" target="_blank" rel="noopener" data-mm-close class="mm-bold">ТГ</a>
+            <a href="#contact" data-mm-close aria-label="Написать нам" style="font-size:17px;color:#FAFAFA;">✉</a>
+            <a href="tel:+74951501238" data-mm-close aria-label="Позвонить нам" style="font-size:17px;color:#FAFAFA;display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.32.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg></a>
           </div>
 
         </div>
 
         <!-- крестик закрытия — в самом низу выпадающего меню, по центру всей ширины (референс mercedes-benz.com) -->
         <div style="flex:0 0 auto;display:flex;justify-content:center;padding:28px 0 34px;">
-          <button type="button" onClick="{{closeMenu}}" aria-label="Закрыть меню" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Закрыть меню</span></button>
+          <button type="button" data-mm-close aria-label="Закрыть меню" class="mm-close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg><span>Закрыть меню</span></button>
         </div>
       </div>
-  </sc-if>
+  
 
   <!-- ================= HERO (видео) ================= -->
   <!-- Видео возвращено по вашей просьбе. Раньше здесь было зелёное мерцание при зацикливании/прокрутке, и пять
@@ -471,20 +465,20 @@
        у себя и дайте знать: тогда, скорее всего, дело снова в окружении показа, а не в самом файле. При
        prefers-reduced-motion автовоспроизведение отключено, показывается тот же статичный кадр. -->
   <section id="hero" style="position:relative;width:100%;min-height:760px;overflow:hidden;display:flex;align-items:flex-end;background:#0A0A0B;">
-    <sc-if value="{{heroVideoMode}}" hint-placeholder-val="{{true}}">
+    
       <!-- хиро-видео: «Video Project 2» целиком, без чёрной заставки с логотипом в начале (0–6,3 с) и чёрного хвоста (90,8–97 с);
            телефоны/узкие окна получают лёгкую версию 720p, остальные — 1080p; сначала WebM (VP9, легче), запасной вариант — MP4 (H.264). -->
-      <video class="hero-bg" poster="{{heroPoster}}" muted="" loop="" playsinline="" preload="none" data-lazy-hero="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateZ(0);will-change:transform;">
+      <video class="hero-bg" poster="./assets/hero/hero2-poster.jpg" muted="" loop="" playsinline="" preload="none" data-lazy-hero="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateZ(0);will-change:transform;">
         <source data-src="./assets/hero/hero2-1440.webm" type="video/webm" media="(min-width: 1800px), (min-width: 1200px) and (min-resolution: 1.5dppx)">
         <source data-src="./assets/hero/hero2-720.webm" type="video/webm" media="(max-width: 900px)">
         <source data-src="./assets/hero/hero2-1080.webm" type="video/webm">
         <source data-src="./assets/hero/hero2-1440.mp4" type="video/mp4" media="(min-width: 1800px), (min-width: 1200px) and (min-resolution: 1.5dppx)">
         <source data-src="./assets/hero/hero2-720.mp4" type="video/mp4" media="(max-width: 900px)">
         <source data-src="./assets/hero/hero2-1080.mp4" type="video/mp4">
-    </video></sc-if>
-    <sc-if value="{{heroPhotoMode}}" hint-placeholder-val="{{false}}">
-      <img class="hero-bg" fetchpriority="high" src="{{heroPoster}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-    </sc-if>
+    </video>
+    <template data-hero-photo>
+      <img class="hero-bg" fetchpriority="high" src="./assets/hero/hero2-poster.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    </template>
     <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,11,.12) 0%, rgba(10,10,11,.20) 38%, rgba(10,10,11,.82) 100%);"></div>
 
     <div style="position:relative;z-index:2;max-width:1440px;width:100%;margin:0 auto;padding:190px 64px 100px;display:flex;flex-direction:column;gap:26px;">
@@ -532,16 +526,62 @@
   <!-- по клику на кнопку подсвечиваются надписи её группы (сейчас расфокусированные и мерцающие), остальные остаются в тумане -->
   <section class="fld-sec" style="width:100%;background:#0A0A0B;overflow:hidden;">
     <div class="fld-wrap" style="max-width:1440px;margin:0 auto;padding:0 64px;">
-      <div class="{{fldCls}}" style="position:relative;width:100%;height:500px;">
+      <div class="fld" style="position:relative;width:100%;height:500px;">
 
-        <sc-for list="{{fieldItems}}" as="item">
-          <a href="{{item.href}}" class="{{item.cls}}" style="{{item.posStyle}}" tabindex="{{item.tab}}" aria-hidden="{{item.hidden}}">{{item.label}}</a>
-        </sc-for>
+        
+          <a href="./products.html" class="field-item blurred fg-eng" style="--dt:83.00%;--dl:70.10%;--tt:16.40%;--tl:12.90%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">КАТАЛОГ ПРОДУКЦИИ</a>
+        
+          <a href="./clients.html" class="field-item blurred fg-clients" style="--dt:9.60%;--dl:34.00%;--tt:23.50%;--tl:34.20%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ЗАПРОСИТЬ ДЕМОНСТРАЦИЮ</a>
+        
+          <a href="#contact" class="field-item blurred fg-partners" style="--dt:15.20%;--dl:53.20%;--tt:16.50%;--tl:64.60%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">СТАТЬ ПАРТНЁРОМ</a>
+        
+          <a href="./rental.html" class="field-item blurred fg-rental" style="--dt:33.80%;--dl:42.80%;--tt:50.90%;--tl:56.50%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ПРИМЕРЫ ПРИМЕНЕНИЯ</a>
+        
+          <a href="./support.html" class="field-item blurred fg-eng" style="--dt:9.70%;--dl:94.30%;--tt:19.10%;--tl:88.30%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ОБУЧЕНИЕ, СЕМИНАРЫ</a>
+        
+          <a href="./showroom.html" class="field-item blurred fg-clients" style="--dt:38.60%;--dl:7.20%;--tt:47.50%;--tl:22.90%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ПОСЕТИТЬ ШОУ-РУМ</a>
+        
+          <a href="./showroom.html" class="field-item blurred fg-partners" style="--dt:29.50%;--dl:25.20%;--tt:34.50%;--tl:12.00%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ПОСЕТИТЬ ШОУ-РУМ</a>
+        
+          <a href="./reviews.html" class="field-item blurred fg-rental" style="--dt:10.90%;--dl:73.90%;--tt:36.60%;--tl:41.00%;width:180px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ОТЗЫВЫ ИНЖЕНЕРОВ И ЗВУКОРЕЖИССЁРОВ</a>
+        
+          <a href="./warranty.html" class="field-item blurred fg-eng" style="--dt:28.30%;--dl:63.40%;--tt:26.60%;--tl:58.30%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ГАРАНТИЯ И СЕРВИС</a>
+        
+          <a href="./gov.html" class="field-item blurred fg-clients" style="--dt:32.90%;--dl:83.30%;--tt:36.40%;--tl:78.80%;width:220px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ ПО УЧАСТИЮ В ГОСЗАКУПКАХ</a>
+        
+          <a href="./clients.html" class="field-item blurred fg-partners" style="--dt:62.40%;--dl:11.20%;--tt:58.80%;--tl:39.60%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ЗАПРОСИТЬ ДЕМОНСТРАЦИЮ</a>
+        
+          <a href="./warranty.html" class="field-item blurred fg-rental" style="--dt:94.00%;--dl:32.90%;--tt:80.30%;--tl:36.90%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ГАРАНТИЯ И СЕРВИС</a>
+        
+          <a href="./docs.html" class="field-item blurred fg-eng" style="--dt:58.90%;--dl:90.30%;--tt:54.00%;--tl:81.80%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ЦЕНТР ДОКУМЕНТАЦИИ</a>
+        
+          <a href="./portfolio.html" class="field-item blurred fg-clients" style="--dt:90.90%;--dl:54.10%;--tt:90.20%;--tl:50.20%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">РЕАЛИЗОВАННЫЕ ПРОЕКТЫ</a>
+        
+          <a href="#" class="field-item blurred fg-partners" style="--dt:89.70%;--dl:94.50%;--tt:93.00%;--tl:86.00%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ЛИЧНЫЙ КАБИНЕТ</a>
+        
+          <a href="./support.html" class="field-item blurred fg-rental" style="--dt:76.00%;--dl:82.00%;--tt:69.00%;--tl:88.80%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">КАЛЬКУЛЯТОР МАССИВА</a>
+        
+          <a href="./technologies.html" class="field-item blurred fg-eng" style="--dt:78.60%;--dl:23.30%;--tt:61.20%;--tl:10.70%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ТЕХНОЛОГИИ И ПАТЕНТЫ</a>
+        
+          <a href="./reviews.html" class="field-item blurred fg-clients" style="--dt:87.60%;--dl:8.50%;--tt:70.90%;--tl:25.30%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ОТЗЫВЫ О НАС</a>
+        
+          <a href="./clients.html" class="field-item blurred fg-partners" style="--dt:75.10%;--dl:41.70%;--tt:90.20%;--tl:16.00%;width:180px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ ПО ОБЪЕКТУ</a>
+        
+          <a href="./support.html" class="field-item blurred fg-eng" style="--dt:14.30%;--dl:12.40%;--tt:80.20%;--tl:66.20%;width:180px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">РАССЧИТАТЬ ЗАЛ САМОСТОЯТЕЛЬНО</a>
+        
+          <a href="./clients.html" class="field-item blurred fg-clients" style="--dt:67.40%;--dl:61.70%;--tt:65.70%;--tl:63.00%;width:150px;transform:translate(-50%,-50%) scale(1);" tabindex="-1" aria-hidden="true">ГДЕ КУПИТЬ</a>
+        
 
         <div class="fld-btns" style="position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);z-index:5;display:flex;gap:18px;">
-          <sc-for list="{{fieldButtons}}" as="btn">
-            <button type="button" class="{{btn.cls}}" onClick="{{btn.onClick}}" aria-pressed="{{btn.pressed}}">{{btn.label}}</button>
-          </sc-for>
+          
+            <button type="button" class="field-btn" data-fg="eng" aria-pressed="false">Инженерам</button>
+          
+            <button type="button" class="field-btn" data-fg="partners" aria-pressed="false">Партнёрам</button>
+          
+            <button type="button" class="field-btn" data-fg="clients" aria-pressed="false">Заказчикам</button>
+          
+            <button type="button" class="field-btn" data-fg="rental" aria-pressed="false">Прокатчикам</button>
+          
         </div>
 
       </div>
@@ -581,27 +621,207 @@
       </div>
       <!-- «раскрывающиеся полосы»: 8 фото-полос, полоса под курсором раскрывается во весь кадр (логика — apx.js), крупные цифры масштаба -->
       <div class="apx" data-apx>
-        <sc-for list="{{portfolioTiles}}" as="tile">
+        
           <div class="apx-c">
-            <img loading="lazy" class="apx-ph" src="{{tile.img}}" alt="{{tile.alt}}" draggable="false">
+            <img loading="lazy" class="apx-ph" src="./assets/mravinsky-hall-choir.jpg" alt="Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского" draggable="false">
             <span class="apx-sh"></span>
-            <a href="{{tile.href}}" class="apx-link" aria-label="{{tile.title}}"></a>
-            <span class="{{tile.numCls}}"><b>{{tile.num}}</b><i>{{tile.plus}}</i></span>
-            <span class="apx-vt">{{tile.title}}</span>
+            <a href="./culture.html" class="apx-link" aria-label="Культура и искусство"></a>
+            <span class="apx-num"><b>40</b><i>+</i></span>
+            <span class="apx-vt">Культура и искусство</span>
             <span class="apx-op">
-              <span class="{{tile.bigCls}}"><b>{{tile.num}}</b><i>{{tile.plus}}</i></span>
-              <span class="apx-nl">{{tile.numLabel}}</span>
-              <a href="{{tile.href}}" class="apx-tt">{{tile.title}}</a>
+              <span class="apx-big"><b>40</b><i>+</i></span>
+              <span class="apx-nl">реализованных объектов</span>
+              <a href="./culture.html" class="apx-tt">Культура и искусство</a>
               <span class="apx-ls">
-                <sc-for list="{{tile.items}}" as="item">
-                  <a href="{{item.href}}" class="apx-sub">{{item.text}}</a>
-                </sc-for>
+                
+                  <a href="./concert-halls.html" class="apx-sub">Концертные залы и филармонии</a>
+                
+                  <a href="./theatres.html" class="apx-sub">Драматические и музыкальные театры</a>
+                
+                  <a href="./dk.html" class="apx-sub">Дома культуры и центры досуга</a>
+                
+                  <a href="./circus.html" class="apx-sub">Цирки</a>
+                
+                  <a href="./museums.html" class="apx-sub">Музеи и выставочные галереи</a>
+                
+                  <a href="./outdoor.html" class="apx-sub">Мобильные комплекты для улицы (IP55)</a>
+                
               </span>
-              <a href="{{tile.href}}" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+              <a href="./culture.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
             </span>
-            <span class="apx-cap">{{tile.caption}}</span>
+            <span class="apx-cap">Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2023 г.</span>
           </div>
-        </sc-for>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-001/01.jpg" alt="Актовый зал РАНХиГС" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./education.html" class="apx-link" aria-label="Образование и наука"></a>
+            <span class="apx-num"><b>50</b><i>+</i></span>
+            <span class="apx-vt">Образование и наука</span>
+            <span class="apx-op">
+              <span class="apx-big"><b>50</b><i>+</i></span>
+              <span class="apx-nl">реализованных объектов</span>
+              <a href="./education.html" class="apx-tt">Образование и наука</a>
+              <span class="apx-ls">
+                
+                  <a href="./edu-assembly.html" class="apx-sub">Актовые залы школ и вузов</a>
+                
+                  <a href="./edu-lecture.html" class="apx-sub">Учебные аудитории и лекционные залы</a>
+                
+                  <a href="./edu-planetarium.html" class="apx-sub">Планетарии</a>
+                
+              </span>
+              <a href="./education.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Актовый зал РАНХиГС, 2026 г.</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-007/01.jpg" alt="Центр единоборств Тарко-Сале" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./sport.html" class="apx-link" aria-label="Спорт и массовые мероприятия"></a>
+            <span class="apx-num dim"><b>8</b><i></i></span>
+            <span class="apx-vt">Спорт и массовые мероприятия</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>8</b><i></i></span>
+              <span class="apx-nl">объектов</span>
+              <a href="./sport.html" class="apx-tt">Спорт и массовые мероприятия</a>
+              <span class="apx-ls">
+                
+                  <a href="./sport-palaces.html" class="apx-sub">Дворцы спорта</a>
+                
+                  <a href="./sport-ice.html" class="apx-sub">Ледовые арены (IP55)</a>
+                
+                  <a href="./sport-complexes.html" class="apx-sub">Спортивные и физкультурно-оздоровительные комплексы</a>
+                
+                  <a href="./sport-pools.html" class="apx-sub">Бассейны и аквапарки (IP55)</a>
+                
+                  <a href="./sport-stadiums.html" class="apx-sub">Открытые стадионы, ипподромы (IP55)</a>
+                
+              </span>
+              <a href="./sport.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Центр единоборств Тарко-Сале, 2025 г.</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-018/07.jpg" alt="Конференц-зал Министерства спорта Российской Федерации" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./corporate.html" class="apx-link" aria-label="Корпоративный сектор"></a>
+            <span class="apx-num"><b>20</b><i>+</i></span>
+            <span class="apx-vt">Корпоративный сектор</span>
+            <span class="apx-op">
+              <span class="apx-big"><b>20</b><i>+</i></span>
+              <span class="apx-nl">реализованных объектов</span>
+              <a href="./corporate.html" class="apx-tt">Корпоративный сектор</a>
+              <span class="apx-ls">
+                
+                  <a href="./corp-conference.html" class="apx-sub">Конференц-залы</a>
+                
+                  <a href="./corp-meeting.html" class="apx-sub">Переговорные комнаты</a>
+                
+                  <a href="./corp-openspace.html" class="apx-sub">Открытые офисные пространства</a>
+                
+              </span>
+              <a href="./corporate.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Конференц-зал Министерства спорта Российской Федерации, 2023 г.</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/portfolio/pf-009/07.jpg" alt="Кафе «ЮТЭК»" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./hospitality.html" class="apx-link" aria-label="Ресторанный и гостиничный бизнес"></a>
+            <span class="apx-num dim"><b>9</b><i></i></span>
+            <span class="apx-vt">Ресторанный и гостиничный бизнес</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>9</b><i></i></span>
+              <span class="apx-nl">объектов</span>
+              <a href="./hospitality.html" class="apx-tt">Ресторанный и гостиничный бизнес</a>
+              <span class="apx-ls">
+                
+                  <a href="./hosp-restaurants.html" class="apx-sub">Рестораны, бары, пабы</a>
+                
+                  <a href="./corp-banquet.html" class="apx-sub">Банкетные залы и ресторанные холлы</a>
+                
+                  <a href="./hosp-terraces.html" class="apx-sub">Уличные кафе и летние веранды (IP55)</a>
+                
+                  <a href="./hosp-spa.html" class="apx-sub">Сауны, SPA‑комплексы (IP55)</a>
+                
+              </span>
+              <a href="./hospitality.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Кафе «ЮТЭК», 2024 г.</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/segments/religious-hero-soft.jpg" alt="Храмовый комплекс в честь Преображения Господня" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./religious.html" class="apx-link" aria-label="Религиозные учреждения"></a>
+            <span class="apx-num dim"><b>3</b><i></i></span>
+            <span class="apx-vt">Религиозные учреждения</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>3</b><i></i></span>
+              <span class="apx-nl">объекта</span>
+              <a href="./religious.html" class="apx-tt">Религиозные учреждения</a>
+              <span class="apx-ls">
+                
+                  <a href="./rel-temples.html" class="apx-sub">Храмы, мечети, синагоги и др. культовые сооружения</a>
+                
+              </span>
+              <a href="./religious.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Храмовый комплекс в честь Преображения Господня, 2024 г.</span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/segments/entertainment-hero-soft.jpg" alt="Клубное выступление" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./entertainment.html" class="apx-link" aria-label="Индустрия развлечений"></a>
+            <span class="apx-num dim"><b>2</b><i></i></span>
+            <span class="apx-vt">Индустрия развлечений</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>2</b><i></i></span>
+              <span class="apx-nl">объекта</span>
+              <a href="./entertainment.html" class="apx-tt">Индустрия развлечений</a>
+              <span class="apx-ls">
+                
+                  <a href="./ent-live.html" class="apx-sub">Клубы живой музыки</a>
+                
+                  <a href="./ent-nightclubs.html" class="apx-sub">Ночные клубы и дискотеки</a>
+                
+                  <a href="./ent-karaoke.html" class="apx-sub">Караоке-бары</a>
+                
+              </span>
+              <a href="./entertainment.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap"></span>
+          </div>
+        
+          <div class="apx-c">
+            <img loading="lazy" class="apx-ph" src="./assets/segments/rental-hero-bessonnitsa.jpg" alt="Фестиваль «Бессонница»" draggable="false">
+            <span class="apx-sh"></span>
+            <a href="./rental.html" class="apx-link" aria-label="Прокатные компании"></a>
+            <span class="apx-num dim"><b>3</b><i></i></span>
+            <span class="apx-vt">Прокатные компании</span>
+            <span class="apx-op">
+              <span class="apx-big dim"><b>3</b><i></i></span>
+              <span class="apx-nl">комплекта решений</span>
+              <a href="./rental.html" class="apx-tt">Прокатные компании</a>
+              <span class="apx-ls">
+                
+                  <a href="./rent-full.html" class="apx-sub">Полнофункциональные решения для широкого спектра задач</a>
+                
+                  <a href="./rent-mid.html" class="apx-sub">Оптимальные решения для средних площадок и задач</a>
+                
+                  <a href="./rent-compact.html" class="apx-sub">Компактность и бюджет для малых мероприятий</a>
+                
+              </span>
+              <a href="./rental.html" class="apx-go">Смотреть направление <span aria-hidden="true">→</span></a>
+            </span>
+            <span class="apx-cap">Фестиваль «Бессонница», 2025 г.</span>
+          </div>
+        
       </div>
     </div>
   </section>
@@ -795,269 +1015,34 @@
   </footer>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6600}}'>
-// Отзывы на главной — упрощённая ротонда: данные и логика в reviews-ring.js (собирается из тех же данных, что reviews.html).
+<script>/* Главная в обычном HTML (30.10.2026, Коля): то, что раньше делал шаблон на React, — меню, интро в логотипе,
+   кадр вместо видео при «уменьшении движения», кнопки поля «кому мы полезны» */
+(function(){
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  /* интро: «Живи Музыкой!» через 5 с растворяется в логотип */
+  var intro=document.querySelector('img[data-intro]'),logo=document.querySelector('img[data-logo]');
+  function showLogo(){if(intro)intro.style.opacity='0';if(logo)logo.style.opacity='1';}
+  if(reduce)showLogo();else setTimeout(showLogo,5000);
+  /* хиро: при «уменьшении движения» — статичный кадр вместо видео */
+  if(reduce){var tp=document.querySelector('template[data-hero-photo]'),hv=document.querySelector('#hero video');
+    if(tp&&hv){hv.parentNode.replaceChild(tp.content.cloneNode(true),hv);}}
+  /* мега-меню */
+  var mm=document.querySelector('.mm-overlay'),mb=document.querySelector('[data-mm-toggle]');
+  function menu(o){if(!mm||!mb)return;mm.hidden=!o;mb.setAttribute('aria-expanded',o?'true':'false');}
+  if(mb)mb.addEventListener('click',function(){menu(mm.hidden);});
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-mm-close]'))menu(false);});
+  /* поле «кому мы полезны»: кнопка проявляет надписи своей группы, повторное нажатие — снимает выбор */
+  var fld=document.querySelector('.fld'),grp=null;
+  function field(g){grp=g;
+    if(fld)fld.className=g?'fld fld-on':'fld';
+    [].forEach.call(document.querySelectorAll('.field-item'),function(a){var on=!!g&&a.classList.contains('fg-'+g);
+      a.classList.toggle('revealed',on);a.classList.toggle('blurred',!on);
+      a.setAttribute('tabindex',on?'0':'-1');a.setAttribute('aria-hidden',on?'false':'true');
+      a.style.transform='translate(-50%,-50%) scale('+(on?1.06:1)+')';});
+    [].forEach.call(document.querySelectorAll('[data-fg]'),function(b){var on=b.getAttribute('data-fg')===g;
+      b.className=on?'field-btn field-btn-active':'field-btn';b.setAttribute('aria-pressed',on?'true':'false');});}
+  [].forEach.call(document.querySelectorAll('[data-fg]'),function(b){b.addEventListener('click',function(){var g=b.getAttribute('data-fg');field(grp===g?null:g);});});
+})();</script>
 
-// --- поле «кому мы полезны»: 16 надписей из присланного списка, привязанные к трём группам ---
-// расположение (top/left, % от поля) — зафиксированная раскладка, которую пользователь расставил вручную и попросил закрепить как новую по умолчанию
-// href — куда ведёт клик по надписи: якорь на существующий раздел черновика, где он есть,
-// либо "#" placeholder — там же, где на такую же по смыслу страницу пока ведёт "#" и в мега-меню (страница ещё не построена)
-// пункты по таблице «Быстрые ссылки для ЦА»; top/left — раскладка, расставленная пользователем в макете (10.10.2026); страницы-заглушки ещё не готовы → ведут на раздел (Техподдержка / Клиентам)
-const FIELD_ITEMS = [
-  { text: "КАТАЛОГ ПРОДУКЦИИ", group: "eng", width: 150, top: 83.0, left: 70.1, tTop: 16.4, tLeft: 12.9, href: "./products.html" },
-  { text: "ЗАПРОСИТЬ ДЕМОНСТРАЦИЮ", group: "clients", width: 150, top: 9.6, left: 34.0, tTop: 23.5, tLeft: 34.2, href: "./clients.html" },
-  { text: "СТАТЬ ПАРТНЁРОМ", group: "partners", width: 150, top: 15.2, left: 53.2, tTop: 16.5, tLeft: 64.6, href: "#contact" },
-  { text: "ПРИМЕРЫ ПРИМЕНЕНИЯ", group: "rental", width: 150, top: 33.8, left: 42.8, tTop: 50.9, tLeft: 56.5, href: "./rental.html" },
-  { text: "ОБУЧЕНИЕ, СЕМИНАРЫ", group: "eng", width: 150, top: 9.7, left: 94.3, tTop: 19.1, tLeft: 88.3, href: "./support.html" },
-  { text: "ПОСЕТИТЬ ШОУ-РУМ", group: "clients", width: 150, top: 38.6, left: 7.2, tTop: 47.5, tLeft: 22.9, href: "./showroom.html" },
-  { text: "ПОСЕТИТЬ ШОУ-РУМ", group: "partners", width: 150, top: 29.5, left: 25.2, tTop: 34.5, tLeft: 12.0, href: "./showroom.html" },
-  { text: "ОТЗЫВЫ ИНЖЕНЕРОВ И ЗВУКОРЕЖИССЁРОВ", group: "rental", width: 180, top: 10.9, left: 73.9, tTop: 36.6, tLeft: 41.0, href: "./reviews.html" },
-  { text: "ГАРАНТИЯ И СЕРВИС", group: "eng", width: 150, top: 28.3, left: 63.4, tTop: 26.6, tLeft: 58.3, href: "./warranty.html" },
-  { text: "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ ПО УЧАСТИЮ В ГОСЗАКУПКАХ", group: "clients", width: 220, top: 32.9, left: 83.3, tTop: 36.4, tLeft: 78.8, href: "./gov.html" },
-  { text: "ЗАПРОСИТЬ ДЕМОНСТРАЦИЮ", group: "partners", width: 150, top: 62.4, left: 11.2, tTop: 58.8, tLeft: 39.6, href: "./clients.html" },
-  { text: "ГАРАНТИЯ И СЕРВИС", group: "rental", width: 150, top: 94.0, left: 32.9, tTop: 80.3, tLeft: 36.9, href: "./warranty.html" },
-  { text: "ЦЕНТР ДОКУМЕНТАЦИИ", group: "eng", width: 150, top: 58.9, left: 90.3, tTop: 54.0, tLeft: 81.8, href: "./docs.html" },
-  { text: "РЕАЛИЗОВАННЫЕ ПРОЕКТЫ", group: "clients", width: 150, top: 90.9, left: 54.1, tTop: 90.2, tLeft: 50.2, href: "./portfolio.html" },
-  { text: "ЛИЧНЫЙ КАБИНЕТ", group: "partners", width: 150, top: 89.7, left: 94.5, tTop: 93.0, tLeft: 86.0, href: "#" },
-  { text: "КАЛЬКУЛЯТОР МАССИВА", group: "rental", width: 150, top: 76.0, left: 82.0, tTop: 69.0, tLeft: 88.8, href: "./support.html" },
-  { text: "ТЕХНОЛОГИИ И ПАТЕНТЫ", group: "eng", width: 150, top: 78.6, left: 23.3, tTop: 61.2, tLeft: 10.7, href: "./technologies.html" },
-  { text: "ОТЗЫВЫ О НАС", group: "clients", width: 150, top: 87.6, left: 8.5, tTop: 70.9, tLeft: 25.3, href: "./reviews.html" },
-  { text: "ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ ПО ОБЪЕКТУ", group: "partners", width: 180, top: 75.1, left: 41.7, tTop: 90.2, tLeft: 16.0, href: "./clients.html" },
-  { text: "РАССЧИТАТЬ ЗАЛ САМОСТОЯТЕЛЬНО", group: "eng", width: 180, top: 14.3, left: 12.4, tTop: 80.2, tLeft: 66.2, href: "./support.html" },
-  { text: "ГДЕ КУПИТЬ", group: "clients", width: 150, top: 67.4, left: 61.7, tTop: 65.7, tLeft: 63.0, href: "./clients.html" }
-];
-const FIELD_GROUPS = [
-  { key: "eng", label: "Инженерам" },
-  { key: "partners", label: "Партнёрам" },
-  { key: "clients", label: "Заказчикам" },
-  { key: "rental", label: "Прокатчикам" }
-];
-
-// --- «Типы объектов / Варианты применения»: 8 плиток-направлений (вид — как .vtile на страницах раздела «Применение») ---
-// top — число объектов этого направления в портфолио (assets/portfolio/portfolio-data.js); style — ширина плитки в сетке из 3 колонок
-// href подразделов — "#" placeholder: посадочные страницы сегментов ещё не построены (тот же приём, что и в мега-меню/FIELD_ITEMS)
-// куда ведёт пункт списка внутри плитки портфолио (по тексту пункта) — плитка на странице раздела
-const ITEM_HREFS = {
-  "Актовые залы школ и вузов": "./edu-assembly.html",
-  "Учебные аудитории и лекционные залы": "./edu-lecture.html",
-  "Планетарии": "./edu-planetarium.html",
-  "Дворцы спорта": "./sport-palaces.html",
-  "Ледовые арены (IP55)": "./sport-ice.html",
-  "Спортивные и физкультурно-оздоровительные комплексы": "./sport-complexes.html",
-  "Бассейны и аквапарки (IP55)": "./sport-pools.html",
-  "Открытые стадионы, ипподромы (IP55)": "./sport-stadiums.html",
-  "Конференц-залы": "./corp-conference.html",
-  "Переговорные комнаты": "./corp-meeting.html",
-  "Открытые офисные пространства": "./corp-openspace.html",
-  "Банкетные залы и ресторанные холлы": "./corp-banquet.html",
-  "Рестораны, бары, пабы": "./hosp-restaurants.html",
-  "Уличные кафе и летние веранды (IP55)": "./hosp-terraces.html",
-  "Сауны, SPA‑комплексы (IP55)": "./hosp-spa.html",
-  "Сауны, SPA-комплексы (IP55)": "./hosp-spa.html",
-  "Храмы, мечети, синагоги и др. культовые сооружения": "./rel-temples.html",
-  "Клубы живой музыки": "./ent-live.html",
-  "Ночные клубы и дискотеки": "./ent-nightclubs.html",
-  "Караоке-бары": "./ent-karaoke.html",
-  "Полнофункциональные решения для широкого спектра задач": "./rent-full.html",
-  "Оптимальные решения для средних площадок и задач": "./rent-mid.html",
-  "Компактность и бюджет для малых мероприятий": "./rent-compact.html"
-};
-const PORTFOLIO_TILES = [
-  {
-    title: "Культура и искусство",
-    lead: "Натуральный тембр в концертном зале, разборчивая речь в театре, покрытие на 360° под куполом цирка.",
-    top: "Реализовано более 40 объектов",
-    style: "grid-column:span 2;",
-    href: "./culture.html",
-    // куда ведёт каждый пункт списка (по порядку items): готовая страница или плитка на странице раздела
-    itemHrefs: ["./concert-halls.html", "./theatres.html", "./dk.html", "./circus.html", "./museums.html", "./outdoor.html"],
-    img: "./assets/mravinsky-hall-choir.jpg",
-    alt: "Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского",
-    caption: "Концертный зал Санкт-Петербургской детской школы искусств имени Е.А. Мравинского, 2023 г.",
-    items: ["Концертные залы и филармонии", "Драматические и музыкальные театры", "Дома культуры и центры досуга", "Цирки", "Музеи и выставочные галереи", "Мобильные комплекты для улицы (IP55)"]
-  },
-  {
-    title: "Образование и наука",
-    lead: "Каждое слово понятно без напряжения — на линейке, на сцене актового зала и на конференции.",
-    top: "Реализовано более 50 объектов",
-    style: "",
-    href: "./education.html",
-    img: "./assets/portfolio/pf-001/01.jpg",
-    alt: "Актовый зал РАНХиГС",
-    caption: "Актовый зал РАНХиГС, 2026 г.",
-    items: ["Актовые залы школ и вузов", "Учебные аудитории и лекционные залы", "Планетарии"]
-  },
-  {
-    title: "Спорт и массовые мероприятия",
-    lead: "Голос диктора разборчив на каждой трибуне; для ледовых арен и бассейнов — исполнение IP55.",
-    top: "8 объектов",
-    style: "",
-    href: "./sport.html",
-    img: "./assets/portfolio/pf-007/01.jpg",
-    alt: "Центр единоборств Тарко-Сале",
-    caption: "Центр единоборств Тарко-Сале, 2025 г.",
-    items: ["Дворцы спорта", "Ледовые арены (IP55)", "Спортивные и физкультурно-оздоровительные комплексы", "Бассейны и аквапарки (IP55)", "Открытые стадионы, ипподромы (IP55)"]
-  },
-  {
-    title: "Корпоративный сектор",
-    lead: "Каждого выступающего слышно без напряжения, а оборудование не отвлекает на себя внимание.",
-    top: "Реализовано более 20 объектов",
-    style: "",
-    href: "./corporate.html",
-    img: "./assets/portfolio/pf-018/07.jpg",
-    alt: "Конференц-зал Министерства спорта Российской Федерации",
-    caption: "Конференц-зал Министерства спорта Российской Федерации, 2023 г.",
-    items: ["Конференц-залы", "Переговорные комнаты", "Открытые офисные пространства"]
-  },
-  {
-    title: "Ресторанный и гостиничный бизнес",
-    lead: "Фоновая музыка не мешает разговору, а вечером система выдерживает живое выступление.",
-    top: "9 объектов",
-    style: "",
-    href: "./hospitality.html",
-    img: "./assets/portfolio/pf-009/07.jpg",
-    alt: "Кафе «ЮТЭК»",
-    caption: "Кафе «ЮТЭК», 2024 г.",
-    items: ["Рестораны, бары, пабы", "Банкетные залы и ресторанные холлы", "Уличные кафе и летние веранды (IP55)", "Сауны, SPA‑комплексы (IP55)"]
-  },
-  {
-    title: "Религиозные учреждения",
-    lead: "Слово и пение разборчивы под высокими сводами, а оборудование не нарушает архитектуру.",
-    top: "3 объекта",
-    style: "",
-    href: "./religious.html",
-    img: "./assets/segments/religious-hero-soft.jpg",
-    alt: "Храмовый комплекс в честь Преображения Господня",
-    caption: "Храмовый комплекс в честь Преображения Господня, 2024 г.",
-    items: ["Храмы, мечети, синагоги и др. культовые сооружения"]
-  },
-  {
-    title: "Индустрия развлечений",
-    lead: "Запас по мощности, плотный бас и чистый вокал — система работает на пределе каждый вечер.",
-    top: "2 объекта",
-    style: "",
-    href: "./entertainment.html",
-    img: "./assets/segments/entertainment-hero-soft.jpg",
-    alt: "Клубное выступление",
-    caption: "",
-    items: ["Клубы живой музыки", "Ночные клубы и дискотеки", "Караоке-бары"]
-  },
-  {
-    title: "Прокатные компании",
-    lead: "Быстрая сборка, надёжность в дороге и предсказуемый звук на любой новой площадке.",
-    top: "3 комплекта решений",
-    style: "",
-    href: "./rental.html",
-    img: "./assets/segments/rental-hero-bessonnitsa.jpg",
-    alt: "Фестиваль «Бессонница»",
-    caption: "Фестиваль «Бессонница», 2025 г.",
-    items: ["Полнофункциональные решения для широкого спектра задач", "Оптимальные решения для средних площадок и задач", "Компактность и бюджет для малых мероприятий"]
-  }
-];
-
-class Component extends DCLogic {
-  renderVals() {
-    // --- мега-меню: по клику на любой пункт открывается целиком, все разделы сразу (референс mercedes-benz.com) ---
-    const menuOpen = !!this.state.menuOpen;
-
-    // --- поле «кому мы полезны»: клик по кнопке проявляет надписи её группы, остальные остаются размытыми и мерцающими ---
-    // расположение зафиксировано — см. top/left в FIELD_ITEMS, перетаскивание убрано по просьбе пользователя
-    const fieldGroup = this.state.fieldGroup || null;
-
-    const fieldItems = FIELD_ITEMS.map((it, i) => {
-      const revealed = !!fieldGroup && it.group === fieldGroup;
-      const scale = revealed ? 1.06 : 1;
-      return {
-        id: "fi" + i,
-        label: it.text,
-        href: it.href,
-        cls: (revealed ? "field-item revealed" : "field-item blurred") + " fg-" + it.group,
-        tab: revealed ? "0" : "-1",                 // скрытые надписи не получают фокус
-        hidden: revealed ? "false" : "true",
-        posStyle: "--dt:" + it.top.toFixed(2) + "%;--dl:" + it.left.toFixed(2) + "%;--tt:" + it.tTop.toFixed(2) + "%;--tl:" + it.tLeft.toFixed(2) + "%;width:" + it.width + "px;transform:translate(-50%,-50%) scale(" + scale + ");"
-      };
-    });
-    // --- портфолио: перечень подразделов каждой плитки — ссылки-плейсхолдеры "#" (посадочные страницы сегментов не построены) ---
-    const portfolioTiles = PORTFOLIO_TILES.map((t, i) => ({
-      id: "pt" + i,
-      title: t.title,
-      img: t.img,
-      alt: t.alt,
-      caption: t.caption,
-      lead: t.lead || "",
-      top: t.top || "",
-      // крупная цифра масштаба: «Реализовано более 40 объектов» → 40+ / «реализованных объектов»; «8 объектов» → 8 (приглушённо)
-      num: (/(\d+)/.exec(t.top || "") || ["", "—"])[1],
-      plus: /более/.test(t.top || "") ? "+" : "",
-      numLabel: /более/.test(t.top || "") ? "реализованных объектов" : (t.top || "").replace(/^\D*\d+\s*/, ""),
-      numCls: "apx-num" + (/более/.test(t.top || "") ? "" : " dim"),
-      bigCls: "apx-big" + (/более/.test(t.top || "") ? "" : " dim"),
-      style: t.style || "",
-      href: t.href || "#",
-      hasLink: !!t.href,
-      items: t.items.map((txt, j) => ({ id: "pt" + i + "-" + j, text: txt, href: (t.itemHrefs && t.itemHrefs[j]) || ITEM_HREFS[txt] || "#" }))
-    }));
-
-    const fieldButtons = FIELD_GROUPS.map(g => {
-      const active = fieldGroup === g.key;
-      return {
-        id: "fb-" + g.key,
-        label: g.label,
-        cls: active ? "field-btn field-btn-active" : "field-btn",
-        pressed: active ? "true" : "false",
-        onClick: () => this.setState({ fieldGroup: active ? null : g.key })
-      };
-    });
-
-    // --- интро в логотипе: «Живи Музыкой!» показывается при открытии страницы, затем растворяется в логотип DS PROAUDIO ---
-    if (!this._introReady) {
-      this._introReady = true;
-      let reduceMotion = false;
-      try { reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-      this._introReduceMotion = reduceMotion;
-      if (!reduceMotion) {
-        setTimeout(() => { this.setState({ showLogo: true }); }, 5000);
-      }
-    }
-
-    // --- хиро: видео при обычных настройках, статичный кадр при prefers-reduced-motion ---
-    const heroReduceMotion = !!this._introReduceMotion;
-    const heroPoster = "./assets/hero/hero2-poster.jpg";   // кадр из хиро-видео IMG_5755 (2K) (прежние: ./assets/hero/hero-poster.jpg, ./assets/e78e5d5fb2e6a22da2fab07370e55dd9.jpg)
-    const heroPhotoMode = heroReduceMotion;
-    const heroVideoMode = !heroReduceMotion;
-
-    const showLogo = this._introReduceMotion || !!this.state.showLogo;
-    const introImgStyle = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:48px;width:auto;transition:opacity .6s ease;opacity:" + (showLogo ? "0" : "1") + ";";
-    const logoImgStyle = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:30px;width:auto;filter:invert(1) brightness(1.4);transition:opacity .6s ease;opacity:" + (showLogo ? "1" : "0") + ";";
-
-
-
-    return {
-      // мега-меню
-      menuOpen: menuOpen,
-      toggleMenu: () => this.setState({ menuOpen: !menuOpen }),
-      closeMenu: () => this.setState({ menuOpen: false }),
-
-      // интро логотипа
-      introImgStyle: introImgStyle,
-      logoImgStyle: logoImgStyle,
-
-      // хиро: видео/фото
-      heroPhotoMode: heroPhotoMode,
-      heroVideoMode: heroVideoMode,
-      heroPoster: heroPoster,
-
-      // поле «кому мы полезны»
-      fieldItems: fieldItems,
-      fieldButtons: fieldButtons,
-      fldCls: fieldGroup ? "fld fld-on" : "fld",
-
-      // портфолио «примеры реализованных объектов»
-      portfolioTiles: portfolioTiles
-    };
-  }
-}
-</script>
 </body>
 </html>
