@@ -369,6 +369,9 @@
   .svc{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .svc-card{border:1px solid #E6E6E6;border-radius:16px;background:#FFFFFF;padding:30px;display:flex;flex-direction:column;gap:18px}
   .svc-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:22px;line-height:1.25;color:#141414}
+  .req-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+  .req .office-rows{grid-template-columns:190px 1fr}
+  @media (max-width:900px){ .req-cols{grid-template-columns:1fr} .req-cols .office-rows+.office-rows{border-top:0;padding-top:0;margin-top:12px} .req .office-rows{grid-template-columns:1fr;gap:4px} .req .office-rows dd{margin-bottom:10px} }
   .svc-text{margin:0;font-size:15.5px;line-height:1.6;color:#767676}
   .svc-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:18px;border-top:1px solid #EDEDED}
   .svc-cols h4{margin:0 0 10px;font-family:'PT Mono',monospace;font-weight:400;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#ADADAD}
@@ -734,6 +737,33 @@
         <iframe data-ymap="spb" data-src="https://yandex.ru/map-widget/v1/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9F%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%204%D0%94&amp;z=16" loading="lazy" title="DS PROAUDIO service center and manufacturing on Yandex Maps" allowfullscreen hidden></iframe>
       </div>
     </div>
+
+    
+    <article id="requisites" class="svc-card req reveal" style="scroll-margin-top:74px;">
+      <div class="office-idx">For contracts and invoices</div>
+      <div class="svc-title">Company details</div>
+      <div class="req-cols">
+        <dl class="office-rows">
+          <dt>Full legal name</dt><dd>Deep Sound Limited Liability Company (OOO «Дип Саунд»)</dd>
+          <dt>Short name</dt><dd>Deep Sound LLC</dd>
+          <dt>TIN (INN) / KPP</dt><dd>7702801847 / 772201001</dd>
+          <dt>OGRN</dt><dd>1127747128200</dd>
+          <dt>OKPO</dt><dd>14301231</dd>
+          <dt>Registered address</dt><dd>109316, Moscow, Ostapovsky Proezd, 3 bldg. 8, room B-301</dd>
+        </dl>
+        <dl class="office-rows">
+          <dt>Bank account</dt><dd>40702810038250018578</dd>
+          <dt>Bank</dt><dd>Sberbank PJSC, Moscow</dd>
+          <dt>BIC</dt><dd>044525225</dd>
+          <dt>Correspondent account</dt><dd>30101810400000000225</dd>
+          <dt>Phone</dt><dd><a href="tel:+74951501238">+7 495 150-12-38</a></dd>
+          <dt>E-mail</dt><dd><a href="mailto:info@ds-proaudio.ru">info@ds-proaudio.ru</a></dd>
+        </dl>
+      </div>
+      <div class="office-actions">
+        <button type="button" class="obtn" data-copy="ООО «Дип Саунд»&#10;ИНН 7702801847 / КПП 772201001&#10;ОГРН 1127747128200&#10;ОКПО 14301231&#10;Юридический адрес: 109316, г. Москва, Остаповский проезд, д. 3, стр. 8, ком. Б-301&#10;Р/с 40702810038250018578 в ПАО Сбербанк, г. Москва&#10;БИК 044525225&#10;К/с 30101810400000000225"><span>Copy company details</span></button>
+      </div>
+    </article>
   </div>
 </section>
 
