@@ -409,6 +409,7 @@
       <legend>Отображение</legend>
       <div class="row"><div><label>Взвешивание уровня</label><select id="wtSel"><option value="Z">Z (без взвешивания)</option><option value="A">A</option><option value="C">C</option></select></div>
         <div><label>Пик-фактор сигнала, дБ</label><input type="number" id="crestInp" step="1" min="0" max="30" value="12"></div></div>
+      <div class="row"><div><label>Кабинеты АС</label><select id="cabStyleSel"><option value="vol">Объём</option><option value="scheme">Схема (контуры)</option></select></div><div></div></div>
       <label class="checkbox-row"><input type="checkbox" id="showPointsChk" checked>Показывать точки</label>
       <button class="btn add" id="arrangePointsEvenlyBtn">Расположить точки равномерно</button>
     </fieldset>
@@ -3953,7 +3954,7 @@
     showAxes: true,
     sceneView: 'side', // Подэтап 1.2: 'side' | 'top' | '3d'
     planeHeightM: DEFAULT_PROJECT.planeHeightM, // высота рабочей плоскости (уровень слушателя над полом): 1,7 или 1,3 м
-    showPoints: true,
+    showPoints: true, cabStyle: 'vol',
     weighting: 'Z', crestDb: 12,      // взвешивание широкополосного уровня (Z/A/C) и пик-фактор сигнала (для пикового уровня и запаса)
     lvlMode: 'max', lvlTrimDb: 0, lvlSplDb: 100, // уровень конфигурации: максимум по паспорту − ослабление / заданный уровень в опорной точке
     eraSubDelayMs: 0, eraSubPol: 1, // ERA-i: задержка и полярность канала S18 (выравнивание с элементами)
@@ -4268,6 +4269,11 @@
     });
     // немного геометрии рамы тоже учтём в границах (короб может быть выше кабинетов)
     room.frameBoundsPts.forEach(function (w) { xs.push(w[0]); ys.push(w[1]); });
+    // без потолка высота площадки на виде сбоку — не менее 3 м от нижней отметки пола
+    if (!(state.ceilSegs && state.ceilSegs.length)) {
+      var fy = state.floorPoints.concat(state.stagePoints || []).map(function (p) { return p[1]; });
+      if (fy.length) ys.push(Math.min.apply(null, fy) + 3);
+    }
     return { minX: Math.min.apply(null, xs), maxX: Math.max.apply(null, xs), minY: Math.min.apply(null, ys), maxY: Math.max.apply(null, ys) };
   }
 
@@ -5260,6 +5266,157 @@
     });
   }
 
+  // -----------------------------------------------------------------------
+  // «Объёмное» отображение кабинетов (Отображение → Кабинеты: Схема / Объём).
+  // Строится только из уже загруженных контуров боковин (DXF) и ширины
+  // кабинета: вид сбоку — косоугольная проекция (ближняя боковина = исходный
+  // контур, дальняя смещена вверх-вправо), 3D — выдавливание с освещением
+  // граней и сортировкой по глубине. Фронт (решётка) — сегменты контура,
+  // обращённые по оси излучения кабинета и лежащие у переднего края.
+  var CABVOL_K = 0.5, CABVOL_A = 0.62;                  // косоугольная проекция: доля ширины и угол
+  var CABVOL_L = (function () { var v = [0.45, 0.8, 0.55], l = Math.hypot(v[0], v[1], v[2]); return [v[0] / l, v[1] / l, v[2] / l]; })();
+  var CABVOL_BASE = [44, 58, 82];                        // #2c3a52 — цвет кабинета как в схеме
+  try { var _cs = localStorage.getItem('soundmath.cabStyle'); if (_cs === 'scheme' || _cs === 'vol') state.cabStyle = _cs; } catch (e) { }
+  function cabVolOn() { return state.cabStyle !== 'scheme'; }
+  function cabRgb(base, k) { return 'rgb(' + base.map(function (x) { return Math.max(0, Math.min(255, Math.round(x * k))); }).join(',') + ')'; }
+  var cabGrilleFill = 'url(#cabGrille)';
+  function cabDefs(svgEl, pxPerM) {
+    // при мелком масштабе точки решётки крупнее самих граней — тогда сплошной тон решётки
+    cabGrilleFill = (pxPerM || 0) >= 80 ? 'url(#cabGrille)' : '#2b3548';
+    var defs = el('defs', {}, svgEl);
+    var p = el('pattern', { id: 'cabGrille', patternUnits: 'userSpaceOnUse', width: 4, height: 4 }, defs);
+    el('rect', { x: 0, y: 0, width: 4, height: 4, fill: '#4a5a78' }, p);
+    el('circle', { cx: 1, cy: 1, r: 1.05, fill: '#0a0e16' }, p);
+    el('circle', { cx: 3, cy: 3, r: 1.05, fill: '#0a0e16' }, p);
+    return defs;
+  }
+  function cabLabel(c) { var s = AS.SYSTEMS[c.sys]; return s ? String(s.shortLabel || s.label || '') : ''; }
+  // сегменты контура в координатах разреза (м): a, b, внешняя нормаль n, признак фронта
+  function cabSegs2D(c, l2r, fw) {
+    var prof = cabinetLocalProfileMm(c), P = prof.map(function (pl) { return l2r(pl); }), n = P.length, A = 0, i;
+    for (i = 0; i < n; i++) { var a0 = P[i], b0 = P[(i + 1) % n]; A += a0[0] * b0[1] - b0[0] * a0[1]; }
+    var sg = A > 0 ? 1 : -1, maxF = -Infinity;
+    P.forEach(function (p) { maxF = Math.max(maxF, p[0] * fw[0] + p[1] * fw[1]); });
+    var segs = [];
+    for (i = 0; i < n; i++) {
+      var a = P[i], b = P[(i + 1) % n], dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy) || 1;
+      var nn = [sg * dy / L, -sg * dx / L];
+      var mf = ((a[0] + b[0]) / 2) * fw[0] + ((a[1] + b[1]) / 2) * fw[1];
+      segs.push({ a: a, b: b, n: nn, len: L, front: (nn[0] * fw[0] + nn[1] * fw[1]) > 0.5 && mf > maxF - 0.045 });
+    }
+    return { pts: P, segs: segs };
+  }
+  function polyPx(pts) { return 'M ' + pts.map(function (q) { return q[0].toFixed(2) + ',' + q[1].toFixed(2); }).join(' L ') + ' Z'; }
+  // Вид сбоку, проход 1: грани выдавливания всех кабинетов (под ближними боковинами)
+  function cabVolSideFaces(list, toPx, pxPerM, parent) {
+    var faces = [], ca = Math.cos(CABVOL_A), sa = Math.sin(CABVOL_A);
+    list.forEach(function (it) {
+      var wM = 2 * (it.c.halfWidthM || CABINET_EXTRUDE_HALF_M) * CABVOL_K * it.cy0;
+      var off = [wM * ca * pxPerM, -wM * sa * pxPerM];
+      if (Math.hypot(off[0], off[1]) < 3) return; // мелкий масштаб — только плоская боковина
+      it.g.segs.forEach(function (s) {
+        if (s.n[0] * ca + s.n[1] * sa <= 1e-6) return; // грань смотрит от наблюдателя
+        var A = toPx(s.a), B = toPx(s.b);
+        var mx = (s.a[0] + s.b[0]) / 2, my = (s.a[1] + s.b[1]) / 2;
+        faces.push({ s: s, P: [A, B, [B[0] + off[0], B[1] + off[1]], [A[0] + off[0], A[1] + off[1]]], d: mx * ca + my * sa });
+      });
+    });
+    faces.sort(function (a, b) { return a.d - b.d; });
+    faces.forEach(function (f) {
+      var sh = Math.max(0, f.s.n[0] * CABVOL_L[0] + f.s.n[1] * CABVOL_L[1]), d = polyPx(f.P);
+      if (f.s.front) {
+        el('path', { d: d, fill: cabGrilleFill, stroke: '#3a4760', 'stroke-width': 0.4, 'pointer-events': 'none' }, parent);
+        el('path', { d: d, fill: '#000', 'fill-opacity': Math.max(0, 0.3 - 0.35 * sh).toFixed(3), 'pointer-events': 'none' }, parent);
+      } else {
+        var col = cabRgb(CABVOL_BASE, 0.55 + 0.75 * sh);
+        el('path', { d: d, fill: col, stroke: col, 'stroke-width': 0.6, 'pointer-events': 'none' }, parent);
+      }
+    });
+  }
+  // Вид сбоку, проход 2: ближняя боковина — градиент тыл→фронт, полоса решётки, подпись типа
+  function cabVolSidePanel(it, idx, toPx, pxPerM, svgEl, defs) {
+    var g = it.g, fw = it.fw, P = g.pts.map(toPx);
+    var proj = g.pts.map(function (p) { return p[0] * fw[0] + p[1] * fw[1]; });
+    var iF = proj.indexOf(Math.max.apply(null, proj)), iR = proj.indexOf(Math.min.apply(null, proj));
+    var gid = 'cabGrad' + idx;
+    var lg = el('linearGradient', { id: gid, gradientUnits: 'userSpaceOnUse', x1: P[iR][0], y1: P[iR][1], x2: P[iF][0], y2: P[iF][1] }, defs);
+    el('stop', { offset: '0', 'stop-color': '#222d41' }, lg);
+    el('stop', { offset: '1', 'stop-color': '#34445f' }, lg);
+    var path = el('path', { d: polyPx(P), class: 'cab-outline' }, svgEl);
+    path.style.fill = 'url(#' + gid + ')';
+    // полоса решётки: фронтальные сегменты со сдвигом внутрь контура
+    var fs = g.segs.filter(function (s) { return s.front; }), ins = it.c.isSub ? 0.03 : 0.025;
+    if (fs.length && ins * pxPerM >= 1.5) {
+      var outer = [], inner = [];
+      fs.forEach(function (s, k) { if (!k) { outer.push(s.a); inner.push([s.a[0] - s.n[0] * ins, s.a[1] - s.n[1] * ins]); } outer.push(s.b); inner.push([s.b[0] - s.n[0] * ins, s.b[1] - s.n[1] * ins]); });
+      el('path', { d: polyPx(outer.concat(inner.slice().reverse()).map(toPx)), fill: cabGrilleFill, 'pointer-events': 'none' }, svgEl);
+      el('path', { d: 'M ' + inner.map(toPx).map(function (q) { return q[0].toFixed(2) + ',' + q[1].toFixed(2); }).join(' L '), fill: 'none', stroke: '#5d7aa3', 'stroke-width': 0.8, 'pointer-events': 'none' }, svgEl);
+      var o2 = el('path', { d: polyPx(P), fill: 'none', stroke: '#7ea6d8', 'stroke-width': 1.2, 'pointer-events': 'none' }, svgEl);
+    }
+    // подпись типа — если кабинет достаточно крупный
+    var ys = P.map(function (q) { return q[1]; }), xs = P.map(function (q) { return q[0]; });
+    var hPx = Math.max.apply(null, ys) - Math.min.apply(null, ys), wPx = Math.max.apply(null, xs) - Math.min.apply(null, xs);
+    var t = cabLabel(it.c), fsz = Math.min(11, hPx * 0.32);
+    if (t && fsz >= 8 && wPx > t.length * fsz * 0.65) {
+      var m = [0, 0]; P.forEach(function (q) { m[0] += q[0] / P.length; m[1] += q[1] / P.length; });
+      var tx = el('text', { x: m[0], y: m[1] + fsz * 0.35, 'text-anchor': 'middle', 'font-size': fsz.toFixed(1), 'font-weight': 600, fill: '#cfe0f7', 'pointer-events': 'none' }, svgEl);
+      tx.textContent = t;
+    }
+  }
+  // 3D: сплошные тела кабинетов. W(c, roomPt2, zLocal) → мировая точка; opt: {base, accent, labels}
+  function cabVol3D(cabs, W, toPx3, parent, opt) {
+    var a = view3d.az * Math.PI / 180, e = view3d.el * Math.PI / 180;
+    var V = [Math.sin(a) * Math.cos(e), Math.sin(e), Math.cos(a) * Math.cos(e)];
+    var base = opt.base || CABVOL_BASE, accent = opt.accent || '#7ea6d8', items = [];
+    function sub3(p, q) { return [p[0] - q[0], p[1] - q[1], p[2] - q[2]]; }
+    function cross(p, q) { return [p[1] * q[2] - p[2] * q[1], p[2] * q[0] - p[0] * q[2], p[0] * q[1] - p[1] * q[0]]; }
+    function dot(p, q) { return p[0] * q[0] + p[1] * q[1] + p[2] * q[2]; }
+    function cen(ps) { var m = [0, 0, 0]; ps.forEach(function (p) { m[0] += p[0]; m[1] += p[1]; m[2] += p[2]; }); return [m[0] / ps.length, m[1] / ps.length, m[2] / ps.length]; }
+    cabs.forEach(function (c) {
+      var hw = c.halfWidthM || CABINET_EXTRUDE_HALF_M;
+      var g = cabSegs2D(c, c.localToRoom, c.forward);
+      var near = g.pts.map(function (p) { return W(c, p, hw); }), far = g.pts.map(function (p) { return W(c, p, -hw); });
+      var cc = cen(near.concat(far));
+      function add(ps, kind, nHint) {
+        var n = null;
+        for (var k = 1; k + 1 < ps.length && !n; k++) { var cr = cross(sub3(ps[k], ps[0]), sub3(ps[k + 1], ps[0])), l = Math.hypot(cr[0], cr[1], cr[2]); if (l > 1e-12) n = [cr[0] / l, cr[1] / l, cr[2] / l]; }
+        if (!n) return;
+        var fc = cen(ps);
+        if (dot(n, sub3(fc, cc)) < 0) n = [-n[0], -n[1], -n[2]];
+        if (kind === 'near' || kind === 'far') { var s = dot(n, sub3(fc, cc)); if (Math.abs(s) < 1e-9) return; }
+        if (dot(n, V) <= 1e-6) return;
+        items.push({ ps: ps, n: n, d: dot(fc, V), kind: kind, c: c });
+      }
+      g.segs.forEach(function (s, i) {
+        var j = (i + 1) % g.pts.length;
+        add([near[i], near[j], far[j], far[i]], s.front ? 'front' : 'side');
+      });
+      add(near, 'near'); add(far, 'far');
+    });
+    items.sort(function (p, q) { return p.d - q.d; });
+    items.forEach(function (f) {
+      var sh = Math.max(0, dot(f.n, CABVOL_L)), P = f.ps.map(toPx3), d = polyPx(P);
+      if (f.kind === 'front') {
+        el('path', { d: d, fill: cabGrilleFill, stroke: '#3a4760', 'stroke-width': 0.4, 'pointer-events': 'none' }, parent);
+        el('path', { d: d, fill: '#000', 'fill-opacity': Math.max(0, 0.3 - 0.35 * sh).toFixed(3), 'pointer-events': 'none' }, parent);
+      } else if (f.kind === 'side') {
+        var col = cabRgb(base, 0.55 + 0.75 * sh);
+        el('path', { d: d, fill: col, stroke: col, 'stroke-width': 0.6, 'pointer-events': 'none' }, parent);
+      } else {
+        el('path', { d: d, fill: cabRgb(base, 0.55 + 0.75 * sh), stroke: accent, 'stroke-width': 1, 'stroke-linejoin': 'round', 'pointer-events': 'none' }, parent);
+        if (opt.labels) {
+          var ys = P.map(function (q) { return q[1]; }), xs = P.map(function (q) { return q[0]; });
+          var hPx = Math.max.apply(null, ys) - Math.min.apply(null, ys), wPx = Math.max.apply(null, xs) - Math.min.apply(null, xs);
+          var t = cabLabel(f.c), fsz = Math.min(10, hPx * 0.3);
+          if (t && fsz >= 8 && wPx > t.length * fsz * 0.65) {
+            var m = [0, 0]; P.forEach(function (q) { m[0] += q[0] / P.length; m[1] += q[1] / P.length; });
+            el('text', { x: m[0], y: m[1] + fsz * 0.35, 'text-anchor': 'middle', 'font-size': fsz.toFixed(1), 'font-weight': 600, fill: '#cfe0f7', 'pointer-events': 'none' }, parent).textContent = t;
+          }
+        }
+      }
+    });
+  }
+
   function renderSide(w, h, room) {
     axisRayLines = [];
     var bounds = computeRoomBounds(room);
@@ -5416,13 +5573,23 @@
     })();
 
     // -- кабинеты --
+    var volOn = cabVolOn(), volDefs = volOn ? cabDefs(svg, pxPerM) : null, volList = [];
+    if (volOn) {
+      room.cabinets.forEach(function (c) {
+        var cy0 = c.yaw0 ? Math.cos(c.yaw0 * Math.PI / 180) : 1;
+        var l2rS = cy0 === 1 ? c.localToRoom : function (pl) { var rp = c.localToRoom(pl); return [c.acousticCenter[0] + (rp[0] - c.acousticCenter[0]) * cy0, rp[1]]; };
+        var fwS = cy0 === 1 ? c.forward : (function () { var fx = c.forward[0] * cy0, fy = c.forward[1], L = Math.hypot(fx, fy) || 1; return [fx / L, fy / L]; })();
+        volList.push({ c: c, cy0: Math.abs(cy0), fw: fwS, g: cabSegs2D(c, l2rS, fwS) });
+      });
+      // объём (грани выдавливания) на виде сбоку не показываем — только боковина
+    }
     room.cabinets.forEach(function (c, idx) {
       // кабинет, повёрнутый в плане (компактные АС), рисуется в проекции на плоскость разреза: глубина × cos(поворот)
       var cy0 = c.yaw0 ? Math.cos(c.yaw0 * Math.PI / 180) : 1;
       var l2rS = cy0 === 1 ? c.localToRoom : function (pl) { var rp = c.localToRoom(pl); return [c.acousticCenter[0] + (rp[0] - c.acousticCenter[0]) * cy0, rp[1]]; };
       var fwS = cy0 === 1 ? c.forward : (function () { var fx = c.forward[0] * cy0, fy = c.forward[1], L = Math.hypot(fx, fy) || 1; return [fx / L, fy / L]; })();
-      var d = bulgePathD(c.verts, l2rS, toPx, pxPerM);
-      el('path', { d: d, class: 'cab-outline' }, svg);
+      if (volOn) cabVolSidePanel(volList[idx], idx, toPx, pxPerM, svg, volDefs);
+      else el('path', { d: bulgePathD(c.verts, l2rS, toPx, pxPerM), class: 'cab-outline' }, svg);
       if (state.showAxes) {
         var acPx = toPx(c.acousticCenter);
         var endM = axisRayEndpoint(c.acousticCenter, fwS, (state.planeHeightM || 1.7), bounds);
@@ -6224,7 +6391,10 @@
     // прямо определяет, что видно сверху. Двухпроходная отрисовка
     // гарантирует, что «акцентная» (яркая) грань КАЖДОГО кабинета лежит
     // поверх приглушённых граней ВСЕХ кабинетов, а не наоборот.
+    var vol3 = cabVolOn();
+    if (vol3) { cabDefs(svg, xf.scale); cabVol3D(room.cabinets, A3, toPx3, el('g', { 'pointer-events': 'none' }, svg), { labels: true }); }
     var cabBackPolys = [];
+    if (!vol3) {
     room.cabinets.forEach(function (c) {
       var backPx = cabinetLocalProfileMm(c).map(function (pLocal) {
         var rp = c.localToRoom(pLocal);
@@ -6257,6 +6427,7 @@
     cabBackPolys.forEach(function (backPx) {
       el('path', { d: polyD(backPx), class: 'cab-outline' }, svg);
     });
+    }
 
     // -- дополнительные порталы: копии массива со смещением и разворотом --
     (noSys3 ? [] : state.portals).forEach(function (q, i) {
@@ -6270,7 +6441,8 @@
       var rA = toPx3(apPortal(room.railRoom[0], 0)), rB = toPx3(apPortal(room.railRoom[1], 0));
       el('line', { x1: rA[0], y1: rA[1], x2: rB[0], y2: rB[1], stroke: '#ffd27a', 'stroke-width': 1.5, 'pointer-events': 'none' }, svg);
       var backs = [];
-      room.cabinets.forEach(function (c) {
+      if (vol3) cabVol3D(room.cabinets, function (c, rp, zl) { var q = cabPt(c, rp, zl); return apPortal(q[0], q[1]); }, toPx3, el('g', { 'pointer-events': 'none' }, svg), { base: [58, 51, 32], accent: '#ffd27a' });
+      else room.cabinets.forEach(function (c) {
         var bk = cabinetLocalProfileMm(c).map(function (pl) { var q = cabPt(c, c.localToRoom(pl), (c.halfWidthM || CABINET_EXTRUDE_HALF_M)); return toPx3(apPortal(q[0], q[1])); });
         var fr = cabinetLocalProfileMm(c).map(function (pl) { var q = cabPt(c, c.localToRoom(pl), -(c.halfWidthM || CABINET_EXTRUDE_HALF_M)); return toPx3(apPortal(q[0], q[1])); });
         backs.push(bk);
@@ -6300,7 +6472,8 @@
       el('line', { x1: t0[0], y1: t0[1], x2: t1[0], y2: t1[1], stroke: o.color, 'stroke-width': 1, 'stroke-dasharray': '3 3', 'stroke-opacity': 0.6 }, g);
       var rA = toPx3(apO(rm.railRoom[0], 0)), rB = toPx3(apO(rm.railRoom[1], 0));
       el('line', { x1: rA[0], y1: rA[1], x2: rB[0], y2: rB[1], stroke: o.color, 'stroke-width': 1.5 }, g);
-      rm.cabinets.forEach(function (c) {
+      if (vol3) cabVol3D(rm.cabinets, function (c, rp, zl) { var q = cabPt(c, rp, zl); return apO(q[0], q[1]); }, toPx3, g, { base: [38, 48, 63], accent: o.color });
+      else rm.cabinets.forEach(function (c) {
         var bk = cabinetLocalProfileMm(c).map(function (pl) { var q = cabPt(c, c.localToRoom(pl), (c.halfWidthM || CABINET_EXTRUDE_HALF_M)); return toPx3(apO(q[0], q[1])); });
         var fr = cabinetLocalProfileMm(c).map(function (pl) { var q = cabPt(c, c.localToRoom(pl), -(c.halfWidthM || CABINET_EXTRUDE_HALF_M)); return toPx3(apO(q[0], q[1])); });
         el('path', { d: polyD(fr), fill: '#26303f' }, g);
@@ -7639,6 +7812,11 @@
       e.addEventListener('focus', function () { pushHistory(); });
       e.addEventListener('change', function () { var v = parseFloat(String(e.value).replace(',', '.')); if (!isFinite(v)) return; state.optZone[k ? 'x1' : 'x0'] = round3(v); syncOptZoneUi(); render(); });
     });
+  })();
+  (function () {
+    var cs = document.getElementById('cabStyleSel'); if (!cs) return;
+    cs.value = state.cabStyle === 'scheme' ? 'scheme' : 'vol';
+    cs.addEventListener('change', function () { state.cabStyle = cs.value; try { localStorage.setItem('soundmath.cabStyle', cs.value); } catch (e) { } render(); });
   })();
   (function () {
     var spc = document.getElementById('showPointsChk'); if (!spc) return;
