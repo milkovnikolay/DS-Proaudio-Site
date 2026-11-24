@@ -116,7 +116,7 @@ MAIN = f"""<main>
     </nav>
     <div class="sw-hero-grid">
       <div style="display:flex;flex-direction:column;gap:24px;">
-        <div class="kicker" style="color:#C8C8C8;">ПО для управления DSP · версия 0.9</div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">ПО для управления DSP · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
         <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DS Proaudio DSP&nbsp;Control</h1>
         <div style="max-width:600px;font-size:22px;line-height:1.5;color:#D8D8D8;">Настройка DSP-модулей усилителей DS PROAUDIO с компьютера — полностью на русском. Вся линия RS-485 на одном экране: группы, связки каналов, эквалайзер, кроссовер, лимитеры, пресеты и защита паролем.</div>
         <div class="dsp-dls">
@@ -136,10 +136,10 @@ MAIN = f"""<main>
 <section style="background:#FAFAFA;">
   <div class="wrap" style="padding-top:72px;padding-bottom:72px;">
     <div class="dsp-facts">
-      <div><b>56 моделей</b><span>DSP-модулей в базе, включая новые DA50xx</span></div>
+      <div><b>Все модули</b><span>все активные DSP-модули DS PROAUDIO в базе программы</span></div>
       <div><b>RS-485</b><span>много модулей на одной линии</span></div>
       <div><b>Win · Mac</b><span>Windows 10/11 и macOS Intel / Apple M</span></div>
-      <div><b>По-русски</b><span>весь интерфейс и руководство</span></div>
+      <div class="dsp-fact-ru"><b>Всё по-русски</b><span>интерфейс, подсказки, сообщения и руководство</span></div>
     </div>
   </div>
 </section>
@@ -219,6 +219,11 @@ CSS = '''
   .dsp-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #E2E2E2;border-bottom:1px solid #E2E2E2}
   .dsp-facts>div{display:flex;flex-direction:column;gap:8px;padding:30px 24px 30px 0}
   .dsp-facts>div+div{padding-left:24px;border-left:1px solid #E2E2E2}
+  .dsp-ru-pill{display:inline-flex;align-items:center;gap:9px;padding:6px 14px 6px 6px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);font-size:13px;font-weight:600;color:#FAFAFA}
+  .dsp-ru-pill i{font-style:normal;font-family:'PT Mono',monospace;font-size:11px;letter-spacing:.06em;padding:3px 7px;border-radius:999px;background:#FAFAFA;color:#0A0A0B}
+  .dsp-facts>div.dsp-fact-ru{background:#141414;border-radius:14px;padding-left:24px}
+  .dsp-fact-ru b{color:#FAFAFA !important}
+  .dsp-fact-ru span{color:#BDBDBD !important}
   .dsp-facts b{font-family:'Montserrat',sans-serif;font-weight:600;font-size:28px;color:#141414}
   .dsp-facts span{font-family:'PT Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#8A8A8A;line-height:1.5}
   .dsp-pros{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
