@@ -43,6 +43,10 @@ ORG = {
   "email": "info@ds-proaudio.ru", "telephone": "+7 495 150-12-38",
   "sameAs": ["https://vk.com/ds_proaudio", "https://t.me/dsproaudio", "https://max.ru/id7702801847_biz"],
   "areaServed": "RU",
+  "legalName": "ООО «Дип Саунд»", "taxID": "7702801847",
+  "identifier": {"@type": "PropertyValue", "propertyID": "ОГРН", "value": "1127747128200"},
+  "address": {"@type": "PostalAddress", "addressCountry": "RU", "postalCode": "109316", "addressLocality": "Москва",
+              "streetAddress": "Остаповский проезд, д. 3, стр. 8, ком. Б-301"},
   "contactPoint": [{"@type": "ContactPoint", "telephone": "+7 495 150-12-38", "email": "info@ds-proaudio.ru",
                     "contactType": "sales", "areaServed": "RU", "availableLanguage": "ru"}],
   "location": [

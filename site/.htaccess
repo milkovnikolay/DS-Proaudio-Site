@@ -5,6 +5,20 @@
 
 # ---- HTTPS ----
 RewriteEngine On
+# ---- seo-robots:start (24.11.2026) ----
+# Тестовые адреса (IP, превью и т. п.) закрыты от поисковиков: вместо robots.txt отдаётся robots-test.txt
+# и заголовок X-Robots-Tag: noindex. На ds-proaudio.ru и www.ds-proaudio.ru работает обычный robots.txt.
+RewriteCond %{HTTP_HOST} !^(www\.)?ds-proaudio\.ru$ [NC]
+RewriteRule ^robots\.txt$ /robots-test.txt [L]
+<IfModule mod_headers.c>
+  <If "%{HTTP_HOST} !~ /^(www\.)?ds-proaudio\.ru$/i">
+    Header always set X-Robots-Tag "noindex, nofollow"
+  </If>
+</IfModule>
+# Старый адрес главной -> корень сайта (только прямой заход на /Main.dc.html; сама главная по-прежнему отдаётся по «/»)
+RewriteCond %{THE_REQUEST} \s/+Main\.dc\.html[\s?] [NC]
+RewriteRule ^Main\.dc\.html$ / [R=301,L]
+# ---- seo-robots:end ----
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # www -> без www (если выбран такой вариант)
