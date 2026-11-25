@@ -152,7 +152,10 @@ def fix_org(rel, s):
         if obj.get('@type') != 'Organization':
             return m.group(0)
         changed = False
-        for k, v in leg.items():
+        leg2 = dict(leg)
+        leg2["knowsAbout"] = (["line arrays", "point source loudspeakers", "column loudspeakers", "power amplifiers with DSP", "sound reinforcement design"]
+                              if is_en(rel) else ["линейные массивы", "точечные акустические системы", "звуковые колонны", "усилители мощности с DSP", "проектирование систем звукоусиления"])
+        for k, v in leg2.items():
             if obj.get(k) != v:
                 obj[k] = v; changed = True
         return m.group(1) + ld_dump(obj, body) + m.group(3) if changed else m.group(0)
@@ -201,6 +204,23 @@ def fix_crumbs(rel, s):
         {"@type": "ListItem", "position": 2, "name": name, "item": page_url(rel)}]}
     block = '<!-- seo-crumbs:start -->\n<script type="application/ld+json">' + ld_dump(ld, '') + '</script>\n<!-- seo-crumbs:end -->'
     return s.replace('</head>', block + '\n</head>', 1)
+
+
+def fix_product_origin(rel, s):
+    """Товар: страна производства — Россия (только для моделей бренда DS PROAUDIO)."""
+    def repl(m):
+        body = m.group(2)
+        if '"Product"' not in body or '"countryOfOrigin"' in body or '"brand": {"@type": "Brand", "name": "DS PROAUDIO"}' not in body:
+            return m.group(0)
+        try:
+            obj = json.loads(body.replace('<\\/', '</'))
+        except Exception:
+            return m.group(0)
+        if obj.get('@type') != 'Product' or obj.get('name', '').split(' ')[0] in ('Gravity', 'Euromet', 'Konig&Meyer'):
+            return m.group(0)
+        obj["countryOfOrigin"] = {"@type": "Country", "name": "RU"}
+        return m.group(1) + ld_dump(obj, body) + m.group(3)
+    return re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)', repl, s, flags=re.S)
 
 
 def fix_en_links(rel, s):
@@ -418,6 +438,105 @@ def build_sitemap(texts):
     return len(entries)
 
 
+# ---------- 10. GEO: файлы для ИИ-поисковиков ----------
+LLMS_EN = """# DS PROAUDIO
+
+> Russian full-cycle manufacturer of professional loudspeaker systems. Manufacturing in St. Petersburg and the Leningrad Region (in-house production of 4–18″ woofers and HF drivers). Office, showroom and service in Moscow, service centre in St. Petersburg.
+
+## Products
+- [Catalogue](https://ds-proaudio.ru/en/products.html): all series and models with specifications
+- [TAURA line arrays](https://ds-proaudio.ru/en/series-taura.html)
+- [ERA](https://ds-proaudio.ru/en/series-era.html) and [ERA-i](https://ds-proaudio.ru/en/series-era-i.html) constant-curvature arrays
+- [PILLAR](https://ds-proaudio.ru/en/series-pillar.html) and [STELLA](https://ds-proaudio.ru/en/series-stella.html) column systems
+- [CX](https://ds-proaudio.ru/en/series-cx.html) and [MCX](https://ds-proaudio.ru/en/series-mcx.html) point sources, [ANT](https://ds-proaudio.ru/en/series-ant.html) compact systems
+- [DA power amplifiers with DSP](https://ds-proaudio.ru/en/series-da.html)
+- [Model facts for AI assistants](https://ds-proaudio.ru/en/llms-full.txt): every model with a short description and link
+
+## Technology and company
+- [Technologies](https://ds-proaudio.ru/en/technologies.html), [Production](https://ds-proaudio.ru/en/production.html), [History](https://ds-proaudio.ru/en/history.html)
+- [Applications](https://ds-proaudio.ru/en/application.html), [Portfolio](https://ds-proaudio.ru/en/portfolio.html), [Reviews](https://ds-proaudio.ru/en/reviews.html)
+
+## Documents and support
+- [Documentation centre](https://ds-proaudio.ru/en/docs.html): PDF catalogue, GLL files for EASE, CAD drawings, manuals
+- [Warranty and service](https://ds-proaudio.ru/en/warranty.html), [Seminars](https://ds-proaudio.ru/en/seminars.html)
+
+## Contacts
+- [Contacts](https://ds-proaudio.ru/en/contacts.html): +7 495 150-12-38, info@ds-proaudio.ru
+- Legal entity: Deep Sound LLC (ООО «Дип Саунд»), INN 7702801847, OGRN 1127747128200
+"""
+
+
+def _model_pages():
+    out = {}
+    for rel in pages():
+        if not os.path.basename(rel).startswith('p-'):
+            continue
+        s = read(os.path.join(SITE, rel))
+        if noindex(s) or 'rel="canonical" href="' + page_url(rel) + '"' not in s:
+            continue
+        sku = product_sku(s)
+        if sku:
+            out.setdefault(sku, {})['en' if is_en(rel) else 'ru'] = (page_url(rel), get_desc(s) or '')
+    return out
+
+
+def build_llms():
+    if not PRODUCTS or not os.path.exists(pj):
+        return
+    data = json.load(open(pj, encoding='utf-8'))
+    mp = _model_pages()
+    ru = ['# DS PROAUDIO — модели и ключевые характеристики',
+          '', '> Справка для ИИ-ассистентов и поисковиков: все модели DS PROAUDIO с описанием и характеристиками из каталога сайта ds-proaudio.ru. Производитель — Россия (ООО «Дип Саунд»).', '']
+    en = ['# DS PROAUDIO — models', '',
+          '> Reference for AI assistants: every DS PROAUDIO model with a short description and a link. Manufacturer: Russia (Deep Sound LLC).', '']
+    seen = set()
+    for cat in data['categories']:
+        if cat['name'] in ('Аксессуары', 'Реестровое оборудование'):
+            continue
+        rows_ru, rows_en = [], []
+        for ser in cat['series']:
+            for g in ser['groups']:
+                for it in g['items']:
+                    pid = it['slug']
+                    if pid in seen or pid not in PRODUCTS or pid not in mp:
+                        continue
+                    seen.add(pid)
+                    p = PRODUCTS[pid]
+                    if 'ru' in mp[pid]:
+                        u, d = mp[pid]['ru']
+                        rows_ru.append('### DS PROAUDIO ' + p['name'])
+                        rows_ru.append('Страница: ' + u)
+                        if d: rows_ru.append(d)
+                        for row in (p.get('specs') or [])[:14]:
+                            if len(row) >= 2 and row[0] and row[1]:
+                                rows_ru.append('- ' + text(row[0]) + ': ' + text(row[1]))
+                        rows_ru.append('')
+                    if 'en' in mp[pid]:
+                        u, d = mp[pid]['en']
+                        rows_en.append('- [DS PROAUDIO ' + p['name'] + '](' + u + ')' + (': ' + d if d else ''))
+        if rows_ru:
+            ru += ['## ' + cat['name'], ''] + rows_ru
+        if rows_en:
+            en += rows_en
+    f = os.path.join(SITE, 'llms-full.txt')
+    write('llms-full.txt', '\n'.join(ru).rstrip() + '\n', read(f) if os.path.exists(f) else '')
+    if os.path.isdir(os.path.join(SITE, 'en')):
+        f = os.path.join(SITE, 'en/llms-full.txt')
+        write('en/llms-full.txt', '\n'.join(en).rstrip() + '\n', read(f) if os.path.exists(f) else '')
+        f = os.path.join(SITE, 'en/llms.txt')
+        write('en/llms.txt', LLMS_EN, read(f) if os.path.exists(f) else '')
+    # ссылка на справку из основного llms.txt
+    f = os.path.join(SITE, 'llms.txt')
+    if os.path.exists(f):
+        s = read(f); o = s
+        line = '- [Все модели с характеристиками — справка для ИИ](https://ds-proaudio.ru/llms-full.txt)'
+        if 'llms-full.txt' not in s:
+            s = re.sub(r'(## Продукция\n)', r'\1' + line.replace('\\', '\\\\') + '\n', s, count=1) if '## Продукция\n' in s else s.rstrip() + '\n\n' + line + '\n'
+        if 'English version' not in s:
+            s = s.rstrip() + '\n\n## English\n- [English version for AI assistants](https://ds-proaudio.ru/en/llms.txt)\n'
+        write('llms.txt', s, o)
+
+
 def main():
     ps = pages()
     texts, stage = fix_titles_descs(ps)
@@ -427,11 +546,13 @@ def main():
         s = fix_org(rel, s)
         s = fix_crumbs(rel, s)
         s = fix_en_links(rel, s)
+        s = fix_product_origin(rel, s)
         s = fix_alts(rel, s)
         final[rel] = s
         write(rel, s, texts[rel])
     n = build_sitemap(final)
     fix_robots_htaccess()
+    build_llms()
     print('страниц просмотрено:', len(ps), '· изменено файлов:', len(CHANGED), '· в карте сайта:', n, '· режим:', 'проверка' if CHECK else 'запись')
     for k in sorted(CHANGED):
         print('  ', k)

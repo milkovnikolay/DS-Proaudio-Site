@@ -1,0 +1,24 @@
+# DS PROAUDIO
+
+> Russian full-cycle manufacturer of professional loudspeaker systems. Manufacturing in St. Petersburg and the Leningrad Region (in-house production of 4–18″ woofers and HF drivers). Office, showroom and service in Moscow, service centre in St. Petersburg.
+
+## Products
+- [Catalogue](https://ds-proaudio.ru/en/products.html): all series and models with specifications
+- [TAURA line arrays](https://ds-proaudio.ru/en/series-taura.html)
+- [ERA](https://ds-proaudio.ru/en/series-era.html) and [ERA-i](https://ds-proaudio.ru/en/series-era-i.html) constant-curvature arrays
+- [PILLAR](https://ds-proaudio.ru/en/series-pillar.html) and [STELLA](https://ds-proaudio.ru/en/series-stella.html) column systems
+- [CX](https://ds-proaudio.ru/en/series-cx.html) and [MCX](https://ds-proaudio.ru/en/series-mcx.html) point sources, [ANT](https://ds-proaudio.ru/en/series-ant.html) compact systems
+- [DA power amplifiers with DSP](https://ds-proaudio.ru/en/series-da.html)
+- [Model facts for AI assistants](https://ds-proaudio.ru/en/llms-full.txt): every model with a short description and link
+
+## Technology and company
+- [Technologies](https://ds-proaudio.ru/en/technologies.html), [Production](https://ds-proaudio.ru/en/production.html), [History](https://ds-proaudio.ru/en/history.html)
+- [Applications](https://ds-proaudio.ru/en/application.html), [Portfolio](https://ds-proaudio.ru/en/portfolio.html), [Reviews](https://ds-proaudio.ru/en/reviews.html)
+
+## Documents and support
+- [Documentation centre](https://ds-proaudio.ru/en/docs.html): PDF catalogue, GLL files for EASE, CAD drawings, manuals
+- [Warranty and service](https://ds-proaudio.ru/en/warranty.html), [Seminars](https://ds-proaudio.ru/en/seminars.html)
+
+## Contacts
+- [Contacts](https://ds-proaudio.ru/en/contacts.html): +7 495 150-12-38, info@ds-proaudio.ru
+- Legal entity: Deep Sound LLC (ООО «Дип Саунд»), INN 7702801847, OGRN 1127747128200
