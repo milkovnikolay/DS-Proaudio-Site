@@ -49,18 +49,32 @@ LEGAL_EN = {
 }
 
 
-def read(p):
-    with open(p, encoding='utf-8') as f:
+KNOWS_EN = ["line arrays", "point source loudspeakers", "column loudspeakers", "power amplifiers with DSP", "sound reinforcement design"]
+KNOWS_RU = ["линейные массивы", "точечные акустические системы", "звуковые колонны", "усилители мощности с DSP", "проектирование систем звукоусиления"]
+
+
+def read_raw(p):
+    with open(p, encoding='utf-8', newline='') as f:
         return f.read()
 
 
-def write(rel, s, old):
-    if s == old:
+def read(p):
+    # внутри скрипта всегда \n; при записи файл получает свои прежние переводы строк (см. write)
+    return read_raw(p).replace('\r\n', '\n')
+
+
+def write(rel, s, old=None):
+    path = os.path.join(SITE, rel)
+    raw = read_raw(path) if os.path.exists(path) else ''
+    s = s.replace('\r\n', '\n')
+    if raw.count('\r\n') * 2 > raw.count('\n'):  # файл с переводами строк Windows — сохраняем их
+        s = s.replace('\n', '\r\n')
+    if s == raw:
         return
     CHANGED.setdefault(rel, 0)
     CHANGED[rel] += 1
     if not CHECK:
-        with open(os.path.join(SITE, rel), 'w', encoding='utf-8') as f:
+        with open(path, 'w', encoding='utf-8', newline='') as f:
             f.write(s)
 
 
@@ -153,8 +167,7 @@ def fix_org(rel, s):
             return m.group(0)
         changed = False
         leg2 = dict(leg)
-        leg2["knowsAbout"] = (["line arrays", "point source loudspeakers", "column loudspeakers", "power amplifiers with DSP", "sound reinforcement design"]
-                              if is_en(rel) else ["линейные массивы", "точечные акустические системы", "звуковые колонны", "усилители мощности с DSP", "проектирование систем звукоусиления"])
+        leg2["knowsAbout"] = KNOWS_EN if is_en(rel) else KNOWS_RU
         for k, v in leg2.items():
             if obj.get(k) != v:
                 obj[k] = v; changed = True
@@ -174,6 +187,7 @@ def fix_org(rel, s):
                         pass
         if org and org.get('@type') == 'Organization':
             org.update(leg)
+            org["knowsAbout"] = KNOWS_EN if is_en(rel) else KNOWS_RU
             block = '<!-- seo-org:start -->\n<script type="application/ld+json">' + ld_dump(org, '') + '</script>\n<!-- seo-org:end -->'
             s = s.replace('</head>', block + '\n</head>', 1)
     return s
