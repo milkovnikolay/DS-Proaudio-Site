@@ -7,10 +7,13 @@
 import os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SITE = os.path.join(ROOT, 'site')
-src = open(os.path.join(SITE, 'software.html'), encoding='utf-8').read()
+SITE = os.environ.get('SITE') or os.path.join(ROOT, 'site')
+raw = open(os.path.join(SITE, 'software.html'), 'rb').read().decode('utf-8')
+CRLF = '\r\n' in raw
+src = raw.replace('\r\n', '\n')
+LABEL = 'Приложение для управления DSP'
 
-TITLE = 'DS Proaudio DSP Control — ПО для управления DSP усилителей — DS PROAUDIO'
+TITLE = 'DS Proaudio DSP Control — приложение для управления DSP усилителей — DS PROAUDIO'
 DESC = ('DS Proaudio DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: '
         'сеть модулей, группы, связки каналов, эквалайзер, кроссовер, лимитер с потолком в ваттах, пресеты и защита паролем. Windows 10/11 и macOS.')
 
@@ -111,12 +114,12 @@ MAIN = f"""<main>
         <li class="sep" aria-hidden="true">/</li>
         <li><a href="./support.html">Техподдержка</a></li>
         <li class="sep" aria-hidden="true">/</li>
-        <li aria-current="page">ПО для управления DSP</li>
+        <li aria-current="page">{LABEL}</li>
       </ol>
     </nav>
     <div class="sw-hero-grid">
       <div style="display:flex;flex-direction:column;gap:24px;">
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">ПО для управления DSP · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">{LABEL} · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
         <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DS Proaudio DSP&nbsp;Control</h1>
         <div style="max-width:600px;font-size:22px;line-height:1.5;color:#D8D8D8;">Программа для настройки и мониторинга DSP-модулей усилителей DS PROAUDIO по интерфейсу RS-485. Управление многомодульной системой, групповое редактирование, связки каналов, контроль выходной мощности и защита настроек.</div>
         <div class="dsp-dls">
@@ -283,7 +286,7 @@ out = src
 # заголовок, описание
 out = re.sub(r'<title>.*?</title>', '<title>%s</title>' % TITLE, out, count=1)
 out = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + DESC, out, count=1)
-out = out.replace('"name":"ПО для акустических расчётов"}', '"name":"ПО для управления DSP"}')
+out = re.sub(r'"name":"[^"]*акустических расчётов"\}', '"name":"%s"}' % LABEL, out)
 # SEO-блок и язык
 out = re.sub(r'(?s)<!-- seo:start -->.*?<!-- seo:end -->', f'''<!-- seo:start -->
 <link rel="canonical" href="https://ds-proaudio.ru/software-dsp.html">
@@ -304,13 +307,18 @@ out = re.sub(r'(?s)<main>.*?</main>', lambda m: MAIN, out, count=1)
 out = out.replace('</head>', CSS + '</head>', 1)
 
 # меню и подвал на этой странице: SoundMath больше не текущая, добавляется новый пункт
-out = out.replace('<a href="./software.html" class="mm-item-long mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">ПО для акустических расчётов</a>',
-                  '<a href="./software.html" class="mm-item-long">ПО для акустических расчётов</a>\n'
-                  '      <a href="./software-dsp.html" class="mm-item-long mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">ПО для управления DSP</a>')
-out = out.replace('<a href="./software.html" class="ft-item-long">ПО для акустических расчётов</a>',
-                  '<a href="./software.html" class="ft-item-long">ПО для акустических расчётов</a>\n'
-                  '          <a href="./software-dsp.html" class="ft-item-long">ПО для управления DSP</a>')
+def fix_menu(m):
+    tag, text = m.group(1), m.group(2)
+    if 'mm-current' in tag:
+        plain = '<a href="./software.html" class="mm-item-long">%s</a>' % text
+        return plain + '\n      <a href="./software-dsp.html" class="mm-item-long mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">%s</a>' % LABEL
+    if 'ft-item-long' in tag:
+        return m.group(0) + '\n          <a href="./software-dsp.html" class="ft-item-long">%s</a>' % LABEL
+    return m.group(0)
+out = re.sub(r'(<a href="\./software\.html"[^>]*>)([^<]*)</a>', fix_menu, out)
 assert 'software-dsp.html" class="mm-item-long mm-current' in out
 assert 'software-dsp.html" class="ft-item-long' in out
-open(os.path.join(SITE, 'software-dsp.html'), 'w', encoding='utf-8').write(out)
+if CRLF:
+    out = out.replace('\r\n', '\n').replace('\n', '\r\n')
+open(os.path.join(SITE, 'software-dsp.html'), 'wb').write(out.encode('utf-8'))
 print('ok', len(out))
