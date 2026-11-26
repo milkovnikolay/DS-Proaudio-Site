@@ -303,8 +303,9 @@ out = re.sub(r'(?s)<!-- seo:start -->.*?<!-- seo:end -->', f'''<!-- seo:start --
 <meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="DS PROAUDIO">
 <!-- seo:end -->''', out, count=1)
-out = re.sub(r'(?s)<!-- lang:start.*?<!-- lang:end -->\n', '', out, count=1)
-out = re.sub(r'<a class="mm-lang" href="./en/software.html"[^\n]*\n', '', out, count=1)
+# переключатель языка и hreflang — на английскую версию этой страницы (en/software-dsp.html)
+out = re.sub(r'(?s)<!-- lang:start.*?<!-- lang:end -->', lambda m: m.group(0).replace('/software.html', '/software-dsp.html'), out, count=1)
+out = out.replace('<a class="mm-lang" href="./en/software.html"', '<a class="mm-lang" href="./en/software-dsp.html"', 1)
 # содержимое
 out = re.sub(r'(?s)<main>.*?</main>', lambda m: MAIN, out, count=1)
 out = out.replace('</head>', CSS + '</head>', 1)

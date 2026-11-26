@@ -209,6 +209,7 @@ PAGES = {
     'education.html': {'en': 'education.html', 'ru_url': DOMAIN + '/education.html', 'en_url': DOMAIN + '/en/education.html'},
     'culture.html': {'en': 'culture.html', 'ru_url': DOMAIN + '/culture.html', 'en_url': DOMAIN + '/en/culture.html'},
     'application.html': {'en': 'application.html', 'ru_url': DOMAIN + '/application.html', 'en_url': DOMAIN + '/en/application.html'},
+    'software-dsp.html': {'en': 'software-dsp.html', 'ru_url': DOMAIN + '/software-dsp.html', 'en_url': DOMAIN + '/en/software-dsp.html'},
 }
 
 CYR = re.compile('[А-Яа-яЁё]')
