@@ -13,7 +13,8 @@ CRLF = '\r\n' in raw
 src = raw.replace('\r\n', '\n')
 # если в шаблоне уже есть пункт DSP Control (меню добавлено на всех страницах) — убираем, чтобы не было дублей
 src = re.sub(r'[ \t]*<a href="\./software-dsp\.html"[^>]*>[^<]*</a>\n', '', src)
-LABEL = 'DSP Control'
+LABEL = 'Программа для управления DSP'  # пункт меню и подвала
+NAME = 'DSP Control'  # название программы на странице
 
 TITLE = 'DSP Control — приложение для управления DSP усилителей — DS PROAUDIO'
 DESC = ('DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: '
@@ -116,12 +117,12 @@ MAIN = f"""<main>
         <li class="sep" aria-hidden="true">/</li>
         <li><a href="./support.html">Техподдержка</a></li>
         <li class="sep" aria-hidden="true">/</li>
-        <li aria-current="page">{LABEL}</li>
+        <li aria-current="page">{NAME}</li>
       </ol>
     </nav>
     <div class="sw-hero-grid">
       <div style="display:flex;flex-direction:column;gap:24px;">
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">Приложение для управления DSP · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">Программа для управления DSP · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
         <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DSP&nbsp;Control</h1>
         <div style="max-width:600px;font-size:22px;line-height:1.5;color:#D8D8D8;">Программа для настройки и мониторинга DSP-модулей усилителей DS PROAUDIO по интерфейсу RS-485. Управление многомодульной системой, групповое редактирование, связки каналов, контроль выходной мощности и защита настроек.</div>
         <div class="dsp-dls">
@@ -288,7 +289,7 @@ out = src
 # заголовок, описание
 out = re.sub(r'<title>.*?</title>', '<title>%s</title>' % TITLE, out, count=1)
 out = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + DESC, out, count=1)
-out = re.sub(r'"name":"[^"]*акустических расчётов"\}', '"name":"%s"}' % LABEL, out)
+out = re.sub(r'"name":"[^"]*акустических расчётов"\}', '"name":"%s"}' % NAME, out)
 # SEO-блок и язык
 out = re.sub(r'(?s)<!-- seo:start -->.*?<!-- seo:end -->', f'''<!-- seo:start -->
 <link rel="canonical" href="https://ds-proaudio.ru/software-dsp.html">
