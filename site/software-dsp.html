@@ -12,8 +12,8 @@
 <script src="./cookie.js" defer></script>
 <script src="./metrika.js" defer></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DS Proaudio DSP Control — приложение для управления DSP усилителей — DS PROAUDIO</title>
-<meta name="description" content="DS Proaudio DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: сеть модулей, группы, связки каналов, эквалайзер, кроссовер, лимитер с потолком в ваттах, пресеты и защита паролем. Windows 10/11 и macOS.">
+<title>DSP Control — приложение для управления DSP усилителей — DS PROAUDIO</title>
+<meta name="description" content="DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: сеть модулей, группы, связки каналов, эквалайзер, кроссовер, лимитер с потолком в ваттах, пресеты и защита паролем. Windows 10/11 и macOS.">
 <!-- основные шрифты заранее: без этого текст перестраивается при подмене шрифта (сдвиг вёрстки, CLS) -->
 <link rel="preload" href="./fonts/ibm-plex-sans-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="./fonts/montserrat-cyrillic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
  {"@type":"ListItem","position":1,"name":"Главная","item":"https://ds-proaudio.ru/"},
  {"@type":"ListItem","position":2,"name":"Техподдержка","item":"https://ds-proaudio.ru/support.html"},
- {"@type":"ListItem","position":3,"name":"Приложение для управления DSP"}]}
+ {"@type":"ListItem","position":3,"name":"DSP Control"}]}
 </script>
 <style>
   /* ===== базовые правила — один в один с Main.dc.html ===== */
@@ -464,8 +464,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DS PROAUDIO">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="DS Proaudio DSP Control — приложение для управления DSP усилителей — DS PROAUDIO">
-<meta property="og:description" content="DS Proaudio DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: сеть модулей, группы, связки каналов, эквалайзер, кроссовер, лимитер с потолком в ваттах, пресеты и защита паролем. Windows 10/11 и macOS.">
+<meta property="og:title" content="DSP Control — приложение для управления DSP усилителей — DS PROAUDIO">
+<meta property="og:description" content="DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: сеть модулей, группы, связки каналов, эквалайзер, кроссовер, лимитер с потолком в ваттах, пресеты и защита паролем. Windows 10/11 и macOS.">
 <meta property="og:url" content="https://ds-proaudio.ru/software-dsp.html">
 <meta property="og:image" content="https://ds-proaudio.ru/assets/og/og-default.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -641,7 +641,7 @@
       <a href="./seminars.html" class="mm-item">Обучение, семинары</a>
       <a href="./docs.html" class="mm-item-long">Центр документации<span class="mm-sub">(скачать файлы EASE CAD)</span></a>
       <a href="./software.html" class="mm-item-long">ПО для акустических расчётов</a>
-      <a href="./software-dsp.html" class="mm-item-long mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">Приложение для управления DSP</a>
+      <a href="./software-dsp.html" class="mm-item-long mm-current" aria-current="page" style="font-weight:500;color:#FFFFFF;">DSP Control</a>
       <a href="./warranty.html" class="mm-item">Гарантия и сервис</a>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:15px;text-align:right;">
@@ -676,13 +676,13 @@
         <li class="sep" aria-hidden="true">/</li>
         <li><a href="./support.html">Техподдержка</a></li>
         <li class="sep" aria-hidden="true">/</li>
-        <li aria-current="page">Приложение для управления DSP</li>
+        <li aria-current="page">DSP Control</li>
       </ol>
     </nav>
     <div class="sw-hero-grid">
       <div style="display:flex;flex-direction:column;gap:24px;">
         <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">Приложение для управления DSP · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
-        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DS Proaudio DSP&nbsp;Control</h1>
+        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DSP&nbsp;Control</h1>
         <div style="max-width:600px;font-size:22px;line-height:1.5;color:#D8D8D8;">Программа для настройки и мониторинга DSP-модулей усилителей DS PROAUDIO по интерфейсу RS-485. Управление многомодульной системой, групповое редактирование, связки каналов, контроль выходной мощности и защита настроек.</div>
         <div class="dsp-dls">
         <div class="dsp-dl" aria-disabled="true">
@@ -699,8 +699,8 @@
         <p class="sw-note" style="margin:2px 0 0;">Программа готовится к публикации. Для получения установщика — <a href="./clients.html#contact">напишите нам</a>.<br>Подключение к усилителю — через <a href="./p-rs485-usb-adapter.html">адаптер RS485 — USB</a>.</p>
       </div>
       <div class="sw-shot dsp-hero-shot">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/03-ekvalayzer-krossover-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/03-ekvalayzer-krossover-dark.png" alt="DS Proaudio DSP Control: главное окно"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/03-ekvalayzer-krossover-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/03-ekvalayzer-krossover-dark.png" alt="DSP Control: главное окно"></a>
       </div>
     </div>
   </div>
@@ -739,8 +739,8 @@
   <div class="wrap dsp-rows" style="padding-bottom:110px;">
     <article class="dsp-row dsp-l reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Сеть</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/01-set-gruppy-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/01-set-gruppy-dark.png" alt="DS Proaudio DSP Control: сеть модулей" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Сеть</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/01-set-gruppy-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/01-set-gruppy-dark.png" alt="DSP Control: сеть модулей" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">01 · Сеть</div>
@@ -751,8 +751,8 @@
     </article>
     <article class="dsp-row dsp-r reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Обзор</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/02-obzor-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/02-obzor-dark.png" alt="DS Proaudio DSP Control: обзор модуля и маршрутизация" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Обзор</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/02-obzor-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/02-obzor-dark.png" alt="DSP Control: обзор модуля и маршрутизация" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">02 · Обзор</div>
@@ -763,8 +763,8 @@
     </article>
     <article class="dsp-row dsp-l reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Входы</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/10-vhody-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/10-vhody-dark.png" alt="DS Proaudio DSP Control: входной канал" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Входы</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/10-vhody-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/10-vhody-dark.png" alt="DSP Control: входной канал" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">03 · Входы</div>
@@ -775,8 +775,8 @@
     </article>
     <article class="dsp-row dsp-r reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Эквалайзер</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/04-ekvalayzer-krupno-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/04-ekvalayzer-krupno-dark.png" alt="DS Proaudio DSP Control: параметрический эквалайзер и кроссовер" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Эквалайзер</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/04-ekvalayzer-krupno-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/04-ekvalayzer-krupno-dark.png" alt="DSP Control: параметрический эквалайзер и кроссовер" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">04 · Эквалайзер</div>
@@ -787,8 +787,8 @@
     </article>
     <article class="dsp-row dsp-l reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Лимитер</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/05-limiter-potolok-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/05-limiter-potolok-dark.png" alt="DS Proaudio DSP Control: компрессор и лимитер" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Лимитер</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/05-limiter-potolok-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/05-limiter-potolok-dark.png" alt="DSP Control: компрессор и лимитер" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">05 · Лимитер</div>
@@ -799,8 +799,8 @@
     </article>
     <article class="dsp-row dsp-r reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Связки каналов</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/07-svyazka-kanalov-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/07-svyazka-kanalov-dark.png" alt="DS Proaudio DSP Control: связки каналов" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Связки каналов</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/07-svyazka-kanalov-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/07-svyazka-kanalov-dark.png" alt="DSP Control: связки каналов" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">06 · Связки каналов</div>
@@ -811,8 +811,8 @@
     </article>
     <article class="dsp-row dsp-l reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Копирование</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/08-kopirovanie-kanala-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/08-kopirovanie-kanala-dark.png" alt="DS Proaudio DSP Control: копирование настроек канала" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Копирование</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/08-kopirovanie-kanala-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/08-kopirovanie-kanala-dark.png" alt="DSP Control: копирование настроек канала" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">07 · Копирование</div>
@@ -823,8 +823,8 @@
     </article>
     <article class="dsp-row dsp-r reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Пресеты</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/06-presety-neskolko-moduley-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/06-presety-neskolko-moduley-dark.png" alt="DS Proaudio DSP Control: пресеты в нескольких модулях" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Пресеты</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/06-presety-neskolko-moduley-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/06-presety-neskolko-moduley-dark.png" alt="DSP Control: пресеты в нескольких модулях" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">08 · Пресеты</div>
@@ -835,8 +835,8 @@
     </article>
     <article class="dsp-row dsp-l reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — Связь и журнал</span></div>
-        <a class="dsp-zoom" href="./assets/software-dsp/11-svyaz-diagnostika-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/11-svyaz-diagnostika-dark.png" alt="DS Proaudio DSP Control: диагностика" loading="lazy"></a>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — Связь и журнал</span></div>
+        <a class="dsp-zoom" href="./assets/software-dsp/11-svyaz-diagnostika-dark.png" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/11-svyaz-diagnostika-dark.png" alt="DSP Control: диагностика" loading="lazy"></a>
       </div>
       <div class="dsp-txt">
         <div class="kicker">09 · Связь и журнал</div>
@@ -971,7 +971,7 @@
           <a href="./seminars.html" class="ft-item">Обучение, семинары</a>
           <a href="./docs.html" class="ft-item-long">Центр документации<span class="ft-sub">(скачать файлы EASE CAD)</span></a>
           <a href="./software.html" class="ft-item-long">ПО для акустических расчётов</a>
-          <a href="./software-dsp.html" class="ft-item-long">Приложение для управления DSP</a>
+          <a href="./software-dsp.html" class="ft-item-long">DSP Control</a>
           <a href="./warranty.html" class="ft-item">Гарантия и сервис</a>
       </div>
       <div class="dsf-col">

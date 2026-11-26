@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Добавляет пункт «Приложение для управления DSP» в меню и подвал всех русских страниц —
+"""Добавляет пункт «DSP Control» в меню и подвал всех русских страниц —
 сразу после пункта про ПО/приложение для акустических расчётов (software.html).
 Повторный запуск ничего не меняет. Переводы строк (CRLF/LF) каждого файла сохраняются.
 Английские страницы (en/) не трогаем: английской версии страницы пока нет.
@@ -9,7 +9,7 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SITE = os.environ.get('SITE') or os.path.join(ROOT, 'site')
-LABEL = 'Приложение для управления DSP'
+LABEL = 'DSP Control'
 LINK = re.compile(r'([ \t]*)<a href="\./software\.html"([^>]*)>[^<]*</a>')
 
 changed = 0

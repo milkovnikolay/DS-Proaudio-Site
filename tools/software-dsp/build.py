@@ -11,10 +11,12 @@ SITE = os.environ.get('SITE') or os.path.join(ROOT, 'site')
 raw = open(os.path.join(SITE, 'software.html'), 'rb').read().decode('utf-8')
 CRLF = '\r\n' in raw
 src = raw.replace('\r\n', '\n')
-LABEL = 'Приложение для управления DSP'
+# если в шаблоне уже есть пункт DSP Control (меню добавлено на всех страницах) — убираем, чтобы не было дублей
+src = re.sub(r'[ \t]*<a href="\./software-dsp\.html"[^>]*>[^<]*</a>\n', '', src)
+LABEL = 'DSP Control'
 
-TITLE = 'DS Proaudio DSP Control — приложение для управления DSP усилителей — DS PROAUDIO'
-DESC = ('DS Proaudio DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: '
+TITLE = 'DSP Control — приложение для управления DSP усилителей — DS PROAUDIO'
+DESC = ('DSP Control — программа на русском языке для настройки DSP-модулей усилителей DS PROAUDIO по линии RS-485: '
         'сеть модулей, группы, связки каналов, эквалайзер, кроссовер, лимитер с потолком в ваттах, пресеты и защита паролем. Windows 10/11 и macOS.')
 
 SRC = os.path.join(SITE, 'assets', 'software-dsp')
@@ -22,7 +24,7 @@ SRC = os.path.join(SITE, 'assets', 'software-dsp')
 def img(name, alt, eager=False):
     """name — файл в site/assets/software-dsp/ (без пути). Нет файла — заглушка."""
     if name and os.path.exists(os.path.join(SRC, name)):
-        return '<a class="dsp-zoom" href="./assets/software-dsp/%s" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/%s" alt="DS Proaudio DSP Control: %s"%s></a>' % (name, name, alt, '' if eager else ' loading="lazy"')
+        return '<a class="dsp-zoom" href="./assets/software-dsp/%s" target="_blank" rel="noopener" title="Открыть в полном размере"><img src="./assets/software-dsp/%s" alt="DSP Control: %s"%s></a>' % (name, name, alt, '' if eager else ' loading="lazy"')
     return '<div class="dsp-ph"><span>Скриншот</span><b>%s</b></div>' % alt
 
 # ---- ключевые возможности (по руководству 0.9.2) ----
@@ -73,7 +75,7 @@ def shot_html(i, s):
     return f"""
     <article class="dsp-row dsp-{side} reveal">
       <div class="dsp-win">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control — {bar}</span></div>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control — {bar}</span></div>
         {img(f, h[0].lower() + h[1:])}
       </div>
       <div class="dsp-txt">
@@ -119,8 +121,8 @@ MAIN = f"""<main>
     </nav>
     <div class="sw-hero-grid">
       <div style="display:flex;flex-direction:column;gap:24px;">
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">{LABEL} · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
-        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DS Proaudio DSP&nbsp;Control</h1>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;"><div class="kicker" style="color:#C8C8C8;">Приложение для управления DSP · версия 0.9</div><span class="dsp-ru-pill"><i>RU</i>Полностью на русском языке</span></div>
+        <h1 class="h1" style="margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:64px;line-height:1.05;color:#FAFAFA;">DSP&nbsp;Control</h1>
         <div style="max-width:600px;font-size:22px;line-height:1.5;color:#D8D8D8;">Программа для настройки и мониторинга DSP-модулей усилителей DS PROAUDIO по интерфейсу RS-485. Управление многомодульной системой, групповое редактирование, связки каналов, контроль выходной мощности и защита настроек.</div>
         <div class="dsp-dls">
         {DOWNLOADS}
@@ -128,7 +130,7 @@ MAIN = f"""<main>
         <p class="sw-note" style="margin:2px 0 0;">Программа готовится к публикации. Для получения установщика — <a href="./clients.html#contact">напишите нам</a>.<br>Подключение к усилителю — через <a href="./p-rs485-usb-adapter.html">адаптер RS485 — USB</a>.</p>
       </div>
       <div class="sw-shot dsp-hero-shot">
-        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DS Proaudio DSP Control</span></div>
+        <div class="sw-shot-bar"><i></i><i></i><i></i><span>DSP Control</span></div>
         {img(HERO_IMG, 'главное окно', eager=True)}
       </div>
     </div>
